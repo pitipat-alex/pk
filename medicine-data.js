@@ -2180,6 +2180,3300 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     PART 2 — RESPIRATORY (Ch 13–25)
+  ============================================================ */
+
+  /* ---------- Ch 13/16/19 · Clinical Manifestations ---------- */
+  {
+    id: 'resp-clinical-manifestations',
+    titleEn: 'Clinical Manifestations of Respiratory Disease',
+    titleTh: 'อาการของโรคระบบทางเดินหายใจ',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['cough', 'dyspnea', 'sneeze', 'stridor', 'stertor', 'nasal discharge', 'epistaxis', 'wheeze', 'crackle'],
+    aliases: ['respiratory signs', 'อาการหายใจ', 'อาการไอ'],
+    source: 'Ch. 13, 16, 19 · pp. 240–300',
+    sections: {
+      definition: `
+        <p>อาการที่บ่งบอกความผิดปกติของ <strong>upper airway</strong> (nasal, pharynx, larynx, trachea) หรือ <strong>lower airway / parenchyma</strong> (bronchi, alveoli, pleura) — ใช้ localize lesion ก่อน workup</p>
+      `,
+      etiology: `
+        <p>ดู entries เฉพาะของแต่ละโรค — แบ่งคร่าวๆ:</p>
+        <ul>
+          <li><strong>Upper airway:</strong> URI, rhinosinusitis, polyps, neoplasia, foreign body, laryngeal paralysis, BOAS, tracheal collapse</li>
+          <li><strong>Lower airway:</strong> CIRDC, bronchitis, asthma, parasites</li>
+          <li><strong>Parenchyma:</strong> pneumonia, pulmonary edema, fibrosis, neoplasia, PTE</li>
+          <li><strong>Pleural:</strong> effusion, pneumothorax</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <p><strong>Localization clues จาก breathing pattern:</strong></p>
+        <ul>
+          <li><strong>Inspiratory dyspnea + stridor</strong> → upper airway obstruction (laryngeal paralysis, BOAS, foreign body)</li>
+          <li><strong>Expiratory dyspnea + wheeze</strong> → lower airway obstruction (asthma, bronchitis, tracheal collapse intrathoracic)</li>
+          <li><strong>Mixed / restrictive (rapid shallow)</strong> → parenchymal disease หรือ pleural effusion</li>
+          <li><strong>Paradoxical (chest in, abdomen out on inspiration)</strong> → severe distress, fatigue, pleural disease</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Nasal signs:</strong></p>
+        <ul>
+          <li><strong>Sneezing</strong> — acute = irritation/FB; chronic = rhinitis, neoplasia, fungal</li>
+          <li><strong>Reverse sneezing</strong> — paroxysmal inspiratory snorting (nasopharyngeal irritation; benign)</li>
+          <li><strong>Nasal discharge:</strong>
+            <ul>
+              <li><em>Serous</em> = early viral, allergic</li>
+              <li><em>Mucopurulent</em> = secondary bacterial infection (most diseases)</li>
+              <li><em>Hemorrhagic / epistaxis</em> = trauma, neoplasia, fungal, coagulopathy, hypertension</li>
+              <li>Unilateral → think FB, neoplasia, fungal, oronasal fistula</li>
+              <li>Bilateral → rhinitis, systemic disease</li>
+            </ul>
+          </li>
+          <li><strong>Stertor</strong> — snoring sound, low-pitched (nasopharynx, soft palate)</li>
+          <li>Facial deformity → aggressive dz (neoplasia, advanced fungal)</li>
+        </ul>
+        <p><strong>Laryngeal/upper airway signs:</strong></p>
+        <ul>
+          <li><strong>Stridor</strong> — high-pitched inspiratory noise (laryngeal paralysis, mass)</li>
+          <li>Voice change (bark, meow)</li>
+          <li>Gagging, regurgitation when eating</li>
+          <li>Acute respiratory distress (excitement, heat exacerbates)</li>
+        </ul>
+        <p><strong>Lower airway/parenchyma signs:</strong></p>
+        <ul>
+          <li><strong>Cough:</strong>
+            <ul>
+              <li><em>Productive moist soft</em> → cardiogenic edema, pneumonia</li>
+              <li><em>Dry honking</em> → tracheal collapse, chronic bronchitis</li>
+              <li><em>Paroxysmal terminal retch</em> → kennel cough</li>
+              <li><em>Cat coughing</em> = uncommon; almost always bronchitis/asthma จนพิสูจน์ตรงข้าม ✨</li>
+            </ul>
+          </li>
+          <li><strong>Tachypnea / dyspnea</strong> — RR &gt; 30 at rest abnormal</li>
+          <li><strong>Wheeze</strong> — expiratory, lower airway obstruction (asthma)</li>
+          <li><strong>Crackles</strong> — inspiratory, fluid/exudate (edema, pneumonia, fibrosis)</li>
+          <li>Cyanosis, exercise intolerance</li>
+          <li>Hemoptysis — uncommon; PTE, neoplasia, severe pneumonia</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Physical exam essentials:</strong></p>
+        <ul>
+          <li>Nasal airflow test (cotton wisp, mirror fog)</li>
+          <li>Retropulsion of eyes (orbital mass)</li>
+          <li>Oral exam (palate, tooth roots, oronasal fistula)</li>
+          <li>Auscultation — entire lung field both sides; trachea</li>
+          <li>Percussion — pleural effusion (dull), pneumothorax (hyperresonant)</li>
+          <li>Submandibular + cervical lymph node palpation</li>
+        </ul>
+        <p><strong>Workup tier:</strong></p>
+        <ul>
+          <li><strong>Tier 1:</strong> CBC, biochem, T4 (cat), heartworm test, thoracic rad (3 views)</li>
+          <li><strong>Tier 2:</strong> nasal/skull rad, dental rad, fecal Baermann, BAL/tracheal wash</li>
+          <li><strong>Tier 3:</strong> CT, rhinoscopy, bronchoscopy, biopsy</li>
+        </ul>
+      `,
+      differential: `<p>กว้างมาก — ดู entries เฉพาะตาม system + presenting sign</p>`,
+      treatment: `<p>Treat underlying disease + supportive (O2, hydration, anti-inflammatory เลือกตามสาเหตุ)</p>`,
+      complications: `
+        <ul>
+          <li>Acute respiratory distress / arrest</li>
+          <li>Aspiration pneumonia</li>
+          <li>Cor pulmonale จาก chronic hypoxia</li>
+          <li>Sleep-disordered breathing (BOAS)</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 14/17/20 · Diagnostic Tests ---------- */
+  {
+    id: 'resp-diagnostic-tests',
+    titleEn: 'Respiratory Diagnostic Tests',
+    titleTh: 'การตรวจวินิจฉัยระบบหายใจ',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['rhinoscopy', 'bronchoscopy', 'tracheal wash', 'BAL', 'thoracic radiograph', 'pulse oximetry', 'blood gas', 'CT'],
+    aliases: ['respiratory workup', 'การตรวจระบบหายใจ'],
+    source: 'Ch. 14, 17, 20 · pp. 254–319',
+    sections: {
+      definition: `
+        <p>เครื่องมือ workup โรคระบบหายใจ — เลือกตามตำแหน่งของโรค (upper vs lower) และความรุนแรง</p>
+      `,
+      etiology: `<p>ใช้ใน workup ของ cough, dyspnea, nasal discharge, abnormal breathing</p>`,
+      pathophysiology: `<p>ดู entries เฉพาะ</p>`,
+      symptoms: `<p>ดู Clinical Manifestations entry</p>`,
+      diagnosis: `
+        <p><strong>1. Imaging</strong></p>
+        <ul>
+          <li><strong>Thoracic radiographs (3 views — left + right lat + DV/VD):</strong>
+            <ul>
+              <li>VHS, chamber size (rule out cardiac)</li>
+              <li>Lung patterns: alveolar (air bronchogram), interstitial, bronchial, vascular</li>
+              <li>Pleural effusion: ventral fluid line, fissure lines</li>
+              <li>Pneumothorax: lung edge retracted, hyperlucent</li>
+              <li>Mediastinal mass, lymph nodes</li>
+            </ul>
+          </li>
+          <li><strong>Skull/nasal rad:</strong> turbinate destruction (neoplasia, fungal), tooth root abscess; ค่อนข้าง insensitive ในระยะแรก</li>
+          <li><strong>Cervical rad:</strong> tracheal collapse (lateral inspiration + expiration); hypoplastic trachea</li>
+          <li><strong>Fluoroscopy:</strong> dynamic airway collapse — gold standard for tracheal collapse + bronchomalacia</li>
+          <li><strong>CT:</strong> superior for nasal cavity, lungs, mediastinum; preferred ก่อน rhinoscopy/bronchoscopy</li>
+          <li><strong>Lung ultrasound (vetBLUE):</strong> B-lines = interstitial syndrome (edema, pneumonia); pleural effusion screening</li>
+        </ul>
+
+        <p><strong>2. Endoscopy</strong></p>
+        <ul>
+          <li><strong>Rhinoscopy:</strong> direct visualization of nasal cavity + nasopharynx; biopsy under direct view</li>
+          <li><strong>Laryngoscopy:</strong> assess arytenoid motion (laryngeal paralysis); soft palate length (BOAS); doxapram 1.1 mg/kg IV stimulate breathing if too anesthetized</li>
+          <li><strong>Bronchoscopy:</strong> visualize trachea, mainstem + lobar bronchi; collect BAL</li>
+        </ul>
+
+        <p><strong>3. Airway sampling</strong></p>
+        <ul>
+          <li><strong>Tracheal wash (TW):</strong>
+            <ul>
+              <li>Transtracheal (awake/sedated, through cricothyroid ligament) หรือ endotracheal (anesthetized)</li>
+              <li>Inject 3-5 mL sterile saline × multiple boluses, aspirate</li>
+              <li>Cytology + culture (aerobic, ± Mycoplasma, ± fungal)</li>
+              <li>Useful for diffuse airway disease, large airway pathogens</li>
+            </ul>
+          </li>
+          <li><strong>Bronchoalveolar lavage (BAL):</strong>
+            <ul>
+              <li>Bronchoscopic หรือ blind technique; 5-25 mL saline per aliquot, 2-3 aliquots</li>
+              <li>Better for distal airway / parenchymal disease</li>
+              <li>เสี่ยง bronchospasm ในแมว — pretreat with terbutaline 0.01 mg/kg SC + albuterol inhaled</li>
+            </ul>
+          </li>
+          <li><strong>Nasal flush / brush:</strong> rhinoscopic-guided sampling for cytology + biopsy</li>
+        </ul>
+
+        <p><strong>4. Cytology + Culture interpretation</strong></p>
+        <ul>
+          <li>Normal TW: respiratory epithelial cells + few macrophages</li>
+          <li><strong>Septic neutrophilic</strong> (intracellular bacteria) → bacterial infection — start broad-spectrum antibiotics + adjust per culture</li>
+          <li><strong>Eosinophilic</strong> &gt; 20% → allergic, parasitic, neoplastic, fungal</li>
+          <li><strong>Lymphocytic</strong> → chronic, viral, neoplastic</li>
+          <li><strong>Mixed inflammation</strong> → bronchitis, chronic disease</li>
+          <li>Oropharyngeal contamination: squamous cells + Simonsiella → discard</li>
+          <li>Look for: parasitic larvae (Aelurostrongylus, Crenosoma), fungal organisms, tachyzoites</li>
+        </ul>
+
+        <p><strong>5. Blood gas analysis (arterial)</strong></p>
+        <ul>
+          <li><strong>PaO2 (room air):</strong> normal &gt; 80 mmHg; &lt; 60 mmHg = severe hypoxemia → O2 support</li>
+          <li><strong>PaCO2:</strong> 35-45 normal; &gt; 50 = hypoventilation / fatigue</li>
+          <li><strong>A-a gradient:</strong> normal &lt; 15 mmHg ในอากาศ; widened = V/Q mismatch / diffusion problem</li>
+          <li>Hyperventilation/anxiety: ↓ PaCO2, ↑ pH</li>
+          <li>Severe pulmonary disease: ↓ PaO2, normal/↓ PaCO2 ตอนแรก, ↑ PaCO2 เมื่อ fatigue</li>
+        </ul>
+
+        <p><strong>6. Pulse oximetry (SpO2)</strong></p>
+        <ul>
+          <li>Probe ที่ลิ้น, ริมฝีปาก, vulva, ear, prepuce</li>
+          <li>Normal &gt; 95%</li>
+          <li>&lt; 90% = significant hypoxemia (PaO2 ~60 mmHg)</li>
+          <li>Limitations: motion artifact, vasoconstriction, anemia, methemoglobinemia, dark pigment, jaundice</li>
+        </ul>
+
+        <p><strong>7. Other tests</strong></p>
+        <ul>
+          <li>Heartworm antigen + microfilaria</li>
+          <li>Fecal Baermann (lungworms — Aelurostrongylus, Crenosoma, Oslerus)</li>
+          <li>Cryptococcal antigen (LCAT) — serum or urine</li>
+          <li>Aspergillus antigen (galactomannan), serology</li>
+          <li>Coag panel ใน epistaxis</li>
+          <li>BP (epistaxis ใน hypertension)</li>
+          <li>FeLV/FIV (cat URI workup)</li>
+        </ul>
+      `,
+      differential: `<p>เลือก test ตาม presenting sign + suspected localization</p>`,
+      treatment: `<p>Diagnostic tools — ไม่มี treatment</p>`,
+      complications: `
+        <p><strong>Procedure-specific risks:</strong></p>
+        <ul>
+          <li>TW: subcutaneous emphysema, tracheal laceration, bronchospasm</li>
+          <li>BAL: hypoxemia (oxygen support during + after), bronchospasm (cats!)</li>
+          <li>Rhinoscopy: hemorrhage (rarely severe; cold saline + epi 1:100,000 lavage)</li>
+          <li>Anesthesia risk in dyspneic patients — stabilize first</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 15 · Feline Upper Respiratory Infection ---------- */
+  {
+    id: 'feline-uri',
+    titleEn: 'Feline Upper Respiratory Infection (URI)',
+    titleTh: 'หวัดแมว — FHV / FCV / Chlamydia',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['cat'],
+    tags: ['FHV', 'FCV', 'feline herpes', 'feline calicivirus', 'Chlamydia', 'Mycoplasma', 'Bordetella', 'rhinotracheitis', 'famciclovir'],
+    aliases: ['cat flu', 'หวัดแมว', 'feline rhinotracheitis', 'snuffles'],
+    source: 'Ch. 15 · pp. 257–264',
+    sections: {
+      definition: `
+        <p>โรคติดเชื้อที่ upper respiratory tract ของแมว — เจอบ่อยมากในแมวลูก, shelter cats, multi-cat households</p>
+        <ul>
+          <li><strong>FHV-1 + FCV ~90%</strong> ของเคส</li>
+          <li>มัก self-limiting ใน 7-14 วัน แต่ <em>chronic carrier</em> เป็น issue</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Pathogens หลัก:</strong></p>
+        <ul>
+          <li><strong>Feline herpesvirus-1 (FHV-1):</strong> rhinotracheitis virus; latency in trigeminal ganglia → recurrence ตอน stress; severe rhinitis, conjunctivitis, corneal ulcers (dendritic) ✗</li>
+          <li><strong>Feline calicivirus (FCV):</strong> RNA virus; oral ulcers (lingual!), polyarthritis ในลูกแมว, rare virulent systemic strain (VS-FCV) → fatal vasculitis</li>
+          <li><strong>Chlamydia felis:</strong> conjunctivitis เด่น, mild URI</li>
+          <li><strong>Mycoplasma felis:</strong> conjunctivitis, sometimes URI</li>
+          <li><strong>Bordetella bronchiseptica:</strong> rare; cough, pneumonia ในลูกแมว</li>
+        </ul>
+        <p><strong>Risk factors:</strong> young, stressed, immunosuppressed, FeLV/FIV+, multi-cat environment, แม่ carrier</p>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Direct contact + fomites (โดยเฉพาะ FHV — labile in environment, FCV — stable นานกว่า)</li>
+          <li>Viral cytolysis → mucosal damage → secondary bacterial infection</li>
+          <li>FHV: turbinate destruction → permanent damage → predispose to chronic rhinosinusitis ตลอดชีวิต ✗</li>
+          <li>Carrier state: FHV intermittent (~40-50% post-recovery); FCV continuous shedding 30 วัน-ตลอดชีวิต</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute URI:</strong></p>
+        <ul>
+          <li>Sneezing (เด่น), serous → mucopurulent nasal discharge</li>
+          <li>Conjunctivitis, ocular discharge, blepharospasm</li>
+          <li>Fever, anorexia, lethargy</li>
+          <li>Hypersalivation</li>
+          <li>Dehydration (ลูกแมว — กินไม่ได้เพราะ smell + oral pain)</li>
+        </ul>
+        <p><strong>FHV-specific:</strong></p>
+        <ul>
+          <li>Severe rhinitis, ocular involvement</li>
+          <li><strong>Corneal ulcers (dendritic)</strong> ✨ — pathognomonic-like</li>
+          <li>Symblepharon (conjunctival adhesion) ในลูกแมว</li>
+          <li>Abortion, neonatal death</li>
+        </ul>
+        <p><strong>FCV-specific:</strong></p>
+        <ul>
+          <li><strong>Oral ulcers (tongue, hard palate)</strong> ✨ — drooling, painful eating</li>
+          <li>Polyarthritis (limping kittens)</li>
+          <li>Interstitial pneumonia (severe strains)</li>
+          <li>VS-FCV: facial/limb edema, jaundice, high mortality (rare outbreaks)</li>
+        </ul>
+        <p><strong>Chlamydia:</strong> conjunctivitis เด่น (uni → bilateral), chemosis, mild URI</p>
+        <p><strong>Chronic phase:</strong> persistent mucopurulent nasal discharge, sneezing — ดู Feline Chronic Rhinosinusitis entry</p>
+      `,
+      diagnosis: `
+        <p><strong>Mostly clinical</strong> — history + signalment + presentation</p>
+        <p><strong>Specific testing เมื่อ:</strong></p>
+        <ul>
+          <li>Severe / persistent disease</li>
+          <li>Cattery / shelter outbreaks (เลือก vaccination strategy)</li>
+          <li>Atypical signs</li>
+        </ul>
+        <p><strong>Tests:</strong></p>
+        <ul>
+          <li><strong>PCR panel</strong> (oropharyngeal/conjunctival/nasal swab) — detects FHV, FCV, Chlamydia, Mycoplasma, Bordetella; most sensitive</li>
+          <li>False positive: post-vaccination shedding (modified-live), asymptomatic carrier</li>
+          <li>Conjunctival cytology — Chlamydia inclusion bodies (rare to see)</li>
+          <li>Bacterial culture — limited utility (normal flora confound)</li>
+          <li>FeLV/FIV — workup recurrent/severe disease</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Foreign body — usually unilateral, acute</li>
+          <li>Nasopharyngeal polyp — young cats, Bulla/middle ear involvement</li>
+          <li>Cryptococcosis — granulomatous, facial swelling, LCAT+</li>
+          <li>Nasal lymphoma — older cats</li>
+          <li>Tooth root abscess — unilateral</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute uncomplicated URI — supportive care มัก enough</strong></p>
+        <ul>
+          <li>Hydration: SC fluids, IV ถ้าจำเป็น</li>
+          <li>Nutritional support — appetite stimulants (mirtazapine 1.88 mg/cat PO/transdermal q24-48h), assisted feeding, esophagostomy tube ถ้านาน &gt; 3 วัน</li>
+          <li>เช็ดน้ำมูก/ขี้ตา ด้วยผ้าชุบน้ำอุ่น</li>
+          <li><strong>Steam therapy</strong> — เอาแมวเข้าห้องน้ำ + เปิดน้ำร้อน 15-20 min × 2-3/วัน เพื่อ clear secretions</li>
+          <li>Topical decongestant (0.25% phenylephrine, 0.025% oxymetazoline) 1 drop/nostril q24h × max 3 วัน (avoid rebound)</li>
+        </ul>
+
+        <p><strong>Antibiotics — ใช้เมื่อ:</strong></p>
+        <ul>
+          <li>Mucopurulent discharge + fever, lethargy, anorexia (signs ของ secondary bacterial infection)</li>
+          <li>Suspected Chlamydia/Mycoplasma (conjunctivitis prominent)</li>
+        </ul>
+        <ul>
+          <li><strong>Doxycycline 5 mg/kg PO q12h</strong> หรือ 10 mg/kg q24h × 14-42 วัน — first-line (covers Chlamydia, Mycoplasma, Bordetella) ✓
+            <ul>
+              <li>ตามด้วยน้ำหรืออาหาร 6-10 mL ทุกครั้ง! เลี่ยง esophagitis ✗</li>
+            </ul>
+          </li>
+          <li>Amoxicillin 22 mg/kg PO q12h × 7-14 วัน — alternative</li>
+          <li>Azithromycin 5-10 mg/kg PO × 1 day, then q72h — tough-to-medicate cats</li>
+        </ul>
+
+        <p><strong>FHV-specific antiviral:</strong></p>
+        <ul>
+          <li><strong>Famciclovir 90 mg/kg PO q8-12h × 2-3 wk</strong> ✨ — effective สำหรับ severe/recurrent FHV; ↓ clinical signs significantly</li>
+          <li>L-lysine 250-500 mg PO q12h — controversial, evidence weak</li>
+          <li>Topical antivirals สำหรับ corneal ulcers: idoxuridine, trifluridine, cidofovir 0.5% q4-6h</li>
+          <li>Topical antibiotic (terramycin) for secondary infection</li>
+          <li><strong>NO topical/systemic corticosteroids</strong> ✗ — prolong viral shedding, worsen ulcers</li>
+        </ul>
+
+        <p><strong>Chlamydia treatment:</strong></p>
+        <ul>
+          <li>Doxycycline 5 mg/kg PO q12h × <strong>42 วัน minimum</strong> (ทุกตัวในบ้าน)</li>
+          <li>Topical chloramphenicol/tetracycline ophthalmic q6-8h × 14 วันหลัง signs หาย</li>
+        </ul>
+
+        <p><strong>VS-FCV outbreak:</strong> isolation, intensive supportive care, ไม่มี specific therapy; mortality 30-50%</p>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Chronic rhinosinusitis</strong> — most common sequela of FHV; permanent turbinate damage</li>
+          <li>Corneal sequestrum, symblepharon (FHV)</li>
+          <li>Polyarthritis (FCV — lameness in kittens, self-resolving)</li>
+          <li>Pneumonia (Bordetella, Mycoplasma, severe FCV)</li>
+          <li>Aspiration pneumonia (severely anorexic with assisted feeding)</li>
+          <li>Carrier state (lifelong shedding, infection of susceptible cats)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Acute uncomplicated: <strong>excellent</strong> with supportive care</li>
+          <li>Recurrent FHV: ดีถ้า famciclovir; chronic carrier — manage stress</li>
+          <li>VS-FCV: guarded</li>
+          <li>Chronic rhinosinusitis post-FHV: lifelong management</li>
+        </ul>
+
+        <p><strong>Prevention:</strong></p>
+        <ul>
+          <li>Core vaccination: FVRCP (FHV + FCV + panleukopenia) เริ่ม 6-8 wk → q3-4 wk จน 16 wk → booster 1 ปี → q3 ปี</li>
+          <li>Vaccines ลด severity แต่ไม่ป้องกัน infection 100%</li>
+          <li>Chlamydia vaccine — non-core, ใช้ใน multi-cat/shelter setting</li>
+          <li>Indoor lifestyle, isolate new arrivals 2 wk</li>
+          <li>Stress reduction (Feliway, hiding spots, predictable routine)</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 15 · Feline Chronic Rhinosinusitis ---------- */
+  {
+    id: 'feline-chronic-rhinosinusitis',
+    titleEn: 'Feline Chronic Rhinosinusitis (CRS)',
+    titleTh: 'แมวคัดจมูกเรื้อรัง',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['cat'],
+    tags: ['chronic rhinitis', 'CRS', 'turbinate', 'FHV sequela', 'snuffler'],
+    aliases: ['chronic snuffler', 'แมวจาม', 'แมวน้ำมูก', 'lymphoplasmacytic rhinitis'],
+    source: 'Ch. 15 · pp. 264–266',
+    sections: {
+      definition: `
+        <p>การอักเสบเรื้อรังของ nasal cavity ในแมว — ส่วนใหญ่ <strong>post-viral (FHV) sequela</strong> ที่ damage turbinates ถาวร</p>
+        <ul>
+          <li>"<strong>Chronic snuffler</strong>" — เจอบ่อยมากใน Thailand; สลับ flare-up + remission ตลอดชีวิต</li>
+          <li>ไม่หายขาด — เน้น <em>manage</em> ไม่ใช่ <em>cure</em></li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>FHV-1 sequela</strong> — most common; turbinate destruction → predispose to bacterial colonization + ↓ mucociliary clearance</li>
+          <li>Persistent FHV reactivation</li>
+          <li>Secondary bacterial colonization (Pasteurella, Streptococcus, Pseudomonas, anaerobes)</li>
+          <li>Mycoplasma — possible role</li>
+          <li>Idiopathic lymphoplasmacytic rhinitis</li>
+          <li>Underlying disease: dental, FB (rare chronic), early neoplasia</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Damaged turbinates + epithelium → impaired mucociliary clearance + abnormal airflow</li>
+          <li>Bacterial overgrowth in altered environment</li>
+          <li>Chronic inflammation + secondary bacterial infections cycle</li>
+          <li>Some cats develop polyps, mucoceles</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Chronic intermittent nasal discharge (mucopurulent, sometimes hemorrhagic streaks)</li>
+          <li>Sneezing (มัก paroxysmal)</li>
+          <li>Stertor (snoring)</li>
+          <li>Mouth breathing เมื่อ nasal congestion มาก</li>
+          <li>Decreased smell → ↓ appetite</li>
+          <li>มัก healthy systemically (ต่างจาก neoplasia)</li>
+          <li>Flare-up ตอน stress, weather change</li>
+          <li>Bilateral &gt; unilateral (vs neoplasia/FB ที่มัก unilateral)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis of exclusion</strong> — ต้อง rule out treatable causes</p>
+        <ul>
+          <li><strong>CBC, biochem, FeLV/FIV, T4</strong></li>
+          <li><strong>Cryptococcal antigen (LCAT)</strong> — essential ถ้า facial swelling หรือ persistent unilateral</li>
+          <li><strong>Skull/dental rad หรือ CT</strong> — turbinate lysis, mass effect, tooth root abscess</li>
+            <ul>
+              <li>CRS: turbinate destruction บ้าง แต่ไม่ aggressive (ต่าง neoplasia)</li>
+              <li>Neoplasia: aggressive lysis, bone destruction, mass</li>
+            </ul>
+          <li><strong>Rhinoscopy:</strong> turbinate atrophy, mucopurulent discharge, ± mass; biopsy random multiple sites</li>
+          <li><strong>Nasal biopsy histopath:</strong> lymphoplasmacytic ± neutrophilic inflammation; rule out neoplasia/cryptococcosis</li>
+          <li>Bacterial culture (deep nasal swab via rhinoscope) — guide antibiotic เมื่อ resistance suspected</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Cryptococcosis</strong> ✗ — ต้อง LCAT ทุกเคส (treatable!)</li>
+          <li>Nasal lymphoma / carcinoma — older cats, progressive, facial deformity</li>
+          <li>Foreign body — acute, unilateral</li>
+          <li>Tooth root abscess — unilateral, dental disease evident</li>
+          <li>Nasopharyngeal polyp — young cats, otic involvement</li>
+          <li>Nasopharyngeal stenosis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Realistic goal:</strong> manage flare-ups + improve quality of life — ไม่ใช่ cure</p>
+
+        <p><strong>Antibiotics during flare-up:</strong></p>
+        <ul>
+          <li><strong>Doxycycline 5 mg/kg PO q12h × 4-6 wk</strong> — first choice (broad + Mycoplasma coverage; remember to follow with water!) ✓</li>
+          <li>Amoxicillin-clavulanate 12.5 mg/kg PO q12h — alternative</li>
+          <li>Azithromycin 5-10 mg/kg PO × 1 day, then q72h × 4-6 wk — pulse therapy</li>
+          <li>Marbofloxacin หรือ pradofloxacin — refractory cases (culture-guided)</li>
+        </ul>
+
+        <p><strong>Antiviral (suspected FHV component):</strong></p>
+        <ul>
+          <li>Famciclovir 90 mg/kg PO q8-12h × 2-3 wk — ลด FHV reactivation</li>
+          <li>L-lysine 500 mg PO q12h (controversial)</li>
+        </ul>
+
+        <p><strong>Anti-inflammatory:</strong></p>
+        <ul>
+          <li>Saline nasal irrigation (sterile saline drops, 0.9%) — moisturize + clear secretions</li>
+          <li>Topical decongestant short-term flare</li>
+          <li><strong>Glucocorticoids</strong> — controversial; ใช้ low-dose (prednisolone 0.5 mg/kg PO q24h) ในเคส lymphoplasmacytic refractory; สามารถ reactivate FHV ✗</li>
+          <li>NSAIDs — caution ในแมว (renal); meloxicam 0.05 mg/kg PO q24h short course</li>
+        </ul>
+
+        <p><strong>Adjunctive:</strong></p>
+        <ul>
+          <li>Steam therapy 15-20 min q12h ตอน flare</li>
+          <li>Humidifier ที่บ้าน</li>
+          <li>Nutritional support — anorexia common</li>
+          <li>Probiotics (some evidence)</li>
+        </ul>
+
+        <p><strong>Surgical (refractory severe):</strong></p>
+        <ul>
+          <li>Frontal sinus trephination + lavage</li>
+          <li>Turbinectomy — last resort</li>
+          <li>ผลไม่แน่นอน, complications high</li>
+        </ul>
+
+        <p><strong>Client education:</strong></p>
+        <ul>
+          <li>Lifelong condition, intermittent flares เป็นปกติ</li>
+          <li>Stress management สำคัญ (Feliway, predictable routine)</li>
+          <li>เก็บ antibiotic on hand for next flare-up</li>
+          <li>คาดหวัง quality of life ที่ดี ไม่ใช่ cure</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Persistent / worsening signs despite treatment</li>
+          <li>Antibiotic resistance after multiple courses</li>
+          <li>Anorexia, weight loss</li>
+          <li>Frontal sinusitis, mucocele</li>
+          <li>Aspiration pneumonia (rare)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Lifelong condition; <em>good</em> quality of life ส่วนใหญ่</li>
+          <li>Severe + refractory: variable, may need referral</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 15 · Nasal Aspergillosis (Canine) ---------- */
+  {
+    id: 'nasal-aspergillosis',
+    titleEn: 'Canine Nasal Aspergillosis',
+    titleTh: 'เชื้อรา Aspergillus ในจมูกหมา',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog'],
+    tags: ['Aspergillus', 'fumigatus', 'mycotic rhinitis', 'fungal', 'clotrimazole', 'enilconazole', 'epistaxis', 'turbinate destruction'],
+    aliases: ['mycotic rhinitis', 'sino-nasal aspergillosis', 'เชื้อราจมูก'],
+    source: 'Ch. 15 · pp. 266–268',
+    sections: {
+      definition: `
+        <p>Sino-nasal infection ด้วย <em>Aspergillus fumigatus</em> (most common) — <strong>destructive, locally invasive</strong> mycotic rhinitis</p>
+        <ul>
+          <li>เจอใน <strong>young-middle aged dolichocephalic dogs</strong> (German Shepherd, Collie, Golden, Lab)</li>
+          <li>Dolichocephalic + mesaticephalic ทำลาย turbinates มาก</li>
+          <li>Brachycephalic เกือบไม่เป็น (anatomy ป้องกัน)</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><em>Aspergillus fumigatus</em> ~ 95%</li>
+          <li>Other species: A. niger, A. nidulans, A. flavus</li>
+          <li>Saprophytic fungus — ubiquitous in environment</li>
+          <li>Predisposing factor: ไม่ชัด; possibly local immunodeficiency, prior turbinate damage</li>
+          <li>มัก non-immunocompromised host (ต่าง systemic aspergillosis)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Hyphal growth + biofilm ใน nasal cavity → fungal plaques on mucosa</li>
+          <li>Local invasion → turbinate destruction + ulceration</li>
+          <li>Production of toxins + immune response → ↓ healing</li>
+          <li>Sometimes erodes through cribriform plate → CNS extension (ระวัง!)</li>
+          <li>Rare hematogenous spread (immunocompromised)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic mucopurulent + sanguineous nasal discharge</strong> — มัก unilateral แต่ progress เป็น bilateral</li>
+          <li><strong>Epistaxis</strong> ✨ — common, recurrent</li>
+          <li>Sneezing</li>
+          <li><strong>Pain on facial palpation / depigmentation around nares</strong> ✨ — characteristic of aspergillosis</li>
+          <li>Nasal ulceration around external nares</li>
+          <li>Loss of smell → ↓ appetite</li>
+          <li>Facial deformity ใน advanced disease (rare)</li>
+          <li>Systemic signs uncommon</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Multiple supportive findings + direct visualization/cytology:</strong></p>
+        <ul>
+          <li><strong>CT (preferred over rad):</strong>
+            <ul>
+              <li>Turbinate destruction with cavitary lesions</li>
+              <li>Soft tissue density (fungal granuloma)</li>
+              <li>Frontal sinus involvement</li>
+              <li>Cribriform plate erosion → consider neuro signs, decision against intranasal therapy</li>
+            </ul>
+          </li>
+          <li><strong>Rhinoscopy (gold standard):</strong>
+            <ul>
+              <li><strong>White-green-grey fungal plaques</strong> on turbinates ✨</li>
+              <li>Turbinate destruction, "moth-eaten" appearance</li>
+              <li>Mucosal ulceration</li>
+              <li>Direct sample for cytology + culture</li>
+            </ul>
+          </li>
+          <li><strong>Cytology of plaque:</strong> septate, branching hyphae</li>
+          <li><strong>Fungal culture:</strong> from plaque sample (Sabouraud agar) — Aspergillus growth</li>
+          <li><strong>Histopathology:</strong> hyphae invading mucosa, granulomatous inflammation</li>
+          <li><strong>Serology (AGID):</strong> sensitivity ~70-80%; useful adjunct, can be negative in true cases</li>
+          <li><strong>Galactomannan antigen</strong> — variable sensitivity</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Nasal neoplasia (older dogs, progressive facial deformity)</li>
+          <li>Lymphoplasmacytic rhinitis</li>
+          <li>Foreign body (acute, unilateral)</li>
+          <li>Nasal mites (Pneumonyssoides) — sneezing fits, reverse sneezing</li>
+          <li>Tooth root abscess</li>
+          <li>Cryptococcosis (rare in dogs)</li>
+          <li>Penicillium (rare but similar)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Topical intranasal antifungal (mainstay) — much higher cure rate than systemic alone</strong></p>
+
+        <p><strong>Clotrimazole infusion (most common):</strong></p>
+        <ul>
+          <li>Under GA, dog in dorsal recumbency</li>
+          <li>Foley catheters in nasopharynx (occlude caudal opening) + nares (delivery)</li>
+          <li>1% clotrimazole solution (or 2% enilconazole) infused 60 min, rotate dog q15min</li>
+          <li>Total volume 20-60 mL/side ขึ้นกับ body size</li>
+          <li>Pre-treatment: rhinoscopic debridement of fungal plaques ✨ — improves contact + cure rate</li>
+          <li>Cure rate ~85-95% with single treatment; ~ 50-60% may need 2nd treatment</li>
+          <li><strong>Contraindicated if cribriform plate destroyed</strong> ✗ — risk CNS exposure to drug</li>
+        </ul>
+
+        <p><strong>Systemic antifungal (when topical not feasible / cribriform compromised):</strong></p>
+        <ul>
+          <li><strong>Itraconazole 5 mg/kg PO q24h × 4-6 months</strong> — most accessible</li>
+          <li>Voriconazole 5 mg/kg PO q12h — more expensive, better CNS penetration</li>
+          <li>Posaconazole — alternative</li>
+          <li>Cure rate lower than topical (~50-70%)</li>
+          <li>Monitor LFT q2-4 wk (hepatotoxicity)</li>
+        </ul>
+
+        <p><strong>Combined approach:</strong> topical + systemic for severe / refractory cases</p>
+
+        <p><strong>Surgery:</strong></p>
+        <ul>
+          <li>Reserved for refractory cases</li>
+          <li>Frontal sinus trephination for direct drug delivery</li>
+          <li>Rhinotomy with debridement — high morbidity, last resort</li>
+        </ul>
+
+        <p><strong>Follow-up:</strong></p>
+        <ul>
+          <li>Recheck rhinoscopy 4-6 wk post-treatment</li>
+          <li>Repeat treatment ถ้ายังมี plaques</li>
+          <li>Clinical signs may persist for weeks even with successful treatment (turbinate damage permanent)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Treatment failure / recurrence (15-30%)</li>
+          <li>Spread through cribriform plate → meningitis/encephalitis (rare but fatal)</li>
+          <li>Permanent turbinate damage → chronic rhinitis post-cure</li>
+          <li>Itraconazole hepatotoxicity</li>
+          <li>Local irritation post-clotrimazole infusion</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Topical clotrimazole single treatment: <strong>cure rate 85-95%</strong> ✓</li>
+          <li>Systemic alone: 50-70%</li>
+          <li>Cribriform plate destruction: guarded, refer to specialist</li>
+          <li>Some persistent nasal discharge despite cure due to permanent turbinate damage</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 15 · Cryptococcosis (Nasal/Systemic) ---------- */
+  {
+    id: 'cryptococcosis',
+    titleEn: 'Cryptococcosis',
+    titleTh: 'Cryptococcus — เชื้อราจมูกแมว',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['cat', 'dog'],
+    tags: ['Cryptococcus', 'neoformans', 'gattii', 'fungal', 'LCAT', 'fluconazole', 'itraconazole', 'facial swelling', 'nasal'],
+    aliases: ['cryptococcus', 'fungal rhinitis cat', 'แมวจมูกบวม'],
+    source: 'Ch. 15 · pp. 268–270 + Ch. 98',
+    sections: {
+      definition: `
+        <p>Systemic mycotic infection ด้วย <em>Cryptococcus neoformans</em> หรือ <em>C. gattii</em> — ตัวสำคัญสุดของ <strong>upper respiratory mycosis ในแมว</strong></p>
+        <ul>
+          <li>เจอบ่อยใน <strong>cat &gt; dog</strong></li>
+          <li>เป็น <em>treatable</em> — testing สำคัญทุกเคส cat chronic nasal disease ✓</li>
+          <li>Endemic worldwide; eucalyptus + pigeon droppings (environmental source)</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><em>Cryptococcus neoformans</em> — pigeon droppings, soil; immunocompromised hosts ด้วย</li>
+          <li><em>Cryptococcus gattii</em> — eucalyptus, tropical/subtropical (Australia, Pacific NW); can infect immunocompetent</li>
+          <li>Inhalation of basidiospores → nasal infection → ± systemic spread</li>
+          <li>FeLV/FIV ไม่เพิ่ม risk significantly แต่อาจ worsen prognosis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Yeast with thick polysaccharide capsule → resists phagocytosis</li>
+          <li>Granulomatous inflammation → mass-like lesions ("fungal granuloma")</li>
+          <li>Nasal cavity → cribriform plate → CNS extension possible</li>
+          <li>Hematogenous spread → eyes (chorioretinitis), CNS, skin, lymph nodes</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Cats (most common presentation):</strong></p>
+        <ul>
+          <li><strong>Chronic nasal discharge</strong> ± hemorrhagic, unilateral หรือ bilateral</li>
+          <li>Sneezing, stertor</li>
+          <li><strong>Firm subcutaneous facial swelling over nasal bridge</strong> ✨ — characteristic ("Roman nose")</li>
+          <li><strong>Polypoid nasal mass</strong> visible at nostril ✨</li>
+          <li>Submandibular lymphadenopathy</li>
+          <li>CNS signs (severe / advanced): seizures, ataxia, behavior change, blindness</li>
+          <li>Ocular: chorioretinitis, optic neuritis, granulomatous uveitis</li>
+          <li>Skin nodules (occasionally)</li>
+          <li>Systemic signs: weight loss, lethargy</li>
+        </ul>
+        <p><strong>Dogs:</strong></p>
+        <ul>
+          <li>CNS signs predominant (~60%) — ataxia, seizures</li>
+          <li>Nasal disease less common than cats</li>
+          <li>Ocular involvement frequent</li>
+          <li>Multisystemic disease typical</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Latex Cryptococcal Antigen Test (LCAT) — KEY TEST ✨</strong></p>
+        <ul>
+          <li>Detects capsular polysaccharide antigen in <strong>serum, urine, CSF</strong></li>
+          <li>Sensitive &gt; 90%, specific ~ 100%</li>
+          <li>Titer correlates with disease burden + treatment response</li>
+          <li>Test ทุกแมวที่มี chronic nasal signs ✓</li>
+        </ul>
+        <p><strong>Cytology (extremely useful):</strong></p>
+        <ul>
+          <li>Nasal swab, lymph node aspirate, skin lesion, CSF</li>
+          <li>Wright-Giemsa หรือ India ink → round to oval yeast with thick capsular halo (clear, unstained zone)</li>
+          <li>Narrow-based budding</li>
+          <li>เจอเร็ว, cheap, definitive</li>
+        </ul>
+        <p><strong>Histopathology:</strong> granulomatous inflammation + yeast organisms</p>
+        <p><strong>Fungal culture:</strong> Sabouraud agar, slow growth (1-2 wk)</p>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Skull rad: soft tissue density, turbinate destruction</li>
+          <li>CT: nasal mass, sinus involvement, cribriform plate</li>
+          <li>MRI ถ้า CNS signs</li>
+        </ul>
+        <p><strong>FeLV/FIV testing</strong> — assess prognosis</p>
+      `,
+      differential: `
+        <ul>
+          <li>Nasal lymphoma / carcinoma — older cats, similar presentation</li>
+          <li>FHV chronic rhinosinusitis — facial swelling absent</li>
+          <li>Aspergillus (rare in cats)</li>
+          <li>Bacterial rhinitis</li>
+          <li>Foreign body</li>
+          <li>Nasopharyngeal polyp (young cats)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Antifungal therapy — oral, prolonged</strong></p>
+        <ul>
+          <li><strong>Fluconazole 50 mg/cat PO q12h</strong> (or 5-10 mg/kg q12h) — first-line ในแมว ✓
+            <ul>
+              <li>Excellent CNS penetration</li>
+              <li>Well tolerated</li>
+              <li>Affordable</li>
+              <li>Continue × 2-12 months until LCAT titer becomes negative + clinical resolution</li>
+            </ul>
+          </li>
+          <li><strong>Itraconazole 5-10 mg/kg PO q24h</strong> — alternative; ↑ hepatotoxicity, monitor LFT</li>
+          <li>Voriconazole — for refractory cases (more expensive)</li>
+          <li>Severe / CNS disease: <strong>amphotericin B</strong> (lipid complex 1-2 mg/kg IV q48h, total dose 10-12 mg/kg) + fluconazole; refer to specialist</li>
+        </ul>
+
+        <p><strong>Supportive care:</strong></p>
+        <ul>
+          <li>Nutritional support</li>
+          <li>Surgical debulking — if large polypoid mass blocking airway</li>
+          <li>Treatment of secondary bacterial infection</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li><strong>LCAT titer ทุก 1-3 เดือน</strong> ✨ — should ↓ progressively; aim for negative or 4-fold ↓ from baseline</li>
+          <li>CBC, biochem, LFT q1-2 month (drug toxicity)</li>
+          <li>Continue treatment <strong>2 months past LCAT negative + clinical cure</strong></li>
+          <li>Average treatment duration: 6-12 months (sometimes longer)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>CNS extension (cribriform plate erosion) → seizures, death</li>
+          <li>Permanent neurologic deficits</li>
+          <li>Blindness</li>
+          <li>Drug toxicity: itraconazole hepatotoxicity, amphotericin nephrotoxicity</li>
+          <li>Relapse after stopping treatment too early</li>
+          <li>Treatment-resistant strains (rare)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Nasal disease without CNS: <strong>good with prolonged fluconazole</strong> (cure ~ 70-80%)</li>
+          <li>CNS involvement: guarded — long treatment, may require lifelong</li>
+          <li>FeLV/FIV+: worse</li>
+          <li>C. gattii: more aggressive than neoformans</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 15 · Nasal Tumors ---------- */
+  {
+    id: 'nasal-tumors',
+    titleEn: 'Nasal Tumors',
+    titleTh: 'มะเร็งจมูก',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['nasal tumor', 'adenocarcinoma', 'carcinoma', 'lymphoma', 'sarcoma', 'radiation therapy', 'epistaxis', 'turbinate destruction'],
+    aliases: ['nasal cancer', 'nasal neoplasia', 'มะเร็งจมูก', 'มะเร็งโพรงจมูก'],
+    source: 'Ch. 15 · pp. 270–273',
+    sections: {
+      definition: `
+        <p>Neoplasia ของ nasal cavity / paranasal sinuses</p>
+        <ul>
+          <li>Most are <strong>malignant</strong> (~80% in dogs, &gt; 90% in cats)</li>
+          <li>Locally aggressive; metastasis ที่ presentation rarely common (~10-40%)</li>
+          <li>Older animals: dog ~ 10 ปี, cat ~ 9-10 ปี</li>
+          <li>Dolichocephalic dogs over-represented</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Dogs:</strong></p>
+        <ul>
+          <li><strong>Adenocarcinoma</strong> — most common (~30-50%)</li>
+          <li>Squamous cell carcinoma</li>
+          <li>Undifferentiated carcinoma</li>
+          <li>Sarcomas: chondrosarcoma, osteosarcoma, fibrosarcoma</li>
+          <li>Transmissible venereal tumor (rare)</li>
+        </ul>
+        <p><strong>Cats:</strong></p>
+        <ul>
+          <li><strong>Lymphoma</strong> — most common ~ 50-60% ✨</li>
+          <li>Adenocarcinoma, SCC</li>
+          <li>FeLV uncommonly associated with nasal lymphoma (most are FeLV-)</li>
+        </ul>
+        <p><strong>Risk factors:</strong> indoor tobacco smoke (dog), urban environment, dolichocephalic conformation</p>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Slow-growing local invasion</li>
+          <li>Turbinate + bone destruction</li>
+          <li>Cribriform plate erosion → CNS extension (advanced)</li>
+          <li>Metastasis: regional LN (~10-15% at dx), lung (uncommon)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic nasal discharge</strong> — initially serous → mucopurulent → hemorrhagic</li>
+          <li><strong>Epistaxis</strong> ✨ — common, especially advanced</li>
+          <li>Sneezing</li>
+          <li><strong>Unilateral → bilateral progression</strong> ✨ — typical</li>
+          <li><strong>Facial deformity</strong> ✨ — bridge of nose, hard palate distortion (advanced)</li>
+          <li>Exophthalmos (caudal extension)</li>
+          <li>Stertor</li>
+          <li>↓ Nasal airflow on affected side</li>
+          <li>Lacrimation, ocular discharge (NLD obstruction)</li>
+          <li>CNS signs: seizures, behavior change, ataxia (cribriform erosion)</li>
+          <li>Systemic: weight loss, lethargy (late)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>CT (preferred):</strong>
+            <ul>
+              <li>Soft tissue mass with bone destruction</li>
+              <li>Aggressive turbinate lysis</li>
+              <li>Bilateral involvement common ใน advanced</li>
+              <li>Cribriform plate evaluation (treatment planning)</li>
+              <li>Regional LN assessment</li>
+            </ul>
+          </li>
+          <li>Skull rad: less sensitive but accessible — increased soft tissue opacity, turbinate loss</li>
+          <li>Thoracic rad — staging</li>
+        </ul>
+        <p><strong>Tissue diagnosis (essential):</strong></p>
+        <ul>
+          <li><strong>Nasal biopsy</strong> ผ่าน rhinoscope หรือ blind transnostril forceps biopsy</li>
+          <li>Aspirate of regional LN if enlarged</li>
+          <li>Histopathology + immunohistochemistry (lymphoma typing)</li>
+        </ul>
+        <p><strong>Lab:</strong> CBC (paraneoplastic hypercalcemia, leukocytosis), biochem, FeLV/FIV (cat)</p>
+        <p><strong>Cryptococcal antigen</strong> — rule out treatable mimics ก่อน assume neoplasia</p>
+      `,
+      differential: `
+        <ul>
+          <li>Cryptococcosis (cat) — must rule out!</li>
+          <li>Aspergillosis (dog)</li>
+          <li>Lymphoplasmacytic / chronic rhinitis</li>
+          <li>Foreign body</li>
+          <li>Nasopharyngeal polyp (cat — young)</li>
+          <li>Tooth root abscess + oronasal fistula</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Carcinoma / Sarcoma:</strong></p>
+        <ul>
+          <li><strong>Radiation therapy (gold standard)</strong> ✨ — definitive treatment
+            <ul>
+              <li>Stereotactic radiation (SRT): 1-3 fractions, MST 7-15 months</li>
+              <li>Conventional fractionated RT (15-20 fractions): MST 12-19 months</li>
+              <li>Best response in early-stage, no cribriform involvement</li>
+            </ul>
+          </li>
+          <li>Surgery alone: NOT effective (rarely curative due to anatomy + invasion)</li>
+          <li>Chemo: limited efficacy for carcinomas; adjuvant only</li>
+          <li>Palliative: NSAIDs (piroxicam 0.3 mg/kg PO q24h dog; meloxicam in cat with caution), antibiotics for secondary infection</li>
+          <li>Without treatment: median survival 3-6 months</li>
+        </ul>
+
+        <p><strong>Nasal Lymphoma (cat):</strong></p>
+        <ul>
+          <li><strong>Chemotherapy primary modality</strong> — generally responds well ✓
+            <ul>
+              <li>CHOP protocol or COP</li>
+              <li>Single-agent chlorambucil + prednisolone (less aggressive)</li>
+            </ul>
+          </li>
+          <li>± Radiation therapy (combined approach for localized disease)</li>
+          <li>MST: 6-30 months depending on protocol + response</li>
+          <li>Better prognosis than carcinoma</li>
+        </ul>
+
+        <p><strong>Supportive care:</strong></p>
+        <ul>
+          <li>Antibiotics for secondary bacterial infection</li>
+          <li>Anti-inflammatory (caution NSAIDs in cats)</li>
+          <li>Pain management — buprenorphine OTM, gabapentin</li>
+          <li>Nutritional support — esophagostomy tube if persistently anorexic</li>
+          <li>Saline nasal irrigation</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Local progression / facial deformity</li>
+          <li>CNS extension (seizures)</li>
+          <li>Aspiration pneumonia (oronasal fistula)</li>
+          <li>Severe epistaxis</li>
+          <li>Radiation side effects: oral mucositis, ocular damage, alopecia, late effects on lens (cataract)</li>
+          <li>Distant metastasis (uncommon)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Carcinoma + RT:</strong> MST 12-19 months</li>
+          <li><strong>Sarcoma + RT:</strong> MST 7-12 months</li>
+          <li><strong>No treatment:</strong> 3-6 months</li>
+          <li><strong>Cat lymphoma + chemo:</strong> 6-30 months (some long-term remissions)</li>
+          <li>Cribriform involvement, epistaxis at presentation = worse</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 18 · Laryngeal Paralysis ---------- */
+  {
+    id: 'laryngeal-paralysis',
+    titleEn: 'Laryngeal Paralysis',
+    titleTh: 'กล่องเสียงเป็นอัมพาต',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['laryngeal paralysis', 'GOLPP', 'tie-back', 'arytenoid lateralization', 'aspiration pneumonia', 'Labrador', 'stridor'],
+    aliases: ['laryngeal paralysis', 'GOLPP', 'แลรินซ์อัมพาต'],
+    source: 'Ch. 18 · pp. 277–279',
+    sections: {
+      definition: `
+        <p>Arytenoid cartilages ไม่ abduct ตอน inspiration → upper airway obstruction</p>
+        <ul>
+          <li>Most cases <strong>idiopathic</strong> ในหมาใหญ่สูงอายุ (especially Labrador Retrievers)</li>
+          <li>Now recognized as part of <strong>generalized polyneuropathy (GOLPP — Geriatric Onset Laryngeal Paralysis Polyneuropathy)</strong></li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Idiopathic / GOLPP</strong> — ~80% of cases; older large breeds, especially Labrador</li>
+          <li>Congenital — Bouvier des Flandres, Siberian Husky, Bull Terrier, Dalmatian, Rottweiler</li>
+          <li>Trauma — cervical injury, post-surgical (thyroid surgery)</li>
+          <li>Neoplasia — thyroid, mediastinal masses pressing recurrent laryngeal nerve</li>
+          <li>Hypothyroidism — controversial; correct first if comorbid</li>
+          <li>Polyneuropathy: myasthenia gravis, immune-mediated, toxic</li>
+          <li>Inflammatory — penetrating trauma, infectious laryngitis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Recurrent laryngeal nerve dysfunction → arytenoid abductor muscle (cricoarytenoideus dorsalis) failure</li>
+          <li>Inspiration: ↑ negative pressure pulls mucosa inward → glottis narrowing → stridor</li>
+          <li>Vicious cycle: ↑ effort → laryngeal edema → worsening obstruction → respiratory distress</li>
+          <li>GOLPP: progressive — esophageal dysfunction (megaesophagus), then pelvic limb weakness ภายใน 1-2 ปี</li>
+          <li>Concurrent pharyngeal/esophageal dysfunction → aspiration risk</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Stridor</strong> — high-pitched inspiratory noise ✨</li>
+          <li>Voice change (bark hoarse, weak)</li>
+          <li>Exercise intolerance</li>
+          <li>Increased breathing effort, especially with excitement, heat</li>
+          <li>Cyanosis, syncope (severe)</li>
+          <li>Acute respiratory distress crisis — heat, exercise, stress trigger</li>
+          <li>Gagging, coughing while eating/drinking</li>
+          <li>Regurgitation (concurrent esophageal dysfunction)</li>
+          <li>Subtle hindlimb weakness (GOLPP — develops months-year later)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Laryngoscopy under light plane of anesthesia (definitive):</strong></p>
+        <ul>
+          <li>Propofol low dose (titrate); avoid deep anesthesia ที่ depress respiration</li>
+          <li>Observe arytenoid motion during deep breaths</li>
+          <li>Have assistant call inspiration</li>
+          <li><strong>Doxapram 1.1 mg/kg IV</strong> — stimulate breathing if too anesthetized</li>
+          <li>Normal: arytenoids abduct symmetrically + widely on inspiration</li>
+          <li>Paralysis: arytenoids stationary or paradoxical motion (suck inward on inspiration)</li>
+          <li>Usually bilateral; unilateral can present with milder signs</li>
+        </ul>
+        <p><strong>Workup for cause + concurrent disease:</strong></p>
+        <ul>
+          <li>Thoracic rad: aspiration pneumonia, megaesophagus, mediastinal mass</li>
+          <li>Cervical rad: tracheal compression, mass</li>
+          <li>T4, free T4 — rule out hypothyroidism</li>
+          <li>CBC, biochem, UA</li>
+          <li>Acetylcholine receptor antibody — myasthenia gravis</li>
+          <li>Neurologic exam (GOLPP)</li>
+          <li>Barium swallow study — esophageal motility</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>BOAS (brachycephalic) — anatomy obvious</li>
+          <li>Tracheal collapse — different cough pattern</li>
+          <li>Laryngeal neoplasia / mass</li>
+          <li>Foreign body</li>
+          <li>Soft palate elongation</li>
+          <li>Laryngeal collapse (advanced BOAS, chronic upper airway obstruction)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute respiratory crisis — emergency:</strong></p>
+        <ul>
+          <li>Cool environment (fans, AC, ice packs at neck)</li>
+          <li>Sedation: butorphanol 0.2 mg/kg IV/IM ± acepromazine 0.01-0.02 mg/kg IV/IM</li>
+          <li>Oxygen supplementation</li>
+          <li>Dexamethasone 0.1-0.2 mg/kg IV — reduce laryngeal edema</li>
+          <li>Severe: emergency intubation or tracheostomy</li>
+          <li>Once stable: definitive workup + treatment</li>
+        </ul>
+
+        <p><strong>Surgical (definitive — preferred for symptomatic cases):</strong></p>
+        <ul>
+          <li><strong>Unilateral arytenoid lateralization (UAL / "tie-back")</strong> ✨ — gold standard
+            <ul>
+              <li>Sutures cricoid + arytenoid → permanent abduction of one side</li>
+              <li>Improves airway adequately, balance vs aspiration risk</li>
+              <li>Success rate &gt; 90% for symptom relief</li>
+              <li>1-yr survival 94%, 3-yr 84%, 4-yr 75% (median age 10.6 yr)</li>
+            </ul>
+          </li>
+          <li>Bilateral lateralization — historic; high aspiration pneumonia risk, no longer preferred</li>
+          <li>Castellated laryngoplasty, partial laryngectomy — alternative procedures</li>
+        </ul>
+
+        <p><strong>Medical management (when surgery declined):</strong></p>
+        <ul>
+          <li>Strict exercise restriction — leash walks only, avoid heat</li>
+          <li>Weight loss if obese ✨</li>
+          <li>Cool environment, AC</li>
+          <li>Anti-anxiety: trazodone 3-7 mg/kg PO q8-24h, gabapentin 10-20 mg/kg PO q8h</li>
+          <li>Anti-inflammatory: prednisolone 0.5 mg/kg PO q12h short bursts during flare</li>
+          <li>Use harness instead of collar</li>
+        </ul>
+
+        <p><strong>GOLPP-specific management:</strong></p>
+        <ul>
+          <li>Recognize progressive disease — counsel client</li>
+          <li>Esophageal dysfunction → upright feeding, small meals, watch for regurgitation</li>
+          <li>Monitor for aspiration pneumonia regularly</li>
+          <li>Pelvic limb support as weakness develops</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Aspiration pneumonia</strong> ✗ — major risk both pre- and post-operative; ~ 19-32% within 4 years post-tieback
+            <ul>
+              <li>Pre-op: due to laryngeal dysfunction during swallowing</li>
+              <li>Post-op: glottis cannot close fully → reflux/saliva enters trachea</li>
+              <li>Prevention: small frequent meals, soft food, upright feeding</li>
+            </ul>
+          </li>
+          <li>Acute respiratory distress / death in untreated severe cases</li>
+          <li>Surgical complications: seroma, suture failure, recurrent disease</li>
+          <li>Post-op aspiration pneumonia — risk factors: postop opioids before discharge, pre-existing megaesophagus</li>
+          <li>Permanent voice change</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Surgical (UAL):</strong> good — &gt; 90% symptom resolution, 4-yr survival 75%</li>
+          <li><strong>Medical only:</strong> guarded long-term; risk of acute crisis</li>
+          <li>GOLPP component → progressive neuromuscular disease eventually limits quality of life</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 18 · BOAS ---------- */
+  {
+    id: 'boas',
+    titleEn: 'Brachycephalic Obstructive Airway Syndrome (BOAS)',
+    titleTh: 'BOAS — หมาหน้าสั้นหายใจลำบาก',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['BOAS', 'brachycephalic', 'stenotic nares', 'elongated soft palate', 'everted laryngeal saccules', 'hypoplastic trachea', 'Bulldog', 'Pug', 'French Bulldog'],
+    aliases: ['brachycephalic syndrome', 'หมาหน้าสั้นหายใจไม่ออก'],
+    source: 'Ch. 18 · pp. 279–282',
+    sections: {
+      definition: `
+        <p>กลุ่มอาการ upper airway obstruction ในหมาหน้าสั้น — anatomical abnormalities หลายอย่างร่วมกัน</p>
+        <ul>
+          <li>Most affected breeds: <strong>English Bulldog, French Bulldog, Pug, Boston Terrier, Boxer, Shih Tzu, Pekingese, Cavalier KCS</strong></li>
+          <li>Brachycephalic cats: Persian, Himalayan</li>
+          <li>Progressive — ถ้าไม่แก้ → laryngeal collapse → respiratory failure</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary anatomic abnormalities:</strong></p>
+        <ul>
+          <li><strong>Stenotic nares</strong> — slit-like, narrow openings</li>
+          <li><strong>Elongated soft palate</strong> — extends past tip of epiglottis</li>
+          <li><strong>Hypoplastic trachea</strong> — เด่นใน English Bulldog</li>
+          <li><strong>Aberrant nasal turbinates</strong> — obstruct caudal nasal cavity (under-recognized; CT/rhinoscopy needed)</li>
+        </ul>
+        <p><strong>Secondary changes:</strong></p>
+        <ul>
+          <li>Everted laryngeal saccules (prolapse into glottis)</li>
+          <li>Laryngeal collapse (stage I-III)</li>
+          <li>Tonsil eversion</li>
+          <li>Pharyngeal mucosal edema/inflammation</li>
+          <li>GI signs: regurgitation, vomiting, reflux esophagitis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↑ Negative inspiratory pressure to overcome upper airway resistance</li>
+          <li>Soft tissue sucked inward → eversion of laryngeal saccules → progressive obstruction</li>
+          <li>Chronic ↑ effort → cartilage softening → <strong>laryngeal collapse</strong>:
+            <ul>
+              <li><em>Stage I:</em> everted saccules</li>
+              <li><em>Stage II:</em> collapsed cuneiform process</li>
+              <li><em>Stage III:</em> collapsed corniculate process — severe ✗</li>
+            </ul>
+          </li>
+          <li>↑ Intrathoracic pressure → GI reflux, hiatal hernia, regurgitation</li>
+          <li>Heat dissipation impaired (panting ineffective) → heat stroke risk</li>
+          <li>Sleep-disordered breathing</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Loud breathing sounds — stertor, snoring</li>
+          <li>Stridor when severe</li>
+          <li>Exercise intolerance</li>
+          <li>Heat intolerance — heat stroke risk ✗</li>
+          <li>Cyanosis, collapse, syncope (severe)</li>
+          <li>Sleep disturbance — owner often reports loud snoring + apnea</li>
+          <li>GI signs: regurgitation, gagging, vomiting (50%+ of BOAS dogs)</li>
+          <li>Acute respiratory distress crisis with excitement / heat / exercise ✗</li>
+          <li>Cyanotic mucous membranes</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical (mostly):</strong></p>
+        <ul>
+          <li>Breed + presenting signs typically diagnostic</li>
+          <li>Visualize stenotic nares directly</li>
+          <li>Auscultate stertor over upper airway</li>
+        </ul>
+        <p><strong>Laryngoscopy (under anesthesia):</strong></p>
+        <ul>
+          <li>Soft palate length (should not extend past epiglottis)</li>
+          <li>Laryngeal saccule eversion</li>
+          <li>Laryngeal collapse staging</li>
+          <li>Tonsil size/eversion</li>
+        </ul>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Cervical/thoracic rad: hypoplastic trachea (T:I ratio &lt; 0.13 in Bulldog), aspiration pneumonia, hiatal hernia</li>
+          <li>CT: comprehensive — turbinates, soft palate, trachea, lung</li>
+          <li>Rhinoscopy: aberrant turbinates</li>
+        </ul>
+        <p><strong>Concurrent disease workup:</strong></p>
+        <ul>
+          <li>GI workup if vomiting/regurgitation prominent</li>
+          <li>Sleep studies (referral)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Laryngeal paralysis (different breed signalment)</li>
+          <li>Tracheal collapse</li>
+          <li>Laryngeal/tracheal mass</li>
+          <li>Foreign body</li>
+          <li>Bordetellosis / kennel cough (acute presentation)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Surgical correction (early intervention preferred):</strong></p>
+        <ul>
+          <li><strong>Rhinoplasty</strong> — wedge/punch resection of alar fold to widen nares ✨ — single most impactful procedure</li>
+          <li><strong>Staphylectomy / palatoplasty</strong> — soft palate shortening (laser, scissors, harmonic scalpel)</li>
+          <li><strong>Sacculectomy</strong> — remove everted laryngeal saccules</li>
+          <li><strong>Laryngeal collapse Stage III:</strong> permanent tracheostomy may be required</li>
+          <li><strong>Turbinectomy (laser):</strong> aberrant turbinates — referral procedures, expensive</li>
+          <li>Best done at 6-12 months (before secondary changes); but worthwhile at any age</li>
+          <li>Combined procedures: usually rhinoplasty + palatoplasty ± sacculectomy in single anesthesia</li>
+        </ul>
+
+        <p><strong>Acute respiratory distress / heat stroke crisis:</strong></p>
+        <ul>
+          <li>Cool — wet towels, AC, fans (avoid extreme cold)</li>
+          <li>O2 supplementation</li>
+          <li>Sedation: butorphanol + acepromazine</li>
+          <li>Dexamethasone 0.1-0.2 mg/kg IV — laryngeal edema</li>
+          <li>Intubation if severe</li>
+          <li>Treat heat stroke (cooling to 39.4°C, IV fluids, anticonvulsants, GI protection)</li>
+        </ul>
+
+        <p><strong>Medical / lifestyle (always, regardless of surgery):</strong></p>
+        <ul>
+          <li><strong>Weight management</strong> ✨ — dramatic improvement with weight loss alone</li>
+          <li>Avoid heat, humidity, excessive exercise</li>
+          <li>Cool environment, AC</li>
+          <li>Use harness, not collar</li>
+          <li>Sleep position support (raised head bed)</li>
+          <li>GI signs: omeprazole 1 mg/kg PO q24h, sucralfate, prokinetics if needed</li>
+          <li>Anxiety: trazodone</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Heat stroke</strong> — significant cause of death ✗</li>
+          <li>Acute respiratory failure</li>
+          <li>Aspiration pneumonia (concurrent reflux + airway obstruction)</li>
+          <li>Laryngeal collapse → permanent tracheostomy required</li>
+          <li>Anesthetic complications (high risk — pre-O2, careful intubation, prolonged recovery monitoring)</li>
+          <li>Cor pulmonale (chronic hypoxia)</li>
+          <li>Sudden death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Early surgery (no laryngeal collapse):</strong> excellent — significant improvement in &gt; 90%</li>
+          <li><strong>Stage I-II laryngeal collapse:</strong> good with surgery</li>
+          <li><strong>Stage III collapse:</strong> guarded — may need permanent tracheostomy</li>
+          <li><strong>Without surgery:</strong> progressive worsening expected</li>
+          <li>Weight management + early intervention key</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Anesthesia care:</strong> BOAS patients high anesthetic risk — preoxygenate, rapid induction + intubation, careful extubation (only when fully awake + swallowing), monitor 4-6 hr post-op for swelling. Have re-intubation supplies ready.</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 21 · Tracheal Collapse ---------- */
+  {
+    id: 'tracheal-collapse',
+    titleEn: 'Tracheal Collapse',
+    titleTh: 'หลอดลมหย่อน — เสียงไอแบบ honking',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog'],
+    tags: ['tracheal collapse', 'tracheobronchomalacia', 'TBM', 'honking cough', 'hydrocodone', 'butorphanol', 'tracheal stent', 'Yorkshire Terrier'],
+    aliases: ['collapsing trachea', 'หลอดลมยุบ', 'tracheobronchomalacia'],
+    source: 'Ch. 21 · pp. 333–337',
+    sections: {
+      definition: `
+        <p>Tracheal cartilages อ่อนแอ + dorsal tracheal membrane หย่อน → trachea ยุบเข้าหากัน (โดยเฉพาะระหว่าง expiration ที่ intrathoracic, inspiration ที่ extrathoracic)</p>
+        <ul>
+          <li>เจอบ่อยใน <strong>หมาพันธุ์เล็ก-เล็กจิ๋ว สูงอายุ</strong> (Yorkie, Pomeranian, Toy Poodle, Maltese, Chihuahua, Pug)</li>
+          <li>มัก concurrent with chronic bronchitis</li>
+          <li>Bronchomalacia — collapse ของ smaller airways บ่อย concurrent</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Genetic / breed predisposition</strong> — primary factor</li>
+          <li>Cartilage matrix abnormality (chondromalacia) — ↓ glycoprotein, ↑ water content</li>
+          <li>Acquired exacerbating factors:
+            <ul>
+              <li>Obesity ✨</li>
+              <li>Chronic respiratory infection</li>
+              <li>Smoke / pollutant exposure</li>
+              <li>Cushing's disease, hypothyroidism</li>
+              <li>Heart disease (mainstem bronchus compression by enlarged LA)</li>
+              <li>Chronic bronchitis</li>
+              <li>Endotracheal intubation trauma</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Normal trachea: rigid C-shaped cartilage rings + flexible dorsal membrane</li>
+          <li>Collapsed: cartilage flattens + dorsal membrane redundant → lumen narrows</li>
+          <li><strong>Cervical (extrathoracic) trachea:</strong> collapse on <em>inspiration</em> (negative intraluminal pressure)</li>
+          <li><strong>Intrathoracic trachea:</strong> collapse on <em>expiration</em> (positive intrathoracic pressure)</li>
+          <li>Self-perpetuating: collapse → cough → ↑ pressure → more collapse → mucosal inflammation</li>
+          <li>Grading: Stage I (25% reduction) → Stage IV (90% — lumen virtually closed)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>"Goose honk" cough</strong> ✨ — dry, harsh, paroxysmal — pathognomonic-like</li>
+          <li>Cough triggered by: excitement, drinking, eating, pressure on neck (collar!), heat</li>
+          <li>Exercise intolerance</li>
+          <li>Inspiratory effort + stridor (cervical collapse)</li>
+          <li>Expiratory wheeze (intrathoracic)</li>
+          <li>Cyanosis, syncope (severe — usually after coughing fit)</li>
+          <li>Acute respiratory crisis with stress/excitement</li>
+          <li>มัก systemically healthy</li>
+          <li>Owner reports waxing/waning — chronic, slowly progressive</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Cervical + thoracic rad (inspiratory + expiratory):</strong></p>
+        <ul>
+          <li>Cervical inspiration view: extrathoracic trachea narrowed</li>
+          <li>Thoracic expiration view: intrathoracic trachea narrowed</li>
+          <li>Rad sensitivity ~60% — many false negatives</li>
+          <li>Note: redundant dorsal tracheal membrane on rad can be artifact (overlying esophagus)</li>
+        </ul>
+        <p><strong>Fluoroscopy (gold standard for diagnosis + grading):</strong></p>
+        <ul>
+          <li>Dynamic visualization across breathing cycle ± cough induction</li>
+          <li>Identify location + grade of collapse</li>
+          <li>Evaluate mainstem bronchi (bronchomalacia)</li>
+        </ul>
+        <p><strong>Bronchoscopy:</strong></p>
+        <ul>
+          <li>Direct visualization, definitive grading</li>
+          <li>Wide dorsal membrane prolapse</li>
+          <li>Concurrent BAL for chronic bronchitis evaluation</li>
+        </ul>
+        <p><strong>Workup for concurrent disease:</strong></p>
+        <ul>
+          <li>Echocardiogram — MMVD common in same population (LA size, mainstem bronchus compression)</li>
+          <li>BAL cytology + culture — bronchitis, infection</li>
+          <li>CBC, biochem, T4 (hypothyroid), ACTH stim (Cushing's)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Chronic bronchitis</li>
+          <li>Cardiogenic cough (LA enlargement compressing mainstem bronchus, MMVD)</li>
+          <li>Laryngeal paralysis</li>
+          <li>BOAS</li>
+          <li>Tracheal mass</li>
+          <li>CIRDC (acute)</li>
+          <li>Eosinophilic bronchopneumopathy</li>
+          <li>Foreign body</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Medical management adequate ใน &gt; 70% of cases ✓</strong></p>
+
+        <p><strong>1. Cough suppression (cornerstone)</strong></p>
+        <ul>
+          <li><strong>Hydrocodone 0.22 mg/kg PO q6-12h</strong> — first-line, effective</li>
+          <li><strong>Butorphanol 0.5-1 mg/kg PO q6-12h</strong> — alternative</li>
+          <li>Codeine 1-2 mg/kg PO q8-12h</li>
+          <li>Tramadol 3-5 mg/kg PO q8-12h (less effective for cough)</li>
+          <li>Refractory: maropitant 2 mg/kg PO q24h (NK1 antagonist), gabapentin 5-10 mg/kg PO q8-12h (neuromodulator)</li>
+        </ul>
+
+        <p><strong>2. Anti-inflammatory (during exacerbation)</strong></p>
+        <ul>
+          <li>Prednisone 0.5-1 mg/kg PO q12h × 5-7 วัน, taper over 3-4 wk</li>
+          <li>Inhaled fluticasone (Flixotide) 110-220 µg q12h via spacer (AeroDawg) — long-term low systemic effect</li>
+        </ul>
+
+        <p><strong>3. Bronchodilators (concurrent bronchitis)</strong></p>
+        <ul>
+          <li>Theophylline ER 10 mg/kg PO q12h</li>
+          <li>Terbutaline 1.25-5 mg/dog PO q8-12h</li>
+          <li>Inhaled albuterol (rescue)</li>
+        </ul>
+
+        <p><strong>4. Sedation / anti-anxiety</strong></p>
+        <ul>
+          <li>Trazodone 3-7 mg/kg PO q8-24h — daily for anxious dogs</li>
+          <li>Acepromazine 0.025-0.05 mg/kg PO PRN — short-term for stressful events</li>
+          <li>Phenobarbital — alternative for severe anxiety</li>
+        </ul>
+
+        <p><strong>5. Antibiotics (only if BAL evidence of infection)</strong></p>
+        <ul>
+          <li>Doxycycline 5 mg/kg PO q12h × 2-4 wk for Mycoplasma/atypicals</li>
+          <li>Amoxicillin-clavulanate, fluoroquinolone if culture-guided</li>
+        </ul>
+
+        <p><strong>6. Lifestyle modifications (essential)</strong></p>
+        <ul>
+          <li><strong>Weight loss</strong> ✨ — single most impactful intervention</li>
+          <li><strong>Harness instead of collar</strong> ✨ — non-negotiable</li>
+          <li>Avoid heat, humidity, excitement</li>
+          <li>AC during hot weather</li>
+          <li>Avoid second-hand smoke</li>
+          <li>Treat concurrent disease (MMVD, hypothyroidism, Cushing's)</li>
+        </ul>
+
+        <p><strong>Stanozolol (novel, limited evidence):</strong></p>
+        <ul>
+          <li>0.3 mg/kg PO divided q12h × 2 months, then taper × 15 days</li>
+          <li>May improve tracheal wall strength; not widely adopted</li>
+        </ul>
+
+        <p><strong>Surgical / interventional (refractory, severe):</strong></p>
+        <ul>
+          <li><strong>Intraluminal tracheal stent</strong> — self-expanding nitinol; place under fluoroscopy
+            <ul>
+              <li>Dramatic relief in dogs failing medical management</li>
+              <li>Median survival ~ 502 days post-stent</li>
+              <li>1-yr survival 78%, 2-yr 60%, 4-yr 26%</li>
+              <li>Complications: 40% — stent fracture, mucus accumulation, infection, persistent cough</li>
+              <li>Cough often worse initially after placement (weeks)</li>
+            </ul>
+          </li>
+          <li><strong>Extraluminal prosthetic rings (PPP rings)</strong> — for cervical collapse only; durable but technically demanding</li>
+        </ul>
+
+        <p><strong>Acute respiratory crisis:</strong></p>
+        <ul>
+          <li>Sedation: butorphanol IV/IM, acepromazine</li>
+          <li>O2 supplementation, cooling</li>
+          <li>Dexamethasone 0.1-0.2 mg/kg IV</li>
+          <li>Cough suppressant (hydrocodone)</li>
+          <li>Severe: intubation, possibly tracheostomy</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Acute respiratory crisis / cyanotic episode</li>
+          <li>Aspiration pneumonia (uncommon)</li>
+          <li>Cor pulmonale (chronic hypoxia, advanced)</li>
+          <li>Stent complications — fracture, granulation tissue ingrowth, infection, mucus impaction</li>
+          <li>Comorbid heart failure (MMVD overlap)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Medical management:</strong> resolution of signs ≥ 1 yr in ~71% — good ✓</li>
+          <li>Most live normal lifespan with intermittent flares</li>
+          <li>Refractory cases → stenting reasonable (60% 1-yr survival)</li>
+          <li>Concurrent severe MMVD or laryngeal collapse — worse</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 21 · CIRDC ---------- */
+  {
+    id: 'cirdc',
+    titleEn: 'Canine Infectious Respiratory Disease Complex (CIRDC)',
+    titleTh: 'Kennel Cough — หมาไอติดต่อ',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog'],
+    tags: ['kennel cough', 'CIRDC', 'Bordetella', 'parainfluenza', 'canine influenza', 'CAV-2', 'Mycoplasma cynos', 'doxycycline'],
+    aliases: ['kennel cough', 'infectious tracheobronchitis', 'หมาไอ', 'หมาไอติดต่อ'],
+    source: 'Ch. 21 · pp. 321–325',
+    sections: {
+      definition: `
+        <p>โรคติดเชื้อระบบหายใจในหมา — <strong>highly contagious</strong> — multiple pathogens; mostly self-limiting</p>
+        <ul>
+          <li>Common in <strong>group settings</strong>: shelter, boarding, daycare, dog park, grooming</li>
+          <li>"Kennel cough" — old name; ใช้ <strong>CIRDC</strong> ดีกว่าเพราะสะท้อนว่ามีหลาย pathogens</li>
+          <li>เปรียบกับ "cold/flu" ของคน — ลูกค้าเข้าใจง่าย</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Viruses:</strong></p>
+        <ul>
+          <li>Canine adenovirus type 2 (CAV-2)</li>
+          <li>Canine parainfluenza virus (CPiV)</li>
+          <li>Canine influenza virus (CIV) — H3N8, H3N2</li>
+          <li>Canine herpesvirus-1 (CHV-1)</li>
+          <li>Canine respiratory coronavirus (CRCoV)</li>
+          <li>Canine pneumovirus</li>
+        </ul>
+        <p><strong>Bacteria:</strong></p>
+        <ul>
+          <li><strong>Bordetella bronchiseptica</strong> ✨ — primary, also opportunistic</li>
+          <li><em>Streptococcus equi subsp. zooepidemicus</em> — severe pneumonia</li>
+          <li><strong>Mycoplasma cynos</strong> — increasing recognition</li>
+          <li>Other Mycoplasma spp.</li>
+        </ul>
+        <p><strong>Co-infection common</strong> → more severe disease</p>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Aerosol transmission, fomites</li>
+          <li>Bordetella attaches to ciliated epithelium → ↓ mucociliary clearance</li>
+          <li>Viruses damage epithelium → secondary bacterial infection</li>
+          <li>Self-limiting in healthy dogs (~ 7-14 วัน)</li>
+          <li>Pneumonia complication ใน young, geriatric, immunosuppressed, brachycephalic, comorbidities</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Uncomplicated CIRDC:</strong></p>
+        <ul>
+          <li><strong>Acute, harsh, paroxysmal cough</strong> ✨ — often ending in retching/foamy sputum</li>
+          <li>Cough easily induced by tracheal palpation</li>
+          <li>Mild serous nasal/ocular discharge</li>
+          <li>Sneezing</li>
+          <li>มัก afebrile, eat well, energetic</li>
+          <li>2-14 days post-exposure, lasts 7-14 days</li>
+        </ul>
+        <p><strong>Complicated (pneumonia developing):</strong></p>
+        <ul>
+          <li>Lethargy, anorexia, fever ✗</li>
+          <li>Mucopurulent nasal discharge</li>
+          <li>Dyspnea, tachypnea</li>
+          <li>Weight loss</li>
+          <li>Crackles on auscultation</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical diagnosis ส่วนใหญ่:</strong></p>
+        <ul>
+          <li>History of exposure + classic acute cough</li>
+          <li>Tracheal palpation easily elicits cough</li>
+          <li>Otherwise healthy</li>
+          <li>ไม่ต้อง routine workup ในเคส uncomplicated</li>
+        </ul>
+        <p><strong>เมื่อไหร่ต้อง workup:</strong></p>
+        <ul>
+          <li>Severe / persistent &gt; 14 วัน</li>
+          <li>Systemic illness (fever, anorexia, dyspnea)</li>
+          <li>Outbreak in shelter / cattery</li>
+          <li>Suspected pneumonia</li>
+        </ul>
+        <p><strong>Tests:</strong></p>
+        <ul>
+          <li><strong>Thoracic rad</strong> — pneumonia identification (alveolar pattern, lobar consolidation)</li>
+          <li><strong>PCR panel</strong> — multiple pathogens (oropharyngeal swab + nasal swab)</li>
+          <li>Tracheal wash / BAL — cytology + culture in pneumonia cases</li>
+          <li>CBC — neutrophilia with left shift (pneumonia)</li>
+          <li>Pulse ox / blood gas if dyspneic</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Tracheal collapse (older small breeds, chronic)</li>
+          <li>Foreign body (sudden onset, single dog)</li>
+          <li>Eosinophilic bronchopneumopathy</li>
+          <li>Heartworm</li>
+          <li>Distemper (multisystemic, neurologic)</li>
+          <li>Aspiration pneumonia</li>
+          <li>Mycotic / parasitic pneumonia</li>
+          <li>Cardiogenic cough (older, MMVD)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Uncomplicated CIRDC — supportive only ✓</strong></p>
+        <ul>
+          <li>Rest, isolate from other dogs (3-4 wk after symptoms resolve — viral shedding)</li>
+          <li>Cough suppressant for comfort:
+            <ul>
+              <li>Butorphanol 0.5 mg/kg PO q6-12h</li>
+              <li>Hydrocodone 0.22 mg/kg PO q6-12h</li>
+              <li>หลีกเลี่ยงถ้าสงสัย pneumonia (ต้องไอออกมา)</li>
+            </ul>
+          </li>
+          <li>Avoid collar pressure</li>
+          <li>Nebulization / steam therapy</li>
+          <li>Hydration</li>
+          <li><strong>NO antibiotics</strong> for uncomplicated CIRDC ✗ (mostly viral; antibiotic stewardship)</li>
+        </ul>
+
+        <p><strong>Antibiotic indications (ISCAID 2017):</strong></p>
+        <ul>
+          <li>Lethargy, anorexia, fever &gt; 39.5°C</li>
+          <li>Cough &gt; 10 days persistent</li>
+          <li>Mucopurulent discharge with systemic illness</li>
+          <li>Suspected/confirmed pneumonia</li>
+        </ul>
+        <ul>
+          <li><strong>Doxycycline 5 mg/kg PO q12h × 7-10 วัน</strong> ✨ — first-line (covers Bordetella, Mycoplasma)</li>
+          <li>Amoxicillin-clavulanate 12.5-25 mg/kg PO q12h — alternative</li>
+          <li>Severe / hospitalized: enrofloxacin 5-20 mg/kg + ampicillin 22 mg/kg q8h IV</li>
+        </ul>
+
+        <p><strong>Supportive care for complicated cases:</strong></p>
+        <ul>
+          <li>O2 therapy</li>
+          <li>IV fluids</li>
+          <li>Nebulization + coupage</li>
+          <li>Bronchodilators (selective)</li>
+        </ul>
+
+        <p><strong>Prevention:</strong></p>
+        <ul>
+          <li>Vaccination:
+            <ul>
+              <li><strong>Bordetella</strong> vaccine — intranasal (best, fastest onset 72h, mucosal immunity), oral, parenteral</li>
+              <li>CAV-2 + CPiV — usually in DHPP combo (core)</li>
+              <li>Canine influenza H3N8 + H3N2 — non-core; recommended for boarding/show dogs</li>
+            </ul>
+          </li>
+          <li>Vaccines reduce severity, not prevent infection completely</li>
+          <li>Boarding/grooming facilities should require Bordetella + DHPP</li>
+          <li>Hygiene: disinfection, ventilation</li>
+          <li>Isolate symptomatic dogs 3-4 wk</li>
+        </ul>
+
+        <p><strong>Client education (key concept):</strong></p>
+        <ul>
+          <li>เปรียบเทียบ "cold/flu in people"</li>
+          <li>Many pathogens involved — vaccine ครอบคลุมไม่ทุกตัว</li>
+          <li>Most recover without antibiotics</li>
+          <li>Vaccine ลด severity, ไม่ป้องกัน 100%</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Bacterial pneumonia (esp. with influenza co-infection, S. zooepidemicus)</li>
+          <li>Chronic cough (rare; persistent post-infection)</li>
+          <li>Death — uncommon, mostly puppies/immunocompromised</li>
+          <li>Outbreak in facilities</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Uncomplicated: <strong>excellent</strong>, full recovery 7-14 วัน</li>
+          <li>Pneumonia: good with treatment in most healthy adult dogs</li>
+          <li>Puppies, geriatric, immunocompromised: guarded</li>
+          <li>Severe S. zooepidemicus pneumonia: poor (high mortality)</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 21 · Canine Chronic Bronchitis ---------- */
+  {
+    id: 'canine-chronic-bronchitis',
+    titleEn: 'Canine Chronic Bronchitis',
+    titleTh: 'หมาไอเรื้อรัง',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog'],
+    tags: ['chronic bronchitis', 'cough', 'fluticasone', 'theophylline', 'terbutaline', 'BAL', 'small breed', 'irreversible airway disease'],
+    aliases: ['CCB', 'canine bronchitis', 'หมาไอเรื้อรัง'],
+    source: 'Ch. 21 · pp. 339–343',
+    sections: {
+      definition: `
+        <p>Chronic airway inflammation &gt; 2-3 เดือน → <strong>irreversible</strong> airway changes (fibrosis, mucus gland hyperplasia)</p>
+        <ul>
+          <li>เจอใน <strong>middle-aged to older small-breed dogs</strong> เด่น</li>
+          <li>มัก concurrent with tracheal collapse (similar population)</li>
+          <li>Differs from acute bronchitis (&lt; 1-3 mo, reversible)</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Idiopathic</strong> — most cases; chronic immune-mediated airway inflammation</li>
+          <li>Environmental triggers: smoke, dust, allergens, pollutants</li>
+          <li>Sequela of recurrent infections</li>
+          <li>Allergic component possible (allergic bronchitis subtype)</li>
+          <li>Co-existence with: tracheal collapse, MMVD, obesity</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Chronic neutrophilic ± eosinophilic airway inflammation</li>
+          <li>Goblet cell + submucosal gland hyperplasia → ↑ mucus production</li>
+          <li>Epithelial squamous metaplasia, fibrosis → permanent airway changes</li>
+          <li>Bronchospasm + mucus plugging → ↓ airflow</li>
+          <li>Chronic cough → tracheomalacia / bronchomalacia exacerbation</li>
+          <li>Secondary bacterial colonization possible</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic cough &gt; 2 เดือน</strong> ✨ — usually dry, harsh, sometimes productive (white-yellow mucus)</li>
+          <li>Often paroxysmal, ending with retching</li>
+          <li>Triggered by excitement, exercise, eating, drinking, position change</li>
+          <li>Exercise intolerance (mild-moderate)</li>
+          <li>Otherwise systemically healthy initially</li>
+          <li>Respiratory distress only in severe / decompensated cases</li>
+          <li>Wheeze, crackles on auscultation</li>
+          <li>Expiratory effort ↑</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis of exclusion + supportive findings</strong></p>
+        <p><strong>Thoracic rad:</strong></p>
+        <ul>
+          <li>Bronchial pattern (donuts + tram lines)</li>
+          <li>± Mild bronchointerstitial infiltrate</li>
+          <li>Tracheal collapse (concurrent)</li>
+          <li>Rule out cardiac disease, pneumonia, neoplasia, parasitism</li>
+        </ul>
+        <p><strong>Echo:</strong> rule out left CHF (especially MMVD breeds)</p>
+        <p><strong>Heartworm test, fecal Baermann</strong> — must rule out!</p>
+        <p><strong>BAL / TW (definitive):</strong></p>
+        <ul>
+          <li>Cytology: ↑ neutrophils ± eosinophils, mucus, hyperplastic epithelial cells</li>
+          <li>Culture: usually no significant growth (or normal flora) — antibiotics not needed unless septic neutrophilic</li>
+          <li>Mycoplasma PCR/culture</li>
+        </ul>
+        <p><strong>Bronchoscopy:</strong> hyperemic mucosa, mucus plugs, dynamic collapse, polypoid changes</p>
+        <p><strong>CBC, biochem, T4</strong> — rule out comorbidities</p>
+      `,
+      differential: `
+        <ul>
+          <li>Tracheal / bronchial collapse</li>
+          <li>Cardiogenic cough (CHF)</li>
+          <li>Eosinophilic bronchopneumopathy (more eosinophils, younger dogs)</li>
+          <li>Pulmonary fibrosis (Westies)</li>
+          <li>Heartworm</li>
+          <li>Pulmonary parasites (Oslerus, Filaroides)</li>
+          <li>Neoplasia</li>
+          <li>Foreign body (acute, unilateral wheeze)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Goals:</strong> ↓ symptoms, ↓ inflammation, prevent progression — ไม่หาย ✗</p>
+
+        <p><strong>1. Glucocorticoids (cornerstone)</strong></p>
+        <ul>
+          <li><strong>Prednisone 0.5-1 mg/kg PO q12h × 5-7 วัน</strong>, then taper to lowest effective dose (e.g. 0.25-0.5 mg/kg q24h or q48h)</li>
+          <li><strong>Inhaled fluticasone (Flixotide HFA) 110-220 µg q12h via spacer (AeroDawg)</strong> ✨ — preferred for long-term: minimal systemic side effects</li>
+          <li>Switch from oral to inhaled after initial control</li>
+        </ul>
+
+        <p><strong>2. Bronchodilators</strong></p>
+        <ul>
+          <li><strong>Theophylline ER 10 mg/kg PO q12h</strong> — anti-inflammatory + mild bronchodilation; therapeutic level 5-20 µg/mL</li>
+          <li>Terbutaline 1.25-5 mg/dog PO q8-12h — β2 agonist</li>
+          <li>Inhaled albuterol — rescue (acute bronchospasm)</li>
+        </ul>
+
+        <p><strong>3. Cough suppression</strong></p>
+        <ul>
+          <li>Hydrocodone 0.22 mg/kg PO q6-12h — when cough disrupts sleep/quality of life</li>
+          <li>Butorphanol 0.5-1 mg/kg PO q6-12h</li>
+          <li>Avoid in productive cough (need to clear mucus)</li>
+        </ul>
+
+        <p><strong>4. Antibiotics — ONLY if BAL evidence of infection</strong></p>
+        <ul>
+          <li>Doxycycline 5 mg/kg PO q12h × 2-4 wk (Mycoplasma)</li>
+          <li>Culture-guided otherwise</li>
+        </ul>
+
+        <p><strong>5. Adjuncts</strong></p>
+        <ul>
+          <li><strong>Weight loss</strong> ✨ — impactful</li>
+          <li>Avoid smoke, dust, perfumes, aerosol cleaners</li>
+          <li>Use harness</li>
+          <li>Humidification</li>
+          <li>Treat concurrent disease (MMVD, tracheal collapse, dental)</li>
+          <li>Trial diet change (consider allergic component)</li>
+        </ul>
+
+        <p><strong>Refractory cases:</strong></p>
+        <ul>
+          <li>Cyclosporine 5 mg/kg PO q12-24h (immunomodulator)</li>
+          <li>Maropitant 2 mg/kg PO q24h (NK-1 antagonist) — antitussive effect</li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h — neuromodulator for chronic cough</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical recheck q3-6 เดือน</li>
+          <li>Repeat rad + BAL ใน worsening</li>
+          <li>Theophylline level if used (initially + dose adjustments)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Progressive airway damage / bronchiectasis</li>
+          <li>Bronchomalacia — dynamic small airway collapse</li>
+          <li>Cor pulmonale (severe chronic disease)</li>
+          <li>Acute exacerbations / decompensation</li>
+          <li>Secondary bacterial infections</li>
+          <li>Chronic glucocorticoid side effects (PU/PD, weight gain, iatrogenic Cushing's, immunosuppression)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Long-term <strong>good</strong> with management — most dogs maintain quality of life for years</li>
+          <li>Cure not achievable</li>
+          <li>Concurrent severe tracheal collapse / cardiac disease — worse</li>
+          <li>Owner compliance + lifestyle modification — biggest predictors</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 21 · Feline Asthma / Bronchitis ---------- */
+  {
+    id: 'feline-asthma',
+    titleEn: 'Feline Asthma / Idiopathic Bronchitis',
+    titleTh: 'แมวหอบ — Asthma',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['cat'],
+    tags: ['feline asthma', 'allergic bronchitis', 'eosinophilic', 'wheeze', 'bronchoconstriction', 'fluticasone', 'terbutaline', 'albuterol', 'prednisolone'],
+    aliases: ['cat asthma', 'allergic bronchitis cat', 'แมวหอบ', 'แมวหายใจไม่ออก'],
+    source: 'Ch. 21 · pp. 343–349',
+    sections: {
+      definition: `
+        <p>Inflammatory lower airway disease ในแมว แบ่งเป็น:</p>
+        <ul>
+          <li><strong>Asthma</strong> = reversible bronchoconstriction + eosinophilic inflammation (allergic in nature)</li>
+          <li><strong>Idiopathic chronic bronchitis</strong> = chronic airway inflammation ที่อาจไม่ reversible เต็มที่</li>
+          <li>ทั้งคู่เจอบ่อยใน practice และอาการ overlap → รักษาคล้ายกัน</li>
+          <li>เด่นใน <strong>young-middle aged cats</strong>; <strong>Siamese over-represented</strong></li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Allergic / hypersensitivity</strong> (asthma) — common allergens:
+            <ul>
+              <li>Dust mites</li>
+              <li>Cat litter (clay, scented)</li>
+              <li>Cigarette smoke</li>
+              <li>Perfumes, cleaners</li>
+              <li>Cooking smoke</li>
+              <li>Pollen, mold</li>
+              <li>Food allergens (rare)</li>
+            </ul>
+          </li>
+          <li>Idiopathic (chronic bronchitis subtype)</li>
+          <li>Mycoplasma — possible co-factor</li>
+          <li>Genetic predisposition (Siamese)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <p><strong>Asthma:</strong></p>
+        <ul>
+          <li>Type I hypersensitivity → bronchoconstriction (smooth muscle spasm)</li>
+          <li>Eosinophilic airway inflammation</li>
+          <li>Mucus hypersecretion</li>
+          <li>Airway remodeling with chronic disease (smooth muscle hypertrophy, fibrosis)</li>
+          <li>Reversible component → responds to bronchodilator</li>
+        </ul>
+        <p><strong>Air trapping:</strong> bronchoconstriction during expiration → hyperinflation → flat diaphragm on rad</p>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Cough</strong> ✨ — uncommon presentation in cats; almost always lower airway disease! Often misdiagnosed as "hairball" by owners</li>
+          <li><strong>Wheeze</strong> — expiratory, audible without stethoscope ใน acute</li>
+          <li>Tachypnea, respiratory effort (expiratory phase prolonged)</li>
+          <li><strong>"Praying" / orthopneic position</strong> ✨ — sternal recumbency, neck extended, elbows abducted</li>
+          <li>Open-mouth breathing — severe distress ✗</li>
+          <li>Cyanosis (severe)</li>
+          <li>Episodes triggered by allergen exposure, stress</li>
+          <li>Between episodes: may appear normal</li>
+          <li>Chronic: progressive exercise intolerance</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Thoracic rad:</strong></p>
+        <ul>
+          <li><strong>Bronchial pattern</strong> ("donuts + tram lines") ✨</li>
+          <li>Hyperinflation: flattened diaphragm, ↑ lucency</li>
+          <li>Right middle lobe collapse occasionally (mucus plugging)</li>
+          <li>Rad may appear normal between episodes</li>
+        </ul>
+        <p><strong>BAL / TW (definitive in stable cat):</strong></p>
+        <ul>
+          <li><strong>Eosinophilic inflammation</strong> &gt; 17% (asthma); neutrophilic = bronchitis subtype</li>
+          <li>Mucus, Curschmann's spirals</li>
+          <li>Mycoplasma culture/PCR</li>
+          <li>⚠️ <strong>Pretreat with bronchodilator</strong> (terbutaline 0.01 mg/kg SC + albuterol inhaled) — cats prone to bronchospasm during procedure</li>
+        </ul>
+        <p><strong>Workup for cause:</strong></p>
+        <ul>
+          <li>Heartworm antigen + antibody (HARD: heartworm-associated respiratory disease)</li>
+          <li>Fecal Baermann (Aelurostrongylus, Capillaria)</li>
+          <li>FeLV/FIV</li>
+          <li>CBC: peripheral eosinophilia &lt; 50% sensitive</li>
+          <li>Allergy workup if recurrent (intradermal, serology — limited utility)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Heartworm / HARD — endemic area, must test ✗</li>
+          <li>Lungworms (Aelurostrongylus abstrusus) — Baermann</li>
+          <li>Cardiogenic edema — cats with HCM may present similarly!</li>
+          <li>Bacterial / Mycoplasma pneumonia</li>
+          <li>Toxoplasmosis</li>
+          <li>Pleural effusion</li>
+          <li>Neoplasia (pulmonary, mediastinal)</li>
+          <li>Foreign body</li>
+          <li>Diaphragmatic hernia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute respiratory crisis (status asthmaticus):</strong></p>
+        <ul>
+          <li><strong>O2 cage</strong> + minimal handling ✨</li>
+          <li><strong>Terbutaline 0.01 mg/kg SC/IM</strong> (can repeat in 10-20 min) ✨ — fastest β2 bronchodilator</li>
+          <li><strong>Inhaled albuterol</strong> — 1-2 puffs via spacer; can repeat q5-10 min initially</li>
+          <li>Dexamethasone 0.5-1 mg/kg IV/IM — fast steroid effect</li>
+          <li>Mild sedation if needed (butorphanol 0.2 mg/kg IM) — reduce stress</li>
+          <li>Aminophylline 5 mg/kg IM/slow IV — refractory</li>
+          <li>Avoid stress, IV catheter only if absolutely needed</li>
+        </ul>
+
+        <p><strong>Chronic management — Two pillars:</strong></p>
+
+        <p><strong>1. Glucocorticoids (mainstay)</strong></p>
+        <ul>
+          <li><strong>Inhaled fluticasone (Flixotide HFA) 110-220 µg q12h via spacer (AeroKat)</strong> ✨ — preferred long-term, minimal systemic effects
+            <ul>
+              <li>Onset 7-10 days — bridge with oral pred initially</li>
+              <li>Excellent compliance with daily routine</li>
+              <li>Continue during remission</li>
+            </ul>
+          </li>
+          <li><strong>Prednisolone</strong> (NOT prednisone in cats — ↓ conversion to active form):
+            <ul>
+              <li>Initial: 1-2 mg/kg PO q12h × 5-7 วัน</li>
+              <li>Taper over 3-4 weeks to lowest effective dose</li>
+              <li>Use during fluticasone onset OR for refractory cases</li>
+              <li>Long-term oral steroid → diabetes, infection, CHF risk in HCM cats</li>
+            </ul>
+          </li>
+          <li>Methylprednisolone acetate 10-20 mg/cat IM q3-4 wk — last resort (depot steroid; long-term DM risk)</li>
+        </ul>
+
+        <p><strong>2. Bronchodilators</strong></p>
+        <ul>
+          <li><strong>Inhaled albuterol</strong> via spacer (AeroKat) — 1-2 puffs PRN for acute symptoms (rescue)</li>
+          <li>Theophylline ER 10-15 mg/kg PO q24h (evening dose)</li>
+          <li>Terbutaline 0.625-1.25 mg/cat PO q12h</li>
+          <li>⚠️ Don't use albuterol as monotherapy daily — may worsen inflammation; always pair with anti-inflammatory</li>
+        </ul>
+
+        <p><strong>3. Environmental modification (essential!) ✨</strong></p>
+        <ul>
+          <li>Remove triggers: smoke, perfumes, aerosols, scented litter</li>
+          <li>Use dust-free / silica gel litter</li>
+          <li>HEPA air filter</li>
+          <li>Avoid dusty cleaning</li>
+          <li>Reduce stress</li>
+        </ul>
+
+        <p><strong>Adjunctive:</strong></p>
+        <ul>
+          <li>Cyclosporine 5 mg/kg PO q12-24h — refractory; immunomodulator</li>
+          <li>Antibiotics (doxycycline) ONLY if Mycoplasma/bacterial co-infection confirmed</li>
+          <li>Trial elimination diet (food allergy component)</li>
+          <li>Heartworm prevention monthly (endemic areas)</li>
+        </ul>
+
+        <p><strong>Spacer training:</strong> introduce gradually with positive reinforcement, treats; cats adapt within 2-4 weeks</p>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Status asthmaticus / respiratory failure</strong> ✗</li>
+          <li>Pneumothorax (severe air trapping → bleb rupture)</li>
+          <li>Right middle lobe atelectasis</li>
+          <li>Cor pulmonale (chronic severe)</li>
+          <li>Iatrogenic Cushing's, diabetes from chronic systemic steroids</li>
+          <li>Bacterial pneumonia (immunosuppression)</li>
+          <li>Sudden death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Good with proper management</strong> ✓ — most cats live normal lifespan</li>
+          <li>Most respond well to fluticasone + environmental changes</li>
+          <li>Lifelong condition — no cure</li>
+          <li>Severe acute crises preventable with daily prophylaxis</li>
+        </ul>
+        <div class="callout">💡 <strong>Spacer + MDI revolutionized feline asthma management</strong> — counseling owners that this is similar to human asthma + showing them training videos improves compliance dramatically</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 22 · Bacterial Pneumonia ---------- */
+  {
+    id: 'bacterial-pneumonia',
+    titleEn: 'Bacterial Pneumonia',
+    titleTh: 'ปอดบวมจากเชื้อแบคทีเรีย',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['pneumonia', 'aspiration pneumonia', 'Bordetella', 'E. coli', 'Klebsiella', 'amoxicillin clavulanate', 'enrofloxacin', 'BAL'],
+    aliases: ['pneumonia', 'aspiration pneumonia', 'ปอดอักเสบ', 'ปอดบวม'],
+    source: 'Ch. 22 · pp. 339–344',
+    sections: {
+      definition: `
+        <p>Inflammation + infection ของ pulmonary parenchyma จาก bacteria ± aspiration of foreign material</p>
+        <ul>
+          <li>เจอบ่อยในหมา > แมว</li>
+          <li>มัก secondary to <strong>aspiration</strong> หรือ <strong>defective host defense</strong></li>
+          <li>Common predisposing causes: laryngeal paralysis, megaesophagus, BOAS, post-anesthesia, immunosuppression</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Bacterial agents:</strong></p>
+        <ul>
+          <li><strong>Bordetella bronchiseptica</strong> — primary pathogen</li>
+          <li><em>Streptococcus equi zooepidemicus</em> — severe, fatal</li>
+          <li><em>E. coli</em>, Klebsiella, Pseudomonas, Pasteurella — opportunistic</li>
+          <li><em>Mycoplasma cynos / felis</em></li>
+          <li>Anaerobes (esp. aspiration): Bacteroides, Fusobacterium</li>
+          <li>Mixed infections common</li>
+        </ul>
+        <p><strong>Predisposing factors:</strong></p>
+        <ul>
+          <li>Aspiration: megaesophagus, regurgitation, laryngeal paralysis, anesthesia, seizures, vomiting</li>
+          <li>Impaired clearance: ciliary dyskinesia, BOAS, chronic bronchitis</li>
+          <li>Immunosuppression: chemo, steroids, FeLV/FIV, very young/old</li>
+          <li>Concurrent viral infection (CIRDC, distemper, FHV)</li>
+          <li>Post-thoracic surgery, indwelling ETT/tracheostomy</li>
+          <li>Foreign body</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Bacterial colonization → inflammation + exudate filling alveoli</li>
+          <li>Lobar consolidation pattern (cranioventral lung lobes most often — gravity dependent)</li>
+          <li>↓ V/Q matching → hypoxemia</li>
+          <li>Pyrexia, systemic inflammatory response</li>
+          <li>Severe: SIRS, sepsis, ARDS</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Productive cough</strong> ✨ — soft, moist (sometimes absent in cats)</li>
+          <li>Tachypnea, dyspnea, exercise intolerance</li>
+          <li><strong>Fever</strong> &gt; 39.5°C</li>
+          <li>Lethargy, anorexia, depression</li>
+          <li>Mucopurulent nasal discharge sometimes</li>
+          <li>Auscultation: <strong>crackles</strong> ± wheezes; lung sounds may be absent if lobe consolidated</li>
+          <li>Tachycardia</li>
+          <li>Cyanosis (severe)</li>
+          <li>Cats may show only nonspecific lethargy/anorexia + tachypnea (subtle!)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Thoracic rad (3 views):</strong></p>
+        <ul>
+          <li><strong>Alveolar pattern with air bronchograms</strong> ✨</li>
+          <li>Lobar distribution: cranioventral predominance (aspiration), right middle lobe most common</li>
+          <li>Diffuse pattern in severe / hematogenous</li>
+          <li>Pleural effusion possible (severe)</li>
+        </ul>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li>CBC: neutrophilia + left shift; sometimes leukopenia in sepsis (poor prognostic)</li>
+          <li>Biochem, electrolytes</li>
+          <li>Pulse ox / blood gas — assess hypoxemia severity</li>
+          <li>Blood culture — sepsis</li>
+        </ul>
+        <p><strong>Tracheal wash / BAL (essential):</strong></p>
+        <ul>
+          <li>Cytology: septic neutrophilic inflammation, intracellular bacteria</li>
+          <li><strong>Aerobic + anaerobic culture + sensitivity</strong> ✨ — guide antibiotic choice</li>
+          <li>Mycoplasma culture/PCR</li>
+          <li>Gram stain — early guidance</li>
+        </ul>
+        <p><strong>Workup for predisposing cause:</strong></p>
+        <ul>
+          <li>Esophagram / fluoroscopy — megaesophagus, aspiration source</li>
+          <li>Laryngoscopy — laryngeal paralysis</li>
+          <li>Acetylcholine receptor antibody — myasthenia</li>
+          <li>Heartworm test, fecal Baermann</li>
+          <li>FeLV/FIV in cats</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Cardiogenic pulmonary edema</li>
+          <li>Non-cardiogenic edema (ARDS, neurogenic, electrocution)</li>
+          <li>Hemorrhage (PTE, neoplasia, trauma, coagulopathy)</li>
+          <li>Eosinophilic bronchopneumopathy</li>
+          <li>Fungal pneumonia</li>
+          <li>Pulmonary parasites</li>
+          <li>Atelectasis</li>
+          <li>Neoplasia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Antibiotics — empirical, then culture-guided</strong></p>
+        <p><strong>Mild cases (outpatient):</strong></p>
+        <ul>
+          <li><strong>Doxycycline 5 mg/kg PO q12h × 14-21 days</strong> — first-line for suspected Bordetella/Mycoplasma ✓</li>
+          <li>Amoxicillin-clavulanate 12.5 mg/kg PO q12h</li>
+          <li>Cefpodoxime 5-10 mg/kg PO q24h</li>
+        </ul>
+        <p><strong>Moderate-severe (hospitalized):</strong></p>
+        <ul>
+          <li><strong>Ampicillin 22 mg/kg IV q8h + enrofloxacin 5-20 mg/kg IV q24h</strong> ✨ — empirical broad coverage</li>
+          <li>Or ampicillin-sulbactam 30 mg/kg IV q8h + fluoroquinolone</li>
+          <li>Add metronidazole 10 mg/kg IV q12h if anaerobes suspected (aspiration)</li>
+          <li>Cats: avoid enrofloxacin &gt; 5 mg/kg/day (retinal toxicity); use marbofloxacin or pradofloxacin</li>
+          <li>Carbapenems (imipenem, meropenem) — multidrug-resistant cases</li>
+          <li>Switch to PO when stable (typically 2-4 days IV)</li>
+          <li>Total duration: <strong>1-2 weeks past clinical + radiographic resolution</strong> (often 4-6 weeks total)</li>
+        </ul>
+
+        <p><strong>Supportive care:</strong></p>
+        <ul>
+          <li><strong>O2 supplementation</strong> — SpO2 &lt; 93% or PaO2 &lt; 80 mmHg</li>
+          <li>IV fluids — maintain hydration (helps mucociliary clearance), avoid overhydration</li>
+          <li>Nebulization with sterile saline 0.9% × 15-20 min q6-12h via small particle nebulizer (deep airway moisture)</li>
+          <li><strong>Coupage (chest physiotherapy)</strong> after nebulization × 5-10 min — mobilize secretions</li>
+          <li>Bronchodilators (cats especially): terbutaline, theophylline</li>
+          <li>Nutritional support — appetite stimulants (mirtazapine, capromorelin)</li>
+          <li>Anti-emetics if vomiting</li>
+        </ul>
+
+        <p><strong>Avoid:</strong></p>
+        <ul>
+          <li><strong>Cough suppressants</strong> ✗ — need to clear mucus</li>
+          <li><strong>Glucocorticoids</strong> ✗ — relatively contraindicated; reserve for severe ARDS-like syndrome</li>
+          <li>Diuretics (unless concurrent CHF)</li>
+        </ul>
+
+        <p><strong>Treat predisposing cause:</strong></p>
+        <ul>
+          <li>Megaesophagus: upright feeding (Bailey chair), small frequent meals, slurry consistency, treat MG if positive</li>
+          <li>Laryngeal paralysis: surgery (tieback)</li>
+          <li>BOAS: surgical correction</li>
+          <li>Foreign body: bronchoscopic removal</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical signs (RR, effort, attitude, appetite) twice daily</li>
+          <li>Recheck thoracic rad q3-7 days initially, then q2-3 wk</li>
+          <li>CBC q3-5 days</li>
+          <li>SpO2 / blood gas as indicated</li>
+          <li>Discontinue antibiotics 1-2 wk past resolution</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Sepsis / SIRS / septic shock ✗</li>
+          <li>ARDS — severe pulmonary failure, mortality high</li>
+          <li>Pulmonary abscess — focal lesion; prolonged antibiotics ± lobectomy</li>
+          <li>Pleural effusion / pyothorax</li>
+          <li>Bronchiectasis (chronic damage)</li>
+          <li>Recurrent pneumonia (untreated predisposing cause)</li>
+          <li>Multidrug resistance with prolonged/inappropriate antibiotic use</li>
+          <li>Death — esp. very young, geriatric, immunocompromised, S. zooepidemicus</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Healthy adult, treated promptly: <strong>good</strong></li>
+          <li>Aspiration with persistent cause (megaesophagus): guarded, recurrent</li>
+          <li>Sepsis / multilobar / ARDS: guarded — mortality 20-50%</li>
+          <li>S. zooepidemicus pneumonia: poor</li>
+          <li>Predisposing factor controllable (BOAS surgery) → much better</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 22 · Eosinophilic Bronchopneumopathy ---------- */
+  {
+    id: 'eosinophilic-bronchopneumopathy',
+    titleEn: 'Eosinophilic Bronchopneumopathy (EBP)',
+    titleTh: 'EBP — โรคปอดอีโอซิโนฟิลิก',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog'],
+    tags: ['EBP', 'PIE', 'pulmonary infiltrates with eosinophils', 'eosinophilic pneumonia', 'allergic', 'prednisone', 'cyclosporine'],
+    aliases: ['PIE', 'pulmonary infiltrates eosinophils', 'eosinophilic pneumonia'],
+    source: 'Ch. 22 · pp. 346–349',
+    sections: {
+      definition: `
+        <p>Hypersensitivity / allergic-type inflammation ของ bronchi + pulmonary parenchyma — eosinophilic infiltrate predominant</p>
+        <ul>
+          <li>เจอใน <strong>young to middle-aged dogs</strong>, often <strong>large breeds</strong> (Husky, Malamute, Rottweiler, Lab)</li>
+          <li>ในแมว: subset ของ feline asthma (eosinophilic bronchitis)</li>
+          <li>Eosinophilic granulomatosis = severe nodular variant</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Idiopathic / allergic</strong> — most common</li>
+          <li>Inhaled allergens: pollens, mold, dust mites</li>
+          <li>Drugs (rare)</li>
+          <li>Heartworm disease — strongly associated with eosinophilic granulomatosis ✨</li>
+          <li>Pulmonary parasites: Aelurostrongylus (cat), Crenosoma, Oslerus, Filaroides — must rule out!</li>
+          <li>Bacterial / fungal antigens (occasional)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Type I and III hypersensitivity → eosinophil recruitment</li>
+          <li>Eosinophil mediators (major basic protein, eosinophil cationic protein) → tissue damage</li>
+          <li>Bronchial inflammation, mucus hypersecretion, ± parenchymal infiltrates</li>
+          <li>Variants:
+            <ul>
+              <li><em>EBP / PIE</em>: bronchitis-predominant</li>
+              <li><em>Eosinophilic pneumonia</em>: parenchymal infiltrate</li>
+              <li><em>Eosinophilic granulomatosis</em>: nodular masses ± hilar lymphadenopathy (severe, must differentiate from neoplasia, fungal)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic cough</strong> — often productive, gagging, retching</li>
+          <li>Exercise intolerance</li>
+          <li>Wheeze, harsh lung sounds</li>
+          <li>Tachypnea, dyspnea (severe)</li>
+          <li>Mild systemic illness — anorexia, weight loss, fever</li>
+          <li>Nasal discharge sometimes (concurrent rhinitis)</li>
+          <li>"Off-and-on" cough — episodic</li>
+          <li>Eosinophilic granulomatosis: more severe systemic illness, mass effect, cachexia</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Thoracic rad:</strong></p>
+        <ul>
+          <li>Bronchointerstitial pattern (severe)</li>
+          <li>Focal alveolar infiltrates</li>
+          <li>Eosinophilic granulomatosis: nodular/mass lesions, hilar lymphadenopathy ⚠️ — easily mistaken for neoplasia</li>
+        </ul>
+        <p><strong>BAL / TW (definitive):</strong></p>
+        <ul>
+          <li><strong>Eosinophilic inflammation &gt; 20%</strong> ✨ (normal &lt; 5%)</li>
+          <li>Mucus, mixed cells</li>
+          <li>Cultures: usually negative</li>
+        </ul>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li>Peripheral eosinophilia ~50-60% (not always present)</li>
+          <li>Hyperglobulinemia</li>
+        </ul>
+        <p><strong>Rule out (essential):</strong></p>
+        <ul>
+          <li><strong>Heartworm</strong> antigen + microfilaria ✗</li>
+          <li><strong>Fecal Baermann × 3 days</strong> — pulmonary parasites</li>
+          <li>Fungal serology / antigen (if endemic)</li>
+          <li>Bacterial culture of BAL</li>
+        </ul>
+        <p><strong>For granulomatosis:</strong> CT, biopsy via bronchoscopy or thoracoscopy — differentiate from neoplasia, fungal granuloma</p>
+      `,
+      differential: `
+        <ul>
+          <li>Heartworm disease (antigen test!)</li>
+          <li>Pulmonary parasites</li>
+          <li>Allergic / chronic bronchitis</li>
+          <li>Fungal pneumonia (Blastomyces, Histoplasma, Coccidioides — endemic)</li>
+          <li>Pulmonary neoplasia (esp. for granulomatosis form)</li>
+          <li>Bacterial pneumonia (septic neutrophilic on cytology)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Identify + remove allergen if possible</strong></p>
+
+        <p><strong>1. Glucocorticoids (mainstay) ✨</strong></p>
+        <ul>
+          <li><strong>Prednisone 1-2 mg/kg PO q12h × 1-2 wk</strong></li>
+          <li>Taper gradually over 2-3 months to lowest effective dose (often 0.25-0.5 mg/kg q48h)</li>
+          <li>Most dogs respond rapidly (days)</li>
+          <li>Switch to inhaled fluticasone for long-term ในเคสที่ตอบสนองดี</li>
+          <li>Some dogs need lifelong low-dose</li>
+        </ul>
+
+        <p><strong>2. Refractory / steroid-sparing</strong></p>
+        <ul>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Azathioprine 2 mg/kg PO q24h × 7-14 d, then q48h (dogs only — toxic in cats)</li>
+        </ul>
+
+        <p><strong>3. Adjunctive</strong></p>
+        <ul>
+          <li>Bronchodilators (theophylline, terbutaline) — bronchospasm component</li>
+          <li>Antihistamines — mostly ineffective</li>
+          <li>Avoid known triggers</li>
+          <li>Heartworm preventive</li>
+          <li>Empirical anthelmintic trial (fenbendazole 50 mg/kg PO q24h × 14 d, ivermectin) ในเคสที่สงสัย parasite</li>
+        </ul>
+
+        <p><strong>Eosinophilic granulomatosis:</strong></p>
+        <ul>
+          <li>More aggressive — high-dose pred + cyclosporine</li>
+          <li>Heartworm preventive + adulticide if HW+</li>
+          <li>Surgical excision rarely possible</li>
+          <li>Worse prognosis</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Recurrent flares</li>
+          <li>Steroid side effects (PU/PD, weight gain, diabetes, infection)</li>
+          <li>Bronchiectasis (chronic damage)</li>
+          <li>Eosinophilic granulomatosis: progressive, may not respond well</li>
+          <li>Misdiagnosis as neoplasia / fungal (granulomatous form)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>EBP / PIE: <strong>good</strong> with steroid response, often manageable long-term</li>
+          <li>Most dogs have good quality of life</li>
+          <li>Eosinophilic granulomatosis: guarded — variable response, may progress</li>
+          <li>Heartworm-associated: depends on HW resolution</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 22 · Idiopathic Pulmonary Fibrosis (IPF) ---------- */
+  {
+    id: 'pulmonary-fibrosis',
+    titleEn: 'Idiopathic Pulmonary Fibrosis (IPF)',
+    titleTh: 'พังผืดในปอด — Westie Lung',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['IPF', 'pulmonary fibrosis', 'Westie lung', 'West Highland White Terrier', 'sildenafil', 'pirfenidone', 'crackles', 'restrictive'],
+    aliases: ['Westie lung disease', 'pulmonary fibrosis', 'พังผืดปอด', 'IPF'],
+    source: 'Ch. 22 · pp. 350–351',
+    sections: {
+      definition: `
+        <p>Progressive, idiopathic <strong>interstitial fibrosis</strong> ของ pulmonary parenchyma — irreversible</p>
+        <ul>
+          <li><strong>West Highland White Terrier</strong> เด่นมาก ("Westie lung") ✨</li>
+          <li>อื่นๆ: Cairn Terrier, Yorkie, Schipperke, Staffordshire Bull Terrier; cats rare (genetic)</li>
+          <li>Middle-aged to older (mean ~ 9 years)</li>
+          <li>No cure — palliative care</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Idiopathic</strong> — unknown cause</li>
+          <li>Genetic predisposition strong (Westie)</li>
+          <li>Postulated triggers: chronic injury (GERD, chronic infection, environmental), aberrant wound healing</li>
+          <li>Some cases secondary to: drugs (bleomycin), radiation, hypersensitivity pneumonitis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Aberrant alveolar epithelial cell repair → fibroblast/myofibroblast proliferation</li>
+          <li>Excessive collagen deposition in interstitium</li>
+          <li>Loss of alveolar architecture → ↓ gas exchange</li>
+          <li><strong>Restrictive lung disease</strong> — ↓ compliance, ↓ lung volume</li>
+          <li>Hypoxemia — V/Q mismatch + diffusion impairment</li>
+          <li>Secondary <strong>pulmonary hypertension</strong> → cor pulmonale (right CHF)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Progressive exercise intolerance</strong> over months-years</li>
+          <li>Tachypnea even at rest (late stage)</li>
+          <li>Dry cough (less prominent than tracheal collapse)</li>
+          <li>Cyanosis with exertion → at rest (advanced)</li>
+          <li>Syncope</li>
+          <li>Right CHF signs: ascites, JVD (advanced, secondary PH)</li>
+          <li>Auscultation: <strong>fine end-inspiratory crackles "Velcro-like"</strong> ✨ — characteristic</li>
+          <li>Increased respiratory effort (restrictive pattern — rapid shallow)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Thoracic rad:</strong></p>
+        <ul>
+          <li>Diffuse interstitial pattern, sometimes nodular</li>
+          <li>Reticular markings</li>
+          <li>Honeycomb appearance (advanced, late)</li>
+          <li>± PA enlargement (PH)</li>
+          <li>Often subtle — easy to miss</li>
+        </ul>
+        <p><strong>HRCT (high-resolution CT) — preferred:</strong></p>
+        <ul>
+          <li>Ground-glass opacities</li>
+          <li>Reticulation, traction bronchiectasis</li>
+          <li>Honeycombing in advanced cases</li>
+          <li>Subpleural + basal distribution</li>
+        </ul>
+        <p><strong>Echocardiography:</strong></p>
+        <ul>
+          <li>Estimate PA pressure (TR jet velocity)</li>
+          <li>RV hypertrophy/dilation in advanced cases</li>
+          <li>Rule out cardiogenic cause</li>
+        </ul>
+        <p><strong>BAL:</strong></p>
+        <ul>
+          <li>Mixed inflammation, sometimes near-normal</li>
+          <li>Rule out infection, eosinophilic disease</li>
+          <li>Cytology not diagnostic for IPF</li>
+        </ul>
+        <p><strong>Lung biopsy (definitive):</strong></p>
+        <ul>
+          <li>Surgical biopsy (thoracoscopy / mini-thoracotomy)</li>
+          <li>Histopath: usual interstitial pneumonia (UIP) pattern, fibrosis, fibroblastic foci</li>
+          <li>มัก declined due to risk + cost — clinical diagnosis usually accepted</li>
+        </ul>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li>Pulse ox / arterial blood gas — hypoxemia</li>
+          <li>CBC, biochem usually normal</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Chronic bronchitis</li>
+          <li>Eosinophilic bronchopneumopathy</li>
+          <li>Bronchopneumonia</li>
+          <li>Pulmonary edema (cardiogenic)</li>
+          <li>Pulmonary metastasis</li>
+          <li>Lymphangiectasia</li>
+          <li>Pulmonary thromboembolism</li>
+          <li>Hypersensitivity pneumonitis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>No definitive treatment — palliative care</strong></p>
+        <ul>
+          <li>Manage symptoms + comorbidities</li>
+          <li>Slow progression where possible</li>
+          <li>Maintain quality of life</li>
+        </ul>
+
+        <p><strong>1. Pulmonary hypertension (very common, treatable component) ✨</strong></p>
+        <ul>
+          <li><strong>Sildenafil 1-3 mg/kg PO q8-12h</strong> ✨ — most impactful intervention; ↑ exercise tolerance + survival</li>
+          <li>Tadalafil 1-2 mg/kg PO q24h — alternative</li>
+        </ul>
+
+        <p><strong>2. Anti-fibrotic (limited evidence in vet med)</strong></p>
+        <ul>
+          <li>Pirfenidone — used in human IPF; small case reports in dogs</li>
+          <li>Nintedanib — investigational</li>
+          <li>N-acetylcysteine 70 mg/kg PO q8-12h — antioxidant, may slow progression (limited evidence)</li>
+        </ul>
+
+        <p><strong>3. Glucocorticoids — controversial</strong></p>
+        <ul>
+          <li>Prednisone 0.5-1 mg/kg PO q12h short course for acute exacerbation</li>
+          <li>Long-term: limited benefit, side effects predominate</li>
+          <li>Inhaled fluticasone for cough symptom control</li>
+        </ul>
+
+        <p><strong>4. Bronchodilators</strong></p>
+        <ul>
+          <li>Theophylline ER 10 mg/kg PO q12h — for concurrent bronchitis</li>
+          <li>Inhaled albuterol PRN</li>
+        </ul>
+
+        <p><strong>5. Cough suppression</strong></p>
+        <ul>
+          <li>Hydrocodone 0.22 mg/kg PO q6-12h</li>
+          <li>Butorphanol</li>
+          <li>Maropitant, gabapentin (chronic refractory)</li>
+        </ul>
+
+        <p><strong>6. Supportive</strong></p>
+        <ul>
+          <li>Weight loss</li>
+          <li>Avoid heat, exertion, stress</li>
+          <li>Cool environment</li>
+          <li>Oxygen at home (severe — concentrator) for end-stage</li>
+          <li>Treat right CHF (furosemide carefully — preload sensitive)</li>
+          <li>Antibiotics ONLY if secondary infection documented</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck q3-6 months — RR, exercise tolerance, weight</li>
+          <li>Pulse ox</li>
+          <li>Echo for PH progression</li>
+          <li>Adjust palliative meds as needed</li>
+        </ul>
+
+        <p><strong>End-of-life:</strong></p>
+        <ul>
+          <li>Honest conversation with owners early — quality of life decisions</li>
+          <li>Hospice / palliative</li>
+          <li>Euthanasia when severe distress, refractory hypoxemia</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Pulmonary hypertension → cor pulmonale</strong> ✗</li>
+          <li>Acute exacerbation — rapid worsening over weeks</li>
+          <li>Secondary bacterial pneumonia</li>
+          <li>Pneumothorax (rare; bullae rupture)</li>
+          <li>Severe hypoxemia, syncope, collapse</li>
+          <li>Death from respiratory failure</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Median survival from diagnosis: 8-18 months</strong> in Westies</li>
+          <li>With sildenafil for PH: prolonged + better quality of life ✨</li>
+          <li>Slowly progressive but ultimately fatal</li>
+          <li>Acute exacerbation: poor — high mortality</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 23 · Pulmonary Thromboembolism (PTE) ---------- */
+  {
+    id: 'pulmonary-thromboembolism',
+    titleEn: 'Pulmonary Thromboembolism (PTE)',
+    titleTh: 'PTE — ลิ่มเลือดอุดในปอด',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['PTE', 'pulmonary embolism', 'IMHA', 'protein-losing nephropathy', 'hyperadrenocorticism', 'D-dimer', 'rivaroxaban', 'clopidogrel'],
+    aliases: ['pulmonary embolism', 'ลิ่มเลือดในปอด'],
+    source: 'Ch. 23 · pp. 367–370',
+    sections: {
+      definition: `
+        <p>Thrombus / embolus อุดตัน pulmonary arteries → V/Q mismatch + acute respiratory distress</p>
+        <ul>
+          <li>Underdiagnosed — ต้อง high index of suspicion</li>
+          <li>Acute, severe — high mortality if missed</li>
+          <li>มัก secondary to underlying pro-thrombotic disease</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Predisposing diseases (Virchow's triad):</strong></p>
+        <ul>
+          <li><strong>IMHA</strong> ✨ — most common in dogs (40-50% develop PTE)</li>
+          <li><strong>Protein-losing nephropathy (PLN, glomerular dz)</strong> — antithrombin loss</li>
+          <li><strong>Hyperadrenocorticism (Cushing's)</strong></li>
+          <li>Heartworm disease</li>
+          <li>Neoplasia (especially carcinoma, hemangiosarcoma)</li>
+          <li>Sepsis / DIC</li>
+          <li>Cardiac disease (uncommon in dogs; HCM in cats)</li>
+          <li>Pancreatitis, severe inflammatory disease</li>
+          <li>Recent surgery, prolonged recumbency</li>
+          <li>IV catheter, indwelling lines</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Thrombus (lower extremity DVT, cardiac, hepatic) → embolize to pulmonary arteries</li>
+          <li>Mechanical obstruction → V/Q mismatch → hypoxemia</li>
+          <li>Vasoactive substance release → bronchoconstriction, vasoconstriction</li>
+          <li>Acute right heart strain → ↓ CO, ↑ PA pressure</li>
+          <li>Chronic / recurrent: pulmonary hypertension</li>
+          <li>Lung infarction uncommon (rich collateral circulation)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Acute respiratory distress</strong> ✗ — sudden onset!</li>
+          <li>Severe tachypnea, dyspnea</li>
+          <li>Cyanosis</li>
+          <li>Hemoptysis (rare)</li>
+          <li>Cough, exercise intolerance</li>
+          <li>Syncope, collapse</li>
+          <li>Tachycardia</li>
+          <li>Auscultation: often unremarkable; sometimes pulmonary crackles, split S2 (PH)</li>
+          <li>Underlying disease signs</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis is challenging — high suspicion + supportive findings</strong></p>
+        <p><strong>Thoracic rad:</strong></p>
+        <ul>
+          <li>Often <strong>discordance between severe clinical signs + minimal radiographic abnormalities</strong> ✨ — classic finding</li>
+          <li>Possible findings:
+            <ul>
+              <li>Hyperlucent lung region (oligemia, "Westermark sign" — rare)</li>
+              <li>Truncated / blunted PA</li>
+              <li>RV enlargement, PA dilation</li>
+              <li>Wedge-shaped peripheral opacity (infarct, rare)</li>
+              <li>Pleural effusion (small amounts)</li>
+              <li>Generalized interstitial pattern</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Pulse ox / arterial blood gas:</strong></p>
+        <ul>
+          <li>Hypoxemia + hypocapnia (hyperventilation)</li>
+          <li>Widened A-a gradient ✨</li>
+          <li>SpO2 disproportionately low for radiographic findings</li>
+        </ul>
+        <p><strong>Echocardiography:</strong></p>
+        <ul>
+          <li>RV dilation, septal flattening (acute strain)</li>
+          <li>Estimate PA pressure (TR jet)</li>
+          <li>Visible thrombus (rare; large clot in main PA)</li>
+        </ul>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li><strong>D-dimer</strong> — sensitive but not specific (elevated in many conditions); negative makes PTE unlikely</li>
+          <li>Thromboelastography (TEG) — hypercoagulability</li>
+          <li>CBC: thrombocytopenia, anemia (IMHA), schistocytes</li>
+          <li>Biochem, UPC (PLN)</li>
+          <li>ACTH stim / LDDS (Cushing's)</li>
+          <li>Heartworm test</li>
+          <li>Coag panel: AT level, fibrinogen</li>
+        </ul>
+        <p><strong>Definitive imaging:</strong></p>
+        <ul>
+          <li><strong>CT pulmonary angiography</strong> ✨ — gold standard; shows filling defects in PA</li>
+          <li>V/Q scintigraphy — alternative</li>
+          <li>Conventional angiography — historical</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Cardiogenic pulmonary edema</li>
+          <li>ARDS / non-cardiogenic edema</li>
+          <li>Pneumonia</li>
+          <li>Hemorrhage (rodenticide, neoplasia)</li>
+          <li>Pleural effusion</li>
+          <li>Pneumothorax</li>
+          <li>Pulmonary hypertension (other causes)</li>
+          <li>Asthma (cat)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute stabilization:</strong></p>
+        <ul>
+          <li><strong>O2 supplementation</strong> — high concentration ✨</li>
+          <li>IV fluids — careful; avoid overload</li>
+          <li>Cage rest, minimal stress</li>
+          <li>Bronchodilator (terbutaline) for bronchospasm component</li>
+        </ul>
+
+        <p><strong>Anticoagulation (mainstay):</strong></p>
+        <ul>
+          <li><strong>Acute:</strong>
+            <ul>
+              <li>Unfractionated heparin 100-300 IU/kg IV bolus, then 200-300 IU/kg SC q6-8h or CRI 600-800 IU/kg/day — adjust by aPTT (1.5-2× baseline)</li>
+              <li>OR Enoxaparin (LMWH) 1-1.5 mg/kg SC q12h — easier monitoring</li>
+              <li>Dalteparin 50-100 IU/kg SC q12h</li>
+            </ul>
+          </li>
+          <li><strong>Chronic / outpatient:</strong>
+            <ul>
+              <li><strong>Rivaroxaban 0.5-1 mg/kg PO q24h (dog), 2.5 mg/cat PO q24h</strong> ✨ — direct factor Xa inhibitor; convenient PO; no monitoring needed</li>
+              <li>Apixaban 0.625 mg/cat PO q12h (cats)</li>
+              <li>Clopidogrel 2-4 mg/kg PO q24h (dog); 18.75 mg/cat q24h — antiplatelet adjunct</li>
+              <li>Warfarin — historic; difficult monitoring (PT/INR)</li>
+              <li>Aspirin 0.5-1 mg/kg PO q24h (dog); 81 mg/cat q72h — weak antiplatelet</li>
+            </ul>
+          </li>
+          <li>Duration: at least 4-6 wk past resolution of underlying cause; lifelong if persistent risk</li>
+        </ul>
+
+        <p><strong>Thrombolytic therapy (controversial, rarely used):</strong></p>
+        <ul>
+          <li>tPA, streptokinase — high risk of fatal hemorrhage</li>
+          <li>Reserved for life-threatening cases at referral centers</li>
+        </ul>
+
+        <p><strong>Treat underlying cause:</strong></p>
+        <ul>
+          <li>IMHA: immunosuppression (prednisone + azathioprine/cyclosporine)</li>
+          <li>PLN: ACEI/ARB, low-dose aspirin</li>
+          <li>Cushing's: trilostane / mitotane</li>
+          <li>Heartworm adulticide</li>
+          <li>Cancer: appropriate therapy</li>
+        </ul>
+
+        <p><strong>PH management:</strong></p>
+        <ul>
+          <li>Sildenafil 1-3 mg/kg PO q8-12h — reduce PA pressure</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical signs, RR, effort, exercise tolerance</li>
+          <li>aPTT (heparin), anti-Xa (LMWH)</li>
+          <li>CBC weekly initially (thrombocytopenia, hemorrhage)</li>
+          <li>Echo for PH</li>
+          <li>Imaging of underlying cause</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Death from acute respiratory failure</strong> ✗ — high mortality (~30-50%)</li>
+          <li>Recurrent PTE (without anticoagulation)</li>
+          <li>Chronic PH → cor pulmonale</li>
+          <li>Hemorrhage from anticoagulation (GI, urinary)</li>
+          <li>Underlying disease progression</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Acute massive PTE: <strong>poor</strong> — high mortality</li>
+          <li>Diagnosed + treated promptly: variable — depends on underlying disease</li>
+          <li>IMHA-associated PTE: 30-day mortality up to 50%</li>
+          <li>Resolved underlying disease + anticoagulation: survival possible</li>
+          <li>Chronic recurrent: PH development, guarded</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 24 · Pleural Effusion ---------- */
+  {
+    id: 'pleural-effusion',
+    titleEn: 'Pleural Effusion (Chylothorax / Pyothorax)',
+    titleTh: 'น้ำในช่องเยื่อหุ้มปอด',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['pleural effusion', 'chylothorax', 'pyothorax', 'transudate', 'exudate', 'thoracocentesis', 'rutin', 'thoracic duct ligation'],
+    aliases: ['chylothorax', 'pyothorax', 'น้ำในปอด', 'น้ำในช่องอก'],
+    source: 'Ch. 24 · pp. 371–380',
+    sections: {
+      definition: `
+        <p>การสะสมของของเหลวใน <strong>pleural space</strong> → restrictive ventilation → respiratory distress</p>
+        <ul>
+          <li>Cat &gt; dog (อาจเพราะ HCM-related effusion เจอบ่อย)</li>
+          <li>แบ่งตาม fluid type — transudate, modified transudate, exudate, chyle, hemorrhage</li>
+          <li>Always identify underlying cause — drainage alone ไม่พอ ✗</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>By fluid classification:</strong></p>
+        <ul>
+          <li><strong>Pure transudate</strong> (TP &lt; 2.5, cells &lt; 1500/µL):
+            <ul>
+              <li>Hypoalbuminemia (PLE, PLN, hepatic failure) — albumin &lt; 1.5 g/dL</li>
+            </ul>
+          </li>
+          <li><strong>Modified transudate</strong> (TP 2.5-5, cells 1000-7000/µL):
+            <ul>
+              <li>CHF (right-sided) ✨</li>
+              <li>Neoplasia (mediastinal, pulmonary)</li>
+              <li>Diaphragmatic hernia</li>
+              <li>Lung lobe torsion</li>
+              <li>Pericardial disease</li>
+            </ul>
+          </li>
+          <li><strong>Exudate</strong> (TP &gt; 3, cells &gt; 7000/µL):
+            <ul>
+              <li><strong>Pyothorax</strong> ✗ — septic exudate</li>
+              <li>FIP (cat) — non-septic, viscous, yellow ✨</li>
+              <li>Neoplasia</li>
+              <li>Sterile pleuritis</li>
+            </ul>
+          </li>
+          <li><strong>Chylothorax</strong>:
+            <ul>
+              <li>Idiopathic (most common in cats)</li>
+              <li>Cardiac disease (cat HCM, pericardial effusion)</li>
+              <li>Mediastinal mass / lymphoma</li>
+              <li>Trauma to thoracic duct</li>
+              <li>Heartworm</li>
+              <li>Lung lobe torsion</li>
+            </ul>
+          </li>
+          <li><strong>Hemothorax</strong>:
+            <ul>
+              <li>Trauma</li>
+              <li>Coagulopathy (rodenticide!)</li>
+              <li>Neoplasia (HSA, mediastinal)</li>
+              <li>Lung lobe torsion</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Pyothorax pathogens:</strong></p>
+        <ul>
+          <li>Cats: <em>Pasteurella, Bacteroides, Fusobacterium, Peptostreptococcus, Actinomyces</em> — bite wound origin common</li>
+          <li>Dogs: mixed aerobic + anaerobic; <em>Actinomyces, Nocardia</em>, Pasteurella, E. coli; grass awn migration possible</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Fluid in pleural space → ↓ lung expansion → restrictive ventilation</li>
+          <li>Tachypnea + shallow breathing</li>
+          <li>Severe → hypoxemia, respiratory failure</li>
+          <li>Bilateral fluid distribution typical (mediastinum incomplete in dog/cat)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Tachypnea, dyspnea</strong> — restrictive pattern (rapid shallow)</li>
+          <li>Open-mouth breathing (cat — severe distress) ✗</li>
+          <li>Cyanosis</li>
+          <li>Exercise intolerance</li>
+          <li>Cough (occasional)</li>
+          <li>Auscultation: <strong>muffled lung sounds ventrally, normal/loud dorsally</strong> ✨</li>
+          <li>Percussion: dull ventrally</li>
+          <li>↓ Compressibility of cranial thorax (mediastinal mass — esp. cat lymphoma)</li>
+          <li>Pyothorax: fever, lethargy, anorexia, weight loss</li>
+          <li>Chylothorax: chronic, may be subtle</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>POCUS / TFAST</strong> ✨ — quick, safe in dyspneic patient; identify fluid before rad</li>
+          <li>Thoracic rad: ventral fluid line, fissure lines, lobar shadows, scalloped lung edges, widened mediastinum
+            <ul>
+              <li>⚠️ <strong>Stabilize + drain before extensive imaging</strong> ✗ — dyspneic patients can decompensate</li>
+            </ul>
+          </li>
+          <li>Repeat rad post-thoracocentesis to assess underlying disease</li>
+          <li>Echocardiography — cardiac causes</li>
+          <li>CT (after stabilization) — mediastinal masses, lung pathology</li>
+        </ul>
+        <p><strong>Thoracocentesis (diagnostic + therapeutic):</strong></p>
+        <ul>
+          <li>Sample for analysis: EDTA tube + plain tube + culture tube</li>
+          <li>Fluid analysis: TP, cell count, cytology, triglycerides (chyle), glucose (sepsis), pH</li>
+          <li>Culture (aerobic + anaerobic) for exudates</li>
+          <li>See Thoracocentesis procedure entry</li>
+        </ul>
+        <p><strong>Fluid analysis interpretation:</strong></p>
+        <ul>
+          <li><strong>Chylothorax:</strong> milky white-pink, <em>triglycerides &gt; 100 mg/dL (and &gt; serum)</em> ✨; cholesterol normal-low; "chylomicrons" on cytology</li>
+          <li><strong>Pyothorax:</strong> turbid yellow-brown, neutrophils degenerate, <em>intracellular bacteria</em>, may smell foul</li>
+          <li><strong>FIP (cat):</strong> straw-yellow, viscous, high protein (&gt; 3.5 g/dL), low cellularity, A:G &lt; 0.4-0.6</li>
+          <li><strong>Hemothorax:</strong> PCV &gt; peripheral or ≥ 50% peripheral; doesn't clot (defibrinated)</li>
+          <li><strong>Modified transudate:</strong> intermediate; based on cause</li>
+        </ul>
+        <p><strong>Underlying cause workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (albumin!), urinalysis (UPC)</li>
+          <li>Coag panel, BMBT, AT</li>
+          <li>Heartworm test</li>
+          <li>FeLV/FIV (cat)</li>
+          <li>Coronavirus titer (FIP) + RT-PCR</li>
+          <li>Echo</li>
+        </ul>
+      `,
+      differential: `<p>ระหว่าง fluid types — see etiology above; correct identification เปลี่ยน management อย่างสิ้นเชิง</p>`,
+      treatment: `
+        <p><strong>Acute stabilization (always first):</strong></p>
+        <ul>
+          <li><strong>Therapeutic thoracocentesis</strong> ✨ — relieve dyspnea immediately</li>
+          <li>O2 supplementation</li>
+          <li>Minimal restraint, gentle handling (esp. cats!)</li>
+          <li>Mild sedation (butorphanol 0.2 mg/kg IM) for anxious patients</li>
+        </ul>
+
+        <p><strong>1. Modified transudate from CHF:</strong></p>
+        <ul>
+          <li>Treat underlying heart disease (see Heart Failure entry)</li>
+          <li>Furosemide, pimobendan, ACEI, spironolactone</li>
+          <li>Repeat thoracocentesis as needed for acute relief</li>
+        </ul>
+
+        <p><strong>2. Pyothorax:</strong></p>
+        <ul>
+          <li><strong>Indwelling thoracic drain (chest tube)</strong> ✨ — bilateral usually
+            <ul>
+              <li>Continuous suction or intermittent drainage q4-8h</li>
+              <li>Saline lavage 10-20 mL/kg through tube q12h</li>
+              <li>Maintain 5-10 days minimum</li>
+            </ul>
+          </li>
+          <li><strong>Antibiotics:</strong>
+            <ul>
+              <li>Empirical IV: ampicillin 22 mg/kg q8h + enrofloxacin (dog) 5-20 mg/kg q24h</li>
+              <li>Or amoxi-clav + metronidazole</li>
+              <li>Adjust per culture</li>
+              <li>Cats: avoid high-dose enrofloxacin (retinal toxicity)</li>
+              <li>Total duration: 4-8 weeks PO after IV phase</li>
+            </ul>
+          </li>
+          <li>Surgical exploration if: foreign body suspected, lung lobe torsion, refractory to medical mgmt &gt; 5-7 d</li>
+          <li>Prognosis: cats &gt; dogs (cats often recover with medical mgmt; dogs more often need surgery)</li>
+        </ul>
+
+        <p><strong>3. Chylothorax:</strong></p>
+        <ul>
+          <li>Identify + treat underlying cause (cardiac, mass) — many resolve</li>
+          <li><strong>Idiopathic chylothorax management:</strong>
+            <ul>
+              <li>Low-fat diet (medium-chain triglycerides)</li>
+              <li><strong>Rutin 50-100 mg/kg PO q8h</strong> — benzopyrone, may ↓ effusion (variable response)</li>
+              <li>Repeat thoracocentesis as needed</li>
+              <li>If no resolution in 2-3 months → surgery</li>
+            </ul>
+          </li>
+          <li><strong>Surgical (refractory):</strong>
+            <ul>
+              <li>Thoracic duct ligation (TDL) + subtotal pericardiectomy + cisterna chyli ablation</li>
+              <li>Success ~50-70%</li>
+              <li>Referral procedure</li>
+            </ul>
+          </li>
+          <li>Complication: fibrosing pleuritis (chronic chyle exposure → pleural thickening, restrictive)</li>
+        </ul>
+
+        <p><strong>4. FIP-associated effusion (cat):</strong></p>
+        <ul>
+          <li>Was historically grave</li>
+          <li><strong>GS-441524 antiviral</strong> ✨ — high cure rate now available; refer or research current protocol</li>
+          <li>Repeat thoracocentesis for symptomatic relief</li>
+          <li>Supportive care</li>
+        </ul>
+
+        <p><strong>5. Neoplastic effusion:</strong></p>
+        <ul>
+          <li>Diagnose tumor type (cytology, biopsy)</li>
+          <li>Mediastinal lymphoma (cat) — chemo (CHOP/COP) often dramatically responsive</li>
+          <li>Other tumors — palliative drainage + tumor-specific therapy</li>
+        </ul>
+
+        <p><strong>6. Hemothorax:</strong></p>
+        <ul>
+          <li>Stabilize: O2, IV fluids, blood transfusion if hemodynamically unstable</li>
+          <li>Identify cause:
+            <ul>
+              <li>Coagulopathy: vitamin K1 2.5 mg/kg PO q12h × 30 days; FFP if active bleed</li>
+              <li>Trauma: surgery if persistent active bleeding</li>
+              <li>Neoplasia: tumor management</li>
+            </ul>
+          </li>
+          <li>Avoid aggressive drainage (autotransfusion of blood may help)</li>
+        </ul>
+
+        <p><strong>7. Hypoalbuminemia transudate:</strong></p>
+        <ul>
+          <li>Treat underlying cause (PLE, PLN, hepatic dz)</li>
+          <li>Address albumin level (correct cause; rarely transfuse for symptoms)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Acute respiratory failure / death</li>
+          <li>Recurrent effusion</li>
+          <li>Fibrosing pleuritis (chronic chylothorax) → restrictive disease</li>
+          <li>Sepsis (pyothorax)</li>
+          <li>Pneumothorax (iatrogenic from drainage)</li>
+          <li>Lung trapped after long-standing effusion</li>
+          <li>Underlying disease progression</li>
+        </ul>
+        <p><strong>Prognosis (varies hugely by cause):</strong></p>
+        <ul>
+          <li>CHF-related: depends on heart disease management</li>
+          <li>Pyothorax: cats good (~ 65-80% with medical mgmt); dogs guarded (~ 50-65%, often need surgery)</li>
+          <li>Idiopathic chylothorax: variable; ~ 50% medical, ~ 70% surgical resolution</li>
+          <li>Lymphoma effusion: chemo response often excellent for cat mediastinal lymphoma</li>
+          <li>FIP: was poor; now good with GS-441524 ✨</li>
+          <li>Neoplastic (carcinoma, mesothelioma): poor</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 24 · Pneumothorax ---------- */
+  {
+    id: 'pneumothorax',
+    titleEn: 'Pneumothorax',
+    titleTh: 'ลมรั่วในช่องอก',
+    type: 'disease',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['pneumothorax', 'tension pneumothorax', 'spontaneous pneumothorax', 'bullae', 'thoracocentesis', 'chest tube'],
+    aliases: ['ลมในช่องอก', 'collapsed lung'],
+    source: 'Ch. 24 · pp. 380–384',
+    sections: {
+      definition: `
+        <p>อากาศใน <strong>pleural space</strong> → lung collapse + restrictive ventilation</p>
+        <ul>
+          <li>แบ่งเป็น <em>traumatic</em> (closed/open) vs <em>spontaneous</em> (primary/secondary)</li>
+          <li><strong>Tension pneumothorax</strong> = one-way valve → progressive air accumulation → cardiopulmonary collapse ✗ <em>emergency</em></li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Traumatic:</strong></p>
+        <ul>
+          <li>Blunt trauma (HBC, fall) — most common</li>
+          <li>Penetrating trauma (bite wound, stab)</li>
+          <li>Iatrogenic — thoracocentesis, lung biopsy, central line, mechanical ventilation</li>
+          <li>Tracheal/bronchial rupture</li>
+        </ul>
+        <p><strong>Spontaneous (no trauma):</strong></p>
+        <ul>
+          <li><strong>Primary:</strong> ruptured subpleural blebs/bullae — large breed dogs (Husky, GSD, Labrador) ✨</li>
+          <li><strong>Secondary:</strong> underlying lung disease
+            <ul>
+              <li>Severe asthma (cat — bullae rupture)</li>
+              <li>Pulmonary parasites (Paragonimus, Aelurostrongylus)</li>
+              <li>Neoplasia</li>
+              <li>Pneumonia (necrotizing)</li>
+              <li>Pulmonary abscess</li>
+              <li>Heartworm</li>
+              <li>IPF (rare)</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Tension pneumothorax:</strong> wound creates one-way valve → air enters but cannot exit</p>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Normal: pleural pressure negative → keeps lung expanded</li>
+          <li>Air enters → loss of negative pressure → lung collapse</li>
+          <li>↓ Tidal volume + V/Q mismatch → hypoxemia</li>
+          <li>Tension PTX: ↑ intrathoracic pressure → ↓ venous return → ↓ CO + cardiopulmonary collapse</li>
+          <li>Bilateral pneumothorax common (incomplete mediastinum in dog/cat)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Acute respiratory distress</strong> ✗</li>
+          <li>Tachypnea, restrictive pattern</li>
+          <li>Cyanosis</li>
+          <li>Open-mouth breathing</li>
+          <li>Auscultation: <strong>↓ lung sounds dorsally</strong> (vs effusion which is ventral) ✨</li>
+          <li>Percussion: <strong>hyperresonant dorsally</strong> ✨</li>
+          <li>Subcutaneous emphysema (penetrating trauma, tracheal/bronchial rupture)</li>
+          <li><strong>Tension PTX:</strong> rapid deterioration, severe distress, tachycardia, weak pulses, cyanosis ✗</li>
+          <li>Trauma history or known underlying disease</li>
+          <li>Spontaneous in healthy large breed: sudden onset distress at rest</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical:</strong> sudden distress + dorsal hyperresonance + history</p>
+        <p><strong>POCUS / TFAST:</strong> "<em>glide sign</em>" absent ✨ — quick bedside test; presence of glide rules out PTX in that area</p>
+        <p><strong>Thoracic rad:</strong></p>
+        <ul>
+          <li><strong>Lung edges retracted from chest wall</strong> ✨</li>
+          <li>Hyperlucent area without lung markings (peripheral)</li>
+          <li>Cardiac silhouette elevated from sternum (lateral) — "floating heart"</li>
+          <li>Look for bullae, underlying disease</li>
+          <li>⚠️ Don't delay treatment for radiographs in severe cases — drain first</li>
+        </ul>
+        <p><strong>CT (after stabilization):</strong> excellent for identifying bullae, underlying lung disease — preoperative for spontaneous PTX</p>
+        <p><strong>Workup for cause:</strong></p>
+        <ul>
+          <li>Heartworm, lungworm tests</li>
+          <li>Coag if hemothorax concurrent</li>
+          <li>Bronchoscopy if airway rupture suspected</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Severe pulmonary disease (asthma — air trapping but lung not collapsed)</li>
+          <li>Pleural effusion (different auscultation pattern)</li>
+          <li>Diaphragmatic hernia</li>
+          <li>Mediastinal mass</li>
+          <li>Cardiac tamponade</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Tension pneumothorax — immediate decompression ✗ (emergency)</strong></p>
+        <ul>
+          <li>Needle thoracocentesis without delay — 18-22 g needle/butterfly, dorsal 7th-9th ICS</li>
+          <li>O2 supplementation</li>
+          <li>Then proceed to chest tube</li>
+        </ul>
+
+        <p><strong>1. Acute stabilization:</strong></p>
+        <ul>
+          <li><strong>Thoracocentesis</strong> — both sides (assume bilateral) ✨
+            <ul>
+              <li>Dorsal aspect ICS 7-9 (air rises dorsally)</li>
+              <li>Aspirate air until negative pressure</li>
+              <li>3-way stopcock + extension set</li>
+            </ul>
+          </li>
+          <li>O2 supplementation</li>
+          <li>Minimal handling, sedation if anxious</li>
+          <li>IV access, fluids if hypovolemic (trauma)</li>
+        </ul>
+
+        <p><strong>2. Traumatic PTX:</strong></p>
+        <ul>
+          <li>Most resolve with thoracocentesis ± chest tube</li>
+          <li>Indwelling chest tube ถ้า:
+            <ul>
+              <li>Need repeat thoracocentesis &gt; 2-3 times</li>
+              <li>Continued large air leak</li>
+              <li>Tension PTX</li>
+              <li>Open / sucking chest wound</li>
+            </ul>
+          </li>
+          <li>Continuous suction (-5 to -15 cm H2O) or intermittent drainage q2-4h</li>
+          <li>Wound management for penetrating injury</li>
+          <li>Pain control: opioids (methadone, fentanyl, buprenorphine)</li>
+          <li>Antibiotics if open / contaminated wound</li>
+          <li>Most resolve in 2-5 days</li>
+        </ul>
+
+        <p><strong>3. Spontaneous PTX (especially primary with bullae):</strong></p>
+        <ul>
+          <li>Initial: thoracocentesis ± chest tube</li>
+          <li><strong>High recurrence rate (~ 50%)</strong> with medical management alone</li>
+          <li><strong>Surgical exploration recommended</strong> ✨ — partial lobectomy of affected lobe(s); bullae often multiple</li>
+          <li>CT preoperatively to localize lesions</li>
+          <li>Median sternotomy or thoracotomy</li>
+          <li>Cure rate after surgery &gt; 90%</li>
+        </ul>
+
+        <p><strong>4. Secondary spontaneous PTX:</strong></p>
+        <ul>
+          <li>Treat underlying disease (asthma, heartworm, neoplasia)</li>
+          <li>Drainage as needed</li>
+          <li>Pleurodesis (chemical or surgical) for refractory cases</li>
+          <li>Prognosis depends on underlying disease</li>
+        </ul>
+
+        <p><strong>Chest tube management:</strong></p>
+        <ul>
+          <li>Strict aseptic care — daily site cleaning</li>
+          <li>Heimlich valve or underwater seal</li>
+          <li>Document air production rate q2-4h</li>
+          <li>Remove when no air for 12-24h</li>
+        </ul>
+
+        <p><strong>Pain management essential</strong> — chest tubes painful</p>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Tension PTX → cardiopulmonary collapse / death</strong> ✗</li>
+          <li>Recurrent pneumothorax (esp. spontaneous primary)</li>
+          <li>Bilateral pneumothorax</li>
+          <li>Iatrogenic from thoracocentesis or chest tube placement</li>
+          <li>Subcutaneous emphysema</li>
+          <li>Pneumomediastinum</li>
+          <li>Chest tube complications: dislodgement, infection, pain, empyema</li>
+          <li>Lung damage from prolonged collapse (re-expansion pulmonary edema)</li>
+          <li>Pneumonia secondary to chest tube</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Traumatic: <strong>good</strong> if isolated, no other major injuries (~ 85-90% survive)</li>
+          <li>Spontaneous primary (bullae): excellent with surgery (~ 90% cure)</li>
+          <li>Spontaneous secondary: depends on underlying disease — guarded if neoplasia, severe asthma</li>
+          <li>Tension PTX recognized + treated promptly: good</li>
+          <li>Tension PTX missed: fatal</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 25 · Thoracocentesis (procedure) ---------- */
+  {
+    id: 'thoracocentesis',
+    titleEn: 'Thoracocentesis',
+    titleTh: 'Thoracocentesis — เจาะระบายช่องอก',
+    type: 'procedure',
+    system: 'respiratory',
+    species: ['dog', 'cat'],
+    tags: ['thoracocentesis', 'pleural tap', 'chest tap', 'pleural fluid', 'pleural air', 'emergency'],
+    aliases: ['pleural tap', 'chest tap', 'การเจาะช่องอก'],
+    source: 'Ch. 25 · pp. 385–387',
+    sections: {
+      indications: `
+        <p><strong>Therapeutic (life-saving):</strong></p>
+        <ul>
+          <li>Pleural effusion causing respiratory compromise</li>
+          <li>Pneumothorax — especially tension PTX ✗ <em>immediate</em></li>
+          <li>Hemothorax (cautious — preserve some blood for autotransfusion potential)</li>
+        </ul>
+        <p><strong>Diagnostic:</strong></p>
+        <ul>
+          <li>Sample pleural fluid for analysis</li>
+          <li>Confirm presence of fluid/air when imaging equivocal</li>
+        </ul>
+      `,
+      contraindications: `
+        <p><strong>Absolute:</strong></p>
+        <ul>
+          <li>None when life-threatening tension PTX or massive effusion → benefit &gt; risk</li>
+        </ul>
+        <p><strong>Relative (proceed with caution):</strong></p>
+        <ul>
+          <li><strong>Severe coagulopathy</strong> — correct first if time permits (vitamin K, FFP); proceed with smaller-bore needle if urgent</li>
+          <li>Severely uncooperative patient — sedate</li>
+          <li>Localized small pleural fluid pockets — use ultrasound guidance</li>
+          <li>Diaphragmatic hernia (abdominal organs herniated into thorax) — risk of organ puncture</li>
+          <li>Bullous lung disease — risk of creating PTX from another lung lobe</li>
+        </ul>
+      `,
+      preparation: `
+        <p><strong>Patient:</strong></p>
+        <ul>
+          <li>Position: <strong>standing or sternal recumbency preferred</strong> ✨ — ลด stress, keep diaphragm caudal
+            <ul>
+              <li>Lateral recumbency only if patient too weak to remain sternal</li>
+            </ul>
+          </li>
+          <li>O2 supplementation (flow-by, mask)</li>
+          <li>IV catheter (cephalic) — emergency drugs available</li>
+          <li>Pulse ox monitoring</li>
+          <li>Sedation usually NOT needed for cooperative patients; mild butorphanol 0.2 mg/kg IM if anxious</li>
+          <li>Avoid heavy sedation in dyspneic patient</li>
+          <li>Clip + aseptic prep at site</li>
+          <li>Local anesthetic: 2% lidocaine 1-3 mL infiltrate skin → intercostal muscles → parietal pleura (1 mL/kg max in cats)</li>
+        </ul>
+        <p><strong>Equipment:</strong></p>
+        <ul>
+          <li>Butterfly needle (19-21 g) for cats / small dogs (effusion)</li>
+          <li>18-20 g over-the-needle catheter (1.5-3 inch) for medium-large dogs</li>
+          <li>16-18 g for large dogs / thick fluid (pyothorax)</li>
+          <li>Extension tubing + 3-way stopcock + 20-60 mL syringe</li>
+          <li>EDTA tube + plain (red top) tube + culture tube + slides for cytology</li>
+          <li>Receptacle for collected fluid (basin / measuring container)</li>
+          <li>Ultrasound (recommended for guidance, especially localized fluid)</li>
+        </ul>
+        <p><strong>Site selection:</strong></p>
+        <ul>
+          <li><strong>Pleural fluid:</strong> 7th-8th ICS, ventral 1/3 of thorax (just dorsal to costochondral junction)</li>
+          <li><strong>Pneumothorax:</strong> 7th-9th ICS, dorsal 1/3 of thorax (air rises dorsally) ✨</li>
+          <li>Tap on the side with more fluid/air per imaging; if unclear, do bilateral</li>
+          <li>Approach <strong>cranial border of rib</strong> ✨ — intercostal vessels run on caudal border of rib (avoid)</li>
+          <li>For cats, often safer to enter at 7th-8th ICS</li>
+        </ul>
+      `,
+      steps: `
+        <ol style="font-family: var(--font-thai); font-size: 16px; line-height: 1.7; color: var(--ink); margin: 6px 0 10px 22px; padding: 0;">
+          <li><strong>Confirm site</strong> with palpation + ultrasound if available</li>
+          <li><strong>Aseptic prep + drape</strong></li>
+          <li><strong>Local anesthesia:</strong> infiltrate lidocaine SQ → intercostal muscle → parietal pleura</li>
+          <li><strong>Stab incision</strong> ด้วย #11 blade (1-2 mm) for catheter passage (optional for needle)</li>
+          <li><strong>Attach extension/stopcock/syringe</strong> to needle/catheter</li>
+          <li><strong>Insert needle perpendicular to skin</strong> at cranial border of rib
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Have assistant aspirate gently as you advance</li>
+              <li>"Pop" sensation when entering pleural space</li>
+            </ul>
+          </li>
+          <li><strong>Once in pleural space:</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>For catheter: advance cannula off stylet, withdraw stylet</li>
+              <li>Angle needle slightly cranially or parallel to chest wall to avoid lung puncture</li>
+            </ul>
+          </li>
+          <li><strong>Aspirate</strong> using stopcock + syringe; fluid or air should come freely
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Drain until negative pressure (resistance, no more fluid/air)</li>
+              <li>For large effusions: drain to dyspnea relief, NOT necessarily complete drainage (re-expansion edema risk)</li>
+            </ul>
+          </li>
+          <li><strong>Collect samples (first aliquot most representative):</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>EDTA — cytology, cell count</li>
+              <li>Plain — biochemistry (TP, glucose, triglycerides), settle for ?clot</li>
+              <li>Culture tube — aerobic ± anaerobic</li>
+              <li>Direct smear slides for in-house cytology</li>
+            </ul>
+          </li>
+          <li><strong>Document fluid characteristics:</strong> volume, color, turbidity, odor</li>
+          <li><strong>Watch ECG / patient response</strong> throughout — VPCs may indicate myocardial contact (withdraw 1-2 mm)</li>
+          <li><strong>If on contralateral side:</strong> repeat procedure (often bilateral, esp. cats due to incomplete mediastinum)</li>
+          <li><strong>Withdraw catheter/needle</strong> when drainage complete; press puncture site briefly</li>
+          <li><strong>Post-procedure rad/POCUS</strong> to assess remaining fluid/air + identify underlying disease (now that lung is expanded)</li>
+        </ol>
+      `,
+      complications: `
+        <p><strong>Common (mild):</strong></p>
+        <ul>
+          <li>Mild hemorrhage at puncture site</li>
+          <li>Vasovagal response — transient bradycardia</li>
+          <li>Failed aspiration (loculated fluid, wrong location, kinked catheter)</li>
+        </ul>
+        <p><strong>Serious (rare with good technique):</strong></p>
+        <ul>
+          <li><strong>Lung laceration → pneumothorax</strong> — most common serious complication</li>
+          <li>Hemorrhage from intercostal vessel laceration (avoid by entering at cranial border of rib)</li>
+          <li>Cardiac puncture (avoid by ventral approach not crossing midline)</li>
+          <li>Diaphragm puncture / abdominal organ injury (avoid going too caudal)</li>
+          <li>Re-expansion pulmonary edema (large chronic effusion drained too rapidly)</li>
+          <li>Pleural infection (poor aseptic technique)</li>
+          <li>Iatrogenic empyema if introducing bacteria</li>
+          <li>Sustained ventricular arrhythmia — withdraw needle</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li><strong>Monitor</strong> respiratory rate + effort, mucous membrane color, pulse ox for several hours post-procedure</li>
+          <li>Watch for re-accumulation of fluid/air → repeat thoracocentesis if dyspnea returns</li>
+          <li>Indications for indwelling chest tube placement:
+            <ul>
+              <li>Need for repeat thoracocentesis &gt; 2-3 times</li>
+              <li>Continued large air production (PTX)</li>
+              <li>Pyothorax (need lavage)</li>
+              <li>Tension PTX</li>
+            </ul>
+          </li>
+          <li>Submit fluid for analysis: TP, cell count, cytology, triglycerides (chyle), glucose (sepsis), pH, culture (exudate)</li>
+          <li>Repeat thoracic rad after stabilization to assess underlying disease (now visible without fluid)</li>
+          <li>Plan diagnostic workup for underlying cause — drainage alone ไม่พอ</li>
+          <li>Pain management if procedure was difficult or chest tube placed</li>
+          <li>Reassess hydration + electrolytes (especially with large effusion drainage)</li>
+        </ul>
+        <div class="callout">💡 <strong>Cats are stress-sensitive</strong> — minimize handling, do procedure with cat in sternal/standing if possible. Consider O2 + butorphanol pre-procedure. Quick + gentle technique saves lives</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
