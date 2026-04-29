@@ -1,1 +1,754 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FAFAF7" />
+  <title>PK · ส่วนตัว</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==================================================================
+       TOKENS — pride 6 colors + neutrals
+    ================================================================== */
+    :root {
+      --bg:        #FAFAF7;
+      --surface:   #FFFFFF;
+      --ink:       #161616;
+      --ink-soft:  #4A4A4A;
+      --ink-mute:  #8A8A8A;
+      --line:      #E8E5DD;
+
+      /* Pride flag (slightly tuned for harmony & readability) */
+      --red:    #E63946;
+      --orange: #F77F00;
+      --yellow: #D4A017;
+      --green:  #06A77D;
+      --blue:   #277DA1;
+      --purple: #7B2CBF;
+
+      /* soft tints for backgrounds */
+      --red-soft:    #FCE7E9;
+      --orange-soft: #FCEBD3;
+      --yellow-soft: #FBF1D5;
+      --green-soft:  #D7F2E9;
+      --blue-soft:   #DAE8F1;
+      --purple-soft: #ECDDF7;
+
+      --font-thai: 'IBM Plex Sans Thai Looped', system-ui, sans-serif;
+      --font-en:   'IBM Plex Sans', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+      --radius:    24px;
+      --radius-sm: 14px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:       #0E0E10;
+        --surface:  #18181B;
+        --ink:      #F5F5F5;
+        --ink-soft: #C7C7C7;
+        --ink-mute: #8A8A8A;
+        --line:     #2A2A2E;
+        --red-soft:    #2A1417;
+        --orange-soft: #2A1A0A;
+        --yellow-soft: #2A210F;
+        --green-soft:  #0F2620;
+        --blue-soft:   #112430;
+        --purple-soft: #1F1228;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-thai);
+      font-size: 17px;
+      line-height: 1.6;
+      letter-spacing: 0.005em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    /* ==================================================================
+       AMBIENT — floating colored blobs in background
+    ================================================================== */
+    .blobs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.22;
+      will-change: transform;
+    }
+    .blob.b1 { width: 280px; height: 280px; background: var(--red);    top: 4%;   left: -12%; animation: drift1 22s ease-in-out infinite; }
+    .blob.b2 { width: 340px; height: 340px; background: var(--purple); top: 38%;  right: -14%; animation: drift2 28s ease-in-out infinite; }
+    .blob.b3 { width: 240px; height: 240px; background: var(--green);  bottom: 6%; left: 18%;  animation: drift3 24s ease-in-out infinite; }
+    .blob.b4 { width: 180px; height: 180px; background: var(--orange); top: 60%;  left: 6%;   animation: drift1 30s ease-in-out infinite reverse; opacity: 0.18; }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      33%      { transform: translate(40px,-30px) scale(1.1); }
+      66%      { transform: translate(-30px,50px) scale(0.95); }
+    }
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50%      { transform: translate(-40px,30px) scale(1.15); }
+    }
+    @keyframes drift3 {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      40%      { transform: translate(50px,20px) scale(1.05); }
+      80%      { transform: translate(-20px,-40px) scale(0.92); }
+    }
+
+    /* ==================================================================
+       PRIDE BAR — flowing gradient line at top
+    ================================================================== */
+    .pride-bar {
+      height: 5px;
+      background: linear-gradient(90deg,
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple),
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple));
+      background-size: 200% 100%;
+      animation: flow 14s linear infinite;
+      position: relative;
+      z-index: 5;
+    }
+    @keyframes flow {
+      to { background-position: -200% 0; }
+    }
+
+    /* ==================================================================
+       LAYOUT
+    ================================================================== */
+    .wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 20px 32px;
+    }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 4px 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--purple));
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
+      animation: spin 14s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .brand-name {
+      font-family: var(--font-en);
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      letter-spacing: 0.05em;
+    }
+    .online {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(6,167,125,0.5); }
+      50%      { box-shadow: 0 0 0 6px rgba(6,167,125,0); }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 32px 4px 36px;
+      animation: heroIn 0.9s cubic-bezier(.2,.7,.2,1) both;
+    }
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .greet {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-family: var(--font-thai);
+      font-weight: 700;
+      font-size: clamp(56px, 16vw, 120px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .rainbow {
+      background: linear-gradient(90deg,
+        var(--red) 0%,
+        var(--orange) 18%,
+        var(--yellow) 36%,
+        var(--green) 54%,
+        var(--blue) 72%,
+        var(--purple) 90%,
+        var(--red) 100%);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+              background-clip: text;
+      -webkit-text-fill-color: transparent;
+              color: transparent;
+      animation: rainbowShift 9s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes rainbowShift {
+      0%, 100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+
+    .hero-name {
+      font-family: var(--font-thai);
+      font-weight: 500;
+      font-size: clamp(28px, 7vw, 48px);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .hero-name .name-strong {
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      font-size: clamp(17px, 4.4vw, 22px);
+      line-height: 1.5;
+      color: var(--ink-soft);
+      max-width: 540px;
+    }
+
+    /* ---------- Section label ---------- */
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 4px 18px;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    .section-label .lbl {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+    .section-label .count {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      letter-spacing: 0.05em;
+    }
+
+    /* ==================================================================
+       CARD GRID — mobile first, 1 col → 2 col → 3 col
+    ================================================================== */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 22px;
+      background: var(--c-soft);
+      border: 1.5px solid transparent;
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--ink);
+      min-height: 96px;
+      cursor: pointer;
+      overflow: hidden;
+      transform-origin: center;
+      transition:
+        transform 0.4s cubic-bezier(.2,.7,.2,1),
+        box-shadow 0.4s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* sweep highlight on hover */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255,255,255,0.55) 50%,
+        transparent 100%);
+      transform: translateX(-110%);
+      transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+      pointer-events: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      .card::before {
+        background: linear-gradient(120deg,
+          transparent 0%,
+          rgba(255,255,255,0.07) 50%,
+          transparent 100%);
+      }
+    }
+    .card:hover::before { transform: translateX(110%); }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--c-main);
+      box-shadow: 0 18px 40px -18px var(--c-shadow);
+    }
+    .card:active {
+      transform: translateY(-1px) scale(0.985);
+      transition-duration: 0.12s;
+    }
+
+    /* Icon bubble */
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--c-main);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
+    }
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.8;
+    }
+    .card:hover .card-icon {
+      transform: rotate(-6deg) scale(1.06);
+    }
+
+    /* Body */
+    .card-body { min-width: 0; }
+    .card-title {
+      font-family: var(--font-thai);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+      color: var(--c-main);
+      margin-bottom: 4px;
+      display: block;
+    }
+    .card-desc {
+      font-family: var(--font-thai);
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      font-weight: 400;
+      display: block;
+    }
+
+    /* Arrow */
+    .card-arrow {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--c-main);
+      display: grid;
+      place-items: center;
+      transition: transform 0.5s cubic-bezier(.2,.7,.2,1), background 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card-arrow svg { width: 18px; height: 18px; }
+    .card:hover .card-arrow {
+      transform: translateX(6px) rotate(-12deg);
+      background: var(--c-main);
+      color: #fff;
+    }
+
+    /* Per-card pride colors */
+    .card.c1 { --c-main: var(--red);    --c-soft: var(--red-soft);    --c-shadow: rgba(230,57,70,0.32); }
+    .card.c2 { --c-main: var(--orange); --c-soft: var(--orange-soft); --c-shadow: rgba(247,127,0,0.32); }
+    .card.c3 { --c-main: var(--yellow); --c-soft: var(--yellow-soft); --c-shadow: rgba(212,160,23,0.32); }
+    .card.c4 { --c-main: var(--green);  --c-soft: var(--green-soft);  --c-shadow: rgba(6,167,125,0.32); }
+    .card.c5 { --c-main: var(--blue);   --c-soft: var(--blue-soft);   --c-shadow: rgba(39,125,161,0.32); }
+    .card.c6 { --c-main: var(--purple); --c-soft: var(--purple-soft); --c-shadow: rgba(123,44,191,0.32); }
+
+    /* Staggered entrance */
+    .card {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: cardIn 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    .card.c1 { animation-delay: 0.10s; }
+    .card.c2 { animation-delay: 0.18s; }
+    .card.c3 { animation-delay: 0.26s; }
+    .card.c4 { animation-delay: 0.34s; }
+    .card.c5 { animation-delay: 0.42s; }
+    .card.c6 { animation-delay: 0.50s; }
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==================================================================
+       FOOTER
+    ================================================================== */
+    .foot {
+      margin-top: 40px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      letter-spacing: 0.06em;
+    }
+    .foot .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .foot .with-pride {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .foot .pride-mini {
+      width: 36px;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg,
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple));
+    }
+
+    /* ==================================================================
+       RESPONSIVE — tablet & desktop
+    ================================================================== */
+    @media (min-width: 640px) {
+      .wrap { padding: 24px 32px 48px; }
+      body { font-size: 18px; }
+      .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .card { padding: 24px 26px; min-height: 110px; }
+      .card-title { font-size: 26px; }
+      .card-desc { font-size: 16px; }
+      .card-icon { width: 60px; height: 60px; }
+    }
+
+    @media (min-width: 980px) {
+      .wrap { padding: 32px 40px 64px; }
+      .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+        padding: 32px;
+        min-height: 240px;
+        align-items: stretch;
+      }
+      .card-icon { width: 64px; height: 64px; }
+      .card-arrow {
+        position: absolute;
+        top: 32px;
+        right: 32px;
+      }
+      .card-body { align-self: end; }
+      .card-title { font-size: 28px; }
+      .hero { padding: 56px 0 60px; }
+    }
+
+    /* Reduced motion respect */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated pride bar -->
+  <div class="pride-bar"></div>
+
+  <!-- Ambient floating blobs -->
+  <div class="blobs">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- TOP BAR ---------------------------------------------------- -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="brand-name">pitipat</span>
+      </div>
+      <div class="meta">
+        <span class="online" aria-hidden="true"></span>
+        <span id="clock">--:--</span>
+      </div>
+    </header>
+
+    <!-- HERO -------------------------------------------------------- -->
+    <section class="hero">
+      <p class="greet" id="greet">GOOD EVENING</p>
+      <h1 class="hero-title"><span class="rainbow">สวัสดี</span></h1>
+      <p class="hero-name">ยินดีต้อนรับ <span class="name-strong">คุณพิทยา</span></p>
+      <p class="hero-sub">วันนี้อยากเริ่มที่ตรงไหนดี? เลือกห้องที่อยากเข้าได้เลยครับ</p>
+    </section>
+
+    <!-- SECTION LABEL ---------------------------------------------- -->
+    <div class="section-label">
+      <span class="lbl">เมนูหลัก · main</span>
+      <span class="count">6 ห้อง</span>
+    </div>
+
+    <!-- CARD GRID --------------------------------------------------- -->
+    <main class="grid">
+
+      <!-- 01 งานสอน · RED -->
+      <a class="card c1" href="#teaching" aria-label="งานสอน">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 5h13a2 2 0 0 1 2 2v12"/>
+            <path d="M3 5v14h13"/>
+            <path d="M7 9h7M7 12.5h5"/>
+            <circle cx="20" cy="20" r="1.5"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">งานสอน</span>
+          <span class="card-desc">ตารางสอน · เนื้อหาบรรยาย · งานนิสิต</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- 02 งานคลินิก · ORANGE -->
+      <a class="card c2" href="#clinic" aria-label="งานคลินิก">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3v6a4 4 0 0 0 8 0V3"/>
+            <path d="M7.5 3h1.5M15 3h1.5"/>
+            <path d="M12 13v3a4 4 0 0 0 4 4a3 3 0 0 0 3-3v-2"/>
+            <circle cx="19" cy="13" r="2"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">งานคลินิก</span>
+          <span class="card-desc">เคสคนไข้ · ตารางตรวจ · บันทึกการรักษา</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- 03 งานบ้าน · YELLOW -->
+      <a class="card c3" href="#home" aria-label="งานบ้าน">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 11l9-7 9 7"/>
+            <path d="M5 10v10h14V10"/>
+            <path d="M10 20v-6h4v6"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">งานบ้าน</span>
+          <span class="card-desc">งานที่ต้องทำ · บิลค่าใช้จ่าย · ของในบ้าน</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- 04 กิน-เที่ยว · GREEN -->
+      <a class="card c4" href="#leisure" aria-label="กิน-เที่ยว">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3 12h18"/>
+            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">กิน · เที่ยว</span>
+          <span class="card-desc">ร้านที่อยากลอง · ทริปในใจ · บันทึกการเดินทาง</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- 05 บัญชี · BLUE -->
+      <a class="card c5" href="#finance" aria-label="บัญชี">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 20h18"/>
+            <path d="M6 20V11M11 20V6M16 20v-7M21 20V4"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">บัญชี</span>
+          <span class="card-desc">รายรับ-รายจ่าย · งบประมาณ · การลงทุน</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- 06 ตั้งค่า · PURPLE -->
+      <a class="card c6" href="#settings" aria-label="ตั้งค่า">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">ตั้งค่า</span>
+          <span class="card-desc">โปรไฟล์ · ธีม · การแจ้งเตือน · สำรองข้อมูล</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
+
+    </main>
+
+    <!-- FOOTER ----------------------------------------------------- -->
+    <footer class="foot">
+      <div class="row">
+        <span>© pitipat · 2026</span>
+        <span class="with-pride">
+          <span>made with pride</span>
+          <span class="pride-mini" aria-hidden="true"></span>
+        </span>
+      </div>
+      <span id="todayLong">วันที่ -</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // Live clock (HH:MM)
+    function tickClock() {
+      const d = new Date();
+      const hh = String(d.getHours()).padStart(2,'0');
+      const mm = String(d.getMinutes()).padStart(2,'0');
+      const el = document.getElementById('clock');
+      if (el) el.textContent = `${hh}:${mm}`;
+    }
+    tickClock();
+    setInterval(tickClock, 30 * 1000);
+
+    // Greeting based on hour
+    (function () {
+      const h = new Date().getHours();
+      let g = 'GOOD EVENING';
+      if (h < 5)        g = 'LATE NIGHT';
+      else if (h < 12)  g = 'GOOD MORNING';
+      else if (h < 17)  g = 'GOOD AFTERNOON';
+      else if (h < 21)  g = 'GOOD EVENING';
+      else              g = 'GOOD NIGHT';
+      const el = document.getElementById('greet');
+      if (el) el.textContent = g;
+    })();
+
+    // Today (Thai-friendly long date)
+    (function () {
+      const days = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
+      const months = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน',
+                      'กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+      const d = new Date();
+      const yearTH = d.getFullYear() + 543;
+      const txt = `วัน${days[d.getDay()]}ที่ ${d.getDate()} ${months[d.getMonth()]} พ.ศ. ${yearTH}`;
+      const el = document.getElementById('todayLong');
+      if (el) el.textContent = txt;
+    })();
+
+    // Subtle haptic nudge on tap (mobile vibration if supported)
+    document.querySelectorAll('.card').forEach(c => {
+      c.addEventListener('click', () => {
+        if (navigator.vibrate) navigator.vibrate(8);
+      });
+    });
+  </script>
+</body>
+</html>
 
