@@ -10,6 +10,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- Supabase JS SDK (must load before our auth code) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Early auth gate: peek at Supabase's localStorage cache to avoid lock-screen flash for logged-in users -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      try {
+        // Supabase stores session under sb-<project-ref>-auth-token
+        var hasCachedSession = !!localStorage.getItem('sb-bxlyctricjayindvcfjo-auth-token');
+        if (hasCachedSession) {
+          // Looks logged in — hide everything until JS verifies
+          d.classList.add('checking');
+        } else {
+          // Definitely not logged in — show lock screen immediately
+          d.classList.add('locked');
+        }
+      } catch (e) {
+        d.classList.add('locked');
+      }
+    })();
+  </script>
+
   <style>
     /* ==================================================================
        TOKENS — pride 6 colors + neutrals
@@ -222,9 +245,11 @@
       font-family: var(--font-thai);
       font-weight: 700;
       font-size: clamp(56px, 16vw, 120px);
-      line-height: 1;
-      letter-spacing: -0.02em;
+      line-height: 1.25;            /* room for Thai upper diacritics (ั ี ิ ื etc.) */
+      letter-spacing: -0.01em;
       margin-bottom: 8px;
+      padding-top: 0.12em;          /* extra headroom so background-clip:text doesn't crop */
+      overflow: visible;
     }
     .rainbow {
       background: linear-gradient(90deg,
@@ -242,6 +267,8 @@
               color: transparent;
       animation: rainbowShift 9s ease-in-out infinite;
       display: inline-block;
+      line-height: 1.25;
+      padding: 0.12em 0.04em;        /* prevents top/side glyph clipping */
     }
     @keyframes rainbowShift {
       0%, 100% { background-position: 0% 50%; }
@@ -481,6 +508,455 @@
     }
 
     /* ==================================================================
+       LOCK SCREEN
+    ================================================================== */
+    html.checking .wrap,
+    html.checking .lock-screen { visibility: hidden; }
+    html.locked   .wrap        { visibility: hidden; }
+    html.locked   body         { overflow: hidden; }
+
+    .lock-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+      overflow: hidden;
+    }
+    html.locked .lock-screen { display: flex; }
+
+    .lock-screen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(230,57,70,0.22), transparent 45%),
+        radial-gradient(circle at 82% 28%, rgba(123,44,191,0.22), transparent 45%),
+        radial-gradient(circle at 60% 82%, rgba(6,167,125,0.20), transparent 45%),
+        radial-gradient(circle at 22% 80%, rgba(247,127,0,0.18), transparent 45%);
+      filter: blur(20px);
+      animation: lockBg 18s ease-in-out infinite;
+    }
+    @keyframes lockBg {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50%      { transform: scale(1.08) rotate(2deg); }
+    }
+
+    .lock-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 38px 28px 28px;
+      text-align: center;
+      box-shadow: 0 30px 70px -28px rgba(22,22,22,0.20);
+      animation: lockIn 0.7s cubic-bezier(.2,.7,.2,1);
+    }
+    @keyframes lockIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .pride-bar-mini {
+      width: 64px;
+      height: 6px;
+      border-radius: 3px;
+      margin: 0 auto 22px;
+      background: linear-gradient(90deg,
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple),
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple));
+      background-size: 200% 100%;
+      animation: flow 8s linear infinite;
+    }
+
+    .lock-title {
+      font-family: var(--font-thai);
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 1.25;
+      letter-spacing: -0.005em;
+      padding: 0.12em 0.04em;
+      background: linear-gradient(90deg,
+        var(--red) 0%, var(--orange) 18%, var(--yellow) 36%,
+        var(--green) 54%, var(--blue) 72%, var(--purple) 90%, var(--red) 100%);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+              background-clip: text;
+      -webkit-text-fill-color: transparent;
+              color: transparent;
+      animation: rainbowShift 9s ease-in-out infinite;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .lock-sub {
+      font-family: var(--font-thai);
+      font-size: 17px;
+      color: var(--ink-soft);
+      margin-bottom: 26px;
+    }
+
+    .input-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .input-wrap input {
+      width: 100%;
+      font-family: var(--font-thai);
+      font-size: 18px;
+      font-weight: 500;
+      padding: 16px 50px 16px 18px;
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      -webkit-appearance: none;
+    }
+    .input-wrap input::placeholder { color: var(--ink-mute); }
+    .input-wrap input:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 4px rgba(123,44,191,0.14);
+    }
+    .input-wrap .eye {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: 0;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--ink-mute);
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .input-wrap .eye:hover { color: var(--purple); background: var(--purple-soft); }
+    .input-wrap .eye svg { width: 22px; height: 22px; }
+
+    .btn {
+      width: 100%;
+      font-family: var(--font-thai);
+      font-weight: 600;
+      font-size: 18px;
+      padding: 16px 18px;
+      border: 0;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--surface);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .btn-primary > * { position: relative; z-index: 1; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(22,22,22,0.45); }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: translateY(0); transition-duration: 0.1s; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink-soft);
+      border: 1.5px solid var(--line);
+    }
+    .btn-secondary:hover { background: var(--bg); color: var(--ink); }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--red);
+      border: 1.5px solid var(--red-soft);
+    }
+    .btn-danger:hover { background: var(--red-soft); }
+
+    /* Google sign-in button */
+    .btn-google {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1.5px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 18px;
+      font-size: 17px;
+      font-weight: 600;
+      position: relative;
+      overflow: visible;
+      z-index: 1;
+    }
+    .btn-google .g-logo {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .btn-google::after {
+      /* rainbow ring on hover */
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 17px;
+      background: linear-gradient(90deg,
+        var(--red), var(--orange), var(--yellow),
+        var(--green), var(--blue), var(--purple),
+        var(--red));
+      background-size: 200% 100%;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+      animation: flow 6s linear infinite;
+    }
+    .btn-google:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -12px rgba(22,22,22,0.20);
+      border-color: transparent;
+    }
+    .btn-google:hover::after { opacity: 1; }
+    .btn-google:active { transform: translateY(0); transition-duration: 0.1s; }
+    .btn-google:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .btn-google:disabled:hover::after { opacity: 0; }
+
+    .lock-sub-note {
+      font-family: var(--font-thai);
+      font-size: 13px;
+      color: var(--ink-mute);
+      margin-top: 14px;
+    }
+
+    .msg {
+      font-family: var(--font-thai);
+      font-size: 14px;
+      min-height: 1.4em;
+      margin-bottom: 12px;
+      text-align: left;
+      line-height: 1.4;
+    }
+    .msg.error   { color: var(--red); }
+    .msg.success { color: var(--green); }
+
+    .lock-card.shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97); }
+    @keyframes shake {
+      10%, 90% { transform: translateX(-2px); }
+      20%, 80% { transform: translateX(4px); }
+      30%, 50%, 70% { transform: translateX(-8px); }
+      40%, 60% { transform: translateX(8px); }
+    }
+
+    .lock-hint {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--ink-mute);
+      margin-top: 22px;
+    }
+
+    /* ==================================================================
+       MODAL (Settings)
+    ================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(22,22,22,0.45);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-backdrop.show { opacity: 1; pointer-events: auto; }
+
+    .modal {
+      position: fixed;
+      z-index: 1000;
+      background: var(--surface);
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 22px 22px 32px;
+      left: 0; right: 0; bottom: 0;
+      max-height: 92vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.42s cubic-bezier(.2,.7,.2,1);
+      padding-bottom: calc(32px + env(safe-area-inset-bottom, 0));
+      box-shadow: 0 -20px 50px -20px rgba(22,22,22,0.25);
+    }
+    .modal.show { transform: translateY(0); }
+
+    .modal::before {
+      content: '';
+      display: block;
+      width: 44px; height: 4px;
+      background: var(--line);
+      border-radius: 2px;
+      margin: 0 auto 18px;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 0 4px;
+    }
+    .modal-head h3 {
+      font-family: var(--font-thai);
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--ink);
+    }
+    .modal-close {
+      width: 38px; height: 38px;
+      border: 0;
+      background: var(--bg);
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      color: var(--ink-soft);
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .modal-close:hover {
+      background: var(--purple-soft);
+      color: var(--purple);
+      transform: rotate(90deg);
+    }
+    .modal-close svg { width: 18px; height: 18px; }
+
+    .modal-section {
+      padding: 18px 4px;
+      border-top: 1px solid var(--line);
+    }
+    .modal-section:first-of-type { border-top: 0; padding-top: 4px; }
+    .modal-section h4 {
+      font-family: var(--font-thai);
+      font-weight: 600;
+      font-size: 19px;
+      margin-bottom: 4px;
+      color: var(--ink);
+    }
+    .modal-section .desc {
+      font-family: var(--font-thai);
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-thai);
+      font-weight: 500;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .status-pill .dotpill {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .status-pill.on  { background: var(--green-soft); color: var(--green); }
+    .status-pill.on  .dotpill { background: var(--green); }
+    .status-pill.off { background: var(--orange-soft); color: var(--orange); }
+    .status-pill.off .dotpill { background: var(--orange); }
+
+    /* Account card in settings modal */
+    .account-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .account-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--purple-soft);
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+    .account-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .account-name {
+      font-family: var(--font-thai);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .account-email {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-row .btn { flex: 1; min-width: 140px; }
+
+    @media (min-width: 640px) {
+      .modal {
+        left: 50%; right: auto;
+        bottom: auto; top: 50%;
+        transform: translate(-50%, -45%) scale(0.96);
+        opacity: 0;
+        max-width: 480px;
+        width: calc(100% - 48px);
+        border-radius: var(--radius);
+        padding: 28px 28px 28px;
+      }
+      .modal.show {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      .modal::before { display: none; }
+    }
+
+    /* ==================================================================
        RESPONSIVE — tablet & desktop
     ================================================================== */
     @media (min-width: 640px) {
@@ -526,6 +1002,29 @@
   </style>
 </head>
 <body>
+
+  <!-- ==================================================================
+       LOCK SCREEN (only visible when html.locked)
+  ================================================================== -->
+  <div class="lock-screen" aria-modal="true" role="dialog" aria-label="ล็อกอินเข้าสู่ระบบ">
+    <div class="lock-card" id="lockCard">
+      <div class="pride-bar-mini" aria-hidden="true"></div>
+      <div class="lock-title">สวัสดี</div>
+      <p class="lock-sub">เว็บส่วนตัวของ Alex</p>
+      <p class="msg error" id="loginMsg" aria-live="polite"></p>
+      <button class="btn btn-google" type="button" id="googleSignInBtn">
+        <svg class="g-logo" viewBox="0 0 18 18" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/>
+          <path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/>
+          <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z"/>
+        </svg>
+        <span>เข้าสู่ระบบด้วย Google</span>
+      </button>
+      <p class="lock-sub-note">เฉพาะอีเมลที่ได้รับอนุญาตเท่านั้น</p>
+      <p class="lock-hint">PRIVATE · 6 ROOMS · WITH PRIDE</p>
+    </div>
+  </div>
 
   <!-- Animated pride bar -->
   <div class="pride-bar"></div>
@@ -671,7 +1170,7 @@
       </a>
 
       <!-- 06 ตั้งค่า · PURPLE -->
-      <a class="card c6" href="#settings" aria-label="ตั้งค่า">
+      <a class="card c6" href="#settings" data-action="open-settings" aria-label="ตั้งค่า">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"/>
@@ -680,7 +1179,7 @@
         </span>
         <span class="card-body">
           <span class="card-title">ตั้งค่า</span>
-          <span class="card-desc">โปรไฟล์ · ธีม · การแจ้งเตือน · สำรองข้อมูล</span>
+          <span class="card-desc">รหัสผ่าน · โปรไฟล์ · ธีม · การแจ้งเตือน</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -703,6 +1202,53 @@
       <span id="todayLong">วันที่ -</span>
     </footer>
 
+  </div>
+
+  <!-- ==================================================================
+       SETTINGS MODAL + BACKDROP
+  ================================================================== -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+
+  <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-label="ตั้งค่า">
+    <div class="modal-head">
+      <h3>ตั้งค่า</h3>
+      <button class="modal-close" id="modalClose" aria-label="ปิด">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Account section -->
+    <section class="modal-section">
+      <h4>บัญชี Google</h4>
+      <p class="desc">Alex ล็อกอินด้วยบัญชีนี้</p>
+
+      <div class="account-card" id="accountCard">
+        <img class="account-avatar" id="accountAvatar" alt="" />
+        <div class="account-info">
+          <div class="account-name" id="accountName">—</div>
+          <div class="account-email" id="accountEmail">—</div>
+        </div>
+        <span class="status-pill on" style="margin-bottom:0">
+          <span class="dotpill"></span> ผ่านการยืนยัน
+        </span>
+      </div>
+    </section>
+
+    <!-- Logout section -->
+    <section class="modal-section" id="logoutSection">
+      <h4>ออกจากระบบ</h4>
+      <p class="desc">ครั้งหน้าที่เปิดเว็บนี้ Alex จะต้องล็อกอินใหม่</p>
+      <button class="btn btn-secondary" id="logoutBtn" type="button">ออกจากระบบ</button>
+    </section>
+
+    <!-- Security note -->
+    <section class="modal-section">
+      <p class="desc" style="margin-bottom:0; font-size:13px;">
+        🔐 ระบบยืนยันตัวตนผ่าน Google + Supabase — ปลอดภัย เข้ารหัสตามมาตรฐาน เฉพาะอีเมลที่ Alex อนุญาตเท่านั้นที่เข้าได้
+      </p>
+    </section>
   </div>
 
   <script>
@@ -747,6 +1293,147 @@
       c.addEventListener('click', () => {
         if (navigator.vibrate) navigator.vibrate(8);
       });
+    });
+
+    /* ===========================================================
+       AUTH SYSTEM — Supabase Google Sign-in
+       Email whitelist: only ALLOWED_EMAILS can access
+    =========================================================== */
+    const SUPABASE_URL      = 'https://bxlyctricjayindvcfjo.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4bHljdHJpY2pheWluZHZjZmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NDE2NTAsImV4cCI6MjA5MzAxNzY1MH0.8b-UqK-SW1dOyZ0WhAC5NBns8lAe1kTgn2xJMiHvaRA';
+
+    // Whitelist (lowercase). Add more emails here later if needed.
+    const ALLOWED_EMAILS = ['carnitab@gmail.com'];
+
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // --- DOM refs ----------
+    const root          = document.documentElement;
+    const lockCard      = document.getElementById('lockCard');
+    const loginMsg      = document.getElementById('loginMsg');
+    const googleBtn     = document.getElementById('googleSignInBtn');
+    const backdrop      = document.getElementById('modalBackdrop');
+    const settingsModal = document.getElementById('settingsModal');
+    const modalClose    = document.getElementById('modalClose');
+    const logoutBtn     = document.getElementById('logoutBtn');
+    const accountAvatar = document.getElementById('accountAvatar');
+    const accountName   = document.getElementById('accountName');
+    const accountEmail  = document.getElementById('accountEmail');
+
+    // --- Helpers ----------
+    function showLock() {
+      root.classList.remove('checking');
+      root.classList.add('locked');
+    }
+    function showDashboard() {
+      root.classList.remove('checking');
+      root.classList.remove('locked');
+    }
+    function flashError(msg) {
+      loginMsg.textContent = msg;
+      lockCard.classList.remove('shake');
+      void lockCard.offsetWidth;
+      lockCard.classList.add('shake');
+      if (navigator.vibrate) navigator.vibrate([40, 40, 40]);
+    }
+    function isAllowed(email) {
+      return email && ALLOWED_EMAILS.includes(email.toLowerCase());
+    }
+    function fillAccount(user) {
+      const meta = user.user_metadata || {};
+      accountName.textContent  = meta.full_name || meta.name || user.email || '—';
+      accountEmail.textContent = user.email || '—';
+      const avatar = meta.avatar_url || meta.picture;
+      if (avatar) {
+        accountAvatar.src = avatar;
+        accountAvatar.style.display = 'block';
+      } else {
+        accountAvatar.style.display = 'none';
+      }
+    }
+
+    // --- Initial session check ----------
+    (async function initAuth() {
+      const { data: { session } } = await sb.auth.getSession();
+      if (session && isAllowed(session.user.email)) {
+        fillAccount(session.user);
+        showDashboard();
+      } else if (session) {
+        // Logged in but not whitelisted — sign out and show error
+        await sb.auth.signOut();
+        showLock();
+        flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
+      } else {
+        showLock();
+      }
+    })();
+
+    // --- Listen for auth changes (handles OAuth callback) ----------
+    sb.auth.onAuthStateChange(async (event, session) => {
+      if (event === 'SIGNED_IN' && session) {
+        if (isAllowed(session.user.email)) {
+          fillAccount(session.user);
+          showDashboard();
+          loginMsg.textContent = '';
+          if (navigator.vibrate) navigator.vibrate([10, 30, 10]);
+        } else {
+          await sb.auth.signOut();
+          showLock();
+          flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
+        }
+      } else if (event === 'SIGNED_OUT') {
+        showLock();
+      }
+    });
+
+    // --- Google Sign-in button ----------
+    googleBtn && googleBtn.addEventListener('click', async () => {
+      googleBtn.disabled = true;
+      loginMsg.textContent = '';
+      const { error } = await sb.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          // Return to the same page after OAuth completes
+          redirectTo: window.location.origin + window.location.pathname,
+        },
+      });
+      if (error) {
+        googleBtn.disabled = false;
+        flashError('เกิดข้อผิดพลาด: ' + error.message);
+      }
+      // On success, browser navigates away to Google → we won't reach here
+    });
+
+    /* ----- Settings modal ----- */
+    function openSettings() {
+      backdrop.classList.add('show');
+      settingsModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSettings() {
+      backdrop.classList.remove('show');
+      settingsModal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+    modalClose && modalClose.addEventListener('click', closeSettings);
+    backdrop   && backdrop.addEventListener('click', closeSettings);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && settingsModal.classList.contains('show')) closeSettings();
+    });
+    document.querySelectorAll('[data-action="open-settings"]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openSettings();
+      });
+    });
+
+    // --- Logout ----------
+    logoutBtn && logoutBtn.addEventListener('click', async () => {
+      logoutBtn.disabled = true;
+      await sb.auth.signOut();
+      closeSettings();
+      // onAuthStateChange listener will handle showing the lock screen
+      logoutBtn.disabled = false;
     });
   </script>
 </body>
