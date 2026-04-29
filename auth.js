@@ -1,0 +1,224 @@
+/* ============================================================
+   PK · shared auth + UI module
+   Used by every page in the site:
+   - Initializes Supabase client
+   - Injects lock screen (only shown when not authed)
+   - Injects settings modal (opened by any [data-action="open-settings"])
+   - Wires Google Sign-in + email whitelist
+   - Universal clock + eye-toggle helpers
+   ============================================================ */
+(function () {
+  'use strict';
+
+  // ---------- Configuration --------------------------------------
+  const SUPABASE_URL      = 'https://bxlyctricjayindvcfjo.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4bHljdHJpY2pheWluZHZjZmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NDE2NTAsImV4cCI6MjA5MzAxNzY1MH0.8b-UqK-SW1dOyZ0WhAC5NBns8lAe1kTgn2xJMiHvaRA';
+  const ALLOWED_EMAILS    = ['carnitab@gmail.com'];
+
+  // ---------- HTML templates -------------------------------------
+  const lockScreenHTML = `
+    <div class="lock-screen" aria-modal="true" role="dialog" aria-label="ล็อกอินเข้าสู่ระบบ">
+      <div class="lock-card" id="lockCard">
+        <div class="pride-bar-mini" aria-hidden="true"></div>
+        <div class="lock-title">สวัสดี</div>
+        <p class="lock-sub">เว็บส่วนตัวของ Alex</p>
+        <p class="msg error" id="loginMsg" aria-live="polite"></p>
+        <button class="btn btn-google" type="button" id="googleSignInBtn">
+          <svg class="g-logo" viewBox="0 0 18 18" aria-hidden="true">
+            <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/>
+            <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/>
+            <path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/>
+            <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z"/>
+          </svg>
+          <span>เข้าสู่ระบบด้วย Google</span>
+        </button>
+        <p class="lock-sub-note">เฉพาะอีเมลที่ได้รับอนุญาตเท่านั้น</p>
+        <p class="lock-hint">PRIVATE · WITH PRIDE</p>
+      </div>
+    </div>
+  `;
+
+  const settingsModalHTML = `
+    <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+    <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-label="ตั้งค่า">
+      <div class="modal-head">
+        <h3>ตั้งค่า</h3>
+        <button class="modal-close" id="modalClose" aria-label="ปิด">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+      <section class="modal-section">
+        <h4>บัญชี Google</h4>
+        <p class="desc">Alex ล็อกอินด้วยบัญชีนี้</p>
+        <div class="account-card" id="accountCard">
+          <img class="account-avatar" id="accountAvatar" alt="" />
+          <div class="account-info">
+            <div class="account-name" id="accountName">—</div>
+            <div class="account-email" id="accountEmail">—</div>
+          </div>
+          <span class="status-pill on" style="margin-bottom:0">
+            <span class="dotpill"></span> ผ่านการยืนยัน
+          </span>
+        </div>
+      </section>
+      <section class="modal-section" id="logoutSection">
+        <h4>ออกจากระบบ</h4>
+        <p class="desc">ครั้งหน้าที่เปิดเว็บนี้ Alex จะต้องล็อกอินใหม่</p>
+        <button class="btn btn-secondary" id="logoutBtn" type="button">ออกจากระบบ</button>
+      </section>
+      <section class="modal-section">
+        <p class="desc" style="margin-bottom:0; font-size:13px;">
+          🔐 ระบบยืนยันตัวตนผ่าน Google + Supabase — ปลอดภัย เข้ารหัสตามมาตรฐาน เฉพาะอีเมลที่ Alex อนุญาตเท่านั้นที่เข้าได้
+        </p>
+      </section>
+    </div>
+  `;
+
+  // ---------- Inject UI -----------------------------------------
+  document.body.insertAdjacentHTML('afterbegin', lockScreenHTML);
+  document.body.insertAdjacentHTML('beforeend',  settingsModalHTML);
+
+  // ---------- Supabase client -----------------------------------
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // ---------- DOM references ------------------------------------
+  const root          = document.documentElement;
+  const lockCard      = document.getElementById('lockCard');
+  const loginMsg      = document.getElementById('loginMsg');
+  const googleBtn     = document.getElementById('googleSignInBtn');
+  const backdrop      = document.getElementById('modalBackdrop');
+  const settingsModal = document.getElementById('settingsModal');
+  const modalClose    = document.getElementById('modalClose');
+  const logoutBtn     = document.getElementById('logoutBtn');
+  const accountAvatar = document.getElementById('accountAvatar');
+  const accountName   = document.getElementById('accountName');
+  const accountEmail  = document.getElementById('accountEmail');
+
+  // ---------- Helpers -------------------------------------------
+  function showLock()      { root.classList.remove('checking'); root.classList.add('locked'); }
+  function showDashboard() { root.classList.remove('checking'); root.classList.remove('locked'); }
+  function isAllowed(email){ return email && ALLOWED_EMAILS.includes(email.toLowerCase()); }
+
+  function flashError(msg) {
+    loginMsg.textContent = msg;
+    lockCard.classList.remove('shake');
+    void lockCard.offsetWidth;
+    lockCard.classList.add('shake');
+    if (navigator.vibrate) navigator.vibrate([40, 40, 40]);
+  }
+
+  function fillAccount(user) {
+    const meta = user.user_metadata || {};
+    accountName.textContent  = meta.full_name || meta.name || user.email || '—';
+    accountEmail.textContent = user.email || '—';
+    const avatar = meta.avatar_url || meta.picture;
+    if (avatar) {
+      accountAvatar.src = avatar;
+      accountAvatar.style.display = 'block';
+    } else {
+      accountAvatar.style.display = 'none';
+    }
+  }
+
+  // ---------- Initial session check ------------------------------
+  (async function initAuth() {
+    const { data: { session } } = await sb.auth.getSession();
+    if (session && isAllowed(session.user.email)) {
+      fillAccount(session.user);
+      showDashboard();
+    } else if (session) {
+      await sb.auth.signOut();
+      showLock();
+      flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
+    } else {
+      showLock();
+    }
+  })();
+
+  // ---------- Auth state listener (handles OAuth callback) -------
+  sb.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'SIGNED_IN' && session) {
+      if (isAllowed(session.user.email)) {
+        fillAccount(session.user);
+        showDashboard();
+        loginMsg.textContent = '';
+        if (navigator.vibrate) navigator.vibrate([10, 30, 10]);
+      } else {
+        await sb.auth.signOut();
+        showLock();
+        flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
+      }
+    } else if (event === 'SIGNED_OUT') {
+      showLock();
+    }
+  });
+
+  // ---------- Google Sign-in -------------------------------------
+  googleBtn && googleBtn.addEventListener('click', async () => {
+    googleBtn.disabled = true;
+    loginMsg.textContent = '';
+    const { error } = await sb.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + window.location.pathname },
+    });
+    if (error) {
+      googleBtn.disabled = false;
+      flashError('เกิดข้อผิดพลาด: ' + error.message);
+    }
+  });
+
+  // ---------- Settings modal -------------------------------------
+  function openSettings() {
+    backdrop.classList.add('show');
+    settingsModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSettings() {
+    backdrop.classList.remove('show');
+    settingsModal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  modalClose && modalClose.addEventListener('click', closeSettings);
+  backdrop   && backdrop.addEventListener('click', closeSettings);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && settingsModal.classList.contains('show')) closeSettings();
+  });
+  document.querySelectorAll('[data-action="open-settings"]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openSettings();
+    });
+  });
+
+  // ---------- Logout ---------------------------------------------
+  logoutBtn && logoutBtn.addEventListener('click', async () => {
+    logoutBtn.disabled = true;
+    await sb.auth.signOut();
+    closeSettings();
+    logoutBtn.disabled = false;
+  });
+
+  // ---------- Universal clock (any page with id="clock") ---------
+  function tickClock() {
+    const el = document.getElementById('clock');
+    if (!el) return;
+    const d = new Date();
+    el.textContent = String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+  }
+  tickClock();
+  setInterval(tickClock, 30000);
+
+  // ---------- Card haptic feedback (any element with .card) ------
+  document.querySelectorAll('.card').forEach(c => {
+    c.addEventListener('click', () => {
+      if (navigator.vibrate) navigator.vibrate(8);
+    });
+  });
+
+  // ---------- Expose for other pages -----------------------------
+  window.PK = { supabase: sb, ALLOWED_EMAILS };
+
+})();

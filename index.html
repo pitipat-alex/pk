@@ -10,1021 +10,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Supabase JS SDK (must load before our auth code) -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Early auth gate: peek at Supabase's localStorage cache to avoid lock-screen flash for logged-in users -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     (function () {
       var d = document.documentElement;
       try {
-        // Supabase stores session under sb-<project-ref>-auth-token
         var hasCachedSession = !!localStorage.getItem('sb-bxlyctricjayindvcfjo-auth-token');
-        if (hasCachedSession) {
-          // Looks logged in — hide everything until JS verifies
-          d.classList.add('checking');
-        } else {
-          // Definitely not logged in — show lock screen immediately
-          d.classList.add('locked');
-        }
-      } catch (e) {
-        d.classList.add('locked');
-      }
+        if (hasCachedSession) d.classList.add('checking');
+        else d.classList.add('locked');
+      } catch (e) { d.classList.add('locked'); }
     })();
   </script>
-
-  <style>
-    /* ==================================================================
-       TOKENS — pride 6 colors + neutrals
-    ================================================================== */
-    :root {
-      --bg:        #FAFAF7;
-      --surface:   #FFFFFF;
-      --ink:       #161616;
-      --ink-soft:  #4A4A4A;
-      --ink-mute:  #8A8A8A;
-      --line:      #E8E5DD;
-
-      /* Pride flag (slightly tuned for harmony & readability) */
-      --red:    #E63946;
-      --orange: #F77F00;
-      --yellow: #D4A017;
-      --green:  #06A77D;
-      --blue:   #277DA1;
-      --purple: #7B2CBF;
-
-      /* soft tints for backgrounds */
-      --red-soft:    #FCE7E9;
-      --orange-soft: #FCEBD3;
-      --yellow-soft: #FBF1D5;
-      --green-soft:  #D7F2E9;
-      --blue-soft:   #DAE8F1;
-      --purple-soft: #ECDDF7;
-
-      --font-thai: 'Noto Serif Thai', 'Noto Serif', Georgia, serif;
-      --font-en:   'IBM Plex Sans', system-ui, sans-serif;
-      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
-
-      --radius:    24px;
-      --radius-sm: 14px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg:       #0E0E10;
-        --surface:  #18181B;
-        --ink:      #F5F5F5;
-        --ink-soft: #C7C7C7;
-        --ink-mute: #8A8A8A;
-        --line:     #2A2A2E;
-        --red-soft:    #2A1417;
-        --orange-soft: #2A1A0A;
-        --yellow-soft: #2A210F;
-        --green-soft:  #0F2620;
-        --blue-soft:   #112430;
-        --purple-soft: #1F1228;
-      }
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-thai);
-      font-size: 17px;
-      line-height: 1.6;
-      letter-spacing: 0.005em;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      min-height: 100vh;
-      overflow-x: hidden;
-      padding-bottom: env(safe-area-inset-bottom, 0);
-    }
-
-    /* ==================================================================
-       AMBIENT — floating colored blobs in background
-    ================================================================== */
-    .blobs {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.22;
-      will-change: transform;
-    }
-    .blob.b1 { width: 280px; height: 280px; background: var(--red);    top: 4%;   left: -12%; animation: drift1 22s ease-in-out infinite; }
-    .blob.b2 { width: 340px; height: 340px; background: var(--purple); top: 38%;  right: -14%; animation: drift2 28s ease-in-out infinite; }
-    .blob.b3 { width: 240px; height: 240px; background: var(--green);  bottom: 6%; left: 18%;  animation: drift3 24s ease-in-out infinite; }
-    .blob.b4 { width: 180px; height: 180px; background: var(--orange); top: 60%;  left: 6%;   animation: drift1 30s ease-in-out infinite reverse; opacity: 0.18; }
-
-    @keyframes drift1 {
-      0%, 100% { transform: translate(0,0) scale(1); }
-      33%      { transform: translate(40px,-30px) scale(1.1); }
-      66%      { transform: translate(-30px,50px) scale(0.95); }
-    }
-    @keyframes drift2 {
-      0%, 100% { transform: translate(0,0) scale(1); }
-      50%      { transform: translate(-40px,30px) scale(1.15); }
-    }
-    @keyframes drift3 {
-      0%, 100% { transform: translate(0,0) scale(1); }
-      40%      { transform: translate(50px,20px) scale(1.05); }
-      80%      { transform: translate(-20px,-40px) scale(0.92); }
-    }
-
-    /* ==================================================================
-       PRIDE BAR — flowing gradient line at top
-    ================================================================== */
-    .pride-bar {
-      height: 5px;
-      background: linear-gradient(90deg,
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple),
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple));
-      background-size: 200% 100%;
-      animation: flow 14s linear infinite;
-      position: relative;
-      z-index: 5;
-    }
-    @keyframes flow {
-      to { background-position: -200% 0; }
-    }
-
-    /* ==================================================================
-       LAYOUT
-    ================================================================== */
-    .wrap {
-      position: relative;
-      z-index: 2;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 18px 20px 32px;
-    }
-
-    /* ---------- Top bar ---------- */
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 4px 18px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--red), var(--purple));
-      box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line);
-      animation: spin 14s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    .brand-name {
-      font-family: var(--font-en);
-      font-weight: 600;
-      font-size: 16px;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-    }
-    .meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ink-mute);
-      letter-spacing: 0.05em;
-    }
-    .online {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(6,167,125,0.5); }
-      50%      { box-shadow: 0 0 0 6px rgba(6,167,125,0); }
-    }
-
-    /* ---------- Hero ---------- */
-    .hero {
-      padding: 32px 4px 36px;
-      animation: heroIn 0.9s cubic-bezier(.2,.7,.2,1) both;
-    }
-    @keyframes heroIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .greet {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-bottom: 14px;
-    }
-
-    .hero-title {
-      font-family: var(--font-thai);
-      font-weight: 700;
-      font-size: clamp(56px, 16vw, 120px);
-      line-height: 1.25;            /* room for Thai upper diacritics (ั ี ิ ื etc.) */
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-      padding-top: 0.12em;          /* extra headroom so background-clip:text doesn't crop */
-      overflow: visible;
-    }
-    .rainbow {
-      background: linear-gradient(90deg,
-        var(--red) 0%,
-        var(--orange) 18%,
-        var(--yellow) 36%,
-        var(--green) 54%,
-        var(--blue) 72%,
-        var(--purple) 90%,
-        var(--red) 100%);
-      background-size: 300% 100%;
-      -webkit-background-clip: text;
-              background-clip: text;
-      -webkit-text-fill-color: transparent;
-              color: transparent;
-      animation: rainbowShift 9s ease-in-out infinite;
-      display: inline-block;
-      line-height: 1.25;
-      padding: 0.12em 0.04em;        /* prevents top/side glyph clipping */
-    }
-    @keyframes rainbowShift {
-      0%, 100% { background-position: 0% 50%; }
-      50%      { background-position: 100% 50%; }
-    }
-
-    .hero-name {
-      font-family: var(--font-thai);
-      font-weight: 500;
-      font-size: clamp(28px, 7vw, 48px);
-      line-height: 1.2;
-      color: var(--ink);
-      margin-bottom: 18px;
-    }
-    .hero-name .name-strong {
-      font-weight: 700;
-    }
-
-    .hero-sub {
-      font-size: clamp(17px, 4.4vw, 22px);
-      line-height: 1.5;
-      color: var(--ink-soft);
-      max-width: 540px;
-    }
-
-    /* ---------- Section label ---------- */
-    .section-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 4px 18px;
-      border-top: 1px solid var(--line);
-      margin-top: 12px;
-    }
-    .section-label .lbl {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-    }
-    .section-label .count {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ink-mute);
-      letter-spacing: 0.05em;
-    }
-
-    /* ==================================================================
-       CARD GRID — mobile first, 1 col → 2 col → 3 col
-    ================================================================== */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .card {
-      position: relative;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 22px;
-      background: var(--c-soft);
-      border: 1.5px solid transparent;
-      border-radius: var(--radius);
-      text-decoration: none;
-      color: var(--ink);
-      min-height: 96px;
-      cursor: pointer;
-      overflow: hidden;
-      transform-origin: center;
-      transition:
-        transform 0.4s cubic-bezier(.2,.7,.2,1),
-        box-shadow 0.4s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* sweep highlight on hover */
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg,
-        transparent 0%,
-        rgba(255,255,255,0.55) 50%,
-        transparent 100%);
-      transform: translateX(-110%);
-      transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
-      pointer-events: none;
-    }
-    @media (prefers-color-scheme: dark) {
-      .card::before {
-        background: linear-gradient(120deg,
-          transparent 0%,
-          rgba(255,255,255,0.07) 50%,
-          transparent 100%);
-      }
-    }
-    .card:hover::before { transform: translateX(110%); }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--c-main);
-      box-shadow: 0 18px 40px -18px var(--c-shadow);
-    }
-    .card:active {
-      transform: translateY(-1px) scale(0.985);
-      transition-duration: 0.12s;
-    }
-
-    /* Icon bubble */
-    .card-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: var(--c-main);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
-    }
-    .card-icon svg {
-      width: 28px;
-      height: 28px;
-      stroke-width: 1.8;
-    }
-    .card:hover .card-icon {
-      transform: rotate(-6deg) scale(1.06);
-    }
-
-    /* Body */
-    .card-body { min-width: 0; }
-    .card-title {
-      font-family: var(--font-thai);
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 1.2;
-      letter-spacing: -0.005em;
-      color: var(--c-main);
-      margin-bottom: 4px;
-      display: block;
-    }
-    .card-desc {
-      font-family: var(--font-thai);
-      font-size: 15px;
-      line-height: 1.45;
-      color: var(--ink-soft);
-      font-weight: 400;
-      display: block;
-    }
-
-    /* Arrow */
-    .card-arrow {
-      flex-shrink: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--surface);
-      color: var(--c-main);
-      display: grid;
-      place-items: center;
-      transition: transform 0.5s cubic-bezier(.2,.7,.2,1), background 0.3s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-    .card-arrow svg { width: 18px; height: 18px; }
-    .card:hover .card-arrow {
-      transform: translateX(6px) rotate(-12deg);
-      background: var(--c-main);
-      color: #fff;
-    }
-
-    /* Per-card pride colors */
-    .card.c1 { --c-main: var(--red);    --c-soft: var(--red-soft);    --c-shadow: rgba(230,57,70,0.32); }
-    .card.c2 { --c-main: var(--orange); --c-soft: var(--orange-soft); --c-shadow: rgba(247,127,0,0.32); }
-    .card.c3 { --c-main: var(--yellow); --c-soft: var(--yellow-soft); --c-shadow: rgba(212,160,23,0.32); }
-    .card.c4 { --c-main: var(--green);  --c-soft: var(--green-soft);  --c-shadow: rgba(6,167,125,0.32); }
-    .card.c5 { --c-main: var(--blue);   --c-soft: var(--blue-soft);   --c-shadow: rgba(39,125,161,0.32); }
-    .card.c6 { --c-main: var(--purple); --c-soft: var(--purple-soft); --c-shadow: rgba(123,44,191,0.32); }
-
-    /* Staggered entrance */
-    .card {
-      opacity: 0;
-      transform: translateY(24px);
-      animation: cardIn 0.7s cubic-bezier(.2,.7,.2,1) forwards;
-    }
-    .card.c1 { animation-delay: 0.10s; }
-    .card.c2 { animation-delay: 0.18s; }
-    .card.c3 { animation-delay: 0.26s; }
-    .card.c4 { animation-delay: 0.34s; }
-    .card.c5 { animation-delay: 0.42s; }
-    .card.c6 { animation-delay: 0.50s; }
-    @keyframes cardIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ==================================================================
-       FOOTER
-    ================================================================== */
-    .foot {
-      margin-top: 40px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      align-items: flex-start;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ink-mute);
-      letter-spacing: 0.06em;
-    }
-    .foot .row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .foot .with-pride {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .foot .pride-mini {
-      width: 36px;
-      height: 6px;
-      border-radius: 3px;
-      background: linear-gradient(90deg,
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple));
-    }
-
-    /* ==================================================================
-       LOCK SCREEN
-    ================================================================== */
-    html.checking .wrap,
-    html.checking .lock-screen { visibility: hidden; }
-    html.locked   .wrap        { visibility: hidden; }
-    html.locked   body         { overflow: hidden; }
-
-    .lock-screen {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      background: var(--bg);
-      overflow: hidden;
-    }
-    html.locked .lock-screen { display: flex; }
-
-    .lock-screen::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 18% 22%, rgba(230,57,70,0.22), transparent 45%),
-        radial-gradient(circle at 82% 28%, rgba(123,44,191,0.22), transparent 45%),
-        radial-gradient(circle at 60% 82%, rgba(6,167,125,0.20), transparent 45%),
-        radial-gradient(circle at 22% 80%, rgba(247,127,0,0.18), transparent 45%);
-      filter: blur(20px);
-      animation: lockBg 18s ease-in-out infinite;
-    }
-    @keyframes lockBg {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50%      { transform: scale(1.08) rotate(2deg); }
-    }
-
-    .lock-card {
-      position: relative;
-      width: 100%;
-      max-width: 420px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 38px 28px 28px;
-      text-align: center;
-      box-shadow: 0 30px 70px -28px rgba(22,22,22,0.20);
-      animation: lockIn 0.7s cubic-bezier(.2,.7,.2,1);
-    }
-    @keyframes lockIn {
-      from { opacity: 0; transform: translateY(28px) scale(0.96); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .pride-bar-mini {
-      width: 64px;
-      height: 6px;
-      border-radius: 3px;
-      margin: 0 auto 22px;
-      background: linear-gradient(90deg,
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple),
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple));
-      background-size: 200% 100%;
-      animation: flow 8s linear infinite;
-    }
-
-    .lock-title {
-      font-family: var(--font-thai);
-      font-weight: 700;
-      font-size: 44px;
-      line-height: 1.25;
-      letter-spacing: -0.005em;
-      padding: 0.12em 0.04em;
-      background: linear-gradient(90deg,
-        var(--red) 0%, var(--orange) 18%, var(--yellow) 36%,
-        var(--green) 54%, var(--blue) 72%, var(--purple) 90%, var(--red) 100%);
-      background-size: 300% 100%;
-      -webkit-background-clip: text;
-              background-clip: text;
-      -webkit-text-fill-color: transparent;
-              color: transparent;
-      animation: rainbowShift 9s ease-in-out infinite;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .lock-sub {
-      font-family: var(--font-thai);
-      font-size: 17px;
-      color: var(--ink-soft);
-      margin-bottom: 26px;
-    }
-
-    .input-wrap {
-      position: relative;
-      margin-bottom: 12px;
-    }
-    .input-wrap input {
-      width: 100%;
-      font-family: var(--font-thai);
-      font-size: 18px;
-      font-weight: 500;
-      padding: 16px 50px 16px 18px;
-      border: 1.5px solid var(--line);
-      border-radius: 14px;
-      background: var(--bg);
-      color: var(--ink);
-      outline: none;
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-      -webkit-appearance: none;
-    }
-    .input-wrap input::placeholder { color: var(--ink-mute); }
-    .input-wrap input:focus {
-      border-color: var(--purple);
-      box-shadow: 0 0 0 4px rgba(123,44,191,0.14);
-    }
-    .input-wrap .eye {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: 0;
-      padding: 8px;
-      cursor: pointer;
-      color: var(--ink-mute);
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      transition: color 0.2s ease, background 0.2s ease;
-    }
-    .input-wrap .eye:hover { color: var(--purple); background: var(--purple-soft); }
-    .input-wrap .eye svg { width: 22px; height: 22px; }
-
-    .btn {
-      width: 100%;
-      font-family: var(--font-thai);
-      font-weight: 600;
-      font-size: 18px;
-      padding: 16px 18px;
-      border: 0;
-      border-radius: 14px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
-      -webkit-tap-highlight-color: transparent;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-primary {
-      background: var(--ink);
-      color: var(--surface);
-    }
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg,
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple));
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-    .btn-primary > * { position: relative; z-index: 1; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(22,22,22,0.45); }
-    .btn-primary:hover::before { opacity: 1; }
-    .btn-primary:active { transform: translateY(0); transition-duration: 0.1s; }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--ink-soft);
-      border: 1.5px solid var(--line);
-    }
-    .btn-secondary:hover { background: var(--bg); color: var(--ink); }
-
-    .btn-danger {
-      background: transparent;
-      color: var(--red);
-      border: 1.5px solid var(--red-soft);
-    }
-    .btn-danger:hover { background: var(--red-soft); }
-
-    /* Google sign-in button */
-    .btn-google {
-      background: var(--surface);
-      color: var(--ink);
-      border: 1.5px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 18px 18px;
-      font-size: 17px;
-      font-weight: 600;
-      position: relative;
-      overflow: visible;
-      z-index: 1;
-    }
-    .btn-google .g-logo {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-    }
-    .btn-google::after {
-      /* rainbow ring on hover */
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 17px;
-      background: linear-gradient(90deg,
-        var(--red), var(--orange), var(--yellow),
-        var(--green), var(--blue), var(--purple),
-        var(--red));
-      background-size: 200% 100%;
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 0.4s ease;
-      animation: flow 6s linear infinite;
-    }
-    .btn-google:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px -12px rgba(22,22,22,0.20);
-      border-color: transparent;
-    }
-    .btn-google:hover::after { opacity: 1; }
-    .btn-google:active { transform: translateY(0); transition-duration: 0.1s; }
-    .btn-google:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .btn-google:disabled:hover::after { opacity: 0; }
-
-    .lock-sub-note {
-      font-family: var(--font-thai);
-      font-size: 13px;
-      color: var(--ink-mute);
-      margin-top: 14px;
-    }
-
-    .msg {
-      font-family: var(--font-thai);
-      font-size: 14px;
-      min-height: 1.4em;
-      margin-bottom: 12px;
-      text-align: left;
-      line-height: 1.4;
-    }
-    .msg.error   { color: var(--red); }
-    .msg.success { color: var(--green); }
-
-    .lock-card.shake { animation: shake 0.5s cubic-bezier(.36,.07,.19,.97); }
-    @keyframes shake {
-      10%, 90% { transform: translateX(-2px); }
-      20%, 80% { transform: translateX(4px); }
-      30%, 50%, 70% { transform: translateX(-8px); }
-      40%, 60% { transform: translateX(8px); }
-    }
-
-    .lock-hint {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      color: var(--ink-mute);
-      margin-top: 22px;
-    }
-
-    /* ==================================================================
-       MODAL (Settings)
-    ================================================================== */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 900;
-      background: rgba(22,22,22,0.45);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-backdrop.show { opacity: 1; pointer-events: auto; }
-
-    .modal {
-      position: fixed;
-      z-index: 1000;
-      background: var(--surface);
-      border-radius: var(--radius) var(--radius) 0 0;
-      padding: 22px 22px 32px;
-      left: 0; right: 0; bottom: 0;
-      max-height: 92vh;
-      overflow-y: auto;
-      transform: translateY(100%);
-      transition: transform 0.42s cubic-bezier(.2,.7,.2,1);
-      padding-bottom: calc(32px + env(safe-area-inset-bottom, 0));
-      box-shadow: 0 -20px 50px -20px rgba(22,22,22,0.25);
-    }
-    .modal.show { transform: translateY(0); }
-
-    .modal::before {
-      content: '';
-      display: block;
-      width: 44px; height: 4px;
-      background: var(--line);
-      border-radius: 2px;
-      margin: 0 auto 18px;
-    }
-
-    .modal-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      padding: 0 4px;
-    }
-    .modal-head h3 {
-      font-family: var(--font-thai);
-      font-weight: 700;
-      font-size: 28px;
-      color: var(--ink);
-    }
-    .modal-close {
-      width: 38px; height: 38px;
-      border: 0;
-      background: var(--bg);
-      border-radius: 50%;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      color: var(--ink-soft);
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-    .modal-close:hover {
-      background: var(--purple-soft);
-      color: var(--purple);
-      transform: rotate(90deg);
-    }
-    .modal-close svg { width: 18px; height: 18px; }
-
-    .modal-section {
-      padding: 18px 4px;
-      border-top: 1px solid var(--line);
-    }
-    .modal-section:first-of-type { border-top: 0; padding-top: 4px; }
-    .modal-section h4 {
-      font-family: var(--font-thai);
-      font-weight: 600;
-      font-size: 19px;
-      margin-bottom: 4px;
-      color: var(--ink);
-    }
-    .modal-section .desc {
-      font-family: var(--font-thai);
-      font-size: 14px;
-      color: var(--ink-soft);
-      margin-bottom: 14px;
-      line-height: 1.55;
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-thai);
-      font-weight: 500;
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    .status-pill .dotpill {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    .status-pill.on  { background: var(--green-soft); color: var(--green); }
-    .status-pill.on  .dotpill { background: var(--green); }
-    .status-pill.off { background: var(--orange-soft); color: var(--orange); }
-    .status-pill.off .dotpill { background: var(--orange); }
-
-    /* Account card in settings modal */
-    .account-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 16px;
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-    }
-    .account-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--purple-soft);
-      flex-shrink: 0;
-      object-fit: cover;
-    }
-    .account-info {
-      flex: 1;
-      min-width: 0;
-    }
-    .account-name {
-      font-family: var(--font-thai);
-      font-weight: 600;
-      font-size: 16px;
-      color: var(--ink);
-      margin-bottom: 2px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .account-email {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ink-mute);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .btn-row .btn { flex: 1; min-width: 140px; }
-
-    @media (min-width: 640px) {
-      .modal {
-        left: 50%; right: auto;
-        bottom: auto; top: 50%;
-        transform: translate(-50%, -45%) scale(0.96);
-        opacity: 0;
-        max-width: 480px;
-        width: calc(100% - 48px);
-        border-radius: var(--radius);
-        padding: 28px 28px 28px;
-      }
-      .modal.show {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-      .modal::before { display: none; }
-    }
-
-    /* ==================================================================
-       RESPONSIVE — tablet & desktop
-    ================================================================== */
-    @media (min-width: 640px) {
-      .wrap { padding: 24px 32px 48px; }
-      body { font-size: 18px; }
-      .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .card { padding: 24px 26px; min-height: 110px; }
-      .card-title { font-size: 26px; }
-      .card-desc { font-size: 16px; }
-      .card-icon { width: 60px; height: 60px; }
-    }
-
-    @media (min-width: 980px) {
-      .wrap { padding: 32px 40px 64px; }
-      .grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-      .card {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 20px;
-        padding: 32px;
-        min-height: 240px;
-        align-items: stretch;
-      }
-      .card-icon { width: 64px; height: 64px; }
-      .card-arrow {
-        position: absolute;
-        top: 32px;
-        right: 32px;
-      }
-      .card-body { align-self: end; }
-      .card-title { font-size: 28px; }
-      .hero { padding: 56px 0 60px; }
-    }
-
-    /* Reduced motion respect */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
 </head>
 <body>
-
-  <!-- ==================================================================
-       LOCK SCREEN (only visible when html.locked)
-  ================================================================== -->
-  <div class="lock-screen" aria-modal="true" role="dialog" aria-label="ล็อกอินเข้าสู่ระบบ">
-    <div class="lock-card" id="lockCard">
-      <div class="pride-bar-mini" aria-hidden="true"></div>
-      <div class="lock-title">สวัสดี</div>
-      <p class="lock-sub">เว็บส่วนตัวของ Alex</p>
-      <p class="msg error" id="loginMsg" aria-live="polite"></p>
-      <button class="btn btn-google" type="button" id="googleSignInBtn">
-        <svg class="g-logo" viewBox="0 0 18 18" aria-hidden="true">
-          <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/>
-          <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/>
-          <path fill="#FBBC05" d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"/>
-          <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.166 6.656 3.58 9 3.58z"/>
-        </svg>
-        <span>เข้าสู่ระบบด้วย Google</span>
-      </button>
-      <p class="lock-sub-note">เฉพาะอีเมลที่ได้รับอนุญาตเท่านั้น</p>
-      <p class="lock-hint">PRIVATE · 6 ROOMS · WITH PRIDE</p>
-    </div>
-  </div>
 
   <!-- Animated pride bar -->
   <div class="pride-bar"></div>
@@ -1072,10 +72,7 @@
       <a class="card c1" href="#teaching" aria-label="งานสอน">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 5h13a2 2 0 0 1 2 2v12"/>
-            <path d="M3 5v14h13"/>
-            <path d="M7 9h7M7 12.5h5"/>
-            <circle cx="20" cy="20" r="1.5"/>
+            <path d="M3 5h13a2 2 0 0 1 2 2v12"/><path d="M3 5v14h13"/><path d="M7 9h7M7 12.5h5"/><circle cx="20" cy="20" r="1.5"/>
           </svg>
         </span>
         <span class="card-body">
@@ -1083,30 +80,23 @@
           <span class="card-desc">ตารางสอน · เนื้อหาบรรยาย · งานนิสิต</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
       <!-- 02 งานคลินิก · ORANGE -->
-      <a class="card c2" href="#clinic" aria-label="งานคลินิก">
+      <a class="card c2" href="clinic.html" aria-label="งานคลินิก">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 3v6a4 4 0 0 0 8 0V3"/>
-            <path d="M7.5 3h1.5M15 3h1.5"/>
-            <path d="M12 13v3a4 4 0 0 0 4 4a3 3 0 0 0 3-3v-2"/>
-            <circle cx="19" cy="13" r="2"/>
+            <path d="M8 3v6a4 4 0 0 0 8 0V3"/><path d="M7.5 3h1.5M15 3h1.5"/><path d="M12 13v3a4 4 0 0 0 4 4a3 3 0 0 0 3-3v-2"/><circle cx="19" cy="13" r="2"/>
           </svg>
         </span>
         <span class="card-body">
           <span class="card-title">งานคลินิก</span>
-          <span class="card-desc">เคสคนไข้ · ตารางตรวจ · บันทึกการรักษา</span>
+          <span class="card-desc">เคสคนไข้ · นัดหมาย · Handbook อ้างอิง</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
@@ -1114,9 +104,7 @@
       <a class="card c3" href="#home" aria-label="งานบ้าน">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 11l9-7 9 7"/>
-            <path d="M5 10v10h14V10"/>
-            <path d="M10 20v-6h4v6"/>
+            <path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>
           </svg>
         </span>
         <span class="card-body">
@@ -1124,9 +112,7 @@
           <span class="card-desc">งานที่ต้องทำ · บิลค่าใช้จ่าย · ของในบ้าน</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
@@ -1134,9 +120,7 @@
       <a class="card c4" href="#leisure" aria-label="กิน-เที่ยว">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3 12h18"/>
-            <circle cx="12" cy="12" r="2" fill="currentColor"/>
+            <circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18M3 12h18"/><circle cx="12" cy="12" r="2" fill="currentColor"/>
           </svg>
         </span>
         <span class="card-body">
@@ -1144,9 +128,7 @@
           <span class="card-desc">ร้านที่อยากลอง · ทริปในใจ · บันทึกการเดินทาง</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
@@ -1154,8 +136,7 @@
       <a class="card c5" href="#finance" aria-label="บัญชี">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 20h18"/>
-            <path d="M6 20V11M11 20V6M16 20v-7M21 20V4"/>
+            <path d="M3 20h18"/><path d="M6 20V11M11 20V6M16 20v-7M21 20V4"/>
           </svg>
         </span>
         <span class="card-body">
@@ -1163,18 +144,15 @@
           <span class="card-desc">รายรับ-รายจ่าย · งบประมาณ · การลงทุน</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
       <!-- 06 ตั้งค่า · PURPLE -->
-      <a class="card c6" href="#settings" data-action="open-settings" aria-label="ตั้งค่า">
+      <a class="card c6" href="#" data-action="open-settings" aria-label="ตั้งค่า">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
+            <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
           </svg>
         </span>
         <span class="card-body">
@@ -1182,9 +160,7 @@
           <span class="card-desc">รหัสผ่าน · โปรไฟล์ · ธีม · การแจ้งเตือน</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M13 6l6 6-6 6"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
       </a>
 
@@ -1204,66 +180,9 @@
 
   </div>
 
-  <!-- ==================================================================
-       SETTINGS MODAL + BACKDROP
-  ================================================================== -->
-  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
-
-  <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-label="ตั้งค่า">
-    <div class="modal-head">
-      <h3>ตั้งค่า</h3>
-      <button class="modal-close" id="modalClose" aria-label="ปิด">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M6 6l12 12M18 6L6 18"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Account section -->
-    <section class="modal-section">
-      <h4>บัญชี Google</h4>
-      <p class="desc">Alex ล็อกอินด้วยบัญชีนี้</p>
-
-      <div class="account-card" id="accountCard">
-        <img class="account-avatar" id="accountAvatar" alt="" />
-        <div class="account-info">
-          <div class="account-name" id="accountName">—</div>
-          <div class="account-email" id="accountEmail">—</div>
-        </div>
-        <span class="status-pill on" style="margin-bottom:0">
-          <span class="dotpill"></span> ผ่านการยืนยัน
-        </span>
-      </div>
-    </section>
-
-    <!-- Logout section -->
-    <section class="modal-section" id="logoutSection">
-      <h4>ออกจากระบบ</h4>
-      <p class="desc">ครั้งหน้าที่เปิดเว็บนี้ Alex จะต้องล็อกอินใหม่</p>
-      <button class="btn btn-secondary" id="logoutBtn" type="button">ออกจากระบบ</button>
-    </section>
-
-    <!-- Security note -->
-    <section class="modal-section">
-      <p class="desc" style="margin-bottom:0; font-size:13px;">
-        🔐 ระบบยืนยันตัวตนผ่าน Google + Supabase — ปลอดภัย เข้ารหัสตามมาตรฐาน เฉพาะอีเมลที่ Alex อนุญาตเท่านั้นที่เข้าได้
-      </p>
-    </section>
-  </div>
-
+  <script src="auth.js"></script>
   <script>
-    // Live clock (HH:MM)
-    function tickClock() {
-      const d = new Date();
-      const hh = String(d.getHours()).padStart(2,'0');
-      const mm = String(d.getMinutes()).padStart(2,'0');
-      const el = document.getElementById('clock');
-      if (el) el.textContent = `${hh}:${mm}`;
-    }
-    tickClock();
-    setInterval(tickClock, 30 * 1000);
-
-    // Greeting based on hour
+    // Page-specific: greeting + Thai date
     (function () {
       const h = new Date().getHours();
       let g = 'GOOD EVENING';
@@ -1275,166 +194,14 @@
       const el = document.getElementById('greet');
       if (el) el.textContent = g;
     })();
-
-    // Today (Thai-friendly long date)
     (function () {
       const days = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
-      const months = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน',
-                      'กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+      const months = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
       const d = new Date();
-      const yearTH = d.getFullYear() + 543;
-      const txt = `วัน${days[d.getDay()]}ที่ ${d.getDate()} ${months[d.getMonth()]} พ.ศ. ${yearTH}`;
+      const txt = `วัน${days[d.getDay()]}ที่ ${d.getDate()} ${months[d.getMonth()]} พ.ศ. ${d.getFullYear() + 543}`;
       const el = document.getElementById('todayLong');
       if (el) el.textContent = txt;
     })();
-
-    // Subtle haptic nudge on tap (mobile vibration if supported)
-    document.querySelectorAll('.card').forEach(c => {
-      c.addEventListener('click', () => {
-        if (navigator.vibrate) navigator.vibrate(8);
-      });
-    });
-
-    /* ===========================================================
-       AUTH SYSTEM — Supabase Google Sign-in
-       Email whitelist: only ALLOWED_EMAILS can access
-    =========================================================== */
-    const SUPABASE_URL      = 'https://bxlyctricjayindvcfjo.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4bHljdHJpY2pheWluZHZjZmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NDE2NTAsImV4cCI6MjA5MzAxNzY1MH0.8b-UqK-SW1dOyZ0WhAC5NBns8lAe1kTgn2xJMiHvaRA';
-
-    // Whitelist (lowercase). Add more emails here later if needed.
-    const ALLOWED_EMAILS = ['carnitab@gmail.com'];
-
-    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-    // --- DOM refs ----------
-    const root          = document.documentElement;
-    const lockCard      = document.getElementById('lockCard');
-    const loginMsg      = document.getElementById('loginMsg');
-    const googleBtn     = document.getElementById('googleSignInBtn');
-    const backdrop      = document.getElementById('modalBackdrop');
-    const settingsModal = document.getElementById('settingsModal');
-    const modalClose    = document.getElementById('modalClose');
-    const logoutBtn     = document.getElementById('logoutBtn');
-    const accountAvatar = document.getElementById('accountAvatar');
-    const accountName   = document.getElementById('accountName');
-    const accountEmail  = document.getElementById('accountEmail');
-
-    // --- Helpers ----------
-    function showLock() {
-      root.classList.remove('checking');
-      root.classList.add('locked');
-    }
-    function showDashboard() {
-      root.classList.remove('checking');
-      root.classList.remove('locked');
-    }
-    function flashError(msg) {
-      loginMsg.textContent = msg;
-      lockCard.classList.remove('shake');
-      void lockCard.offsetWidth;
-      lockCard.classList.add('shake');
-      if (navigator.vibrate) navigator.vibrate([40, 40, 40]);
-    }
-    function isAllowed(email) {
-      return email && ALLOWED_EMAILS.includes(email.toLowerCase());
-    }
-    function fillAccount(user) {
-      const meta = user.user_metadata || {};
-      accountName.textContent  = meta.full_name || meta.name || user.email || '—';
-      accountEmail.textContent = user.email || '—';
-      const avatar = meta.avatar_url || meta.picture;
-      if (avatar) {
-        accountAvatar.src = avatar;
-        accountAvatar.style.display = 'block';
-      } else {
-        accountAvatar.style.display = 'none';
-      }
-    }
-
-    // --- Initial session check ----------
-    (async function initAuth() {
-      const { data: { session } } = await sb.auth.getSession();
-      if (session && isAllowed(session.user.email)) {
-        fillAccount(session.user);
-        showDashboard();
-      } else if (session) {
-        // Logged in but not whitelisted — sign out and show error
-        await sb.auth.signOut();
-        showLock();
-        flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
-      } else {
-        showLock();
-      }
-    })();
-
-    // --- Listen for auth changes (handles OAuth callback) ----------
-    sb.auth.onAuthStateChange(async (event, session) => {
-      if (event === 'SIGNED_IN' && session) {
-        if (isAllowed(session.user.email)) {
-          fillAccount(session.user);
-          showDashboard();
-          loginMsg.textContent = '';
-          if (navigator.vibrate) navigator.vibrate([10, 30, 10]);
-        } else {
-          await sb.auth.signOut();
-          showLock();
-          flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
-        }
-      } else if (event === 'SIGNED_OUT') {
-        showLock();
-      }
-    });
-
-    // --- Google Sign-in button ----------
-    googleBtn && googleBtn.addEventListener('click', async () => {
-      googleBtn.disabled = true;
-      loginMsg.textContent = '';
-      const { error } = await sb.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          // Return to the same page after OAuth completes
-          redirectTo: window.location.origin + window.location.pathname,
-        },
-      });
-      if (error) {
-        googleBtn.disabled = false;
-        flashError('เกิดข้อผิดพลาด: ' + error.message);
-      }
-      // On success, browser navigates away to Google → we won't reach here
-    });
-
-    /* ----- Settings modal ----- */
-    function openSettings() {
-      backdrop.classList.add('show');
-      settingsModal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeSettings() {
-      backdrop.classList.remove('show');
-      settingsModal.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-    modalClose && modalClose.addEventListener('click', closeSettings);
-    backdrop   && backdrop.addEventListener('click', closeSettings);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && settingsModal.classList.contains('show')) closeSettings();
-    });
-    document.querySelectorAll('[data-action="open-settings"]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-        openSettings();
-      });
-    });
-
-    // --- Logout ----------
-    logoutBtn && logoutBtn.addEventListener('click', async () => {
-      logoutBtn.disabled = true;
-      await sb.auth.signOut();
-      closeSettings();
-      // onAuthStateChange listener will handle showing the lock screen
-      logoutBtn.disabled = false;
-    });
   </script>
 </body>
 </html>
