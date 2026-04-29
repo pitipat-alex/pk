@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <script>
     (function () {
       var d = document.documentElement;
@@ -55,6 +56,19 @@
       <p class="page-subtitle">Small Animal Internal Medicine · Nelson &amp; Couto, 6<sup>th</sup> Edition</p>
       <p class="page-meta" id="entryStats">— โรค · — หัตถการ</p>
     </section>
+
+    <!-- DOWNLOAD ALL --------------------------------------------- -->
+    <div class="download-all-wrap">
+      <button id="downloadAllBtn" class="download-all-btn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>ดาวน์โหลดทั้งหมด (ZIP)</span>
+      </button>
+      <span class="download-all-hint" id="downloadHint"></span>
+    </div>
 
     <!-- SEARCH ---------------------------------------------------- -->
     <div class="search-bar">
@@ -308,6 +322,234 @@
     // Initial render
     updateStats();
     renderList();
+
+    // ============================================================
+    // DOWNLOAD ALL — bundle every entry as .md files in a ZIP
+    // ============================================================
+    const $dlBtn  = document.getElementById('downloadAllBtn');
+    const $dlHint = document.getElementById('downloadHint');
+
+    // Convert simple HTML (used in entries) to clean Markdown
+    function htmlToMarkdown(html) {
+      if (!html) return '';
+      // Use a temp DOM node to walk the tree
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+
+      function walk(node, depth) {
+        depth = depth || 0;
+        let out = '';
+        node.childNodes.forEach(child => {
+          if (child.nodeType === 3) {
+            // Text node — collapse whitespace
+            out += child.textContent.replace(/\s+/g, ' ');
+            return;
+          }
+          if (child.nodeType !== 1) return;
+          const tag = child.tagName.toLowerCase();
+          const inner = walk(child, depth);
+
+          if (tag === 'p') {
+            out += inner.trim() + '\n\n';
+          } else if (tag === 'strong' || tag === 'b') {
+            out += '**' + inner.trim() + '**';
+          } else if (tag === 'em' || tag === 'i') {
+            out += '*' + inner.trim() + '*';
+          } else if (tag === 'br') {
+            out += '\n';
+          } else if (tag === 'ul') {
+            out += '\n' + listToMd(child, '-', depth) + '\n';
+          } else if (tag === 'ol') {
+            out += '\n' + listToMd(child, '1.', depth) + '\n';
+          } else if (tag === 'div') {
+            // Callout boxes
+            if (child.classList && child.classList.contains('callout')) {
+              const txt = inner.trim().replace(/\n+/g, '\n> ');
+              out += '\n> ' + txt + '\n\n';
+            } else {
+              out += inner;
+            }
+          } else if (tag === 'sup') {
+            out += '^' + inner + '^';
+          } else if (tag === 'sub') {
+            out += '~' + inner + '~';
+          } else {
+            out += inner;
+          }
+        });
+        return out;
+      }
+
+      function listToMd(listNode, marker, depth) {
+        const indent = '  '.repeat(depth);
+        let out = '';
+        Array.from(listNode.children).forEach(li => {
+          if (li.tagName.toLowerCase() !== 'li') return;
+          // Find any nested lists, and walk the rest as inline content
+          let inline = '';
+          let nested = '';
+          li.childNodes.forEach(n => {
+            if (n.nodeType === 1 && (n.tagName.toLowerCase() === 'ul' || n.tagName.toLowerCase() === 'ol')) {
+              nested += listToMd(n, n.tagName.toLowerCase() === 'ol' ? '1.' : '-', depth + 1) + '\n';
+            } else {
+              inline += walk({ childNodes: [n] }, depth);
+            }
+          });
+          out += `${indent}${marker} ${inline.trim()}\n`;
+          if (nested) out += nested;
+        });
+        return out;
+      }
+
+      let md = walk(tmp);
+      // Cleanup: collapse 3+ newlines to 2, trim
+      md = md.replace(/\n{3,}/g, '\n\n').trim();
+      return md;
+    }
+
+    // Convert one entry to a full Markdown document
+    function entryToMarkdown(entry) {
+      const sections = entry.type === 'procedure'
+        ? procedureSections(entry.sections || {})
+        : diseaseSections(entry.sections || {});
+      const sysLabel = SYSTEM_LABEL_TH[entry.system] || entry.system;
+
+      let md = '';
+      md += `# ${entry.titleEn}\n\n`;
+      if (entry.titleTh) md += `**${entry.titleTh}**\n\n`;
+      md += `---\n\n`;
+
+      // Metadata block
+      md += `- **System:** ${sysLabel} (${entry.system})\n`;
+      md += `- **Type:** ${entry.type === 'procedure' ? 'Procedure / หัตถการ' : 'Disease / โรค'}\n`;
+      md += `- **Species:** ${(entry.species || []).join(', ')}\n`;
+      if (entry.tags && entry.tags.length) {
+        md += `- **Tags:** ${entry.tags.join(', ')}\n`;
+      }
+      if (entry.aliases && entry.aliases.length) {
+        md += `- **Aliases:** ${entry.aliases.join(', ')}\n`;
+      }
+      if (entry.source) md += `- **Source:** ${entry.source}\n`;
+      md += `\n---\n\n`;
+
+      sections.forEach(s => {
+        if (!s.body) return;
+        md += `## ${s.title}\n\n`;
+        md += htmlToMarkdown(s.body) + '\n\n';
+      });
+
+      md += `---\n\n*Personal clinical reference — Nelson &amp; Couto Small Animal Internal Medicine, 6th Edition*\n`;
+      return md;
+    }
+
+    function buildReadme(entries) {
+      const today = new Date();
+      const dateStr = today.toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      const bySystem = {};
+      entries.forEach(e => {
+        if (!bySystem[e.system]) bySystem[e.system] = [];
+        bySystem[e.system].push(e);
+      });
+
+      let md = '';
+      md += `# Medicine Handbook\n\n`;
+      md += `**Small Animal Internal Medicine** — Nelson &amp; Couto, 6th Edition\n\n`;
+      md += `Personal clinical reference compiled by Alex.\n\n`;
+      md += `Exported: ${dateStr}\n\n`;
+      md += `---\n\n`;
+      md += `## Summary\n\n`;
+      const dz = entries.filter(e => e.type !== 'procedure').length;
+      const px = entries.filter(e => e.type === 'procedure').length;
+      md += `- Total entries: **${entries.length}**\n`;
+      md += `- Diseases: ${dz}\n`;
+      md += `- Procedures: ${px}\n\n`;
+      md += `---\n\n`;
+      md += `## Contents\n\n`;
+
+      Object.keys(bySystem).sort().forEach(sys => {
+        const sysLabel = SYSTEM_LABEL_TH[sys] || sys;
+        md += `### ${sysLabel} (${sys})\n\n`;
+        bySystem[sys].forEach((e, i) => {
+          const num = String(i + 1).padStart(2, '0');
+          const fname = `${num}-${e.id}.md`;
+          const tag = e.type === 'procedure' ? '🔧' : '📋';
+          md += `${i + 1}. ${tag} [${e.titleEn}](./${sys}/${fname})${e.titleTh ? ` — ${e.titleTh}` : ''}\n`;
+        });
+        md += `\n`;
+      });
+
+      md += `---\n\n`;
+      md += `*This handbook is for personal clinical reference only. Not a substitute for the original textbook or clinical judgment.*\n`;
+      return md;
+    }
+
+    async function downloadAll() {
+      if (!ENTRIES.length) return;
+      if (typeof JSZip === 'undefined') {
+        alert('ไลบรารี ZIP โหลดไม่สำเร็จ — ลองรีเฟรชหน้าใหม่');
+        return;
+      }
+
+      const originalLabel = $dlBtn.querySelector('span').textContent;
+      $dlBtn.disabled = true;
+      $dlBtn.querySelector('span').textContent = 'กำลังเตรียมไฟล์...';
+      $dlHint.textContent = '';
+
+      try {
+        const zip = new JSZip();
+        const root = zip.folder('medicine-handbook');
+
+        // README at root
+        root.file('README.md', buildReadme(ENTRIES));
+
+        // Group by system
+        const bySystem = {};
+        ENTRIES.forEach(e => {
+          if (!bySystem[e.system]) bySystem[e.system] = [];
+          bySystem[e.system].push(e);
+        });
+
+        Object.keys(bySystem).forEach(sys => {
+          const folder = root.folder(sys);
+          bySystem[sys].forEach((e, i) => {
+            const num = String(i + 1).padStart(2, '0');
+            const fname = `${num}-${e.id}.md`;
+            folder.file(fname, entryToMarkdown(e));
+          });
+        });
+
+        $dlBtn.querySelector('span').textContent = 'กำลังบีบอัด...';
+
+        const blob = await zip.generateAsync({
+          type: 'blob',
+          compression: 'DEFLATE',
+          compressionOptions: { level: 6 },
+        });
+
+        // Trigger download
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const dateTag = new Date().toISOString().slice(0, 10);
+        a.href = url;
+        a.download = `medicine-handbook-${dateTag}.zip`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+
+        $dlHint.textContent = `✓ ดาวน์โหลด ${ENTRIES.length} entries เรียบร้อย`;
+        if (navigator.vibrate) navigator.vibrate(20);
+      } catch (err) {
+        console.error('Download failed', err);
+        $dlHint.textContent = '✗ เกิดข้อผิดพลาด — ลองอีกครั้ง';
+      } finally {
+        $dlBtn.disabled = false;
+        $dlBtn.querySelector('span').textContent = originalLabel;
+      }
+    }
+
+    $dlBtn.addEventListener('click', downloadAll);
   </script>
 </body>
 </html>
