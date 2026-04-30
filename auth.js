@@ -81,7 +81,17 @@
   document.body.insertAdjacentHTML('beforeend',  settingsModalHTML);
 
   // ---------- Supabase client -----------------------------------
-  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  // PKCE flow + detectSessionInUrl = mandatory for mobile Safari/Chrome
+  // (third-party cookie restrictions break implicit flow on mobile)
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: {
+      flowType: 'pkce',
+      autoRefreshToken: true,
+      persistSession: true,
+      detectSessionInUrl: true,
+      storage: window.localStorage,
+    },
+  });
 
   // ---------- DOM references ------------------------------------
   const root          = document.documentElement;
@@ -124,6 +134,22 @@
 
   // ---------- Initial session check ------------------------------
   (async function initAuth() {
+    // Step 1: If we just returned from OAuth redirect, URL contains ?code=... or #access_token=...
+    // detectSessionInUrl in createClient will auto-handle this, but we wait briefly for it.
+    const urlHasOAuthParams =
+      window.location.search.includes('code=') ||
+      window.location.hash.includes('access_token=');
+
+    if (urlHasOAuthParams) {
+      // Give Supabase client time to exchange code for session
+      await new Promise(resolve => setTimeout(resolve, 100));
+      // Clean URL — remove ?code=... so refresh doesn't break
+      try {
+        const cleanUrl = window.location.origin + window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+      } catch (e) { /* ignore */ }
+    }
+
     const { data: { session } } = await sb.auth.getSession();
     if (session && isAllowed(session.user.email)) {
       fillAccount(session.user);
@@ -159,13 +185,33 @@
   googleBtn && googleBtn.addEventListener('click', async () => {
     googleBtn.disabled = true;
     loginMsg.textContent = '';
-    const { error } = await sb.auth.signInWithOAuth({
-      provider: 'google',
-      options: { redirectTo: window.location.origin + window.location.pathname },
-    });
-    if (error) {
+
+    // Build redirectTo: origin + pathname (no query, no hash)
+    // This MUST be whitelisted in Supabase Dashboard → Authentication → URL Configuration
+    const redirectTo = window.location.origin + window.location.pathname;
+
+    try {
+      const { error } = await sb.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: redirectTo,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'select_account',
+          },
+        },
+      });
+      if (error) {
+        googleBtn.disabled = false;
+        flashError('เกิดข้อผิดพลาด: ' + error.message);
+        console.error('OAuth error:', error);
+      }
+      // On success, browser redirects to Google → returns to redirectTo URL with ?code=...
+      // detectSessionInUrl handles the code exchange automatically
+    } catch (err) {
       googleBtn.disabled = false;
-      flashError('เกิดข้อผิดพลาด: ' + error.message);
+      flashError('เชื่อมต่อ Google ไม่ได้: ' + (err.message || err));
+      console.error('Sign-in exception:', err);
     }
   });
 

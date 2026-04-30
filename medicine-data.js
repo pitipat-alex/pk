@@ -8858,6 +8858,2868 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     PART 4 — HEPATOBILIARY &amp; EXOCRINE PANCREAS (Ch 33–37)
+  ============================================================ */
+
+  /* ---------- Ch 33 · Clinical Manifestations of Hepatobiliary Disease ---------- */
+  {
+    id: 'hepato-clinical-manifestations',
+    titleEn: 'Clinical Manifestations of Hepatobiliary Disease',
+    titleTh: 'อาการของโรคตับ',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['jaundice', 'icterus', 'hepatic encephalopathy', 'ascites', 'PU/PD', 'weight loss', 'coagulopathy', 'hyperbilirubinemia'],
+    aliases: ['liver disease signs', 'อาการโรคตับ', 'ดีซ่าน'],
+    source: 'Ch. 33 · pp. 553–562',
+    sections: {
+      definition: `
+        <p>โรคตับ — อาการ <strong>nonspecific มาก</strong> มัก present ตอน &gt; 70-80% ของ liver function lost</p>
+        <ul>
+          <li>ตับมี <em>functional reserve</em> สูง + <em>regenerative capacity</em> ดี → early disease detection ยาก</li>
+          <li>ส่วนใหญ่เคสที่เจอเป็น <em>secondary</em> hepatopathy (จาก systemic dz) ไม่ใช่ primary</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary liver disease:</strong></p>
+        <ul>
+          <li>Hepatic lipidosis (cat)</li>
+          <li>Chronic hepatitis (dog)</li>
+          <li>Cholangitis (cat)</li>
+          <li>Portosystemic shunt</li>
+          <li>Drug/toxin (acetaminophen, sago palm, xylitol, mushroom, NSAIDs, anticonvulsants)</li>
+          <li>Neoplasia (HCC, biliary, metastatic)</li>
+          <li>Infectious (leptospirosis, hepatic abscess)</li>
+          <li>Copper storage disease</li>
+        </ul>
+        <p><strong>Secondary (reactive) hepatopathy:</strong></p>
+        <ul>
+          <li>Steroid hepatopathy (dog)</li>
+          <li>Diabetes</li>
+          <li>Pancreatitis</li>
+          <li>IBD</li>
+          <li>Cardiac (right CHF — congestion)</li>
+          <li>Sepsis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <p>กลไกของอาการต่างๆ:</p>
+        <ul>
+          <li><strong>Jaundice:</strong> bilirubin metabolism impaired</li>
+          <li><strong>HE (hepatic encephalopathy):</strong> ammonia + other neurotoxins → ↓ consciousness</li>
+          <li><strong>Ascites:</strong> portal hypertension + hypoalbuminemia</li>
+          <li><strong>Coagulopathy:</strong> ↓ synthesis of factors II, VII, IX, X, fibrinogen</li>
+          <li><strong>PU/PD:</strong> ↓ urea cycle → ↓ medullary tonicity + cortisol metabolism altered</li>
+          <li><strong>Weight loss / muscle wasting:</strong> impaired protein synthesis + cachexia</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Common signs (mostly nonspecific):</strong></p>
+        <ul>
+          <li>Anorexia / hyporexia ✨ (มัก first sign)</li>
+          <li>Lethargy</li>
+          <li>Vomiting (cat especially)</li>
+          <li>Diarrhea (sometimes pale acholic stool — biliary obstruction)</li>
+          <li>Weight loss</li>
+          <li>PU/PD ✨ (เด่นในหมา)</li>
+        </ul>
+        <p><strong>Specific signs:</strong></p>
+        <ul>
+          <li><strong>Jaundice (icterus)</strong> ✨ — sclera, oral mucosa, skin (pinna, ventral abdomen)
+            <ul>
+              <li>Detectable when bilirubin &gt; 2-3 mg/dL</li>
+              <li>Pre-hepatic (hemolysis), hepatic, post-hepatic (obstruction)</li>
+            </ul>
+          </li>
+          <li><strong>Hepatic encephalopathy</strong> ✨:
+            <ul>
+              <li>Mild: depression, head-pressing, mild ataxia</li>
+              <li>Moderate: drooling, intermittent blindness, circling, behavior change</li>
+              <li>Severe: stupor, seizures, coma ✗</li>
+              <li>Worse after high-protein meals</li>
+            </ul>
+          </li>
+          <li><strong>Ascites</strong> — portal hypertension; modified transudate</li>
+          <li><strong>Coagulopathy</strong> — petechiae, ecchymoses, prolonged bleeding</li>
+          <li>Hepatomegaly / microhepatica (palpate carefully)</li>
+          <li>Acholic stool — pale grey-tan; complete biliary obstruction</li>
+          <li>Bilirubinuria — orange-brown urine ✨ (cat: <em>any</em> bilirubinuria abnormal)</li>
+          <li>Vitamin K deficiency bleeding (biliary obstruction)</li>
+        </ul>
+        <p><strong>Cat-specific:</strong></p>
+        <ul>
+          <li>Anorexia &gt; 3 days → <strong>hepatic lipidosis risk</strong> ✗ — ทุกแมวที่ stop eating</li>
+          <li>Drooling/ptyalism (HE component)</li>
+          <li>"Ventroflexion" (severe — hepatic + electrolytes)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p>ดู Hepatic Diagnostic Tests entry</p>
+      `,
+      differential: `<p>กว้างมาก — ต้องแยก primary vs secondary hepatopathy</p>`,
+      treatment: `<p>ตามสาเหตุ — ดู entries เฉพาะ</p>`,
+      complications: `
+        <ul>
+          <li>Hepatic encephalopathy → coma, death</li>
+          <li>Coagulopathy → spontaneous bleeding</li>
+          <li>Hypoglycemia (severe failure)</li>
+          <li>Sepsis (impaired Kupffer cell function)</li>
+          <li>Ascites / pleural effusion</li>
+          <li>Hepatic failure</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 34 · Hepatobiliary Diagnostic Tests ---------- */
+  {
+    id: 'hepato-diagnostic-tests',
+    titleEn: 'Hepatobiliary Diagnostic Tests',
+    titleTh: 'การตรวจวินิจฉัยโรคตับ',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['ALT', 'ALP', 'GGT', 'bilirubin', 'bile acids', 'ammonia', 'albumin', 'coagulation', 'liver biopsy', 'FNA'],
+    aliases: ['liver enzymes', 'bile acids', 'ตรวจตับ'],
+    source: 'Ch. 34 · pp. 563–570',
+    sections: {
+      definition: `<p>เครื่องมือ workup โรคตับ — แยก hepatocellular damage / cholestasis / function</p>`,
+      etiology: `<p>—</p>`,
+      pathophysiology: `<p>—</p>`,
+      symptoms: `<p>ดู Clinical Manifestations entry</p>`,
+      diagnosis: `
+        <p><strong>1. Hepatocellular damage (leakage enzymes):</strong></p>
+        <ul>
+          <li><strong>ALT (alanine transaminase)</strong> ✨ — most specific for hepatocyte damage in dog/cat
+            <ul>
+              <li>Half-life: dog 60h, cat 3-4h</li>
+              <li>Cat: <strong>any ↑ ALT abnormal</strong> ✨ — short half-life</li>
+              <li>Severity ≠ disease severity (massive ALT in resolving toxin; mild in end-stage cirrhosis)</li>
+            </ul>
+          </li>
+          <li>AST — less specific (muscle, RBC also)</li>
+        </ul>
+
+        <p><strong>2. Cholestasis (induced enzymes):</strong></p>
+        <ul>
+          <li><strong>ALP (alkaline phosphatase):</strong>
+            <ul>
+              <li>Dog: ↑ from cholestasis, steroids (steroid-induced isoenzyme), bone (young), hepatic neoplasia
+                <ul>
+                  <li>Mild ↑ common, often nonspecific</li>
+                  <li>Massive ↑ → hepatic / endocrine cause</li>
+                </ul>
+              </li>
+              <li>Cat: <strong>any ↑ ALP very significant</strong> ✨ — short half-life ~ 6h, no steroid isoenzyme</li>
+            </ul>
+          </li>
+          <li><strong>GGT (gamma-glutamyl transferase):</strong>
+            <ul>
+              <li>Cat: more sensitive than ALP for cholangitis</li>
+              <li>↑ GGT + ↑ ALP cat → biliary disease likely</li>
+              <li>Hepatic lipidosis: ALP ↑↑ but GGT often normal-mild ✨ (distinguish from cholangitis!)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Liver function tests:</strong></p>
+        <ul>
+          <li><strong>Bile acids (pre + 2h post-prandial)</strong> ✨ — most sensitive function test
+            <ul>
+              <li>Pre &lt; 10 µmol/L, post &lt; 25 µmol/L (dog); cat similar</li>
+              <li>Both ↑ &gt; 25 = significant dysfunction or shunt</li>
+              <li>Use to detect PSS, cirrhosis, severe hepatitis</li>
+              <li>NOT useful in icteric patients (already hyperbili)</li>
+            </ul>
+          </li>
+          <li><strong>Ammonia:</strong>
+            <ul>
+              <li>↑ in HE, PSS, severe failure</li>
+              <li>Sample handling tricky (must be cold, processed quickly)</li>
+              <li>Bile acids + ammonia = complementary</li>
+            </ul>
+          </li>
+          <li><strong>Albumin:</strong>
+            <ul>
+              <li>↓ in chronic hepatic insufficiency (synthesis)</li>
+              <li>&gt; 70% of liver lost before albumin ↓</li>
+            </ul>
+          </li>
+          <li><strong>BUN:</strong> ↓ in PSS, hepatic insufficiency (urea cycle)</li>
+          <li><strong>Glucose:</strong> ↓ in severe failure, sepsis, neonatal PSS</li>
+          <li><strong>Cholesterol:</strong> ↓ in PSS, severe insufficiency, malabsorption</li>
+          <li><strong>Coagulation (PT, aPTT, fibrinogen):</strong> prolonged in severe dz, biliary obstruction (vit K malabsorption)</li>
+        </ul>
+
+        <p><strong>4. Bilirubin:</strong></p>
+        <ul>
+          <li>Total + direct (conjugated) + indirect (unconjugated)</li>
+          <li>↑ Indirect: hemolysis (+ ↑ direct as overflow)</li>
+          <li>↑ Direct dominant: cholestasis</li>
+          <li>Cat: <strong>bilirubinuria abnormal even in trace amounts</strong> ✨</li>
+          <li>Dog: trace bilirubinuria can be normal (concentrated urine male dogs)</li>
+        </ul>
+
+        <p><strong>5. Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal US (preferred)</strong> ✨:
+            <ul>
+              <li>Liver size, echogenicity, masses</li>
+              <li>Biliary tree dilation (obstruction)</li>
+              <li>Gallbladder mucocele (kiwi-fruit appearance)</li>
+              <li>Vascular abnormalities (PSS — extra-hepatic shunt visible)</li>
+              <li>FNA / Tru-cut biopsy under guidance</li>
+            </ul>
+          </li>
+          <li>Abdominal rad: liver size, masses, mineralization</li>
+          <li>CT angiography: PSS confirmation, complex vascular anomalies</li>
+          <li>Scintigraphy (per-rectal): PSS detection (referral)</li>
+        </ul>
+
+        <p><strong>6. Liver biopsy (definitive):</strong></p>
+        <ul>
+          <li><strong>FNA:</strong>
+            <ul>
+              <li>Cytology — diffuse processes (lipidosis, lymphoma, mast cell, infection, copper)</li>
+              <li>Limited for inflammation, fibrosis</li>
+              <li>Quick + safe ใน most cases</li>
+            </ul>
+          </li>
+          <li><strong>Tru-cut needle biopsy</strong>:
+            <ul>
+              <li>Tissue architecture — chronic hepatitis, fibrosis</li>
+              <li>Coag panel + platelet count <em>before</em> biopsy</li>
+              <li>Multiple cores recommended</li>
+              <li>Special stains: rhodanine (copper), reticulin, IHC</li>
+            </ul>
+          </li>
+          <li><strong>Surgical / laparoscopic biopsy:</strong>
+            <ul>
+              <li>Larger samples</li>
+              <li>Direct visualization, multi-organ biopsy (cat triaditis: liver + pancreas + intestine)</li>
+              <li>Better for fibrosis assessment</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>7. Hepatic copper quantification:</strong></p>
+        <ul>
+          <li>Atomic absorption spectroscopy on biopsy</li>
+          <li>Normal &lt; 400 µg/g dry weight</li>
+          <li>&gt; 1500 = copper toxicity</li>
+          <li>Bedlington, Lab, Doberman — screen ✨</li>
+        </ul>
+
+        <p><strong>8. Bile / pancreatic specific:</strong></p>
+        <ul>
+          <li>Ascitic / bile fluid analysis</li>
+          <li>Bile culture (cholangitis)</li>
+          <li>cPL/fPL (concurrent pancreatitis common — triaditis)</li>
+        </ul>
+      `,
+      differential: `<p>—</p>`,
+      treatment: `<p>เครื่องมือ — ไม่มี</p>`,
+      complications: `
+        <ul>
+          <li>Biopsy: hemorrhage (esp. coagulopathy), bile leak, pneumothorax (rare)</li>
+          <li>Always check coag profile + platelets before invasive procedure</li>
+          <li>Pre-treatment with vitamin K1 (1-2.5 mg/kg SC × 2-3 doses) ถ้า PT prolonged</li>
+        </ul>
+        <div class="callout">💡 <strong>Cat liver enzyme rule:</strong> any ALT/ALP/GGT elevation in cat is significant due to short half-life. Don't dismiss "mild" elevation — workup recommended</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 35 · Hepatic Lipidosis (Feline) ---------- */
+  {
+    id: 'hepatic-lipidosis',
+    titleEn: 'Feline Hepatic Lipidosis',
+    titleTh: 'ตับติดมัน — ภาวะตับอักเสบในแมวที่ไม่กินอาหาร',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['cat'],
+    tags: ['hepatic lipidosis', 'feline fatty liver', 'anorexia', 'jaundice', 'feeding tube', 'esophagostomy', 'taurine', 'L-carnitine', 'vitamin K'],
+    aliases: ['fatty liver cat', 'FHL', 'idiopathic hepatic lipidosis', 'แมวตับติดมัน', 'hepatic steatosis cat'],
+    source: 'Ch. 35 · pp. 571–578',
+    sections: {
+      definition: `
+        <p>ภาวะ <strong>fatty infiltration of hepatocytes</strong> ในแมว → ตับทำงานผิดปกติ + cholestasis</p>
+        <ul>
+          <li><strong>เจอบ่อยที่สุดของโรคตับในแมว</strong> ✨</li>
+          <li>เกิดจากการ <strong>หยุดกินอาหาร</strong> (anorexia) &gt; 3-5 วัน → ตับสะสมไขมัน</li>
+          <li>มัก <strong>secondary</strong> ต่อโรคอื่น (pancreatitis, IBD, neoplasia, stress, dental, urinary)</li>
+          <li>Mortality สูงถ้าไม่รักษาเร็ว — &gt; 90%; with aggressive treatment 60-85% survive</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary trigger: prolonged anorexia / hyporexia ในแมว overweight</strong></p>
+        <p><strong>Underlying causes (must identify!):</strong></p>
+        <ul>
+          <li><strong>Idiopathic</strong> — ~ 50% (no underlying cause found despite workup)</li>
+          <li><strong>Pancreatitis</strong> ✨ — common; "triaditis" with IBD + cholangitis</li>
+          <li><strong>IBD / chronic enteropathy</strong></li>
+          <li><strong>Cholangitis</strong></li>
+          <li>Diabetes mellitus (DKA cat — anorexia)</li>
+          <li>Neoplasia (lymphoma, others)</li>
+          <li>CKD</li>
+          <li>Hyperthyroidism</li>
+          <li>Stress (boarding, household change, new pet)</li>
+          <li>Urinary tract dz (FLUTD)</li>
+          <li>Dental disease (oral pain → anorexia)</li>
+          <li>Drug-induced (recent medication change)</li>
+        </ul>
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li>Obesity ✨</li>
+          <li>Middle-aged (5-10 years)</li>
+          <li>Stress / household change</li>
+          <li>Female slightly &gt; male</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Anorexia → peripheral lipolysis → free fatty acids flood liver</li>
+          <li>Liver overwhelmed → can't repackage as VLDL or β-oxidize</li>
+          <li>Triglycerides accumulate in hepatocytes → <strong>fatty infiltration</strong></li>
+          <li>Hepatocyte swelling → intrahepatic cholestasis → ↑ bilirubin, ↑ ALP</li>
+          <li>Cell membrane dysfunction → ALT leak</li>
+          <li>Carnitine, taurine, B-vitamins, electrolytes depleted</li>
+          <li>Coagulopathy (vitamin K malabsorption from cholestasis) — clinical bleeding risk</li>
+          <li>Severe → hepatic encephalopathy, refractory hypokalemia, hypophosphatemia (refeeding syndrome)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Anorexia &gt; 3-5 days</strong> ✨ — hallmark</li>
+          <li><strong>Severe weight loss</strong> ✨ — มาก ภายใน weeks</li>
+          <li><strong>Jaundice</strong> ✨ — sclera, oral mucosa, ear pinna, skin</li>
+          <li>Vomiting (variable)</li>
+          <li>Lethargy, weakness</li>
+          <li>Dehydration</li>
+          <li><strong>Drooling / ptyalism</strong> (early sign of HE)</li>
+          <li>Hepatic encephalopathy: depression, head-pressing, ventroflexion, intermittent blindness</li>
+          <li>Hepatomegaly (palpable)</li>
+          <li>Constipation (dehydration)</li>
+          <li>Coagulopathy — petechiae, prolonged bleeding from venipuncture</li>
+          <li>Severe: stupor, coma ✗</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab findings (classic):</strong></p>
+        <ul>
+          <li><strong>↑ ALP (markedly), ↑ ALT, ↑ AST</strong> ✨</li>
+          <li><strong>GGT normal or mildly ↑</strong> — KEY for distinguishing from cholangitis (where GGT ↑↑) ✨</li>
+          <li><strong>↑ Total bilirubin</strong> (often &gt; 2-5 mg/dL)</li>
+          <li><strong>Bilirubinuria</strong></li>
+          <li>Hypoalbuminemia (severe)</li>
+          <li>↓ BUN (rare)</li>
+          <li>Hypokalemia, hypophosphatemia, hypomagnesemia (especially after refeeding starts)</li>
+          <li>Prolonged PT (vit K deficiency)</li>
+          <li>± Mild non-regenerative anemia, poikilocytosis, Heinz bodies</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal US</strong> ✨:
+            <ul>
+              <li><strong>Hyperechoic liver</strong> (relative to falciform fat, kidney) — suggestive</li>
+              <li>Hepatomegaly</li>
+              <li>Rule out concurrent: pancreatitis, biliary dilation, mass, IBD changes</li>
+            </ul>
+          </li>
+          <li>Abdominal rad: hepatomegaly</li>
+        </ul>
+
+        <p><strong>Definitive diagnosis:</strong></p>
+        <ul>
+          <li><strong>Liver FNA + cytology</strong> ✨ — high diagnostic yield
+            <ul>
+              <li>Hepatocytes with marked vacuolation (lipid)</li>
+              <li>Quick, safe, low-cost</li>
+              <li>Wright-Giemsa or Oil Red O stain</li>
+              <li>Rule out lymphoma cytologically</li>
+            </ul>
+          </li>
+          <li>Tru-cut biopsy — only if cytology unclear; <em>after</em> coag corrected</li>
+        </ul>
+
+        <p><strong>Workup for underlying cause (essential):</strong></p>
+        <ul>
+          <li>fPL — pancreatitis</li>
+          <li>T4 — hyperthyroid</li>
+          <li>Glucose — DM</li>
+          <li>FeLV/FIV</li>
+          <li>Bile acids — assess function</li>
+          <li>cobalamin, folate</li>
+          <li>Repeat US looking for IBD, mass, cholangitis</li>
+          <li>Endoscopy/biopsy if signs persist after recovery</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Cholangitis</strong> (neutrophilic / lymphocytic) — GGT typically markedly ↑, often fever</li>
+          <li>Lymphoma (hepatic / alimentary)</li>
+          <li>Pancreatitis</li>
+          <li>FIP (effusive)</li>
+          <li>Toxoplasmosis</li>
+          <li>Drug-induced hepatopathy</li>
+          <li>Other primary hepatic disease</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment philosophy: AGGRESSIVE NUTRITIONAL SUPPORT — feed the cat ✨</strong></p>
+        <ul>
+          <li>"Treatment is feeding" — without nutrition, mortality &gt; 90%</li>
+          <li>With proper management, 60-85% survive</li>
+          <li>Recovery takes 4-12 weeks</li>
+        </ul>
+
+        <p><strong>1. Stabilization (day 1-2):</strong></p>
+        <ul>
+          <li><strong>IV fluid therapy</strong> — Plasmalyte or LRS (avoid lactate-rich? — debated, but LRS commonly used)
+            <ul>
+              <li>Correct dehydration over 12-24h</li>
+              <li>Avoid dextrose-containing fluids initially (worsen lipidosis)</li>
+              <li>Then maintenance + ongoing losses</li>
+            </ul>
+          </li>
+          <li><strong>Aggressive K+ supplementation</strong> ✨ — hypokalemia common, worsens with refeeding
+            <ul>
+              <li>20-40 mEq KCl/L IV (max 0.5 mEq/kg/hr)</li>
+              <li>Monitor q12-24h</li>
+            </ul>
+          </li>
+          <li><strong>Phosphorus supplementation</strong> ✨ — hypophosphatemia critical (causes hemolysis, weakness, RBC dysfunction)
+            <ul>
+              <li>K-phosphate 0.01-0.03 mmol/kg/hr if severe (&lt; 2 mg/dL)</li>
+              <li>Monitor q12h initially</li>
+            </ul>
+          </li>
+          <li>Magnesium supplementation if low</li>
+          <li><strong>Vitamin K1 1-2 mg/kg SC q12h × 3 doses</strong> ✨ — correct coagulopathy before tube placement</li>
+          <li>Anti-emetics: maropitant 1 mg/kg SC q24h, ondansetron 0.5-1 mg/kg IV q8-12h</li>
+          <li>Treat hepatic encephalopathy if present (lactulose enema, antibiotics)</li>
+        </ul>
+
+        <p><strong>2. Feeding tube placement (mainstay) ✨</strong></p>
+        <ul>
+          <li><strong>Esophagostomy (E-tube)</strong> — preferred ✨
+            <ul>
+              <li>Place once stable + coag corrected</li>
+              <li>Easy at-home use by owners</li>
+              <li>Can stay weeks-months</li>
+              <li>See E-tube procedure entry</li>
+            </ul>
+          </li>
+          <li>NG tube — short-term, in-hospital only</li>
+          <li>PEG tube — if longer than 6+ weeks anticipated</li>
+          <li><strong>Force feeding by syringe = NOT effective</strong> ✗ — stress, food aversion, aspiration risk; tube is humane + reliable</li>
+        </ul>
+
+        <p><strong>3. Feeding protocol (gradual — avoid refeeding syndrome):</strong></p>
+        <ul>
+          <li>Calculate RER = 70 × (BW kg)^0.75 หรือ 30 × BW + 70 (for 2-30 kg)</li>
+          <li><strong>Day 1: 25-33% RER</strong> — start small ✨</li>
+          <li>Day 2: 50%</li>
+          <li>Day 3+: 100% RER, then ↑ to MER as tolerated</li>
+          <li>Divide into 4-6 small meals/day, slowly over 5-10 min each</li>
+          <li>Flush tube with 5-10 mL warm water before + after each meal</li>
+          <li><strong>Diet:</strong> high-protein, calorie-dense liquid recovery diet
+            <ul>
+              <li>Royal Canin Recovery Liquid</li>
+              <li>Hill's a/d (blenderize + strain)</li>
+              <li>Eukanuba Maximum Calorie</li>
+              <li>NOT low-protein hepatic diet (unless overt HE — see below)</li>
+            </ul>
+          </li>
+          <li>Continue tube feeding until cat eats voluntarily ≥ 75% RER × 3-5 days</li>
+        </ul>
+
+        <p><strong>4. Supplements:</strong></p>
+        <ul>
+          <li><strong>L-carnitine 250-500 mg/cat PO q24h</strong> ✨ — facilitates β-oxidation</li>
+          <li>Taurine 250-500 mg/cat PO q24h (cat-specific essential)</li>
+          <li>SAMe 200-400 mg/cat PO q24h (Denamarin) — antioxidant; on empty stomach</li>
+          <li>Vitamin E 50-100 IU/cat PO q24h — antioxidant</li>
+          <li><strong>Cobalamin 250 µg SC weekly × 6 wk, then monthly</strong> ✨ — almost always low</li>
+          <li>Thiamine 50-100 mg/cat PO q24h × 1-2 wk (B-complex)</li>
+          <li>Ursodiol 10-15 mg/kg PO q24h — choleretic; if cholestasis prominent</li>
+        </ul>
+
+        <p><strong>5. Hepatic encephalopathy (if present):</strong></p>
+        <ul>
+          <li>Lactulose 0.5-1 mL/kg PO q8-12h (titrate to 2-3 soft stools/day)</li>
+          <li>Lactulose enema (warm water + lactulose 1:3) for severe HE</li>
+          <li>Metronidazole 7.5 mg/kg PO q12h (low dose for HE — reduces ammonia-producing bacteria)</li>
+          <li>Avoid high-protein diet during severe HE; once resolved → high-protein diet again (cat = obligate carnivore)</li>
+          <li>Treat hypokalemia (worsens HE)</li>
+        </ul>
+
+        <p><strong>6. Monitor:</strong></p>
+        <ul>
+          <li>Daily: weight, BCS, eating attempts, hydration, urine output</li>
+          <li>Q3-5 d: PCV, electrolytes, glucose, bilirubin, ALT, ALP</li>
+          <li>Watch for refeeding syndrome (esp. K, P, Mg drop after feeding starts)</li>
+          <li>Liver enzymes typically improve over 2-6 weeks</li>
+          <li>Bilirubin lags — last to normalize (4-12 wk)</li>
+        </ul>
+
+        <p><strong>7. Treat underlying cause:</strong></p>
+        <ul>
+          <li>Pancreatitis: supportive, pain mgmt</li>
+          <li>IBD: diet trial, ± steroids after lipidosis stable</li>
+          <li>Cholangitis: antibiotics (amoxi-clav, fluoroquinolone) + ursodiol</li>
+          <li>DM: insulin (carefully — cats with DKA + lipidosis are very sick)</li>
+          <li>Stress: identify + minimize</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Refeeding syndrome</strong> ✗ — hypokalemia, hypophosphatemia, hypomagnesemia 24-72h after refeeding starts; can be fatal</li>
+          <li>Hepatic encephalopathy → coma</li>
+          <li>Coagulopathy → bleeding</li>
+          <li>Aspiration pneumonia (tube feeding too fast, vomiting)</li>
+          <li>E-tube complications (cellulitis, dislodgement, esophagitis)</li>
+          <li>Pancreatitis flare</li>
+          <li>Recurrent / untreated underlying disease</li>
+          <li>Death from progressive liver failure</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Aggressive treatment + tube feeding: 60-85% survival</strong> ✓</li>
+          <li>Untreated: &gt; 90% mortality</li>
+          <li>Recovery 4-12 weeks (full normalization of bilirubin can take 12+ wk)</li>
+          <li>Underlying disease successfully managed = better long-term outcome</li>
+          <li>Recurrence rate: low if underlying cause addressed</li>
+          <li>Negative prognostic factors: severe HE, refractory hypokalemia, age &gt; 14 yr, severe coagulopathy, untreated underlying disease</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Owner conversation key points:</strong> "ตับแมวสะสมไขมันจากการไม่กิน 3-5 วัน ทำให้ตับทำงานผิดปกติ — รักษาได้ถ้าใส่ feeding tube + ให้อาหารทุกวันต่อเนื่อง 4-12 สัปดาห์. โดยไม่ใส่ tube มีโอกาสตายมาก. Tube feeding ที่บ้านง่ายกว่าที่คิด"</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 36 · Canine Chronic Hepatitis ---------- */
+  {
+    id: 'canine-chronic-hepatitis',
+    titleEn: 'Canine Chronic Hepatitis',
+    titleTh: 'ตับอักเสบเรื้อรังในหมา',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog'],
+    tags: ['chronic hepatitis', 'idiopathic', 'copper hepatopathy', 'Cocker Spaniel', 'Doberman', 'Lab', 'WHWT', 'prednisone', 'SAMe', 'ursodiol'],
+    aliases: ['CCH', 'idiopathic chronic hepatitis', 'ตับอักเสบเรื้อรังหมา'],
+    source: 'Ch. 36 · pp. 585–600',
+    sections: {
+      definition: `
+        <p>Chronic inflammation + necrosis of hepatocytes &gt; 4-6 wk → fibrosis → cirrhosis</p>
+        <ul>
+          <li>โรคตับเรื้อรังที่เจอบ่อยที่สุดในหมา</li>
+          <li>มัก idiopathic; แต่ต้อง rule out copper storage disease, drugs, infectious</li>
+          <li>Progressive — มัก present เมื่อ &gt; 60-70% ตับเสียหาย</li>
+          <li>Female-predominant ในหลายสายพันธุ์</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Breed predispositions ✨:</strong></p>
+        <ul>
+          <li><strong>Bedlington Terrier</strong> — copper storage disease (autosomal recessive, COMMD1 gene)</li>
+          <li><strong>Labrador Retriever</strong> — copper-associated hepatitis (worldwide)</li>
+          <li><strong>Doberman Pinscher</strong> — copper + immune-mediated component (F &gt; M)</li>
+          <li><strong>Cocker Spaniel</strong> (American + English; M &gt; F)</li>
+          <li><strong>West Highland White Terrier</strong> — some copper, some not</li>
+          <li>Skye Terrier (ductal plate abnormality)</li>
+          <li>English Springer Spaniel (F &gt; M)</li>
+          <li>Dalmatian (copper, US)</li>
+          <li>Standard Poodle</li>
+        </ul>
+        <p><strong>Causes:</strong></p>
+        <ul>
+          <li><strong>Idiopathic chronic hepatitis</strong> — most common (likely immune-mediated, post-infectious, or unidentified toxin)</li>
+          <li><strong>Copper storage hepatopathy</strong> — primary (genetic) or secondary (cholestasis-induced)</li>
+          <li><strong>Drug/toxin-induced:</strong>
+            <ul>
+              <li>Phenobarbital, primidone, anticonvulsants</li>
+              <li>NSAIDs (carprofen, others — idiosyncratic)</li>
+              <li>Lomustine, methotrexate</li>
+              <li>Sulfonamides, doxycycline (rare)</li>
+              <li>Aflatoxins (moldy food)</li>
+              <li>Cycad palm (sago palm)</li>
+              <li>Xylitol</li>
+              <li>Mushrooms (Amanita)</li>
+              <li>Acetaminophen</li>
+            </ul>
+          </li>
+          <li><strong>Infectious:</strong>
+            <ul>
+              <li>Leptospirosis ✨</li>
+              <li>CAV-1 (rare with vaccination)</li>
+              <li>Bacterial cholangiohepatitis</li>
+              <li>Histoplasmosis (endemic)</li>
+            </ul>
+          </li>
+          <li><strong>Immune-mediated</strong> — suspected but criteria not well-established</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Chronic hepatocyte injury → inflammation → fibrosis → distorted architecture → <strong>cirrhosis</strong></li>
+          <li>Loss of hepatocyte mass → ↓ function</li>
+          <li>Fibrosis → portal hypertension → ascites + acquired PSS</li>
+          <li>Bilirubin metabolism impaired → jaundice</li>
+          <li>Coagulation factor synthesis ↓</li>
+          <li>Hepatic encephalopathy as end-stage</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Often <strong>insidious onset</strong> — owners report subtle changes over weeks-months</li>
+          <li>Anorexia, weight loss</li>
+          <li>Lethargy</li>
+          <li>Vomiting, diarrhea (intermittent)</li>
+          <li>PU/PD (very common in dog liver dz)</li>
+          <li><strong>Jaundice</strong> — late sign</li>
+          <li><strong>Ascites</strong> — portal hypertension; modified transudate</li>
+          <li>Hepatic encephalopathy (advanced)</li>
+          <li>Coagulopathy — petechiae, bleeding</li>
+          <li>Microhepatica (advanced cirrhosis)</li>
+          <li>Acute decompensation possible (transition from compensated to overt failure)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li><strong>↑ ALT, AST</strong> ✨ — hepatocellular damage</li>
+          <li>↑ ALP — variable (from cholestasis component)</li>
+          <li>↑ Bilirubin — late</li>
+          <li>↓ BUN, ↓ albumin, ↓ cholesterol — synthetic dysfunction</li>
+          <li>↑ Bile acids (pre + post) — function impaired</li>
+          <li>↑ Ammonia (HE)</li>
+          <li>Prolonged PT/aPTT (severe)</li>
+          <li>Mild non-regenerative anemia</li>
+          <li>UA: ammonium biurate crystals (severe dysfunction / shunt)</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Abdominal US:
+            <ul>
+              <li>Variable: heterogeneous parenchyma, nodular surface, microhepatica (cirrhosis)</li>
+              <li>Mass lesions (HCC, biliary)</li>
+              <li>Ascites</li>
+              <li>Acquired portosystemic collaterals</li>
+            </ul>
+          </li>
+          <li>CT — better for masses, vascular abnormalities</li>
+        </ul>
+
+        <p><strong>Liver biopsy — DEFINITIVE ✨</strong></p>
+        <ul>
+          <li>Required for:
+            <ul>
+              <li>Definitive diagnosis</li>
+              <li>Inflammation type / activity</li>
+              <li>Fibrosis stage</li>
+              <li>Copper quantification (rhodanine stain + atomic absorption)</li>
+              <li>Treatment guidance</li>
+            </ul>
+          </li>
+          <li>Methods: Tru-cut (US-guided), laparoscopic, surgical wedge biopsy</li>
+          <li><strong>Coag panel + platelets BEFORE biopsy</strong> ✨</li>
+          <li>Vit K1 1-2 mg/kg SC × 2-3 doses if PT prolonged</li>
+          <li>Multiple cores from different lobes</li>
+          <li>Bile + tissue culture</li>
+          <li>WSAVA scoring system standardized</li>
+        </ul>
+
+        <p><strong>Specific etiology workup:</strong></p>
+        <ul>
+          <li>Lepto MAT or PCR (urine/blood)</li>
+          <li>Drug history (phenobarbital, NSAIDs, recent dewormers)</li>
+          <li>Hepatic copper quantification (essential for breed-predisposed)</li>
+          <li>Bile culture</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Hepatic neoplasia (primary HCC, metastatic)</li>
+          <li>Hepatic abscess</li>
+          <li>Cholangitis</li>
+          <li>Vascular anomaly (PSS, AV fistula)</li>
+          <li>Reactive hepatopathy (secondary to systemic dz)</li>
+          <li>Toxin / drug-induced acute hepatitis</li>
+          <li>Nodular hyperplasia (benign, older dogs)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment depends on etiology + biopsy findings</strong></p>
+
+        <p><strong>1. Copper storage disease (when copper &gt; 1500 µg/g):</strong></p>
+        <ul>
+          <li><strong>D-Penicillamine 10-15 mg/kg PO q12h</strong> ✨ — chelator; lifelong; on empty stomach
+            <ul>
+              <li>Side effects: vomiting, anorexia (gradual dose escalation helps)</li>
+            </ul>
+          </li>
+          <li>Trientine — alternative chelator (less side effects, expensive)</li>
+          <li><strong>Zinc gluconate/acetate 5-10 mg/kg PO q12h</strong> — blocks copper absorption (maintenance after chelation)</li>
+          <li><strong>Low-copper diet</strong> ✨ — Royal Canin Hepatic, Hill's l/d
+            <ul>
+              <li>Avoid liver, organ meats, shellfish, lamb, duck, salmon</li>
+            </ul>
+          </li>
+          <li>Avoid copper-containing supplements</li>
+          <li>Monitor copper biopsies q1-2 yr to assess depletion</li>
+        </ul>
+
+        <p><strong>2. Idiopathic chronic hepatitis (suspected immune-mediated):</strong></p>
+        <ul>
+          <li><strong>Prednisone 1-2 mg/kg PO q12h × 2-4 wk</strong>, then taper over 3-6 months to lowest effective dose
+            <ul>
+              <li>Use only after biopsy + ruling out infection, copper, drug</li>
+              <li>Monitor for steroid hepatopathy (paradox)</li>
+            </ul>
+          </li>
+          <li>Cyclosporine 5 mg/kg PO q12h — adjunct or steroid-sparing</li>
+          <li>Azathioprine 2 mg/kg PO q24h × 2 wk, then q48h — adjunct</li>
+          <li>Mycophenolate 10-20 mg/kg PO q12h</li>
+        </ul>
+
+        <p><strong>3. Hepatoprotectants (use in all chronic hepatitis):</strong></p>
+        <ul>
+          <li><strong>SAMe (S-adenosylmethionine) 17-20 mg/kg PO q24h</strong> ✨ — antioxidant, glutathione precursor
+            <ul>
+              <li>Denosyl, Denamarin (combined with silybin)</li>
+              <li>Empty stomach (1h before meal)</li>
+            </ul>
+          </li>
+          <li><strong>Silybin (milk thistle) 5-10 mg/kg PO q24h</strong> — antioxidant, anti-fibrotic</li>
+          <li>Vitamin E 10-15 IU/kg PO q24h — antioxidant</li>
+          <li><strong>Ursodeoxycholic acid (UDCA) 10-15 mg/kg PO q24h</strong> ✨ — choleretic, hepatoprotective; especially for cholestatic disease</li>
+          <li>N-acetylcysteine — used in acute toxic hepatitis (acetaminophen, mushroom)</li>
+        </ul>
+
+        <p><strong>4. Manage complications:</strong></p>
+        <ul>
+          <li><strong>Ascites:</strong>
+            <ul>
+              <li>Spironolactone 1-2 mg/kg PO q12h — first-line</li>
+              <li>± Furosemide 1-2 mg/kg PO q12h (combined ratio 100:40 spironolactone:furosemide)</li>
+              <li>Sodium-restricted diet</li>
+              <li>Therapeutic abdominocentesis if respiratory compromise</li>
+              <li>Avoid aggressive diuresis (electrolyte imbalance, ↓ effective volume)</li>
+            </ul>
+          </li>
+          <li><strong>Hepatic encephalopathy:</strong>
+            <ul>
+              <li>Lactulose 0.5-1 mL/kg PO q8-12h titrated to 2-3 soft stools/day</li>
+              <li>Lactulose enema (warm water + lactulose 1:3) for acute HE</li>
+              <li>Metronidazole 7.5 mg/kg PO q12h (low dose) — reduce gut bacteria</li>
+              <li>Or amoxicillin / neomycin</li>
+              <li>Restricted-protein hepatic diet (in severe HE)</li>
+            </ul>
+          </li>
+          <li><strong>Coagulopathy:</strong>
+            <ul>
+              <li>Vitamin K1 1-2 mg/kg SC × 2-3 doses if PT prolonged</li>
+              <li>FFP if active bleeding or pre-procedure</li>
+            </ul>
+          </li>
+          <li><strong>GI ulceration</strong> (portal hypertension): omeprazole 1 mg/kg PO q24h, sucralfate</li>
+        </ul>
+
+        <p><strong>5. Diet:</strong></p>
+        <ul>
+          <li>Highly digestible, moderate-protein (unless severe HE)</li>
+          <li>Royal Canin Hepatic, Hill's l/d (low copper, balanced)</li>
+          <li>Avoid high-fat treats (cholestasis aggravation)</li>
+          <li>Multiple small meals</li>
+          <li>Adequate calories — cachexia worsens prognosis</li>
+        </ul>
+
+        <p><strong>6. Address underlying cause:</strong></p>
+        <ul>
+          <li>Lepto: doxycycline 5 mg/kg PO q12h × 2 wk</li>
+          <li>Drug discontinuation</li>
+          <li>Treat concurrent infection</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck CBC, biochem (incl. ALT, ALP, bili, alb), bile acids q1-3 mo</li>
+          <li>Body weight, BCS</li>
+          <li>Repeat biopsy if disease progression / treatment response unclear</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Cirrhosis</strong> — end-stage</li>
+          <li><strong>Hepatic encephalopathy</strong></li>
+          <li>Coagulopathy</li>
+          <li>Ascites</li>
+          <li>GI ulceration</li>
+          <li>Acquired portosystemic shunt</li>
+          <li>HCC (chronic hepatitis = ↑ risk over years)</li>
+          <li>Sepsis (impaired immune function)</li>
+          <li>Drug side effects (steroid, chelators)</li>
+          <li>Death from hepatic failure</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Idiopathic: variable; MST 1-3 years post-diagnosis (but highly individual)</li>
+          <li>Copper storage with early treatment: <strong>good</strong> — many normal lifespans</li>
+          <li>Bedlington with diagnosis + treatment: excellent</li>
+          <li>Doberman: poorer than other breeds (more aggressive)</li>
+          <li>Cirrhosis with ascites: median survival 1-12 months</li>
+          <li>Drug-induced (recognized + discontinued): can be excellent</li>
+          <li>Lepto: good with prompt antibiotic + supportive care</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 36 · Portosystemic Shunt (PSS) ---------- */
+  {
+    id: 'portosystemic-shunt',
+    titleEn: 'Portosystemic Shunt (PSS)',
+    titleTh: 'ทางลัดเลือดข้ามตับ',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['PSS', 'portosystemic shunt', 'hepatic encephalopathy', 'extrahepatic', 'intrahepatic', 'Yorkie', 'Maltese', 'ammonium biurate', 'lactulose'],
+    aliases: ['liver shunt', 'PSS', 'portovascular anomaly', 'PSVA', 'หลอดเลือดลัดข้ามตับ'],
+    source: 'Ch. 36 · pp. 600–608',
+    sections: {
+      definition: `
+        <p>Vascular anomaly ที่ทำให้เลือดจาก <strong>portal vein bypass ตับ</strong> → ตรงเข้า systemic circulation</p>
+        <ul>
+          <li>ตับไม่ได้ detoxify → ammonia, GI toxins, gut hormones สู่ systemic → <strong>hepatic encephalopathy</strong></li>
+          <li>Liver hypoplasia/atrophy from lack of trophic factors</li>
+          <li>2 types: <strong>congenital</strong> (single shunt, common) vs <strong>acquired</strong> (multiple, secondary to portal hypertension)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Congenital PSS:</strong></p>
+        <ul>
+          <li><strong>Extrahepatic (single shunt) — small breeds ✨</strong>:
+            <ul>
+              <li>Yorkshire Terrier (most common!)</li>
+              <li>Maltese, Mini Schnauzer, Tibetan Spaniel</li>
+              <li>Pug, Cairn Terrier, Shih Tzu</li>
+              <li>Persian + Himalayan cat</li>
+              <li>Most are portoazygos or portocaval</li>
+              <li>Diagnosed young (3-12 months typically)</li>
+            </ul>
+          </li>
+          <li><strong>Intrahepatic (single shunt) — large breeds ✨</strong>:
+            <ul>
+              <li>Irish Wolfhound, Lab, Golden Retriever, Aussie Shepherd, Border Collie</li>
+              <li>Persistent ductus venosus (left, right, central divisional)</li>
+              <li>Surgically more challenging</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Acquired PSS:</strong></p>
+        <ul>
+          <li>Multiple shunts (collaterals)</li>
+          <li>Secondary to chronic portal hypertension (cirrhosis, end-stage hepatitis)</li>
+          <li>Different management — treat underlying disease, NOT shunts directly</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Portal blood (with ammonia, GABA, mercaptans, fatty acids, gut hormones) bypasses liver</li>
+          <li>Toxins reach brain → HE</li>
+          <li>Liver doesn't receive portal trophic factors → hypoplasia, ↓ function</li>
+          <li>Loss of hepatic detoxification of bile acids, drugs</li>
+          <li>Hyperammonemia from gut bacterial protein metabolism</li>
+          <li>Ammonium biurate uroliths (urate not converted to allantoin → precipitates with ammonium)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Failure to thrive / runt of litter</strong> ✨ — small for breed</li>
+          <li><strong>Hepatic encephalopathy</strong> ✨ — episodic, especially after meals (postprandial)
+            <ul>
+              <li>Mild: lethargy, depression, mild ataxia, head-pressing</li>
+              <li>Moderate: drooling (cat especially), intermittent blindness, behavior change, circling, pacing</li>
+              <li>Severe: stupor, seizures, coma ✗</li>
+              <li>Worse with high-protein meal, GI bleed, dehydration, infection</li>
+            </ul>
+          </li>
+          <li>Ptyalism / drooling ✨ (especially cats with PSS)</li>
+          <li>PU/PD (urea cycle defect)</li>
+          <li>Vomiting, anorexia</li>
+          <li>Diarrhea</li>
+          <li>Polyphagia or hyporexia (variable)</li>
+          <li>Weight loss / poor body condition</li>
+          <li>Urinary signs from <strong>ammonium biurate uroliths</strong> ✨ (stranguria, hematuria, obstruction)</li>
+          <li>Copper-colored irises (cats with PSS) ✨</li>
+          <li>Slow recovery from anesthesia</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab findings (classic):</strong></p>
+        <ul>
+          <li><strong>↓ BUN</strong> ✨ — urea cycle defect</li>
+          <li><strong>↓ Albumin</strong> ✨ — synthesis</li>
+          <li><strong>↓ Cholesterol</strong> ✨</li>
+          <li>↓ Glucose (especially small breeds, fasting)</li>
+          <li>↑ ALT, ALP — mild-moderate</li>
+          <li>Mild non-regenerative anemia, microcytosis (iron metabolism — RBC mean MCV ↓)</li>
+          <li><strong>Bile acids ↑↑</strong> ✨ — both pre + post-prandial elevated; sensitive screen</li>
+          <li><strong>Ammonia ↑</strong> ✨ — diagnostic</li>
+          <li>UA: <strong>ammonium biurate crystals</strong> (yellow-brown, "thorn apple" shape) ✨</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Abdominal US:
+            <ul>
+              <li>Microhepatica (small liver)</li>
+              <li>Visualize shunt vessel (extrahepatic easier; experienced operator)</li>
+              <li>Renal mineralization, urolith</li>
+              <li>Hypoplastic portal vessels in liver</li>
+            </ul>
+          </li>
+          <li><strong>CT angiography</strong> ✨ — gold standard for definitive diagnosis + surgical planning
+            <ul>
+              <li>Locate shunt(s) precisely</li>
+              <li>Differentiate congenital from acquired</li>
+              <li>Plan surgical/interventional approach</li>
+            </ul>
+          </li>
+          <li>Per-rectal scintigraphy (Tc-99m pertechnetate) — detect shunting (referral)</li>
+          <li>Mesenteric portography — historical, replaced by CT</li>
+        </ul>
+
+        <p><strong>Definitive:</strong> imaging confirms shunt anatomy</p>
+        <p><strong>Liver biopsy</strong> — usually shows hepatic atrophy / hypoplasia + portal vein hypoplasia</p>
+      `,
+      differential: `
+        <ul>
+          <li>Microvascular dysplasia (MVD) — similar bile acids ↑ but no anatomic shunt; treated medically only</li>
+          <li>Severe chronic hepatitis with acquired collaterals</li>
+          <li>Other causes of HE (urea cycle defects, severe sepsis)</li>
+          <li>Hypoglycemia (other cause)</li>
+          <li>Other causes of FTT</li>
+          <li>Toxic hepatitis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Medical stabilization (always first, even if surgery planned):</strong></p>
+        <ul>
+          <li><strong>Lactulose 0.5-1 mL/kg PO q8-12h</strong> ✨ — titrate to 2-3 soft stools/day
+            <ul>
+              <li>Acidifies colon → traps NH3 as NH4+</li>
+              <li>Cathartic effect → faster bowel transit</li>
+            </ul>
+          </li>
+          <li><strong>Antibiotics:</strong>
+            <ul>
+              <li>Metronidazole 7.5 mg/kg PO q12h ✨ (low dose for HE)</li>
+              <li>Or amoxicillin 22 mg/kg PO q12h</li>
+              <li>Or neomycin (poorly absorbed) — reduce ammonia-producing bacteria</li>
+            </ul>
+          </li>
+          <li><strong>Hepatic diet</strong> ✨:
+            <ul>
+              <li>Royal Canin Hepatic, Hill's l/d</li>
+              <li>Moderately restricted, high-quality protein (vegetable + dairy preferred over meat for less aromatic AA)</li>
+              <li>Multiple small meals (4-6/day)</li>
+            </ul>
+          </li>
+          <li>Acute HE crisis:
+            <ul>
+              <li>Lactulose enema (1:3 with warm water, 5-10 mL/kg, retention) ✨ — fast acting</li>
+              <li>IV fluids + dextrose if hypoglycemic</li>
+              <li>K supplementation</li>
+              <li>Manage seizures (levetiracetam preferred; avoid diazepam — hepatic metabolism)</li>
+              <li>Treat concurrent GI bleed (omeprazole)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Definitive treatment — Surgical shunt attenuation ✨</strong></p>
+        <ul>
+          <li><strong>Indication:</strong> congenital single shunt (extra- or intra-hepatic)</li>
+          <li><strong>Methods:</strong>
+            <ul>
+              <li><strong>Ameroid constrictor</strong> ✨ — slow occlusion over 4-6 weeks; preferred for extrahepatic; better outcomes than acute ligation</li>
+              <li>Cellophane banding — alternative; gradual fibrosis</li>
+              <li>Acute ligation — historical; risk portal hypertension</li>
+              <li><strong>Percutaneous transvenous coil embolization</strong> — for intrahepatic shunts (interventional radiology, referral)</li>
+            </ul>
+          </li>
+          <li>Pre-op stabilization 4-8 weeks medical mgmt before surgery</li>
+          <li>Outcome:
+            <ul>
+              <li>Extrahepatic: <strong>excellent — 80-95% normal long-term</strong></li>
+              <li>Intrahepatic: more challenging; 70-85% improve</li>
+            </ul>
+          </li>
+          <li>Post-op: continue medical mgmt × weeks-months; gradual diet transition</li>
+        </ul>
+
+        <p><strong>3. Medical management only (if surgery declined / not feasible):</strong></p>
+        <ul>
+          <li>Lifelong lactulose + diet + intermittent antibiotics</li>
+          <li>Survival: variable — 1-5 years; quality of life can be reasonable but inferior to surgical correction</li>
+        </ul>
+
+        <p><strong>4. Acquired PSS (multiple):</strong></p>
+        <ul>
+          <li><strong>Do NOT attempt surgical correction</strong> ✗ — needed for portal decompression</li>
+          <li>Treat underlying liver disease</li>
+          <li>Medical management of HE + ascites</li>
+          <li>Prognosis depends on underlying disease (often guarded)</li>
+        </ul>
+
+        <p><strong>5. Anesthetic considerations:</strong></p>
+        <ul>
+          <li>Avoid drugs heavily metabolized by liver: diazepam, methoxyflurane</li>
+          <li>Use: propofol (rapid clearance), isoflurane/sevoflurane, fentanyl</li>
+          <li>Levetiracetam for pre-op seizure prophylaxis (if HE history)</li>
+          <li>Slow recovery expected</li>
+        </ul>
+
+        <p><strong>Monitoring after surgery:</strong></p>
+        <ul>
+          <li>Recheck bile acids 6-8 wk post-op (most normalize at 8-12 wk)</li>
+          <li>Repeat US — assess shunt closure</li>
+          <li>If signs persist → check for persistent shunting / development of acquired shunts</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe HE / coma ✗</li>
+          <li>Seizures (peri-operative — common with sudden shunt occlusion)</li>
+          <li>Portal hypertension post-attenuation — aggressive over-rapid closure</li>
+          <li>Persistent shunting after surgery (some shunts not fully closed)</li>
+          <li>Recurrent HE</li>
+          <li>Ammonium biurate uroliths (urinary obstruction)</li>
+          <li>Slow anesthetic recovery</li>
+          <li>Hypoglycemia in small breeds</li>
+          <li>Failure to thrive</li>
+          <li>Acute decompensation with stress, GI bleed, infection</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Surgical correction (extrahepatic): excellent</strong> ✓ — 80-95% normal lives</li>
+          <li>Intrahepatic surgical: 70-85% improve</li>
+          <li>Medical management only: 50-70% acceptable QOL × 1-5 yr</li>
+          <li>Acquired PSS: guarded — depends on underlying liver dz</li>
+          <li>Severe HE at presentation: more guarded</li>
+        </ul>
+        <div class="callout">💡 <strong>Yorkie + drooling + post-meal lethargy + small size = think PSS</strong> ✨ — bile acids + ammonia confirm; CT angio for surgery planning. Surgery = best chance for normal life</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 35 · Feline Cholangitis ---------- */
+  {
+    id: 'feline-cholangitis',
+    titleEn: 'Feline Cholangitis (Neutrophilic / Lymphocytic)',
+    titleTh: 'ทางเดินน้ำดีอักเสบในแมว',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['cat'],
+    tags: ['cholangitis', 'cholangiohepatitis', 'neutrophilic', 'lymphocytic', 'triaditis', 'amoxicillin clavulanate', 'ursodiol', 'liver fluke'],
+    aliases: ['cholangiohepatitis', 'cholangitis cat', 'แมวตับน้ำดีอักเสบ'],
+    source: 'Ch. 35 · pp. 578–582',
+    sections: {
+      definition: `
+        <p>การอักเสบของ <strong>biliary tract</strong> ในแมว — มัก extend ไปยัง surrounding hepatic parenchyma (cholangiohepatitis)</p>
+        <ul>
+          <li>เจอบ่อยที่ 2 ของโรคตับในแมว (รองจาก hepatic lipidosis)</li>
+          <li>3 main types: <strong>neutrophilic, lymphocytic, sclerosing/chronic</strong></li>
+          <li><strong>"Triaditis"</strong> ✨ — concurrent cholangitis + pancreatitis + IBD ในแมว ~ 50-80%</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Neutrophilic cholangitis (acute):</strong></p>
+        <ul>
+          <li>Ascending bacterial infection จาก GI tract via biliary tree</li>
+          <li>Common organisms: <em>E. coli</em>, Streptococcus, Enterococcus, Clostridium, anaerobes</li>
+          <li>Younger to middle-aged cats</li>
+          <li>Mostly acute presentation</li>
+        </ul>
+        <p><strong>Lymphocytic cholangitis (chronic):</strong></p>
+        <ul>
+          <li><strong>Immune-mediated</strong> — chronic infiltrate with lymphocytes ± plasma cells</li>
+          <li>Persians may be over-represented</li>
+          <li>Some cases may be chronic post-neutrophilic transition</li>
+          <li>Concurrent IBD common</li>
+          <li>Middle-aged to older cats</li>
+        </ul>
+        <p><strong>Sclerosing cholangitis (end-stage):</strong></p>
+        <ul>
+          <li>Biliary cirrhosis</li>
+          <li>Mostly post-liver fluke (Platynosomum) in endemic areas (Thailand, tropical regions ✨)</li>
+          <li>Severe end-stage — fibrotic biliary tree</li>
+        </ul>
+        <p><strong>Liver flukes (Platynosomum fastosum):</strong></p>
+        <ul>
+          <li>Endemic in tropical regions including Thailand ✨</li>
+          <li>Cat ingests intermediate host (lizards, geckos)</li>
+          <li>Cause sclerosing cholangitis, eosinophilic infiltrate</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Bile ducts inflamed → cholestasis → bilirubin retention</li>
+          <li>Bacteria can reach via ascending route (intestinal) or hematogenous</li>
+          <li>Inflammation extends to peri-portal hepatic parenchyma → cholangiohepatitis</li>
+          <li>Chronic → fibrosis → cirrhosis → portal hypertension → ascites, acquired PSS</li>
+          <li>Concurrent pancreatitis common (anatomic — common bile duct + pancreatic duct enter together at major duodenal papilla in cat)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Neutrophilic (acute):</strong></p>
+        <ul>
+          <li>Acute illness &lt; 1 month duration</li>
+          <li><strong>Fever</strong> ✨ — typical (vs lipidosis usually afebrile)</li>
+          <li>Lethargy, depression</li>
+          <li>Anorexia (→ may develop concurrent lipidosis ✗)</li>
+          <li>Vomiting</li>
+          <li><strong>Jaundice</strong></li>
+          <li>Abdominal pain (severe — palpate carefully)</li>
+          <li>Sometimes acute abdomen presentation</li>
+          <li>Dehydration</li>
+        </ul>
+        <p><strong>Lymphocytic (chronic):</strong></p>
+        <ul>
+          <li>Insidious — weeks to months</li>
+          <li>Variable signs: anorexia (intermittent), weight loss</li>
+          <li>Vomiting, diarrhea (concurrent IBD)</li>
+          <li>Mild jaundice (variable)</li>
+          <li>Hepatomegaly</li>
+          <li>Polyphagia in some (vs anorexia in neutrophilic)</li>
+          <li>Ascites (advanced)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab findings:</strong></p>
+        <ul>
+          <li><strong>↑ ALT, AST, ALP</strong> — variable; less marked in lymphocytic</li>
+          <li><strong>↑ GGT</strong> ✨ — typically marked (KEY differentiator from lipidosis where GGT often normal-mild)</li>
+          <li>↑ Bilirubin (variable — neutrophilic often higher)</li>
+          <li>Bilirubinuria</li>
+          <li>↑ Bile acids</li>
+          <li>Neutrophilia (neutrophilic form)</li>
+          <li>Lymphocytosis (lymphocytic form)</li>
+          <li>± Hyperglobulinemia (chronic)</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal US</strong> ✨:
+            <ul>
+              <li>Thickened gallbladder wall (&gt; 1 mm cat)</li>
+              <li>Sludgy or echogenic bile</li>
+              <li>Dilated common bile duct (&gt; 4 mm cat = abnormal; &gt; 5 mm with EHBO)</li>
+              <li>Hepatomegaly variable</li>
+              <li>Concurrent: pancreatitis (enlarged hyperechoic pancreas), IBD (thickened intestinal wall)</li>
+              <li>Liver flukes — may see flukes in bile ducts (rare to visualize directly)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Definitive — Liver biopsy + bile sample ✨</strong></p>
+        <ul>
+          <li>FNA / Tru-cut biopsy (US-guided after coag check)</li>
+          <li>Surgical / laparoscopic biopsy preferred for triaditis evaluation (multi-organ sampling)</li>
+          <li>Bile aspiration (cholecystocentesis) under US guidance:
+            <ul>
+              <li>Cytology + aerobic + anaerobic culture</li>
+              <li>Best for confirming neutrophilic + identifying organism</li>
+            </ul>
+          </li>
+          <li>Histopath:
+            <ul>
+              <li>Neutrophilic: neutrophilic infiltrate in/around bile ducts ± hepatocyte necrosis</li>
+              <li>Lymphocytic: dense lymphoplasmacytic infiltrate, ± fibrosis</li>
+              <li>Sclerosing: extensive fibrosis around bile ducts</li>
+              <li>Liver flukes: eosinophilic + lymphoplasmacytic; flukes/eggs visible</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Concurrent disease workup:</strong></p>
+        <ul>
+          <li>fPL — pancreatitis (high concurrence)</li>
+          <li>Endoscopy + intestinal biopsy — IBD</li>
+          <li>Cobalamin, folate</li>
+          <li>FeLV/FIV</li>
+          <li>T4</li>
+          <li>Fecal exam — flukes (Platynosomum eggs visible occasionally; sedimentation technique better than flotation)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Hepatic lipidosis (GGT KEY differentiator ✨)</li>
+          <li>Hepatic / biliary lymphoma</li>
+          <li>Pancreatitis with reactive hepatopathy</li>
+          <li>Toxoplasmosis</li>
+          <li>FIP</li>
+          <li>Drug-induced hepatitis</li>
+          <li>Liver flukes (Platynosomum)</li>
+          <li>Biliary obstruction (mass, stone)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Neutrophilic cholangitis:</strong></p>
+        <ul>
+          <li><strong>Antibiotics — based on culture if available, otherwise broad-spectrum ✨</strong>
+            <ul>
+              <li>Initial empirical IV: ampicillin 22 mg/kg IV q6-8h + enrofloxacin 5 mg/kg IV q24h (or marbofloxacin)</li>
+              <li>Or amoxicillin-clavulanate IV</li>
+              <li>Add metronidazole 7.5-10 mg/kg PO q12h for anaerobes</li>
+              <li>Switch to PO when stable: amoxicillin-clavulanate 12.5 mg/kg PO q12h × 4-6 wk</li>
+              <li>Total duration: 4-8 weeks minimum</li>
+            </ul>
+          </li>
+          <li><strong>IV fluids</strong> — correct dehydration, support liver</li>
+          <li><strong>Anti-emetics</strong> — maropitant, ondansetron</li>
+          <li><strong>Pain management</strong> — buprenorphine (avoid NSAIDs)</li>
+          <li><strong>Nutritional support</strong> — esophagostomy tube ถ้า anorexic &gt; 3-5 d ✨ — prevent lipidosis</li>
+          <li>Vitamin K1 1-2 mg/kg SC × 2-3 doses if cholestatic</li>
+        </ul>
+
+        <p><strong>Lymphocytic cholangitis:</strong></p>
+        <ul>
+          <li><strong>Immunosuppression:</strong>
+            <ul>
+              <li>Prednisolone 1-2 mg/kg PO q12h × 2-4 wk, then taper over 2-4 months to lowest effective dose</li>
+              <li>Long-term low-dose maintenance often required</li>
+            </ul>
+          </li>
+          <li>Refractory: chlorambucil 2 mg/cat PO q48h or cyclosporine 5 mg/kg PO q12h</li>
+          <li>Consider concurrent IBD treatment (combined approach)</li>
+          <li>Ursodiol throughout</li>
+        </ul>
+
+        <p><strong>Hepatoprotectants (both forms):</strong></p>
+        <ul>
+          <li><strong>Ursodeoxycholic acid (UDCA) 10-15 mg/kg PO q24h</strong> ✨ — choleretic, hepatoprotective; cornerstone</li>
+          <li>SAMe 200-400 mg/cat PO q24h (Denamarin) — antioxidant; empty stomach</li>
+          <li>Vitamin E 30-100 IU/cat PO q24h</li>
+          <li>Silybin (in Denamarin combo)</li>
+        </ul>
+
+        <p><strong>Liver flukes (endemic Thailand!):</strong></p>
+        <ul>
+          <li><strong>Praziquantel 20 mg/kg PO/SC × 3 days</strong> ✨ — primary treatment
+            <ul>
+              <li>Or 40 mg/kg single dose</li>
+              <li>Repeat in 4-6 weeks</li>
+            </ul>
+          </li>
+          <li>Or fenbendazole 50 mg/kg PO q24h × 5-10 days</li>
+          <li>Supportive: ursodiol, hepatoprotectants</li>
+          <li>Prevention: prevent hunting (lizards, geckos)</li>
+          <li>Surveillance fecal sedimentation in endemic areas</li>
+        </ul>
+
+        <p><strong>Triaditis (concurrent pancreatitis + IBD):</strong></p>
+        <ul>
+          <li>Treat all 3 components simultaneously</li>
+          <li>Cobalamin supplementation (essential)</li>
+          <li>Pain management</li>
+          <li>Prednisolone for IBD + lymphocytic cholangitis</li>
+          <li>Antibiotics for neutrophilic component</li>
+          <li>Pancreatitis: supportive, hydration, anti-emetic, pain</li>
+        </ul>
+
+        <p><strong>Cholecystectomy — selected cases:</strong></p>
+        <ul>
+          <li>Refractory infection</li>
+          <li>Mucocele in cats (rare vs dog)</li>
+          <li>Choleliths obstructing</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Concurrent hepatic lipidosis</strong> ✗ (anorexic cat)</li>
+          <li>Sepsis from cholangitis (acute neutrophilic)</li>
+          <li>Bile peritonitis (rupture, post-cholecystocentesis)</li>
+          <li>Biliary obstruction</li>
+          <li>Cirrhosis / sclerosing cholangitis (chronic)</li>
+          <li>Portal hypertension, ascites</li>
+          <li>Drug side effects (steroid, chlorambucil)</li>
+          <li>Triaditis flares</li>
+          <li>Recurrent infection</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Neutrophilic with prompt antibiotic + supportive care: good</strong> — most recover ✓</li>
+          <li>Lymphocytic: variable; often manageable long-term, may relapse</li>
+          <li>Sclerosing / liver fluke advanced: guarded</li>
+          <li>Triaditis: more challenging — depends on overall management</li>
+          <li>Severe at presentation (jaundice, coagulopathy, lipidosis): more guarded</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 36 · Gallbladder Mucocele ---------- */
+  {
+    id: 'gallbladder-mucocele',
+    titleEn: 'Gallbladder Mucocele (Canine)',
+    titleTh: 'GB Mucocele — ถุงน้ำดีตัน',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog'],
+    tags: ['gallbladder mucocele', 'GBM', 'kiwi sign', 'cholecystectomy', 'Sheltie', 'Cocker Spaniel', 'hyperlipidemia', 'endocrinopathy'],
+    aliases: ['GB mucocele', 'biliary mucocele', 'GBM', 'ถุงน้ำดีอุดตัน'],
+    source: 'Ch. 36 · pp. 614–617',
+    sections: {
+      definition: `
+        <p>การสะสมของ <strong>thick mucinous bile</strong> ใน gallbladder จนขยายและอุดตัน → ↑ pressure → wall ischemia → necrosis/rupture</p>
+        <ul>
+          <li>เจอบ่อยขึ้นในช่วงหลัง — recognition + US ดีขึ้น</li>
+          <li>Older dogs (mean ~ 9 yr)</li>
+          <li>Predisposed: <strong>Sheltie ✨, Cocker Spaniel, Mini Schnauzer, Border Terrier, Pomeranian</strong></li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li><strong>Endocrinopathies</strong> ✨:
+            <ul>
+              <li>Hyperadrenocorticism (Cushing's)</li>
+              <li>Hypothyroidism</li>
+            </ul>
+          </li>
+          <li><strong>Hyperlipidemia</strong> (Sheltie, Mini Schnauzer)</li>
+          <li>Cholestasis (other causes)</li>
+          <li>Genetic predisposition (Sheltie — ABCB4 mutation in some)</li>
+          <li>Chronic gallbladder dysmotility</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mucus hypersecretion + altered motility → bile becomes thick mucinous</li>
+          <li>Progressive distension → wall thinning, ischemia</li>
+          <li>"Stellate" or "kiwi-fruit" appearance on US ✨</li>
+          <li>Severe → wall necrosis → <strong>rupture → bile peritonitis</strong> ✗</li>
+          <li>± Concurrent biliary obstruction</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Clinically silent (incidental US finding):</strong></p>
+        <ul>
+          <li>~ 30-50% diagnosed incidentally — may have no signs</li>
+        </ul>
+        <p><strong>Clinically affected:</strong></p>
+        <ul>
+          <li>Vomiting (most common)</li>
+          <li>Anorexia, lethargy</li>
+          <li>± Diarrhea</li>
+          <li>Abdominal pain (cranial)</li>
+          <li>Jaundice (with obstruction or rupture)</li>
+          <li>PU/PD</li>
+          <li>Weight loss (chronic)</li>
+        </ul>
+        <p><strong>Acute / Ruptured:</strong></p>
+        <ul>
+          <li>Severe abdominal pain</li>
+          <li>Septic shock signs ✗</li>
+          <li>Fever or hypothermia</li>
+          <li>Collapse</li>
+          <li>Tachycardia, weak pulses</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Abdominal US — diagnostic ✨:</strong></p>
+        <ul>
+          <li><strong>"Stellate" or "kiwi-fruit" pattern</strong> ✨ — striated, immobile, gravity-dependent bile</li>
+          <li>GB wall thickness ↑</li>
+          <li>± Surrounding hyperechoic mesentery (peritonitis if ruptured)</li>
+          <li>± Free abdominal fluid (rupture)</li>
+          <li>± Common bile duct dilation (concurrent obstruction)</li>
+          <li>Grading (Type 1-5 by progression)</li>
+        </ul>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li>↑ ALP, ALT, GGT (variable)</li>
+          <li>↑ Bilirubin (with obstruction or rupture)</li>
+          <li>CBC: leukocytosis ± left shift (severe / septic)</li>
+          <li>Lipid panel — hyperlipidemia screen</li>
+          <li>Endocrine workup: ACTH stim, T4 (Cushing's, hypothyroid)</li>
+        </ul>
+        <p><strong>If rupture suspected:</strong></p>
+        <ul>
+          <li>Abdominocentesis — bilirubin in fluid &gt; 2× serum = bile peritonitis</li>
+          <li>Aerobic + anaerobic culture of abdominal fluid</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Cholelithiasis</li>
+          <li>Cholecystitis</li>
+          <li>Biliary obstruction (mass, stone)</li>
+          <li>Pancreatitis</li>
+          <li>Hepatic mass</li>
+          <li>Other causes of cholestasis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Surgical management — Cholecystectomy ✨</strong></p>
+        <ul>
+          <li><strong>Indications for surgery:</strong>
+            <ul>
+              <li>Clinical signs (vomiting, pain, jaundice)</li>
+              <li>Wall necrosis on US</li>
+              <li>Suspected/confirmed rupture (emergency!) ✗</li>
+              <li>Biliary obstruction</li>
+              <li>Progression on serial US</li>
+              <li>Severe distension (Grade 4-5)</li>
+            </ul>
+          </li>
+          <li>Laparotomy or laparoscopic</li>
+          <li>Common bile duct flush — confirm patency</li>
+          <li>Submit GB for histopath + culture</li>
+          <li>Mortality: elective surgery ~ 2-10%; rupture/peritonitis 20-40%</li>
+        </ul>
+
+        <p><strong>2. Medical management — for asymptomatic / not surgical candidates:</strong></p>
+        <ul>
+          <li><strong>Ursodeoxycholic acid (UDCA) 10-15 mg/kg PO q24h</strong> ✨ — choleretic, anti-inflammatory; may slow progression</li>
+          <li>Low-fat diet — Royal Canin Hepatic, Hill's i/d Low Fat</li>
+          <li>Treat underlying endocrinopathy:
+            <ul>
+              <li>Cushing's — trilostane</li>
+              <li>Hypothyroid — levothyroxine</li>
+              <li>Hyperlipidemia — diet, omega-3</li>
+            </ul>
+          </li>
+          <li>SAMe — antioxidant</li>
+          <li>Serial US q3-6 months — monitor progression</li>
+          <li>Surgery if progression / clinical signs develop</li>
+        </ul>
+
+        <p><strong>3. Ruptured GB / Bile peritonitis (emergency):</strong></p>
+        <ul>
+          <li>Stabilize: IV fluids, antibiotics (broad-spectrum), pain mgmt</li>
+          <li>Emergency surgical exploration + cholecystectomy + extensive abdominal lavage</li>
+          <li>Closed-suction drain</li>
+          <li>Aggressive post-op ICU care</li>
+          <li>Monitor for sepsis, AKI, ARDS</li>
+        </ul>
+
+        <p><strong>Post-operative care:</strong></p>
+        <ul>
+          <li>Antibiotics (amoxi-clav) × 2-4 wk</li>
+          <li>UDCA × 4-8 wk post-op</li>
+          <li>Treat underlying conditions</li>
+          <li>Recheck biochem 2 wk + 1 mo post-op</li>
+          <li>Most dogs do well long-term</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>GB rupture → bile peritonitis</strong> ✗ — life-threatening</li>
+          <li>Biliary obstruction</li>
+          <li>Sepsis</li>
+          <li>Concurrent pancreatitis (CBD flush)</li>
+          <li>Surgical complications: dehiscence, biliary leak, bleeding</li>
+          <li>Recurrence — rare after cholecystectomy</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Elective cholecystectomy: excellent</strong> — &gt; 90% long-term success ✓</li>
+          <li>Ruptured / peritonitis: guarded — 60-80% survival</li>
+          <li>Asymptomatic with medical management: variable; serial monitoring essential</li>
+          <li>Underlying endocrinopathy controlled: better outcome</li>
+        </ul>
+        <div class="callout">💡 <strong>Sheltie / Cocker / older dog with elevated ALP + vomiting → US for GB mucocele</strong> ✨ — classic kiwi-fruit pattern. Surgery before rupture = excellent outcome. After rupture = much higher mortality. Don't delay!</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 36 · Extrahepatic Biliary Obstruction ---------- */
+  {
+    id: 'biliary-obstruction',
+    titleEn: 'Extrahepatic Biliary Obstruction (EHBO)',
+    titleTh: 'อุดตันท่อน้ำดีนอกตับ',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['EHBO', 'biliary obstruction', 'choledocholithiasis', 'pancreatitis', 'tumor', 'jaundice', 'cholecystectomy', 'biliary stenting'],
+    aliases: ['EHBO', 'biliary obstruction', 'common bile duct obstruction', 'CBD obstruction', 'อุดตันท่อน้ำดี'],
+    source: 'Ch. 36 · pp. 617–620',
+    sections: {
+      definition: `
+        <p>การอุดตันของ <strong>extrahepatic biliary tract</strong> (common bile duct, common hepatic duct, cystic duct) — partial หรือ complete</p>
+        <ul>
+          <li>Surgical emergency เมื่อ severe / acute</li>
+          <li>Causes: pancreatitis (most common cause in dog/cat ✨), neoplasia, choleliths, mucocele, foreign body</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common causes:</strong></p>
+        <ul>
+          <li><strong>Pancreatitis</strong> ✨ — most common; pancreatic edema/inflammation compresses CBD as it traverses pancreas
+            <ul>
+              <li>Often resolves with pancreatitis treatment</li>
+              <li>Cat: more likely to develop chronic biliary disease post-pancreatitis</li>
+            </ul>
+          </li>
+          <li><strong>Neoplasia:</strong>
+            <ul>
+              <li>Pancreatic adenocarcinoma</li>
+              <li>Hepatic / biliary carcinoma</li>
+              <li>Lymphoma (cat)</li>
+              <li>Duodenal mass</li>
+            </ul>
+          </li>
+          <li><strong>GB mucocele</strong> — extension into CBD</li>
+          <li><strong>Choledocholithiasis</strong> — bile stones (less common in pets vs humans)</li>
+          <li><strong>Foreign body / parasites:</strong>
+            <ul>
+              <li>Liver flukes (Platynosomum) — endemic Thailand ✨</li>
+            </ul>
+          </li>
+          <li>Stricture (post-trauma, post-surgical)</li>
+          <li>Pancreatic abscess / pseudocyst</li>
+          <li>Duodenal mass</li>
+          <li>Lymphadenopathy (sublumbar)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Obstruction → bile backflow → ↑ pressure in biliary tree</li>
+          <li>Hepatocyte damage from retained bile salts</li>
+          <li>Bilirubin regurgitation → conjugated hyperbilirubinemia</li>
+          <li>Acholic stool (no bilirubin reaching intestine)</li>
+          <li>Vitamin K malabsorption (no bile for fat absorption) → coagulopathy</li>
+          <li>Severe / chronic → secondary biliary cirrhosis</li>
+          <li>Bacterial overgrowth in stagnant bile → cholangitis, sepsis</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Jaundice</strong> ✨ — typically progressive, marked</li>
+          <li>Anorexia, lethargy</li>
+          <li>Vomiting (especially with concurrent pancreatitis)</li>
+          <li>Abdominal pain (cranial)</li>
+          <li><strong>Acholic (pale grey-tan) stool</strong> ✨ — pathognomonic of complete obstruction</li>
+          <li>Bilirubinuria (orange-brown urine)</li>
+          <li>PU/PD</li>
+          <li>Weight loss (chronic)</li>
+          <li>Coagulopathy — bleeding, petechiae (severe / chronic)</li>
+          <li>Pruritus (rare in pets, common in humans)</li>
+          <li>Sepsis signs (concurrent cholangitis) — fever, depression ✗</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li><strong>↑ Total bilirubin (markedly), with conjugated &gt; unconjugated</strong></li>
+          <li>↑↑ ALP, GGT</li>
+          <li>↑ ALT, AST (variable)</li>
+          <li>↑ Cholesterol (often)</li>
+          <li>Prolonged PT (vit K deficiency from chronic obstruction)</li>
+          <li>↑ Bile acids</li>
+          <li>cPL/fPL — pancreatitis screen ✨</li>
+          <li>Bilirubinuria</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal US — diagnostic ✨:</strong>
+            <ul>
+              <li><strong>Dilated common bile duct</strong>: dog &gt; 5 mm, cat &gt; 4-5 mm</li>
+              <li>Dilated intrahepatic bile ducts (severe / chronic)</li>
+              <li>Dilated GB</li>
+              <li>Identify cause: pancreatitis, mass, mucocele, stone</li>
+              <li>Note: CBD doesn't dilate immediately — takes 1-3 days; acute obstruction may have normal CBD initially</li>
+            </ul>
+          </li>
+          <li>CT — better for tumor staging, complex anatomy</li>
+        </ul>
+
+        <p><strong>Definitive:</strong> identify + biopsy the cause (FNA mass, pancreas)</p>
+        <p><strong>Bile sampling (caution):</strong> cholecystocentesis under US — culture, cytology</p>
+      `,
+      differential: `
+        <ul>
+          <li>Hepatic disease (pre-hepatic causes have less marked bilirubin elevation typically)</li>
+          <li>Hemolytic anemia (pre-hepatic — IMHA)</li>
+          <li>Sepsis with cholestasis</li>
+          <li>Drug-induced cholestasis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Identify + treat underlying cause ✨</strong></p>
+        <ul>
+          <li><strong>Pancreatitis (most common, often resolves with medical mgmt):</strong>
+            <ul>
+              <li>Aggressive supportive care: IV fluids, anti-emetics, pain</li>
+              <li>NPO → early enteral feeding</li>
+              <li>Most resolve over 7-14 days</li>
+              <li>Surgical decompression only if no improvement / severe</li>
+            </ul>
+          </li>
+          <li><strong>Neoplasia:</strong>
+            <ul>
+              <li>Surgical resection if possible</li>
+              <li>Biliary stenting (palliative for unresectable)</li>
+              <li>Cholecystoduodenostomy / cholecystojejunostomy (bypass)</li>
+            </ul>
+          </li>
+          <li><strong>GB mucocele:</strong> cholecystectomy + CBD flush</li>
+          <li><strong>Choledocholithiasis:</strong> surgical removal, choledochotomy</li>
+          <li><strong>Liver flukes:</strong> praziquantel 20 mg/kg × 3 d</li>
+        </ul>
+
+        <p><strong>2. Pre-operative stabilization:</strong></p>
+        <ul>
+          <li><strong>Vitamin K1 1-2 mg/kg SC q12h × 3 doses</strong> ✨ — correct coagulopathy before any procedure
+            <ul>
+              <li>Recheck PT 12h after last dose</li>
+            </ul>
+          </li>
+          <li>FFP 10 mL/kg if active bleeding or PT remains prolonged</li>
+          <li>IV fluids — hydration, electrolyte correction</li>
+          <li>Antibiotics (broad-spectrum): ampicillin + enrofloxacin or amoxi-clav (cholangitis risk high)</li>
+          <li>Anti-emetics, pain management</li>
+          <li>Address sepsis if present</li>
+        </ul>
+
+        <p><strong>3. Surgical decompression (when medical fails / severe):</strong></p>
+        <ul>
+          <li><strong>Indications:</strong>
+            <ul>
+              <li>Persistent obstruction &gt; 5-7 days despite medical mgmt</li>
+              <li>Septic peritonitis / cholangitis</li>
+              <li>Mass causing obstruction</li>
+              <li>Worsening clinical or biochemical status</li>
+            </ul>
+          </li>
+          <li>Procedures:
+            <ul>
+              <li>Cholecystectomy (if cause is biliary)</li>
+              <li>Cholecystotomy + CBD flush (with stenting if needed)</li>
+              <li>Cholecystoduodenostomy / cholecystojejunostomy (bypass for unresectable distal obstruction)</li>
+              <li>Stenting (CBD or duodenal) — interventional radiology</li>
+            </ul>
+          </li>
+          <li>Biopsy + culture during surgery</li>
+          <li>Cholecystotomy tube — temporary biliary diversion</li>
+        </ul>
+
+        <p><strong>4. Supportive care (during + post-treatment):</strong></p>
+        <ul>
+          <li><strong>Ursodeoxycholic acid (UDCA) 10-15 mg/kg PO q24h</strong> ✨ — once obstruction resolved (contraindicated in complete obstruction)</li>
+          <li>SAMe + silybin (Denamarin) — hepatoprotection</li>
+          <li>Vitamin K1 maintenance (1-2 mg/kg SC q1-4 wk)</li>
+          <li>Low-fat diet</li>
+          <li>Anti-emetic, appetite stimulants as needed</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Bilirubin trend (slow decline expected — weeks)</li>
+          <li>Recheck US 1-2 wk after intervention</li>
+          <li>Coag panel before any procedure</li>
+          <li>Watch for sepsis signs</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Septic cholangitis / sepsis</strong> ✗</li>
+          <li>Bile peritonitis (rupture, post-surgical leak)</li>
+          <li>Coagulopathy → bleeding</li>
+          <li>Secondary biliary cirrhosis (chronic)</li>
+          <li>Surgical complications: dehiscence, stricture at anastomosis, infection</li>
+          <li>Persistent / recurrent obstruction</li>
+          <li>Pancreatitis (post-surgical or related)</li>
+          <li>Death from sepsis or hepatic failure</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Pancreatitis-induced: depends on pancreatitis severity; most resolve with medical mgmt</li>
+          <li>Mucocele / cholelithiasis with surgery: good (~ 80% survival)</li>
+          <li>Neoplastic: poor — depends on tumor type, resectability</li>
+          <li>Septic cholangitis with surgery: guarded — 50-65% mortality</li>
+          <li>Secondary biliary cirrhosis: poor</li>
+          <li>Coagulopathy at presentation: ↑ surgical risk</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 37 · Acute Pancreatitis ---------- */
+  {
+    id: 'acute-pancreatitis',
+    titleEn: 'Acute Pancreatitis',
+    titleTh: 'ตับอ่อนอักเสบเฉียบพลัน',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['acute pancreatitis', 'cPL', 'fPL', 'SNAP', 'maropitant', 'fentanyl', 'plasma transfusion', 'low-fat diet', 'Mini Schnauzer'],
+    aliases: ['pancreatitis', 'AP', 'ตับอ่อนอักเสบ'],
+    source: 'Ch. 37 · pp. 627–636',
+    sections: {
+      definition: `
+        <p>การอักเสบเฉียบพลันของตับอ่อน → autodigestion จาก premature activation ของ pancreatic enzymes → systemic effects</p>
+        <ul>
+          <li>เจอบ่อยในคลินิก — ทั้งหมาและแมว</li>
+          <li>Spectrum กว้าง: mild → severe necrotizing → SIRS → MODS</li>
+          <li>Mortality สูงถ้า severe (~ 30-50%)</li>
+          <li>Cat: subtler presentation, harder to diagnose ✨</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Dog risk factors:</strong></p>
+        <ul>
+          <li><strong>Dietary indiscretion / high-fat meal</strong> ✨ — classic trigger</li>
+          <li><strong>Hyperlipidemia / hypertriglyceridemia</strong> ✨ — Mini Schnauzer especially</li>
+          <li>Obesity</li>
+          <li>Endocrinopathy: Cushing's, DM, hypothyroid</li>
+          <li>Drugs: <strong>azathioprine, sulfonamides, KBr, l-asparaginase</strong>, organophosphate</li>
+          <li>Trauma (HBC, post-surgical)</li>
+          <li>Hypercalcemia</li>
+          <li>Idiopathic (many cases)</li>
+        </ul>
+        <p><strong>Predisposed breeds:</strong> Mini Schnauzer, Yorkie, Cocker Spaniel, terrier breeds, Cavalier KCS</p>
+        <p><strong>Cat:</strong></p>
+        <ul>
+          <li>Idiopathic mostly (~ 90%)</li>
+          <li>Trauma</li>
+          <li>Toxoplasmosis</li>
+          <li>Liver flukes (endemic)</li>
+          <li>Drugs (less common than dogs)</li>
+          <li>Concurrent IBD, cholangitis ("triaditis") ✨</li>
+          <li>Hypercalcemia</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Premature activation of trypsinogen → trypsin → activates other zymogens within pancreas</li>
+          <li>Autodigestion → inflammation → edema → necrosis</li>
+          <li>Local inflammation → systemic inflammatory response (SIRS)</li>
+          <li>Severe: ARDS, AKI, DIC, MODS</li>
+          <li>Concurrent biliary obstruction common (anatomy)</li>
+          <li>Cat: chronic pancreatitis often co-exists with IBD + cholangitis (triaditis)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Dog:</strong></p>
+        <ul>
+          <li><strong>Acute persistent vomiting</strong> ✨</li>
+          <li>Anorexia, lethargy</li>
+          <li><strong>Cranial abdominal pain</strong> ✨ — "praying position", reluctance to move</li>
+          <li>Dehydration</li>
+          <li>± Diarrhea</li>
+          <li>Fever (variable)</li>
+          <li>Severe: shock, collapse, hypothermia, jaundice ✗</li>
+          <li>Petechiae, ecchymoses (DIC)</li>
+        </ul>
+        <p><strong>Cat (subtle, harder to diagnose ✨):</strong></p>
+        <ul>
+          <li><strong>Anorexia</strong> ✨ — most consistent sign</li>
+          <li>Lethargy, weight loss</li>
+          <li>Vomiting LESS common than in dogs (~ 35-50%)</li>
+          <li>Abdominal pain often missed (cats hide pain well)</li>
+          <li>Dehydration</li>
+          <li>± Hypothermia</li>
+          <li>± Jaundice (concurrent cholangitis / lipidosis)</li>
+          <li>Diarrhea uncommon</li>
+          <li>Concurrent disease signs (DM, IBD, cholangitis, lipidosis)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical suspicion + multi-modal approach:</strong></p>
+
+        <p><strong>1. cPL / fPL (SNAP) ✨ — first-line</strong></p>
+        <ul>
+          <li>Pancreatic-specific lipase</li>
+          <li>SNAP qualitative (in-clinic): positive / negative</li>
+          <li>Spec cPL / fPL (lab): quantitative
+            <ul>
+              <li>Dog: &gt; 400 µg/L = consistent; &gt; 1000 = highly suggestive</li>
+              <li>Cat: &gt; 5.4 µg/L = consistent</li>
+            </ul>
+          </li>
+          <li>High specificity but not 100% sensitivity</li>
+          <li>Doesn't differentiate severity</li>
+          <li>Negative test does NOT rule out (especially cat)</li>
+        </ul>
+
+        <p><strong>2. Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal US (preferred):</strong>
+            <ul>
+              <li>Enlarged hypoechoic pancreas</li>
+              <li>Surrounding hyperechoic mesentery (peritonitis)</li>
+              <li>Free fluid</li>
+              <li>± Dilated CBD (concurrent obstruction)</li>
+              <li>Pseudocyst, abscess (rare complications)</li>
+              <li>Skill-dependent — cat pancreatitis can be missed</li>
+            </ul>
+          </li>
+          <li>Abdominal rad: nonspecific; ileus, "loss of detail" cranial abdomen</li>
+          <li>CT — superior for staging/complications, less commonly used in vet med</li>
+        </ul>
+
+        <p><strong>3. Lab:</strong></p>
+        <ul>
+          <li>CBC: leukocytosis with left shift; severe — leukopenia (poor prognosis)</li>
+          <li>Biochem:
+            <ul>
+              <li>Hyperlipidemia, hypertriglyceridemia</li>
+              <li>↑ ALT, ALP, bilirubin (concurrent hepatic / biliary involvement)</li>
+              <li>Hyperglycemia (stress / DM)</li>
+              <li>Hypocalcemia (saponification)</li>
+              <li>Pre-renal azotemia</li>
+              <li>Lipase, amylase — historically used; non-specific, replaced by cPL/fPL</li>
+            </ul>
+          </li>
+          <li>Electrolytes — hypoK, hypoNa, hypoCl from vomiting</li>
+          <li>Coag panel — DIC screening in severe</li>
+          <li>Lactate — sepsis / SIRS indicator</li>
+          <li>Glucose, fT4 (cat) — concurrent disease workup</li>
+        </ul>
+
+        <p><strong>4. Definitive (rarely needed):</strong> pancreatic biopsy — surgical or laparoscopic; usually not pursued except for chronic cases</p>
+      `,
+      differential: `
+        <ul>
+          <li>Foreign body / GI obstruction</li>
+          <li>GDV</li>
+          <li>Severe gastroenteritis</li>
+          <li>Septic peritonitis</li>
+          <li>HBC / abdominal trauma</li>
+          <li>Pyometra</li>
+          <li>Hepatic dz</li>
+          <li>Renal dz (cat)</li>
+          <li>Lymphoma (cat)</li>
+          <li>IBD flare</li>
+          <li>DKA</li>
+          <li>Addison's</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Mainstay = supportive care; no specific therapy</strong></p>
+
+        <p><strong>1. IV fluid therapy ✨ (cornerstone):</strong></p>
+        <ul>
+          <li>Aggressive crystalloid (LRS, Plasmalyte) — restore perfusion, support pancreatic microcirculation</li>
+          <li>Bolus 10-20 mL/kg if hypovolemic, then maintenance + ongoing losses</li>
+          <li>Adjust K supplementation (often hypokalemic)</li>
+          <li>Monitor BP, urine output, electrolytes</li>
+          <li>Avoid overhydration (risk pulmonary edema, especially cat)</li>
+        </ul>
+
+        <p><strong>2. Pain management ✨ (essential — pain worsens outcome):</strong></p>
+        <ul>
+          <li><strong>Methadone 0.2-0.4 mg/kg IV/IM q4-6h</strong> ✨</li>
+          <li>Or buprenorphine 0.02 mg/kg IV/IM q6-8h</li>
+          <li>Severe: <strong>fentanyl CRI 2-5 µg/kg/hr</strong> — most effective</li>
+          <li>Lidocaine CRI 25-50 µg/kg/min — adjunct (avoid in cats)</li>
+          <li>Ketamine CRI 2-10 µg/kg/min — adjunct refractory pain</li>
+          <li>Avoid NSAIDs ✗ — kidney injury risk in dehydrated/hypotensive patient</li>
+        </ul>
+
+        <p><strong>3. Anti-emetics ✨:</strong></p>
+        <ul>
+          <li><strong>Maropitant 1 mg/kg SC/IV q24h</strong> ✨ — first-line; also has visceral analgesic effect</li>
+          <li><strong>Ondansetron 0.5-1 mg/kg IV q8-12h</strong> ✨ — refractory; combine with maropitant</li>
+          <li>Metoclopramide CRI 1-2 mg/kg/day — prokinetic, central anti-emetic</li>
+          <li>Dolasetron alternative</li>
+        </ul>
+
+        <p><strong>4. Nutritional support ✨ — early enteral feeding:</strong></p>
+        <ul>
+          <li><strong>Modern approach: feed early</strong> (within 24-48h, not prolonged NPO) ✨
+            <ul>
+              <li>NPO &gt; 3 days = harm (mucosal atrophy, bacterial translocation)</li>
+              <li>Especially critical in cat (lipidosis risk)</li>
+            </ul>
+          </li>
+          <li>Diet: low-fat, highly digestible (Royal Canin GI Low Fat, Hill's i/d Low Fat)</li>
+          <li>Cat: not necessarily low-fat; high-protein recovery diet usually tolerated</li>
+          <li>Small frequent meals</li>
+          <li><strong>Esophagostomy tube</strong> ✨ if anorexic &gt; 3-5 d (cat especially)</li>
+          <li>Naso-jejunal tube — bypass stomach for severe cases (referral)</li>
+          <li>TPN — last resort for refractory vomiting</li>
+        </ul>
+
+        <p><strong>5. Acid suppression / GI protection:</strong></p>
+        <ul>
+          <li>Pantoprazole 1 mg/kg IV q12-24h (hospitalized)</li>
+          <li>Omeprazole 1 mg/kg PO q12-24h (when oral)</li>
+          <li>Sucralfate 0.5-1 g PO q8h ถ้า hematemesis</li>
+        </ul>
+
+        <p><strong>6. Plasma / colloid (severe cases):</strong></p>
+        <ul>
+          <li>FFP 10-20 mL/kg — replace antiproteases (α2-macroglobulin, antithrombin), DIC support</li>
+          <li>Indication: hypoalbuminemia, DIC, severe disease</li>
+          <li>Albumin support if &lt; 2.0</li>
+        </ul>
+
+        <p><strong>7. Antibiotics — selective use:</strong></p>
+        <ul>
+          <li>NOT routinely indicated in uncomplicated pancreatitis ✗</li>
+          <li>Indications:
+            <ul>
+              <li>Septic peritonitis / abscess</li>
+              <li>Concurrent cholangitis</li>
+              <li>Suspected bacterial translocation (severe SIRS, leukopenia)</li>
+              <li>Aspiration pneumonia</li>
+            </ul>
+          </li>
+          <li>Choices: ampicillin + enrofloxacin, amoxi-clav</li>
+        </ul>
+
+        <p><strong>8. Treat concurrent disease:</strong></p>
+        <ul>
+          <li>DM: insulin (carefully — pancreatitis worsens insulin resistance)</li>
+          <li>Cholangitis: antibiotics, ursodiol</li>
+          <li>IBD (cat): defer steroids until pancreatitis resolved</li>
+          <li>Hyperlipidemia: low-fat diet, omega-3, fenofibrate post-recovery</li>
+          <li>Hepatic lipidosis (cat): aggressive nutritional support</li>
+        </ul>
+
+        <p><strong>9. Avoid:</strong></p>
+        <ul>
+          <li>Steroids — historically avoided; recent evidence may not be harmful, but reserve for refractory cases / IBD component</li>
+          <li>NSAIDs ✗</li>
+          <li>Prolonged NPO</li>
+          <li>High-fat diet</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Vital signs, hydration, urine output q4-6h</li>
+          <li>Daily: PCV/TS, electrolytes, glucose, BUN/Cr, lactate</li>
+          <li>Weight</li>
+          <li>cPL/fPL recheck — typically falls with clinical improvement (not always parallel)</li>
+          <li>US recheck if not improving</li>
+          <li>Watch for: AKI, ARDS, DIC, septic peritonitis (abscess), pseudocyst, EPI / DM development</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>SIRS / MODS / death</strong> ✗</li>
+          <li>AKI</li>
+          <li>ARDS</li>
+          <li>DIC</li>
+          <li>Septic peritonitis</li>
+          <li>Pancreatic abscess</li>
+          <li>Pancreatic pseudocyst</li>
+          <li>Diabetes mellitus (post-pancreatitis — endocrine cells damaged)</li>
+          <li>EPI (chronic / recurrent → exocrine cell loss)</li>
+          <li>Concurrent hepatic lipidosis (cat)</li>
+          <li>Biliary obstruction</li>
+          <li>Recurrent pancreatitis (chronic disease pattern)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Mild dog pancreatitis with prompt treatment: good</strong> — recover 5-10 days</li>
+          <li>Severe / necrotizing: guarded — mortality 30-50%</li>
+          <li>Cat acute pancreatitis: variable; depends on triaditis component</li>
+          <li>Mini Schnauzer with hyperlipidemia: recurrent risk; lifelong management</li>
+          <li>Negative prognostic factors: severe SIRS, AKI, ARDS, DIC, hypocalcemia, hypoglycemia, age &gt; 10 yr, comorbidities</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Owner education:</strong> ห้ามให้อาหาร high-fat, table scraps, ไขมัน — เสี่ยง recurrent pancreatitis. ใช้ low-fat prescription diet long-term ในเคสที่เคยเป็น. Mini Schnauzer + hyperlipidemia = lifelong vigilance</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 37 · Chronic Pancreatitis (Cat) ---------- */
+  {
+    id: 'chronic-pancreatitis-cat',
+    titleEn: 'Chronic Pancreatitis (Feline)',
+    titleTh: 'ตับอ่อนอักเสบเรื้อรังในแมว',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['cat', 'dog'],
+    tags: ['chronic pancreatitis', 'triaditis', 'fPL', 'cobalamin', 'low-fat diet', 'maropitant', 'IBD'],
+    aliases: ['chronic pancreatitis', 'CP cat', 'ตับอ่อนเรื้อรัง'],
+    source: 'Ch. 37 · pp. 636–640',
+    sections: {
+      definition: `
+        <p>การอักเสบเรื้อรังหรือเป็นๆหายๆ ของตับอ่อน → progressive damage</p>
+        <ul>
+          <li><strong>Cat: เจอบ่อยมาก แต่ undiagnosed</strong> — postmortem studies show ~ 60% of cats have chronic pancreatitis ✨</li>
+          <li>Often subclinical or vague signs</li>
+          <li>Concurrent IBD + cholangitis ("triaditis") ✨</li>
+          <li>Dog: less common as discrete entity; often progression from recurrent acute episodes (Mini Schnauzer)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Cat:</strong></p>
+        <ul>
+          <li><strong>Idiopathic</strong> — most common</li>
+          <li>Concurrent IBD, cholangitis (triaditis)</li>
+          <li>Toxoplasmosis</li>
+          <li>Liver flukes (endemic)</li>
+          <li>Possible immune-mediated component</li>
+        </ul>
+        <p><strong>Dog:</strong></p>
+        <ul>
+          <li>Recurrent acute episodes → chronic damage</li>
+          <li>Hyperlipidemia (Mini Schnauzer)</li>
+          <li>Genetic predisposition (English Cocker — possibly autoimmune pancreatitis)</li>
+          <li>Persistent dietary indiscretion</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Recurrent / persistent inflammation → fibrosis + atrophy of acinar cells</li>
+          <li>Eventually loss of exocrine function → EPI</li>
+          <li>Damage to islet cells → diabetes mellitus</li>
+          <li>Triaditis (cat): shared embryologic origin + anatomy of pancreatic duct + bile duct + duodenum</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Cat — vague + chronic:</strong></p>
+        <ul>
+          <li><strong>Intermittent anorexia / hyporexia</strong> ✨</li>
+          <li>Weight loss (gradual)</li>
+          <li>Lethargy</li>
+          <li>Vomiting (sometimes)</li>
+          <li>Diarrhea (concurrent IBD)</li>
+          <li>± Mild abdominal pain</li>
+          <li>Dehydration during flare</li>
+          <li>Concurrent triaditis signs</li>
+          <li>End-stage: DM, EPI</li>
+        </ul>
+        <p><strong>Dog:</strong></p>
+        <ul>
+          <li>Recurrent vomiting episodes</li>
+          <li>Intermittent anorexia</li>
+          <li>Weight loss</li>
+          <li>Diarrhea (EPI development)</li>
+          <li>PU/PD (DM development)</li>
+          <li>Cachexia (advanced)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical suspicion in chronic vague illness:</strong></p>
+        <ul>
+          <li><strong>fPL / cPL</strong> — may be elevated during flares; can be normal between flares
+            <ul>
+              <li>Repeated testing useful</li>
+              <li>Negative does NOT rule out chronic pancreatitis</li>
+            </ul>
+          </li>
+          <li><strong>Abdominal US</strong>:
+            <ul>
+              <li>Hyperechoic, irregular pancreas</li>
+              <li>Pancreatic atrophy (chronic)</li>
+              <li>± Surrounding mesenteric changes</li>
+              <li>Concurrent: liver, biliary, intestinal changes</li>
+            </ul>
+          </li>
+          <li>CBC, biochem — variable; may be near-normal during quiescence</li>
+          <li>Cobalamin, folate ✨ — often low; supplement</li>
+          <li>TLI — assess for EPI (low if exocrine damage extensive)</li>
+          <li>fT4, glucose, biochem — concurrent disease</li>
+          <li>FeLV/FIV</li>
+          <li><strong>Pancreatic biopsy</strong> — gold standard (surgical/laparoscopic; rarely pursued); also allows liver + intestinal biopsy for triaditis</li>
+        </ul>
+        <p><strong>Workup for triaditis (cat):</strong></p>
+        <ul>
+          <li>fPL — pancreatitis</li>
+          <li>GGT, ALT, ALP, bilirubin — cholangitis</li>
+          <li>Cobalamin, fecal — IBD</li>
+          <li>If practical: surgical biopsy of pancreas + liver + small intestine simultaneously</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>IBD (concurrent often)</li>
+          <li>Lymphoma (alimentary)</li>
+          <li>Cholangitis (concurrent often)</li>
+          <li>EPI</li>
+          <li>Hyperthyroidism (cat senior)</li>
+          <li>CKD</li>
+          <li>Hepatic disease</li>
+          <li>Other chronic inflammatory disease</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treat flares + prevent progression + manage complications</strong></p>
+
+        <p><strong>1. Acute flare management (similar to acute pancreatitis):</strong></p>
+        <ul>
+          <li>IV fluids</li>
+          <li>Anti-emetics (maropitant ± ondansetron)</li>
+          <li>Pain management (buprenorphine, methadone)</li>
+          <li>Early enteral feeding (esophagostomy tube if anorexic)</li>
+          <li>Address concurrent diseases</li>
+        </ul>
+
+        <p><strong>2. Long-term management:</strong></p>
+        <ul>
+          <li><strong>Diet:</strong>
+            <ul>
+              <li>Cat: highly digestible, moderate-fat OK; avoid sudden changes; canned wet food preferred (hydration)</li>
+              <li>Dog: <strong>strict low-fat diet</strong> ✨ (Royal Canin GI Low Fat, Hill's i/d Low Fat)</li>
+              <li>No table scraps, high-fat treats</li>
+              <li>Multiple small meals</li>
+            </ul>
+          </li>
+          <li><strong>Cobalamin supplementation</strong> ✨ — almost always indicated
+            <ul>
+              <li>Cat: 250 µg SC weekly × 6 wk, then monthly</li>
+              <li>Dog: 250-1500 µg SC weekly × 6 wk, then monthly</li>
+              <li>Or oral 1 mg/day</li>
+            </ul>
+          </li>
+          <li>Pancreatic enzyme supplementation — if EPI develops (low TLI)</li>
+          <li>Insulin — if DM develops</li>
+        </ul>
+
+        <p><strong>3. Triaditis treatment (cat):</strong></p>
+        <ul>
+          <li><strong>Cholangitis component:</strong>
+            <ul>
+              <li>Neutrophilic — antibiotics (amoxi-clav 4-8 wk)</li>
+              <li>Lymphocytic — prednisolone 1-2 mg/kg PO q12h, taper</li>
+              <li>Ursodiol 10-15 mg/kg PO q24h</li>
+            </ul>
+          </li>
+          <li><strong>IBD component:</strong>
+            <ul>
+              <li>Diet trial (hydrolyzed / novel protein)</li>
+              <li>Cobalamin</li>
+              <li>If not food-responsive: prednisolone or budesonide</li>
+              <li>Refractory: chlorambucil (cat) or cyclosporine</li>
+            </ul>
+          </li>
+          <li><strong>Pancreatitis component:</strong>
+            <ul>
+              <li>Anti-emetics, pain control during flares</li>
+              <li>Maintain hydration</li>
+              <li>Recovery diet during flare</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. Steroids (controversial):</strong></p>
+        <ul>
+          <li>Historically avoided in pancreatitis</li>
+          <li>Recent evidence: not contraindicated; useful when concurrent IBD / cholangitis lymphocytic</li>
+          <li>Prednisolone 1-2 mg/kg PO q12h (cat); taper</li>
+          <li>Especially indicated for triaditis lymphoplasmacytic</li>
+        </ul>
+
+        <p><strong>5. Address hyperlipidemia (dog):</strong></p>
+        <ul>
+          <li>Strict low-fat diet</li>
+          <li>Omega-3 fatty acids (EPA + DHA) 50-100 mg/kg/day</li>
+          <li>Fibrates (bezafibrate 4-10 mg/kg PO q24h) — refractory hypertriglyceridemia</li>
+          <li>Treat underlying endocrinopathy (Cushing's, hypothyroid)</li>
+        </ul>
+
+        <p><strong>6. Pain management (chronic):</strong></p>
+        <ul>
+          <li>Recognize chronic visceral pain (cats hide!)</li>
+          <li>Buprenorphine 0.02-0.04 mg/kg OTM q6-8h during flares</li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h — chronic neuropathic pain component</li>
+          <li>Avoid NSAIDs long-term in pancreatitis patients</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck q3-6 mo: weight, BCS, biochem, fPL, cobalamin</li>
+          <li>Glucose monitoring (DM development)</li>
+          <li>TLI annually (EPI development)</li>
+          <li>US periodic — assess progression</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Diabetes mellitus</strong> (islet cell loss)</li>
+          <li><strong>EPI</strong> (acinar cell loss, especially in chronic cases)</li>
+          <li>Recurrent flares / acute pancreatitis episodes</li>
+          <li>Concurrent hepatic lipidosis (cat anorexia)</li>
+          <li>Triaditis flares</li>
+          <li>Cachexia, malnutrition</li>
+          <li>Pancreatic neoplasia (rare; chronic inflammation increases risk)</li>
+          <li>Drug side effects (steroid: DM, infection)</li>
+          <li>Owner fatigue with chronic management</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Cat with proper management: <strong>fair to good</strong> — many cats live years with good quality of life ✓</li>
+          <li>Triaditis well-controlled: good</li>
+          <li>EPI / DM development: requires lifelong management but manageable</li>
+          <li>Mini Schnauzer with hyperlipidemia + chronic pancreatitis: variable; depends on lipid control</li>
+          <li>Severe end-stage with cachexia: guarded</li>
+        </ul>
+        <div class="callout">💡 <strong>Cat anorexia + weight loss + vague illness = always think pancreatitis (+ triaditis components)</strong>. fPL, US, cobalamin, GGT — comprehensive workup. แม้ว่า definitive diagnosis ต้อง biopsy, การรักษาแบบ empirical สำหรับ triaditis บ่อยครั้งทำได้ผลดี</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 36 · Hepatic Neoplasia ---------- */
+  {
+    id: 'hepatic-neoplasia',
+    titleEn: 'Hepatic Neoplasia',
+    titleTh: 'มะเร็งตับ',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['hepatocellular carcinoma', 'HCC', 'biliary carcinoma', 'hepatic lymphoma', 'metastatic', 'lobectomy', 'AFP'],
+    aliases: ['liver cancer', 'liver tumor', 'HCC', 'มะเร็งตับ'],
+    source: 'Ch. 36 · pp. 612–614',
+    sections: {
+      definition: `
+        <p>Tumors involving liver — primary or metastatic</p>
+        <ul>
+          <li><strong>Metastatic &gt; primary</strong> ในส่วนใหญ่ (liver = common metastasis site)</li>
+          <li>Older animals (mean ~ 10-12 yr)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary tumors (dog):</strong></p>
+        <ul>
+          <li><strong>Hepatocellular carcinoma (HCC)</strong> ✨ — most common primary hepatic tumor in dog
+            <ul>
+              <li>Massive form (single large mass) — most common; resectable often!</li>
+              <li>Nodular form — multiple nodules</li>
+              <li>Diffuse form — least common, worst prognosis</li>
+            </ul>
+          </li>
+          <li>Hepatocellular adenoma — benign</li>
+          <li>Biliary carcinoma (cholangiocarcinoma) — aggressive, multifocal</li>
+          <li>Hepatic carcinoid (rare)</li>
+          <li>Sarcomas (HSA, leiomyosarcoma)</li>
+        </ul>
+        <p><strong>Primary tumors (cat):</strong></p>
+        <ul>
+          <li><strong>Lymphoma</strong> ✨ — most common in cat (alimentary form often involves liver)</li>
+          <li>Biliary carcinoma</li>
+          <li>HCC (less common than dog)</li>
+        </ul>
+        <p><strong>Metastatic to liver:</strong></p>
+        <ul>
+          <li>HSA (especially splenic)</li>
+          <li>Mast cell tumor</li>
+          <li>Lymphoma</li>
+          <li>Histiocytic sarcoma</li>
+          <li>Carcinomas: mammary, prostate, anal sac, intestinal, pancreatic</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Local invasion + mass effect</li>
+          <li>Vascular invasion → hemoabdomen if rupture (HSA, HCC)</li>
+          <li>Paraneoplastic syndromes: hypoglycemia (HCC), hypercalcemia (lymphoma)</li>
+          <li>Bile duct compression → obstructive jaundice</li>
+          <li>Disseminated intravascular coagulation (HSA)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Often vague / subclinical until advanced:</strong></p>
+        <ul>
+          <li>Anorexia, weight loss, lethargy</li>
+          <li>Vomiting (intermittent)</li>
+          <li>Abdominal distension (mass, ascites, hemoabdomen)</li>
+          <li>Jaundice (biliary involvement)</li>
+          <li>PU/PD (hypercalcemia, hepatic insufficiency)</li>
+          <li>Hypoglycemia signs (HCC paraneoplastic) — weakness, seizures, collapse ✗</li>
+          <li>Acute collapse — ruptured HSA / HCC ✗</li>
+          <li>Pale MM (anemia from chronic dz or hemoabdomen)</li>
+          <li>Palpable cranial abdominal mass</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li>↑ ALT, ALP, GGT (variable)</li>
+          <li>↑ Bilirubin (biliary involvement)</li>
+          <li>± Hypoglycemia (HCC paraneoplastic)</li>
+          <li>± Hypercalcemia (lymphoma paraneoplastic)</li>
+          <li>Anemia (chronic dz, hemorrhage)</li>
+          <li>Coagulopathy (HSA — DIC)</li>
+          <li>Bile acids ↑</li>
+          <li>α-Fetoprotein (AFP) — HCC marker (limited availability)</li>
+        </ul>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal US</strong> ✨ — mass identification, FNA guidance</li>
+          <li>Thoracic rad (3 views) — lung metastasis (staging)</li>
+          <li>CT/MRI — preoperative planning, vascular involvement</li>
+          <li>Echocardiography — right atrial HSA (if splenic HSA + hepatic mets)</li>
+        </ul>
+        <p><strong>Tissue diagnosis:</strong></p>
+        <ul>
+          <li><strong>FNA cytology</strong> — diffuse processes (lymphoma, HCC sometimes)
+            <ul>
+              <li>Caution with HSA / vascular tumors (hemorrhage risk)</li>
+              <li>HCC may resemble normal hepatocytes — biopsy preferred for diagnosis</li>
+            </ul>
+          </li>
+          <li>Tru-cut biopsy — coag check first; some tumors hemorrhage</li>
+          <li>Surgical / laparoscopic biopsy — definitive; allows resection</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Hepatic abscess</li>
+          <li>Hepatic regenerative nodules / nodular hyperplasia (benign, common in older dogs)</li>
+          <li>Hepatic cyst</li>
+          <li>Hematoma</li>
+          <li>Granuloma (fungal, parasitic)</li>
+          <li>Cholangiohepatitis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Surgical resection (best for massive HCC) ✨:</strong></p>
+        <ul>
+          <li><strong>Massive HCC</strong>: liver lobectomy — often curative if single lobe + no metastasis ✓
+            <ul>
+              <li>MST: 1500+ days (often years)</li>
+              <li>Recurrence rate low (~ 13%)</li>
+            </ul>
+          </li>
+          <li>Nodular / diffuse HCC: not resectable — palliative care</li>
+          <li>Biliary carcinoma: usually too multifocal for resection</li>
+          <li>Pre-op staging essential (thoracic rad, CT, regional LN)</li>
+        </ul>
+
+        <p><strong>2. Hepatic lymphoma (cat):</strong></p>
+        <ul>
+          <li>Chemotherapy:
+            <ul>
+              <li>Low-grade (small cell): chlorambucil 2 mg/cat PO q48h + prednisolone 1-2 mg/kg PO q24h
+                <ul>
+                  <li>MST 1.5-3 yr (good response)</li>
+                </ul>
+              </li>
+              <li>High-grade (large cell): CHOP / COP protocol — variable response, MST 6 months</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Metastatic disease:</strong></p>
+        <ul>
+          <li>Treat primary tumor when possible</li>
+          <li>HSA: doxorubicin-based chemo post-splenectomy; MST 4-6 mo</li>
+          <li>Mast cell tumor: vinblastine, prednisone, toceranib</li>
+          <li>Most metastatic disease — palliative</li>
+        </ul>
+
+        <p><strong>4. Palliative care (unresectable / metastatic):</strong></p>
+        <ul>
+          <li>Pain management: NSAIDs (with kidney monitoring), opioids (buprenorphine, methadone), gabapentin</li>
+          <li>Anti-emetics, appetite stimulants (mirtazapine, capromorelin)</li>
+          <li>Hepatoprotectants: SAMe, silybin, ursodiol</li>
+          <li>Manage hypoglycemia (HCC): frequent meals + dextrose CRI for episodes</li>
+          <li>Manage hypercalcemia (lymphoma): IV fluids, furosemide, bisphosphonates</li>
+          <li>Therapeutic abdominocentesis (ascites, hemoabdomen)</li>
+          <li>End-of-life discussion + euthanasia when QOL poor</li>
+        </ul>
+
+        <p><strong>5. Adjunctive (some evidence):</strong></p>
+        <ul>
+          <li>Toceranib (Palladia) — TKI; some HCC cases respond</li>
+          <li>Metronomic chemotherapy (low-dose cyclophosphamide + NSAID)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Tumor rupture / hemoabdomen</strong> ✗ — HSA, HCC</li>
+          <li>Biliary obstruction</li>
+          <li>Hepatic insufficiency</li>
+          <li>Hypoglycemic seizures (HCC)</li>
+          <li>Hypercalcemia (AKI, weakness)</li>
+          <li>DIC</li>
+          <li>Surgical complications: bleeding, biliary leak, dehiscence</li>
+          <li>Metastasis (lung, regional LN, peritoneal)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Massive HCC + lobectomy: excellent</strong> — MST &gt; 4 years possible ✓</li>
+          <li>Nodular / diffuse HCC: poor — MST 270 days</li>
+          <li>Biliary carcinoma: poor — MST &lt; 6 mo (often metastatic at diagnosis)</li>
+          <li>Cat low-grade lymphoma: <strong>good</strong> — MST 1.5-3 yr</li>
+          <li>Cat high-grade lymphoma: poor — MST 6 mo</li>
+          <li>Splenic HSA with hepatic mets: poor — MST 4-6 mo with chemo</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Toxic Hepatopathy ---------- */
+  {
+    id: 'toxic-hepatopathy',
+    titleEn: 'Toxic Hepatopathy',
+    titleTh: 'ตับเป็นพิษ',
+    type: 'disease',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['acetaminophen', 'paracetamol', 'xylitol', 'sago palm', 'mushroom', 'aflatoxin', 'NAC', 'N-acetylcysteine', 'silibinin'],
+    aliases: ['drug-induced hepatitis', 'toxin liver', 'paracetamol toxicity', 'ตับพิษ'],
+    source: 'Ch. 36 · pp. 608–612',
+    sections: {
+      definition: `
+        <p>Acute or chronic liver damage จาก hepatotoxin ingestion</p>
+        <ul>
+          <li>Common emergency presentation</li>
+          <li>Spectrum: mild self-limiting → fulminant hepatic failure</li>
+          <li>Some have <strong>specific antidotes</strong> (acetaminophen, mushroom) ✨</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common hepatotoxins:</strong></p>
+        <ul>
+          <li><strong>Acetaminophen (paracetamol)</strong> ✨:
+            <ul>
+              <li><strong>Cat: extremely toxic — fatal at 50-100 mg/kg</strong> ✗ (no glucuronidation!)</li>
+              <li>Dog: toxic at &gt; 100-200 mg/kg</li>
+              <li>Causes methemoglobinemia + hepatic necrosis</li>
+            </ul>
+          </li>
+          <li><strong>Xylitol</strong> ✨ (sugar substitute, gum, baked goods):
+            <ul>
+              <li>Dog: severe hypoglycemia (&gt; 0.1 g/kg) + hepatic necrosis (&gt; 0.5 g/kg)</li>
+              <li>Cat: less affected</li>
+            </ul>
+          </li>
+          <li><strong>Sago palm (Cycas)</strong> — all parts toxic; severe hepatic necrosis ✗</li>
+          <li><strong>Mushrooms (Amanita phalloides — death cap)</strong> — fulminant hepatic failure ✗</li>
+          <li><strong>Aflatoxin</strong> — moldy food / corn / peanuts; outbreaks reported</li>
+          <li><strong>Drugs:</strong>
+            <ul>
+              <li>NSAIDs (carprofen — idiosyncratic; ibuprofen, naproxen toxicity)</li>
+              <li>Phenobarbital (chronic; idiosyncratic acute)</li>
+              <li>Acetaminophen-codeine combinations</li>
+              <li>Sulfonamides (TMS)</li>
+              <li>Methimazole (cat)</li>
+              <li>Itraconazole, ketoconazole</li>
+              <li>Lomustine, methotrexate</li>
+              <li>Diazepam (cat — idiosyncratic, can be fatal)</li>
+            </ul>
+          </li>
+          <li>Iron, copper (overdose / toxicity)</li>
+          <li>Ethanol</li>
+          <li>Heavy metals (lead, arsenic)</li>
+          <li>Ricinus communis (castor bean)</li>
+          <li>Blue-green algae (microcystins)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Direct hepatocellular damage or via toxic metabolites</li>
+          <li>Acetaminophen: depletion of glutathione → reactive metabolite NAPQI binds proteins → necrosis</li>
+          <li>Cat: severely deficient in glucuronidation (UGT enzyme) → ↑ susceptibility ✗</li>
+          <li>Xylitol: insulin release → hypoglycemia + hepatic damage (mechanism not fully clear)</li>
+          <li>Mushroom amatoxins: inhibit RNA polymerase II → hepatocyte death</li>
+          <li>Centrilobular necrosis common pattern (zone 3 — most metabolically active)</li>
+          <li>Severe → coagulopathy, HE, multi-organ failure</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>General (variable timing post-ingestion):</strong></p>
+        <ul>
+          <li>Vomiting</li>
+          <li>Anorexia, lethargy</li>
+          <li>Abdominal pain</li>
+          <li>Jaundice (delayed — 2-5 days post-ingestion)</li>
+          <li>Hepatic encephalopathy (severe)</li>
+          <li>Coagulopathy</li>
+        </ul>
+        <p><strong>Specific:</strong></p>
+        <ul>
+          <li><strong>Acetaminophen (cat especially):</strong>
+            <ul>
+              <li>Methemoglobinemia: <strong>chocolate-brown MM, cyanosis, dyspnea</strong> ✨</li>
+              <li>Facial / paw edema</li>
+              <li>Jaundice (delayed in dog)</li>
+              <li>Hemoglobinuria</li>
+              <li>Heinz body anemia</li>
+            </ul>
+          </li>
+          <li><strong>Xylitol (dog):</strong>
+            <ul>
+              <li>30-60 min: <strong>severe hypoglycemia</strong> ✨ — weakness, ataxia, seizures, collapse</li>
+              <li>12-72h: hepatic failure signs</li>
+              <li>Coagulopathy</li>
+            </ul>
+          </li>
+          <li><strong>Sago palm:</strong>
+            <ul>
+              <li>Within 24h: GI signs (vomiting bloody, melena)</li>
+              <li>2-3 days: hepatic failure, coagulopathy, neuro signs</li>
+            </ul>
+          </li>
+          <li><strong>Amanita mushroom:</strong>
+            <ul>
+              <li>6-24h: severe GI signs</li>
+              <li>"False recovery" 24-48h</li>
+              <li>3-7 days: fulminant hepatic failure ✗</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>History critical:</strong> witnessed ingestion, exposure, drug history, garden plants</p>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li><strong>Massive ↑ ALT, AST</strong> ✨ — often &gt; 1000 IU/L</li>
+          <li>↑ ALP (variable)</li>
+          <li>↑ Bilirubin (delayed onset)</li>
+          <li>↑ NH3 (severe / HE)</li>
+          <li>Prolonged PT/aPTT</li>
+          <li>Hypoglycemia (xylitol, severe failure)</li>
+          <li>Methemoglobinemia (acetaminophen — Heinz body anemia, chocolate brown blood)</li>
+          <li>Hyperphosphatemia (severe necrosis — poor prognostic)</li>
+          <li>Lactate ↑</li>
+        </ul>
+        <p><strong>Specific tests:</strong></p>
+        <ul>
+          <li>Acetaminophen serum level (limited availability)</li>
+          <li>Methemoglobin level</li>
+          <li>Mushroom toxicology (rarely available timely)</li>
+          <li>Liver biopsy — usually not pursued acutely; centrilobular necrosis pattern</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Infectious hepatitis (lepto)</li>
+          <li>Acute hepatic ischemia</li>
+          <li>Bile peritonitis</li>
+          <li>Pancreatitis with hepatic involvement</li>
+          <li>Severe sepsis with hepatopathy</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Decontamination (if recent ingestion):</strong></p>
+        <ul>
+          <li><strong>Induce vomiting</strong> if &lt; 1-2 hours post-ingestion + alert + no contraindication
+            <ul>
+              <li>Dog: apomorphine 0.04 mg/kg IV</li>
+              <li>Cat: dexmedetomidine 7-10 µg/kg IM (not as reliable)</li>
+              <li>NEVER hydrogen peroxide in cat ✗</li>
+            </ul>
+          </li>
+          <li><strong>Activated charcoal 1-3 g/kg PO</strong> — within 2-4h of ingestion
+            <ul>
+              <li>Repeat doses for enterohepatic circulation toxins (NSAIDs, mushroom)</li>
+              <li>Caution: aspiration risk; not for caustic / hydrocarbon</li>
+            </ul>
+          </li>
+          <li>Gastric lavage — rarely indicated</li>
+        </ul>
+
+        <p><strong>2. Specific antidotes:</strong></p>
+        <ul>
+          <li><strong>Acetaminophen — N-acetylcysteine (NAC) ✨</strong>:
+            <ul>
+              <li>140 mg/kg IV / PO loading dose, then 70 mg/kg q6h × 7 doses</li>
+              <li>Replenishes glutathione</li>
+              <li>Earlier = better; effective even hours post-ingestion</li>
+              <li>Methylene blue 1-2 mg/kg slow IV (cat) — methemoglobinemia
+                <ul>
+                  <li>Caution Heinz body formation</li>
+                </ul>
+              </li>
+              <li>Vitamin C 30 mg/kg PO/IV q6h (cat) — adjunct</li>
+              <li>Cimetidine — historical, less used now</li>
+              <li>SAMe 17-20 mg/kg PO q24h — glutathione support</li>
+            </ul>
+          </li>
+          <li><strong>Xylitol — supportive + dextrose:</strong>
+            <ul>
+              <li>IV dextrose CRI 2.5-5% — correct + prevent hypoglycemia (24-72h)</li>
+              <li>SAMe, silybin (Denamarin)</li>
+              <li>NAC may help</li>
+              <li>Plasma if coagulopathic</li>
+            </ul>
+          </li>
+          <li><strong>Mushroom (Amanita) — silibinin (silymarin)</strong>:
+            <ul>
+              <li>IV silibinin 5 mg/kg IV q4h (Legalon — hard to source)</li>
+              <li>NAC adjunct</li>
+              <li>Aggressive supportive care</li>
+              <li>Penicillin G 1,000,000 IU/kg/day IV — historical adjunct</li>
+            </ul>
+          </li>
+          <li><strong>Iron toxicity — deferoxamine</strong>:
+            <ul>
+              <li>40 mg/kg IM q4-8h</li>
+              <li>Combined with whole bowel irrigation</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Supportive care (all toxic hepatopathies):</strong></p>
+        <ul>
+          <li><strong>IV fluids</strong> — restore perfusion, support liver, address electrolytes</li>
+          <li><strong>Vitamin K1 1-2 mg/kg SC q12h × 3 doses</strong> — coagulopathy</li>
+          <li>FFP 10-20 mL/kg — if active bleeding or DIC</li>
+          <li><strong>Hepatoprotectants ✨:</strong>
+            <ul>
+              <li>SAMe 17-20 mg/kg PO q24h (Denamarin) on empty stomach</li>
+              <li>Silybin (milk thistle) 5-10 mg/kg PO q24h</li>
+              <li>NAC (specific or general antioxidant)</li>
+              <li>Vitamin E 10 IU/kg PO q24h</li>
+            </ul>
+          </li>
+          <li>Anti-emetics: maropitant, ondansetron</li>
+          <li>Pain management: opioids (avoid NSAIDs ✗, acetaminophen)</li>
+          <li>HE management: lactulose, antibiotics, low-protein diet (if HE present)</li>
+          <li>Hypoglycemia: dextrose CRI</li>
+          <li>Anti-ulcer: omeprazole, sucralfate</li>
+          <li>Nutritional support: early enteral, low-fat highly digestible</li>
+          <li>Avoid drugs metabolized by liver during recovery</li>
+        </ul>
+
+        <p><strong>4. ICU monitoring:</strong></p>
+        <ul>
+          <li>Vital signs, mucous membrane color, hydration</li>
+          <li>Blood gases, lactate</li>
+          <li>Daily: ALT, ALP, bilirubin, BUN/Cr, glucose, electrolytes, PT/aPTT</li>
+          <li>Watch for: HE, coagulopathy, AKI, sepsis, GI ulceration</li>
+        </ul>
+
+        <p><strong>Prevention / education:</strong></p>
+        <ul>
+          <li>Owner education: list of common toxins; don't share human meds with cats!</li>
+          <li>Specific warnings:
+            <ul>
+              <li>Cat + paracetamol = ตายได้ ✗</li>
+              <li>Dog + xylitol gum/peanut butter = emergency</li>
+              <li>Sago palm — remove from house if pet present</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Fulminant hepatic failure</strong> ✗</li>
+          <li>HE, coma</li>
+          <li>Coagulopathy, GI bleed</li>
+          <li>AKI</li>
+          <li>DIC</li>
+          <li>ARDS</li>
+          <li>Methemoglobinemia (acetaminophen)</li>
+          <li>Severe hypoglycemia (xylitol)</li>
+          <li>Sepsis</li>
+          <li>Death</li>
+          <li>Chronic hepatitis post-recovery (some cases)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild exposure with prompt decontamination + treatment: <strong>good</strong></li>
+          <li>Acetaminophen + early NAC: good chance of survival</li>
+          <li>Acetaminophen cat with severe methemoglobinemia + delayed treatment: guarded</li>
+          <li>Xylitol + early treatment: good</li>
+          <li>Sago palm advanced: very poor (~ 50% mortality)</li>
+          <li>Amanita mushroom + delayed: very poor</li>
+          <li>Massive ALT + INR &gt; 2 + HE = poor prognosis</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Owner education ที่สำคัญ:</strong> <ul><li>"แมวกินยาแก้ปวดของคน (paracetamol) = ตายได้ — ไม่ใช่แค่ป่วย" ✗</li><li>"หมากินหมากฝรั่ง / ขนมที่มี xylitol → emergency"</li><li>"สาคูปาล์มในสวน — ทุกส่วนเป็นพิษกับสัตว์"</li></ul></div>
+      `,
+    },
+  },
+
+  /* ---------- Abdominocentesis (Procedure) ---------- */
+  {
+    id: 'abdominocentesis',
+    titleEn: 'Abdominocentesis',
+    titleTh: 'การเจาะช่องท้อง',
+    type: 'procedure',
+    system: 'hepatobiliary',
+    species: ['dog', 'cat'],
+    tags: ['abdominocentesis', 'paracentesis', 'ascites', 'hemoabdomen', 'septic peritonitis', 'bile peritonitis', 'AFAST', 'POCUS'],
+    aliases: ['paracentesis', 'abdominal tap', 'การเจาะท้อง'],
+    source: 'Ch. 33 · pp. 558–562',
+    sections: {
+      indications: `
+        <p><strong>Diagnostic:</strong></p>
+        <ul>
+          <li>Identify nature of free abdominal fluid</li>
+          <li>Differentiate: transudate / modified transudate / exudate / hemoabdomen / bile peritonitis / septic peritonitis / chyle / urine</li>
+          <li>Cytology + culture + biochemistry</li>
+        </ul>
+        <p><strong>Therapeutic:</strong></p>
+        <ul>
+          <li>Relieve respiratory compromise from massive ascites</li>
+          <li>Reduce abdominal pain from tense ascites</li>
+          <li>Decompress abdomen pre-surgery</li>
+        </ul>
+        <p><strong>Common scenarios:</strong></p>
+        <ul>
+          <li>Ascites of unknown cause</li>
+          <li>Suspected hemoabdomen (HBC, HSA rupture)</li>
+          <li>Suspected septic peritonitis</li>
+          <li>Post-trauma free fluid</li>
+          <li>Acute abdomen workup</li>
+        </ul>
+      `,
+      contraindications: `
+        <p><strong>Relative:</strong></p>
+        <ul>
+          <li><strong>Severe coagulopathy</strong> — correct first if time permits (vitamin K, FFP)</li>
+          <li>Gross abdominal distension (organ puncture risk) — use US guidance</li>
+          <li>Known organomegaly at planned tap site</li>
+          <li>Pregnancy (avoid uterus)</li>
+          <li>Pyometra suspected (rupture risk if uterus tapped)</li>
+        </ul>
+        <p><strong>Pearls:</strong></p>
+        <ul>
+          <li>Always use ultrasound guidance when possible — much safer</li>
+          <li>If suspected hemoabdomen + unstable patient — stabilize first, may not need diagnostic tap (PCV abdomen ≈ peripheral)</li>
+          <li>Never tap to "rule out" fluid — use POCUS instead (more sensitive)</li>
+        </ul>
+      `,
+      preparation: `
+        <p><strong>Patient:</strong></p>
+        <ul>
+          <li>Position: <strong>standing or lateral recumbency (right lateral preferred)</strong> ✨</li>
+          <li>Sedation usually NOT needed (procedure not painful)</li>
+          <li>Mild butorphanol if anxious</li>
+          <li>Empty bladder before procedure (reduces puncture risk)</li>
+          <li>Clip + aseptic prep</li>
+          <li>Local lidocaine optional (1-2 mL SQ)</li>
+        </ul>
+        <p><strong>Equipment:</strong></p>
+        <ul>
+          <li>20-22 g 1-1.5 inch needle (cat / small dog)</li>
+          <li>18-20 g 1.5 inch needle (medium-large dog)</li>
+          <li>Or 18-20 g over-the-needle catheter for large drainage</li>
+          <li>3 mL or 6 mL syringe (diagnostic); 60 mL syringe + 3-way stopcock + tubing for therapeutic</li>
+          <li>Sample tubes:
+            <ul>
+              <li>EDTA — cell count, cytology</li>
+              <li>Plain (red top) — biochemistry</li>
+              <li>Culture tube — aerobic + anaerobic</li>
+              <li>Slides for direct cytology</li>
+            </ul>
+          </li>
+          <li>Ultrasound (recommended)</li>
+        </ul>
+        <p><strong>Site selection:</strong></p>
+        <ul>
+          <li><strong>Standard 4-quadrant approach</strong> (without US): both sides of midline, cranial + caudal to umbilicus
+            <ul>
+              <li>Avoid spleen (left cranial)</li>
+              <li>Avoid bladder (caudal midline)</li>
+            </ul>
+          </li>
+          <li><strong>Ultrasound-guided</strong> (preferred) ✨ — locate maximum fluid pocket</li>
+          <li>Most common site: 1-2 cm caudal + lateral to umbilicus on the right side (avoids spleen)</li>
+        </ul>
+      `,
+      steps: `
+        <ol style="font-family: var(--font-thai); font-size: 16px; line-height: 1.7; color: var(--ink); margin: 6px 0 10px 22px; padding: 0;">
+          <li><strong>Position patient + identify site</strong> — palpate, US confirm fluid pocket</li>
+          <li><strong>Aseptic prep + drape</strong></li>
+          <li><strong>Optional local anesthesia</strong> — 1 mL lidocaine SQ at site</li>
+          <li><strong>Insert needle perpendicular to skin</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Avoid linea alba (epigastric vessels)</li>
+              <li>Don't aspirate continuously while advancing — wait until in fluid</li>
+              <li>Advance through skin + body wall</li>
+            </ul>
+          </li>
+          <li><strong>Aspirate gently</strong> — fluid should flow freely
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>If no flow, redirect needle slightly or try different site</li>
+              <li>If only small amount, may be drips on hub — collect</li>
+              <li>Don't force aspiration — risk organ damage</li>
+            </ul>
+          </li>
+          <li><strong>Open / drip technique</strong> if syringe aspiration fails:
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Insert needle without syringe</li>
+              <li>Allow fluid to drip out passively</li>
+              <li>Useful for low-volume effusions</li>
+            </ul>
+          </li>
+          <li><strong>Collect sufficient sample:</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Diagnostic: 3-5 mL minimum</li>
+              <li>EDTA tube (cell count, cytology)</li>
+              <li>Plain tube (TP, glucose, lactate, bilirubin, creatinine, K)</li>
+              <li>Culture tube (if exudate / suspected sepsis)</li>
+              <li>Direct slides if cytologic urgency</li>
+            </ul>
+          </li>
+          <li><strong>For therapeutic drainage</strong> (large volumes):
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Use 18 g over-the-needle catheter</li>
+              <li>Connect to extension tubing + 3-way stopcock + 60 mL syringe</li>
+              <li>Drain slowly to avoid hypotension (large rapid removal → fluid shifts)</li>
+              <li>Drain to symptom relief, not necessarily complete drainage</li>
+              <li>Monitor BP, HR during drainage</li>
+            </ul>
+          </li>
+          <li><strong>Withdraw needle/catheter</strong> when complete; pressure briefly</li>
+          <li><strong>Document fluid characteristics:</strong> color, turbidity, odor, volume</li>
+        </ol>
+      `,
+      complications: `
+        <p><strong>Common (mild):</strong></p>
+        <ul>
+          <li>Failed aspiration (small fluid pocket, loculated)</li>
+          <li>Mild hemorrhage at puncture site</li>
+          <li>Rare hypotension after large-volume drainage</li>
+        </ul>
+        <p><strong>Serious (rare with good technique):</strong></p>
+        <ul>
+          <li>Organ puncture: spleen (most common), bowel, bladder, pregnant uterus, kidney</li>
+          <li>Iatrogenic peritonitis from bowel puncture</li>
+          <li>Bleeding (coagulopathy, splenic laceration)</li>
+          <li>Hypotension from rapid large-volume drainage (avoid by gradual)</li>
+          <li>Hypoalbuminemia worsened by repeated drainage (no protein recovery)</li>
+        </ul>
+      `,
+      postCare: `
+        <p><strong>Sample analysis:</strong></p>
+        <ul>
+          <li><strong>Cell count + total protein:</strong>
+            <ul>
+              <li>Pure transudate: TP &lt; 2.5, cells &lt; 1500/µL</li>
+              <li>Modified transudate: TP 2.5-5, cells 1000-7000</li>
+              <li>Exudate: TP &gt; 3, cells &gt; 7000</li>
+            </ul>
+          </li>
+          <li><strong>Cytology:</strong> infection (intracellular bacteria = septic peritonitis ✗), neoplastic cells, mesothelial reactivity</li>
+          <li><strong>Biochemistry of fluid:</strong>
+            <ul>
+              <li><strong>Bilirubin:</strong> fluid &gt; 2× serum = bile peritonitis ✗</li>
+              <li><strong>Creatinine + K:</strong> fluid Cr &gt; 2× serum or fluid K &gt; 1.4× serum (dog), &gt; 1.9× (cat) = uroabdomen ✗</li>
+              <li><strong>Glucose:</strong> fluid glucose &gt; 20 mg/dL less than peripheral = septic peritonitis (bacterial consumption)</li>
+              <li><strong>Lactate:</strong> fluid lactate &gt; 2 mmol/L higher than peripheral = septic peritonitis</li>
+              <li><strong>Triglycerides:</strong> &gt; 100 mg/dL (and &gt; serum) = chyloabdomen</li>
+            </ul>
+          </li>
+          <li><strong>Hemoabdomen:</strong> PCV close to peripheral; doesn't clot (defibrinated)</li>
+          <li><strong>Culture:</strong> aerobic + anaerobic for exudates</li>
+        </ul>
+        <p><strong>Patient monitoring:</strong></p>
+        <ul>
+          <li>Watch for: bleeding from site, ↑ abdominal pain, dehiscence (rare), acute decompensation</li>
+          <li>Vital signs, MM, abdominal palpation</li>
+          <li>If therapeutic large-volume drainage: monitor BP, electrolytes</li>
+        </ul>
+        <p><strong>Decision making based on results:</strong></p>
+        <ul>
+          <li>Septic peritonitis → emergency surgical exploration ✗</li>
+          <li>Bile peritonitis → surgical exploration</li>
+          <li>Uroabdomen → urinary tract repair</li>
+          <li>Hemoabdomen → stabilize, identify source (US, surgery)</li>
+          <li>Modified transudate (CHF, hepatic dz) → manage underlying disease</li>
+          <li>Chyloabdomen → identify cause (lymphoma, lymphangiectasia, cardiac)</li>
+          <li>Neoplastic effusion → stage + treat tumor</li>
+        </ul>
+        <div class="callout">💡 <strong>POCUS / AFAST</strong> ✨ — ทุกเคส acute abdomen / collapse / trauma ทำ AFAST ก่อน → ถ้ามี fluid → tap ที่ pocket ใหญ่ที่สุด. สามารถ diagnose hemoabdomen, bile peritonitis, septic peritonitis ได้ภายใน 5-10 นาที</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
