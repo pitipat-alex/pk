@@ -1181,11 +1181,20 @@ html.locked .lock-screen { display: flex; }
   margin: 0 auto;
 }
 
-/* "Coming soon" card variant (greyed out) */
+/* "Coming soon" card variant (greyed out)
+   Note: avoid filter:saturate — creates GPU compositor layer that
+   blocks touch on adjacent cards in iPadOS 26 WebKit. Use grayscale
+   via opacity + desaturated palette instead. */
 .card.coming-soon {
   pointer-events: none;
-  opacity: 0.5;
-  filter: saturate(0.6);
+  opacity: 0.55;
+  /* filter removed for iPad compatibility */
+}
+.card.coming-soon * {
+  pointer-events: none !important;
+}
+.card.coming-soon .card-icon {
+  opacity: 0.7;
 }
 .card.coming-soon::after {
   content: 'เร็วๆ นี้';
