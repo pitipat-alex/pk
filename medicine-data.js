@@ -13185,6 +13185,726 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Ch 40 · Glomerular Disease / PLN ---------- */
+  {
+    id: 'glomerular-disease-pln',
+    titleEn: 'Glomerular Disease &amp; Protein-Losing Nephropathy (PLN)',
+    titleTh: 'โรคโกลเมอรูลัส / PLN — โปรตีนรั่วทางไต',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['glomerular disease', 'PLN', 'glomerulonephritis', 'amyloidosis', 'minimal change disease', 'nephrotic syndrome', 'UPC', 'ACE inhibitor', 'telmisartan', 'aspirin', 'clopidogrel', 'Soft-coated Wheaten'],
+    aliases: ['GN', 'glomerulonephritis', 'PLN', 'protein-losing nephropathy', 'โปรตีนรั่วไต', 'nephrotic'],
+    source: 'Ch. 40 · pp. 675–688',
+    sections: {
+      definition: `
+        <p>โรคที่ <strong>glomerulus</strong> (หน่วยกรองในไต) ถูกทำลาย → โปรตีนรั่วเข้าปัสสาวะ → progressive CKD</p>
+        <ul>
+          <li>เจอบ่อยในหมา &gt; แมว ✨</li>
+          <li>Major cause ของ CKD ในหมา (ตรงข้ามกับแมวที่เป็น tubulointerstitial)</li>
+          <li><strong>UPC &gt; 0.5 (dog), &gt; 0.4 (cat)</strong> = significant proteinuria</li>
+          <li>Severe form = <strong>Nephrotic syndrome</strong> ✨ (proteinuria + hypoalbuminemia + edema + hypercholesterolemia)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>1. Immune complex glomerulonephritis (most common in dog):</strong></p>
+        <ul>
+          <li>Chronic infection: <strong>Ehrlichia, Anaplasma, Borrelia</strong> (Lyme nephritis), Lepto, Bartonella, Babesia, Heartworm, Leishmaniasis</li>
+          <li>Chronic inflammation: pyometra, prostatitis, deep pyoderma, pancreatitis</li>
+          <li>Neoplasia (paraneoplastic)</li>
+          <li>Immune-mediated dz: SLE, IMHA, IBD</li>
+          <li>Endocrine: Cushing's, hypothyroid (debated)</li>
+          <li>Vaccine reaction (rare)</li>
+        </ul>
+        <p><strong>2. Familial / genetic:</strong></p>
+        <ul>
+          <li><strong>Soft-coated Wheaten Terrier</strong> ✨ — combined PLE + PLN</li>
+          <li>Bull Terrier — hereditary nephritis</li>
+          <li>Samoyed (X-linked Alport-like)</li>
+          <li>Dalmatian — familial proteinuria</li>
+          <li>English Cocker — familial nephropathy</li>
+          <li>Bernese Mountain Dog — familial nephropathy</li>
+        </ul>
+        <p><strong>3. Amyloidosis:</strong></p>
+        <ul>
+          <li>Shar-Pei ✨ — autoinflammatory + renal/hepatic amyloid</li>
+          <li>Beagle (some lines)</li>
+          <li>Cat: Abyssinian, Siamese, Oriental Shorthair</li>
+        </ul>
+        <p><strong>4. Other:</strong></p>
+        <ul>
+          <li>Membranous nephropathy</li>
+          <li>Focal segmental glomerulosclerosis (FSGS)</li>
+          <li>Minimal change disease (rare)</li>
+          <li>Hypertensive nephropathy</li>
+          <li>Diabetic nephropathy (cat advanced DM)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Glomerular damage → ↑ permeability to plasma proteins</li>
+          <li>Albumin (small) leaks first → albuminuria</li>
+          <li>Larger proteins follow → severe proteinuria</li>
+          <li>Loss of antithrombin → <strong>hypercoagulable state → thromboembolism</strong> ✗</li>
+          <li>Hypoalbuminemia → ↓ oncotic pressure → edema, ascites, pleural effusion</li>
+          <li>Hyperlipidemia (compensatory hepatic synthesis)</li>
+          <li>Progressive glomerulosclerosis → CKD → ESRD</li>
+          <li>Concurrent hypertension common</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Often <strong>subclinical early</strong> — detected on screening UPC ✨</li>
+          <li>Lethargy, ↓ appetite (advanced)</li>
+          <li>Weight loss, muscle wasting</li>
+          <li>PU/PD (concurrent CKD)</li>
+          <li>Edema, ascites (severe — nephrotic) ✨</li>
+          <li>Pleural effusion → dyspnea (severe)</li>
+          <li>Foamy urine (high protein)</li>
+          <li>Vomiting (uremic, advanced)</li>
+          <li>Acute blindness (severe HT → retinal detachment) ✗</li>
+          <li>Sudden dyspnea / collapse — <strong>pulmonary thromboembolism</strong> ✗</li>
+          <li>Shar-Pei: episodic fever + swollen hocks (Shar-Pei autoinflammatory dz precedes renal amyloid)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Initial workup:</strong></p>
+        <ul>
+          <li><strong>UPC ratio</strong> ✨ — confirm proteinuria; persistent if &gt; 0.5 dog (&gt; 0.4 cat) on ≥ 3 samples over 2 weeks
+            <ul>
+              <li>Sterile sample — rule out UTI/sediment first</li>
+              <li>Severe = UPC &gt; 5 (massive proteinuria)</li>
+            </ul>
+          </li>
+          <li>UA + sediment — rule out UTI, hematuria contributing</li>
+          <li>Urine culture — rule out UTI</li>
+          <li>CBC, biochem (BUN, Cr, SDMA, albumin, globulin, cholesterol, electrolytes)</li>
+          <li>BP measurement (HT common)</li>
+          <li>Coag panel — antithrombin (often ↓ in PLN)</li>
+        </ul>
+
+        <p><strong>Differentiating glomerular vs tubular proteinuria:</strong></p>
+        <ul>
+          <li>Glomerular: high UPC (&gt; 2.0 typically), albumin dominant, USG variable</li>
+          <li>Tubular: lower UPC (&lt; 2.0 usually), low MW proteins, isosthenuric</li>
+        </ul>
+
+        <p><strong>Identify underlying cause (essential):</strong></p>
+        <ul>
+          <li><strong>Infectious disease panel</strong> ✨:
+            <ul>
+              <li>4DX SNAP (heartworm + Lyme + Ehrlichia + Anaplasma)</li>
+              <li>Lepto MAT</li>
+              <li>Bartonella (regional)</li>
+              <li>Babesia PCR (regional)</li>
+              <li>Leishmania (endemic)</li>
+            </ul>
+          </li>
+          <li>Tick-borne disease history</li>
+          <li>Cushing's screen (ACTH stim, LDDST)</li>
+          <li>Thoracic + abdominal imaging — neoplasia, infection, prostate</li>
+          <li>SLE workup if suspected (ANA, joint tap)</li>
+        </ul>
+
+        <p><strong>Renal biopsy ✨ — definitive (when feasible):</strong></p>
+        <ul>
+          <li>Indication:
+            <ul>
+              <li>UPC &gt; 3.5 with progression</li>
+              <li>Refractory to standard treatment</li>
+              <li>Considering immunosuppression</li>
+              <li>Atypical signalment</li>
+            </ul>
+          </li>
+          <li>Pre-biopsy: BP control, coag panel, platelet count</li>
+          <li>US-guided Tru-cut, surgical wedge, or laparoscopic</li>
+          <li>Send to specialized lab (e.g., IVRPS — International Veterinary Renal Pathology Service):
+            <ul>
+              <li>Light microscopy</li>
+              <li>Electron microscopy</li>
+              <li>Immunofluorescence</li>
+            </ul>
+          </li>
+          <li>Differentiates: ICGN, FSGS, minimal change, amyloidosis, membranous</li>
+          <li>Guides immunosuppression decision</li>
+        </ul>
+
+        <p><strong>IRIS substaging:</strong></p>
+        <ul>
+          <li>Proteinuric (UPC &gt; 0.5 dog, &gt; 0.4 cat)</li>
+          <li>BP substaging (normotensive → severe HT)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Pre-renal proteinuria (fever, exercise — usually mild, transient)</li>
+          <li>Post-renal proteinuria (UTI, hemorrhage, calculi)</li>
+          <li>Tubular proteinuria (Fanconi syndrome — rare; Basenji familial)</li>
+          <li>Bence-Jones proteinuria (multiple myeloma)</li>
+          <li>Hemoglobin/myoglobinuria (false positive on dipstick)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Treat underlying cause (ESSENTIAL) ✨:</strong></p>
+        <ul>
+          <li>Infection — appropriate antibiotic (doxycycline 5 mg/kg q12h for tick-borne × 4 wk; Lepto = doxy × 2 wk)</li>
+          <li>Cushing's — trilostane</li>
+          <li>Neoplasia — surgical / chemo</li>
+          <li>Discontinue offending drugs</li>
+        </ul>
+
+        <p><strong>2. Renin-angiotensin system blockade ✨ — cornerstone:</strong></p>
+        <ul>
+          <li><strong>ACE inhibitors:</strong>
+            <ul>
+              <li>Benazepril 0.25-0.5 mg/kg PO q24h (start) → q12h if needed</li>
+              <li>Enalapril similar</li>
+              <li>Reduces glomerular hypertension + proteinuria</li>
+            </ul>
+          </li>
+          <li><strong>ARB (angiotensin receptor blocker):</strong>
+            <ul>
+              <li><strong>Telmisartan (Semintra)</strong> ✨ 1 mg/kg PO q24h dog (cat-licensed for proteinuria)
+                <ul>
+                  <li>More potent proteinuria reduction in some studies</li>
+                  <li>Better tolerated than ACEi in some patients</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Combination ACEi + ARB</strong> for refractory cases (monitor K, Cr closely)</li>
+          <li>Goal: ↓ UPC by &gt; 50%, ideally &lt; 0.5</li>
+          <li>Caution:
+            <ul>
+              <li>Monitor Cr — small ↑ acceptable; large ↑ = stop and reassess</li>
+              <li>Monitor K — risk hyperkalemia</li>
+              <li>Avoid in dehydration / hypovolemia</li>
+              <li>Don't start if Cr &gt; 5 mg/dL (Stage 4) without specialist guidance</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Antithrombotic ✨ — reduce TE risk:</strong></p>
+        <ul>
+          <li>Indication: hypoalbuminemia &lt; 2.0 g/dL, AT III &lt; 70%, severe proteinuria</li>
+          <li><strong>Clopidogrel 1-2 mg/kg PO q24h</strong> ✨ — first choice (more effective than aspirin in dogs per recent evidence)</li>
+          <li>Or low-dose aspirin 0.5-1 mg/kg PO q24h</li>
+          <li>Rivaroxaban 1 mg/kg PO q24h — alternative (more expensive, monitor bleeding)</li>
+        </ul>
+
+        <p><strong>4. Hypertension control:</strong></p>
+        <ul>
+          <li>Goal BP &lt; 160 systolic</li>
+          <li>ACEi/ARB usually sufficient</li>
+          <li>Add amlodipine 0.1-0.5 mg/kg PO q24h if persistently hypertensive</li>
+        </ul>
+
+        <p><strong>5. Diet ✨ — renal proteinuric:</strong></p>
+        <ul>
+          <li>Royal Canin Renal, Hill's k/d (early CKD)</li>
+          <li>Restricted protein (high quality), restricted P, ↑ omega-3</li>
+          <li>Severe nephrotic — moderate protein restriction (don't over-restrict)</li>
+          <li>Adequate calories — prevent cachexia</li>
+        </ul>
+
+        <p><strong>6. Omega-3 fatty acids:</strong></p>
+        <ul>
+          <li>EPA + DHA 50-100 mg/kg/day combined</li>
+          <li>Anti-inflammatory + reduces glomerular pressure</li>
+        </ul>
+
+        <p><strong>7. Manage hypercholesterolemia (severe):</strong></p>
+        <ul>
+          <li>Diet first</li>
+          <li>Omega-3</li>
+          <li>Atorvastatin (refractory) — limited vet evidence</li>
+        </ul>
+
+        <p><strong>8. Manage edema/effusion (nephrotic syndrome):</strong></p>
+        <ul>
+          <li>Spironolactone 1-2 mg/kg PO q12h (gentle)</li>
+          <li>Furosemide 1-2 mg/kg PO q12h (caution — worsens prerenal)</li>
+          <li>Therapeutic abdominocentesis / thoracocentesis if respiratory compromise</li>
+          <li>Sodium restriction</li>
+          <li>Plasma transfusion only as bridge for severe hypoalbuminemia (&lt; 1.5)</li>
+        </ul>
+
+        <p><strong>9. Immunosuppression — IF biopsy confirms ICGN:</strong></p>
+        <ul>
+          <li>NOT for amyloidosis (steroids harmful)</li>
+          <li>Mycophenolate 10-15 mg/kg PO q12h ✨ — first-line for biopsy-proven ICGN</li>
+          <li>Cyclosporine 5 mg/kg PO q12h — alternative</li>
+          <li>Prednisone — controversial for GN; often used short-term</li>
+          <li>Combination protocols per IRIS guidelines</li>
+        </ul>
+
+        <p><strong>10. Amyloidosis-specific:</strong></p>
+        <ul>
+          <li>No effective specific treatment</li>
+          <li>Colchicine 0.025-0.03 mg/kg PO q24h (Shar-Pei prevention; if Shar-Pei autoinflammatory dz episodes)</li>
+          <li>DMSO — historical, limited evidence</li>
+          <li>Standard CKD + proteinuria management</li>
+          <li>Poor prognosis</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>UPC q4-6 wk initially, then q3 mo</li>
+          <li>BP at every visit</li>
+          <li>BUN, Cr, SDMA, albumin, K q4-6 wk initially</li>
+          <li>Body weight, BCS, edema assessment</li>
+          <li>Recheck infection panel if endemic exposure</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Thromboembolism (PE, splenic, aortic, portal)</strong> ✗ — major cause of death</li>
+          <li>Progressive CKD → ESRD</li>
+          <li>Severe hypertension → retinal detachment, cardiac, neuro</li>
+          <li>Nephrotic syndrome (edema, ascites, effusion)</li>
+          <li>Cachexia, sarcopenia</li>
+          <li>Infection (immunosuppressed)</li>
+          <li>Drug side effects (ACEi-induced hyperkalemia, AKI)</li>
+          <li>Sudden death from PTE</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Identified treatable cause + early treatment: good</strong> ✓
+            <ul>
+              <li>Lyme nephritis with doxy + ACEi: variable; 50% improve significantly</li>
+              <li>Other tick-borne: similar</li>
+            </ul>
+          </li>
+          <li>Idiopathic ICGN with biopsy + immunosuppression: variable; ~ 50% respond</li>
+          <li>Amyloidosis: poor — MST &lt; 6-12 months from diagnosis</li>
+          <li>Soft-coated Wheaten PLE/PLN: guarded — MST 2-5 yr</li>
+          <li>Nephrotic syndrome (severe): guarded</li>
+          <li>UPC &gt; 5 + hypoalbuminemia + HT: poor 6-month survival</li>
+          <li>Negative prognostic factors: high UPC, ↓ albumin, ↑ Cr, severe HT, age, amyloid</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Sudden dyspnea / collapse ใน proteinuric dog → suspect PTE</strong> ✗ — high mortality. Antithrombotic prophylaxis สำคัญมาก<br><br>💡 <strong>Tick-borne dz screening</strong> = essential first step ในเคสหมา proteinuric — บางเคสรักษาหายได้ด้วย doxycycline เฉยๆ</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 45 · Urinary Incontinence ---------- */
+  {
+    id: 'urinary-incontinence',
+    titleEn: 'Urinary Incontinence',
+    titleTh: 'ปัสสาวะเล็ด',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['urinary incontinence', 'USMI', 'urethral sphincter mechanism incompetence', 'phenylpropanolamine', 'PPA', 'estriol', 'collagen injection', 'spayed female'],
+    aliases: ['incontinence', 'urine leakage', 'USMI', 'ปัสสาวะเล็ด', 'ปัสสาวะรั่ว'],
+    source: 'Ch. 45 · pp. 752–759',
+    sections: {
+      definition: `
+        <p>การ <strong>รั่วปัสสาวะโดยไม่ตั้งใจ</strong> — แยกจาก behavioral periuria + voluntary urination</p>
+        <ul>
+          <li>เจอบ่อยใน <strong>spayed female dogs</strong> (5-30% of spayed females) ✨</li>
+          <li>Cat: rare; ส่วนใหญ่ neurogenic หรือ ectopic ureter</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>1. USMI (Urethral Sphincter Mechanism Incompetence) ✨ — most common dog:</strong></p>
+        <ul>
+          <li>Spayed female (estrogen deficiency → ↓ urethral tone)</li>
+          <li>Onset typically months-years post-spay</li>
+          <li>Large breed predisposed (Boxer, Doberman, GSD, Old English Sheepdog, Rottweiler)</li>
+          <li>Obesity contributes</li>
+          <li>Castrated male (less common)</li>
+        </ul>
+
+        <p><strong>2. Anatomic abnormalities:</strong></p>
+        <ul>
+          <li><strong>Ectopic ureter</strong> ✨ — congenital; young female dogs (Lab, Golden, Husky, terriers); see entry</li>
+          <li>Pelvic bladder / intrapelvic position</li>
+          <li>Urethral hypoplasia</li>
+          <li>Vestibulovaginal stenosis</li>
+        </ul>
+
+        <p><strong>3. Neurogenic:</strong></p>
+        <ul>
+          <li>UMN bladder (above sacral SC) — spastic, poor emptying</li>
+          <li>LMN bladder (sacral SC, cauda equina) — flaccid, overflow</li>
+          <li>IVDD, fibrocartilaginous embolism, trauma</li>
+        </ul>
+
+        <p><strong>4. Detrusor instability / overactive bladder:</strong></p>
+        <ul>
+          <li>Idiopathic detrusor hyperreflexia</li>
+          <li>Cystitis (bladder irritation)</li>
+        </ul>
+
+        <p><strong>5. Overflow (functional/mechanical obstruction):</strong></p>
+        <ul>
+          <li>Urolith, mass, stricture</li>
+          <li>Reflex dyssynergia (functional obstruction during urination)</li>
+        </ul>
+
+        <p><strong>6. Other:</strong></p>
+        <ul>
+          <li>UTI (especially older dog with new incontinence)</li>
+          <li>Polyuria → exceeds bladder capacity (DM, CKD, Cushing's, DI)</li>
+          <li>Cognitive dysfunction (senior)</li>
+          <li>Medication-induced</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li><strong>USMI:</strong> ↓ urethral closing pressure due to estrogen ↓, smooth muscle atrophy, structural changes</li>
+          <li>Ectopic ureter: ureter bypasses bladder → drains into urethra/vagina → constant dribble</li>
+          <li>Neurogenic: damaged neural control → loss of voluntary control or detrusor function</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Urine leakage at rest, especially when sleeping/relaxing</strong> ✨ — wet bedding</li>
+          <li>Wet hair around vulva/prepuce</li>
+          <li>Perivulvar dermatitis (chronic)</li>
+          <li>UTI (recurrent, secondary)</li>
+          <li>Otherwise normal urination otherwise</li>
+        </ul>
+        <p><strong>Distinguish from:</strong></p>
+        <ul>
+          <li>Pollakiuria (UTI/cystitis) — frequent small voluntary urination</li>
+          <li>PU/PD — large volumes, accidents from full bladder</li>
+          <li>Behavioral periuria (cat especially) — full conscious urination</li>
+          <li>Submissive urination (puppy, anxiety)</li>
+        </ul>
+        <p><strong>Ectopic ureter signs:</strong></p>
+        <ul>
+          <li><strong>Constant dribbling since puppyhood</strong> ✨</li>
+          <li>Always wet vulva/prepuce</li>
+          <li>Recurrent UTI</li>
+          <li>Female &gt; male (anatomy)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>History critical:</strong></p>
+        <ul>
+          <li>Onset (since young = ectopic; post-spay = USMI)</li>
+          <li>Pattern (continuous dribble vs intermittent leak vs "puddles in bed")</li>
+          <li>Concurrent diseases (PU/PD?, DM, Cushing's)</li>
+          <li>Drug history</li>
+          <li>Spay/neuter status</li>
+        </ul>
+        <p><strong>Physical:</strong></p>
+        <ul>
+          <li>Inspect vulva/prepuce — recessed vulva, dermatitis</li>
+          <li>Rectal exam — pelvic mass, prostate, urethral palpation</li>
+          <li>Bladder palpation — size, expressibility</li>
+          <li>Neuro exam — perineal reflex, anal tone, hindlimb function</li>
+          <li>Observe urination if possible</li>
+        </ul>
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>UA + culture ✨ — rule out UTI (very common in incontinent dogs)</li>
+          <li>UPC if any concern</li>
+          <li>CBC, biochem (rule out PU/PD)</li>
+          <li>BP</li>
+          <li>Abdominal US — bladder, kidneys, ureters (ectopic), masses</li>
+          <li>Cushing's screen if indicated</li>
+        </ul>
+        <p><strong>Specific tests:</strong></p>
+        <ul>
+          <li><strong>CT urogram</strong> ✨ — gold standard for ectopic ureter</li>
+          <li><strong>Cystoscopy + ureteroscopy</strong> ✨ — direct visualization; can laser-correct ectopic during procedure</li>
+          <li>Contrast cystography (older method)</li>
+          <li>Urethral pressure profile (referral)</li>
+          <li>Spinal MRI if neurogenic suspected</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology — comprehensive workup needed</p>`,
+      treatment: `
+        <p><strong>1. USMI (spayed female) — first-line ✨</strong></p>
+        <ul>
+          <li><strong>Phenylpropanolamine (PPA) 1-2 mg/kg PO q8-12h</strong> ✨ — alpha agonist; ↑ urethral tone
+            <ul>
+              <li>~ 75-90% response rate</li>
+              <li>Side effects: hypertension, restlessness, anorexia</li>
+              <li>Caution in cardiac dz, HT</li>
+              <li>Trade names: Proin, Propalin</li>
+            </ul>
+          </li>
+          <li><strong>Estrogen replacement</strong>:
+            <ul>
+              <li>Diethylstilbestrol (DES) 0.1-1 mg PO q24h × 5d, then q week — historical, dose-dependent BM suppression risk</li>
+              <li>Estriol 2 mg/dog PO q24h × 7d, then q24-48h (Incurin) — better safety profile ✨</li>
+              <li>Combine with PPA for refractory: synergistic</li>
+            </ul>
+          </li>
+          <li>If refractory:
+            <ul>
+              <li>Combination PPA + estriol</li>
+              <li>Imipramine 5-15 mg/dog PO q12h</li>
+              <li>Endoscopic collagen injection (urethral bulking) — referral; effective</li>
+              <li>Hydraulic occluder cuff — surgical; refractory cases</li>
+              <li>Colposuspension — surgical (older technique)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Ectopic ureter:</strong></p>
+        <ul>
+          <li><strong>Cystoscopic laser ablation</strong> ✨ — minimally invasive; refers to specialist; success rate 50-80%</li>
+          <li>Surgical neoureterostomy / ureteral reimplantation — alternative</li>
+          <li>Many still need PPA / estriol post-procedure (concurrent USMI)</li>
+        </ul>
+
+        <p><strong>3. Neurogenic:</strong></p>
+        <ul>
+          <li>Identify + treat underlying cause (IVDD, mass, etc.)</li>
+          <li>UMN (spastic):
+            <ul>
+              <li>Diazepam 0.2-0.5 mg/kg PO q8h — relax urethra during expression</li>
+              <li>Prazosin 0.5-1 mg/dog PO q8-12h — alpha blocker, urethral relaxation</li>
+              <li>Phenoxybenzamine 0.25-0.5 mg/kg PO q8-12h — alternative alpha blocker</li>
+              <li>Manual expression q6-8h</li>
+              <li>Intermittent catheterization</li>
+            </ul>
+          </li>
+          <li>LMN (flaccid):
+            <ul>
+              <li>Bethanechol 5-15 mg/dog PO q8h — cholinergic, ↑ detrusor contraction</li>
+              <li>Manual expression</li>
+              <li>Indwelling catheter (short-term)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. Detrusor instability / overactive bladder:</strong></p>
+        <ul>
+          <li>Treat UTI if present</li>
+          <li>Anticholinergic: oxybutynin 0.2-0.4 mg/kg PO q8-12h</li>
+          <li>Imipramine</li>
+        </ul>
+
+        <p><strong>5. Concurrent UTI:</strong></p>
+        <ul>
+          <li>Treat all UTIs in incontinent dogs (very common, perpetuating cycle)</li>
+          <li>Recheck culture after treatment</li>
+        </ul>
+
+        <p><strong>Lifestyle:</strong></p>
+        <ul>
+          <li>Frequent walks / opportunities to urinate</li>
+          <li>Waterproof bedding</li>
+          <li>Doggy diapers / belly bands</li>
+          <li>Weight loss if obese</li>
+          <li>Maintain good hygiene to prevent perivulvar dermatitis</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Recurrent UTI</li>
+          <li>Perivulvar dermatitis</li>
+          <li>Owner relinquishment (chronic incontinence is a top reason)</li>
+          <li>PPA side effects (HT, restlessness)</li>
+          <li>Estrogen toxicity (high-dose DES — bone marrow suppression — rare with modern dosing)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>USMI with PPA: excellent</strong> — 75-90% well controlled ✓</li>
+          <li>USMI refractory + collagen injection: 50-70% improvement</li>
+          <li>Ectopic ureter post-correction: variable; many need adjunctive PPA</li>
+          <li>Neurogenic: depends on underlying lesion (IVDD recovery often good with treatment)</li>
+          <li>UTI-related: excellent with treatment</li>
+        </ul>
+        <div class="callout">💡 <strong>Spayed female dog + wet bed = USMI จนกว่าจะพิสูจน์ตรงข้าม</strong> ✨ — UA culture rule out UTI ก่อน, เริ่ม PPA. Most respond. Estriol (Incurin) เป็นทางเลือกที่ปลอดภัยกว่า DES</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 45 · Ectopic Ureter ---------- */
+  {
+    id: 'ectopic-ureter',
+    titleEn: 'Ectopic Ureter',
+    titleTh: 'ท่อไตผิดตำแหน่ง',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['ectopic ureter', 'congenital', 'incontinence', 'CT urogram', 'cystoscopy', 'laser ablation', 'Lab', 'Golden', 'Husky', 'puppy'],
+    aliases: ['ectopic ureter', 'EU', 'ท่อไตผิดที่', 'ureter ectopic'],
+    source: 'Ch. 45 · pp. 759–763',
+    sections: {
+      definition: `
+        <p>ความผิดปกติแต่กำเนิด: ureter ไม่ได้เปิดเข้า bladder trigone ปกติ — เปิดเข้า urethra, vagina, หรือ uterus → <strong>continuous urine leakage since puppyhood</strong> ✨</p>
+        <ul>
+          <li>Female &gt; male (90% female)</li>
+          <li>Often unilateral (one side); bilateral 30%</li>
+          <li><strong>Most common cause of incontinence in young dogs</strong> ✨</li>
+          <li>Cat: rare</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Congenital — embryonic developmental abnormality of ureteral migration</strong></p>
+        <p><strong>Predisposed breeds:</strong></p>
+        <ul>
+          <li>Labrador Retriever ✨</li>
+          <li>Golden Retriever</li>
+          <li>Siberian Husky</li>
+          <li>Soft-coated Wheaten</li>
+          <li>Newfoundland</li>
+          <li>Poodle, terrier breeds</li>
+          <li>English Bulldog (males more common in this breed)</li>
+        </ul>
+        <p><strong>Anatomic types:</strong></p>
+        <ul>
+          <li><strong>Intramural</strong> (most common, ~ 95% of dogs) — ureter tunnels through bladder wall but exits past trigone (urethra/vagina)</li>
+          <li><strong>Extramural</strong> — ureter completely bypasses bladder; ends in urethra, vagina, uterus, or vestibule</li>
+        </ul>
+        <p><strong>Common ectopic openings:</strong></p>
+        <ul>
+          <li>Female: proximal urethra (most common), vagina, vestibule, uterus</li>
+          <li>Male: prostatic urethra, ductus deferens (rare)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Urine bypasses bladder/sphincter → continuous dribbling</li>
+          <li>Concurrent USMI common (~ 30-50% of cases) — even after surgical correction</li>
+          <li>Reflux → recurrent UTI, pyelonephritis</li>
+          <li>Hydroureter, hydronephrosis common (ureter dilated proximally)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Continuous urine dribbling since puppyhood</strong> ✨</li>
+          <li>Always wet vulva (or prepuce in male) → perivulvar dermatitis</li>
+          <li>Normal voluntary urination also occurs (other ureter / detrusor function ok)</li>
+          <li>Recurrent UTI (sometimes presenting sign)</li>
+          <li>Wet bedding, smell of urine</li>
+          <li>± Hydronephrosis — kidney palpation enlarged (severe cases)</li>
+          <li>Some dogs continent during day, leak during sleep — confusion with USMI</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>CT urogram</strong> ✨ — gold standard
+            <ul>
+              <li>IV contrast → fills ureter → shows ectopic opening + course</li>
+              <li>Identify uni- vs bilateral</li>
+              <li>Hydroureter, hydronephrosis</li>
+              <li>Concurrent anatomy abnormalities</li>
+            </ul>
+          </li>
+          <li><strong>Cystoscopy</strong> ✨ — definitive; can be diagnostic + therapeutic same procedure
+            <ul>
+              <li>Direct visualization of ureteral openings</li>
+              <li>Laser ablation possible immediately</li>
+              <li>Vaginal exam concurrent — vestibulovaginal abnormalities</li>
+            </ul>
+          </li>
+          <li>Excretory urography (older method)</li>
+          <li>Abdominal US — hydronephrosis, hydroureter; can sometimes visualize abnormal course</li>
+        </ul>
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>UA + culture (UTI almost always present)</li>
+          <li>CBC, biochem, BUN/Cr (assess renal function — chronic obstruction)</li>
+          <li>BP</li>
+          <li>Vaginal exam (rule out concurrent vestibulovaginal abnormality)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>USMI in young female (less common before 1 year)</li>
+          <li>Pelvic bladder</li>
+          <li>Persistent paramesonephric remnant</li>
+          <li>Vestibulovaginal stenosis</li>
+          <li>Detrusor atony (neurogenic)</li>
+          <li>UTI-related incontinence</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Cystoscopic laser ablation (CLA) ✨ — first-line for intramural ectopic ureter:</strong></p>
+        <ul>
+          <li>Minimally invasive — endoscopic</li>
+          <li>Use diode/holmium laser to ablate ectopic ureteral wall, repositioning opening into bladder trigone</li>
+          <li>Same procedure: diagnostic + therapeutic</li>
+          <li>Success rate (full continence): 50-65%</li>
+          <li>Improvement: 75-85%</li>
+          <li>Complications: low (mild hematuria, transient UTI)</li>
+          <li>Referral procedure (limited centers in Thailand)</li>
+        </ul>
+
+        <p><strong>2. Surgical correction:</strong></p>
+        <ul>
+          <li><strong>Neoureterostomy</strong> — reimplant ureter into bladder lumen
+            <ul>
+              <li>For intramural type</li>
+              <li>Performed via cystotomy</li>
+            </ul>
+          </li>
+          <li><strong>Ureteral transplantation (extramural)</strong> — divide ureter, reimplant into bladder</li>
+          <li>Success similar to CLA but more invasive</li>
+          <li>Risk: stricture, leak, infection</li>
+        </ul>
+
+        <p><strong>3. Adjunctive medical therapy ✨ (for residual incontinence):</strong></p>
+        <ul>
+          <li>Most dogs need ongoing PPA / estriol after surgery (concurrent USMI common)</li>
+          <li>PPA 1-2 mg/kg PO q8-12h</li>
+          <li>Estriol 2 mg/dog PO q24-48h (spayed female; usually wait until adult to spay if ectopic ureter known)</li>
+          <li>Some require lifelong medical management</li>
+        </ul>
+
+        <p><strong>4. Treat concurrent UTI:</strong></p>
+        <ul>
+          <li>Pre-op + post-op cultures essential</li>
+          <li>Antibiotic per culture</li>
+          <li>Long-term recurrence common — periodic recheck</li>
+        </ul>
+
+        <p><strong>5. Manage hydronephrosis/hydroureter:</strong></p>
+        <ul>
+          <li>Resolves often after correction</li>
+          <li>Severe cases may require ureteral reconstruction or nephrectomy (if severely damaged kidney + functional contralateral)</li>
+        </ul>
+
+        <p><strong>6. Spay timing:</strong></p>
+        <ul>
+          <li>Delay spay until after correction + adulthood ideally</li>
+          <li>Spaying before correction can compound USMI later</li>
+        </ul>
+
+        <p><strong>Owner expectations:</strong></p>
+        <ul>
+          <li>Most dogs improve significantly</li>
+          <li>~ 30-40% achieve complete continence on first procedure alone</li>
+          <li>Combined with PPA / estriol → 70-80% well controlled</li>
+          <li>Some need second procedure / hydraulic occluder cuff for refractory cases</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Persistent incontinence (concurrent USMI — 30-50%)</li>
+          <li>Recurrent UTI (lifelong tendency)</li>
+          <li>Stricture at correction site</li>
+          <li>Urine leak (surgical)</li>
+          <li>Pyelonephritis</li>
+          <li>Hydronephrosis progression</li>
+          <li>CKD development (severe / chronic obstruction)</li>
+          <li>Need for second procedure</li>
+          <li>Owner frustration (lifelong management)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Cystoscopic laser ablation: <strong>good — 50-65% complete continence, 75-85% improvement</strong> ✓</li>
+          <li>+ PPA / estriol = 70-80% well controlled</li>
+          <li>Surgical correction: similar success</li>
+          <li>Bilateral with severe hydronephrosis: more guarded</li>
+          <li>Concurrent severe USMI: variable — may need additional procedures</li>
+          <li>Most dogs achieve good quality of life with combined approach</li>
+        </ul>
+        <div class="callout">💡 <strong>Lab puppy female + dripping ตั้งแต่เด็ก = ectopic ureter จนกว่าจะพิสูจน์ตรงข้าม</strong> ✨ — CT urogram + cystoscopy ที่ specialist. CLA เป็นทางเลือกที่ดีที่สุดในยุคปัจจุบัน</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
