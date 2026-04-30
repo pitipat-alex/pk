@@ -15256,6 +15256,617 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Ch 47 · Feline Hyperthyroidism ---------- */
+  {
+    id: 'feline-hyperthyroidism',
+    titleEn: 'Feline Hyperthyroidism',
+    titleTh: 'ไทรอยด์เป็นพิษในแมว',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['cat'],
+    tags: ['hyperthyroidism', 'thyrotoxicosis', 'methimazole', 'carbimazole', 'I-131', 'radioactive iodine', 'thyroidectomy', 'y/d diet', 'concurrent CKD', 'masked CKD'],
+    aliases: ['hyperthyroid cat', 'thyrotoxicosis', 'ไทรอยด์', 'ต่อมไทรอยด์เป็นพิษ', 'feline hyperthyroidism'],
+    source: 'Ch. 47 · pp. 786–812',
+    sections: {
+      definition: `
+        <p>โรคต่อมไร้ท่อที่พบบ่อยที่สุดในแมวสูงวัย ✨ — &gt; 10% ของแมว &gt; 10 ปี</p>
+        <ul>
+          <li>เกิดจาก <strong>functional adenomatous hyperplasia / adenoma</strong> ของ thyroid (~ 98%)</li>
+          <li>Thyroid carcinoma &lt; 2% (อาจสูงขึ้นถ้าโรคเรื้อรังนาน)</li>
+          <li>Bilateral involvement ใน 70-90% ✨ (สำคัญสำหรับ surgery planning)</li>
+          <li>Median age 12-13 yr; rare &lt; 8 yr</li>
+          <li>ไม่มี breed/sex predilection ชัดเจน</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Idiopathic — exact cause ไม่ทราบ</li>
+          <li>Theories: dietary iodine variation, environmental goitrogens (BPA from food cans, fire retardants/PBDE), genetic susceptibility</li>
+          <li>Indoor cats with canned food &gt; outdoor cats — risk ↑</li>
+          <li>Aging — adenomatous transformation</li>
+          <li>NOT autoimmune like Graves disease in humans</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Autonomous T4/T3 secretion (ไม่ตอบสนองต่อ TSH feedback)</li>
+          <li>↑ Metabolic rate → catabolic state</li>
+          <li>↑ Cardiac output, β-adrenergic sensitization → tachycardia, hypertension, HCM-like changes</li>
+          <li>↑ GFR → masks underlying CKD ✨ (sensitive issue!)</li>
+          <li>↑ Bone turnover</li>
+          <li>↑ Insulin resistance</li>
+          <li>Catabolism → muscle wasting despite polyphagia</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic triad ✨:</strong></p>
+        <ol>
+          <li><strong>Weight loss</strong> despite polyphagia ✨</li>
+          <li><strong>Polyphagia</strong> (ravenous, demanding food)</li>
+          <li>Hyperactivity, restlessness, behavioral changes</li>
+        </ol>
+
+        <p><strong>Common signs:</strong></p>
+        <ul>
+          <li>PU/PD ✨</li>
+          <li>Vomiting (intermittent)</li>
+          <li>Diarrhea / large soft stools (rapid GI transit)</li>
+          <li>Tachycardia, gallop rhythm</li>
+          <li>Heart murmur (often new)</li>
+          <li>Hypertension ✗ (~ 25%)</li>
+          <li>Unkempt coat, matted fur</li>
+          <li>Heat intolerance, panting</li>
+          <li>Anxious, irritable, aggressive</li>
+          <li><strong>Palpable thyroid nodule</strong> ✨ — feel cervical region (cat in sphinx position; thumb behind larynx; small mobile nodule slipping under fingers)
+            <ul>
+              <li>Unilateral ~ 30%, bilateral ~ 70%</li>
+              <li>~ 10-15% ectopic (intrathoracic) — not palpable</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>"Apathetic" hyperthyroidism (~ 5-10%):</strong></p>
+        <ul>
+          <li>Lethargy, anorexia (instead of polyphagia)</li>
+          <li>Cardiac signs predominate</li>
+          <li>Often older sicker cats with concurrent dz</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Total T4 (TT4)</strong> ✨ — first-line:</p>
+        <ul>
+          <li>↑ above reference range = diagnostic in vast majority</li>
+          <li>Reference: typically 0.8-4.0 µg/dL (varies by lab)</li>
+          <li>~ 90% of hyperthyroid cats have ↑ TT4</li>
+          <li>~ 10% have <strong>normal TT4 despite hyperthyroid</strong> (early dz, concurrent illness suppression)</li>
+        </ul>
+
+        <p><strong>2. Free T4 (fT4) by equilibrium dialysis</strong> ✨ — when TT4 normal but suspicious:</p>
+        <ul>
+          <li>More sensitive than TT4 alone</li>
+          <li>↑ in hyperthyroid even if TT4 normal</li>
+          <li>Caution: also ↑ in non-thyroidal illness (NTI) — false positive ~ 10-20%</li>
+          <li>Best interpreted with TT4 + clinical signs</li>
+          <li>Use as "tie-breaker" in equivocal cases</li>
+        </ul>
+
+        <p><strong>3. TSH (canine TSH assay used in cat — feline-specific not available):</strong></p>
+        <ul>
+          <li>Suppressed/undetectable in hyperthyroid</li>
+          <li>Helpful if borderline T4 + suspicious signs</li>
+          <li>Rule out hyperthyroid: TT4 mid-range + detectable TSH = unlikely hyperthyroid</li>
+        </ul>
+
+        <p><strong>4. T3 suppression test</strong> — historical, rarely used now (replaced by fT4 + TSH)</p>
+
+        <p><strong>5. Thyroid scintigraphy (referral):</strong></p>
+        <ul>
+          <li>Gold standard — visualizes hyperfunctioning tissue</li>
+          <li>Distinguishes unilateral vs bilateral (sx planning)</li>
+          <li>Detects ectopic thyroid tissue (mediastinum)</li>
+          <li>Detects carcinoma vs adenoma (multiple foci, distant uptake)</li>
+        </ul>
+
+        <p><strong>Concurrent disease screening (CRITICAL) ✨:</strong></p>
+        <ul>
+          <li><strong>CKD screen — masked by hyperthyroid</strong> ✨
+            <ul>
+              <li>BUN, Cr, SDMA, USG, UPC</li>
+              <li>Hyperthyroid → ↑ GFR → falsely lowers Cr</li>
+              <li>~ 30-40% of hyperthyroid cats have underlying CKD revealed after treatment</li>
+              <li>SDMA more reliable in this scenario</li>
+            </ul>
+          </li>
+          <li>Cardiac assessment: BP measurement (systolic), thoracic radiograph, echocardiogram if murmur/gallop</li>
+          <li>UA + culture (UTI common, often subclinical in elderly cats)</li>
+          <li>CBC (mild erythrocytosis, stress leukogram)</li>
+          <li>Liver enzymes ↑ (mild ALT, ALP — usually resolve with treatment)</li>
+          <li>Calcium (usually normal but can ↑)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>CKD alone (PU/PD + weight loss + no polyphagia)</li>
+          <li>DM (PU/PD + polyphagia + weight loss but glycosuria)</li>
+          <li>GI lymphoma / IBD (weight loss + vomiting + diarrhea)</li>
+          <li>Other neoplasia</li>
+          <li>EPI (rare in cat)</li>
+          <li>Hepatic disease</li>
+          <li>Behavioral hyperactivity (stress, environmental)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>4 treatment options:</strong></p>
+
+        <p><strong>1. Methimazole (Tapazole / Felimazole) ✨ — first-line for most:</strong></p>
+        <ul>
+          <li><strong>Dose: start 2.5 mg PO q12h</strong> (regardless of cat size; titrate up to 5 mg q12h if needed)
+            <ul>
+              <li>Felimazole = veterinary formulation (1.25, 2.5, 5 mg)</li>
+              <li>Methimazole human formulation works equally</li>
+            </ul>
+          </li>
+          <li><strong>Transdermal methimazole</strong> ✨ — apply to inner pinna (rotate sides) q12h
+            <ul>
+              <li>For cats hard to pill</li>
+              <li>Slightly less effective initially but improves over weeks</li>
+              <li>Owner uses gloves</li>
+            </ul>
+          </li>
+          <li>Mechanism: blocks thyroid peroxidase → blocks T4 synthesis (doesn't destroy gland)</li>
+          <li>Time to effect: 2-4 wk</li>
+          <li>Recheck T4 + Cr/SDMA at 2-4 wk → adjust dose
+            <ul>
+              <li>Goal T4: lower half of reference range (e.g., 1.0-2.0 µg/dL)</li>
+              <li>If T4 still ↑ → ↑ methimazole</li>
+              <li>If T4 too low → reduce</li>
+            </ul>
+          </li>
+          <li><strong>Side effects (~ 10-20%):</strong>
+            <ul>
+              <li>GI: vomiting, anorexia (transient, often resolves)</li>
+              <li>Facial pruritus / excoriation (immune-mediated; stop drug)</li>
+              <li>Hepatopathy (rare, severe — stop drug)</li>
+              <li>Blood dyscrasias: leukopenia, thrombocytopenia, bone marrow suppression (rare)</li>
+              <li>Recheck CBC + chem at 2 wk, 1 mo, then q3-6 mo</li>
+            </ul>
+          </li>
+          <li>Lifelong therapy (doesn't cure)</li>
+          <li>Reversible — useful trial before definitive Tx (assess if CKD unmasks)</li>
+        </ul>
+
+        <p><strong>2. Carbimazole (Vidalta — sustained release):</strong></p>
+        <ul>
+          <li>Pro-drug → methimazole</li>
+          <li>10-15 mg PO q24h (once daily!)</li>
+          <li>Better compliance for some owners</li>
+          <li>Limited availability in some regions</li>
+        </ul>
+
+        <p><strong>3. Radioactive iodine (I-131) ✨ — gold standard curative:</strong></p>
+        <ul>
+          <li><strong>Mechanism:</strong> selectively destroys hyperfunctioning thyroid tissue (normal tissue suppressed by negative feedback uptakes less)</li>
+          <li>Single SC injection</li>
+          <li>Cure rate &gt; 95% with one treatment</li>
+          <li><strong>Advantages:</strong>
+            <ul>
+              <li>One-time treatment</li>
+              <li>No daily medication</li>
+              <li>Treats ectopic tissue (mediastinal)</li>
+              <li>Treats carcinoma</li>
+              <li>No anesthesia</li>
+            </ul>
+          </li>
+          <li><strong>Disadvantages:</strong>
+            <ul>
+              <li>Specialized facility — limited availability in Thailand</li>
+              <li>Hospitalization 5-14 days (radiation isolation by regulation)</li>
+              <li>Cost (initially expensive but lifetime cost-effective)</li>
+              <li>~ 5% develop persistent hypothyroidism (treat with thyroxine)</li>
+              <li>Pre-treatment requires methimazole trial (assess CKD)</li>
+            </ul>
+          </li>
+          <li><strong>Best candidate:</strong>
+            <ul>
+              <li>Cat tolerates methimazole + CKD doesn't worsen significantly</li>
+              <li>Owner committed to definitive treatment</li>
+              <li>Younger / healthier cat</li>
+              <li>Bilateral or ectopic disease</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. Thyroidectomy (surgical) ✨:</strong></p>
+        <ul>
+          <li>Unilateral or bilateral</li>
+          <li>Indicated if I-131 not available; or unilateral confirmed by scintigraphy</li>
+          <li>Pre-op: methimazole 2-4 weeks → stabilize cardiac, normalize T4</li>
+          <li><strong>Complications:</strong>
+            <ul>
+              <li><strong>Hypocalcemia</strong> ✗ — parathyroid damage; bilateral procedure higher risk
+                <ul>
+                  <li>Monitor Ca q6-12h × 5-7 d post-op</li>
+                  <li>Treat with calcium gluconate IV + calcitriol if symptomatic</li>
+                </ul>
+              </li>
+              <li>Recurrence (incomplete excision, ectopic, contralateral hyperplasia)</li>
+              <li>Laryngeal nerve damage (voice change, regurgitation)</li>
+              <li>Horner's syndrome</li>
+            </ul>
+          </li>
+          <li>Cost moderate; widely available</li>
+          <li>~ 70-80% long-term success</li>
+        </ul>
+
+        <p><strong>5. Iodine-restricted diet (Hill's y/d):</strong></p>
+        <ul>
+          <li>Severely restricted iodine → thyroid can't make hormone</li>
+          <li>Only effective if <strong>EXCLUSIVE</strong> diet (no treats, no other food, multi-cat homes problematic)</li>
+          <li>Wet + dry available</li>
+          <li>Lifelong</li>
+          <li>Reasonable option in cats with limited treatment options (concurrent severe dz, owner refuses other Tx)</li>
+          <li>Less effective than other options</li>
+        </ul>
+
+        <p><strong>Concurrent management:</strong></p>
+        <ul>
+          <li><strong>Hypertension:</strong> usually resolves with euthyroidism; if persists → amlodipine 0.625-1.25 mg/cat PO q24h</li>
+          <li><strong>HCM/cardiac changes:</strong> often resolve with treatment; severe cases may need atenolol</li>
+          <li><strong>UTI:</strong> culture-based</li>
+          <li><strong>CKD masked:</strong>
+            <ul>
+              <li>Methimazole trial first to "unmask"</li>
+              <li>If Cr ↑ significantly with euthyroidism → balance: aim for slightly higher T4 (mid-upper reference) to maintain GFR</li>
+              <li>Goal: maintain QOL, not perfect normal T4 in cat with severe CKD</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Monitoring after definitive Tx:</strong></p>
+        <ul>
+          <li>T4 + chem panel at 1 mo, 3 mo, 6 mo, then q6 mo</li>
+          <li>BP, body weight, BCS</li>
+          <li>Watch for hypothyroidism (post-I-131 ~ 5%)</li>
+          <li>UA q6 mo</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Cardiac: HCM-like changes, CHF, arrhythmia → often reverses with treatment</li>
+          <li>Severe hypertension → retinal detachment, neuro signs ✗</li>
+          <li>Cachexia, severe muscle wasting if untreated</li>
+          <li>"Unmasking" of CKD post-Tx — major decision point</li>
+          <li>Methimazole side effects (hepatopathy, blood dyscrasia, facial excoriation)</li>
+          <li>Post-thyroidectomy hypocalcemia ✗</li>
+          <li>Post-I-131 hypothyroidism (~ 5%)</li>
+          <li>Carcinoma (rare but increases with chronicity / multiple I-131 needs)</li>
+          <li>Recurrence (depending on Tx modality)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Excellent with appropriate treatment</strong> ✓ — MST 2-5+ years post-Tx</li>
+          <li>I-131 cure: ~ 95% effective; MST &gt; 4 years</li>
+          <li>Methimazole long-term: MST 2-3 years (limited by concurrent disease)</li>
+          <li>Surgery: 70-80% success; lifetime if successful</li>
+          <li>Concurrent CKD: shortens survival but still good QOL</li>
+          <li>Carcinoma: poorer (10-15% MST 1 year despite treatment)</li>
+          <li>Untreated: progressive decline 1-2 years</li>
+        </ul>
+        <div class="callout">💡 <strong>Hyperthyroid + senior cat = always screen CKD</strong> ✨ — masked by ↑ GFR; methimazole trial unmasks. Balance treatment goal between T4 control + renal preservation<br><br>I-131 = definitive cure; methimazole = reversible trial + lifelong management option. Transdermal methimazole = game-changer for owners</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 48 · Canine Hypothyroidism ---------- */
+  {
+    id: 'canine-hypothyroidism',
+    titleEn: 'Canine Hypothyroidism',
+    titleTh: 'ไทรอยด์ทำงานต่ำในหมา',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['dog'],
+    tags: ['hypothyroidism', 'lymphocytic thyroiditis', 'levothyroxine', 'L-T4', 'TSH', 'free T4', 'sick euthyroid syndrome', 'myxedema'],
+    aliases: ['hypothyroid dog', 'low thyroid', 'ไทรอยด์ต่ำ', 'canine hypothyroidism'],
+    source: 'Ch. 48 · pp. 813–820',
+    sections: {
+      definition: `
+        <p>การลดลงของฮอร์โมนไทรอยด์ — โรคต่อมไร้ท่อที่พบบ่อยในหมา (vs hyperthyroid ที่พบในแมว)</p>
+        <ul>
+          <li>~ 95% เป็น <strong>primary hypothyroidism</strong></li>
+          <li>Middle-aged dogs (4-10 yr typical)</li>
+          <li>Medium-large breeds: Golden, Doberman, GSD, Cocker, Boxer, Dachshund, Beagle, Irish Setter, Great Dane</li>
+          <li><strong>Massively over-diagnosed</strong> ✗ — many "atypical" presentations are sick euthyroid syndrome, not true hypothyroidism</li>
+          <li>Definitive diagnosis requires correct interpretation of full thyroid panel</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary (95%):</strong></p>
+        <ul>
+          <li><strong>Lymphocytic thyroiditis</strong> ✨ ~ 50% — autoimmune; thyroglobulin antibodies positive
+            <ul>
+              <li>Heritable in some breeds (Beagle, Doberman, Borzoi, Old English Sheepdog, Rhodesian Ridgeback)</li>
+            </ul>
+          </li>
+          <li><strong>Idiopathic atrophy</strong> ~ 50% — end-stage of thyroiditis or independent</li>
+          <li>Thyroid neoplasia (rare cause of hypothyroidism)</li>
+          <li>Iodine deficiency (rare in commercial diet era)</li>
+        </ul>
+
+        <p><strong>Secondary (rare, &lt; 5%):</strong></p>
+        <ul>
+          <li>Pituitary disease (TSH deficiency)</li>
+          <li>Congenital hypoplasia</li>
+        </ul>
+
+        <p><strong>Tertiary (very rare):</strong></p>
+        <ul>
+          <li>Hypothalamic disease</li>
+        </ul>
+
+        <p><strong>Drug-induced (transient):</strong></p>
+        <ul>
+          <li>Glucocorticoids (suppress TSH)</li>
+          <li>Phenobarbital (induce metabolism)</li>
+          <li>Trimethoprim-sulfa (idiosyncratic)</li>
+          <li>Carprofen, mitotane, propranolol</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↓ T4/T3 production → reduced metabolic rate</li>
+          <li>↑ TSH (compensatory, primary)</li>
+          <li>Effects on virtually every tissue:
+            <ul>
+              <li>Skin/coat: ↓ hair growth cycle, ↓ sebum → seborrhea, alopecia</li>
+              <li>↓ Lipid clearance → hypercholesterolemia, hepatic lipidosis</li>
+              <li>↓ Cardiac contractility, bradycardia</li>
+              <li>↓ GI motility</li>
+              <li>↓ Erythropoiesis → anemia</li>
+              <li>Neuromuscular: ↓ nerve conduction → neuropathies</li>
+              <li>Reproductive: anestrus, low libido</li>
+              <li>Severe: myxedema (mucinous edema)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic dermatologic signs ✨:</strong></p>
+        <ul>
+          <li><strong>Symmetrical bilateral truncal alopecia</strong> ✨ — non-pruritic; "rat tail," dorsum spared (sun-exposed areas)</li>
+          <li>Easily epilated hair (not regrowing where shaved)</li>
+          <li>Dull, dry coat; dry brittle hair</li>
+          <li>Hyperpigmentation (chronic)</li>
+          <li>Seborrhea (dry or oily)</li>
+          <li>Recurrent pyoderma, otitis externa</li>
+          <li>Demodicosis (immunosuppression)</li>
+          <li>Comedones, calcinosis ↓ (these are MORE Cushing's)</li>
+          <li>Tragic facial expression (myxedema — drooping eyelids, thickened skin)</li>
+        </ul>
+
+        <p><strong>Metabolic:</strong></p>
+        <ul>
+          <li><strong>Weight gain</strong> despite normal/decreased appetite ✨</li>
+          <li>Lethargy, exercise intolerance</li>
+          <li>Heat-seeking, cold intolerance</li>
+          <li>Mental dullness, slowed reflexes</li>
+        </ul>
+
+        <p><strong>Neuromuscular (less common):</strong></p>
+        <ul>
+          <li>Generalized weakness</li>
+          <li>Peripheral neuropathy (laryngeal paralysis ✨, megaesophagus, facial nerve, vestibular)</li>
+          <li>Myopathy</li>
+        </ul>
+
+        <p><strong>Cardiovascular:</strong></p>
+        <ul>
+          <li>Bradycardia</li>
+          <li>Weak femoral pulses</li>
+          <li>(Rarely contributes to clinical signs)</li>
+        </ul>
+
+        <p><strong>Reproductive:</strong></p>
+        <ul>
+          <li>Anestrus (intact female), prolonged interestrous</li>
+          <li>Infertility, gynecomastia (intact male)</li>
+        </ul>
+
+        <p><strong>Severe — myxedema coma ✗ (rare):</strong></p>
+        <ul>
+          <li>Profound lethargy, stupor, coma</li>
+          <li>Hypothermia</li>
+          <li>Bradycardia, hypotension</li>
+          <li>Hypoventilation</li>
+          <li>Mortality high without aggressive intervention</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Hematology / biochemistry findings ✨:</strong></p>
+        <ul>
+          <li><strong>Hypercholesterolemia</strong> ✨ — &gt; 75% of hypothyroid dogs; supportive but not diagnostic alone</li>
+          <li>Hypertriglyceridemia</li>
+          <li>Mild non-regenerative anemia (~ 50%)</li>
+          <li>Normal liver enzymes (mild ↑ ALP possible)</li>
+          <li>Normal renal function</li>
+        </ul>
+
+        <p><strong>Thyroid testing — interpretation is key ✨:</strong></p>
+
+        <p><strong>1. Total T4 (TT4):</strong></p>
+        <ul>
+          <li>Normal range typically 1.0-4.0 µg/dL (lab dependent)</li>
+          <li>Low TT4 + clinical signs + supportive labs = consistent</li>
+          <li><strong>BUT:</strong> low TT4 alone is NOT diagnostic — many false positives:
+            <ul>
+              <li>Sick euthyroid syndrome (NTI) — most common false low T4</li>
+              <li>Drugs (steroids, phenobarb, sulfa, NSAIDs)</li>
+              <li>Stress, athletic conditioning (sighthounds normally low T4!)</li>
+              <li>Diurnal/circadian variation</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Free T4 (fT4) by equilibrium dialysis</strong> ✨:</p>
+        <ul>
+          <li>More accurate than TT4 — less affected by binding protein/illness</li>
+          <li>Low fT4 = more reliable indicator of hypothyroidism</li>
+          <li>Still can be ↓ in severe NTI</li>
+        </ul>
+
+        <p><strong>3. TSH</strong> (canine TSH = cTSH):</p>
+        <ul>
+          <li>↑ TSH + low fT4 + low TT4 = primary hypothyroidism (high specificity)</li>
+          <li>~ 70% of hypothyroid dogs have ↑ TSH</li>
+          <li>Normal TSH does NOT rule out hypothyroidism — 30% have normal TSH</li>
+          <li>Caution: also ↑ in recovery from NTI</li>
+        </ul>
+
+        <p><strong>4. Thyroglobulin antibodies (TgAA):</strong></p>
+        <ul>
+          <li>Marker of lymphocytic thyroiditis</li>
+          <li>+ in early disease (predictive)</li>
+          <li>Doesn't confirm current hypothyroidism (just thyroiditis)</li>
+        </ul>
+
+        <p><strong>Algorithm ✨:</strong></p>
+        <ol>
+          <li>Compatible signs + supportive lab findings (especially hypercholesterolemia)?</li>
+          <li>Run <strong>full thyroid panel: TT4 + fT4 + TSH</strong></li>
+          <li>↓ TT4 + ↓ fT4 + ↑ TSH = hypothyroidism (high confidence)</li>
+          <li>↓ TT4 + normal fT4 + normal TSH = NOT hypothyroid (likely NTI / drug)</li>
+          <li>↓ TT4 + ↓ fT4 + normal TSH = equivocal — repeat in 4-6 wk; consider trial therapy</li>
+          <li>↓ TT4 + normal fT4 + ↑ TSH = early disease — monitor, retest</li>
+        </ol>
+
+        <p><strong>Avoid:</strong></p>
+        <ul>
+          <li>Diagnosing on TT4 alone</li>
+          <li>Testing during acute illness</li>
+          <li>Testing while on confounding drugs (wait 4-6 wk after discontinuation)</li>
+          <li>Therapeutic trial without baseline tests (creates lifelong unnecessary therapy)</li>
+        </ul>
+
+        <p><strong>Other workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (assess for concurrent disease causing NTI)</li>
+          <li>UA</li>
+          <li>Cardiac evaluation if signs (bradycardia, etc.)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Sick euthyroid syndrome (NTI)</strong> ✨ — most important DDx; address concurrent illness</li>
+          <li>Hyperadrenocorticism (similar dermatologic signs but different metabolic profile)</li>
+          <li>Demodicosis</li>
+          <li>Sex hormone alopecia (Pomeranian alopecia X, ovarian remnant)</li>
+          <li>Recurrent flank alopecia</li>
+          <li>Cyclic alopecia</li>
+          <li>Dermatophytosis</li>
+          <li>Pituitary dwarfism (juvenile)</li>
+          <li>Color dilution alopecia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Levothyroxine (synthetic L-T4) ✨ — only treatment:</strong></p>
+        <ul>
+          <li><strong>Initial dose: 0.02 mg/kg PO q12h</strong> (0.018-0.022 mg/kg)
+            <ul>
+              <li>= ~ 20 µg/kg q12h</li>
+              <li>Soloxine, Thyro-Tabs, Levothyroxine human, Forthyron</li>
+              <li>Round to nearest tablet size</li>
+            </ul>
+          </li>
+          <li><strong>Cardiac disease / older patient: start lower</strong> — 0.005-0.01 mg/kg q12h, titrate up over weeks
+            <ul>
+              <li>Avoid rapid increase in metabolic rate stressing heart</li>
+            </ul>
+          </li>
+          <li>Time to clinical effect: 4-8 weeks</li>
+          <li>Hair regrowth: 3-6 months</li>
+          <li>Lifelong treatment</li>
+        </ul>
+
+        <p><strong>Monitoring (4-8 weeks after starting / dose change):</strong></p>
+        <ul>
+          <li><strong>Post-pill T4</strong> ✨ — sample 4-6h post AM dose
+            <ul>
+              <li>Goal: upper-half of reference range or slightly above</li>
+              <li>Too low = increase dose</li>
+              <li>Too high (well above reference) = reduce dose / check for absorption issues</li>
+            </ul>
+          </li>
+          <li>Pre-pill T4 (just before next dose):
+            <ul>
+              <li>Some clinicians prefer this; should be in reference range</li>
+            </ul>
+          </li>
+          <li>Clinical response review:
+            <ul>
+              <li>Energy improvement (often within 1-2 wk)</li>
+              <li>Weight loss (gradual over weeks-months)</li>
+              <li>Hair regrowth (3-6 mo)</li>
+              <li>Cholesterol normalization (4-8 wk)</li>
+            </ul>
+          </li>
+          <li>Recheck T4 + cholesterol q6 mo lifelong (or sooner if signs change)</li>
+        </ul>
+
+        <p><strong>Adjusting:</strong></p>
+        <ul>
+          <li>Inadequate response after 6-8 wk:
+            <ul>
+              <li>Check compliance (most common reason)</li>
+              <li>Check storage (heat-sensitive)</li>
+              <li>Check brand (some generics less reliable)</li>
+              <li>Increase dose by 25-50%, recheck in 4 wk</li>
+              <li>Consider concurrent disease</li>
+            </ul>
+          </li>
+          <li>Once daily dosing acceptable in stable cases (after initial control on q12h):
+            <ul>
+              <li>0.02 mg/kg PO q24h (full daily dose given once)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Myxedema coma — emergency ✗:</strong></p>
+        <ul>
+          <li>IV levothyroxine 5 µg/kg IV q12h × 2-3 doses → switch to oral</li>
+          <li>Aggressive supportive care: warm fluids, ventilation, glucose</li>
+          <li>Investigate triggers (sepsis, surgery)</li>
+          <li>Mortality 50%+</li>
+        </ul>
+
+        <p><strong>Side effects of over-supplementation (thyrotoxicosis):</strong></p>
+        <ul>
+          <li>Restlessness, polyphagia, weight loss</li>
+          <li>Tachycardia, panting</li>
+          <li>PU/PD</li>
+          <li>Reduce dose if seen</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Untreated: progressive decline; severe dermatologic dz; secondary infections</li>
+          <li>Cardiac complications (severe untreated)</li>
+          <li>Megaesophagus, laryngeal paralysis (peripheral neuropathy)</li>
+          <li>Myxedema coma ✗ (rare, severe untreated/triggered)</li>
+          <li>Iatrogenic thyrotoxicosis (overdose)</li>
+          <li>Concurrent autoimmune diseases (lymphocytic thyroiditis associated with other autoimmune syndromes — Addison's, IMHA)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Excellent with appropriate treatment</strong> ✓ — normal lifespan, full clinical resolution</li>
+          <li>Hair regrowth, weight normalization, energy restoration over 3-6 months</li>
+          <li>Concurrent autoimmune disease may complicate</li>
+          <li>Myxedema coma: poor without aggressive treatment</li>
+          <li>Lifelong therapy + monitoring required</li>
+        </ul>
+        <div class="callout">💡 <strong>Hypothyroid = over-diagnosed</strong> ✗ — แค่ low T4 ไม่พอ. ต้องมี: clinical signs + supportive labs (cholesterol) + full panel (low fT4 + ↑ TSH ideally). Sick euthyroid syndrome (NTI) คือ false positive ที่พบบ่อยที่สุด — รักษา concurrent illness ก่อนตรวจ thyroid<br><br>Levothyroxine 0.02 mg/kg q12h เริ่มต้น; cardiac/elderly เริ่ม lower</div>
+      `,
+    },
+  },
+
   /* ---------- More entries to come ---------- */
 
 ];
