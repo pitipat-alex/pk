@@ -514,18 +514,28 @@ html.locked .lock-screen::before {
   z-index: 1000;
   isolation: isolate;
   display: none;
-  align-items: center;
+  align-items: flex-start;          /* ← changed from center */
   justify-content: center;
-  padding: 24px;
+  padding: max(24px, env(safe-area-inset-top)) 24px 24px 24px;  /* iPad safe area top */
   background:
     radial-gradient(circle at 18% 22%, rgba(230,57,70,0.18), transparent 50%),
     radial-gradient(circle at 82% 28%, rgba(123,44,191,0.18), transparent 50%),
     radial-gradient(circle at 60% 82%, rgba(6,167,125,0.16), transparent 50%),
     radial-gradient(circle at 22% 80%, rgba(247,127,0,0.14), transparent 50%),
     var(--bg);
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 html.locked .lock-screen { display: flex; }
+
+/* Lock card pushed to top quarter — avoids iPadOS 26 hit-test bug
+   that breaks button taps in lower portions of viewport */
+.lock-card-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(8px, 4vh, 60px);
+}
 
 /* ::before kept for desktop animation but disabled on mobile */
 .lock-screen::before {
