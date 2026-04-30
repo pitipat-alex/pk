@@ -496,6 +496,8 @@ html.locked .lock-screen { display: flex; }
   content: '';
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  z-index: 0;
   background:
     radial-gradient(circle at 18% 22%, rgba(230,57,70,0.22), transparent 45%),
     radial-gradient(circle at 82% 28%, rgba(123,44,191,0.22), transparent 45%),
@@ -511,6 +513,7 @@ html.locked .lock-screen { display: flex; }
 
 .lock-card {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 420px;
   background: var(--surface);
@@ -668,7 +671,12 @@ html.locked .lock-screen { display: flex; }
   font-weight: 600;
   position: relative;
   overflow: visible;
-  z-index: 1;
+  z-index: 2;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+  -webkit-user-select: none;
+  user-select: none;
 }
 .btn-google .g-logo {
   width: 22px;
