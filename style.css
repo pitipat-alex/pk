@@ -481,30 +481,45 @@ html.locked   body         { overflow: hidden; }
 
 .lock-screen {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1000;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 18% 22%, rgba(230,57,70,0.18), transparent 50%),
+    radial-gradient(circle at 82% 28%, rgba(123,44,191,0.18), transparent 50%),
+    radial-gradient(circle at 60% 82%, rgba(6,167,125,0.16), transparent 50%),
+    radial-gradient(circle at 22% 80%, rgba(247,127,0,0.14), transparent 50%),
+    var(--bg);
   overflow: hidden;
 }
 html.locked .lock-screen { display: flex; }
 
+/* ::before kept for desktop animation but disabled on mobile */
 .lock-screen::before {
   content: '';
+  display: none;
   position: absolute;
-  inset: 0;
+  top: 0; right: 0; bottom: 0; left: 0;
   pointer-events: none;
   z-index: 0;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(230,57,70,0.22), transparent 45%),
-    radial-gradient(circle at 82% 28%, rgba(123,44,191,0.22), transparent 45%),
-    radial-gradient(circle at 60% 82%, rgba(6,167,125,0.20), transparent 45%),
-    radial-gradient(circle at 22% 80%, rgba(247,127,0,0.18), transparent 45%);
-  filter: blur(20px);
-  animation: lockBg 18s ease-in-out infinite;
+}
+
+/* Only animate on larger desktop screens (avoid iPad issues) */
+@media (hover: hover) and (pointer: fine) and (min-width: 1100px) {
+  .lock-screen::before {
+    display: block;
+    background:
+      radial-gradient(circle at 18% 22%, rgba(230,57,70,0.10), transparent 45%),
+      radial-gradient(circle at 82% 28%, rgba(123,44,191,0.10), transparent 45%);
+    filter: blur(15px);
+    animation: lockBg 18s ease-in-out infinite;
+  }
 }
 @keyframes lockBg {
   0%, 100% { transform: scale(1) rotate(0deg); }
@@ -522,11 +537,18 @@ html.locked .lock-screen { display: flex; }
   padding: 38px 28px 28px;
   text-align: center;
   box-shadow: 0 30px 70px -28px rgba(22,22,22,0.20);
+  /* Default state: fully visible (no animation dependency) */
+  opacity: 1;
+  transform: none;
   animation: lockIn 0.7s cubic-bezier(.2,.7,.2,1);
+  animation-fill-mode: both;
 }
 @keyframes lockIn {
   from { opacity: 0; transform: translateY(28px) scale(0.96); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lock-card { animation: none; opacity: 1; transform: none; }
 }
 
 .pride-bar-mini {
