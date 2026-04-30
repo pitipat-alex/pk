@@ -203,20 +203,22 @@
   });
 
   // ---------- Supabase client -----------------------------------
-  // PKCE flow + detectSessionInUrl = mandatory for mobile Safari/Chrome
-  // (third-party cookie restrictions break implicit flow on mobile)
+  // Implicit flow (default) — token comes in URL hash directly
+  // We previously tried PKCE, but Safari iPad has issues with code_verifier
+  // persistence in localStorage across the OAuth redirect (ITP, etc.)
+  // Implicit flow works reliably for client-only SPAs.
   let sb;
   try {
     sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
       auth: {
-        flowType: 'pkce',
+        flowType: 'implicit',
         autoRefreshToken: true,
         persistSession: true,
         detectSessionInUrl: true,
         storage: window.localStorage,
       },
     });
-    DEBUG.add('✓ Supabase client created (PKCE)', 'ok');
+    DEBUG.add('✓ Supabase client created (implicit)', 'ok');
   } catch (err) {
     DEBUG.add('FATAL createClient: ' + (err.message || err), 'error');
     DEBUG.show();
@@ -266,50 +268,48 @@
 
   // ---------- Initial session check ------------------------------
   (async function initAuth() {
-    // Step 1: Detect OAuth callback (URL contains ?code=... for PKCE)
+    // Implicit flow: token comes in URL hash (#access_token=...)
+    // detectSessionInUrl in createClient auto-handles the parsing.
+    // We just need to wait briefly then check session.
+
     const url = new URL(window.location.href);
-    const code = url.searchParams.get('code');
-    const errorParam = url.searchParams.get('error');
+    const errorParam = url.searchParams.get('error') || (function() {
+      // Hash also can carry error
+      if (url.hash.includes('error=')) {
+        const hashParams = new URLSearchParams(url.hash.substring(1));
+        return hashParams.get('error');
+      }
+      return null;
+    })();
     const errorDesc = url.searchParams.get('error_description');
 
     if (errorParam) {
       DEBUG.add('OAuth error from Google: ' + errorParam + ' - ' + (errorDesc || ''), 'error');
       DEBUG.show();
-      // Clean URL
       try { window.history.replaceState({}, document.title, window.location.origin + window.location.pathname); } catch(e){}
       showLock();
       flashError('Google ปฏิเสธ: ' + (errorDesc || errorParam));
       return;
     }
 
-    if (code) {
-      DEBUG.add('OAuth code detected, exchanging for session...', 'info');
-      try {
-        // Explicit exchange — don't rely on detectSessionInUrl race
-        const { data, error } = await sb.auth.exchangeCodeForSession(window.location.href);
-        if (error) {
-          DEBUG.add('exchangeCodeForSession ERROR: ' + error.message, 'error');
-          DEBUG.show();
-          // Clean URL anyway to avoid loop
-          try { window.history.replaceState({}, document.title, window.location.origin + window.location.pathname); } catch(e){}
-          showLock();
-          flashError('แลกเปลี่ยน session ไม่สำเร็จ: ' + error.message);
-          return;
-        }
-        DEBUG.add('✓ Session exchange OK, user: ' + (data.session && data.session.user ? data.session.user.email : 'unknown'), 'ok');
-      } catch (err) {
-        DEBUG.add('exchangeCodeForSession exception: ' + (err.message || err), 'error');
-        DEBUG.show();
-      }
-      // Clean URL only AFTER exchange
+    const hasToken = window.location.hash.includes('access_token=');
+    if (hasToken) {
+      DEBUG.add('Token detected in URL hash, waiting for parse...', 'info');
+      // Give detectSessionInUrl time to consume the hash
+      await new Promise(resolve => setTimeout(resolve, 300));
+    }
+
+    // Check session
+    const { data: { session } } = await sb.auth.getSession();
+    DEBUG.add('Session check: ' + (session ? 'HAS session, user=' + session.user.email : 'NO session'), session ? 'ok' : 'info');
+
+    // Clean URL hash if still present
+    if (window.location.hash || window.location.search.includes('error=')) {
       try {
         window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
       } catch (e) { /* ignore */ }
     }
 
-    // Step 2: Now check session
-    const { data: { session } } = await sb.auth.getSession();
-    DEBUG.add('Session check: ' + (session ? 'HAS session, user=' + session.user.email : 'NO session'), session ? 'ok' : 'info');
     if (session && isAllowed(session.user.email)) {
       fillAccount(session.user);
       showDashboard();
