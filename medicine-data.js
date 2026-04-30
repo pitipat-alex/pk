@@ -14466,6 +14466,796 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Ch 49 · Diabetes Mellitus (Feline) ---------- */
+  {
+    id: 'diabetes-mellitus-feline',
+    titleEn: 'Diabetes Mellitus (Feline)',
+    titleTh: 'เบาหวานในแมว',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['cat'],
+    tags: ['DM', 'diabetes', 'feline diabetes', 'glargine', 'ProZinc', 'insulin', 'Lantus', 'remission', 'low-carb diet', 'fructosamine', 'continuous glucose monitor', 'Freestyle Libre'],
+    aliases: ['feline DM', 'cat diabetes', 'เบาหวานแมว'],
+    source: 'Ch. 49 · pp. 821–840',
+    sections: {
+      definition: `
+        <p>Hyperglycemia เรื้อรังจาก insulin deficiency ± insulin resistance — ในแมวมีลักษณะเฉพาะ:</p>
+        <ul>
+          <li><strong>Type 2-like</strong> ✨ — เริ่มจาก insulin resistance + amyloid deposition ใน pancreatic islets → β-cell loss</li>
+          <li><strong>Diabetic remission ~ 30-50% ของ cat ใหม่</strong> ✨ — ถ้า early aggressive treatment + low-carb diet</li>
+          <li>Reversible "transient diabetes" (กลูโคโทกซิก) ถ้ารีบรักษา</li>
+          <li>Older cat (&gt; 8 years), male &gt; female, obese predisposed</li>
+          <li>Burmese (Australia/NZ) — predisposed</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Insulin resistance + amyloid deposition</strong> = pathognomonic</li>
+          <li>Obesity ✨ — major modifiable risk factor</li>
+          <li>Older age</li>
+          <li><strong>Concurrent diseases (insulin antagonists):</strong>
+            <ul>
+              <li>Acromegaly (hypersomatotropism) ✨ — increasingly recognized; should screen IGF-1 in difficult-to-control cats</li>
+              <li>Hyperthyroidism (rare in newly diabetic, common comorbid)</li>
+              <li>Hyperadrenocorticism (uncommon in cat)</li>
+              <li>Pancreatitis</li>
+              <li>Chronic kidney disease</li>
+              <li>Infection / inflammation</li>
+              <li>Neoplasia</li>
+            </ul>
+          </li>
+          <li><strong>Drug-induced:</strong>
+            <ul>
+              <li>Glucocorticoids (long-term) ✨</li>
+              <li>Megestrol acetate (progestin)</li>
+              <li>Cyclosporine</li>
+            </ul>
+          </li>
+          <li>Pancreatitis (chronic) → β-cell destruction</li>
+          <li>Genetic — Burmese cats</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↓ Insulin sensitivity (peripheral resistance) → ↑ glucose</li>
+          <li>↑ Glucose toxicity → ↓ β-cell function (reversible early)</li>
+          <li>Amyloid deposition (islet amyloid polypeptide / IAPP) → permanent β-cell loss</li>
+          <li>Persistent hyperglycemia → glucose toxicity loop</li>
+          <li>Lipotoxicity (obesity) → worsens</li>
+          <li>Eventually absolute insulin deficiency</li>
+          <li>Glycosuria → osmotic diuresis → PU/PD</li>
+          <li>Negative energy balance → polyphagia + weight loss</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>PU/PD</strong> ✨ — classic</li>
+          <li><strong>Polyphagia + weight loss</strong> ✨ (despite eating well)</li>
+          <li>Muscle wasting (sarcopenia)</li>
+          <li>Lethargy, ↓ grooming → unkempt coat</li>
+          <li>Hindlimb weakness / <strong>plantigrade stance</strong> ✨ (peripheral neuropathy — diabetic) — relatively unique to cat
+            <ul>
+              <li>Walking on hocks instead of toes</li>
+              <li>Reversible with good glycemic control</li>
+            </ul>
+          </li>
+          <li>Hepatomegaly (lipidosis)</li>
+          <li>Recurrent UTI (subclinical common)</li>
+          <li>Dehydration</li>
+          <li>If progressing to DKA: vomiting, anorexia, severe lethargy → emergency ✗</li>
+        </ul>
+        <p><strong>Acromegaly (in difficult-to-control DM cat) ✨:</strong></p>
+        <ul>
+          <li>Persistent insulin resistance despite high doses</li>
+          <li>Weight gain or stable (paradoxical — anabolic GH)</li>
+          <li>Broad facial features, prognathism, organomegaly</li>
+          <li>Cardiac changes (HCM-like)</li>
+          <li>Should screen IGF-1 if insulin &gt; 1.5 U/kg q12h not controlling</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Confirmation requires ALL of:</strong></p>
+        <ol>
+          <li>Compatible clinical signs</li>
+          <li><strong>Persistent fasting hyperglycemia</strong> &gt; 200 mg/dL (cat normal &lt; 150)
+            <ul>
+              <li>Caution: stress hyperglycemia common in cat — single high reading not diagnostic</li>
+              <li>Cat stress glucose can reach 300-400 mg/dL transiently!</li>
+            </ul>
+          </li>
+          <li><strong>Glycosuria</strong> persistent</li>
+        </ol>
+
+        <p><strong>Key tests:</strong></p>
+        <ul>
+          <li><strong>Fructosamine</strong> ✨ — distinguishes true DM from stress hyperglycemia
+            <ul>
+              <li>Reflects average BG over past 2-3 weeks</li>
+              <li>&gt; 350-400 µmol/L = persistent hyperglycemia (true DM)</li>
+              <li>&lt; 300 = stress hyperglycemia likely</li>
+              <li>Use to monitor control too (target &lt; 450 ideally)</li>
+            </ul>
+          </li>
+          <li>Repeated BG curves over time</li>
+          <li>UA + culture — glucosuria, ketones, UTI screen ✨</li>
+        </ul>
+
+        <p><strong>Workup (rule out concurrent dz):</strong></p>
+        <ul>
+          <li>CBC, biochem (liver, renal, electrolytes)</li>
+          <li>T4 (concurrent hyperthyroid)</li>
+          <li>Total T4 + free T4 if equivocal</li>
+          <li>fPL / SNAP fPL (concurrent pancreatitis)</li>
+          <li>Urine culture (UTI common, often subclinical)</li>
+          <li>BP measurement</li>
+          <li>Abdominal US (pancreatitis, neoplasia, adrenal)</li>
+          <li><strong>IGF-1</strong> if insulin-resistant (acromegaly screen) ✨
+            <ul>
+              <li>&gt; 1000 ng/mL = highly suspect; pituitary MRI</li>
+              <li>50-60% sensitivity in early acromegaly</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Differentiating type:</strong></p>
+        <ul>
+          <li>True idiopathic DM: most cases</li>
+          <li>Acromegaly-induced: difficult control, ↑ IGF-1</li>
+          <li>Cushing's-induced: rare in cat; LDDST/UCCR; usually concurrent skin signs</li>
+          <li>Pancreatitis: ↑ fPL, US findings</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Stress hyperglycemia (cat — very common)</li>
+          <li>Hyperthyroid (PU/PD + weight loss but polyphagia + ↑ T4 + no glycosuria)</li>
+          <li>CKD (PU/PD + weight loss but no polyphagia + isosthenuric)</li>
+          <li>Hepatic lipidosis (anorexia)</li>
+          <li>Lymphoma</li>
+          <li>Acromegaly (specific subtype of DM presentation)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Goals:</strong></p>
+        <ul>
+          <li>Resolve clinical signs (polydipsia, polyphagia, weight loss, neuropathy)</li>
+          <li>Avoid hypoglycemia</li>
+          <li>Achieve BG nadir 80-150 mg/dL, peak &lt; 300 mg/dL</li>
+          <li>Goal fructosamine 350-450</li>
+          <li><strong>Pursue diabetic remission</strong> ✨ — early intensive treatment</li>
+        </ul>
+
+        <p><strong>1. Insulin therapy ✨ — first-line:</strong></p>
+        <ul>
+          <li><strong>Glargine (Lantus) 0.25-0.5 U/kg SC q12h</strong> ✨ — first-line; long-acting basal insulin
+            <ul>
+              <li>Best remission rate ~ 50% if started early + low-carb diet</li>
+              <li>Start 1-2 U/cat q12h regardless of weight (low-dose start)</li>
+              <li>Smooth glucose curves</li>
+              <li>U-100 syringe (0.3 mL recommended for accurate small doses)</li>
+              <li>Newer detemir (Levemir) similar profile, alternative</li>
+            </ul>
+          </li>
+          <li><strong>ProZinc (PZI — protamine zinc insulin) 0.25-0.5 U/kg SC q12h</strong> ✨ — first-line cat-licensed
+            <ul>
+              <li>Similar efficacy to glargine</li>
+              <li>Available U-40 (cat-specific syringe)</li>
+            </ul>
+          </li>
+          <li>Lente / Vetsulin / Caninsulin — alternatives but shorter duration in cat (less ideal q12h)</li>
+          <li>NPH — too short duration in cat</li>
+          <li><strong>Recheck BG curve at 7-14 days</strong>:
+            <ul>
+              <li>BG every 2h × 12h after insulin</li>
+              <li>Adjust dose by 0.5-1 U based on nadir</li>
+              <li>Avoid frequent dose changes (allow 5-7 days between adjustments)</li>
+            </ul>
+          </li>
+          <li>Owner gives at home: SC injection at scapular region (rotate sites); morning + evening with meals</li>
+        </ul>
+
+        <p><strong>2. Low-carb diet ✨ — equally important:</strong></p>
+        <ul>
+          <li>Goal: &lt; 12% calories from carbs</li>
+          <li>Hill's m/d (cat), Royal Canin Diabetic, Purina DM</li>
+          <li>Wet food preferred (low carb + hydration)</li>
+          <li><strong>Significantly increases remission rate</strong></li>
+          <li>Transition gradually if anorexic/picky</li>
+          <li>Feed twice daily with insulin</li>
+        </ul>
+
+        <p><strong>3. Weight management:</strong></p>
+        <ul>
+          <li>Obese cat → controlled weight loss (1-2% body weight/week max)</li>
+          <li>Target BCS 5/9</li>
+          <li>Improves insulin sensitivity → may achieve remission</li>
+        </ul>
+
+        <p><strong>4. Address concurrent disease:</strong></p>
+        <ul>
+          <li>Treat hyperthyroid, pancreatitis, UTI, dental dz</li>
+          <li>Acromegaly: radiation therapy / cabergoline / hypophysectomy (referral)</li>
+          <li>Discontinue glucocorticoids if possible</li>
+        </ul>
+
+        <p><strong>5. Monitoring:</strong></p>
+        <ul>
+          <li><strong>Continuous glucose monitor (Freestyle Libre 2/3)</strong> ✨ — gold standard modern
+            <ul>
+              <li>14-day continuous reading via subcutaneous sensor</li>
+              <li>Avoids stress hyperglycemia of in-hospital BG curve</li>
+              <li>Owner-friendly, scan with phone</li>
+              <li>Becoming standard of care</li>
+            </ul>
+          </li>
+          <li>BG curve at home (alternative if no Libre): owner does AlphaTrak ear/lip prick q2h</li>
+          <li>In-hospital BG curve (older method, stress confounds)</li>
+          <li>Fructosamine q3 mo</li>
+          <li>Body weight, water intake diary, urine glucose dipstick</li>
+          <li>Recheck UA + culture q6 mo (UTI screen)</li>
+        </ul>
+
+        <p><strong>6. Pursuit of remission ✨:</strong></p>
+        <ul>
+          <li>Definition: BG normal off insulin &gt; 4 weeks</li>
+          <li>~ 30-50% achievable in newly diagnosed cats</li>
+          <li>Predictors:
+            <ul>
+              <li>Early aggressive treatment (within 6 months of diagnosis)</li>
+              <li>Glargine or detemir + low-carb diet</li>
+              <li>No concurrent insulin-resistant disease</li>
+              <li>Non-obese or successful weight loss</li>
+            </ul>
+          </li>
+          <li>Watch for signs of remission: ↓ insulin requirement → hypoglycemia at standard dose</li>
+          <li>Taper insulin gradually if BG nadirs &lt; 80</li>
+          <li>Monitor for relapse (~ 25-30% relapse within 1 year)</li>
+        </ul>
+
+        <p><strong>7. Owner education:</strong></p>
+        <ul>
+          <li>Recognize signs of hypoglycemia: weakness, ataxia, seizures, collapse → karo syrup oral, then ER</li>
+          <li>Recognize DKA signs: vomiting, anorexia, profound lethargy → ER</li>
+          <li>Consistent feeding/insulin schedule</li>
+          <li>Don't change diet abruptly</li>
+          <li>Sick day rules (don't skip insulin if eating; reduce if anorexic + call)</li>
+          <li>Stress importance of remission window</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Hypoglycemia ✗</strong> — overdose, missed meal, exercise excess, remission</li>
+          <li><strong>DKA</strong> ✗ — see entry; major emergency</li>
+          <li>HHS (hyperosmolar hyperglycemic state) — cat occasionally; severe dehydration + extreme glucose without ketones</li>
+          <li>Diabetic neuropathy (plantigrade stance) — reversible with good control</li>
+          <li>Hepatic lipidosis (concurrent)</li>
+          <li>Recurrent UTI</li>
+          <li>Cataracts — cat rare (vs dog where common)</li>
+          <li>Pancreatitis flares</li>
+          <li>Acromegaly underlying (worsens with time)</li>
+          <li>Loss of remission</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Cat with achieved remission: excellent</strong> — normal lifespan ✓</li>
+          <li>Well-controlled DM cat (no remission): good — MST 3-5+ years</li>
+          <li>Acromegaly-driven DM: variable — depends on concurrent dz progression</li>
+          <li>DKA at presentation: good if survives initial — MST similar to non-DKA after stabilization</li>
+          <li>Concurrent CKD/pancreatitis: guarded</li>
+        </ul>
+        <div class="callout">💡 <strong>Cat DM = remission possible!</strong> ✨ — Glargine/ProZinc + low-carb wet food + early aggressive Tx → 30-50% off insulin permanently. Window สำคัญในช่วง 6 เดือนแรก. Continuous glucose monitor (Libre) เปลี่ยน landscape การ monitor — stress-free, accurate</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 49 · Diabetic Ketoacidosis (DKA) ---------- */
+  {
+    id: 'diabetic-ketoacidosis',
+    titleEn: 'Diabetic Ketoacidosis (DKA)',
+    titleTh: 'DKA — เบาหวานชนิดมีกรดคีโตน',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['dog', 'cat'],
+    tags: ['DKA', 'ketoacidosis', 'regular insulin', 'CRI', 'fluid therapy', 'hypokalemia', 'metabolic acidosis', 'beta-hydroxybutyrate', 'emergency'],
+    aliases: ['DKA', 'ketoacidosis', 'diabetic emergency', 'เบาหวานคีโต', 'เบาหวานวิกฤต'],
+    source: 'Ch. 49 · pp. 840–851',
+    sections: {
+      definition: `
+        <p><strong>Life-threatening complication ของ DM</strong> ✗ — severe insulin deficiency + counter-regulatory hormones → ketogenesis → metabolic acidosis</p>
+        <ul>
+          <li>Triad: <strong>hyperglycemia + ketonemia + metabolic acidosis</strong></li>
+          <li>Mortality 25-30% even with treatment</li>
+          <li>Often presenting sign of new DM, or precipitated by concurrent illness in known DM</li>
+          <li>Distinguish from "ketosis" (ketones without acidosis — outpatient management)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Triggers (concurrent illness in known diabetic):</strong></p>
+        <ul>
+          <li>Pancreatitis ✨ (very common trigger)</li>
+          <li>UTI / pyelonephritis ✨</li>
+          <li>Pneumonia, prostatitis</li>
+          <li>Cushing's flares</li>
+          <li>Hyperthyroid (cat)</li>
+          <li>Surgery, trauma</li>
+          <li>Sepsis</li>
+          <li>Glucocorticoid administration</li>
+          <li>Estrus / pregnancy</li>
+          <li>Insulin omission / underdosing</li>
+          <li>Heart failure</li>
+          <li>Renal failure</li>
+        </ul>
+        <p><strong>Or new DM presentation</strong> — 30-40% of DKA cases are first DM diagnosis</p>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Severe insulin deficiency + ↑ glucagon, cortisol, GH, catecholamines</li>
+          <li>Lipolysis → free fatty acids → hepatic ketogenesis (β-hydroxybutyrate &gt; acetoacetate &gt; acetone)</li>
+          <li>Ketones = strong organic acids → metabolic acidosis</li>
+          <li>Hyperglycemia → osmotic diuresis → severe dehydration</li>
+          <li>Loss of K, Na, Cl, P, Mg in urine</li>
+          <li>Apparent "normal" K in serum despite total body K depletion (acidosis shifts K out of cells)</li>
+          <li>Once insulin given + acidosis corrected → K shifts back into cells → severe hypokalemia ✗</li>
+          <li>Severe phosphorus depletion → hemolysis (cat especially)</li>
+          <li>Hyperosmolarity → CNS depression, coma</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Severe lethargy, weakness, depression</li>
+          <li><strong>Vomiting</strong> ✨</li>
+          <li>Anorexia (after PD/PU phase)</li>
+          <li>Severe dehydration (5-10% loss)</li>
+          <li>Tachypnea / Kussmaul respiration (compensatory for acidosis)</li>
+          <li>Acetone breath (fruity smell) ✨</li>
+          <li>Cardiovascular: tachycardia → progressing to bradycardia/shock if severe</li>
+          <li>Hypothermia (severe)</li>
+          <li>Mental dullness → stupor → coma (severe)</li>
+          <li>Concurrent illness signs (pancreatitis pain, UTI, etc.)</li>
+          <li>± plantigrade stance (cat, longstanding DM)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnostic triad:</strong></p>
+        <ol>
+          <li><strong>Hyperglycemia</strong> &gt; 250 mg/dL (often &gt; 400-600)</li>
+          <li><strong>Ketones</strong> in urine (dipstick) and/or blood (β-hydroxybutyrate &gt; 3.5 mmol/L)
+            <ul>
+              <li>Note: dipstick detects acetoacetate but not β-hydroxybutyrate (the dominant ketone in DKA!)</li>
+              <li>Negative urine ketones ≠ no DKA — measure blood β-hydroxybutyrate ✨</li>
+            </ul>
+          </li>
+          <li><strong>Metabolic acidosis</strong> — pH &lt; 7.3, HCO3 &lt; 15 mEq/L (or anion gap &gt; 25)</li>
+        </ol>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>Venous blood gas (priority) ✨</li>
+          <li>Electrolytes — K (often misleading), Na, Cl, P, Mg, Ca (ionized)</li>
+          <li>Glucose</li>
+          <li>BUN, Cr (often elevated — pre-renal + intrinsic)</li>
+          <li>CBC — leukocytosis common (concurrent infection? stress?)</li>
+          <li>UA + culture (UTI common trigger)</li>
+          <li>fPL/cPL or SNAP cPL (pancreatitis trigger)</li>
+          <li>Abdominal US</li>
+          <li>Thoracic radiographs (pneumonia, CHF)</li>
+          <li>T4 (cat)</li>
+          <li>Liver enzymes — often elevated (hepatic lipidosis cat)</li>
+          <li>Coag panel — DIC risk</li>
+          <li>Lactate (often elevated — perfusion, sepsis)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Pancreatitis (often concurrent rather than alternative)</li>
+          <li>HHS (hyperosmolar hyperglycemic state) — DKA without significant ketones; extreme glucose &gt; 600, severe hyperosmolarity</li>
+          <li>AKI / CKD acute</li>
+          <li>Sepsis</li>
+          <li>Severe gastroenteritis</li>
+          <li>Toxin (ethylene glycol — ↑ anion gap acidosis without ketones; ↑ Cr; calcium oxalate crystals)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>4 priorities (in order):</strong></p>
+        <ol>
+          <li>Restore intravascular volume + tissue perfusion</li>
+          <li>Correct electrolyte abnormalities (especially K + P)</li>
+          <li>Control hyperglycemia + halt ketogenesis</li>
+          <li>Identify + treat trigger</li>
+        </ol>
+
+        <p><strong>1. Fluid therapy ✨ — START FIRST, BEFORE INSULIN:</strong></p>
+        <ul>
+          <li><strong>0.9% NaCl</strong> initial choice (normalizes Na slowly + restores volume)
+            <ul>
+              <li>Alternative: LRS or Plasmalyte (caution K content)</li>
+            </ul>
+          </li>
+          <li>Bolus 10-20 mL/kg (dog) / 5-10 mL/kg (cat) over 30-60 min if hypovolemic; reassess</li>
+          <li>Replace dehydration deficit over 24-48h</li>
+          <li>Maintenance + ongoing losses</li>
+          <li>Monitor: HR, BP, MM, CRT, body weight q6h, urine output</li>
+          <li>Avoid over-resuscitation (risk pulmonary edema, cerebral edema)</li>
+        </ul>
+
+        <p><strong>2. Potassium supplementation ✨ — CRITICAL:</strong></p>
+        <ul>
+          <li>Almost always needed despite "normal" initial serum K</li>
+          <li>Add KCl to fluids:
+            <ul>
+              <li>Serum K &gt; 5.5: don't add yet, recheck after fluids</li>
+              <li>K 3.5-5.0: add 20 mEq KCl/L</li>
+              <li>K 3.0-3.5: add 30 mEq KCl/L</li>
+              <li>K 2.5-3.0: add 40 mEq KCl/L</li>
+              <li>K &lt; 2.5: add 60 mEq KCl/L (ideally 80 for severe — caution rate)</li>
+            </ul>
+          </li>
+          <li><strong>Maximum K infusion rate: 0.5 mEq/kg/hr</strong> (don't exceed — cardiac arrhythmia)</li>
+          <li>Recheck K q4-6h initially, then q12h</li>
+          <li>Anticipate K drop with insulin + acidosis correction</li>
+        </ul>
+
+        <p><strong>3. Phosphorus supplementation:</strong></p>
+        <ul>
+          <li>If P &lt; 1.5 mg/dL (especially cat) — risk hemolysis</li>
+          <li>Potassium phosphate replace 25-50% of K supplementation as KPhos
+            <ul>
+              <li>Not exceed 0.03-0.12 mmol/kg/hr</li>
+              <li>Provides P + K simultaneously</li>
+            </ul>
+          </li>
+          <li>Caution: hypocalcemia can result from rapid P correction</li>
+          <li>Recheck P q12h</li>
+        </ul>
+
+        <p><strong>4. Insulin therapy ✨ — START AFTER 1-4h of fluid resuscitation:</strong></p>
+        <ul>
+          <li><strong>Use REGULAR (short-acting) insulin only</strong> ✨ — Humulin R, Novolin R</li>
+          <li><strong>Method 1: Low-dose CRI (preferred)</strong>:
+            <ul>
+              <li>2.2 U/kg regular insulin in 250 mL 0.9% NaCl (concentration depends on patient size)</li>
+              <li>Run via separate line at 10 mL/hr (~ 0.05-0.1 U/kg/hr)</li>
+              <li>Pre-flush IV line with 50 mL of solution (insulin binds to plastic)</li>
+              <li>Adjust rate based on glucose checks q2h</li>
+              <li>Goal: BG drop &lt; 50-75 mg/dL/hr</li>
+            </ul>
+          </li>
+          <li><strong>Method 2: Intermittent IM</strong>:
+            <ul>
+              <li>0.1-0.2 U/kg IM initial</li>
+              <li>Then 0.05-0.1 U/kg IM q1h</li>
+              <li>Less common in modern practice</li>
+            </ul>
+          </li>
+          <li><strong>Once BG &lt; 250 mg/dL → add dextrose to fluids</strong> ✨
+            <ul>
+              <li>2.5% dextrose if BG 200-250</li>
+              <li>5% dextrose if BG &lt; 200</li>
+              <li>Continue insulin to suppress ketogenesis (insulin is treating ketosis, not just BG)</li>
+              <li>Don't stop insulin until ketones cleared and acidosis resolved</li>
+            </ul>
+          </li>
+          <li>Goal: maintain BG 150-250 throughout</li>
+          <li>Transition to SC long-acting insulin once eating + ketones resolved</li>
+        </ul>
+
+        <p><strong>5. Bicarbonate — controversial:</strong></p>
+        <ul>
+          <li>NOT routine — fluid + insulin usually corrects acidosis</li>
+          <li>Consider if pH &lt; 7.0 or HCO3 &lt; 8 with cardiovascular instability</li>
+          <li>Calculate deficit conservatively: dose (mEq) = BW (kg) × 0.4 × (12 - pt HCO3) × 0.25 = give ¼ over 4-6 h</li>
+          <li>Caution: paradoxical CSF acidosis, hypokalemia worsening</li>
+        </ul>
+
+        <p><strong>6. Treat trigger:</strong></p>
+        <ul>
+          <li>Pancreatitis: supportive care, anti-emetics, pain management</li>
+          <li>UTI: culture-based antibiotic</li>
+          <li>Other infections: appropriate antibiotic</li>
+          <li>Cushing's: stabilize first, treat after recovery</li>
+        </ul>
+
+        <p><strong>7. Supportive:</strong></p>
+        <ul>
+          <li>Anti-emetics (maropitant, ondansetron)</li>
+          <li>Pain management (avoid NSAIDs)</li>
+          <li>Antibiotics if infection suspected (broad spectrum until culture)</li>
+          <li>Nutritional support — once stable, esophagostomy tube if anorexic &gt; 3 days (cat critical)</li>
+          <li>Continuous monitoring: vital signs q1-2h, BG q2h, electrolytes q4-12h, body weight q6-12h</li>
+        </ul>
+
+        <p><strong>Transition to long-term management:</strong></p>
+        <ul>
+          <li>Criteria to transition: eating well, no vomiting, ketones cleared, electrolytes stable</li>
+          <li>Discontinue regular insulin CRI</li>
+          <li>Start long-acting SC insulin (glargine cat / Vetsulin or NPH dog) at conservative dose</li>
+          <li>Hospitalize 24-48h after switch to confirm control</li>
+          <li>Discharge with detailed home plan</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Hypokalemia ✗</strong> — develops after insulin started; cardiac arrhythmia, weakness, ileus</li>
+          <li><strong>Hypophosphatemia → hemolytic anemia (cat)</strong> ✗</li>
+          <li><strong>Hypoglycemia</strong> — overcorrection</li>
+          <li>Cerebral edema (rapid osmolar shift) — rare but devastating, especially with rapid correction</li>
+          <li>Pulmonary edema (fluid overload)</li>
+          <li>AKI</li>
+          <li>DIC</li>
+          <li>Sepsis</li>
+          <li>Hospital-acquired infection</li>
+          <li>Death (mortality 25-30%)</li>
+          <li>Recurrent DKA after recovery (poor compliance, undertreatment)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>With aggressive treatment: mortality 25-30% acute episode</li>
+          <li>Survivors with managed DM: similar to non-DKA DM long-term</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe acidosis (pH &lt; 7.1)</li>
+              <li>Severe dehydration</li>
+              <li>Anuric AKI</li>
+              <li>Severe pancreatitis</li>
+              <li>Sepsis</li>
+              <li>Hypothermia at presentation</li>
+              <li>Cat &gt; dog mortality (concurrent lipidosis, pancreatitis)</li>
+            </ul>
+          </li>
+          <li>Cost of intensive care often a limiting factor</li>
+        </ul>
+        <div class="callout">⚠️ <strong>DKA = ICU emergency</strong> ✗ — fluids first 1-4h, then insulin. K supplementation MANDATORY (will drop with treatment). Find + treat trigger (pancreatitis, UTI, infection most common). Mortality สูง — refer ถ้าไม่มี ICU capability<br><br>💡 Modern: blood β-hydroxybutyrate &gt; urine ketones (ดีกว่า) — handheld meter (Precision Xtra)</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 50 · Insulinoma (β-cell tumor) ---------- */
+  {
+    id: 'insulinoma',
+    titleEn: 'Insulinoma',
+    titleTh: 'อินซูลินโนมา — เนื้องอกเบต้าเซลล์',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['dog', 'cat'],
+    tags: ['insulinoma', 'beta cell tumor', 'hypoglycemia', 'Whipple triad', 'diazoxide', 'prednisolone', 'partial pancreatectomy', 'streptozotocin'],
+    aliases: ['β-cell tumor', 'insulin-secreting tumor', 'อินซูลิโนมา', 'pancreatic islet tumor'],
+    source: 'Ch. 50 · pp. 873–882',
+    sections: {
+      definition: `
+        <p><strong>Functional malignant tumor of pancreatic β-cells</strong> → autonomous insulin secretion → recurrent hypoglycemia</p>
+        <ul>
+          <li><strong>Almost always malignant</strong> in dog (~ 95% adenocarcinoma)</li>
+          <li>Frequently <strong>metastatic at diagnosis</strong> (regional LN, liver) — even though primary tumor is small</li>
+          <li>Middle-aged to older dogs (~ 9-10 yr median)</li>
+          <li>Medium-large breeds: GSD, Boxer, Lab, Golden, Standard Poodle, Setter</li>
+          <li>Cat: extremely rare</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Spontaneous neoplastic transformation of pancreatic islet β-cells</li>
+          <li>No known specific cause</li>
+          <li>No clear association with chronic pancreatitis or DM</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Tumor secretes insulin <strong>independent of glucose feedback</strong></li>
+          <li>Persistent insulin → hypoglycemia → counter-regulatory response (epinephrine, cortisol, GH, glucagon)</li>
+          <li>Chronic adaptation: brain becomes more tolerant — patients survive lower BG than expected</li>
+          <li>Symptoms primarily neurological (neuroglycopenia)</li>
+          <li>± peripheral neuropathy (paraneoplastic)</li>
+          <li>Metastasis common: regional lymph nodes (mesenteric), liver, omentum</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Neuroglycopenic signs (BG-dependent):</strong></p>
+        <ul>
+          <li>Episodic weakness, ataxia ✨</li>
+          <li><strong>Seizures</strong> ✨ (often presenting sign — generalized tonic-clonic)</li>
+          <li>Collapse, syncope</li>
+          <li>Mental dullness, "spaced out"</li>
+          <li>Behavior changes, restlessness, anxiety</li>
+          <li>Coma (severe)</li>
+        </ul>
+        <p><strong>Catecholamine release signs (acute hypoglycemia):</strong></p>
+        <ul>
+          <li>Trembling, muscle fasciculations</li>
+          <li>Restlessness</li>
+          <li>Polyphagia (some)</li>
+          <li>Tachycardia</li>
+        </ul>
+        <p><strong>Pattern:</strong></p>
+        <ul>
+          <li>Episodes triggered by: fasting, exercise, excitement, stress</li>
+          <li>Resolve with feeding (initially)</li>
+          <li>Progressive — episodes become more frequent + severe</li>
+          <li><strong>Often misdiagnosed as idiopathic epilepsy</strong> ✗</li>
+        </ul>
+        <p><strong>Other:</strong></p>
+        <ul>
+          <li>Weight gain (chronic insulin excess) — paradoxical</li>
+          <li>Peripheral neuropathy (later — reflexes ↓, weakness, atrophy)</li>
+          <li>Hepatomegaly (metastasis)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Whipple's triad ✨ — classic:</strong></p>
+        <ol>
+          <li>Symptoms of hypoglycemia</li>
+          <li>Documented hypoglycemia (BG &lt; 60 mg/dL during episode)</li>
+          <li>Resolution of symptoms with glucose administration</li>
+        </ol>
+
+        <p><strong>Initial workup:</strong></p>
+        <ul>
+          <li>Confirm hypoglycemia (multiple samples; fasting often needed):
+            <ul>
+              <li>Fasting BG &lt; 60 mg/dL (often &lt; 40-50)</li>
+              <li>If unclear: hospitalize, fast 12-24h with q1h BG (rule out dietary, technical errors)</li>
+            </ul>
+          </li>
+          <li><strong>Paired insulin + glucose during hypoglycemia</strong> ✨:
+            <ul>
+              <li>BG &lt; 60 + insulin INAPPROPRIATELY HIGH (within or above normal range) = consistent with insulinoma</li>
+              <li>Amended insulin:glucose ratio: insulin (µU/mL) × 100 / (glucose mg/dL - 30) — &gt; 30 supportive</li>
+              <li>Normal: insulin should be suppressed during hypoglycemia</li>
+            </ul>
+          </li>
+          <li>Rule out other hypoglycemia causes (see DDx)</li>
+        </ul>
+
+        <p><strong>Imaging — locate primary + stage:</strong></p>
+        <ul>
+          <li><strong>Abdominal US</strong> — primary detection rate ~ 50-75%; small lesions difficult; check liver/LN</li>
+          <li><strong>CT (triple-phase contrast)</strong> ✨ — better sensitivity (70-90%), recommended pre-surgery, stages mets</li>
+          <li>Thoracic radiographs (rare lung mets)</li>
+          <li>Nuclear medicine (octreotide scan) — limited availability</li>
+          <li>Exploratory laparotomy with intra-op US — gold standard if imaging negative but disease confirmed biochemically</li>
+        </ul>
+
+        <p><strong>Staging:</strong></p>
+        <ul>
+          <li>Stage I: confined to pancreas</li>
+          <li>Stage II: regional LN metastasis</li>
+          <li>Stage III: distant metastasis (liver, omentum)</li>
+        </ul>
+      `,
+      differential: `
+        <p><strong>Other causes of hypoglycemia:</strong></p>
+        <ul>
+          <li><strong>Sepsis</strong> ✨ — leukogram, lactate, source workup</li>
+          <li>Hepatic insufficiency / PSS — ↓ albumin, ↑ bile acids</li>
+          <li>Addison's — Na/K, cortisol</li>
+          <li>Hunting dog hypoglycemia / juvenile (toy breed puppies)</li>
+          <li>Severe malnutrition</li>
+          <li>Insulin overdose (iatrogenic in DM)</li>
+          <li>Xylitol toxicity ✗ (history; severe acute hypoglycemia + hepatic failure)</li>
+          <li>Other functional tumors (rare):
+            <ul>
+              <li>Hepatic carcinoma producing IGF-2</li>
+              <li>Smooth muscle tumors (leiomyosarcoma) — paraneoplastic</li>
+              <li>Hemangiosarcoma (rare)</li>
+            </ul>
+          </li>
+          <li>Polycythemia vera (false low BG due to ↑ RBC consumption)</li>
+          <li>Sample handling artifact (delayed measurement, RBC consumption)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Acute hypoglycemia management ✗:</strong></p>
+        <ul>
+          <li>Conscious: feed; honey/karo syrup on gums if not eating</li>
+          <li>Unconscious / seizing: <strong>50% dextrose 0.5-1 mL/kg IV slow</strong> (diluted 1:1 with saline; can be given through butterfly)
+            <ul>
+              <li>Caution: rapid bolus → reactive insulin surge → rebound hypoglycemia</li>
+              <li>Follow with constant rate dextrose CRI (2.5-5%) until eating</li>
+            </ul>
+          </li>
+          <li>Owner emergency kit: karo syrup PO between meals if shows signs</li>
+        </ul>
+
+        <p><strong>2. Surgical treatment ✨ — preferred when feasible:</strong></p>
+        <ul>
+          <li><strong>Partial pancreatectomy</strong> — remove visible tumor + regional debulking
+            <ul>
+              <li>Often left/right limb depending on location</li>
+              <li>Remove visible LN mets if possible</li>
+            </ul>
+          </li>
+          <li>Resolves hypoglycemia in ~ 50-90% (depends on stage)</li>
+          <li>Survival benefit: median 1-2 years post-op (vs 5-12 mo medical alone)</li>
+          <li><strong>Complications:</strong>
+            <ul>
+              <li>Post-op pancreatitis (common — give IV fluids 48-72h, fenta CRI)</li>
+              <li>Iatrogenic DM (~ 10-25% — rare with partial resection)</li>
+              <li>Persistent hypoglycemia from incomplete resection</li>
+              <li>Recurrence (most cases — eventually)</li>
+            </ul>
+          </li>
+          <li>Pre-op management:
+            <ul>
+              <li>Stabilize BG with frequent feeding + dextrose CRI</li>
+              <li>Anesthesia caution — minimize fasting, dextrose-supplemented IVF intra-op</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Medical management ✨ — adjunctive or sole therapy:</strong></p>
+        <ul>
+          <li><strong>Frequent small meals</strong> ✨ — high protein, high fat, complex carbs; q4-6h
+            <ul>
+              <li>Avoid simple sugars (rebound)</li>
+              <li>Hill's w/d, hypoallergenic blends</li>
+            </ul>
+          </li>
+          <li><strong>Prednisolone 0.5-2 mg/kg PO q12h</strong> ✨ — first-line medical
+            <ul>
+              <li>Promotes gluconeogenesis</li>
+              <li>Start low, titrate upward as needed</li>
+              <li>Side effects: PU/PD, hepatomegaly, iatrogenic Cushing's</li>
+            </ul>
+          </li>
+          <li><strong>Diazoxide 5-30 mg/kg PO q12h</strong> — directly inhibits insulin secretion
+            <ul>
+              <li>Add when prednisolone insufficient</li>
+              <li>Side effects: anorexia, vomiting, diarrhea, hyponatremia, marrow suppression</li>
+              <li>Cost can be limiting</li>
+            </ul>
+          </li>
+          <li>Octreotide 10-50 µg SC q8-12h — somatostatin analog; variable response</li>
+          <li>Glucagon CRI for refractory severe hypoglycemia (hospitalized)</li>
+        </ul>
+
+        <p><strong>4. Chemotherapy (advanced/metastatic):</strong></p>
+        <ul>
+          <li><strong>Streptozotocin 500 mg/m² IV q3 wk</strong> — selective β-cell toxicity (renal toxicity major concern; aggressive saline diuresis required)</li>
+          <li>Limited availability, specialist needed</li>
+          <li>Modest improvement in survival</li>
+          <li>Toceranib (Palladia) — anecdotal efficacy in some cases</li>
+        </ul>
+
+        <p><strong>5. Monitor:</strong></p>
+        <ul>
+          <li>Owner home BG monitoring (AlphaTrak)</li>
+          <li>Symptom diary</li>
+          <li>Recheck physical, BG, electrolytes q1-3 mo</li>
+          <li>Adjust feeding schedule + medications</li>
+          <li>Imaging every 6 months for mets</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe hypoglycemia → seizures, coma, death</li>
+          <li>Status epilepticus</li>
+          <li>Peripheral neuropathy (paraneoplastic — distal weakness, atrophy)</li>
+          <li>Iatrogenic complications:
+            <ul>
+              <li>Steroid side effects (prednisolone)</li>
+              <li>Pancreatitis post-op</li>
+              <li>Iatrogenic DM</li>
+            </ul>
+          </li>
+          <li>Metastasis progression → liver failure</li>
+          <li>Recurrent hypoglycemia despite medical management</li>
+          <li>Rebound from rapid IV dextrose → reactive insulin secretion</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Overall: <strong>guarded long-term but good for symptom control</strong></li>
+          <li><strong>Stage I (no mets) + surgery:</strong> MST 18-24 months</li>
+          <li><strong>Stage II (LN mets) + surgery:</strong> MST 12-18 months</li>
+          <li><strong>Stage III (distant mets) + medical:</strong> MST 6-12 months</li>
+          <li>Medical management alone (any stage): MST 5-12 months</li>
+          <li>Owner satisfaction generally high — quality of life often excellent for months-years</li>
+          <li>Cause of death: often progressive disease + neuroglycopenic seizures</li>
+        </ul>
+        <div class="callout">💡 <strong>Older dog + episodic seizures + hypoglycemia = insulinoma until proven otherwise</strong> ✨ — paired insulin/glucose is key. Surgery + medical = best outcomes (1-2 yr median); medical-alone still gives 6-12 mo with good QOL<br><br>⚠️ **NEVER fast a known insulinoma patient** without IV dextrose — pre-op preparation critical
+</div>
+      `,
+    },
+  },
+
   /* ---------- More entries to come ---------- */
 
 ];
