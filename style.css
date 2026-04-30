@@ -10,8 +10,18 @@ body {
   touch-action: manipulation;
   -webkit-tap-highlight-color: rgba(0,0,0,0.05);
 }
-button, a, [role="button"], .lock-card, .btn, .btn-google {
+button, a, [role="button"], .lock-card, .btn, .btn-google, .card, .menu-card,
+input, select, textarea, label, summary {
   touch-action: manipulation;
+  /* Force compositor layer — works around iPadOS 26 WebKit hit-test bug
+     where elements in lower viewport miss touch events */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+/* Avoid translateZ on the lock-card itself (preserves animation) */
+.lock-card {
+  -webkit-transform: none;
+  transform: none;
 }
 
 /* ==================================================================
