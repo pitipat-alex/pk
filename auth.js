@@ -131,17 +131,6 @@
         <p class="lock-sub-note">เฉพาะอีเมลที่ได้รับอนุญาตเท่านั้น</p>
         <p class="lock-hint">PRIVATE · WITH PRIDE</p>
       </div>
-      <div id="pkDebugPanel" style="display:none;position:fixed;top:48px;right:8px;width:min(360px,calc(100vw - 16px));max-height:40vh;overflow-y:auto;background:rgba(0,0,0,0.92);color:#0f0;font-family:monospace;font-size:10px;line-height:1.3;padding:6px;z-index:99999;border:1px solid #0f0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:4px;border-bottom:1px solid #444;padding-bottom:3px;position:sticky;top:0;background:rgba(0,0,0,0.92);">
-          <strong style="color:#0ff;font-size:11px;">PK Debug</strong>
-          <button onclick="window.PK_TouchDiag.enable()" style="background:#06A77D;color:#fff;border:0;padding:6px 10px;border-radius:4px;cursor:pointer;font-size:11px;touch-action:manipulation;">🔍 Touch Diag</button>
-          <button onclick="window.PK_DEBUG.hide()" style="background:#c00;color:#fff;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:13px;touch-action:manipulation;">ปิด ✕</button>
-        </div>
-      </div>
-      <!-- Always-visible debug trigger (top-right, small) -->
-      <button onclick="window.PK_DEBUG && window.PK_DEBUG.show()"
-              style="position:fixed;top:8px;right:8px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(0,0,0,0.35);color:#fff;font-size:14px;cursor:pointer;z-index:1001;touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,255,255,0.3);"
-              aria-label="Debug">🔧</button>
     </div>
   `;
 
@@ -184,8 +173,23 @@
   `;
 
   // ---------- Inject UI -----------------------------------------
+  // Debug UI (independent of lock screen — always visible after login too)
+  const debugHTML = `
+    <div id="pkDebugPanel" style="display:none;position:fixed;top:48px;right:8px;width:min(360px,calc(100vw - 16px));max-height:40vh;overflow-y:auto;background:rgba(0,0,0,0.92);color:#0f0;font-family:monospace;font-size:10px;line-height:1.3;padding:6px;z-index:99999;border:1px solid #0f0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:4px;border-bottom:1px solid #444;padding-bottom:3px;position:sticky;top:0;background:rgba(0,0,0,0.92);">
+        <strong style="color:#0ff;font-size:11px;">PK Debug</strong>
+        <button onclick="window.PK_TouchDiag.enable()" style="background:#06A77D;color:#fff;border:0;padding:6px 10px;border-radius:4px;cursor:pointer;font-size:11px;touch-action:manipulation;">🔍 Touch Diag</button>
+        <button onclick="window.PK_DEBUG.hide()" style="background:#c00;color:#fff;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:13px;touch-action:manipulation;">ปิด ✕</button>
+      </div>
+    </div>
+    <button id="pkDebugTrigger" onclick="window.PK_DEBUG && window.PK_DEBUG.show()"
+            style="position:fixed;top:8px;right:8px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(0,0,0,0.35);color:#fff;font-size:14px;cursor:pointer;z-index:1001;touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,255,255,0.3);"
+            aria-label="Debug">🔧</button>
+  `;
+
   document.body.insertAdjacentHTML('afterbegin', lockScreenHTML);
   document.body.insertAdjacentHTML('beforeend',  settingsModalHTML);
+  document.body.insertAdjacentHTML('beforeend',  debugHTML);
   DEBUG.add('✓ UI injected', 'ok');
 
   // Secret debug toggle: tap "PRIVATE · WITH PRIDE" 5 times to show debug panel
