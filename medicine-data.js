@@ -5474,6 +5474,3390 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     PART 3 — DIGESTIVE (Ch 26–32)
+  ============================================================ */
+
+  /* ---------- Ch 26 · Clinical Manifestations of GI Disease ---------- */
+  {
+    id: 'gi-clinical-manifestations',
+    titleEn: 'Clinical Manifestations of GI Disease',
+    titleTh: 'อาการของระบบทางเดินอาหาร',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['vomiting', 'diarrhea', 'regurgitation', 'hematemesis', 'melena', 'hematochezia', 'anorexia', 'tenesmus', 'dysphagia'],
+    aliases: ['GI signs', 'อาการ GI', 'อาเจียน', 'ถ่ายเหลว'],
+    source: 'Ch. 26 · pp. 391–410',
+    sections: {
+      definition: `
+        <p>อาการที่บ่งบอกความผิดปกติของ GI tract — แต่หลายอาการ <strong>nonspecific</strong> และอาจมาจาก systemic disease ก็ได้</p>
+        <ul>
+          <li>ขั้นแรกของ workup = แยก primary GI vs extra-GI (uremia, hepatic, pancreatitis, hypoadrenocorticism, drugs)</li>
+          <li>Localize lesion: oral, esophageal, gastric, small intestinal, large intestinal</li>
+        </ul>
+      `,
+      etiology: `
+        <p>ดู entries เฉพาะของแต่ละโรค</p>
+      `,
+      pathophysiology: `
+        <p><strong>Localization clues:</strong></p>
+        <ul>
+          <li><strong>Vomiting</strong> — gastric/proximal SI; secondary จาก systemic dz บ่อย</li>
+          <li><strong>Regurgitation</strong> — esophageal (passive, no bile, undigested food)</li>
+          <li><strong>Small bowel diarrhea</strong> — ↑ volume, weight loss, melena, ↓ frequency (3-5/day), no urgency</li>
+          <li><strong>Large bowel diarrhea</strong> — ↑ frequency (&gt; 5-10/day), small volume, mucus, hematochezia, tenesmus, urgency</li>
+          <li><strong>Mixed bowel</strong> — components of both</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>1. Vomiting vs Regurgitation (สำคัญมาก!)</strong></p>
+        <ul>
+          <li><strong>Vomiting:</strong> active, abdominal contractions, prodromal nausea (drooling, lip licking), bile/digested food, retching</li>
+          <li><strong>Regurgitation:</strong> passive, no warning, undigested tubular food, no bile, neck extension</li>
+          <li>แยกให้ออกก่อนเริ่ม workup — DDx ต่างกันสิ้นเชิง ✨</li>
+        </ul>
+
+        <p><strong>2. Hematemesis (vomiting blood)</strong></p>
+        <ul>
+          <li>Frank red blood: oral/esophageal/gastric source</li>
+          <li>"Coffee grounds": digested blood from stomach (ulcer)</li>
+          <li>DDx: GI ulcer, NSAID/steroid use, foreign body, neoplasia, coagulopathy, severe gastritis, hepatic dz, mast cell tumor, gastrinoma</li>
+        </ul>
+
+        <p><strong>3. Diarrhea</strong></p>
+        <ul>
+          <li>Acute (&lt; 14 d) vs Chronic (&gt; 14 d)</li>
+          <li>SI vs LI vs mixed (see localization above)</li>
+          <li>Melena (digested blood) → upper GI bleed</li>
+          <li>Hematochezia (frank blood) → lower GI / colon</li>
+        </ul>
+
+        <p><strong>4. Anorexia / Hyporexia</strong></p>
+        <ul>
+          <li>Pseudoanorexia — ปวดเวลากิน (oral/dental dz, esophageal dz, jaw fracture)</li>
+          <li>True anorexia — central CNS, systemic dz, GI dz, nausea</li>
+          <li>Cats หิวได้ &gt; 3 วันโดยไม่กิน → <strong>hepatic lipidosis risk</strong> ✗</li>
+        </ul>
+
+        <p><strong>5. Weight loss</strong></p>
+        <ul>
+          <li>Despite normal/↑ appetite: maldigestion (EPI), malabsorption (IBD, lymphangiectasia), hyperthyroidism, DM</li>
+          <li>With ↓ appetite: chronic GI dz, neoplasia, systemic dz</li>
+        </ul>
+
+        <p><strong>6. Constipation / Tenesmus</strong></p>
+        <ul>
+          <li>Constipation: hard dry feces, infrequent</li>
+          <li>Obstipation: refractory constipation</li>
+          <li>Megacolon (cat) — chronic dilation, idiopathic หรือ secondary</li>
+          <li>Tenesmus: straining; either constipation OR colitis (counterintuitive!)</li>
+        </ul>
+
+        <p><strong>7. Dysphagia</strong></p>
+        <ul>
+          <li>Oral, pharyngeal, cricopharyngeal phases</li>
+          <li>Drooling, gagging, dropping food</li>
+          <li>DDx: oral mass, dental dz, neuromuscular (myasthenia, polyneuropathy), retropharyngeal mass</li>
+        </ul>
+
+        <p><strong>8. Halitosis</strong></p>
+        <ul>
+          <li>Most common: dental disease</li>
+          <li>Severe: uremia, hepatic encephalopathy, oral neoplasia, megaesophagus food retention</li>
+        </ul>
+
+        <p><strong>9. Abdominal pain / posture</strong></p>
+        <ul>
+          <li>"Praying" position: cranial abdominal pain (pancreatitis, gastritis, FB)</li>
+          <li>Tense abdomen, splinting</li>
+          <li>Acute abdomen workup: GDV, septic peritonitis, intussusception, FB</li>
+        </ul>
+
+        <p><strong>10. Ascites</strong></p>
+        <ul>
+          <li>PLE (hypoalbuminemia)</li>
+          <li>Right CHF</li>
+          <li>Hepatic dz</li>
+          <li>Peritonitis</li>
+          <li>Neoplasia</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Workup tier:</strong></p>
+        <ul>
+          <li><strong>Tier 1</strong> (every patient): physical exam, oral/dental, abdominal palpation, fecal flotation, fecal direct, CBC, biochem, UA, T4 (cat senior)</li>
+          <li><strong>Tier 2</strong>: FeLV/FIV (cat), abdominal rad ± US, cPL/fPL, cobalamin/folate, parvo SNAP (puppy), Giardia ELISA</li>
+          <li><strong>Tier 3</strong>: bile acids, ACTH stim (Addison's!), endoscopy + biopsy, exploratory laparotomy</li>
+        </ul>
+        <p><strong>Imaging — radiograph vs ultrasound:</strong></p>
+        <ul>
+          <li>Rad: better for foreign body (radiopaque), free gas (perforation)</li>
+          <li>US: better for masses, wall thickness/layering, fluid, pancreatitis, lymph nodes, intussusception</li>
+        </ul>
+        <p><strong>Cobalamin / Folate (B12):</strong></p>
+        <ul>
+          <li>↓ Cobalamin = ileal disease หรือ EPI; supplement!</li>
+          <li>↑ Folate = proximal SI bacterial overgrowth</li>
+          <li>↓ Folate = proximal SI mucosal disease</li>
+        </ul>
+      `,
+      differential: `<p>กว้างมาก — ดู entries เฉพาะ</p>`,
+      treatment: `
+        <p><strong>หลักทั่วไปสำหรับ acute presentation:</strong></p>
+        <ul>
+          <li>Hydration (IV หรือ SQ ตามอาการ)</li>
+          <li>Anti-emetic (maropitant 1 mg/kg SC q24h)</li>
+          <li>NPO ตอนแรก แล้ว reintroduce easy diet</li>
+          <li>เฉพาะตามสาเหตุ</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe dehydration → hypovolemic shock</li>
+          <li>Electrolyte imbalance (hypokalemia, hyponatremia)</li>
+          <li>Hepatic lipidosis (cats &gt; 3 d anorexia)</li>
+          <li>Aspiration pneumonia (regurgitation)</li>
+          <li>Septic peritonitis (perforation)</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 27 · GI Diagnostic Tests ---------- */
+  {
+    id: 'gi-diagnostic-tests',
+    titleEn: 'GI Diagnostic Tests',
+    titleTh: 'การตรวจวินิจฉัยระบบ GI',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['endoscopy', 'biopsy', 'cobalamin', 'folate', 'cPL', 'fPL', 'TLI', 'bile acids', 'fecal'],
+    aliases: ['GI workup', 'การตรวจ GI'],
+    source: 'Ch. 27 · pp. 411–438',
+    sections: {
+      definition: `<p>เครื่องมือ workup โรค GI — เลือกตาม presenting sign + signalment</p>`,
+      etiology: `<p>—</p>`,
+      pathophysiology: `<p>—</p>`,
+      symptoms: `<p>ดู Clinical Manifestations entry</p>`,
+      diagnosis: `
+        <p><strong>1. Fecal tests</strong></p>
+        <ul>
+          <li><strong>Direct smear</strong> — fresh feces in saline; Giardia trophozoites (motile pear-shape), Tritrichomonas (cat), bacteria overgrowth</li>
+          <li><strong>Fecal flotation</strong> (zinc sulfate sg 1.18 หรือ sucrose) — ascarids, hookworms, whipworms, Giardia cysts</li>
+          <li><strong>Baermann technique</strong> — pulmonary parasites (รวม Aelurostrongylus, Crenosoma)</li>
+          <li><strong>Giardia ELISA / SNAP</strong> — sensitive (intermittent shedding makes flotation unreliable)</li>
+          <li><strong>Parvo ELISA</strong> — puppy with bloody diarrhea; vaccine within 7-10 d → false positive</li>
+          <li><strong>Fecal occult blood</strong> — limited utility, dietary interference</li>
+          <li><strong>Fecal culture</strong> — Salmonella, Campylobacter, Clostridium toxin (rarely useful — many healthy carry pathogens)</li>
+          <li><strong>PCR panel</strong> (GI panel) — multiple pathogens; useful in shelter/outbreak</li>
+        </ul>
+
+        <p><strong>2. Serology / blood tests</strong></p>
+        <ul>
+          <li><strong>cPL / fPL (SNAP)</strong> — pancreatic lipase immunoreactivity; suggests pancreatitis but not a "litmus test" — clinical correlation needed</li>
+          <li><strong>TLI (Trypsin-like Immunoreactivity)</strong> — diagnose <strong>EPI</strong> (low TLI &lt; 2.5 µg/L dog, &lt; 8 cat); fasted sample</li>
+          <li><strong>Cobalamin (B12)</strong>:
+            <ul>
+              <li>↓ &lt; 250-350 ng/L = supplement</li>
+              <li>Causes: EPI, ileal disease, chronic enteropathy, dysbiosis</li>
+              <li>Important for clinical response — supplement before assessing therapy</li>
+            </ul>
+          </li>
+          <li><strong>Folate</strong>:
+            <ul>
+              <li>↑ &gt; 17 µg/L = bacterial overgrowth proximal SI</li>
+              <li>↓ &lt; 7 = proximal SI mucosal disease</li>
+            </ul>
+          </li>
+          <li><strong>Bile acids (pre + 2h post-prandial)</strong> — hepatic function, PSS</li>
+          <li><strong>Resting cortisol / ACTH stim</strong> — rule out Addison's (atypical presentation as chronic GI signs)</li>
+          <li><strong>T4 (cat senior)</strong></li>
+          <li><strong>FeLV/FIV (cat)</strong></li>
+        </ul>
+
+        <p><strong>3. Imaging</strong></p>
+        <ul>
+          <li><strong>Abdominal radiograph (3 views: lateral × 2 + VD):</strong>
+            <ul>
+              <li>Foreign body (radiopaque), ileus, mass, free gas, free fluid, organomegaly</li>
+              <li>"Plicated" intestinal pattern → linear FB</li>
+              <li>"Double bubble" / displaced gas pattern → GDV</li>
+            </ul>
+          </li>
+          <li><strong>Contrast study (barium):</strong> rarely used now; reserved for occult FB, megaesophagus diagnosis</li>
+          <li><strong>Abdominal ultrasound (preferred for soft tissue):</strong>
+            <ul>
+              <li>Wall thickness, layering, mass, intussusception</li>
+              <li>Lymphadenopathy (mesenteric)</li>
+              <li>Pancreatitis</li>
+              <li>Ascites — sample for analysis</li>
+              <li>FNA of masses, lymph nodes</li>
+            </ul>
+          </li>
+          <li>CT — neoplasia staging, complex anatomic dz</li>
+        </ul>
+
+        <p><strong>4. Endoscopy</strong></p>
+        <ul>
+          <li><strong>Esophagogastroduodenoscopy (EGD):</strong>
+            <ul>
+              <li>Visualize esophagus, stomach, duodenum (cats: easier reach to ileum than dogs)</li>
+              <li>Biopsy multiple sites (≥ 6-10 per region)</li>
+              <li>Foreign body retrieval</li>
+              <li>Stricture dilation</li>
+              <li>Tube placement (PEG, esophagostomy)</li>
+            </ul>
+          </li>
+          <li><strong>Colonoscopy:</strong>
+            <ul>
+              <li>Visualize colon to ileocolic junction</li>
+              <li>Ileal biopsy attempts (variable success)</li>
+              <li>Polyp / mass biopsy</li>
+            </ul>
+          </li>
+          <li>Limitations: biopsy depth limited to mucosa-submucosa; full-thickness lymphoma หรือ deep submucosal mass อาจ miss</li>
+        </ul>
+
+        <p><strong>5. Exploratory laparotomy (Ex-lap)</strong></p>
+        <ul>
+          <li>When endoscopy unrevealing or full-thickness biopsy needed</li>
+          <li>Biopsy stomach + multiple SI sites + LI (3+ per area)</li>
+          <li>Examine + biopsy lymph nodes, liver, pancreas</li>
+          <li>Mass excision/biopsy</li>
+          <li>FB removal</li>
+          <li>Risk: dehiscence ใน hypoalbuminemia (PLE patients) ✗</li>
+        </ul>
+      `,
+      differential: `<p>—</p>`,
+      treatment: `<p>เครื่องมือ — ไม่มี treatment</p>`,
+      complications: `
+        <ul>
+          <li>Endoscopy: anesthetic risk, perforation (rare), aspiration</li>
+          <li>Ex-lap: dehiscence (esp. hypoalbuminemia &lt; 2.0), septic peritonitis, ileus</li>
+          <li>Biopsy interpretation: variable, pathologist-dependent; correlate with clinical</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 29 · Megaesophagus ---------- */
+  {
+    id: 'megaesophagus',
+    titleEn: 'Megaesophagus',
+    titleTh: 'หลอดอาหารโต — สำลักง่าย',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['megaesophagus', 'regurgitation', 'aspiration pneumonia', 'myasthenia gravis', 'AChR antibody', 'Bailey chair', 'bethanechol', 'sildenafil'],
+    aliases: ['ME', 'megaesophagus', 'หลอดอาหารโต'],
+    source: 'Ch. 29 · pp. 449–453',
+    sections: {
+      definition: `
+        <p>การขยายตัวของ esophagus + ↓ motility → ↓ propulsion ของอาหาร → <strong>regurgitation</strong></p>
+        <ul>
+          <li>Regurgitation, ไม่ใช่ vomiting — แยกให้ออก ✨</li>
+          <li>เสี่ยง <strong>aspiration pneumonia</strong> มาก ✗</li>
+          <li>Cause หลักของการตาย</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Congenital (idiopathic):</strong></p>
+        <ul>
+          <li>German Shepherd, Great Dane, Irish Setter, Lab, Mini Schnauzer, Newfoundland, Shar-Pei, Fox Terrier, Cocker</li>
+          <li>Diagnosed ตอนหย่านม / เริ่มกินอาหารเหลว → แข็ง</li>
+          <li>Persistent right aortic arch (PRAA) — vascular ring anomaly; surgical correctable!</li>
+        </ul>
+        <p><strong>Acquired adult:</strong></p>
+        <ul>
+          <li><strong>Idiopathic</strong> — most common (~ 50-60%)</li>
+          <li><strong>Myasthenia gravis (MG)</strong> ✨ — must screen ทุกเคส; AChR antibody test</li>
+          <li>Hypothyroidism (debated, weak evidence)</li>
+          <li>Hypoadrenocorticism (Addison's)</li>
+          <li>Polyneuropathy / polymyopathy (GOLPP, dysautonomia)</li>
+          <li>Lead, organophosphate toxicity</li>
+          <li>Esophagitis severe</li>
+          <li>Esophageal obstruction (FB, neoplasia, stricture, vascular ring)</li>
+          <li>Botulism, tetanus</li>
+          <li>SLE, dermatomyositis</li>
+          <li>Cats: rare; secondary to dysautonomia, FHV, esophagitis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Loss of normal peristalsis → food accumulates in dilated esophagus</li>
+          <li>Passive reflux → regurgitation</li>
+          <li>Aspiration → pneumonia → death</li>
+          <li>Weight loss from inadequate intake</li>
+          <li>Concurrent reflux esophagitis common</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Regurgitation</strong> ✨ — passive, undigested tubular food, no bile, no warning</li>
+          <li>Often delayed minutes to hours after eating</li>
+          <li>Weight loss, poor body condition</li>
+          <li>Polyphagia (compensatory)</li>
+          <li>Aspiration pneumonia signs: fever, lethargy, cough, dyspnea, tachypnea ✗</li>
+          <li>Excessive salivation</li>
+          <li>Halitosis (food retention)</li>
+          <li>If MG: concurrent generalized weakness, fatigability, dropped jaw, ventroflexion</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Plain thoracic rad:</strong> dilated air- หรือ food-filled esophagus, ventral tracheal displacement, "tracheal stripe sign"</li>
+          <li>Aspiration pneumonia: cranioventral alveolar pattern (right middle lobe)</li>
+          <li>Some cases need <strong>contrast esophagram</strong> ± fluoroscopy เพื่อยืนยัน</li>
+          <li>Vascular ring anomaly (PRAA): focal dilation cranial to heart base on lateral; "leftward deviation of trachea" on DV</li>
+        </ul>
+        <p><strong>Workup for cause (essential):</strong></p>
+        <ul>
+          <li><strong>AChR antibody (acetylcholine receptor)</strong> ✨ — myasthenia gravis screen — must test!</li>
+          <li>T4, free T4 (hypothyroid)</li>
+          <li>Resting cortisol / ACTH stim (Addison's)</li>
+          <li>CBC, biochem, UA</li>
+          <li>Lead level if indicated</li>
+          <li>Endoscopy — esophagitis, FB, stricture, mass</li>
+          <li>EMG/NCV — polyneuropathy</li>
+        </ul>
+      `,
+      differential: `
+        <p><strong>Vomiting vs Regurgitation:</strong></p>
+        <ul>
+          <li>Distinguish first — vomiting has DDx ที่ต่างกันสิ้นเชิง</li>
+        </ul>
+        <p><strong>Other cause of regurgitation:</strong></p>
+        <ul>
+          <li>Esophagitis</li>
+          <li>Esophageal stricture</li>
+          <li>Esophageal FB / mass</li>
+          <li>Vascular ring anomaly</li>
+          <li>Hiatal hernia</li>
+          <li>Cricopharyngeal achalasia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Treat underlying cause if identified ✨</strong></p>
+        <ul>
+          <li><strong>Myasthenia gravis:</strong> pyridostigmine 1-3 mg/kg PO q8-12h ± immunosuppressives. ~ 50% achieve immune remission spontaneously over 6-18 months — recheck AChR titer</li>
+          <li>Hypothyroid: levothyroxine</li>
+          <li>Addison's: physiologic glucocorticoid + mineralocorticoid replacement</li>
+          <li>PRAA: surgical correction — best outcome if young, before megaesophagus permanent</li>
+        </ul>
+
+        <p><strong>2. Feeding management (mainstay for idiopathic) ✨</strong></p>
+        <ul>
+          <li><strong>Bailey chair / upright feeding</strong> 10-15 min before + after meals — gravity drainage ✨</li>
+          <li>Small frequent meals (3-6×/day)</li>
+          <li>Trial different food consistencies — meatballs, slurry, blended, kibble — find what works for individual dog</li>
+          <li>Elevated water bowl</li>
+          <li>If unable to maintain weight + recurrent aspiration: <strong>gastrostomy tube (PEG)</strong> bypassing esophagus</li>
+        </ul>
+
+        <p><strong>3. Pharmacologic adjuncts (limited evidence)</strong></p>
+        <ul>
+          <li><strong>Sildenafil 1 mg/kg PO q8-12h</strong> ✨ — relaxes lower esophageal sphincter, may improve passage; recent evidence supportive
+            <ul>
+              <li>Liquid form via compounding (1-2.5 mg/mL) easier to dose</li>
+              <li>Give 30 min before meals</li>
+            </ul>
+          </li>
+          <li>Bethanechol 5-15 mg PO q8h — cholinergic; theoretical motility benefit; variable response</li>
+          <li>Cisapride — controversial; no significant evidence</li>
+          <li>Metoclopramide — limited utility (acts on smooth muscle; esophagus มี striated muscle ส่วนใหญ่ในหมา)</li>
+        </ul>
+
+        <p><strong>4. Esophagitis / GERD prevention</strong></p>
+        <ul>
+          <li>Omeprazole 1-2 mg/kg PO q12-24h</li>
+          <li>Sucralfate 0.5-1 g PO q8h slurry</li>
+          <li>Famotidine 0.5-1 mg/kg PO q12h</li>
+        </ul>
+
+        <p><strong>5. Aspiration pneumonia management (when occurs)</strong></p>
+        <ul>
+          <li>See Bacterial Pneumonia entry</li>
+          <li>Aggressive antibiotic therapy (broad-spectrum IV; doxycycline or amoxi-clav)</li>
+          <li>Nebulization + coupage</li>
+          <li>O2 support</li>
+          <li>Recurrent pneumonia → consider PEG tube</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Aspiration pneumonia</strong> ✗ — single most common cause of death</li>
+          <li>Severe weight loss, cachexia</li>
+          <li>Esophagitis / stricture</li>
+          <li>Owner fatigue with management</li>
+          <li>Persistent regurgitation despite optimal management</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Idiopathic adult:</strong> guarded; median survival 3-15 months; many die from aspiration</li>
+          <li><strong>MG with treatment:</strong> ~ 50% achieve immune remission; megaesophagus may resolve!</li>
+          <li><strong>Congenital:</strong> guarded; some improve with growth, others persist lifelong</li>
+          <li><strong>PRAA + early surgery:</strong> good if no permanent ME yet</li>
+          <li><strong>Hypothyroidism / Addison's:</strong> good — reversible with treatment</li>
+          <li>Owners must commit to long-term feeding management</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 29 · Esophagitis / Esophageal Stricture / FB ---------- */
+  {
+    id: 'esophagitis-stricture-fb',
+    titleEn: 'Esophagitis, Stricture &amp; Esophageal Foreign Body',
+    titleTh: 'หลอดอาหารอักเสบ / ตีบ / สิ่งแปลกปลอม',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['esophagitis', 'GERD', 'esophageal stricture', 'esophageal foreign body', 'omeprazole', 'sucralfate', 'balloon dilation', 'bougienage'],
+    aliases: ['esophagitis', 'GERD', 'esophageal FB', 'หลอดอาหารอักเสบ', 'หลอดอาหารตีบ'],
+    source: 'Ch. 29 · pp. 446–449',
+    sections: {
+      definition: `
+        <p>กลุ่มโรค esophagus ที่ขัดขวาง / ทำลาย mucosa — มัก present ด้วย <strong>regurgitation, dysphagia, odynophagia</strong></p>
+        <ul>
+          <li><strong>Esophagitis:</strong> mucosal inflammation</li>
+          <li><strong>Stricture:</strong> fibrotic narrowing — sequela ของ severe esophagitis</li>
+          <li><strong>Foreign body:</strong> obstruction → emergency endoscopy</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Esophagitis:</strong></p>
+        <ul>
+          <li><strong>GERD</strong> (gastroesophageal reflux disease) — most common; idiopathic, post-anesthesia, brachycephalic dogs ✨</li>
+          <li><strong>Pill-induced</strong> — doxycycline, clindamycin in cats! ✗ ต้องตามด้วยน้ำ/อาหาร 6-10 mL ทุกครั้ง</li>
+          <li>Caustic ingestion (acids, alkalis)</li>
+          <li>Foreign body irritation</li>
+          <li>Persistent vomiting / chronic gastritis</li>
+          <li>Hiatal hernia</li>
+          <li>Megaesophagus (food retention)</li>
+          <li>FHV in cats</li>
+        </ul>
+        <p><strong>Stricture:</strong></p>
+        <ul>
+          <li>Sequela ของ severe esophagitis (esp. post-anesthesia GERD ที่ไม่ recognized)</li>
+          <li>FB removal trauma</li>
+          <li>Caustic ingestion</li>
+          <li>Mucosal damage from radiation</li>
+        </ul>
+        <p><strong>Foreign body:</strong></p>
+        <ul>
+          <li>Bones, fishhooks, toys, rawhide chews</li>
+          <li>Common location: thoracic inlet, base of heart, distal esophagus (LES)</li>
+          <li>Small breed dogs over-represented (Yorkie, Mini Poodle)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mucosal injury → inflammation → ↓ peristalsis → reflux exacerbates</li>
+          <li>Severe transmural inflammation → fibrotic healing → stricture</li>
+          <li>FB compression → mucosal necrosis → perforation risk (mediastinitis ✗)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Esophagitis:</strong></p>
+        <ul>
+          <li><strong>Odynophagia</strong> — painful swallowing (may extend neck, refuse food despite hunger)</li>
+          <li>Regurgitation</li>
+          <li>Dysphagia, drooling</li>
+          <li>Anorexia (pseudoanorexia from pain)</li>
+          <li>Halitosis, retching</li>
+        </ul>
+        <p><strong>Stricture:</strong></p>
+        <ul>
+          <li>Progressive regurgitation, especially solid food</li>
+          <li>Eventually unable to swallow even liquids</li>
+          <li>Onset typically 1-3 weeks post-anesthesia event</li>
+          <li>Weight loss</li>
+        </ul>
+        <p><strong>FB:</strong></p>
+        <ul>
+          <li><strong>Acute onset</strong> — sudden retching, regurgitation, drooling, refusing food</li>
+          <li>Restless, distress</li>
+          <li>Concurrent witnessed event (chewing bone, toy)</li>
+          <li>Severe: respiratory distress (compression), coughing</li>
+          <li>Perforation: pleuritis, mediastinitis, sepsis ✗</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Thoracic radiograph (lateral):</strong>
+            <ul>
+              <li>Radiopaque FB visible (bones)</li>
+              <li>Free gas / mediastinitis (perforation) ✗</li>
+              <li>Esophageal dilation cranial to lesion</li>
+              <li>Aspiration pneumonia</li>
+            </ul>
+          </li>
+          <li><strong>Contrast study (barium):</strong> rarely needed; identify stricture, perforation suspect</li>
+          <li>CT — complicated cases, perforation evaluation</li>
+        </ul>
+        <p><strong>Endoscopy (gold standard):</strong></p>
+        <ul>
+          <li>Direct visualization of mucosa</li>
+          <li>Esophagitis grading (mild erythema → ulceration → severe)</li>
+          <li>Stricture diameter measurement, dilation</li>
+          <li>FB retrieval ✨</li>
+          <li>Biopsy if mass / atypical lesion</li>
+        </ul>
+      `,
+      differential: `
+        <p>Differentials for regurgitation:</p>
+        <ul>
+          <li>Megaesophagus</li>
+          <li>Hiatal hernia</li>
+          <li>Esophageal mass / neoplasia</li>
+          <li>Vascular ring anomaly</li>
+          <li>Cricopharyngeal achalasia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Esophagitis (medical):</strong></p>
+        <ul>
+          <li><strong>Acid suppression:</strong>
+            <ul>
+              <li><strong>Omeprazole 1-2 mg/kg PO q12-24h</strong> ✨ — first-line; PPI most effective</li>
+              <li>Pantoprazole 1 mg/kg IV q12-24h (hospitalized)</li>
+              <li>Famotidine 0.5-1 mg/kg IV/PO q12h — H2 blocker, less effective</li>
+            </ul>
+          </li>
+          <li><strong>Mucosal protectant:</strong>
+            <ul>
+              <li><strong>Sucralfate 0.5-1 g PO q8h slurry</strong> ✨ — coats ulcers; give 1h apart from PPI for best effect</li>
+            </ul>
+          </li>
+          <li><strong>Promotility:</strong>
+            <ul>
+              <li>Metoclopramide 0.2-0.5 mg/kg PO/SC q8h — ↑ LES tone, ↓ reflux</li>
+              <li>Cisapride 0.1-0.5 mg/kg PO q8h (if available)</li>
+            </ul>
+          </li>
+          <li><strong>Diet:</strong> small frequent meals, low-fat (ลด LES relaxation), bland</li>
+          <li>Elevated feeding (megaesophagus + esophagitis combined)</li>
+          <li>Treat concurrent vomiting</li>
+          <li>Prevent: ตามน้ำ/อาหารหลังกิน doxycycline ในแมวทุกครั้ง! ✨</li>
+          <li>Duration: 4-8 weeks; recheck endoscopy if persistent</li>
+        </ul>
+
+        <p><strong>Stricture (interventional):</strong></p>
+        <ul>
+          <li><strong>Balloon dilation</strong> ✨ — preferred; under endoscopic + fluoroscopic guidance
+            <ul>
+              <li>Multiple sessions usually needed (3-5 average)</li>
+              <li>1-2 wk between sessions</li>
+              <li>Success rate 70-85%</li>
+            </ul>
+          </li>
+          <li>Bougienage — alternative; mechanical dilation</li>
+          <li>Triamcinolone injection at stricture site post-dilation — ↓ recurrence (some evidence)</li>
+          <li>Aggressive medical management between sessions (PPI + sucralfate)</li>
+          <li>Esophageal stent — refractory cases (last resort; complications high)</li>
+          <li>Surgical resection — last resort, high morbidity</li>
+        </ul>
+
+        <p><strong>Esophageal FB (emergency):</strong></p>
+        <ul>
+          <li><strong>Endoscopic removal ASAP</strong> ✨ — within 24h of obstruction ideally
+            <ul>
+              <li>Forceps, rat-tooth grasper, snare</li>
+              <li>Push into stomach if removal too difficult — let dissolve / pass</li>
+              <li>Always evaluate mucosa post-removal for ulceration / perforation</li>
+            </ul>
+          </li>
+          <li>Surgical removal if endoscopy fails — esophagotomy (high morbidity)</li>
+          <li>Post-removal: PPI + sucralfate × 2-4 weeks; soft diet</li>
+          <li>Recheck endoscopy in 2-3 weeks if symptomatic — stricture risk</li>
+          <li>If perforation: aggressive supportive care, IV antibiotics, surgical referral</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Stricture formation</strong> — major complication of severe esophagitis</li>
+          <li>Perforation → mediastinitis, pleuritis, sepsis ✗</li>
+          <li>Aspiration pneumonia</li>
+          <li>Megaesophagus development (severe chronic)</li>
+          <li>Recurrent stricture despite multiple dilations</li>
+          <li>Esophageal pseudodiverticulum</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild esophagitis with prompt treatment: <strong>excellent</strong></li>
+          <li>Severe esophagitis untreated: stricture risk high</li>
+          <li>Stricture with balloon dilation: 70-85% success</li>
+          <li>FB removed within 24h: usually good; longer obstruction → necrosis, perforation risk</li>
+          <li>Perforation: guarded</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Post-anesthetic dysphagia/regurgitation</strong> at 1-3 weeks → highly suspicious for esophageal stricture. Consider PPI prophylaxis in high-risk anesthesia (brachy, prolonged)</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 30 · Acute Gastritis &amp; Vomiting ---------- */
+  {
+    id: 'acute-gastritis',
+    titleEn: 'Acute Gastritis &amp; Vomiting',
+    titleTh: 'อาเจียนเฉียบพลัน',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['acute vomiting', 'gastritis', 'dietary indiscretion', 'maropitant', 'ondansetron', 'metoclopramide', 'antiemetic', 'HGE', 'AHDS'],
+    aliases: ['acute vomiting', 'dietary indiscretion', 'อาเจียน', 'อาเจียนกะทันหัน', 'HGE'],
+    source: 'Ch. 30 · pp. 459–462',
+    sections: {
+      definition: `
+        <p>อาเจียนแบบเฉียบพลัน &lt; 7 วัน — เคสที่เจอบ่อยมากในคลินิก</p>
+        <ul>
+          <li>ส่วนใหญ่ <em>self-limiting</em> — supportive care พอ</li>
+          <li>ต้องแยกเคสที่ <strong>serious</strong> ออก (FB, GDV, pancreatitis, Addison's, toxin, sepsis)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common (mild) causes:</strong></p>
+        <ul>
+          <li><strong>Dietary indiscretion</strong> — กินขยะ, เปลี่ยนอาหารกะทันหัน, treats</li>
+          <li>Idiopathic gastritis</li>
+          <li>Parasites (Giardia, ascarids — puppy)</li>
+          <li>Drug-induced (NSAIDs, antibiotics, chemo, doxycycline pill esophagitis ในแมว)</li>
+          <li>Bacterial / dietary overgrowth</li>
+          <li>Mild food intolerance</li>
+        </ul>
+        <p><strong>Don't miss (serious causes):</strong></p>
+        <ul>
+          <li><strong>Foreign body / linear FB</strong> (string ในแมว — เปิดดูใต้ลิ้น!)</li>
+          <li><strong>GDV</strong> — large/deep-chested breeds</li>
+          <li><strong>Pancreatitis</strong></li>
+          <li><strong>Addisonian crisis</strong> — มัก masquerade</li>
+          <li><strong>Acute hemorrhagic diarrhea syndrome (AHDS / HGE)</strong> — Clostridium perfringens; bloody diarrhea + ↑ PCV</li>
+          <li><strong>Parvo virus</strong> ใน puppy ✗</li>
+          <li><strong>Toxins:</strong> chocolate, raisin/grape, xylitol, lily (cat), antifreeze, NSAID OD, paracetamol (cat fatal)</li>
+          <li>Pyometra (intact female)</li>
+          <li>Acute kidney injury, hepatic dz</li>
+          <li>Intussusception</li>
+          <li>Severe gastric ulcer (NSAID, mast cell tumor)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Gastric mucosal irritation/inflammation → ↑ secretion + altered motility → vomiting</li>
+          <li>Vomiting → fluid/electrolyte loss (HCl loss → metabolic alkalosis, hypokalemia, hypochloremia)</li>
+          <li>Severe → dehydration, hypovolemic shock</li>
+          <li>Risk of aspiration pneumonia ใน obtunded patient</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Vomiting (active, with retching, ± bile, ± food)</li>
+          <li>Anorexia, lethargy</li>
+          <li>Abdominal discomfort</li>
+          <li>± Diarrhea concurrent</li>
+          <li>Dehydration (skin tent, dry MM, prolonged CRT)</li>
+          <li><strong>Red flags:</strong>
+            <ul>
+              <li>Hematemesis (frank red หรือ "coffee grounds")</li>
+              <li>Severe abdominal pain, distension</li>
+              <li>Unproductive retching → GDV ✗</li>
+              <li>Collapse, shock signs</li>
+              <li>Severe lethargy, fever</li>
+              <li>Dehydration severe / persistent</li>
+              <li>Vomit looks like feces (distal obstruction)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Mild self-limiting case (young, healthy, no red flags):</strong></p>
+        <ul>
+          <li>Minimal workup — history + PE</li>
+          <li>Empirical treatment, recheck if no improvement 24-48h</li>
+        </ul>
+        <p><strong>Workup เมื่อ:</strong> persistent &gt; 24-48h, red flags, geriatric, immunocompromised</p>
+        <ul>
+          <li><strong>Tier 1:</strong> CBC, biochem (Na, K, Cl, BUN/Cr, glucose, albumin), UA, T4 (cat senior)</li>
+          <li>Fecal flotation + Giardia ELISA</li>
+          <li>Parvo SNAP (puppy with bloody diarrhea + vomiting)</li>
+          <li><strong>Abdominal rad (3 views)</strong> — FB, ileus, free gas, mass, GDV</li>
+          <li><strong>Abdominal US</strong> — preferred for soft tissue (FB, intussusception, pancreatitis, mass)</li>
+          <li><strong>cPL/fPL SNAP</strong> ถ้าสงสัย pancreatitis</li>
+          <li><strong>Resting cortisol / ACTH stim</strong> — rule out Addison's (must consider!)</li>
+          <li>Toxin history — chocolate calculator, ethylene glycol, etc.</li>
+        </ul>
+      `,
+      differential: `
+        <p>ดู etiology + Clinical Manifestations entry</p>
+      `,
+      treatment: `
+        <p><strong>Mild self-limiting (outpatient):</strong></p>
+        <ul>
+          <li><strong>NPO 12-24h</strong> (ไม่จำเป็นในแมว — เสี่ยง hepatic lipidosis)</li>
+          <li>SQ fluids ที่คลินิก (LRS หรือ Plasmalyte 30-50 mL/kg) ถ้า mild dehydration</li>
+          <li><strong>Maropitant (Cerenia) 1 mg/kg SC q24h</strong> ✨ — first-line antiemetic; effective + minimal side effects
+            <ul>
+              <li>PO 2 mg/kg q24h available</li>
+            </ul>
+          </li>
+          <li><strong>Bland diet introduction</strong> หลัง 12-24h: ไก่ต้ม + ข้าวต้ม, ตามด้วยอาหาร GI prescription, ค่อยกลับสู่ regular diet ใน 3-5 วัน</li>
+          <li>Probiotics (Saccharomyces boulardii, Enterococcus) — สนับสนุน gut microbiome</li>
+          <li>Deworm ถ้ายังไม่ได้ทำล่าสุด (pyrantel ± fenbendazole)</li>
+        </ul>
+
+        <p><strong>Moderate-severe (hospitalized):</strong></p>
+        <ul>
+          <li><strong>IV fluids</strong> — LRS หรือ Plasmalyte
+            <ul>
+              <li>Replacement: deficit + maintenance + ongoing losses</li>
+              <li>Bolus 10-20 mL/kg ถ้า hypovolemic → reassess</li>
+              <li>Add KCl 20-40 mEq/L ถ้า hypokalemic</li>
+            </ul>
+          </li>
+          <li><strong>Antiemetics:</strong>
+            <ul>
+              <li><strong>Maropitant 1 mg/kg SC/IV q24h</strong> — first choice</li>
+              <li><strong>Ondansetron 0.5-1 mg/kg IV/PO q8-12h</strong> — refractory; combine กับ maropitant ได้ ✨</li>
+              <li>Metoclopramide 0.2-0.5 mg/kg SC q8h หรือ CRI 1-2 mg/kg/day — prokinetic + central antiemetic</li>
+              <li>Dolasetron 0.5-1 mg/kg IV q24h — alternative</li>
+            </ul>
+          </li>
+          <li><strong>Acid suppression (เคสที่สงสัย ulcer/severe gastritis):</strong>
+            <ul>
+              <li>Omeprazole 1 mg/kg PO/IV q12-24h</li>
+              <li>Pantoprazole 1 mg/kg IV q12-24h</li>
+              <li>Famotidine 0.5-1 mg/kg IV/PO q12h — H2 blocker</li>
+            </ul>
+          </li>
+          <li><strong>Sucralfate 0.5-1 g PO q8h slurry</strong> ถ้า hematemesis / suspected ulcer</li>
+          <li>Gastroprotectant + anti-emetic combination เป็นมาตรฐาน</li>
+        </ul>
+
+        <p><strong>Specific scenarios:</strong></p>
+        <ul>
+          <li><strong>HGE / AHDS:</strong> aggressive IV fluids, antibiotics ตามอาการ (metronidazole 10-15 mg/kg PO q12h × 5-7d controversial — ส่วนใหญ่ไม่จำเป็น), antiemetic, supportive</li>
+          <li><strong>Parvo puppy:</strong> aggressive IVF, broad-spectrum AB, antiemetic, plasma if hypoalbuminemic, isolation, NPO ตอนแรก แล้วเริ่ม early enteral nutrition</li>
+          <li><strong>Toxin exposure:</strong> decontamination (induce vomiting ถ้ายังไม่อาเจียน + ≤ 2h post-ingestion), activated charcoal, specific antidote, consult Animal Poison Control</li>
+          <li><strong>Foreign body:</strong> ไม่ induce vomiting; endoscopic หรือ surgical removal</li>
+        </ul>
+
+        <p><strong>Avoid:</strong></p>
+        <ul>
+          <li>Routine antibiotics (gut microbiome disruption) — เฉพาะที่มี indication ชัด</li>
+          <li>NSAIDs ✗</li>
+          <li>Inducing vomiting ใน corrosive/sharp FB ingestion</li>
+          <li>Steroids (rarely indicated, except Addison's)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe dehydration, hypovolemic shock</li>
+          <li>Electrolyte imbalance (hypoK, hypoCl)</li>
+          <li>Aspiration pneumonia</li>
+          <li>Hepatic lipidosis (cat &gt; 3 d anorexia) ✗</li>
+          <li>Esophagitis from chronic vomiting</li>
+          <li>Missed serious cause (FB, GDV, Addison's, toxin)</li>
+          <li>Sepsis (parvo, severe gastroenteritis)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild self-limiting: <strong>excellent</strong> — recover 24-72h</li>
+          <li>Pancreatitis-related: variable</li>
+          <li>Parvo with aggressive treatment: 70-90% survival</li>
+          <li>Untreated serious cause: poor</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 30 · Chronic Gastritis &amp; Vomiting ---------- */
+  {
+    id: 'chronic-gastritis',
+    titleEn: 'Chronic Gastritis &amp; Vomiting',
+    titleTh: 'อาเจียนเรื้อรัง',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['chronic vomiting', 'lymphoplasmacytic gastritis', 'Helicobacter', 'gastric ulcer', 'gastric lymphoma', 'omeprazole', 'sucralfate'],
+    aliases: ['chronic vomiting', 'อาเจียนเรื้อรัง', 'gastric ulcer'],
+    source: 'Ch. 30 · pp. 462–476',
+    sections: {
+      definition: `
+        <p>อาเจียน &gt; 2-3 สัปดาห์ — ต้อง workup เสมอ</p>
+        <ul>
+          <li>หลายโรคแฝงอยู่ — primary gastric vs systemic</li>
+          <li>Cat: hairball &gt; 1-2 ครั้ง/เดือน <em>ไม่ใช่ปกติ</em> — ส่วนใหญ่เป็น chronic enteropathy / lymphoma ✨</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary gastric:</strong></p>
+        <ul>
+          <li><strong>Lymphoplasmacytic gastritis</strong> — common form ของ chronic enteropathy</li>
+          <li><strong>Eosinophilic gastritis</strong></li>
+          <li><strong>Gastric ulcer</strong> — NSAIDs, mast cell tumor (histamine), gastrinoma, severe stress, hepatic dz</li>
+          <li><strong>Gastric neoplasia:</strong>
+            <ul>
+              <li>Adenocarcinoma — most common malignant in dogs (older, esp. Belgian Shepherd, Rough Collie, Staffordshire)</li>
+              <li>Lymphoma — most common malignant ในแมว ✨</li>
+              <li>Leiomyoma/sarcoma, GIST</li>
+            </ul>
+          </li>
+          <li><strong>Helicobacter</strong> — debated significance; some cases respond to triple therapy</li>
+          <li>Foreign body (chronic, partial obstruction)</li>
+          <li>Pyloric stenosis / outflow obstruction</li>
+          <li>Bilious vomiting syndrome (empty stomach overnight → bile reflux)</li>
+        </ul>
+        <p><strong>Extra-gastric (systemic):</strong></p>
+        <ul>
+          <li>Renal disease (uremia)</li>
+          <li>Hepatic disease</li>
+          <li>Hyperthyroidism (cat) ✨</li>
+          <li>Hypoadrenocorticism (Addison's) — atypical!</li>
+          <li>Diabetes (DKA)</li>
+          <li>Pancreatitis chronic</li>
+          <li>Inflammatory bowel disease</li>
+          <li>CNS disease (vestibular, ↑ ICP)</li>
+          <li>Drugs (chronic NSAIDs)</li>
+        </ul>
+      `,
+      pathophysiology: `<p>ดู etiology — กลไกต่างกันตามสาเหตุ</p>`,
+      symptoms: `
+        <ul>
+          <li>Intermittent / persistent vomiting &gt; 2-3 wk</li>
+          <li>± Hematemesis (ulcer, neoplasia, severe gastritis)</li>
+          <li>± Melena</li>
+          <li>Weight loss</li>
+          <li>Anorexia / hyporexia variable</li>
+          <li>Pica (ulcer)</li>
+          <li>± Diarrhea concurrent</li>
+          <li>± Polydipsia</li>
+          <li><strong>Cat:</strong> "hairball" weekly+ → suspicious ✨; weight loss; vomiting after eating</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Tier 1:</strong> CBC, biochem (incl. albumin), UA, T4 (cat), fecal × 2-3</p>
+        <p><strong>Tier 2:</strong></p>
+        <ul>
+          <li>FeLV/FIV (cat)</li>
+          <li><strong>Resting cortisol / ACTH stim</strong> — Addison's screen</li>
+          <li>cPL/fPL — pancreatitis</li>
+          <li>Bile acids — hepatic dysfunction</li>
+          <li>Cobalamin / folate</li>
+          <li><strong>Abdominal US</strong> ✨ — gastric wall thickness, layering, mass, lymph node, foreign body, pancreas, intussusception</li>
+          <li>Abdominal rad — FB, ileus</li>
+        </ul>
+        <p><strong>Tier 3 — Endoscopy + biopsy ✨:</strong></p>
+        <ul>
+          <li>Direct visualization stomach + duodenum</li>
+          <li>Biopsy multiple sites (≥ 6-10 per region)</li>
+          <li>Helicobacter detection (cytology, urease test, PCR)</li>
+          <li>Gastric ulcer evaluation</li>
+          <li>Tumor biopsy (caution — ulcer wall thin, perforation risk)</li>
+          <li>Foreign body retrieval</li>
+        </ul>
+        <p><strong>Histopath grading:</strong> WSAVA criteria — inflammation severity + cell type (lymphoplasmacytic, eosinophilic, neutrophilic, granulomatous)</p>
+        <p>Distinguishing severe lymphoplasmacytic gastritis from low-grade lymphoma can be challenging — <strong>PARR (PCR for antigen receptor rearrangement)</strong> or immunohistochemistry helps</p>
+      `,
+      differential: `<p>ดู etiology — comprehensive workup needed</p>`,
+      treatment: `
+        <p><strong>Treat underlying cause:</strong></p>
+
+        <p><strong>1. Dietary trial (chronic enteropathy):</strong></p>
+        <ul>
+          <li><strong>Novel protein</strong> หรือ <strong>hydrolyzed protein diet</strong> × 2-4 wk minimum
+            <ul>
+              <li>Royal Canin Hypoallergenic, Hill's z/d, Purina HA</li>
+              <li>Strict — no treats, table food</li>
+              <li>Food-responsive enteropathy diagnosed if signs resolve</li>
+            </ul>
+          </li>
+          <li>Highly digestible / low-fat GI diet — alternative</li>
+        </ul>
+
+        <p><strong>2. Antibiotic trial (ARE — antibiotic-responsive enteropathy):</strong></p>
+        <ul>
+          <li>Tylosin 10-20 mg/kg PO q12-24h × 3-6 weeks</li>
+          <li>Metronidazole 10-15 mg/kg PO q12h × 3-6 wk</li>
+          <li>Diagnose ARE if signs resolve, recur on stopping</li>
+        </ul>
+
+        <p><strong>3. Acid suppression + mucosal protection (ulcer / severe gastritis):</strong></p>
+        <ul>
+          <li><strong>Omeprazole 1-2 mg/kg PO q12-24h × 4-8 wk</strong> ✨</li>
+          <li>Sucralfate 0.5-1 g PO q8h slurry × 2-4 wk</li>
+          <li>Misoprostol 2-5 µg/kg PO q8h — NSAID-induced ulcer prevention/treatment</li>
+          <li>Famotidine 0.5-1 mg/kg PO q12h — alternative H2 blocker</li>
+        </ul>
+
+        <p><strong>4. Helicobacter (suspected significance):</strong></p>
+        <ul>
+          <li>Triple therapy × 14-21 d:
+            <ul>
+              <li>Amoxicillin 20 mg/kg PO q12h</li>
+              <li>Metronidazole 10 mg/kg PO q12h</li>
+              <li>Omeprazole 1 mg/kg PO q12h</li>
+              <li>± Bismuth subsalicylate</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>5. Lymphoplasmacytic / eosinophilic gastritis (chronic enteropathy — IRE):</strong></p>
+        <ul>
+          <li>If diet + antibiotic trials fail → immunosuppression</li>
+          <li><strong>Prednisolone</strong> (cat) / Prednisone (dog) 1-2 mg/kg PO q12h × 2-3 wk, then taper over 8-12 wk</li>
+          <li>Budesonide 1-3 mg/dog PO q24h — locally active steroid; ↓ systemic effects (DM cat, recurrent infection dog)</li>
+          <li>Refractory: cyclosporine 5 mg/kg PO q12-24h, chlorambucil (cats — less side effects)</li>
+          <li>Cobalamin supplementation if low</li>
+        </ul>
+
+        <p><strong>6. Gastric neoplasia:</strong></p>
+        <ul>
+          <li>Lymphoma (cat low-grade): chlorambucil 2 mg/cat PO q48h + prednisolone — good response, MST 1-3 yr</li>
+          <li>Lymphoma (high-grade): CHOP/COP — variable</li>
+          <li>Adenocarcinoma: surgical resection if possible (poor prognosis even with surgery — MST 6 mo)</li>
+          <li>Leiomyoma: surgical excision — curative</li>
+        </ul>
+
+        <p><strong>7. Bilious vomiting syndrome:</strong></p>
+        <ul>
+          <li>Late-evening small meal</li>
+          <li>± Famotidine before bed</li>
+          <li>± Metoclopramide 0.2-0.5 mg/kg PO before bed</li>
+        </ul>
+
+        <p><strong>8. Antiemetic for symptom control:</strong></p>
+        <ul>
+          <li>Maropitant 2 mg/kg PO q24h — chronic outpatient</li>
+          <li>Ondansetron 0.5-1 mg/kg PO q8-12h</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Gastric ulcer perforation → septic peritonitis ✗</li>
+          <li>Severe weight loss / cachexia</li>
+          <li>Hypoalbuminemia (PLE component)</li>
+          <li>Anemia (chronic blood loss, B12 deficiency)</li>
+          <li>Aspiration pneumonia</li>
+          <li>Lymphoma development from chronic inflammation (debated)</li>
+          <li>Drug side effects (steroid: DM, recurrent UTI, etc.)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Food-responsive: <strong>excellent</strong></li>
+          <li>Antibiotic-responsive: good — may need long-term</li>
+          <li>Steroid-responsive (IRE): good with proper management</li>
+          <li>Refractory IBD: variable</li>
+          <li>Low-grade lymphoma: good — MST 1-3 yr</li>
+          <li>High-grade lymphoma / carcinoma: guarded-poor</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 30 · GI Foreign Body ---------- */
+  {
+    id: 'gi-foreign-body',
+    titleEn: 'Gastrointestinal Foreign Body',
+    titleTh: 'สิ่งแปลกปลอมใน GI',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['foreign body', 'linear FB', 'string', 'obstruction', 'plication', 'enterotomy', 'gastrotomy', 'endoscopy'],
+    aliases: ['FB', 'GI obstruction', 'gastric foreign body', 'intestinal foreign body', 'สิ่งแปลกปลอม'],
+    source: 'Ch. 30 · pp. 459–462',
+    sections: {
+      definition: `
+        <p>วัตถุที่กินเข้าไปติดอยู่ใน stomach / intestine — partial หรือ complete obstruction</p>
+        <ul>
+          <li>เจอบ่อยมากในหมาวัยรุ่น (puppies → 3 yr) — กินทุกอย่าง</li>
+          <li>แมว: <strong>linear FB (string, sewing thread)</strong> เด่น — ใต้ลิ้น base ✨</li>
+          <li>Complete obstruction = surgical emergency ✗</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common items:</strong></p>
+        <ul>
+          <li>Toys, balls, rubber items</li>
+          <li>Bones (chicken, fish), corn cobs</li>
+          <li>Rocks, plastic</li>
+          <li>Socks, towels, clothing</li>
+          <li>Fishing hook + line</li>
+          <li>Coins (zinc → toxicity!)</li>
+          <li>Magnets (multiple → bowel necrosis)</li>
+          <li>Hair ties, rubber bands</li>
+        </ul>
+        <p><strong>Linear FB (cat):</strong></p>
+        <ul>
+          <li>String, yarn, thread (with needle attached)</li>
+          <li>Cassette tape</li>
+          <li>Wraps around base of tongue → distal end pulled by peristalsis → bowel plication ✨</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mechanical obstruction → proximal distension, fluid accumulation, ileus</li>
+          <li>Bowel wall edema, ↓ perfusion → necrosis</li>
+          <li>Linear FB: bowel plicates around fixed string → laceration of mesenteric border → perforation ✗</li>
+          <li>Complete obstruction → vomiting, dehydration, electrolyte loss, acid-base disturbance</li>
+          <li>Perforation → septic peritonitis</li>
+          <li>Sharp FB → laceration anywhere along path</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute:</strong></p>
+        <ul>
+          <li>Acute persistent vomiting</li>
+          <li>Anorexia, lethargy</li>
+          <li>Abdominal pain, "praying" position</li>
+          <li>± Diarrhea (partial obstruction)</li>
+          <li>± Tenesmus</li>
+          <li>Abdominal distension</li>
+          <li>Witnessed event sometimes</li>
+        </ul>
+        <p><strong>Chronic / partial:</strong></p>
+        <ul>
+          <li>Intermittent vomiting</li>
+          <li>Weight loss</li>
+          <li>Diarrhea + vomiting alternating</li>
+        </ul>
+        <p><strong>Linear FB (cat):</strong></p>
+        <ul>
+          <li>Vomiting</li>
+          <li>Anorexia, dehydration</li>
+          <li><strong>Examine under tongue base</strong> ✨ — string visible in 50%+ of linear FB cases (need sedation if uncooperative; ketamine 2.2 mg/kg IV)</li>
+        </ul>
+        <p><strong>Severe / perforation:</strong></p>
+        <ul>
+          <li>Septic shock signs — pale MM, prolonged CRT, hypotension, fever or hypothermia</li>
+          <li>Severe abdominal pain, splinting</li>
+          <li>Ileus, obstipation</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Abdominal palpation — mass, pain, distension</li>
+          <li><strong>Examine tongue base ทุกตัวที่อาเจียน</strong> ✨ (cats especially)</li>
+          <li>Vital signs (shock, fever)</li>
+        </ul>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal radiograph (3 views) — first-line</strong> ✨
+            <ul>
+              <li>Radiopaque FB (bones, metal)</li>
+              <li>Distended bowel loops, abnormal gas pattern, plication</li>
+              <li>"Two-population" gas/fluid pattern (proximal distended, distal empty) → obstruction</li>
+              <li>Free gas → perforation ✗</li>
+              <li>Free fluid → peritonitis</li>
+            </ul>
+          </li>
+          <li><strong>Abdominal ultrasound</strong> ✨ — superior for radiolucent FB
+            <ul>
+              <li>FB visualized as hyperechoic with shadowing</li>
+              <li>Bowel wall thickness, layering</li>
+              <li>Free fluid, lymph nodes</li>
+              <li>Plication / linear FB</li>
+            </ul>
+          </li>
+          <li>Contrast study (barium) — rarely needed; partial obstruction; barium-impregnated polyethylene spheres (BIPS)</li>
+          <li>CT — complex / equivocal cases</li>
+        </ul>
+        <p><strong>Lab:</strong></p>
+        <ul>
+          <li>CBC: stress leukogram, ± leukocytosis with left shift (peritonitis)</li>
+          <li>Biochem: hypochloremic metabolic alkalosis (proximal obstruction); hypoK, hypoCl, hypoNa</li>
+          <li>Lactate ↑ — bowel ischemia / sepsis</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Acute gastritis / gastroenteritis</li>
+          <li>Pancreatitis</li>
+          <li>Intussusception</li>
+          <li>Mesenteric volvulus</li>
+          <li>GDV</li>
+          <li>HBC trauma</li>
+          <li>Toxin</li>
+          <li>Pyometra</li>
+          <li>Septic peritonitis (other cause)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Stabilize first:</strong></p>
+        <ul>
+          <li>IV fluids — bolus 10-20 mL/kg LRS, then maintain</li>
+          <li>Correct electrolyte abnormalities (K supplementation)</li>
+          <li>Antiemetic — maropitant 1 mg/kg IV/SC</li>
+          <li>Pain management — opioid (methadone 0.2-0.4 mg/kg IV/IM, buprenorphine)</li>
+          <li>Antibiotics if perforation suspected/sepsis (ampicillin + enrofloxacin IV)</li>
+        </ul>
+
+        <p><strong>1. Endoscopic retrieval (esophagus, stomach):</strong></p>
+        <ul>
+          <li>FB above pyloric sphincter — endoscopic removal preferred ✨</li>
+          <li>Forceps, snares, retrieval baskets</li>
+          <li>If unable to grasp — push to stomach, then surgical if needed</li>
+          <li>Inspect mucosa post-retrieval</li>
+        </ul>
+
+        <p><strong>2. Surgical removal:</strong></p>
+        <ul>
+          <li><strong>Indications:</strong>
+            <ul>
+              <li>Intestinal obstruction (cannot reach by endoscope)</li>
+              <li>FB in stomach not retrievable endoscopically</li>
+              <li>Perforation, peritonitis ✗</li>
+              <li>Linear FB with plication</li>
+              <li>Sharp FB risk to bowel wall</li>
+              <li>Failed conservative management ของ partial obstruction</li>
+            </ul>
+          </li>
+          <li><strong>Gastrotomy</strong> — incision on greater curvature, retrieve, 2-layer closure</li>
+          <li><strong>Enterotomy</strong> — antimesenteric incision, retrieve</li>
+          <li><strong>Resection + anastomosis</strong> — necrotic bowel, multiple plication sites</li>
+          <li>Multiple enterotomies for linear FB (don't pull through!)</li>
+          <li>Lavage abdomen if peritonitis</li>
+          <li>Closed-suction drain (Jackson-Pratt) ถ้าsepsis</li>
+        </ul>
+
+        <p><strong>3. Conservative management — selected cases only:</strong></p>
+        <ul>
+          <li>Small smooth FB likely to pass (small stones, coins)</li>
+          <li>No clinical signs of obstruction</li>
+          <li>Serial radiographs q12-24h to monitor passage</li>
+          <li>IV fluids, antiemetic</li>
+          <li>Surgery if no progression in 24-48h or signs worsen</li>
+        </ul>
+
+        <p><strong>Linear FB (cat) — special considerations:</strong></p>
+        <ul>
+          <li><strong>NEVER pull on visible string</strong> ✗ — risk of bowel laceration</li>
+          <li>Cut tongue end to release tension</li>
+          <li>If short string + minimal plication: may pass with conservative management + careful monitoring</li>
+          <li>Plication / signs of obstruction: surgery — multiple enterotomies along plicated segment</li>
+          <li>Aggressive supportive care</li>
+        </ul>
+
+        <p><strong>Post-op care:</strong></p>
+        <ul>
+          <li>IV fluids 24-48h until eating</li>
+          <li>Pain management (opioid, taper)</li>
+          <li>Maropitant continued</li>
+          <li>Early enteral nutrition (within 12-24h) — improves healing</li>
+          <li>Sucralfate, omeprazole short course</li>
+          <li>Antibiotics × 5-7d (cefazolin or amoxi-clav) ถ้า dehiscence risk หรือ peritonitis</li>
+          <li>Monitor incision, abdominal pain, vomiting recurrence</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Septic peritonitis</strong> ✗ — perforation; mortality 30-50%</li>
+          <li><strong>Dehiscence</strong> — esp. ใน hypoalbuminemia, prolonged obstruction, sepsis</li>
+          <li>Short bowel syndrome (extensive resection)</li>
+          <li>Intussusception post-op</li>
+          <li>Recurrent FB ingestion (behavioral)</li>
+          <li>Anesthetic complications</li>
+          <li>Aspiration pneumonia</li>
+          <li>SSI (surgical site infection)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Uncomplicated FB removed promptly: <strong>excellent</strong> &gt; 95%</li>
+          <li>Linear FB without perforation: good</li>
+          <li>Perforation + septic peritonitis: guarded — 30-50% mortality even with aggressive treatment</li>
+          <li>Hypoalbuminemia &lt; 2.0 g/dL: ↑ dehiscence risk</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 30 · GDV ---------- */
+  {
+    id: 'gdv',
+    titleEn: 'Gastric Dilatation-Volvulus (GDV)',
+    titleTh: 'GDV — กระเพาะบิด',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog'],
+    tags: ['GDV', 'bloat', 'gastric volvulus', 'gastropexy', 'unproductive retching', 'large breed', 'deep-chested', 'emergency surgery'],
+    aliases: ['bloat', 'gastric torsion', 'GDV', 'กระเพาะบิด', 'กระเพาะอืด'],
+    source: 'Ch. 30 · pp. 477–479',
+    sections: {
+      definition: `
+        <p>กระเพาะ <strong>dilate + rotate</strong> รอบแกน mesenteric — emergency!</p>
+        <ul>
+          <li>Mortality สูงถ้าไม่รักษาเร็ว — 15-30% แม้ผ่าตัด</li>
+          <li>เจอใน <strong>large/giant deep-chested breeds</strong> เด่น</li>
+          <li>Clock direction (จากด้าน caudal): มัก clockwise 180-360°</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Breed predisposition (highest risk):</strong></p>
+        <ul>
+          <li>Great Dane (&gt; 40% lifetime risk!)</li>
+          <li>Saint Bernard, Weimaraner, Irish Setter, Gordon Setter, Standard Poodle, Doberman, GSD, Boxer</li>
+          <li>Akita, Bloodhound, Newfoundland</li>
+        </ul>
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li>Deep-chested conformation</li>
+          <li>First-degree relative with GDV</li>
+          <li>Older age &gt; 7 yr</li>
+          <li>Lean body condition</li>
+          <li>Once-daily large meal</li>
+          <li>Eating from elevated bowl ✗ (counterintuitive — actually ↑ risk)</li>
+          <li>Stress, anxious temperament</li>
+          <li>Vigorous exercise post-meal</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Gastric distension with gas / fluid → impaired venous return</li>
+          <li>Volvulus → vascular compromise of stomach wall + spleen</li>
+          <li>Pylorus rotates ventrally and to left side</li>
+          <li>↓ Venous return (caudal vena cava compression) → distributive/hypovolemic shock</li>
+          <li>Gastric wall ischemia → necrosis → endotoxin release</li>
+          <li>Spleen often torsed/congested</li>
+          <li>Severe metabolic acidosis, lactate ↑</li>
+          <li>DIC, MODS, ARDS</li>
+          <li>Cardiac arrhythmias (VPCs, VT) common — myocardial ischemia + electrolyte</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Unproductive retching</strong> ✨ — pathognomonic; "trying to vomit but nothing comes out"</li>
+          <li>Acute abdominal distension (especially cranial)</li>
+          <li>Restlessness, anxiety, pacing</li>
+          <li>Hypersalivation</li>
+          <li>Rapid deterioration — collapse, weak pulses</li>
+          <li>Pale MM, prolonged CRT</li>
+          <li>Tachycardia → eventually bradycardia (severe)</li>
+          <li>Tachypnea, dyspnea (gastric pressure on diaphragm)</li>
+          <li>Tympanic abdomen on percussion (gas)</li>
+          <li>Sometimes hematemesis</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical recognition + immediate radiograph:</strong></p>
+        <ul>
+          <li><strong>Right lateral abdominal radiograph</strong> ✨ — diagnostic
+            <ul>
+              <li>"<strong>Double bubble</strong>" / "<strong>Popeye sign</strong>" / "<strong>compartmentalized stomach</strong>" — pylorus displaced dorsally on right lateral, separated from gastric body by soft tissue</li>
+              <li>Massive gastric distension</li>
+              <li>± Pneumoperitoneum (gastric rupture) ✗</li>
+            </ul>
+          </li>
+          <li>VD usually unnecessary — patient unstable for repositioning</li>
+          <li>Distinguish from simple dilatation: dilatation alone = no rotation, no compartmentalization</li>
+        </ul>
+        <p><strong>Lab (parallel with stabilization, don't delay):</strong></p>
+        <ul>
+          <li>CBC, biochem, electrolytes, lactate</li>
+          <li><strong>Plasma lactate &gt; 6 mmol/L = poor prognosis</strong> ✨ (gastric necrosis predictor)</li>
+          <li>Lactate failing to normalize after fluids = worse</li>
+          <li>Coagulation profile — DIC</li>
+          <li>ECG — VPCs, VT (50-75% develop arrhythmias)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Simple gastric dilatation (no volvulus) — decompresses easily, no compartmentalization</li>
+          <li>Acute pancreatitis</li>
+          <li>Septic peritonitis</li>
+          <li>Splenic torsion (rare standalone)</li>
+          <li>Small intestinal volvulus / mesenteric torsion</li>
+          <li>Acute hemoabdomen</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>GDV = surgical emergency — every minute counts ✗</strong></p>
+
+        <p><strong>1. Immediate stabilization (parallel with surgery prep):</strong></p>
+        <ul>
+          <li><strong>Two large-bore IV catheters in cephalic veins</strong> (avoid hindlimb — caudal vena cava compromised) ✨</li>
+          <li><strong>Aggressive IV fluids:</strong>
+            <ul>
+              <li>Shock dose: 90 mL/kg/hr LRS or Plasmalyte (start with 1/4-1/2 dose, reassess)</li>
+              <li>Hypertonic saline 7.5% 4 mL/kg over 5-10 min — alternative for rapid resuscitation</li>
+              <li>Colloid (Hetastarch 5-10 mL/kg) — adjunct</li>
+            </ul>
+          </li>
+          <li><strong>Gastric decompression — ASAP:</strong>
+            <ul>
+              <li><strong>Trocharization</strong>: 14-16 g IV catheter through right paracostal area where most tympanic — quick, easy
+                <ul>
+                  <li>Risk: spleen laceration if poorly placed</li>
+                </ul>
+              </li>
+              <li><strong>Orogastric intubation</strong>: lubricated stomach tube; measure to last rib; if cannot pass — volvulus likely (don't force)</li>
+              <li>Decompression often relieves shock dramatically</li>
+            </ul>
+          </li>
+          <li>Pain management: methadone 0.2 mg/kg IV, buprenorphine, fentanyl CRI</li>
+          <li>Antibiotics: ampicillin 22 mg/kg IV + enrofloxacin 5 mg/kg IV (broad coverage; gut translocation, peritonitis if rupture)</li>
+          <li>Treat arrhythmias: lidocaine 2 mg/kg IV bolus, then CRI 25-75 µg/kg/min ถ้า sustained VT</li>
+          <li>O2 supplementation</li>
+          <li>Continuous ECG monitoring</li>
+        </ul>
+
+        <p><strong>2. Surgical correction (definitive treatment) ✨</strong></p>
+        <ul>
+          <li><strong>Goals:</strong>
+            <ul>
+              <li>Decompress stomach</li>
+              <li>Reposition (derotate) — usually counter-clockwise from surgeon's view</li>
+              <li>Assess gastric wall viability</li>
+              <li>Resection of necrotic stomach (greater curvature most affected)</li>
+              <li>Splenectomy if severe congestion / torsion</li>
+              <li><strong>Gastropexy</strong> ✨ — prevent recurrence (essential — 75-80% recurrence without)</li>
+            </ul>
+          </li>
+          <li>Right-side gastropexy techniques:
+            <ul>
+              <li>Incisional gastropexy (most common)</li>
+              <li>Belt-loop</li>
+              <li>Circumcostal</li>
+              <li>Tube gastropexy</li>
+            </ul>
+          </li>
+          <li>Lavage abdomen, address peritonitis</li>
+        </ul>
+
+        <p><strong>3. Post-op care:</strong></p>
+        <ul>
+          <li>ICU monitoring 24-72h</li>
+          <li>IV fluids continued</li>
+          <li>Pain management (CRI)</li>
+          <li>Continuous ECG — VT common 24-72h post-op
+            <ul>
+              <li>Treat sustained VT or significant compromise (lidocaine CRI, sotalol later)</li>
+              <li>Many self-resolve</li>
+            </ul>
+          </li>
+          <li>Anti-emetic (maropitant)</li>
+          <li>Acid suppression (pantoprazole IV → omeprazole PO)</li>
+          <li>Early enteral feeding (start small bland meals 12-24h post-op)</li>
+          <li>Monitor for: ileus, recurrent vomiting, septic peritonitis (dehiscence), DIC, AKI, ARDS</li>
+          <li>Recheck lactate</li>
+        </ul>
+
+        <p><strong>Prophylactic gastropexy:</strong></p>
+        <ul>
+          <li>Recommended for high-risk breeds (Great Dane especially)</li>
+          <li>Concurrent with neuter/spay or as solo procedure</li>
+          <li>Laparoscopic gastropexy — minimally invasive option</li>
+          <li>↓ Risk of GDV ~ 30-fold</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Cardiac arrhythmias</strong> (VPCs, VT) — 50-75%; peak 24-72h post-op</li>
+          <li><strong>Gastric wall necrosis</strong> → resection / fatal</li>
+          <li>Septic peritonitis (gastric rupture / dehiscence) ✗</li>
+          <li>DIC</li>
+          <li>AKI</li>
+          <li>ARDS</li>
+          <li>SIRS / MODS</li>
+          <li>Splenic infarction / necrosis</li>
+          <li>Reperfusion injury</li>
+          <li>Recurrence (without gastropexy)</li>
+          <li>Anesthetic / surgical complications</li>
+        </ul>
+        <p><strong>Prognosis (mortality predictors):</strong></p>
+        <ul>
+          <li><strong>Lactate &gt; 6 mmol/L pre-op</strong> ✨ — poor outcome</li>
+          <li>Failure of lactate to clear with fluids</li>
+          <li>Gastric wall necrosis requiring resection (mortality 35-65%)</li>
+          <li>Splenectomy required</li>
+          <li>Pre-existing comorbidities</li>
+          <li>Time from onset to surgery &gt; 6 hours</li>
+        </ul>
+        <p><strong>Survival:</strong></p>
+        <ul>
+          <li>Uncomplicated GDV with prompt surgery + gastropexy: <strong>~ 80-90%</strong></li>
+          <li>Gastric necrosis requiring resection: 35-65%</li>
+          <li>Severe sepsis / DIC: poor</li>
+          <li>Recurrence after gastropexy: &lt; 5% (vs 75-80% without)</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Owner education:</strong> Time = life ใน GDV. ถ้า large-breed dog มาด้วย unproductive retching + bloated abdomen = ER ทันที. Prophylactic gastropexy ใน high-risk breed คุ้มมาก</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 31 · Canine Parvovirus ---------- */
+  {
+    id: 'canine-parvovirus',
+    titleEn: 'Canine Parvoviral Enteritis (CPV-2)',
+    titleTh: 'Parvo — ลำไส้อักเสบจากไวรัสในลูกหมา',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog'],
+    tags: ['parvo', 'CPV-2', 'puppy', 'bloody diarrhea', 'leukopenia', 'maropitant', 'plasma transfusion', 'ELISA SNAP'],
+    aliases: ['parvo virus', 'CPV', 'Parvo', 'ลูกหมาท้องเสียเป็นเลือด'],
+    source: 'Ch. 31 · pp. 491–494',
+    sections: {
+      definition: `
+        <p>โรคติดเชื้อไวรัสร้ายแรงในลูกหมา — <em>Canine parvovirus type 2 (CPV-2)</em> — ทำลาย rapidly dividing cells ใน intestinal crypts + bone marrow</p>
+        <ul>
+          <li>เจอบ่อยใน <strong>puppies 6 wk - 6 mo</strong> ที่ยังไม่ได้ vaccine ครบ</li>
+          <li>Mortality 10-30% ถ้าได้รับการรักษาทันท่วงที, &gt; 90% ถ้าไม่รักษา</li>
+          <li>เจอใน Thailand ทั่วไป — endemic</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Pathogen:</strong> CPV-2 (variants 2a, 2b, 2c) — non-enveloped DNA virus, <strong>extremely environmentally stable</strong> (months-years)</p>
+        <p><strong>Transmission:</strong></p>
+        <ul>
+          <li>Fecal-oral (direct or fomite)</li>
+          <li>Survives in environment คงทนมาก</li>
+          <li>Incubation 3-14 d (typically 4-7)</li>
+        </ul>
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li>Age 6 wk - 6 mo (maternal Ab wanes)</li>
+          <li>Incomplete vaccination series</li>
+          <li>Breed predisposition: <strong>Rottweiler, Doberman, German Shepherd, English Springer, Lab, Pit Bull</strong></li>
+          <li>Stress, parasitism, multi-dog environment</li>
+          <li>Concurrent enteric infection</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Virus targets <strong>rapidly dividing cells</strong>:
+            <ul>
+              <li>Intestinal crypt epithelium → villous atrophy → severe enteritis</li>
+              <li>Bone marrow → severe leukopenia (esp. neutropenia)</li>
+              <li>Lymphoid tissue → immunosuppression</li>
+              <li>Cardiac myocytes (very young pups) → myocarditis (rare now due to maternal Ab)</li>
+            </ul>
+          </li>
+          <li>Loss of intestinal barrier → <strong>bacterial translocation</strong> → sepsis / endotoxemia ✗</li>
+          <li>Severe protein/fluid loss → hypoalbuminemia, dehydration, hypovolemic shock</li>
+          <li>Hypoglycemia common (small pups, sepsis)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Lethargy, anorexia, fever</strong> first 24-48h (sometimes hypothermia later — sepsis)</li>
+          <li>Vomiting — often <strong>severe + persistent</strong></li>
+          <li><strong>Hemorrhagic diarrhea</strong> ✨ — frank red, foul-smelling, classic</li>
+          <li>Severe dehydration, prolonged CRT, weak pulses</li>
+          <li>Abdominal pain</li>
+          <li>± Hypoglycemia signs (weakness, seizures)</li>
+          <li>Septic shock signs (severe — pale/injected MM, hypotension, cold extremities)</li>
+          <li>Diarrhea may be absent first 24-48h — <strong>vomiting + leukopenia + signalment</strong> → suspect</li>
+          <li>Death within 48-72h if untreated</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Fecal antigen ELISA (SNAP) — primary test ✨</strong></p>
+        <ul>
+          <li>In-clinic, 8-10 min</li>
+          <li>Sensitivity ~ 80-90%</li>
+          <li>Specificity high</li>
+          <li>False negative: early disease (before viral shedding peaks), late disease (post-shedding)</li>
+          <li>False positive (weak): vaccination within 5-15 d (vaccine virus shed transiently)</li>
+        </ul>
+        <p><strong>CBC:</strong></p>
+        <ul>
+          <li><strong>Severe leukopenia / neutropenia</strong> ✨ — hallmark; WBC often &lt; 2000/µL</li>
+          <li>Lymphopenia early</li>
+          <li>± Anemia (chronic blood loss)</li>
+        </ul>
+        <p><strong>Biochem:</strong></p>
+        <ul>
+          <li>Hypoglycemia (sepsis, very young)</li>
+          <li>Hypoalbuminemia (PLE)</li>
+          <li>Hyponatremia, hypokalemia, hypochloremia</li>
+          <li>Pre-renal azotemia</li>
+          <li>↑ Lactate (sepsis)</li>
+        </ul>
+        <p><strong>Confirm cases:</strong> PCR (more sensitive, useful when ELISA equivocal)</p>
+        <p><strong>Coag:</strong> consider DIC screening in severe cases</p>
+        <p><strong>Rule out:</strong> Giardia, ascarids, intussusception (parvo predisposes!), distemper, hemorrhagic gastroenteritis</p>
+      `,
+      differential: `
+        <ul>
+          <li>Hemorrhagic gastroenteritis / AHDS</li>
+          <li>Distemper (multisystemic — neuro, respiratory)</li>
+          <li>Coronavirus enteritis (milder usually)</li>
+          <li>Severe parasitism (hookworms, Giardia)</li>
+          <li>Foreign body / intussusception</li>
+          <li>Salmonellosis</li>
+          <li>Toxin (ethylene glycol)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Hospitalization + intensive supportive care — no specific antiviral</strong></p>
+
+        <p><strong>1. Isolation ✨</strong></p>
+        <ul>
+          <li>Strict isolation ward</li>
+          <li>Dedicated equipment, PPE</li>
+          <li>Foot baths, bleach 1:32 for environment</li>
+          <li>Stool isolation for staff</li>
+        </ul>
+
+        <p><strong>2. Aggressive IV fluid therapy:</strong></p>
+        <ul>
+          <li>Bolus 10-20 mL/kg LRS or Plasmalyte until perfusion restored</li>
+          <li>Maintenance + replacement of deficit + ongoing losses</li>
+          <li>Add 20-40 mEq/L KCl (replace as supplement once urinating)</li>
+          <li>Add 2.5-5% dextrose if hypoglycemic</li>
+          <li>Monitor weight, BP, urine output, electrolytes q12h</li>
+        </ul>
+
+        <p><strong>3. Antibiotics — broad-spectrum IV ✨</strong></p>
+        <ul>
+          <li>Bacterial translocation + neutropenia → sepsis risk high</li>
+          <li><strong>Ampicillin 22 mg/kg IV q6-8h + enrofloxacin 5 mg/kg IV q24h</strong> ✨
+            <ul>
+              <li>Caution: enrofloxacin in puppies &lt; 28 wk — cartilage; ใช้เฉพาะ severe sepsis</li>
+              <li>Alternative: ampicillin + gentamicin (only when well-hydrated, no AKI)</li>
+              <li>Or amoxi-clav + metronidazole</li>
+            </ul>
+          </li>
+          <li>Continue until WBC normalizes + clinical improvement</li>
+        </ul>
+
+        <p><strong>4. Antiemetics (essential for early enteral nutrition):</strong></p>
+        <ul>
+          <li><strong>Maropitant 1 mg/kg SC/IV q24h</strong> ✨ (over 5 min if IV)</li>
+          <li>Ondansetron 0.5-1 mg/kg IV q8-12h — combine ได้</li>
+          <li>Metoclopramide CRI 1-2 mg/kg/day — adjunct</li>
+        </ul>
+
+        <p><strong>5. Pain management:</strong></p>
+        <ul>
+          <li>Buprenorphine 0.02 mg/kg IV/IM q6-8h</li>
+          <li>Avoid NSAIDs ✗</li>
+        </ul>
+
+        <p><strong>6. Plasma / colloid (severe hypoalbuminemia):</strong></p>
+        <ul>
+          <li>FFP 10-20 mL/kg ถ้า albumin &lt; 1.5-2.0 g/dL หรือ DIC</li>
+          <li>Hetastarch alternative (but affects platelet function)</li>
+          <li>Human serum albumin — if available</li>
+        </ul>
+
+        <p><strong>7. Early enteral nutrition ✨</strong></p>
+        <ul>
+          <li><strong>Start within 12-24h</strong> (don't wait for vomiting to stop completely)</li>
+          <li>Improves survival, ↓ time to recovery, ↓ bacterial translocation</li>
+          <li>Small frequent meals — bland diet</li>
+          <li>Naso-esophageal tube ถ้ายังไม่กิน</li>
+        </ul>
+
+        <p><strong>8. Monitor:</strong></p>
+        <ul>
+          <li>CBC daily — WBC trending up = recovery</li>
+          <li>Glucose q6-12h</li>
+          <li>Electrolytes q12h</li>
+          <li>Vital signs q4-6h</li>
+          <li>Watch for intussusception (acute deterioration after improvement!)</li>
+        </ul>
+
+        <p><strong>Outpatient management — if owner cannot afford hospitalization:</strong></p>
+        <ul>
+          <li>Less ideal but better than nothing</li>
+          <li>SC fluids 60-100 mL/kg/day divided</li>
+          <li>Maropitant SC q24h</li>
+          <li>Antibiotics: amoxi-clav PO if tolerated</li>
+          <li>Recheck daily</li>
+          <li>Survival rate lower but possible (50-70%)</li>
+        </ul>
+
+        <p><strong>Prevention:</strong></p>
+        <ul>
+          <li>Core vaccination: DHPP เริ่ม 6-8 wk → q3-4 wk จน 16+ wk → booster 1 ปี → q3 ปี</li>
+          <li>High-risk breeds: extend last vaccine to 18-20 wk</li>
+          <li>Avoid public dog areas until 1 wk post-final puppy vaccine</li>
+          <li>Environmental hygiene</li>
+          <li>Recovered dogs immune for life</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Sepsis / endotoxemia</strong> ✗</li>
+          <li>Severe dehydration / hypovolemic shock</li>
+          <li>DIC</li>
+          <li>Hypoglycemia (very young / sepsis)</li>
+          <li><strong>Intussusception</strong> — important complication; acute deterioration after improvement; rad/US confirms</li>
+          <li>Aspiration pneumonia</li>
+          <li>Esophagitis from severe vomiting</li>
+          <li>Hypoproteinemia / edema</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Aggressive in-hospital treatment: <strong>70-90% survival</strong> ✨</li>
+          <li>Outpatient care: 50-70%</li>
+          <li>Untreated: &gt; 90% mortality</li>
+          <li>Survive first 4 days → typically recover</li>
+          <li>Younger pups (&lt; 12 wk) + smaller size = worse</li>
+          <li>Severe leukopenia + hypoalbuminemia + hypoglycemia = worse</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 31 · Acute SI Diarrhea ---------- */
+  {
+    id: 'acute-si-diarrhea',
+    titleEn: 'Acute Small Intestinal Diarrhea',
+    titleTh: 'ท้องเสียเฉียบพลัน — SI',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['acute diarrhea', 'enteritis', 'AHDS', 'HGE', 'parasites', 'Giardia', 'dietary indiscretion', 'parvo'],
+    aliases: ['acute diarrhea', 'enteritis', 'AHDS', 'HGE', 'ท้องเสีย'],
+    source: 'Ch. 31 · pp. 488–491',
+    sections: {
+      definition: `
+        <p>ท้องเสียเฉียบพลัน &lt; 14 วัน — เคสที่เจอในคลินิกบ่อยมาก</p>
+        <ul>
+          <li>SI pattern: ↑ volume, ↓ frequency (3-5/day), no urgency, may have melena, weight loss</li>
+          <li>ส่วนใหญ่ self-limiting; แต่ต้องคัดแยก serious cases</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common (mild):</strong></p>
+        <ul>
+          <li><strong>Dietary indiscretion</strong> — กินขยะ, เปลี่ยนอาหาร, treats, food intolerance</li>
+          <li>Stress (boarding, travel)</li>
+          <li>Parasites: <strong>Giardia</strong> ✨, ascarids, hookworms, whipworms (LI but can present as mixed), coccidia (puppy/kitten)</li>
+          <li>Mild dysbiosis</li>
+        </ul>
+        <p><strong>Infectious:</strong></p>
+        <ul>
+          <li><strong>CPV-2</strong> (puppy) ✗ — see entry</li>
+          <li>FPV (feline panleukopenia)</li>
+          <li>Coronavirus (mild)</li>
+          <li>Bacterial: Salmonella, Campylobacter, Clostridium perfringens / difficile, E. coli</li>
+          <li>Protozoa: Cryptosporidium, Tritrichomonas (cat — mostly LI), Giardia</li>
+        </ul>
+        <p><strong>AHDS (Acute Hemorrhagic Diarrhea Syndrome):</strong></p>
+        <ul>
+          <li>Previously called HGE</li>
+          <li>Sudden severe bloody diarrhea ("raspberry jam") + vomiting + ↑ PCV (hemoconcentration) ✨</li>
+          <li>Small breeds over-represented (Schnauzer, Yorkie, Maltese)</li>
+          <li>Likely Clostridium perfringens netF toxin</li>
+          <li>Typically afebrile (vs sepsis)</li>
+        </ul>
+        <p><strong>Toxins/Drugs:</strong></p>
+        <ul>
+          <li>NSAIDs, antibiotics</li>
+          <li>Mushrooms, plants</li>
+          <li>Heavy metals</li>
+        </ul>
+        <p><strong>Don't miss:</strong></p>
+        <ul>
+          <li>Foreign body / intussusception</li>
+          <li>Addison's</li>
+          <li>Pancreatitis</li>
+          <li>Sepsis from non-GI source</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mucosal damage / inflammation → ↑ permeability + ↓ absorption + ↑ secretion</li>
+          <li>Osmotic + secretory + inflammatory components</li>
+          <li>Fluid/electrolyte loss → dehydration, acid-base disturbance (typically metabolic acidosis)</li>
+          <li>AHDS: severe mucosal damage → fluid + protein + RBC loss; PCV ↑ from disproportionate fluid loss</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Loose to liquid stool, ↑ volume</li>
+          <li>± Hematochezia (frank blood) or melena</li>
+          <li>± Vomiting concurrent</li>
+          <li>± Anorexia, lethargy</li>
+          <li>Dehydration variable</li>
+          <li>Abdominal discomfort</li>
+          <li>Weight loss (acute)</li>
+          <li>AHDS: severe distress, dramatic bloody diarrhea, ↑ PCV</li>
+          <li>Severe / sepsis: fever (or hypothermia), prolonged CRT, weak pulses, collapse</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Mild self-limiting case:</strong></p>
+        <ul>
+          <li>Minimal workup — history + PE + fecal direct/flotation</li>
+          <li>Empirical treatment, recheck if persistent</li>
+        </ul>
+        <p><strong>Workup เมื่อ:</strong> persistent &gt; 24-48h, severe signs, puppy/kitten, geriatric, immunocompromised</p>
+        <ul>
+          <li><strong>Fecal exam (3 specimens):</strong> direct smear, flotation, Giardia ELISA</li>
+          <li><strong>Parvo SNAP</strong> ใน puppy with bloody diarrhea ✨</li>
+          <li>CBC: WBC (leukocytosis vs leukopenia of parvo), PCV (↑ in AHDS)</li>
+          <li>Biochem, electrolytes, lactate</li>
+          <li>Resting cortisol → ACTH stim if Addison's suspected</li>
+          <li>Abdominal rad ± US if obstruction / mass suspected</li>
+          <li>cPL/fPL ถ้า pancreatitis suspected</li>
+          <li>Stool PCR panel — outbreaks, refractory cases</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology + Clinical Manifestations entry</p>`,
+      treatment: `
+        <p><strong>Mild self-limiting (outpatient):</strong></p>
+        <ul>
+          <li>Bland diet × 3-5 d (chicken + rice / GI prescription)</li>
+          <li>Small frequent meals</li>
+          <li>SQ fluids if mild dehydration (LRS 30-50 mL/kg)</li>
+          <li>Probiotics (S. boulardii, FortiFlora, ProViable)</li>
+          <li>Fiber supplement (psyllium 1-2 tsp per meal) — soft stool</li>
+          <li>Deworming (pyrantel ± fenbendazole 50 mg/kg PO q24h × 3 d) — empirical</li>
+          <li>Maropitant 1 mg/kg SC q24h ถ้ามี vomiting concurrent</li>
+          <li>Recheck if no improvement 24-48h</li>
+        </ul>
+
+        <p><strong>Giardia treatment:</strong></p>
+        <ul>
+          <li>Fenbendazole 50 mg/kg PO q24h × 5 days (preferred — works well in cats too) ✨</li>
+          <li>Metronidazole 25 mg/kg PO q12h × 5-7 days (alternative)</li>
+          <li>Combine with bath (chlorhexidine) — environmental decontamination</li>
+          <li>Treat all dogs/cats in household</li>
+          <li>Recheck fecal 2-4 wk post-treatment</li>
+        </ul>
+
+        <p><strong>Moderate-severe (hospitalized):</strong></p>
+        <ul>
+          <li>IV fluids — replace deficit + maintain</li>
+          <li>Antiemetic (maropitant ± ondansetron)</li>
+          <li>Pain management ถ้าจำเป็น (buprenorphine; avoid full mu opioids — ileus risk)</li>
+          <li>Monitor electrolytes, hydration, urine output</li>
+        </ul>
+
+        <p><strong>AHDS specific:</strong></p>
+        <ul>
+          <li>Aggressive IV fluids — correct hemoconcentration</li>
+          <li>Antiemetics</li>
+          <li>Antibiotics — debated;  metronidazole or amoxicillin only ถ้ามี signs of sepsis (fever, leukocytosis with left shift, hypotension); recent literature suggests withholding AB ในเคส uncomplicated</li>
+          <li>Most respond rapidly to fluid therapy</li>
+        </ul>
+
+        <p><strong>Antibiotics — selective use:</strong></p>
+        <ul>
+          <li>Indications:
+            <ul>
+              <li>Documented bacterial infection (culture)</li>
+              <li>Severe sepsis/systemic illness</li>
+              <li>Neutropenia + GI disease</li>
+              <li>Significant melena</li>
+            </ul>
+          </li>
+          <li>Choices: metronidazole 10-15 mg/kg PO q12h, amoxi-clav, doxycycline</li>
+          <li><strong>Routine antibiotics for acute diarrhea = NOT recommended</strong> ✗ — disrupts microbiome</li>
+        </ul>
+
+        <p><strong>Avoid:</strong></p>
+        <ul>
+          <li>Antimotility drugs (loperamide) — prolong infectious enteritis; avoid in dogs &lt; 20 kg, never in cats, never with bloody diarrhea or fever</li>
+          <li>NSAIDs</li>
+          <li>Steroids (unless Addison's)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe dehydration → hypovolemic shock</li>
+          <li>Electrolyte imbalance</li>
+          <li>Sepsis (rare with prompt treatment)</li>
+          <li>Intussusception (esp. parvo, severe enteritis)</li>
+          <li>Chronic diarrhea (post-acute syndrome)</li>
+          <li>Missed Addison's, FB, intussusception</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild self-limiting: <strong>excellent</strong> — recover 2-5 d</li>
+          <li>AHDS with prompt treatment: good</li>
+          <li>Severe sepsis: variable</li>
+          <li>Underlying serious cause: depends</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 31 · Chronic Enteropathy / IBD ---------- */
+  {
+    id: 'chronic-enteropathy-ibd',
+    titleEn: 'Chronic Enteropathy / IBD',
+    titleTh: 'ลำไส้อักเสบเรื้อรัง / IBD',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['IBD', 'chronic enteropathy', 'lymphoplasmacytic enteritis', 'food-responsive', 'antibiotic-responsive', 'steroid-responsive', 'budesonide', 'novel protein', 'hydrolyzed diet'],
+    aliases: ['IBD', 'chronic enteropathy', 'CE', 'ลำไส้อักเสบเรื้อรัง', 'lymphoplasmacytic enteritis'],
+    source: 'Ch. 31 · pp. 511–515',
+    sections: {
+      definition: `
+        <p>Chronic GI signs (vomiting, diarrhea, weight loss) &gt; 3 wk ที่ไม่มี extra-GI cause หรือ neoplasia</p>
+        <ul>
+          <li>แบ่งตาม <strong>response to therapy</strong> (modern classification): ✨
+            <ul>
+              <li><strong>FRE</strong> (food-responsive enteropathy) — ~ 50-60%</li>
+              <li><strong>ARE</strong> (antibiotic-responsive enteropathy / dysbiosis)</li>
+              <li><strong>IRE / IBD</strong> (immunosuppressant-responsive)</li>
+              <li><strong>NRE</strong> (non-responsive enteropathy) — refractory</li>
+            </ul>
+          </li>
+          <li><strong>Lymphoplasmacytic enteritis</strong> = histologic finding (most common); not a final diagnosis itself</li>
+          <li>Cat: เจอบ่อยมาก — แยกจาก low-grade lymphoma ยาก ✗</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Multifactorial:</strong></p>
+        <ul>
+          <li>Genetic susceptibility (German Shepherd, Boxer, Yorkie, French Bulldog, Soft-coated Wheaten — PLE/PLN)</li>
+          <li>Dietary antigens / food allergy</li>
+          <li>Dysbiosis (microbiome imbalance)</li>
+          <li>Immune dysregulation</li>
+          <li>Environmental triggers</li>
+        </ul>
+        <p><strong>Histologic patterns:</strong></p>
+        <ul>
+          <li>Lymphoplasmacytic (most common)</li>
+          <li>Eosinophilic</li>
+          <li>Granulomatous (Boxer/French Bulldog histiocytic ulcerative colitis)</li>
+          <li>Neutrophilic (uncommon, suggest infection)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Loss of immune tolerance to luminal antigens (dietary, microbial)</li>
+          <li>Dysregulated mucosal immune response → chronic inflammation</li>
+          <li>Villous atrophy, crypt hyperplasia, ↑ permeability</li>
+          <li>Malabsorption + protein loss → hypoalbuminemia (severe form = PLE)</li>
+          <li>Cobalamin malabsorption (ileal disease)</li>
+          <li>Secondary lipogranulomatous lymphangitis → lymphangiectasia</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic vomiting</strong> (esp. cats — "hairball" frequent ✨)</li>
+          <li><strong>Chronic diarrhea</strong> (SI, LI, mixed)</li>
+          <li>Weight loss</li>
+          <li>↓ Appetite or polyphagia (variable)</li>
+          <li>Borborygmi, flatulence</li>
+          <li>Occasional acute exacerbations</li>
+          <li>Dull coat (cat)</li>
+          <li>Lethargy variable</li>
+          <li>Severe / PLE: ascites, peripheral edema, pleural effusion</li>
+          <li>Cat senior + chronic vomiting + weight loss = <strong>must rule out lymphoma + IBD + hyperthyroid + CKD + pancreatitis ("triaditis")</strong></li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis of exclusion + therapeutic response trial</strong></p>
+        <p><strong>Tier 1 (rule out extra-GI):</strong></p>
+        <ul>
+          <li>CBC, biochem, UA, T4 (cat), fecal × 2-3</li>
+          <li>FeLV/FIV (cat)</li>
+          <li>cPL/fPL — pancreatitis</li>
+          <li>Bile acids — hepatic</li>
+          <li>Resting cortisol / ACTH stim — Addison's</li>
+        </ul>
+        <p><strong>Tier 2 — GI-specific:</strong></p>
+        <ul>
+          <li><strong>Cobalamin (B12):</strong> low → supplement (1000 µg/dog SC weekly × 6, then monthly; cat 250 µg SC)</li>
+          <li><strong>Folate:</strong> low (proximal SI), high (dysbiosis)</li>
+          <li>Abdominal US — wall thickness, layering, lymph nodes, mass; bowel wall &gt; 3.5 mm (cat) suspicious</li>
+          <li>FNA mesenteric lymph node — neoplasia screen</li>
+        </ul>
+        <p><strong>Tier 3 — Endoscopy + biopsy ✨</strong></p>
+        <ul>
+          <li>EGD: stomach, duodenum (cat: terminal ileum often reachable)</li>
+          <li>Biopsy ≥ 6-10 sites per region</li>
+          <li>Concurrent colonoscopy if LI signs</li>
+          <li>WSAVA standardized grading (mild → severe inflammation)</li>
+          <li>If biopsies non-diagnostic / suspect lymphoma:
+            <ul>
+              <li>Immunohistochemistry (CD3, CD20)</li>
+              <li>PARR (PCR for antigen receptor rearrangement) — clonality</li>
+              <li>Full-thickness biopsy via laparotomy (better for transmural disease, lymphoma diagnosis)</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Severity scoring (CIBDAI / FCEAI):</strong> objective measure for clinical trials, response monitoring</p>
+      `,
+      differential: `
+        <ul>
+          <li>Parasites (Giardia, hookworms, Tritrichomonas)</li>
+          <li>EPI (low TLI)</li>
+          <li>Hyperthyroidism (cat senior)</li>
+          <li>Addison's (atypical)</li>
+          <li><strong>Alimentary lymphoma</strong> ✨ — esp. cat; difficult to differentiate from severe IBD</li>
+          <li>Adenocarcinoma</li>
+          <li>Chronic pancreatitis</li>
+          <li>Hepatic disease</li>
+          <li>FIP (effusive form)</li>
+          <li>Histiocytic ulcerative colitis (Boxer)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Stepwise approach — start simplest, escalate:</strong></p>
+
+        <p><strong>Step 1: Anthelmintic + Cobalamin</strong></p>
+        <ul>
+          <li>Empirical fenbendazole 50 mg/kg PO q24h × 3-5 days</li>
+          <li>Cobalamin supplementation if low ✨</li>
+        </ul>
+
+        <p><strong>Step 2: Diet trial (FRE) — 2-4 wk minimum ✨</strong></p>
+        <ul>
+          <li>Choose ONE:
+            <ul>
+              <li><strong>Hydrolyzed protein</strong> — Royal Canin Hypoallergenic, Hill's z/d, Purina HA</li>
+              <li><strong>Novel protein</strong> — venison, duck, rabbit (proteins not previously eaten)</li>
+              <li>GI prescription diet (highly digestible, moderate fat) — first option for many</li>
+            </ul>
+          </li>
+          <li><strong>Strict adherence</strong> — no treats, table food, flavored medication ✨</li>
+          <li>Many improve within 1-2 weeks</li>
+          <li>Continue successful diet long-term</li>
+          <li>FRE = ~ 50-60% of CE</li>
+        </ul>
+
+        <p><strong>Step 3: Antibiotic trial (ARE) — if diet trial fails</strong></p>
+        <ul>
+          <li>Tylosin 10-20 mg/kg PO q12-24h × 4-6 wk</li>
+          <li>Or metronidazole 10-15 mg/kg PO q12h × 4-6 wk</li>
+          <li>If responds — may need long-term low-dose</li>
+          <li>Increasingly recognized as <em>dysbiosis</em> — probiotics may help (less evidence than antibiotics)</li>
+        </ul>
+
+        <p><strong>Step 4: Immunosuppression (IRE / IBD) — biopsy preferred before this step</strong></p>
+        <ul>
+          <li><strong>Prednisone (dog) / Prednisolone (cat) 1-2 mg/kg PO q12h × 2-3 wk</strong>, then taper over 8-12 wk to lowest effective dose</li>
+          <li><strong>Budesonide 1-3 mg/dog PO q24h</strong> — locally active steroid; good for cats with DM, dogs needing long-term ✨</li>
+          <li>Monitor for steroid side effects (PU/PD, weight gain, DM, infections)</li>
+        </ul>
+
+        <p><strong>Step 5: Refractory IBD — add second immunosuppressant</strong></p>
+        <ul>
+          <li><strong>Cyclosporine 5 mg/kg PO q12h initially</strong>, then q24h
+            <ul>
+              <li>Refractory dog cases; some cats</li>
+              <li>Monitor LFT</li>
+            </ul>
+          </li>
+          <li>Chlorambucil 2 mg/cat PO q48h (cat lymphoma / refractory IBD) ✨</li>
+          <li>Azathioprine 2 mg/kg PO q24h × 7-14d, then q48h (dog only — toxic in cats)</li>
+          <li>Mycophenolate 10-20 mg/kg PO q12h</li>
+        </ul>
+
+        <p><strong>Adjunctive:</strong></p>
+        <ul>
+          <li>Cobalamin supplementation (essential, often life-long)</li>
+          <li>Probiotics (S. boulardii, multi-strain)</li>
+          <li>Soluble fiber (psyllium 1-3 tsp/day)</li>
+          <li>Omega-3 fatty acids (anti-inflammatory)</li>
+          <li>Anti-emetics PRN (maropitant)</li>
+          <li>Treat concurrent diseases (hyperthyroid, pancreatitis, CKD)</li>
+        </ul>
+
+        <p><strong>Cat low-grade alimentary lymphoma (LGAL):</strong></p>
+        <ul>
+          <li>Difficult to differentiate from severe IBD</li>
+          <li>Treatment: <strong>chlorambucil 2 mg/cat PO q48h + prednisolone 1-2 mg/kg PO q24h</strong></li>
+          <li>MST 1.5-3 years — much better than high-grade lymphoma!</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical response (weight, BCS, stool quality, vomiting frequency)</li>
+          <li>CIBDAI / FCEAI scoring</li>
+          <li>Recheck albumin, CBC, biochem q4-12 wk</li>
+          <li>Cobalamin recheck 1-2 mo post-supplementation</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Hypoalbuminemia / PLE (severe IBD, lymphangiectasia)</li>
+          <li>Cobalamin deficiency</li>
+          <li>Lymphoma development (debated transformation from severe IBD)</li>
+          <li>Steroid side effects (DM cat, infections, muscle wasting)</li>
+          <li>Refractory disease</li>
+          <li>Cachexia, malnutrition</li>
+          <li>Quality of life concerns</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>FRE: <strong>excellent</strong> — long-term diet management</li>
+          <li>ARE: good with periodic antibiotic courses</li>
+          <li>IRE / IBD: good-to-fair; most achieve good control</li>
+          <li>NRE / refractory: guarded</li>
+          <li>Severe PLE form: guarded — albumin &lt; 2.0 = poor prognosis</li>
+          <li>Cat LGAL with chlorambucil: <strong>good</strong> — MST 1.5-3 yr</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 31 · PLE / Lymphangiectasia ---------- */
+  {
+    id: 'ple-lymphangiectasia',
+    titleEn: 'Protein-Losing Enteropathy &amp; Lymphangiectasia',
+    titleTh: 'PLE — โปรตีนรั่วทางลำไส้',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['PLE', 'lymphangiectasia', 'hypoalbuminemia', 'ascites', 'edema', 'Yorkie', 'Soft-coated Wheaten', 'low-fat diet', 'budesonide'],
+    aliases: ['PLE', 'protein-losing enteropathy', 'lymphangiectasia', 'โปรตีนรั่วลำไส้'],
+    source: 'Ch. 31 · pp. 512–515',
+    sections: {
+      definition: `
+        <p>การสูญเสีย <strong>plasma protein (albumin + globulin)</strong> ผ่าน intestinal mucosa → hypoalbuminemia → ascites/edema</p>
+        <ul>
+          <li>ไม่ใช่ disease เดี่ยว — เป็น syndrome ของหลายโรค</li>
+          <li><strong>Lymphangiectasia</strong> = สาเหตุที่เจอบ่อยที่สุด — lymphatic dilation/leakage</li>
+          <li>Severe form ของ chronic enteropathy</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Lymphangiectasia (most common):</strong></p>
+        <ul>
+          <li><strong>Primary (idiopathic):</strong>
+            <ul>
+              <li>Yorkshire Terrier ✨</li>
+              <li>Soft-coated Wheaten Terrier (combined PLE + PLN)</li>
+              <li>Maltese, Norwegian Lundehund, Rottweiler</li>
+              <li>Lhasa Apso</li>
+            </ul>
+          </li>
+          <li><strong>Secondary:</strong> any cause of ↑ lymphatic pressure
+            <ul>
+              <li>Lipogranulomatous lymphangitis (severe IBD)</li>
+              <li>Right CHF</li>
+              <li>Pericardial disease</li>
+              <li>Cranial vena cava obstruction</li>
+              <li>Mesenteric mass / lymphadenopathy</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Other causes of PLE:</strong></p>
+        <ul>
+          <li>Severe IBD (lymphoplasmacytic enteritis)</li>
+          <li>Alimentary lymphoma</li>
+          <li>Adenocarcinoma</li>
+          <li>Histoplasmosis (endemic areas)</li>
+          <li>Severe parasitism (hookworms — puppies/kittens)</li>
+          <li>Intestinal ulceration / hemorrhage</li>
+          <li>Chronic intussusception</li>
+          <li>Phycomycosis (Pythiosis — tropical)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <p><strong>Lymphangiectasia:</strong></p>
+        <ul>
+          <li>Dilated mucosal/submucosal lymphatics</li>
+          <li>Rupture → leakage of <strong>protein, lymphocytes, lipids</strong> into intestinal lumen</li>
+          <li>↑ Pressure from obstruction or primary defect</li>
+          <li>Loss of both albumin AND globulin (panhypoproteinemia) ✨</li>
+          <li>Loss of lymphocytes → lymphopenia</li>
+          <li>Loss of fat-soluble vitamins, fats → steatorrhea, hypocalcemia, hypocholesterolemia</li>
+          <li>Hypoalbuminemia → ↓ oncotic pressure → ascites, peripheral edema, pleural effusion</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic intermittent diarrhea</strong> (sometimes absent ✗ — diagnosis missed)</li>
+          <li>Weight loss / muscle wasting</li>
+          <li><strong>Abdominal distension (ascites)</strong> ✨</li>
+          <li>Peripheral edema (ventral abdomen, distal limbs)</li>
+          <li>Pleural effusion → tachypnea, dyspnea (severe)</li>
+          <li>Lethargy, exercise intolerance</li>
+          <li>Variable appetite (often preserved!)</li>
+          <li>Vomiting (variable)</li>
+          <li>Steatorrhea (greasy, pale stool)</li>
+          <li>Thromboembolism (loss of antithrombin) — rare but devastating ✗</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab findings (classic triad):</strong></p>
+        <ul>
+          <li><strong>Panhypoproteinemia</strong> — ↓ albumin AND ↓ globulin ✨ (vs PLN where only albumin low)</li>
+          <li><strong>Hypocholesterolemia</strong> ✨</li>
+          <li><strong>Lymphopenia</strong> ✨</li>
+          <li>± Hypocalcemia (ionized + total — vit D + albumin loss)</li>
+          <li>↓ Magnesium</li>
+          <li>↓ Cobalamin (often)</li>
+          <li>Iron deficiency anemia (chronic blood loss)</li>
+        </ul>
+        <p><strong>Rule out other causes of hypoalbuminemia first:</strong></p>
+        <ul>
+          <li>Hepatic insufficiency (bile acids, BUN)</li>
+          <li>PLN (UPC ratio &gt; 0.5)</li>
+          <li>Severe burns / vasculitis</li>
+          <li>Malabsorption / EPI (TLI)</li>
+        </ul>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Abdominal US: hyperechoic mucosal striations ✨ ("white lines"); thickened wall; mesenteric lymphadenopathy</li>
+          <li>Ascites — paracentesis (modified transudate)</li>
+          <li>Thoracic rad if dyspnea — pleural effusion</li>
+        </ul>
+        <p><strong>Endoscopy + biopsy ✨:</strong></p>
+        <ul>
+          <li><strong>White punctate mucosal spots ("snow-capped villi")</strong> ✨ — pathognomonic-like</li>
+          <li>Multiple deep biopsies (mucosa to submucosa)</li>
+          <li>Histopath: dilated lacteals + chronic inflammation</li>
+          <li>Differentiate IBD, lymphoma, granulomatous disease</li>
+        </ul>
+        <p><strong>Cobalamin, folate</strong> — supplementation needs</p>
+      `,
+      differential: `
+        <ul>
+          <li>Hepatic insufficiency (panhypoproteinemia + ↓ BUN + ↑ bile acids)</li>
+          <li>PLN (proteinuria — albumin loss only)</li>
+          <li>Combined PLE + PLN (Soft-coated Wheaten)</li>
+          <li>Severe systemic disease / vasculitis</li>
+          <li>Severe burns</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Diet — cornerstone ✨</strong></p>
+        <ul>
+          <li><strong>Ultra low-fat, highly digestible diet</strong> — &lt; 20 g fat / 1000 kcal ME ✨
+            <ul>
+              <li>Royal Canin Gastrointestinal Low Fat</li>
+              <li>Hill's i/d Low Fat</li>
+              <li>Purina EN Low Fat</li>
+              <li>Home-cooked: chicken/fish + rice/sweet potato (consult nutritionist)</li>
+            </ul>
+          </li>
+          <li>Hydrolyzed protein diet — alternative if food-responsive component</li>
+          <li>Strict adherence — no treats, table food</li>
+          <li>Often dramatic improvement with diet alone in lymphangiectasia</li>
+          <li>MCT oil supplementation — bypasses lymphatic absorption (controversial — still requires lymphatics in dogs unlike humans)</li>
+        </ul>
+
+        <p><strong>2. Immunosuppression (concurrent IBD):</strong></p>
+        <ul>
+          <li><strong>Prednisone 1-2 mg/kg PO q12h × 2-3 wk</strong>, then taper over 8-12 wk</li>
+          <li><strong>Budesonide 1-3 mg/dog PO q24h</strong> ✨ — preferred for many; locally active, ↓ systemic effects</li>
+          <li>Cyclosporine 5 mg/kg PO q12h — refractory cases or steroid-sparing</li>
+          <li>Chlorambucil 2-4 mg/m² PO q24-48h — refractory or lymphoma diagnosis</li>
+        </ul>
+
+        <p><strong>3. Cobalamin supplementation (essential):</strong></p>
+        <ul>
+          <li>Dog: 250-1500 µg SC weekly × 6 wk, then monthly (lifelong)</li>
+          <li>Cat: 250 µg SC weekly × 6 wk, then monthly</li>
+          <li>Or oral cobalamin 1 mg PO q24h (some evidence equivalent)</li>
+        </ul>
+
+        <p><strong>4. Manage ascites/effusion:</strong></p>
+        <ul>
+          <li>Therapeutic abdominocentesis if respiratory compromise / discomfort</li>
+          <li>Avoid aggressive diuresis (worsens hypovolemia)</li>
+          <li>Spironolactone 1-2 mg/kg PO q12h — gentle</li>
+          <li>Plasma transfusion only for severe symptomatic hypoalbuminemia (&lt; 1.5) or surgery — short-lived effect</li>
+        </ul>
+
+        <p><strong>5. Antithrombotic — risk of thromboembolism:</strong></p>
+        <ul>
+          <li>Clopidogrel 1-2 mg/kg PO q24h — consider in severe hypoalbuminemia</li>
+          <li>Rivaroxaban — alternative</li>
+        </ul>
+
+        <p><strong>6. Adjunctive:</strong></p>
+        <ul>
+          <li>Probiotics</li>
+          <li>Vitamin D supplementation (severe loss)</li>
+          <li>Calcium gluconate IV if symptomatic hypocalcemia</li>
+          <li>Iron supplementation if iron-deficiency anemia</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Albumin q2-4 wk initially → trend up = response</li>
+          <li>Body weight, BCS, ascites severity</li>
+          <li>Clinical signs (diarrhea frequency, energy)</li>
+          <li>Cobalamin level periodic</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe hypoalbuminemia + ascites/effusion</li>
+          <li><strong>Thromboembolism</strong> ✗ — antithrombin loss; PE, ATE</li>
+          <li>Hypocalcemic tetany (rare, severe)</li>
+          <li>Steroid side effects (DM, recurrent infection)</li>
+          <li>Refractory disease</li>
+          <li>Lymphoma transformation</li>
+          <li>Cachexia, sarcopenia</li>
+          <li>Death from sepsis (immunosuppressed) or PE</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Variable</strong> — depends on response to dietary + medical management</li>
+          <li>Yorkie idiopathic lymphangiectasia: often good with strict low-fat diet ± steroids — many years</li>
+          <li>Soft-coated Wheaten PLE/PLN: guarded — combined disease, MST 2-5 yr</li>
+          <li>Severe with persistent hypoalbuminemia (&lt; 1.5): poor</li>
+          <li>Albumin trending up after 4-6 wk treatment: good predictor</li>
+          <li>Lymphoma-associated: depends on lymphoma type</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 32 · Acute &amp; Chronic Colitis ---------- */
+  {
+    id: 'colitis',
+    titleEn: 'Colitis (Acute &amp; Chronic)',
+    titleTh: 'ลำไส้ใหญ่อักเสบ',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['colitis', 'large bowel diarrhea', 'tenesmus', 'hematochezia', 'mucus', 'whipworm', 'Tritrichomonas', 'fiber', 'tylosin', 'Boxer histiocytic'],
+    aliases: ['LI diarrhea', 'colitis', 'ลำไส้ใหญ่อักเสบ', 'ท้องเสียมูกเลือด'],
+    source: 'Ch. 32 · pp. 526–533',
+    sections: {
+      definition: `
+        <p>Inflammation ของ colon → diarrhea แบบ <strong>large bowel pattern</strong></p>
+        <ul>
+          <li>LI pattern: ↑ frequency (&gt; 5-10/day), <strong>small volume</strong>, <strong>mucus</strong>, <strong>fresh blood (hematochezia)</strong>, <strong>tenesmus</strong>, urgency</li>
+          <li>เจอบ่อยมากในคลินิก</li>
+          <li>Acute (&lt; 14 d) vs Chronic (&gt; 3 wk)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Acute colitis:</strong></p>
+        <ul>
+          <li>Dietary indiscretion / abrupt diet change</li>
+          <li>Stress (boarding, travel, kenneling)</li>
+          <li>Parasites:
+            <ul>
+              <li><strong>Whipworms (Trichuris vulpis)</strong> ✨ — common cause of chronic LI signs in dogs</li>
+              <li>Giardia (LI signs sometimes)</li>
+              <li>Tritrichomonas foetus (cat LI diarrhea ✨)</li>
+              <li>Coccidia (puppies, kittens)</li>
+              <li>Cryptosporidium</li>
+            </ul>
+          </li>
+          <li>Bacterial: Clostridium perfringens / difficile, Campylobacter, Salmonella</li>
+          <li>Drug-induced (antibiotics)</li>
+          <li>Garbage gut (toxin)</li>
+        </ul>
+        <p><strong>Chronic colitis:</strong></p>
+        <ul>
+          <li><strong>Idiopathic chronic colitis / IBD (LI form)</strong> — lymphoplasmacytic, eosinophilic</li>
+          <li><strong>Histiocytic ulcerative colitis (HUC)</strong> — <strong>Boxer + French Bulldog</strong> ✨ — adherent-invasive E. coli</li>
+          <li>Fiber-responsive colitis</li>
+          <li>Stress colitis (irritable bowel-like)</li>
+          <li>Food-responsive colitis (dietary allergy)</li>
+          <li>Whipworm chronic infection (must rule out!)</li>
+          <li>Neoplasia: lymphoma, adenocarcinoma, polyps</li>
+          <li>Ileocolic intussusception (chronic)</li>
+          <li>Pythium / phycomycosis (tropical, granulomatous mass)</li>
+          <li>Cecal inversion / impaction</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mucosal inflammation → ↓ water absorption + ↑ secretion + ↑ motility</li>
+          <li>↑ Mucus production from goblet cells</li>
+          <li>Surface erosions/ulcers → fresh blood (hematochezia)</li>
+          <li>Inflammation triggers urge / tenesmus</li>
+          <li>Severe: colonic edema, transmural inflammation, stricture (rare)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Frequent small-volume liquid stool</strong> ✨ — &gt; 5-10×/day</li>
+          <li><strong>Mucus</strong> coating stool ✨</li>
+          <li><strong>Fresh red blood (hematochezia)</strong> — bright red, on stool surface ✨</li>
+          <li><strong>Tenesmus (straining)</strong> ✨ — confused with constipation by owners!</li>
+          <li>Urgency, accidents indoors</li>
+          <li>± Mild vomiting</li>
+          <li>Usually <strong>preserved appetite + body condition</strong> (vs SI diarrhea)</li>
+          <li>Weight loss less common (unless severe / chronic)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>History + physical exam (rectal palpation important!)</strong></p>
+        <p><strong>Tier 1:</strong></p>
+        <ul>
+          <li><strong>Fecal × 3 (different days):</strong> direct, flotation, Giardia ELISA, ฺBaermann ถ้าสงสัย parasite</li>
+          <li>Whipworm — egg shedding intermittent — multiple samples ✨</li>
+          <li><strong>Tritrichomonas foetus PCR (cat)</strong> — InPouch culture หรือ feline-specific PCR</li>
+          <li>Empirical fenbendazole 50 mg/kg PO q24h × 3 d (covers whipworm, Giardia)</li>
+        </ul>
+        <p><strong>Tier 2:</strong></p>
+        <ul>
+          <li>CBC, biochem (rule out extra-GI), UA</li>
+          <li>FeLV/FIV (cat), T4</li>
+          <li>Abdominal US — wall thickness, mass, intussusception, lymph nodes</li>
+          <li>Rectal cytology — neoplastic cells, fungal organisms (Pythium, histoplasma — endemic), inflammation type</li>
+        </ul>
+        <p><strong>Tier 3 — Colonoscopy + biopsy ✨</strong></p>
+        <ul>
+          <li>Direct visualization to ileocolic junction</li>
+          <li>Biopsy multiple sites (≥ 6-10)</li>
+          <li>Identify polyps, masses, ulcers</li>
+          <li>Boxer/French Bulldog HUC — characteristic gross + histopath (PAS-positive macrophages) ✨</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Constipation (some owners confuse tenesmus with constipation!)</li>
+          <li>Anal sac disease (similar tenesmus)</li>
+          <li>Perineal hernia</li>
+          <li>Prostatic disease (intact male — prostatitis, abscess, BPH)</li>
+          <li>Rectal stricture / polyp / mass</li>
+          <li>Pelvic mass</li>
+          <li>Cauda equina syndrome</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Acute mild colitis (outpatient):</strong></p>
+        <ul>
+          <li>Bland diet × 3-5 d, then transition to GI prescription / fiber-supplemented diet</li>
+          <li><strong>Soluble fiber: psyllium 1-3 tsp/day mixed in food</strong> ✨ — very effective for fiber-responsive colitis</li>
+          <li>Probiotics (S. boulardii, FortiFlora)</li>
+          <li><strong>Empirical anthelmintic — fenbendazole 50 mg/kg PO q24h × 3-5 d</strong> ✨ (covers whipworm, Giardia)</li>
+          <li>Recheck in 5-7 d if no improvement</li>
+        </ul>
+
+        <p><strong>2. Whipworm treatment:</strong></p>
+        <ul>
+          <li>Fenbendazole 50 mg/kg PO q24h × 3-5 d, repeat ที่ 3 wk + 3 mo (eggs survive in environment 3-4 yr)</li>
+          <li>Milbemycin oxime — also effective</li>
+          <li>Monthly heartworm preventive containing milbemycin</li>
+          <li>Environmental decontamination difficult (eggs resistant)</li>
+        </ul>
+
+        <p><strong>3. Tritrichomonas (cat) treatment:</strong></p>
+        <ul>
+          <li><strong>Ronidazole 30 mg/kg PO q24h × 14 d</strong> ✨ (off-label; obtain from compounding pharmacy)
+            <ul>
+              <li>Caution: neurotoxicity at higher doses (&gt; 30 mg/kg) — ataxia, tremors</li>
+              <li>Stop if neurologic signs</li>
+            </ul>
+          </li>
+          <li>Many cats spontaneously resolve over 6-12 mo without treatment</li>
+          <li>Diet change + probiotics — supportive</li>
+        </ul>
+
+        <p><strong>4. Antibiotic-responsive (suspected dysbiosis / clostridial):</strong></p>
+        <ul>
+          <li>Tylosin 10-20 mg/kg PO q12h × 3-6 wk ✨ — effective</li>
+          <li>Metronidazole 10-15 mg/kg PO q12h × 5-14 d</li>
+          <li>If responds + recurs on stopping → may need long-term low-dose</li>
+        </ul>
+
+        <p><strong>5. Histiocytic Ulcerative Colitis (Boxer / French Bulldog) ✨</strong></p>
+        <ul>
+          <li><strong>Enrofloxacin 5-10 mg/kg PO q24h × 6-8 wk</strong> ✨ — definitive treatment</li>
+          <li>Or marbofloxacin 2.5-5 mg/kg PO q24h</li>
+          <li>Often complete remission</li>
+          <li>Earlier endoscopic diagnosis = better outcome (vs years of inappropriate steroids)</li>
+        </ul>
+
+        <p><strong>6. Idiopathic chronic colitis / LI IBD:</strong></p>
+        <ul>
+          <li>Stepwise approach (similar to SI IBD):
+            <ol>
+              <li>Diet trial: hydrolyzed / novel protein / high-fiber × 2-4 wk</li>
+              <li>Antibiotic trial (tylosin) if diet fails</li>
+              <li>Sulfasalazine 10-30 mg/kg PO q8-12h (dog) — local anti-inflammatory; monitor KCS, hepatic
+                <ul>
+                  <li>Cat: 10-20 mg/kg PO q24h — caution salicylate toxicity</li>
+                </ul>
+              </li>
+              <li>Steroids: prednisone 1-2 mg/kg PO q12h, taper</li>
+              <li>Budesonide 1-3 mg/dog PO q24h — locally active</li>
+              <li>Refractory: cyclosporine, chlorambucil</li>
+            </ol>
+          </li>
+        </ul>
+
+        <p><strong>7. Stress colitis:</strong></p>
+        <ul>
+          <li>Identify + manage trigger</li>
+          <li>Bland diet + fiber</li>
+          <li>Probiotics</li>
+          <li>Anxiolytic if needed (trazodone, gabapentin) for known stressors</li>
+          <li>Self-limiting (3-7 d)</li>
+        </ul>
+
+        <p><strong>8. Adjunctive:</strong></p>
+        <ul>
+          <li>Probiotics (multi-strain, S. boulardii)</li>
+          <li>Fiber (soluble — psyllium, beet pulp)</li>
+          <li>Omega-3 fatty acids</li>
+          <li>Avoid loperamide (mask serious dz; not recommended for infectious cause)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Chronic dehydration (rare, usually mild)</li>
+          <li>Perianal dermatitis from frequent soft stool</li>
+          <li>Owner frustration / fatigue</li>
+          <li>Misdiagnosis as constipation / steroid-treatment of HUC</li>
+          <li>Refractory disease</li>
+          <li>Lymphoma (cat — chronic LI signs may be lymphoma)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Acute self-limiting / parasitic / fiber-responsive: <strong>excellent</strong></li>
+          <li>HUC Boxer/Frenchie with enrofloxacin: <strong>excellent</strong> ✓</li>
+          <li>Tritrichomonas (cat): self-resolution often; ronidazole 65-90% cure</li>
+          <li>Chronic IBD: good with management</li>
+          <li>Neoplastic: depends on tumor</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 32 · Constipation / Megacolon ---------- */
+  {
+    id: 'constipation-megacolon',
+    titleEn: 'Constipation &amp; Megacolon',
+    titleTh: 'ท้องผูก / ลำไส้ใหญ่ขยาย',
+    type: 'disease',
+    system: 'digestive',
+    species: ['cat', 'dog'],
+    tags: ['constipation', 'obstipation', 'megacolon', 'cisapride', 'lactulose', 'colectomy', 'enema', 'feline idiopathic megacolon'],
+    aliases: ['constipation', 'megacolon', 'obstipation', 'ท้องผูก', 'แมวขี้แห้ง'],
+    source: 'Ch. 32 · pp. 540–544',
+    sections: {
+      definition: `
+        <p>Constipation = ขับถ่ายไม่ออก / ขับถ่ายแห้งแข็ง</p>
+        <p>Obstipation = constipation รุนแรงรักษาไม่หาย</p>
+        <p>Megacolon = colon ขยายเรื้อรัง + motility ผิดปกติ</p>
+        <ul>
+          <li>เจอบ่อยมากใน <strong>middle-aged to senior cats</strong> ✨</li>
+          <li>หมา: less common; มัก secondary to obstruction หรือ pain</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Cat — common causes:</strong></p>
+        <ul>
+          <li><strong>Idiopathic megacolon</strong> — most common ในแมว ✨</li>
+          <li>Dehydration (CKD, diabetes, hyperthyroid)</li>
+          <li>Pelvic fracture / narrowing (post-trauma)</li>
+          <li>Sacral nerve damage (Manx — sacrocaudal dysgenesis)</li>
+          <li>Pelvic mass / lymph node</li>
+          <li>Foreign material (hair, bones — ingestion of bone meal, raw bones)</li>
+          <li>Painful defecation (anal sac, anal mass)</li>
+          <li>Litter box aversion / behavioral</li>
+          <li>Spinal disease (cauda equina)</li>
+        </ul>
+        <p><strong>Dog — common causes:</strong></p>
+        <ul>
+          <li>Pelvic obstruction:
+            <ul>
+              <li><strong>Prostate disease</strong> (BPH, prostatitis, abscess, neoplasia) — intact male</li>
+              <li>Perineal hernia (intact older male)</li>
+              <li>Pelvic fracture</li>
+              <li>Rectal mass / stricture</li>
+            </ul>
+          </li>
+          <li>Painful defecation (anal sac dz, perianal fistula)</li>
+          <li>Dehydration (CKD, drugs)</li>
+          <li>Drug-induced (opioids, anticholinergics)</li>
+          <li>Mechanical: bones, foreign material</li>
+          <li>Cauda equina, IVDD</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Prolonged retention of feces → ↑ water absorption → harder, drier feces</li>
+          <li>Smooth muscle stretch → ↓ propulsion → vicious cycle</li>
+          <li>Megacolon: chronic distension → irreversible loss of colonic smooth muscle function</li>
+          <li>Cat idiopathic megacolon: dysfunction of colonic smooth muscle — neuromuscular</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Tenesmus, straining without producing stool</strong> (or producing small dry pellets)</li>
+          <li>Owners often confuse with diarrhea straining (colitis) — <strong>ต้องแยกให้ออก!</strong></li>
+          <li>Vocalization, discomfort during attempts</li>
+          <li>Anorexia, lethargy (chronic)</li>
+          <li>Vomiting (severe — colon distends → reflex vomiting)</li>
+          <li>Weight loss</li>
+          <li>Dehydration</li>
+          <li>Palpable distended colon with hard fecal mass</li>
+          <li>Halitosis</li>
+          <li>Megacolon: chronic recurrent episodes</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>History + physical exam (rectal palpation essential!):</strong></p>
+        <ul>
+          <li>Distended colon with hard fecal material</li>
+          <li>Pelvic narrowing</li>
+          <li>Prostate enlargement (intact male)</li>
+          <li>Perineal hernia (asymmetric perineal swelling)</li>
+          <li>Anal sac assessment</li>
+          <li>Rectal mass</li>
+        </ul>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal radiograph</strong> ✨ — confirms severity, identifies pelvic narrowing, FB
+            <ul>
+              <li>Megacolon: colon &gt; 1.5× length of L5 vertebra (cat)</li>
+              <li>Dilated colon filled with hard fecal material</li>
+            </ul>
+          </li>
+          <li>Abdominal US — pelvic mass, prostate, lymph nodes</li>
+          <li>Pelvic radiograph — fracture, healed callus, narrowing</li>
+        </ul>
+        <p><strong>Lab (chronic / recurrent):</strong></p>
+        <ul>
+          <li>CBC, biochem (BUN/Cr — CKD), electrolytes (hypoK), T4 (cat senior — hyperthyroid &amp; constipation paradox)</li>
+          <li>UA — concentration, infection</li>
+          <li>FeLV/FIV</li>
+          <li>Spinal rad / MRI ถ้าสงสัย neurologic</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Tenesmus from colitis</strong> — major DDx (passing soft/bloody stool, high frequency); rectal exam helps differentiate ✨</li>
+          <li>Dyschezia from anal sac disease, perianal mass</li>
+          <li>Stranguria (urinary obstruction, FLUTD) — different signalment / localization</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute obstipation — emergency relief:</strong></p>
+        <ul>
+          <li><strong>IV fluid therapy</strong> — correct dehydration, electrolytes ✨</li>
+          <li><strong>Warm-water enemas</strong>:
+            <ul>
+              <li>5-10 mL/kg warm water + few drops of dish soap or DSS (docusate)</li>
+              <li>Manual extraction under sedation (often needed)</li>
+              <li>Repeat q4-6h until evacuated</li>
+              <li><strong>NEVER use phosphate enemas (Fleet®) in cats</strong> ✗ — fatal hyperphosphatemia, hypocalcemia, hypernatremia</li>
+            </ul>
+          </li>
+          <li>Manual deobstipation under anesthesia — sterile lubricant, gentle disimpaction with fingers/forceps</li>
+          <li>Pain management (buprenorphine; avoid full mu opioids — worsen!)</li>
+        </ul>
+
+        <p><strong>Chronic management — Cat (idiopathic megacolon):</strong></p>
+
+        <p><strong>1. Diet:</strong></p>
+        <ul>
+          <li><strong>High-fiber diet</strong> (Hill's w/d, Royal Canin Fibre Response) — first-line if mild
+            <ul>
+              <li>Add psyllium 1-2 tsp/day</li>
+            </ul>
+          </li>
+          <li>OR <strong>low-residue / canned wet diet</strong> (Hill's a/d, Royal Canin Recovery, Purina EN) — preferred for severe megacolon (fiber can worsen if motility severely affected)
+            <ul>
+              <li>Maximize water intake</li>
+            </ul>
+          </li>
+          <li>Trial both — individual response varies</li>
+        </ul>
+
+        <p><strong>2. Stool softeners / Osmotic laxatives:</strong></p>
+        <ul>
+          <li><strong>Lactulose 0.5-1 mL/kg PO q8-12h</strong> ✨ — first-line; titrate to 2-3 soft stools/day
+            <ul>
+              <li>Sweet taste — most cats accept</li>
+              <li>Side effect: cramps, flatulence at high doses</li>
+            </ul>
+          </li>
+          <li>PEG 3350 (Miralax) 1/8-1/4 tsp PO q12h — alternative; tasteless, mix in food</li>
+          <li>Polyethylene glycol electrolyte solution (CoLyte) — colonic lavage for severe; via NG tube ที่ 6-10 mL/kg/h</li>
+        </ul>
+
+        <p><strong>3. Prokinetic — Cisapride ✨ (cornerstone for cat megacolon):</strong></p>
+        <ul>
+          <li>0.1-1 mg/kg PO q8-12h (start 0.25 mg/kg, titrate up)</li>
+          <li>5-HT4 agonist → ↑ colonic motility</li>
+          <li>Off-label, obtain from compounding pharmacy</li>
+          <li>Combined with lactulose + diet = standard protocol</li>
+          <li>Effective in many cases of mild-moderate megacolon</li>
+        </ul>
+
+        <p><strong>4. Hydration support:</strong></p>
+        <ul>
+          <li>Encourage water intake (multiple bowls, fountain, wet food)</li>
+          <li>SQ fluids 100-150 mL 2-3×/wk at home for chronic cases (esp. CKD comorbid)</li>
+        </ul>
+
+        <p><strong>5. Treat underlying cause:</strong></p>
+        <ul>
+          <li>CKD — fluid therapy, diet</li>
+          <li>Hyperthyroid — methimazole / definitive</li>
+          <li>Prostate (dog) — neuter, treat infection</li>
+          <li>Perineal hernia (dog) — surgical correction</li>
+          <li>Pelvic obstruction — surgical correction (rarely possible if old healed)</li>
+          <li>Anal sac dz — express, treat</li>
+        </ul>
+
+        <p><strong>6. Refractory megacolon — Subtotal colectomy ✨</strong></p>
+        <ul>
+          <li>Indication: failure of medical management ≥ 6 months</li>
+          <li>Removes 95% of colon; anastomose ileum to rectum (or distal colon)</li>
+          <li>Highly effective — most cats regain normal defecation</li>
+          <li>Post-op: soft stool / mild diarrhea common, improves over weeks-months</li>
+          <li>Survival rate &gt; 90%; recurrence rare</li>
+          <li>Complications: dehiscence, stricture, recurrent diarrhea</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe dehydration / electrolyte imbalance</li>
+          <li>Vomiting → aspiration</li>
+          <li>Colonic ulceration / perforation (rare, severe obstipation)</li>
+          <li>Megacolon progression (irreversible after chronic distension)</li>
+          <li>Anesthetic complications during deobstipation</li>
+          <li>Owner fatigue with management</li>
+          <li>Drug side effects (cisapride compounded — variable potency)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Acute obstipation with prompt treatment + management of cause: good</li>
+          <li>Idiopathic megacolon with medical mgmt: good control in many cats</li>
+          <li>Severe megacolon refractory to medical: subtotal colectomy = excellent</li>
+          <li>Pelvic obstruction surgical: depends on chronicity</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 32 · Anal Sac Disease ---------- */
+  {
+    id: 'anal-sac-disease',
+    titleEn: 'Anal Sac Disease',
+    titleTh: 'ต่อมข้างก้นอักเสบ / อุดตัน',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['anal sac', 'impaction', 'sacculitis', 'abscess', 'apocrine adenocarcinoma', 'scooting'],
+    aliases: ['anal gland', 'anal sacculitis', 'ต่อมข้างก้น', 'ต่อมข้างทวาร'],
+    source: 'Ch. 32 · pp. 545–547',
+    sections: {
+      definition: `
+        <p>Disorders ของ anal sacs (paired sacs ระหว่าง internal + external anal sphincter) — เป็น <strong>most common anorectal problem in dogs</strong></p>
+        <ul>
+          <li>Impaction → sacculitis → abscess → rupture (continuum)</li>
+          <li>Apocrine gland adenocarcinoma — neoplasia ที่ต้อง rule out</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Impaction (most common):</strong></p>
+        <ul>
+          <li>Soft stool not stimulating natural expression</li>
+          <li>Obesity</li>
+          <li>Recurrent diarrhea</li>
+          <li>Anatomic factors (small breed)</li>
+          <li>Allergic skin disease</li>
+        </ul>
+        <p><strong>Sacculitis / Abscess:</strong></p>
+        <ul>
+          <li>Bacterial overgrowth in impacted sac</li>
+          <li>Common organisms: E. coli, Streptococcus, Staphylococcus, Proteus, anaerobes</li>
+        </ul>
+        <p><strong>Neoplasia — Apocrine gland adenocarcinoma (AGASACA):</strong></p>
+        <ul>
+          <li>Older dogs, F &gt; M historically (now equal)</li>
+          <li>Associated with <strong>hypercalcemia of malignancy</strong> ✨ (PTHrp secretion)</li>
+          <li>Aggressive — metastasis to sublumbar lymph nodes common</li>
+        </ul>
+      `,
+      pathophysiology: `<p>Sacs normally express during defecation; failure → impaction → secondary infection → abscessation → rupture through skin</p>`,
+      symptoms: `
+        <p><strong>Impaction:</strong></p>
+        <ul>
+          <li><strong>Scooting</strong> ✨ — dragging bottom on floor</li>
+          <li>Licking perianal area</li>
+          <li>Tail chasing</li>
+          <li>Tenesmus, dyschezia</li>
+          <li>Foul odor</li>
+        </ul>
+        <p><strong>Sacculitis / Abscess:</strong></p>
+        <ul>
+          <li>All above signs + pain</li>
+          <li><strong>Hot, swollen, painful area</strong> 4 or 8 o'clock position adjacent to anus</li>
+          <li>± Discharge (purulent, sometimes bloody)</li>
+          <li>Fever (severe)</li>
+          <li>Reluctance to sit / defecate</li>
+          <li>Aggression when palpated</li>
+        </ul>
+        <p><strong>Ruptured abscess:</strong></p>
+        <ul>
+          <li>Open draining wound near anus</li>
+          <li>Bloody-purulent discharge</li>
+          <li>Improvement of pain after rupture</li>
+        </ul>
+        <p><strong>Neoplasia (AGASACA):</strong></p>
+        <ul>
+          <li>Firm mass at anal sac (rectal palpation)</li>
+          <li>Sometimes large external swelling</li>
+          <li>Hypercalcemia signs: PU/PD, weakness, GI signs</li>
+          <li>Metastasis: sublumbar LN enlargement → constipation, hindlimb edema</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Physical exam — rectal palpation ✨</strong></p>
+        <ul>
+          <li>Palpate sacs externally + internally (rectal)</li>
+          <li>Identify mass, abscess, rupture</li>
+          <li>Express both sacs — character of fluid (normal yellow-brown thick liquid; abnormal: purulent, bloody, viscous)</li>
+        </ul>
+        <p><strong>Suspected neoplasia:</strong></p>
+        <ul>
+          <li><strong>FNA mass</strong> — cytology characteristic</li>
+          <li><strong>Calcium (ionized + total)</strong> — hypercalcemia of malignancy</li>
+          <li>Abdominal US / CT — sublumbar LN size, metastasis</li>
+          <li>Thoracic rad — lung metastasis</li>
+        </ul>
+        <p><strong>Suspected severe infection:</strong></p>
+        <ul>
+          <li>Culture + sensitivity from sac fluid</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Perianal fistula (German Shepherd ✨ — different appearance, multiple draining tracts)</li>
+          <li>Perianal mass (perianal gland adenoma, mast cell tumor)</li>
+          <li>Tail chasing (behavioral)</li>
+          <li>Flea allergy / atopy (similar pruritus pattern)</li>
+          <li>Tapeworm proglottids</li>
+          <li>Rectal mass / polyp</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Impaction (uncomplicated):</strong></p>
+        <ul>
+          <li><strong>Manual expression</strong> ✨ — internal (rectal) most thorough
+            <ul>
+              <li>Lubricated gloved finger insert into rectum, gentle pressure outward</li>
+              <li>Express to depletion</li>
+            </ul>
+          </li>
+          <li>Address underlying cause (weight loss, fiber-supplemented diet for soft stool, allergy management)</li>
+          <li>Frequency: q4-12 weeks for prone individuals</li>
+        </ul>
+
+        <p><strong>2. Sacculitis (no abscess):</strong></p>
+        <ul>
+          <li>Express + flush sac with saline</li>
+          <li>Instill antibiotic ointment (gentamicin/dexamethasone, mupirocin) into sac via cannula</li>
+          <li>Systemic antibiotic if severe: amoxi-clav 12.5 mg/kg PO q12h × 7-10 d</li>
+          <li>NSAID for inflammation/pain (caution with kidney/GI)</li>
+        </ul>
+
+        <p><strong>3. Anal sac abscess:</strong></p>
+        <ul>
+          <li>Lance/drain abscess if not yet ruptured</li>
+          <li>Flush with dilute chlorhexidine or saline q12-24h</li>
+          <li>Systemic antibiotics (amoxi-clav, clindamycin) × 10-14 d</li>
+          <li>Pain management (NSAID + opioid as needed)</li>
+          <li>Warm compresses</li>
+          <li>E-collar to prevent licking</li>
+          <li>Recheck in 1-2 weeks</li>
+        </ul>
+
+        <p><strong>4. Recurrent / chronic anal sac disease:</strong></p>
+        <ul>
+          <li><strong>Anal sacculectomy</strong> — removal of sacs
+            <ul>
+              <li>Closed technique preferred — ↓ contamination</li>
+              <li>Risk: fecal incontinence (rare with proper technique &lt; 5%), wound dehiscence</li>
+              <li>Indication: ≥ 2-3 episodes of sacculitis/abscess despite management</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>5. Apocrine gland adenocarcinoma:</strong></p>
+        <ul>
+          <li><strong>Surgical excision</strong> + sublumbar lymph node removal if affected</li>
+          <li>Treat hypercalcemia (IV fluids, furosemide, bisphosphonates) preoperatively</li>
+          <li>Adjuvant chemotherapy (carboplatin, mitoxantrone, melphalan)</li>
+          <li>Radiation therapy — adjunct</li>
+          <li>NSAIDs (piroxicam, meloxicam)</li>
+          <li>Toceranib (Palladia) 2.5-2.75 mg/kg PO q48h — TKI, evidence in AGASACA</li>
+          <li>MST: 6-18 months depending on stage, calcium, treatment aggressiveness</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Recurrent impaction / infection</li>
+          <li>Abscess rupture → fistulous tract (occasionally chronic non-healing)</li>
+          <li>Fecal incontinence post-sacculectomy (rare)</li>
+          <li>Wound dehiscence post-abscess drainage</li>
+          <li>Hypercalcemia complications (AGASACA — AKI, neurologic)</li>
+          <li>Metastasis (AGASACA)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Impaction / sacculitis with treatment: <strong>excellent</strong></li>
+          <li>Abscess: good with proper treatment</li>
+          <li>Sacculectomy for recurrent dz: excellent — definitive</li>
+          <li>AGASACA without metastasis: fair to good — MST 12-18 mo with surgery</li>
+          <li>AGASACA with metastasis / hypercalcemia: guarded — MST 6-12 mo</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 32 · Perianal Fistula ---------- */
+  {
+    id: 'perianal-fistula',
+    titleEn: 'Perianal Fistula (Anal Furunculosis)',
+    titleTh: 'แผลฟิสตูล่ารอบทวาร — German Shepherd',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog'],
+    tags: ['perianal fistula', 'anal furunculosis', 'German Shepherd', 'cyclosporine', 'tacrolimus', 'immune-mediated'],
+    aliases: ['perianal fistula', 'anal furunculosis', 'แผลก้น GSD'],
+    source: 'Ch. 32 · pp. 545–547',
+    sections: {
+      definition: `
+        <p>Chronic immune-mediated <strong>ulcerative + fistulous disease</strong> ของ perianal tissues</p>
+        <ul>
+          <li><strong>German Shepherd Dog</strong> เด่นมาก — over-represented &gt; 80% ของเคส ✨</li>
+          <li>Irish Setter, mixed-breeds occasionally</li>
+          <li>Middle-aged to older intact males</li>
+          <li>เคยเข้าใจผิดเป็น anal sac abscess — รักษาคนละแบบ</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Immune-mediated</strong> ✨ — similar to Crohn's disease in humans</li>
+          <li>Genetic predisposition (GSD)</li>
+          <li>Low tail carriage anatomy → ↑ moisture, fecal contamination</li>
+          <li>Concurrent IBD common (~ 30-50%) — must screen!</li>
+          <li>Bacterial infection = secondary, not primary</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>T-cell mediated inflammation of perianal apocrine glands + adjacent skin</li>
+          <li>Multiple draining sinus tracts radiating from anus</li>
+          <li>Chronic ulceration, scarring</li>
+          <li>Stenosis from fibrosis (advanced)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Multiple draining ulcerated tracts around anus</strong> ✨ — pathognomonic appearance</li>
+          <li>Foul odor</li>
+          <li>Constant licking, dyschezia, tenesmus</li>
+          <li>Bloody / purulent discharge</li>
+          <li>Pain on defecation</li>
+          <li>Tail held low</li>
+          <li>Weight loss (chronic)</li>
+          <li>Anorexia</li>
+          <li>Concurrent IBD signs (chronic diarrhea/vomiting)</li>
+          <li>Stricture formation (advanced) → constipation</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Mostly clinical — characteristic appearance + signalment:</strong></p>
+        <ul>
+          <li>Visual exam under sedation (most painful — sedate to evaluate properly)</li>
+          <li>Document number + extent of tracts</li>
+          <li>Rule out: anal sac abscess, neoplasia, foreign body</li>
+        </ul>
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA — baseline before immunosuppression</li>
+          <li>Bacterial culture — identify secondary infection (rarely changes management)</li>
+          <li>Biopsy — only if atypical or rule out neoplasia (squamous cell carcinoma)</li>
+          <li>GI workup if concurrent diarrhea/vomiting (colonoscopy + biopsy for IBD)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Anal sac abscess (single tract, localized)</li>
+          <li>Perianal neoplasia — apocrine adenocarcinoma, SCC</li>
+          <li>Foreign body</li>
+          <li>Trauma</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Modern era — medical management with immunosuppression preferred over surgery ✨</strong></p>
+
+        <p><strong>1. Cyclosporine — first-line ✨</strong></p>
+        <ul>
+          <li><strong>Cyclosporine 5 mg/kg PO q12h × 4-16 wk</strong>, then taper to lowest effective dose
+            <ul>
+              <li>Often maintained at 2.5-5 mg/kg q24h or q48h long-term</li>
+              <li>Monitor blood levels (trough 400-600 ng/mL ideal)</li>
+              <li>Side effects: GI upset, gingival hyperplasia, hirsutism, ↑ infection risk</li>
+              <li>Resolution in 70-85% of cases ✓</li>
+            </ul>
+          </li>
+          <li><strong>Ketoconazole 5-10 mg/kg PO q24h</strong> can be combined to ↓ cyclosporine dose 30-50% (cost-saving)
+            <ul>
+              <li>Monitor LFT</li>
+              <li>Drug interaction increases cyclosporine levels</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Topical tacrolimus 0.1% ointment ✨</strong></p>
+        <ul>
+          <li>Apply to lesions q12-24h</li>
+          <li>Adjunct to systemic therapy</li>
+          <li>Owner uses gloves to apply</li>
+          <li>Effective for milder cases as monotherapy</li>
+        </ul>
+
+        <p><strong>3. Diet:</strong></p>
+        <ul>
+          <li><strong>Hydrolyzed protein diet</strong> ✨ — ↓ recurrence rate; treat concurrent IBD</li>
+          <li>Royal Canin Hypoallergenic, Hill's z/d</li>
+          <li>Strict — no treats</li>
+        </ul>
+
+        <p><strong>4. Adjunctive:</strong></p>
+        <ul>
+          <li>Stool softener (lactulose 0.5-1 mL/kg PO q12h) — reduce trauma during defecation</li>
+          <li>Pain management — NSAID (caution kidney/GI), gabapentin</li>
+          <li>Local hygiene — clip hair, gentle clean q12h with chlorhexidine</li>
+          <li>E-collar to prevent licking</li>
+          <li>Antibiotic only if cellulitis/secondary infection (cephalexin, amoxi-clav × 2-4 wk)</li>
+        </ul>
+
+        <p><strong>5. Steroids — historically used, now adjunct only:</strong></p>
+        <ul>
+          <li>Prednisone 1-2 mg/kg PO q12h × 2 wk, taper</li>
+          <li>Less effective monotherapy than cyclosporine</li>
+          <li>Combine with cyclosporine for refractory cases</li>
+        </ul>
+
+        <p><strong>6. Refractory cases:</strong></p>
+        <ul>
+          <li>Azathioprine (combine with cyclosporine — synergy)</li>
+          <li>Surgical management (less common now — high morbidity):
+            <ul>
+              <li>Surgical debridement / cryotherapy</li>
+              <li>Tail amputation (very refractory)</li>
+            </ul>
+          </li>
+          <li>Castration ↓ recurrence — recommended in intact males</li>
+        </ul>
+
+        <p><strong>Long-term:</strong></p>
+        <ul>
+          <li>Most dogs require lifelong low-dose immunosuppression</li>
+          <li>Recurrence common if therapy stopped</li>
+          <li>Recheck q3-6 months</li>
+          <li>Manage concurrent IBD</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Recurrence (~ 30-50%)</li>
+          <li>Anal stenosis from chronic scarring</li>
+          <li>Fecal incontinence (uncommon, post-surgical)</li>
+          <li>Cyclosporine side effects: gingival hyperplasia, GI, ↑ infection</li>
+          <li>Concurrent IBD flare</li>
+          <li>Owner fatigue with long-term management</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>With cyclosporine: <strong>70-85% remission</strong> ✓</li>
+          <li>Most require maintenance therapy</li>
+          <li>Diet management ↓ recurrence</li>
+          <li>Severe long-standing dz with stricture: guarded</li>
+          <li>Concurrent IBD: harder to manage</li>
+        </ul>
+        <div class="callout">💡 <strong>Owner education:</strong> นี่คือ immune-mediated disease ของ German Shepherd ที่รักษาได้ดีด้วย cyclosporine + diet — ไม่ใช่ infection. Long-term management แต่ quality of life ดีมาก</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 32 · EPI ---------- */
+  {
+    id: 'epi',
+    titleEn: 'Exocrine Pancreatic Insufficiency (EPI)',
+    titleTh: 'EPI — ตับอ่อนสร้างเอนไซม์ไม่พอ',
+    type: 'disease',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['EPI', 'pancreatic insufficiency', 'TLI', 'pancreatic enzyme', 'cobalamin', 'German Shepherd', 'weight loss', 'steatorrhea'],
+    aliases: ['EPI', 'pancreatic insufficiency', 'ตับอ่อนพร่อง'],
+    source: 'Ch. 32 · pp. 581–584',
+    sections: {
+      definition: `
+        <p>การที่ <strong>exocrine pancreas</strong> ผลิตเอนไซม์ไม่พอ → maldigestion + malabsorption</p>
+        <ul>
+          <li>เจอบ่อยใน <strong>German Shepherd Dog</strong> ✨ — autosomal recessive pancreatic acinar atrophy (PAA)</li>
+          <li>Rough Collie, Eurasier, Chow Chow, Cavalier KCS</li>
+          <li>Cat: rare; usually post-chronic pancreatitis</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Dog:</strong></p>
+        <ul>
+          <li><strong>Pancreatic acinar atrophy (PAA)</strong> — most common; immune-mediated destruction of acinar cells; young adult onset (1-5 yr)</li>
+          <li>Chronic pancreatitis (sequela; older onset)</li>
+          <li>Pancreatic neoplasia (rare)</li>
+          <li>Congenital pancreatic hypoplasia (rare)</li>
+        </ul>
+        <p><strong>Cat:</strong></p>
+        <ul>
+          <li>Chronic pancreatitis — most common</li>
+          <li>Often concurrent with IBD, cholangitis ("triaditis")</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Loss of acinar cells (~ 90%+ before clinical signs) → ↓ digestive enzymes (lipase, amylase, proteases)</li>
+          <li>Maldigestion → malabsorption</li>
+          <li>Undigested food → bacterial overgrowth in SI → folate ↑, cobalamin ↓</li>
+          <li>Cobalamin deficiency: intrinsic factor production ↓ + bacterial competition for B12</li>
+          <li>Steatorrhea from undigested fat</li>
+          <li>Maintained appetite or polyphagia (fed but starving)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Chronic large-volume diarrhea</strong> — soft, voluminous, sometimes pale/greasy (steatorrhea) ✨</li>
+          <li><strong>Polyphagia despite weight loss</strong> ✨ — classic triad with diarrhea + weight loss</li>
+          <li>Severe weight loss / cachexia</li>
+          <li>Coprophagia, pica</li>
+          <li>Borborygmi, flatulence</li>
+          <li>Poor coat quality</li>
+          <li>Vomiting (less common)</li>
+          <li>Behavior change (irritable from hunger)</li>
+          <li>Cat: variable — weight loss, ± diarrhea, may be subtle</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>TLI (Trypsin-Like Immunoreactivity) — definitive ✨</strong></p>
+        <ul>
+          <li>Fasted serum sample (12h fast)</li>
+          <li><strong>Dog: TLI &lt; 2.5 µg/L = diagnostic</strong></li>
+          <li><strong>Cat: TLI &lt; 8 µg/L = diagnostic</strong></li>
+          <li>Borderline (2.5-5.7 dog, 8-12 cat) — repeat in 1-2 months</li>
+          <li>Highly sensitive + specific</li>
+          <li>Replaces older fecal trypsin tests (unreliable)</li>
+        </ul>
+        <p><strong>Cobalamin (B12):</strong></p>
+        <ul>
+          <li>↓ in &gt; 80% of EPI dogs ✨</li>
+          <li>Must supplement — without it, treatment fails</li>
+        </ul>
+        <p><strong>Folate:</strong></p>
+        <ul>
+          <li>↑ from bacterial overgrowth (common in EPI)</li>
+          <li>↓ may occur with chronic SI mucosal disease</li>
+        </ul>
+        <p><strong>Other tests:</strong></p>
+        <ul>
+          <li>CBC: usually normal (chronic dz) or mild anemia</li>
+          <li>Biochem: hypocholesterolemia, ± hypoalbuminemia</li>
+          <li>cPL — usually normal in PAA; may be low</li>
+          <li>Abdominal US: small pancreas (chronic atrophy); rule out neoplasia, IBD</li>
+          <li>Endoscopy + biopsy if concurrent IBD suspected</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Severe IBD / chronic enteropathy</li>
+          <li>Lymphoma (alimentary)</li>
+          <li>SI bacterial overgrowth (without EPI)</li>
+          <li>Dietary intolerance / food allergy</li>
+          <li>Parasites</li>
+          <li>Hyperthyroid (cat)</li>
+          <li>DM</li>
+          <li>Malabsorption from other causes</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Pancreatic enzyme replacement therapy (PERT) — mainstay ✨</strong></p>
+        <ul>
+          <li><strong>Powdered pancreatic enzymes</strong> — most effective form
+            <ul>
+              <li>Pancreatic enzyme powder (Pancrezyme, Viokase-V) 1 tsp per 10 kg per meal, mixed with food</li>
+              <li>Or 2 g/20 kg per meal</li>
+              <li>Mix with food + let sit 15-20 min before feeding (predigestion enhances) — ไม่จำเป็นเสมอ, แต่ช่วยบางเคส</li>
+            </ul>
+          </li>
+          <li>Tablets / capsules — less effective; some lose enzyme activity</li>
+          <li>Raw pancreas (frozen 0.5-3 oz/meal) — alternative; cheaper, effective</li>
+          <li>Adjust dose to clinical response</li>
+        </ul>
+
+        <p><strong>2. Cobalamin supplementation ✨ (essential — treatment fails without it):</strong></p>
+        <ul>
+          <li><strong>Dog: 250-1500 µg cyanocobalamin SC weekly × 6 weeks, then monthly (lifelong)</strong></li>
+          <li><strong>Cat: 250 µg SC weekly × 6 weeks, then monthly</strong></li>
+          <li>Or oral cobalamin 1 mg PO q24h dog (recent evidence equivalent for many cases)</li>
+          <li>Recheck B12 level 1 month after series</li>
+        </ul>
+
+        <p><strong>3. Diet:</strong></p>
+        <ul>
+          <li>Highly digestible, moderate-low fat diet</li>
+          <li>Royal Canin GI Low Fat, Hill's i/d, Purina EN</li>
+          <li>Multiple small meals (3-4×/day) initially</li>
+          <li>Avoid high-fat treats / table food</li>
+          <li>Some dogs do well on regular maintenance diet — individual response</li>
+        </ul>
+
+        <p><strong>4. Antibiotic for SIBO (if folate ↑):</strong></p>
+        <ul>
+          <li>Tylosin 10-20 mg/kg PO q12h × 4-6 wk</li>
+          <li>Or metronidazole 10 mg/kg PO q12h × 4-6 wk</li>
+          <li>Improves response when SIBO confirmed</li>
+        </ul>
+
+        <p><strong>5. H2 blocker / PPI (if poor enzyme efficacy):</strong></p>
+        <ul>
+          <li>Famotidine 0.5-1 mg/kg PO q12h or omeprazole 1 mg/kg PO q24h</li>
+          <li>Reduces gastric acid degradation of enzymes</li>
+          <li>Trial if not responding to PERT alone</li>
+        </ul>
+
+        <p><strong>6. Concurrent IBD (cat triaditis):</strong></p>
+        <ul>
+          <li>If concurrent inflammatory enteropathy → add prednisolone or budesonide</li>
+          <li>Biopsy if uncertain</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Weight gain, BCS, stool quality (most important indicators)</li>
+          <li>Cobalamin q2-3 months initially</li>
+          <li>TLI not useful for monitoring (low forever)</li>
+          <li>Clinical response within 1-2 weeks of starting therapy = expected</li>
+        </ul>
+
+        <p><strong>Cost considerations:</strong></p>
+        <ul>
+          <li>Pancreatic enzymes are <strong>expensive</strong> — major owner concern</li>
+          <li>Raw frozen pancreas (from butcher / pet supply) — more affordable</li>
+          <li>Generic enzymes available</li>
+          <li>Long-term commitment essential</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Treatment failure due to cobalamin deficiency unrecognized</li>
+          <li>Cost of enzymes — owner non-compliance</li>
+          <li>SIBO recurrence</li>
+          <li>Concurrent IBD / lymphoma</li>
+          <li>Severe weight loss / cachexia (untreated)</li>
+          <li>Persistent steatorrhea</li>
+          <li>Pancreatitis episodes (triaditis cat)</li>
+          <li>Diabetes mellitus development (if endocrine cells also lost — rare)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>With proper treatment + cobalamin: <strong>excellent</strong> — normal lifespan ✓</li>
+          <li>Weight gain expected within 2-4 wk</li>
+          <li>Treatment lifelong</li>
+          <li>Owner compliance essential (cost, daily administration)</li>
+          <li>Cat with triaditis: more complex; depends on overall management</li>
+        </ul>
+        <div class="callout">💡 <strong>3 R's for EPI success:</strong> Replace enzymes (PERT), Replace B12 (cobalamin), Reassess regularly. ขาดอย่างใดอย่างหนึ่ง = treatment fails</div>
+      `,
+    },
+  },
+
+  /* ---------- Esophagostomy Tube Placement (procedure) ---------- */
+  {
+    id: 'esophagostomy-tube',
+    titleEn: 'Esophagostomy Tube Placement',
+    titleTh: 'การใส่ E-tube — สายให้อาหารทางหลอดอาหาร',
+    type: 'procedure',
+    system: 'digestive',
+    species: ['dog', 'cat'],
+    tags: ['esophagostomy tube', 'E-tube', 'feeding tube', 'enteral nutrition', 'anorexia', 'nutritional support'],
+    aliases: ['E-tube', 'esophagostomy', 'feeding tube placement', 'การใส่สายให้อาหาร'],
+    source: 'Ch. 28 · pp. 442–444',
+    sections: {
+      indications: `
+        <p><strong>Primary indications — anorexic patient who cannot/will not eat ≥ 3-5 days but has functional GI tract</strong> ✨</p>
+        <ul>
+          <li><strong>Hepatic lipidosis (cat)</strong> ✨ — most common indication; lifesaving</li>
+          <li>Severe oral / dental disease (post-jaw fracture, severe stomatitis)</li>
+          <li>Pancreatitis with prolonged anorexia</li>
+          <li>Megaesophagus (recurrent aspiration with oral feeding) — bypass</li>
+          <li>CKD with cachexia</li>
+          <li>Post-surgical (oral, mandibular)</li>
+          <li>Chronic disease with cachexia</li>
+          <li>Recovery from severe illness</li>
+          <li>Drug administration in fractious / non-compliant patients</li>
+        </ul>
+      `,
+      contraindications: `
+        <p><strong>Absolute:</strong></p>
+        <ul>
+          <li>Esophageal disease — severe esophagitis, stricture, mass, megaesophagus (relative — case by case)</li>
+          <li>Persistent vomiting (will dislodge tube + risk aspiration)</li>
+          <li>Uncontrolled coagulopathy</li>
+          <li>Patient too unstable for sedation/anesthesia</li>
+        </ul>
+        <p><strong>Relative:</strong></p>
+        <ul>
+          <li>Cervical mass / disease</li>
+          <li>Need for &gt; 3-4 weeks nutrition (consider PEG instead)</li>
+          <li>Severe neck dermatitis</li>
+        </ul>
+        <p><strong>Choice of feeding tube:</strong></p>
+        <ul>
+          <li><em>NG tube</em> — short-term (&lt; 3-5 d), in-hospital, awake placement</li>
+          <li><strong>Esophagostomy</strong> — short-medium term (1 day - several months); easy at-home use ✨</li>
+          <li><em>Gastrostomy (PEG)</em> — long-term &gt; 1 month; more invasive</li>
+          <li><em>Jejunostomy</em> — bypass stomach; specialized cases</li>
+        </ul>
+      `,
+      preparation: `
+        <p><strong>Patient:</strong></p>
+        <ul>
+          <li>General anesthesia required — propofol induction, isoflurane maintenance, ETT</li>
+          <li>Pre-op IV catheter, fluid therapy</li>
+          <li>Pre-op antibiotic single dose (cefazolin 22 mg/kg IV) optional</li>
+          <li>Position: <strong>right lateral recumbency</strong></li>
+          <li>Clip + aseptic prep <strong>left lateral cervical</strong> (avoids carotid + jugular)</li>
+          <li>Drape</li>
+        </ul>
+        <p><strong>Equipment:</strong></p>
+        <ul>
+          <li><strong>E-tube selection:</strong>
+            <ul>
+              <li>Cat: 12-14 Fr</li>
+              <li>Small dog: 14-18 Fr</li>
+              <li>Medium-large dog: 18-22 Fr</li>
+              <li>Premeasure: from skin entry site to 9th rib (approximately mid-thoracic esophagus, above LES)</li>
+              <li>Mark with tape or marker</li>
+            </ul>
+          </li>
+          <li>Curved Carmalt or Rochester forceps (long, sturdy)</li>
+          <li>Scalpel #11 blade</li>
+          <li>Suture: nylon 2-0 or 3-0 for skin secure</li>
+          <li>Chinese finger trap suture pattern</li>
+          <li>Sterile lubricant (water-soluble)</li>
+          <li>Stylet / wire guide (some kits)</li>
+          <li>Needle-driver, suture scissors</li>
+        </ul>
+      `,
+      steps: `
+        <ol style="font-family: var(--font-thai); font-size: 16px; line-height: 1.7; color: var(--ink); margin: 6px 0 10px 22px; padding: 0;">
+          <li><strong>Anesthetize + position</strong> right lateral recumbency, intubate, maintain</li>
+          <li><strong>Aseptic prep</strong> left cervical area</li>
+          <li><strong>Insert curved forceps</strong> through mouth into proximal-mid cervical esophagus
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Direct tip toward left lateral cervical body wall</li>
+              <li>Push tip out laterally to tent skin</li>
+              <li>Tip should be palpable through skin (between jugular vein dorsally + larynx ventrally)</li>
+            </ul>
+          </li>
+          <li><strong>Make stab incision through skin over forceps tip</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Force tip through esophageal wall + skin</li>
+              <li>Feel "pop" as forceps emerges</li>
+            </ul>
+          </li>
+          <li><strong>Grasp E-tube tip with forceps</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Pull tube back through esophagus + out the mouth</li>
+              <li>Tube goes: skin → esophagus → out mouth (retrograde)</li>
+            </ul>
+          </li>
+          <li><strong>Curve tube tip back toward esophagus</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Reinsert tube tip into esophagus down to caudal esophagus</li>
+              <li>Direction reversed — now feeds normally</li>
+              <li>Tube has subtle "U-curl" at exit point — palpate to ensure smooth</li>
+            </ul>
+          </li>
+          <li><strong>Confirm placement</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Pass to premeasured length</li>
+              <li>Should advance smoothly without resistance</li>
+              <li>Lateral cervical/thoracic radiograph — tip in distal esophagus, 1-2 vertebrae cranial to diaphragm; <em>not in stomach</em></li>
+            </ul>
+          </li>
+          <li><strong>Secure with finger trap suture pattern</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Anchor first to skin near tube exit</li>
+              <li>Multiple criss-cross sutures around tube without compressing</li>
+              <li>Tube should be snug but not strangulated</li>
+            </ul>
+          </li>
+          <li><strong>Apply sterile dressing + neck wrap</strong>
+            <ul style="margin: 6px 0 6px 20px;">
+              <li>Antibiotic ointment + sterile gauze at exit site</li>
+              <li>Light bandage / soft collar — prevent self-removal</li>
+            </ul>
+          </li>
+          <li><strong>Post-procedure radiograph</strong> — confirm tube position, no pneumothorax</li>
+        </ol>
+      `,
+      complications: `
+        <p><strong>Common (mild):</strong></p>
+        <ul>
+          <li><strong>Stoma site cellulitis / infection</strong> — most common; clean daily, monitor</li>
+          <li>Tube clogging — flush with warm water q4-6h + after each meal</li>
+          <li>Mild discomfort first 24-48h</li>
+          <li>Slight food regurgitation if rate too fast</li>
+        </ul>
+        <p><strong>Serious (rare):</strong></p>
+        <ul>
+          <li>Tube migration — into oropharynx (vomits up tube) or into stomach (rare)</li>
+          <li>Esophagitis from tube tip if too caudal (LES region)</li>
+          <li>Esophageal stricture (chronic tube → fibrosis; rare)</li>
+          <li>Aspiration pneumonia (delayed gastric emptying, vomiting)</li>
+          <li>Carotid / jugular laceration (poor technique) ✗</li>
+          <li>Pneumomediastinum / pneumothorax (rare)</li>
+          <li>Subcutaneous emphysema</li>
+          <li>Tube dislodgement</li>
+        </ul>
+      `,
+      postCare: `
+        <p><strong>Initial 24h post-placement:</strong></p>
+        <ul>
+          <li>Monitor for vomiting, dyspnea</li>
+          <li>Wait <strong>at least 4-6 hours before first feeding</strong> — allow tract to seal</li>
+          <li>Many start with water trickle first feed, then dilute food</li>
+        </ul>
+        <p><strong>Feeding protocol:</strong></p>
+        <ul>
+          <li><strong>Day 1: 25-33% of resting energy requirement (RER)</strong></li>
+          <li>Day 2: 50-66%</li>
+          <li>Day 3+: 100% RER (then ↑ to MER as tolerated)</li>
+          <li>RER (kcal/day) = 70 × (BW kg)^0.75 หรือ 30(BW) + 70 for 2-30 kg</li>
+          <li>Divide into 4-6 meals/day</li>
+          <li>Each meal: deliver slowly over 5-10 min via syringe</li>
+          <li><strong>Flush tube with 5-10 mL warm water before + after each feeding</strong> — prevent clogging ✨</li>
+          <li>Cap when not in use</li>
+        </ul>
+        <p><strong>Diet choice:</strong></p>
+        <ul>
+          <li>Liquid recovery diets: Royal Canin Recovery Liquid, Hill's a/d Liquid, Eukanuba Maximum Calorie</li>
+          <li>Or blenderize canned food (a/d, Recovery, EN) with water to syringe through tube</li>
+          <li>Strain to remove particulates ที่อาจ clog</li>
+          <li>Check viscosity — should flow easily through chosen tube size</li>
+        </ul>
+        <p><strong>Site care:</strong></p>
+        <ul>
+          <li>Clean stoma site daily with chlorhexidine</li>
+          <li>Apply antibiotic ointment</li>
+          <li>Replace dressing</li>
+          <li>Watch for redness, discharge, swelling, pain → check for infection</li>
+        </ul>
+        <p><strong>Owner education for at-home use:</strong></p>
+        <ul>
+          <li>Teach feeding technique</li>
+          <li>Recognize tube migration (gagging, regurgitation, tube length change)</li>
+          <li>Site care</li>
+          <li>When to call (vomiting, redness, fever, dyspnea)</li>
+        </ul>
+        <p><strong>Tube removal:</strong></p>
+        <ul>
+          <li>When patient eats voluntarily ≥ 75% of RER × 3-5 days</li>
+          <li>Cut suture, gentle traction — slides out</li>
+          <li>Stoma heals by second intention 3-7 days (clean daily)</li>
+          <li>No surgical closure needed</li>
+          <li>Can leave tube in place for weeks-months if needed</li>
+        </ul>
+        <div class="callout">💡 <strong>E-tube ในแมว anorexic เป็น life-saving</strong> — โดยเฉพาะ hepatic lipidosis. อย่ารอ — ใส่เร็ว แมวกินได้ทันที = recovery เร็วขึ้นมาก. Owners learn to use within 1-2 days</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
