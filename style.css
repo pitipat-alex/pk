@@ -1,4 +1,20 @@
 /* ==================================================================
+   GLOBAL — prevent iPad double-tap zoom + touch interference
+================================================================== */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+body {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+}
+button, a, [role="button"], .lock-card, .btn, .btn-google {
+  touch-action: manipulation;
+}
+
+/* ==================================================================
    TOKENS — pride 6 colors + neutrals
 ================================================================== */
 :root {
