@@ -10,10 +10,75 @@
 (function () {
   'use strict';
 
+  // ---------- Visible Debug Overlay (mobile-friendly) ----------
+  // Shows runtime errors directly on screen so iPad/iPhone users can
+  // see what went wrong without opening Web Inspector.
+  // Toggle: tap the lock screen logo 5 times to show.
+  const DEBUG = {
+    logs: [],
+    add: function(msg, type) {
+      const ts = new Date().toLocaleTimeString();
+      this.logs.push({ ts, msg, type: type || 'info' });
+      if (this.logs.length > 50) this.logs.shift();
+      this.render();
+    },
+    render: function() {
+      let panel = document.getElementById('pkDebugPanel');
+      if (!panel) return;
+      panel.innerHTML = this.logs.map(l =>
+        '<div class="pk-dbg-line pk-dbg-' + l.type + '">' +
+        '<span class="pk-dbg-ts">' + l.ts + '</span> ' +
+        l.msg.replace(/&/g,'&amp;').replace(/</g,'&amp;lt;').replace(/>/g,'&amp;gt;') +
+        '</div>'
+      ).join('');
+    },
+    show: function() {
+      let panel = document.getElementById('pkDebugPanel');
+      if (panel) { panel.style.display = 'block'; this.render(); }
+    },
+    hide: function() {
+      let panel = document.getElementById('pkDebugPanel');
+      if (panel) panel.style.display = 'none';
+    },
+  };
+  window.PK_DEBUG = DEBUG;
+
+  // Catch ALL uncaught errors and show them
+  window.addEventListener('error', function(e) {
+    DEBUG.add('JS Error: ' + (e.message || 'unknown') + ' @ ' +
+              (e.filename || '?') + ':' + (e.lineno || '?'), 'error');
+    DEBUG.show();
+  });
+  window.addEventListener('unhandledrejection', function(e) {
+    DEBUG.add('Promise rejected: ' + (e.reason && e.reason.message || e.reason || 'unknown'), 'error');
+    DEBUG.show();
+  });
+
+  DEBUG.add('Script start', 'info');
+  DEBUG.add('UA: ' + navigator.userAgent.substring(0, 80), 'info');
+  DEBUG.add('URL: ' + window.location.href.substring(0, 80), 'info');
+
   // ---------- Configuration --------------------------------------
   const SUPABASE_URL      = 'https://bxlyctricjayindvcfjo.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4bHljdHJpY2pheWluZHZjZmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NDE2NTAsImV4cCI6MjA5MzAxNzY1MH0.8b-UqK-SW1dOyZ0WhAC5NBns8lAe1kTgn2xJMiHvaRA';
   const ALLOWED_EMAILS    = ['carnitab@gmail.com'];
+
+  // Verify Supabase library is loaded
+  if (!window.supabase || !window.supabase.createClient) {
+    DEBUG.add('FATAL: Supabase library not loaded! CDN may be blocked.', 'error');
+    DEBUG.show();
+    document.documentElement.classList.remove('checking');
+    document.documentElement.classList.add('locked');
+    // Try to show user-facing error after DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      const msg = document.createElement('div');
+      msg.style.cssText = 'position:fixed;top:50%;left:10%;right:10%;background:#fff;border:2px solid #c00;padding:20px;border-radius:12px;z-index:99999;text-align:center;font-family:sans-serif;';
+      msg.innerHTML = '<h3 style="color:#c00;margin:0 0 10px">เชื่อมต่อ Supabase ไม่ได้</h3><p>CDN อาจถูก block หรือ network ช้า — ลองรีเฟรชหรือเช็ค WiFi</p>';
+      document.body.appendChild(msg);
+    });
+    return;
+  }
+  DEBUG.add('✓ Supabase library loaded', 'ok');
 
   // ---------- HTML templates -------------------------------------
   const lockScreenHTML = `
@@ -34,6 +99,12 @@
         </button>
         <p class="lock-sub-note">เฉพาะอีเมลที่ได้รับอนุญาตเท่านั้น</p>
         <p class="lock-hint">PRIVATE · WITH PRIDE</p>
+      </div>
+      <div id="pkDebugPanel" style="display:none;position:fixed;bottom:0;left:0;right:0;max-height:50vh;overflow-y:auto;background:#000;color:#0f0;font-family:monospace;font-size:11px;line-height:1.4;padding:8px;z-index:99999;border-top:2px solid #0f0;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;border-bottom:1px solid #444;padding-bottom:4px;">
+          <strong style="color:#0ff;">PK Debug Console</strong>
+          <button onclick="window.PK_DEBUG.hide()" style="background:#c00;color:#fff;border:0;padding:4px 10px;border-radius:4px;cursor:pointer;">ปิด ✕</button>
+        </div>
       </div>
     </div>
   `;
@@ -79,19 +150,44 @@
   // ---------- Inject UI -----------------------------------------
   document.body.insertAdjacentHTML('afterbegin', lockScreenHTML);
   document.body.insertAdjacentHTML('beforeend',  settingsModalHTML);
+  DEBUG.add('✓ UI injected', 'ok');
+
+  // Secret debug toggle: tap "PRIVATE · WITH PRIDE" 5 times to show debug panel
+  let tapCount = 0, tapTimer = null;
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList && e.target.classList.contains('lock-hint')) {
+      tapCount++;
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(function() { tapCount = 0; }, 2000);
+      if (tapCount >= 5) {
+        DEBUG.show();
+        tapCount = 0;
+      }
+    }
+  });
 
   // ---------- Supabase client -----------------------------------
   // PKCE flow + detectSessionInUrl = mandatory for mobile Safari/Chrome
   // (third-party cookie restrictions break implicit flow on mobile)
-  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-    auth: {
-      flowType: 'pkce',
-      autoRefreshToken: true,
-      persistSession: true,
-      detectSessionInUrl: true,
-      storage: window.localStorage,
-    },
-  });
+  let sb;
+  try {
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: {
+        flowType: 'pkce',
+        autoRefreshToken: true,
+        persistSession: true,
+        detectSessionInUrl: true,
+        storage: window.localStorage,
+      },
+    });
+    DEBUG.add('✓ Supabase client created (PKCE)', 'ok');
+  } catch (err) {
+    DEBUG.add('FATAL createClient: ' + (err.message || err), 'error');
+    DEBUG.show();
+    document.documentElement.classList.remove('checking');
+    document.documentElement.classList.add('locked');
+    return;
+  }
 
   // ---------- DOM references ------------------------------------
   const root          = document.documentElement;
@@ -182,38 +278,51 @@
   });
 
   // ---------- Google Sign-in -------------------------------------
-  googleBtn && googleBtn.addEventListener('click', async () => {
-    googleBtn.disabled = true;
-    loginMsg.textContent = '';
+  if (googleBtn) {
+    DEBUG.add('✓ Google button found, attaching handler', 'ok');
+    googleBtn.addEventListener('click', async function(ev) {
+      DEBUG.add('▶ Google button TAPPED', 'ok');
+      googleBtn.disabled = true;
+      loginMsg.textContent = '';
 
-    // Build redirectTo: origin + pathname (no query, no hash)
-    // This MUST be whitelisted in Supabase Dashboard → Authentication → URL Configuration
-    const redirectTo = window.location.origin + window.location.pathname;
+      // Build redirectTo: origin + pathname (no query, no hash)
+      // This MUST be whitelisted in Supabase Dashboard → Authentication → URL Configuration
+      const redirectTo = window.location.origin + window.location.pathname;
+      DEBUG.add('Redirect to: ' + redirectTo, 'info');
 
-    try {
-      const { error } = await sb.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: redirectTo,
-          queryParams: {
-            access_type: 'offline',
-            prompt: 'select_account',
+      try {
+        DEBUG.add('Calling signInWithOAuth...', 'info');
+        const { data, error } = await sb.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: redirectTo,
+            queryParams: {
+              access_type: 'offline',
+              prompt: 'select_account',
+            },
           },
-        },
-      });
-      if (error) {
+        });
+        if (error) {
+          googleBtn.disabled = false;
+          DEBUG.add('OAuth error: ' + error.message, 'error');
+          DEBUG.show();
+          flashError('เกิดข้อผิดพลาด: ' + error.message);
+        } else {
+          DEBUG.add('OAuth call OK. URL: ' + (data && data.url ? data.url.substring(0,80) : '(none)'), 'ok');
+          // On success, browser redirects to Google → returns to redirectTo URL with ?code=...
+          // detectSessionInUrl handles the code exchange automatically
+        }
+      } catch (err) {
         googleBtn.disabled = false;
-        flashError('เกิดข้อผิดพลาด: ' + error.message);
-        console.error('OAuth error:', error);
+        DEBUG.add('Exception: ' + (err.message || err), 'error');
+        DEBUG.show();
+        flashError('เชื่อมต่อ Google ไม่ได้: ' + (err.message || err));
       }
-      // On success, browser redirects to Google → returns to redirectTo URL with ?code=...
-      // detectSessionInUrl handles the code exchange automatically
-    } catch (err) {
-      googleBtn.disabled = false;
-      flashError('เชื่อมต่อ Google ไม่ได้: ' + (err.message || err));
-      console.error('Sign-in exception:', err);
-    }
-  });
+    });
+  } else {
+    DEBUG.add('FATAL: Google button NOT FOUND in DOM', 'error');
+    DEBUG.show();
+  }
 
   // ---------- Settings modal -------------------------------------
   function openSettings() {
