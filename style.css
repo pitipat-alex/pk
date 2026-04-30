@@ -753,7 +753,7 @@ html.locked .lock-screen { display: flex; }
   flex-shrink: 0;
 }
 .btn-google::after {
-  /* rainbow ring on hover */
+  /* rainbow ring on hover - desktop only to avoid iPad touch dead zone bug */
   content: '';
   position: absolute;
   inset: -3px;
@@ -765,8 +765,14 @@ html.locked .lock-screen { display: flex; }
   background-size: 200% 100%;
   opacity: 0;
   z-index: -1;
+  pointer-events: none;
   transition: opacity 0.4s ease;
-  animation: flow 6s linear infinite;
+  /* No animation by default — only enable on desktop with hover */
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 1100px) {
+  .btn-google::after {
+    animation: flow 6s linear infinite;
+  }
 }
 .btn-google:hover {
   transform: translateY(-2px);

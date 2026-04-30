@@ -11720,6 +11720,721 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     PART 5 — URINARY (Ch 38–45)
+  ============================================================ */
+
+  /* ---------- Ch 38 · Clinical Manifestations of Urinary Disorders ---------- */
+  {
+    id: 'urinary-clinical-manifestations',
+    titleEn: 'Clinical Manifestations of Urinary Disorders',
+    titleTh: 'อาการของโรคทางเดินปัสสาวะ',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['PU/PD', 'oliguria', 'anuria', 'hematuria', 'pollakiuria', 'stranguria', 'azotemia', 'uremia', 'proteinuria'],
+    aliases: ['urinary signs', 'อาการโรคปัสสาวะ', 'อาการไต'],
+    source: 'Ch. 38 · pp. 649–660',
+    sections: {
+      definition: `
+        <p>อาการทางเดินปัสสาวะ — แยกตาม <strong>upper</strong> (kidney, ureter) vs <strong>lower</strong> (bladder, urethra)</p>
+        <ul>
+          <li>Upper: PU/PD, weight loss, vomiting, uremia</li>
+          <li>Lower: pollakiuria, stranguria, hematuria, periuria (ปัสสาวะนอกที่)</li>
+        </ul>
+      `,
+      etiology: `<p>ดู entries เฉพาะตามอาการ</p>`,
+      pathophysiology: `
+        <ul>
+          <li><strong>PU/PD:</strong> ↓ medullary tonicity, osmotic diuresis (DM, post-obstruction), ↓ ADH response</li>
+          <li><strong>Oliguria/anuria:</strong> AKI, obstruction, severe dehydration</li>
+          <li><strong>Azotemia:</strong> ↑ BUN/Cr — pre-renal (hypovolemia), renal (parenchymal), post-renal (obstruction, rupture)</li>
+          <li><strong>Uremia:</strong> clinical syndrome ของ azotemia + signs (vomiting, halitosis, oral ulcer)</li>
+          <li><strong>Proteinuria:</strong> glomerular leak, tubular dysfunction, post-renal (UTI, hemorrhage)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Upper urinary (kidney):</strong></p>
+        <ul>
+          <li>PU/PD ✨</li>
+          <li>Weight loss, ↓ appetite</li>
+          <li>Lethargy, weakness</li>
+          <li>Vomiting (uremic gastritis)</li>
+          <li>Halitosis (uremic — fruity/ammoniacal)</li>
+          <li>Oral ulcers (uremic)</li>
+          <li>Dehydration despite PU/PD</li>
+          <li>Pale MM (anemia of CKD)</li>
+          <li>Small irregular kidneys (CKD) or large painful kidneys (AKI, pyelo)</li>
+        </ul>
+        <p><strong>Lower urinary (bladder/urethra):</strong></p>
+        <ul>
+          <li><strong>Pollakiuria</strong> — ปัสสาวะบ่อย ปริมาณน้อย ✨</li>
+          <li><strong>Stranguria</strong> — เบ่งปัสสาวะ, เจ็บ ✨</li>
+          <li><strong>Dysuria</strong> — ปัสสาวะลำบาก</li>
+          <li><strong>Hematuria</strong> — frank red, end-of-stream (lower) vs throughout (upper/diffuse)</li>
+          <li><strong>Periuria</strong> — ปัสสาวะนอกกระบะ (cat especially)</li>
+          <li>Distended painful bladder (obstruction) ✗</li>
+          <li>Urethral plug palpable (cat male) ✗</li>
+        </ul>
+        <p><strong>Differentiating PU/PD from pollakiuria:</strong></p>
+        <ul>
+          <li>PU/PD: ↑ total volume + ↑ thirst, comfortable urination</li>
+          <li>Pollakiuria: ↑ frequency, normal/↓ total volume, painful, urgent</li>
+        </ul>
+      `,
+      diagnosis: `<p>ดู Urinary Diagnostic Tests entry</p>`,
+      differential: `<p>กว้างมาก — แยกตามอาการเด่น</p>`,
+      treatment: `<p>ตามสาเหตุ — ดู entries เฉพาะ</p>`,
+      complications: `
+        <ul>
+          <li>Uremic crisis</li>
+          <li>Hyperkalemia (obstruction, AKI) → cardiac arrhythmia ✗</li>
+          <li>Bladder rupture (obstruction prolonged)</li>
+          <li>Severe dehydration / hypovolemia</li>
+          <li>Anemia (CKD chronic)</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ---------- Ch 39 · Urinary Diagnostic Tests ---------- */
+  {
+    id: 'urinary-diagnostic-tests',
+    titleEn: 'Urinary Diagnostic Tests',
+    titleTh: 'การตรวจวินิจฉัยโรคทางเดินปัสสาวะ',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['BUN', 'creatinine', 'SDMA', 'urinalysis', 'USG', 'UPC', 'cystocentesis', 'urine culture', 'IRIS staging'],
+    aliases: ['kidney tests', 'urinalysis', 'ตรวจไต', 'ตรวจปัสสาวะ'],
+    source: 'Ch. 39 · pp. 661–667',
+    sections: {
+      definition: `<p>เครื่องมือตรวจไตและทางเดินปัสสาวะ</p>`,
+      etiology: `<p>—</p>`,
+      pathophysiology: `<p>—</p>`,
+      symptoms: `<p>—</p>`,
+      diagnosis: `
+        <p><strong>1. Serum biomarkers:</strong></p>
+        <ul>
+          <li><strong>BUN (urea):</strong>
+            <ul>
+              <li>↑ in renal dysfunction (&gt; 75% loss before ↑)</li>
+              <li>↑ also: dehydration, GI bleed, high-protein diet, post-prandial</li>
+              <li>↓: PSS, hepatic insufficiency, low-protein diet</li>
+            </ul>
+          </li>
+          <li><strong>Creatinine:</strong>
+            <ul>
+              <li>More specific than BUN</li>
+              <li>↑ in renal dysfunction (&gt; 75% loss)</li>
+              <li>Affected by muscle mass (low in cachexia, high in muscular breeds)</li>
+            </ul>
+          </li>
+          <li><strong>SDMA</strong> ✨ — modern marker
+            <ul>
+              <li>↑ when ~ 40% renal function lost (vs 75% for Cr) — earlier detection</li>
+              <li>Not affected by muscle mass — better in old/cachectic cats</li>
+              <li>Recommended for IRIS staging, early CKD detection</li>
+            </ul>
+          </li>
+          <li><strong>Phosphorus:</strong> ↑ in CKD (poor prognostic), ↓ in PU/PD</li>
+          <li><strong>K+:</strong> ↑ in obstruction/anuria/Addison's; ↓ in CKD cat (common!)</li>
+        </ul>
+
+        <p><strong>2. Urinalysis (UA) ✨ — cornerstone:</strong></p>
+        <ul>
+          <li><strong>USG:</strong>
+            <ul>
+              <li>Dog: hyposthenuric &lt;1.008, isosthenuric 1.008-1.012, hypersthenuric &gt; 1.030</li>
+              <li>Cat: hypersthenuric &gt; 1.035 (cat concentrates more)</li>
+              <li>↓ Concentrating ability with renal failure (USG &lt; 1.030 dog, &lt; 1.035 cat with concurrent azotemia = renal)</li>
+            </ul>
+          </li>
+          <li><strong>Dipstick:</strong>
+            <ul>
+              <li>pH: alkaline (struvite, urease bacteria) vs acidic (CaOx, cat normal)</li>
+              <li>Protein: 1+ to 4+ — must compare to USG (1+ in dilute = significant)</li>
+              <li>Blood: hematuria, hemoglobinuria, myoglobinuria — confirm with sediment</li>
+              <li>Glucose: DM, primary renal glucosuria (Fanconi)</li>
+              <li>Ketones: DKA</li>
+              <li>Bilirubin: hepatobiliary (cat = abnormal in any amount)</li>
+            </ul>
+          </li>
+          <li><strong>Sediment:</strong>
+            <ul>
+              <li>RBC, WBC (&gt; 5/hpf = pyuria → infection)</li>
+              <li>Bacteria (must culture — bacteria-only doesn't confirm UTI without WBC)</li>
+              <li>Crystals: struvite, CaOx mono/dihydrate, urate (PSS), cystine</li>
+              <li>Casts: hyaline (mild), granular (tubular damage), cellular (active dz), waxy (chronic)</li>
+              <li>Atypical cells — TCC suspect</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. UPC ratio ✨</strong></p>
+        <ul>
+          <li>Quantify proteinuria from sterile sample (no UTI, no severe hematuria)</li>
+          <li><strong>IRIS classification (dog):</strong>
+            <ul>
+              <li>&lt; 0.2 = non-proteinuric</li>
+              <li>0.2-0.5 = borderline (recheck)</li>
+              <li>&gt; 0.5 = proteinuric (workup glomerular dz)</li>
+            </ul>
+          </li>
+          <li>Cat: &lt; 0.2 normal, 0.2-0.4 borderline, &gt; 0.4 proteinuric</li>
+          <li>Persistent if confirmed × 3 over 2 wk</li>
+        </ul>
+
+        <p><strong>4. Urine culture &amp; sensitivity ✨</strong></p>
+        <ul>
+          <li><strong>Cystocentesis sample preferred</strong> — sterile</li>
+          <li>Quantitative count + sensitivity</li>
+          <li>Indications: pyuria, suspected UTI, immunocompromised (DM, Cushing's, CKD), recurrent UTI, before/after treatment</li>
+        </ul>
+
+        <p><strong>5. Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal radiograph:</strong> kidney size/shape, radiopaque uroliths (struvite, CaOx, mixed), bladder distension</li>
+          <li><strong>Abdominal US</strong> ✨: renal size/architecture/echogenicity, hydronephrosis, pyelonephritis, mass, bladder wall, uroliths (incl. radiolucent — urate, cystine), prostate</li>
+          <li><strong>Contrast cystography:</strong> wall mass, urolith, ectopic ureter, ruptured bladder</li>
+          <li><strong>CT</strong> ✨ — gold standard for ectopic ureter, complex obstruction</li>
+        </ul>
+
+        <p><strong>6. Renal biopsy:</strong></p>
+        <ul>
+          <li>Indication: glomerular dz workup (proteinuria), unexplained renal dysfunction</li>
+          <li>Methods: US-guided Tru-cut, surgical wedge, laparoscopic</li>
+          <li><strong>Coag panel + BP first</strong> ✨</li>
+          <li>Risk: hemorrhage (esp. ↑ BP, coagulopathy), infarction</li>
+        </ul>
+
+        <p><strong>7. IRIS Staging (CKD) ✨ — global standard</strong></p>
+        <ul>
+          <li>Stage 1: Cr &lt; 1.4 dog, &lt; 1.6 cat — non-azotemic, evidence of CKD</li>
+          <li>Stage 2: Cr 1.4-2.8 dog, 1.6-2.8 cat — mild azotemia</li>
+          <li>Stage 3: Cr 2.9-5.0 — moderate azotemia, signs likely</li>
+          <li>Stage 4: Cr &gt; 5.0 — severe, uremic crisis risk</li>
+          <li>Substaging: BP + UPC</li>
+        </ul>
+
+        <p><strong>8. Blood pressure ✨</strong></p>
+        <ul>
+          <li>Doppler or oscillometric</li>
+          <li>Multiple measurements — avoid stress</li>
+          <li>HT common in CKD, DM, hyperthyroid, Cushing's</li>
+          <li>Severe HT (&gt; 180 systolic) = end-organ damage risk</li>
+        </ul>
+      `,
+      differential: `<p>—</p>`,
+      treatment: `<p>—</p>`,
+      complications: `<p>Renal biopsy: hemorrhage (esp. coagulopathy, HT). Cystocentesis: bladder rupture (severe distension), iatrogenic infection (rare)</p>`,
+    },
+  },
+
+  /* ---------- Ch 40 · Acute Kidney Injury (AKI) ---------- */
+  {
+    id: 'acute-kidney-injury',
+    titleEn: 'Acute Kidney Injury (AKI)',
+    titleTh: 'ไตวายเฉียบพลัน',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['AKI', 'acute renal failure', 'leptospirosis', 'ethylene glycol', 'lily', 'NSAID', 'aminoglycoside', 'oliguria', 'hyperkalemia', 'hemodialysis'],
+    aliases: ['ARF', 'acute renal failure', 'AKI', 'ไตวายเฉียบพลัน'],
+    source: 'Ch. 40 · pp. 668–688',
+    sections: {
+      definition: `
+        <p>ฟังก์ชันไตลดลง <strong>เฉียบพลัน</strong> (hours-days) → ↑ azotemia + electrolyte/acid-base disturbance</p>
+        <ul>
+          <li>Mortality สูง 50-60% — emergency!</li>
+          <li>3 phases: induction → maintenance → recovery</li>
+          <li>Survivors อาจกลับสู่ปกติ หรือ progress เป็น CKD</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Pre-renal (hypoperfusion):</strong></p>
+        <ul>
+          <li>Severe dehydration, hypovolemic shock</li>
+          <li>CHF, sepsis, anesthesia hypotension</li>
+          <li>Reversible if treated promptly</li>
+        </ul>
+        <p><strong>Intrinsic renal (parenchymal damage):</strong></p>
+        <ul>
+          <li><strong>Toxic ✨:</strong>
+            <ul>
+              <li><strong>Ethylene glycol (antifreeze)</strong> ✗ — fatal; calcium oxalate crystals</li>
+              <li><strong>Lily (cat)</strong> ✗ — ALL parts toxic; even pollen on fur licked = AKI ✨</li>
+              <li><strong>NSAIDs</strong> — ibuprofen, naproxen, aspirin OD; carprofen idiosyncratic</li>
+              <li><strong>Aminoglycosides</strong> — gentamicin, amikacin (proximal tubule)</li>
+              <li>Grapes/raisins (dog) ✗</li>
+              <li>Heavy metals (lead, mercury)</li>
+              <li>Vitamin D toxicity (cholecalciferol rodenticide)</li>
+              <li>Acetaminophen, sulfa drugs</li>
+              <li>IV contrast media</li>
+              <li>Cisplatin, amphotericin B</li>
+            </ul>
+          </li>
+          <li><strong>Infectious:</strong>
+            <ul>
+              <li><strong>Leptospirosis (dog)</strong> ✨ — common cause; vaccine-preventable</li>
+              <li>Bacterial pyelonephritis</li>
+              <li>Borrelia, Ehrlichia (less common)</li>
+            </ul>
+          </li>
+          <li><strong>Ischemic:</strong> prolonged hypotension, RTE, DIC, hemolysis</li>
+          <li><strong>Other:</strong> hypercalcemia, severe pancreatitis, snake envenomation, heat stroke</li>
+        </ul>
+        <p><strong>Post-renal:</strong></p>
+        <ul>
+          <li>Urethral obstruction (cat plug, urolith)</li>
+          <li>Bilateral ureteral obstruction</li>
+          <li>Ruptured bladder/urethra (HBC, prolonged obstruction)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Tubular damage → cell death, sloughing → tubular obstruction by debris</li>
+          <li>↓ GFR + back-leak of glomerular filtrate</li>
+          <li>Vasoconstriction → ↓ renal blood flow</li>
+          <li>Severe → oliguria/anuria</li>
+          <li>Recovery — depends on basement membrane integrity (severe = no recovery)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Acute onset</strong> — hours to days</li>
+          <li>Severe lethargy, weakness</li>
+          <li>Anorexia, vomiting (uremic), halitosis, oral ulcers</li>
+          <li>Diarrhea ± melena</li>
+          <li>Dehydration (or fluid overload if anuric + treated)</li>
+          <li><strong>Oliguria/anuria</strong> ✗ — &lt; 1 mL/kg/hr or no output</li>
+          <li>± Polyuria (early/recovery phase)</li>
+          <li>Painful enlarged kidneys (palpation)</li>
+          <li>Hypothermia (severe)</li>
+          <li>Bradycardia from hyperkalemia ✗</li>
+          <li>Seizures (uremic encephalopathy) ✗</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Lab findings:</strong></p>
+        <ul>
+          <li>↑ BUN, ↑ Cr (often markedly), ↑ SDMA</li>
+          <li>↑ K+ ✗ (esp. obstruction, oliguria)</li>
+          <li>↑ P, variable Ca, metabolic acidosis</li>
+          <li>USG: isosthenuric (1.008-1.012) once intrinsic damage</li>
+          <li>UA: granular casts ✨ (active tubular damage), proteinuria, hematuria, glucosuria, cellular debris</li>
+          <li>Urine culture — pyelonephritis</li>
+          <li>Lepto MAT (paired) + urine PCR ✨</li>
+          <li>Toxicology: ethylene glycol test (within 12-24h), lily history</li>
+        </ul>
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>US: enlarged kidneys, hyperechoic cortex (acute), pelvic dilation (pyelo, obstruction)</li>
+          <li>Rad: kidney size, uroliths, free fluid (rupture)</li>
+        </ul>
+        <p><strong>Differentiate AKI vs CKD acute exacerbation:</strong></p>
+        <ul>
+          <li>AKI: enlarged kidneys, hyperechoic, no anemia, hyperK common, history of acute illness</li>
+          <li>CKD: small irregular kidneys, anemia, hypokalemia (cat), gradual onset</li>
+          <li>"Acute on chronic" possible</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>CKD (acute decompensation)</li>
+          <li>Severe dehydration with pre-renal azotemia (resolves with fluids)</li>
+          <li>Post-renal — palpate bladder, US</li>
+          <li>Hepatic insufficiency (PSS — different lab pattern)</li>
+          <li>Addison's crisis (hyperK + hypotension; cortisol low)</li>
+          <li>Sepsis, DKA</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Initial stabilization:</strong></p>
+        <ul>
+          <li><strong>IV fluids</strong> — restore perfusion (LRS or Plasmalyte)
+            <ul>
+              <li>Bolus 10-20 mL/kg if hypovolemic, reassess</li>
+              <li>Replace deficit + maintenance + ongoing losses</li>
+              <li>Monitor body weight q6-12h, BP, urine output, lung auscultation</li>
+              <li>Avoid over-resuscitation — fluid overload in oliguric = pulmonary edema ✗</li>
+            </ul>
+          </li>
+          <li><strong>Treat hyperkalemia (K &gt; 6.5 with ECG changes):</strong>
+            <ul>
+              <li>Calcium gluconate 10% 0.5-1 mL/kg slow IV (cardioprotective)</li>
+              <li>Regular insulin 0.25-0.5 U/kg IV + dextrose</li>
+              <li>NaHCO3 1-2 mEq/kg slow IV (severe acidosis)</li>
+              <li>Definitive: relieve obstruction or dialyze</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Specific treatment by cause:</strong></p>
+        <ul>
+          <li><strong>Ethylene glycol</strong> ✨:
+            <ul>
+              <li>Within 3h dog / 8h cat: <strong>4-MP (fomepizole) 20 mg/kg IV</strong>, then 15 mg/kg q12h × 3 doses
+                <ul>
+                  <li>Cat: higher initial 125 mg/kg IV</li>
+                </ul>
+              </li>
+              <li>Or ethanol 20% 5.5 mL/kg IV q4h × 5 doses (alternative)</li>
+              <li>Aggressive IV fluids + supportive</li>
+              <li>If azotemia present already → poor prognosis</li>
+            </ul>
+          </li>
+          <li><strong>Lily (cat) ✗</strong>:
+            <ul>
+              <li>Decontamination if recent (induce vomiting + activated charcoal)</li>
+              <li>Aggressive IV fluids 48-72h (3-4× maintenance)</li>
+              <li>Most need hemodialysis if azotemic — guarded prognosis</li>
+            </ul>
+          </li>
+          <li><strong>Leptospirosis</strong>:
+            <ul>
+              <li><strong>Doxycycline 5 mg/kg PO q12h × 2 weeks</strong> ✨</li>
+              <li>Or ampicillin 22 mg/kg IV q6h initially → doxy when stable</li>
+              <li>Owner notification — zoonotic (avoid urine contact)</li>
+              <li>Aggressive supportive care</li>
+            </ul>
+          </li>
+          <li><strong>Pyelonephritis</strong>: empirical fluoroquinolone (enrofloxacin 5-10 mg/kg PO/IV q24h) until culture; total 4-6 wk</li>
+          <li><strong>Obstruction</strong>: relieve immediately — urethral catheterization, retrograde flushing, surgical</li>
+          <li><strong>NSAID-induced</strong>: discontinue, gastroprotectants, aggressive fluids</li>
+          <li><strong>Hypercalcemia-induced</strong>: IV fluids 0.9% NaCl, furosemide, treat underlying</li>
+        </ul>
+
+        <p><strong>3. Manage oliguria/anuria:</strong></p>
+        <ul>
+          <li>Confirm euvolemia + no obstruction first</li>
+          <li><strong>Furosemide 1-4 mg/kg IV bolus</strong>; if no response within 1h, ↑ dose or CRI 0.5-1 mg/kg/hr</li>
+          <li><strong>Mannitol 0.5-1 g/kg IV</strong> over 15-20 min — trial if euvolemic + no CHF</li>
+          <li>If anuric &gt; 12-24h despite above → <strong>hemodialysis or peritoneal dialysis</strong></li>
+        </ul>
+
+        <p><strong>4. Supportive care:</strong></p>
+        <ul>
+          <li>Anti-emetics: maropitant 1 mg/kg SC/IV q24h, ondansetron 0.5 mg/kg IV q8-12h</li>
+          <li>Acid suppression: pantoprazole, omeprazole</li>
+          <li>Sucralfate ถ้า hematemesis</li>
+          <li>Pain mgmt — buprenorphine, methadone (NEVER NSAIDs ✗)</li>
+          <li>Esophagostomy tube ถ้า anorexia &gt; 3 d (cat especially)</li>
+          <li>Phosphate binders if hyperP persists</li>
+          <li>Monitor: weight, BP, urine output q6h, electrolytes q12h, BUN/Cr q24h</li>
+        </ul>
+
+        <p><strong>5. Renal replacement therapy (RRT) — referral:</strong></p>
+        <ul>
+          <li>Indications: anuria &gt; 12-24h, severe hyperK refractory, severe acidosis, fluid overload, lily/EG adjunct</li>
+          <li>Hemodialysis — gold standard (limited availability)</li>
+          <li>Peritoneal dialysis — alternative</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Hyperkalemic cardiac arrhythmia / arrest</strong> ✗</li>
+          <li>Uremic encephalopathy → seizures, coma</li>
+          <li>Pulmonary edema (fluid overload)</li>
+          <li>GI hemorrhage (uremic gastropathy)</li>
+          <li>DIC, sepsis</li>
+          <li>Progression to CKD (50% of survivors)</li>
+          <li>Death from progressive renal failure</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Pre-renal AKI corrected promptly: <strong>excellent</strong></li>
+          <li>Lepto with prompt antibiotic + supportive: 70-85% survival</li>
+          <li>Toxic AKI (ethylene glycol with early fomepizole): variable; if azotemic = poor</li>
+          <li>Lily (cat) advanced: poor — &lt; 50% survival without dialysis</li>
+          <li>Anuric AKI without RRT: poor — &gt; 50% mortality</li>
+          <li>Survivors: ~ 50% develop CKD; lifelong monitoring</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Owner education:</strong> "Lily ทุกชนิดเป็นพิษกับแมว — ดอก, ใบ, ละอองเกสร, แม้แต่น้ำในแจกัน. ห้ามมีในบ้านที่มีแมว!" ✗ <br>"หมา/แมวกินแอนตี้ฟรีซ — emergency ภายใน 3 ชม. มีโอกาสรอด"</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 41 · Chronic Kidney Disease (CKD) ---------- */
+  {
+    id: 'chronic-kidney-disease',
+    titleEn: 'Chronic Kidney Disease (CKD)',
+    titleTh: 'CKD — ไตวายเรื้อรัง',
+    type: 'disease',
+    system: 'urinary',
+    species: ['cat', 'dog'],
+    tags: ['CKD', 'chronic kidney disease', 'IRIS staging', 'SDMA', 'phosphate binders', 'renal diet', 'ACE inhibitor', 'hypertension', 'anemia', 'darbepoetin', 'amlodipine', 'mirtazapine'],
+    aliases: ['CRF', 'chronic renal failure', 'CKD', 'ไตวาย', 'ไตเรื้อรัง'],
+    source: 'Ch. 41 · pp. 689–705',
+    sections: {
+      definition: `
+        <p>การลดลงของฟังก์ชันไต <strong>&gt; 3 เดือน</strong> — irreversible</p>
+        <ul>
+          <li><strong>เจอบ่อยที่สุดในแมวสูงวัย</strong> ✨ — &gt; 30% ของแมวอายุ &gt; 10 ปี</li>
+          <li>หมา: เจอน้อยกว่า แต่อาจรุนแรงกว่า (proteinuric form, glomerular dz)</li>
+          <li>Progressive — แต่ slowed with proper management</li>
+          <li>IRIS staging guide treatment</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Cat:</strong></p>
+        <ul>
+          <li>Idiopathic interstitial nephritis (most common)</li>
+          <li>Sequela of AKI</li>
+          <li>Polycystic kidney disease (Persian, Himalayan ✨ — autosomal dominant)</li>
+          <li>Lymphoma, neoplasia</li>
+          <li>Amyloidosis (Abyssinian, Siamese)</li>
+          <li>Chronic pyelonephritis</li>
+          <li>Glomerulonephritis (less common cat vs dog)</li>
+          <li>FIP, FIV-related</li>
+        </ul>
+        <p><strong>Dog:</strong></p>
+        <ul>
+          <li><strong>Glomerular disease</strong> ✨ — proteinuric, often severe</li>
+          <li>Familial nephropathies (Cocker, Bull Terrier, Lhasa Apso, Shih Tzu, GSD, Samoyed)</li>
+          <li>Chronic interstitial nephritis</li>
+          <li>Amyloidosis (Shar-Pei, Beagle)</li>
+          <li>Chronic pyelonephritis</li>
+          <li>Hypertension-associated</li>
+          <li>Sequela of AKI</li>
+          <li>Leishmaniasis (endemic)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Progressive nephron loss</li>
+          <li>Surviving nephrons hyperfilter to compensate → eventually fail (intraglomerular hypertension)</li>
+          <li>↓ GFR → azotemia, ↓ erythropoietin → anemia</li>
+          <li>Secondary HPT (↓ vit D activation, P retention → ↑ PTH)</li>
+          <li>Hypokalemia (cat — K wasting)</li>
+          <li>Metabolic acidosis</li>
+          <li>Systemic hypertension common</li>
+          <li>Proteinuria worsens progression (glomerular sclerosis)</li>
+          <li>Renal secondary HPT → bone demineralization, "rubber jaw" (severe)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Early (Stage 1-2):</strong></p>
+        <ul>
+          <li>Often subclinical, subtle weight loss, mild PU/PD</li>
+          <li>Detected on screening</li>
+        </ul>
+        <p><strong>Advanced (Stage 3-4):</strong></p>
+        <ul>
+          <li><strong>PU/PD</strong> ✨</li>
+          <li><strong>Weight loss, muscle wasting (sarcopenia)</strong> ✨</li>
+          <li>Anorexia / hyporexia (food aversion to renal diet)</li>
+          <li>Vomiting (uremic gastritis)</li>
+          <li>Halitosis, oral ulcers</li>
+          <li>Lethargy</li>
+          <li>Constipation (dehydration)</li>
+          <li>Pale MM (anemia)</li>
+          <li>Dehydration despite drinking</li>
+          <li>Small irregular kidneys (palpation)</li>
+          <li>Cachexia, weakness</li>
+          <li>Severe: uremic seizures, coma</li>
+        </ul>
+        <p><strong>Hypertension complications:</strong></p>
+        <ul>
+          <li>Acute blindness (retinal detachment, hemorrhage) ✗</li>
+          <li>Neurological signs</li>
+          <li>Cardiac (LVH)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnostic criteria (any of):</strong></p>
+        <ul>
+          <li>Persistent ↑ Cr / SDMA over 2-3 months</li>
+          <li>Persistent isosthenuric urine (USG &lt; 1.030 dog, &lt; 1.035 cat) with azotemia</li>
+          <li>Small irregular kidneys on imaging</li>
+          <li>Persistent renal proteinuria</li>
+        </ul>
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>Full chem panel: BUN, Cr, SDMA, P, Ca, K, glucose, ALT, ALP, albumin, globulin</li>
+          <li>UA + UPC + culture</li>
+          <li>CBC — anemia (non-regenerative)</li>
+          <li>BP measurement ✨ (multiple readings)</li>
+          <li>T4 (cat senior — concurrent hyperthyroid common)</li>
+          <li>FeLV/FIV (cat)</li>
+          <li>Abdominal US — kidney size/architecture, mass, polycystic, hydronephrosis</li>
+          <li>Lepto (dog with subacute onset)</li>
+          <li>Renal biopsy — only if proteinuric, young, atypical</li>
+        </ul>
+        <p><strong>IRIS staging</strong> at diagnosis + each recheck:</p>
+        <ul>
+          <li>Stage by Cr (after rehydration)</li>
+          <li>Substage by UPC + BP</li>
+          <li>Determines treatment intensity</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>AKI (acute on chronic distinguish — kidney size + anemia status)</li>
+          <li>Pre-renal azotemia (dehydration — resolves with fluids)</li>
+          <li>Post-renal (obstruction)</li>
+          <li>Hyperthyroid (cat — masks CKD; treat both)</li>
+          <li>Pyelonephritis (treatable cause)</li>
+          <li>Lymphoma (renal — biopsy/cytology)</li>
+          <li>Amyloidosis</li>
+          <li>Glomerulonephritis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Goals:</strong> slow progression + manage uremia + improve QOL</p>
+
+        <p><strong>1. Renal diet ✨ — cornerstone (all stages with azotemia):</strong></p>
+        <ul>
+          <li>Royal Canin Renal, Hill's k/d, Purina NF</li>
+          <li>Restricted protein (high-quality), restricted phosphorus, ↑ omega-3, ↑ B-vitamins, alkalinizing</li>
+          <li>Cat: prefers wet food (hydration); transition slowly</li>
+          <li>If refuses renal diet: prioritize calorie intake over diet (cachexia worse than slightly higher P)</li>
+          <li>Improves survival significantly in cat CKD ✓</li>
+        </ul>
+
+        <p><strong>2. Hydration support:</strong></p>
+        <ul>
+          <li>Multiple water sources, fountains</li>
+          <li>Wet food preferred</li>
+          <li><strong>SQ fluids (LRS) at home</strong> ✨ — cat: 100-150 mL 2-3×/wk; dog: 10-20 mL/kg as needed</li>
+          <li>Owner training simple — pinch tent of skin, insert butterfly</li>
+          <li>Improves QOL dramatically</li>
+        </ul>
+
+        <p><strong>3. Phosphate management ✨:</strong></p>
+        <ul>
+          <li>Goal: P &lt; 4.5 mg/dL (Stage 2), &lt; 5.0 (Stage 3), &lt; 6.0 (Stage 4)</li>
+          <li>Renal diet first — usually adequate Stage 2</li>
+          <li><strong>Phosphate binders</strong> if diet insufficient:
+            <ul>
+              <li>Aluminum hydroxide 30-90 mg/kg/day with meals (cheap, effective)</li>
+              <li>Calcium carbonate (caution Ca level)</li>
+              <li>Lanthanum carbonate (Renalzin, Ipakitine)</li>
+              <li>Sevelamer (Renagel) — non-absorbable, premium</li>
+            </ul>
+          </li>
+          <li>Recheck P q4-6 wk, adjust dose</li>
+        </ul>
+
+        <p><strong>4. Hypertension control:</strong></p>
+        <ul>
+          <li>Indication: persistent BP &gt; 160 mmHg with end-organ damage; or &gt; 180 regardless</li>
+          <li><strong>Amlodipine (cat) 0.625-1.25 mg/cat PO q24h</strong> ✨ — first-line
+            <ul>
+              <li>Dog: 0.1-0.5 mg/kg PO q24h</li>
+            </ul>
+          </li>
+          <li><strong>ACE inhibitors</strong> (benazepril 0.25-0.5 mg/kg PO q24h, enalapril similar):
+            <ul>
+              <li>Adjunct or first-line for proteinuric CKD</li>
+              <li>Reduces glomerular pressure</li>
+              <li>Monitor Cr (small ↑ acceptable, large ↑ = stop)</li>
+            </ul>
+          </li>
+          <li><strong>Telmisartan (Semintra)</strong> 1-3 mg/kg PO q24h — ARB; cat-licensed for proteinuria + HT</li>
+          <li>Avoid ACEi/ARB in dehydrated patient</li>
+        </ul>
+
+        <p><strong>5. Proteinuria management (UPC &gt; 0.5 dog, &gt; 0.4 cat):</strong></p>
+        <ul>
+          <li>ACE inhibitor (benazepril) or telmisartan ✨</li>
+          <li>Renal diet</li>
+          <li>Omega-3 supplementation</li>
+          <li>Recheck UPC q4-6 wk, adjust</li>
+        </ul>
+
+        <p><strong>6. Anemia management:</strong></p>
+        <ul>
+          <li>HCT &lt; 25% with clinical signs:
+            <ul>
+              <li><strong>Darbepoetin (Aranesp) 1 µg/kg SC weekly</strong> ✨ → adjust to maintain HCT 30-40%</li>
+              <li>Or epoetin alfa 100 U/kg SC 3×/wk</li>
+              <li>Iron supplementation IV before starting</li>
+              <li>Caution: pure red cell aplasia rare with epoetin (less with darbe)</li>
+            </ul>
+          </li>
+          <li>Severe symptomatic — pRBC transfusion bridge</li>
+        </ul>
+
+        <p><strong>7. Hypokalemia (cat especially):</strong></p>
+        <ul>
+          <li><strong>Potassium gluconate 2-4 mEq/cat PO q12-24h</strong> ✨ (Tumil-K, RenaKare)</li>
+          <li>Recheck K q2-4 wk; adjust</li>
+        </ul>
+
+        <p><strong>8. Acidosis:</strong></p>
+        <ul>
+          <li>Sodium bicarbonate 8-12 mg/kg PO q12h ถ้า bicarb &lt; 16 mEq/L</li>
+          <li>Or potassium citrate</li>
+        </ul>
+
+        <p><strong>9. Anti-emetics + appetite stimulants:</strong></p>
+        <ul>
+          <li>Maropitant 2 mg/kg PO q24h ✨</li>
+          <li>Ondansetron 0.5 mg/kg PO q8-12h (refractory)</li>
+          <li>Mirtazapine 1.88-3.75 mg/cat PO q48h or transdermal (Mirataz) — appetite stimulant ✨</li>
+          <li>Capromorelin (Entyce/Elura) — ghrelin agonist</li>
+        </ul>
+
+        <p><strong>10. Acid suppression for uremic gastritis:</strong></p>
+        <ul>
+          <li>Famotidine 0.5-1 mg/kg PO q12h, or omeprazole 1 mg/kg PO q24h</li>
+          <li>Sucralfate ถ้ามี hematemesis/melena</li>
+        </ul>
+
+        <p><strong>11. Treat concurrent disease:</strong></p>
+        <ul>
+          <li>UTI: culture-based antibiotics (long course 3-4 wk if pyelo)</li>
+          <li>Hyperthyroid: methimazole / definitive (caution unmasking CKD progression)</li>
+          <li>DM: insulin, monitor closely</li>
+        </ul>
+
+        <p><strong>Monitoring schedule:</strong></p>
+        <ul>
+          <li>Stage 1: q6 mo</li>
+          <li>Stage 2: q3-4 mo</li>
+          <li>Stage 3: q1-3 mo</li>
+          <li>Stage 4: q1 mo or more often</li>
+          <li>Each visit: weight, BCS, hydration, BP, Cr/SDMA, P, K, UPC, UA</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Uremic crisis (acute decompensation)</li>
+          <li>Hypertensive emergencies (retinal detachment, neuro signs) ✗</li>
+          <li>Severe hyperphosphatemia → secondary HPT, soft tissue mineralization</li>
+          <li>Refractory anemia</li>
+          <li>Sepsis (immunocompromised)</li>
+          <li>Calcium phosphate metastatic mineralization</li>
+          <li>Cachexia</li>
+          <li>End-stage uremia → death/euthanasia</li>
+        </ul>
+        <p><strong>Prognosis (median survival from diagnosis):</strong></p>
+        <ul>
+          <li><strong>Cat:</strong>
+            <ul>
+              <li>Stage 1: &gt; 3 years</li>
+              <li>Stage 2: 1-3 years</li>
+              <li>Stage 3: 1-2 years (highly variable)</li>
+              <li>Stage 4: months</li>
+            </ul>
+          </li>
+          <li><strong>Dog (more aggressive):</strong>
+            <ul>
+              <li>Stage 2: ~ 1-1.5 years</li>
+              <li>Stage 3: ~ 200-400 days</li>
+              <li>Stage 4: ~ 100-150 days</li>
+              <li>Proteinuric forms worse</li>
+            </ul>
+          </li>
+          <li>Negative prognostic factors: high P, severe proteinuria, severe HT, anemia, low K (cat)</li>
+          <li>Renal diet adherence + comprehensive management = significantly better outcomes ✓</li>
+        </ul>
+        <div class="callout">💡 <strong>"CKD แมว = manageable disease"</strong> ✨ — diagnosis early stage + diet + hydration + manage P/K/BP/anemia → quality of life ดี + ยืดอายุได้ปี ๆ. SQ fluids ที่บ้าน เป็นอุปกรณ์ลับสำหรับ owner</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
