@@ -16648,6 +16648,3625 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     PART 7 — METABOLIC &amp; ELECTROLYTE DISORDERS (Ch 51–55)
+  ============================================================ */
+
+  /* ---------- Ch 53 · Hypercalcemia ---------- */
+  {
+    id: 'hypercalcemia',
+    titleEn: 'Hypercalcemia',
+    titleTh: 'ภาวะแคลเซียมในเลือดสูง',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['hypercalcemia', 'PTHrp', 'lymphoma', 'anal sac adenocarcinoma', 'primary hyperparathyroidism', 'vitamin D toxicity', 'idiopathic feline', 'pamidronate', 'zoledronate', 'PU/PD'],
+    aliases: ['high calcium', 'แคลเซียมสูง', 'hyperCa'],
+    source: 'Ch. 53 · pp. 922–942',
+    sections: {
+      definition: `
+        <p>การที่ <strong>calcium ในเลือดสูงผิดปกติ</strong> — สำคัญที่ต้องวัด <strong>ionized calcium (iCa)</strong> ✨ เพราะ total Ca อาจถูก protein/pH รบกวน</p>
+        <ul>
+          <li>Total Ca &gt; 12 mg/dL (dog) / &gt; 11 mg/dL (cat) = abnormal</li>
+          <li><strong>iCa</strong> = active form; reference 1.25-1.45 mmol/L (dog), 1.20-1.40 (cat)</li>
+          <li>Severe: total Ca &gt; 15 mg/dL or iCa &gt; 1.65 → emergency, organ damage risk ✗</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>"GOSH DARN IT" mnemonic:</strong></p>
+        <ul>
+          <li><strong>G</strong>ranulomatous dz (fungal, FIP)</li>
+          <li><strong>O</strong>steolytic (bone tumors, multiple myeloma, infection)</li>
+          <li><strong>S</strong>pherocytes? (no — sometimes "Spurious" — lab artifact, lipemia)</li>
+          <li><strong>H</strong>yperparathyroidism (primary)</li>
+          <li><strong>D</strong>'s: Vitamin D toxicity, Addison's, Drugs</li>
+          <li><strong>A</strong>ddison's disease ✨</li>
+          <li><strong>R</strong>enal disease (CKD — variable Ca; can be ↑ or ↓)</li>
+          <li><strong>N</strong>eoplasia ✨ (most common pathologic cause)</li>
+          <li><strong>I</strong>diopathic (cat ✨)</li>
+          <li><strong>T</strong>emperature (lab artifact)</li>
+        </ul>
+
+        <p><strong>Top causes by species:</strong></p>
+        <ul>
+          <li><strong>Dog ✨:</strong>
+            <ul>
+              <li><strong>Lymphoma</strong> ✨ — most common malignant cause (~ 60-70% of paraneoplastic hyperCa)</li>
+              <li><strong>Anal sac adenocarcinoma (apocrine gland)</strong> ✨ — classic: older spayed female dog, mass at anal sac</li>
+              <li>Primary hyperparathyroidism (Keeshond predisposed; functional parathyroid adenoma)</li>
+              <li>Multiple myeloma (osteolytic + PTHrp)</li>
+              <li>Carcinomas (squamous, mammary, prostate)</li>
+              <li>Vitamin D toxicity (cholecalciferol rodenticide ✗, calcipotriene cream — psoriasis)</li>
+              <li>Granulomatous dz (blastomycosis, histoplasmosis, coccidioidomycosis, FIP-like)</li>
+              <li>Addison's ✨</li>
+              <li>Acute / chronic kidney disease</li>
+              <li>Osteomyelitis</li>
+            </ul>
+          </li>
+          <li><strong>Cat ✨:</strong>
+            <ul>
+              <li><strong>Idiopathic hypercalcemia (IHC)</strong> ✨ — most common in cat, unique entity; middle-aged, mild-moderate, often subclinical</li>
+              <li>CKD (often see ↑ total but normal-low iCa)</li>
+              <li>Lymphoma, SCC</li>
+              <li>Primary hyperparathyroidism (uncommon)</li>
+              <li>Vitamin D toxicity</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↑ Calcium → multi-system effects:
+            <ul>
+              <li><strong>Renal:</strong> nephrocalcinosis, ↓ ADH effect → PU/PD; AKI risk</li>
+              <li><strong>GI:</strong> ↓ motility, anorexia, vomiting, constipation</li>
+              <li><strong>Neuromuscular:</strong> weakness, depression, twitching</li>
+              <li><strong>Cardiac:</strong> shortened QT, arrhythmia (severe)</li>
+              <li><strong>Soft tissue:</strong> mineralization (lung, kidney, GI, vessels)</li>
+            </ul>
+          </li>
+          <li>Tumor mechanisms:
+            <ul>
+              <li>PTHrp secretion (lymphoma, anal sac adenocarcinoma, carcinomas)</li>
+              <li>Local osteolysis (multiple myeloma, bone mets)</li>
+              <li>↑ 1,25-vit D (granulomatous, lymphoma)</li>
+            </ul>
+          </li>
+          <li>Primary hyperPTH: autonomous PTH from adenoma → ↑ Ca + ↓/normal P</li>
+          <li>Idiopathic feline: unknown — possibly diet-related (acidified urine), GI absorption</li>
+        </ul>
+      `,
+      symptoms: `
+        <p>Severity correlates with iCa level + chronicity</p>
+        <ul>
+          <li><strong>PU/PD</strong> ✨ — earliest, most common</li>
+          <li>Anorexia, weight loss</li>
+          <li>Lethargy, weakness</li>
+          <li>Vomiting (uremic, GI), constipation</li>
+          <li>Muscle weakness, twitching</li>
+          <li>Bradycardia (severe)</li>
+          <li>Stupor → coma (severe)</li>
+          <li>Calcium urolithiasis (CaOx, calcium phosphate)</li>
+          <li>Cardiac arrhythmias (severe)</li>
+          <li>Idiopathic feline: often subclinical or mild; weight loss only</li>
+          <li>Mass: anal sac (palpate), peripheral LN (lymphoma), bone (myeloma)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Confirm + characterize:</strong></p>
+        <ul>
+          <li><strong>iCa measurement</strong> ✨ — essential; total Ca alone unreliable
+            <ul>
+              <li>Heparin/EDTA artifact possible — use proper tube</li>
+              <li>Process promptly</li>
+            </ul>
+          </li>
+          <li>Total Ca + albumin (correction formula often used but unreliable in dogs)</li>
+          <li>Phosphorus (high in CKD, vit D toxicity, osteolysis; low in primary hyperPTH)</li>
+          <li>BUN, Cr, SDMA (renal function)</li>
+          <li>UA, USG, UPC</li>
+        </ul>
+
+        <p><strong>Workup based on history + exam:</strong></p>
+        <ul>
+          <li>CBC, biochem (full)</li>
+          <li>UA + culture</li>
+          <li>Thoracic radiograph (mediastinal mass — lymphoma; mets)</li>
+          <li>Abdominal radiograph + ultrasound (LN, splenomegaly, mass)</li>
+          <li><strong>Rectal exam — anal sac palpation</strong> ✨ (essential in older spayed female dog)</li>
+          <li>Peripheral LN aspirate if enlarged</li>
+          <li>Bone marrow aspirate (myeloma — see globulin ↑, M-spike on protein electrophoresis)</li>
+          <li>FNA mass</li>
+        </ul>
+
+        <p><strong>PTH + PTHrp + 25-OH vitamin D panel</strong> ✨ — pivotal:</p>
+        <ul>
+          <li>Send to endocrinology lab (Michigan State, Cornell)</li>
+          <li>Sample handling: chilled, prompt centrifugation</li>
+        </ul>
+        <ul>
+          <li><strong>↑ PTH + ↑ Ca + ↓/normal P</strong> = primary hyperparathyroidism</li>
+          <li><strong>↓ PTH + ↑ Ca + ↑ PTHrp</strong> = malignancy (lymphoma, anal sac AC, carcinomas)</li>
+          <li><strong>↓ PTH + ↑ Ca + normal PTHrp + ↑ 25-OH vit D</strong> = vitamin D toxicity</li>
+          <li><strong>↓ PTH + ↑ Ca + normal PTHrp + normal vit D</strong> = idiopathic / granulomatous / other</li>
+        </ul>
+
+        <p><strong>Other:</strong></p>
+        <ul>
+          <li>ACTH stim if Addison's suspected</li>
+          <li>Cervical US (parathyroid adenoma — single nodule &gt; 4 mm)</li>
+          <li>Fungal serology if granulomatous dz suspected</li>
+          <li>SPEP / immunoglobulin quantification (myeloma)</li>
+          <li>Bone marrow aspirate</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology — comprehensive workup</p>`,
+      treatment: `
+        <p><strong>Severity-based approach:</strong></p>
+
+        <p><strong>1. Mild-moderate (iCa &lt; 1.6 mmol/L, no signs):</strong></p>
+        <ul>
+          <li>Diagnostic workup first</li>
+          <li>Treat underlying cause</li>
+          <li>Ca usually normalizes</li>
+        </ul>
+
+        <p><strong>2. Moderate-severe with signs / Ca &gt; 15 / iCa &gt; 1.65 — emergency:</strong></p>
+
+        <p><strong>Step 1 - IV fluids ✨:</strong></p>
+        <ul>
+          <li><strong>0.9% NaCl 2-3× maintenance</strong> ✨ — promotes calciuresis (Na competes with Ca reabsorption)</li>
+          <li>Avoid LRS (contains Ca!)</li>
+          <li>Monitor hydration, BP, urine output</li>
+          <li>Continue 24-48h until Ca trending down</li>
+        </ul>
+
+        <p><strong>Step 2 - Furosemide (after rehydration):</strong></p>
+        <ul>
+          <li>2-4 mg/kg IV/PO q8-12h ✨</li>
+          <li>Loop diuretic — ↑ calciuresis</li>
+          <li>NEVER before rehydration (worsens)</li>
+          <li>Monitor K (loss with furosemide)</li>
+        </ul>
+
+        <p><strong>Step 3 - Bisphosphonates (severe / refractory):</strong></p>
+        <ul>
+          <li><strong>Pamidronate 1-2 mg/kg IV</strong> over 2h in 0.9% NaCl ✨
+            <ul>
+              <li>Single infusion; effect 24-72h</li>
+              <li>May repeat in 1-3 weeks</li>
+              <li>Inhibits osteoclasts</li>
+              <li>Especially useful: vit D toxicity, malignancy, refractory</li>
+              <li>Monitor renal function (nephrotoxic)</li>
+            </ul>
+          </li>
+          <li>Zoledronate 0.1-0.25 mg/kg IV — newer alternative; longer-acting</li>
+          <li>Alendronate 10 mg/dog or 5 mg/cat PO 1×/wk — oral; for chronic management (idiopathic feline)</li>
+        </ul>
+
+        <p><strong>Step 4 - Glucocorticoid (CAUTION):</strong></p>
+        <ul>
+          <li>Prednisolone 1-2 mg/kg PO/IV q24h</li>
+          <li><strong>Effective for:</strong> lymphoma, multiple myeloma, granulomatous, Addison's, vit D tox, idiopathic feline</li>
+          <li><strong>⚠️ AVOID until lymphoma/malignancy ruled out</strong> ✗ — partial response masks dx, complicates chemo</li>
+          <li>If proven cause / no malignancy concern → start</li>
+        </ul>
+
+        <p><strong>Step 5 - Calcitonin (rare use):</strong></p>
+        <ul>
+          <li>4-6 IU/kg SC q8-12h</li>
+          <li>Quick-acting but tachyphylaxis</li>
+          <li>Used in vit D toxicity acute</li>
+        </ul>
+
+        <p><strong>3. Specific cause treatment:</strong></p>
+        <ul>
+          <li><strong>Lymphoma:</strong> chemotherapy (CHOP) → Ca normalizes with response</li>
+          <li><strong>Anal sac adenocarcinoma:</strong> surgical excision → Ca normalizes within days; LN debulking + chemo if mets</li>
+          <li><strong>Primary hyperparathyroidism:</strong>
+            <ul>
+              <li>Surgical parathyroidectomy ✨ — definitive
+                <ul>
+                  <li>US-localize adenoma</li>
+                  <li>Post-op risk: hypocalcemia (other glands suppressed) — supplement Ca + vit D 7-14 d</li>
+                </ul>
+              </li>
+              <li>US-guided ethanol or heat ablation — alternative</li>
+              <li>Cure rate &gt; 90%</li>
+            </ul>
+          </li>
+          <li><strong>Vitamin D toxicity:</strong> aggressive fluids + furosemide + pamidronate + prednisolone; monitor for AKI; long course (weeks)</li>
+          <li><strong>Idiopathic feline:</strong>
+            <ul>
+              <li>High-fiber diet (Hill's w/d)</li>
+              <li>Or renal diet (more alkalinizing)</li>
+              <li>If persistent/severe: prednisolone 1-2 mg/kg PO q24h, then taper</li>
+              <li>Alendronate 5 mg/cat PO 1×/wk if refractory</li>
+              <li>Monitor q3-6 mo</li>
+            </ul>
+          </li>
+          <li><strong>Addison's:</strong> ดู Addison's entry — DOCP + pred</li>
+          <li><strong>Granulomatous:</strong> appropriate antifungal/treatment</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>iCa, total Ca, P, renal function q12-24h during acute Tx</li>
+          <li>Long-term: q3-6 mo per cause</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>AKI from nephrocalcinosis</strong> ✗ — major complication</li>
+          <li>Soft-tissue mineralization (kidney, lung, GI, vessels) — irreversible</li>
+          <li>Cardiac arrhythmia (severe)</li>
+          <li>Calcium urolithiasis</li>
+          <li>Pancreatitis</li>
+          <li>Coma → death (severe untreated)</li>
+          <li>Iatrogenic hypocalcemia post-parathyroidectomy ✗</li>
+          <li>Bisphosphonate-induced AKI</li>
+          <li>Glucocorticoid masks lymphoma dx ✗</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Primary hyperPTH + parathyroidectomy: <strong>excellent</strong> — cure ✓</li>
+          <li>Anal sac AC + surgery: variable — local control good, MST 1-2 yr (mets common)</li>
+          <li>Lymphoma + chemo: depends on stage; multicentric T-cell with hyperCa = poor</li>
+          <li>Idiopathic feline: managed long-term; excellent QOL</li>
+          <li>Vit D toxicity: variable; if AKI develops = guarded</li>
+          <li>Addison's: excellent with treatment</li>
+          <li>Untreated severe (Ca &gt; 18): poor</li>
+        </ul>
+        <div class="callout">💡 <strong>Older spayed female dog + ↑ Ca = anal sac adenocarcinoma until proven otherwise</strong> ✨ — rectal exam mandatory<br><br><strong>Lymphoma = #1 malignant cause hyperCa in dog</strong> — DON'T give pred until ruled out<br><br>Cat: idiopathic hyperCa = unique entity; high-fiber/renal diet first</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 53 · Hypocalcemia ---------- */
+  {
+    id: 'hypocalcemia',
+    titleEn: 'Hypocalcemia',
+    titleTh: 'ภาวะแคลเซียมในเลือดต่ำ',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['hypocalcemia', 'eclampsia', 'puerperal tetany', 'hypoparathyroidism', 'CKD', 'pancreatitis', 'calcium gluconate', 'calcitriol', 'tetany', 'seizure'],
+    aliases: ['low calcium', 'แคลเซียมต่ำ', 'eclampsia', 'milk fever', 'tetany'],
+    source: 'Ch. 53 · pp. 942–956',
+    sections: {
+      definition: `
+        <p>Calcium ต่ำ — สาเหตุได้หลากหลาย; severity แปรตามระดับ + speed of onset</p>
+        <ul>
+          <li>Total Ca &lt; 8 mg/dL or iCa &lt; 1.0 mmol/L = abnormal</li>
+          <li>Severe: iCa &lt; 0.7 → tetany, seizures ✗</li>
+          <li>Acute drops more dangerous than chronic adaptation</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Eclampsia (puerperal tetany)</strong> ✨ ✗ — small-breed bitch postpartum (1-3 wk after whelping); high milk Ca demand
+            <ul>
+              <li>Chihuahua, Yorkie, Poodle, Maltese</li>
+              <li>Large litter, primiparous</li>
+            </ul>
+          </li>
+          <li><strong>Hypoparathyroidism (primary)</strong>:
+            <ul>
+              <li>Idiopathic (immune-mediated parathyroid destruction)</li>
+              <li>Iatrogenic post-thyroidectomy (cat after bilateral) ✨</li>
+              <li>Cervical trauma</li>
+            </ul>
+          </li>
+          <li><strong>CKD</strong> ✨ — chronic; ↓ vit D activation, P retention → ↓ Ca; usually ↓ iCa late stage</li>
+          <li><strong>Pancreatitis</strong> ✨ — Ca saponification with fat necrosis; mild-moderate ↓</li>
+          <li>Acute kidney injury (with hyperphosphatemia)</li>
+          <li>Ethylene glycol toxicity ✗ (Ca-oxalate crystallization)</li>
+          <li>Phosphate enema (cat especially) — hyperphosphatemia → ↓ Ca</li>
+          <li>Tumor lysis syndrome (post-chemo)</li>
+          <li>Hypoalbuminemia → ↓ <strong>total</strong> Ca but <strong>iCa normal</strong> — no signs</li>
+          <li>Severe magnesium deficiency (functional hypoPTH)</li>
+          <li>Chronic alkalosis</li>
+          <li>Citrate toxicity (massive transfusion)</li>
+          <li>Refeeding syndrome</li>
+          <li>EDTA contamination (lab artifact)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↓ Ionized Ca → ↑ neuromuscular excitability:
+            <ul>
+              <li>Muscle twitching, fasciculations</li>
+              <li>Tetany (sustained contractions)</li>
+              <li>Seizures</li>
+            </ul>
+          </li>
+          <li>Cardiac: prolonged QT, arrhythmia, ↓ contractility</li>
+          <li>↓ Stress response, hypotension (severe)</li>
+          <li>Eclampsia: massive Ca loss to milk + Ca demand from puppies</li>
+          <li>HypoPTH: failed Ca homeostasis, no Ca mobilization from bone, ↓ renal Ca reabsorption</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute / severe:</strong></p>
+        <ul>
+          <li><strong>Muscle tremors, fasciculations</strong> ✨</li>
+          <li><strong>Tetany</strong> — stiff gait, sustained contraction</li>
+          <li><strong>Seizures</strong> ✗</li>
+          <li>Restlessness, panting, anxiety</li>
+          <li>Hyperthermia (from muscle activity)</li>
+          <li>Vocalizations</li>
+          <li>Facial twitching, pawing at face</li>
+          <li>Hypersensitivity to stimuli</li>
+        </ul>
+
+        <p><strong>Chronic:</strong></p>
+        <ul>
+          <li>Episodic weakness</li>
+          <li>Behavioral changes</li>
+          <li>Lethargy</li>
+          <li>Cataracts (chronic hypoPTH)</li>
+          <li>Often subclinical until severe</li>
+        </ul>
+
+        <p><strong>Cardiac:</strong></p>
+        <ul>
+          <li>Bradycardia or arrhythmia</li>
+          <li>Hypotension (severe)</li>
+        </ul>
+
+        <p><strong>Eclampsia specific ✗:</strong></p>
+        <ul>
+          <li>Postpartum bitch (peak 1-3 wk after whelping; can be late pregnancy)</li>
+          <li>Restless, panting → tremors → tetany → seizures → death within hours if untreated</li>
+          <li>Hyperthermia common</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Confirm:</strong></p>
+        <ul>
+          <li><strong>iCa measurement</strong> ✨ — essential (total Ca alters with albumin)
+            <ul>
+              <li>iCa &lt; 1.0 mmol/L = abnormal; &lt; 0.7 = severe</li>
+            </ul>
+          </li>
+          <li>Total Ca + albumin</li>
+          <li>P (high in CKD/AKI/phosphate enema; low in hypoPTH)</li>
+          <li>Magnesium</li>
+          <li>BUN, Cr (renal)</li>
+          <li>Albumin</li>
+          <li>Glucose</li>
+          <li>Lipase / fPL/cPL (pancreatitis)</li>
+        </ul>
+
+        <p><strong>Etiology workup:</strong></p>
+        <ul>
+          <li>History: postpartum?, recent thyroidectomy?, drug exposures, phosphate enema?</li>
+          <li>UA — calcium oxalate crystals (ethylene glycol)</li>
+          <li>PTH — low/undetectable in primary hypoPTH; high in CKD (compensatory)</li>
+          <li>25-OH vitamin D — low in deficiency</li>
+          <li>Ionized Mg</li>
+          <li>Abdominal US (pancreatitis)</li>
+        </ul>
+
+        <p><strong>ECG:</strong></p>
+        <ul>
+          <li>Prolonged QT</li>
+          <li>Bradycardia</li>
+          <li>± ventricular arrhythmia</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology</p>`,
+      treatment: `
+        <p><strong>1. Acute symptomatic / tetany / seizures ✗ — emergency:</strong></p>
+        <ul>
+          <li><strong>Calcium gluconate 10% 0.5-1.5 mL/kg slow IV over 10-20 min</strong> ✨
+            <ul>
+              <li>= 50-150 mg/kg</li>
+              <li>Monitor ECG continuously — STOP if bradycardia, arrhythmia</li>
+              <li>Effect within minutes; tetany resolves</li>
+              <li>Calcium chloride NOT for IV use peripheral (necrosis if extravasation)</li>
+            </ul>
+          </li>
+          <li>If recurs: continue as CRI (calcium gluconate 60-90 mg/kg/day diluted in fluids)</li>
+          <li>Or repeat bolus q6-8h until oral therapy effective</li>
+          <li>Caution: extravasation = severe tissue necrosis ✗</li>
+        </ul>
+
+        <p><strong>2. Eclampsia — emergency ✗:</strong></p>
+        <ul>
+          <li>Calcium gluconate 10% IV slow as above</li>
+          <li>Cool the dam (active cooling — wet towels, fan)</li>
+          <li><strong>WEAN PUPPIES</strong> ✨ — switch to bottle/formula
+            <ul>
+              <li>Continued nursing → relapse</li>
+              <li>If &lt; 4 wk old: bottle feed q2-3h with milk replacer</li>
+              <li>If 4-5 wk: gradual weaning to gruel</li>
+              <li>If &gt; 5 wk: wean directly</li>
+            </ul>
+          </li>
+          <li>Oral calcium 50-100 mg elemental Ca/kg/day for prevention</li>
+          <li>Recovered bitches — high risk of recurrence in next pregnancy; counsel on supplementation + weaning early</li>
+        </ul>
+
+        <p><strong>3. Hypoparathyroidism (primary or post-thyroidectomy) ✨:</strong></p>
+        <ul>
+          <li>Acute crisis: IV calcium as above</li>
+          <li>Long-term:
+            <ul>
+              <li><strong>Calcitriol (active vit D) 0.02-0.03 µg/kg PO q24h</strong> ✨ — rapid onset (1-4 d), short half-life (1-2 d) — easier to adjust
+                <ul>
+                  <li>Start 0.03-0.06 µg/kg/d split q12h × 3-5 d (loading)</li>
+                  <li>Maintain 0.01-0.03 µg/kg/d</li>
+                  <li>Recheck Ca q1-2 wk initially</li>
+                </ul>
+              </li>
+              <li><strong>Oral elemental calcium</strong>:
+                <ul>
+                  <li>Calcium carbonate 100-150 mg/kg/day divided q8h</li>
+                  <li>Calcium gluconate</li>
+                  <li>Calcium citrate (better absorbed in achlorhydria)</li>
+                </ul>
+              </li>
+              <li>Wean off oral Ca over weeks-months (vit D alone often sufficient long-term)</li>
+            </ul>
+          </li>
+          <li>Goal: low-normal Ca (avoid over-supplementation → hypercalciuria, urolithiasis)</li>
+          <li>Lifelong therapy</li>
+          <li>Recheck Ca q3-6 mo</li>
+        </ul>
+
+        <p><strong>4. CKD-related hypocalcemia:</strong></p>
+        <ul>
+          <li>Address hyperphosphatemia first (phosphate binders, renal diet)</li>
+          <li>Calcitriol 2.5-3.5 ng/kg PO q24h (very low dose for CKD — different from hypoPTH)</li>
+          <li>Don't use calcium-based binders if Ca already high</li>
+          <li>Monitor Ca, P, PTH</li>
+        </ul>
+
+        <p><strong>5. Pancreatitis-related:</strong></p>
+        <ul>
+          <li>Usually mild; treat pancreatitis</li>
+          <li>Ca supplementation only if symptomatic + iCa &lt; 0.8</li>
+          <li>Resolves with pancreatitis recovery</li>
+        </ul>
+
+        <p><strong>6. Phosphate enema toxicity (cat):</strong></p>
+        <ul>
+          <li>Aggressive IV fluids 0.9% NaCl</li>
+          <li>Calcium gluconate IV as above</li>
+          <li>Aluminum hydroxide oral (P binder)</li>
+          <li>Recovery 24-48h with treatment</li>
+        </ul>
+
+        <p><strong>7. Ethylene glycol:</strong></p>
+        <ul>
+          <li>See AKI entry — fomepizole/ethanol antidote, IV fluids, support</li>
+          <li>Don't supplement Ca (gives substrate for more oxalate crystals)</li>
+        </ul>
+
+        <p><strong>Magnesium correction:</strong></p>
+        <ul>
+          <li>Always check Mg in refractory hypocalcemia</li>
+          <li>Hypomagnesemia → functional hypoPTH</li>
+          <li>Magnesium sulfate 0.75-1 mEq/kg/day CRI in fluids</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Status epilepticus → hypoxia, brain damage ✗</li>
+          <li>Cardiac arrhythmia → arrest ✗</li>
+          <li>Hyperthermia → DIC, organ damage</li>
+          <li>Aspiration during seizures</li>
+          <li>Iatrogenic Ca extravasation → tissue necrosis ✗</li>
+          <li>Iatrogenic hypercalcemia (over-supplementation) → nephrocalcinosis, urolithiasis</li>
+          <li>Recurrence of eclampsia in subsequent pregnancies</li>
+          <li>Cataract formation (chronic hypoPTH)</li>
+          <li>Death (severe acute untreated)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Eclampsia + prompt treatment + weaning: <strong>excellent</strong> ✓</li>
+          <li>Primary hypoPTH with calcitriol: excellent — normal lifespan with monitoring</li>
+          <li>Post-thyroidectomy hypoPTH: often transient (weeks-months); some permanent</li>
+          <li>CKD-related: depends on CKD stage</li>
+          <li>Pancreatitis-related: depends on pancreatitis severity</li>
+          <li>Ethylene glycol-induced: depends on AKI; poor if late presentation</li>
+          <li>Severe untreated tetany/seizures: poor</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Eclampsia = post-partum emergency</strong> ✗ — small-breed bitch + tetany + 1-3 wk post-whelp = treat empirically. Wean puppies essential ป้องกัน relapse<br><br>💡 Cat post-bilateral thyroidectomy: monitor Ca q6-12h × 5-7 d — parathyroid often disturbed</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 52 · Hyperlipidemia ---------- */
+  {
+    id: 'hyperlipidemia',
+    titleEn: 'Hyperlipidemia',
+    titleTh: 'ภาวะไขมันในเลือดสูง',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['hyperlipidemia', 'hypertriglyceridemia', 'hypercholesterolemia', 'Schnauzer', 'pancreatitis', 'fenofibrate', 'omega-3', 'low-fat diet', 'xanthoma'],
+    aliases: ['high lipid', 'high cholesterol', 'high triglyceride', 'ไขมันสูง', 'lipemia'],
+    source: 'Ch. 52 · pp. 908–921',
+    sections: {
+      definition: `
+        <p>การที่ <strong>triglyceride หรือ cholesterol</strong> ในเลือดสูง</p>
+        <ul>
+          <li>Reference dog: TG 50-150 mg/dL, cholesterol 125-300 mg/dL</li>
+          <li>Reference cat: TG 20-110 mg/dL, cholesterol 95-130 mg/dL</li>
+          <li>Severe TG &gt; 1000 mg/dL → pancreatitis risk + clinical signs ✗</li>
+          <li>Lactescent serum (milky) = TG severely elevated</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary (idiopathic):</strong></p>
+        <ul>
+          <li><strong>Miniature Schnauzer</strong> ✨ — familial; up to 75% of Schnauzers &gt; 9 yr have hyperTG</li>
+          <li>Beagle (familial hypercholesterolemia)</li>
+          <li>Briard, Shetland Sheepdog</li>
+          <li>Cat: idiopathic familial (rare)</li>
+        </ul>
+
+        <p><strong>Secondary (acquired):</strong></p>
+        <ul>
+          <li><strong>Diabetes mellitus</strong> ✨ — insulin deficiency → ↓ lipoprotein lipase + ↑ lipolysis</li>
+          <li><strong>Hypothyroidism</strong> ✨ — &gt; 75% have hypercholesterolemia</li>
+          <li><strong>Hyperadrenocorticism (Cushing's)</strong> ✨</li>
+          <li>Pancreatitis (acute) — often both cause + effect</li>
+          <li>Cholestasis (post-hepatic) — ↑ cholesterol</li>
+          <li>Nephrotic syndrome / PLN — hypercholesterolemia from ↑ hepatic synthesis</li>
+          <li>Drugs: glucocorticoids, phenobarbital, megestrol</li>
+          <li>High-fat diet (transient post-prandial)</li>
+          <li>Severe obesity</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Lipoproteins: chylomicrons, VLDL (TG-rich), LDL/HDL (cholesterol-rich)</li>
+          <li>Insulin: ↑ lipoprotein lipase → ↑ TG clearance; deficiency → hyperTG</li>
+          <li>Glucocorticoids: stimulate hormone-sensitive lipase → ↑ FFA → ↑ VLDL</li>
+          <li>Hypothyroid: ↓ LDL receptor expression → ↓ cholesterol clearance</li>
+          <li>Severe TG → activation of pancreatic enzymes → pancreatitis cycle ✗</li>
+          <li>Lipid-laden macrophages → cutaneous xanthomas, lipemia retinalis</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Often subclinical — incidental finding (lipemic serum)</strong></p>
+
+        <p><strong>HyperTG signs (TG &gt; 500-1000 mg/dL):</strong></p>
+        <ul>
+          <li>Vomiting, diarrhea, abdominal pain (pancreatitis-like)</li>
+          <li>Anorexia</li>
+          <li><strong>Pancreatitis</strong> ✨ ✗</li>
+          <li>Seizures (especially Schnauzer)</li>
+          <li>Behavioral changes</li>
+          <li><strong>Cutaneous xanthomas</strong> ✨ — yellow papules/plaques (especially cat with severe DM)</li>
+          <li>Lipemia retinalis — milky retinal vessels (fundic exam)</li>
+          <li>Peripheral neuropathy — paralysis (Horner's, tibial, radial)</li>
+        </ul>
+
+        <p><strong>Hypercholesterolemia signs:</strong></p>
+        <ul>
+          <li>Usually asymptomatic in pets</li>
+          <li>Corneal arcus lipoides</li>
+          <li>Atherosclerosis (rare in dog/cat — much less common than humans)</li>
+          <li>Xanthomas</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Confirm:</strong></p>
+        <ul>
+          <li><strong>Fasted (12h) serum sample</strong> ✨ — essential to distinguish post-prandial vs pathologic</li>
+          <li>Triglycerides + cholesterol</li>
+          <li>Lipemic/lactescent serum suggests TG &gt; 500 mg/dL</li>
+        </ul>
+
+        <p><strong>Lipemia interferes with many lab tests:</strong></p>
+        <ul>
+          <li>False ↑: bilirubin, P, ALP, glucose, total protein</li>
+          <li>False ↓: Na (pseudohyponatremia), creatinine, BUN</li>
+          <li>Hemolysis from lipemia</li>
+        </ul>
+
+        <p><strong>Workup secondary causes:</strong></p>
+        <ul>
+          <li><strong>T4 + TSH</strong> (hypothyroid screen) ✨</li>
+          <li>Glucose, fructosamine (DM)</li>
+          <li>UCCR or LDDST (Cushing's)</li>
+          <li>UA, UPC (PLN)</li>
+          <li>Liver enzymes, bile acids (cholestasis)</li>
+          <li>cPL/fPL or SNAP cPL (pancreatitis)</li>
+          <li>Drug history</li>
+        </ul>
+
+        <p><strong>Chylomicron test (refrigerate sample 12h):</strong></p>
+        <ul>
+          <li>Cream layer on top = chylomicrons (suggesting post-prandial or chylomicronemia)</li>
+          <li>Turbid throughout = VLDL-mediated</li>
+        </ul>
+      `,
+      differential: `<p>ดู secondary causes</p>`,
+      treatment: `
+        <p><strong>1. Treat secondary cause first ✨:</strong></p>
+        <ul>
+          <li>DM: insulin therapy → ↓ TG significantly within weeks</li>
+          <li>Hypothyroidism: levothyroxine → cholesterol normalizes 4-8 wk</li>
+          <li>Cushing's: trilostane → improves over months</li>
+          <li>Discontinue causative drugs if possible</li>
+        </ul>
+
+        <p><strong>2. Diet ✨ — primary management:</strong></p>
+        <ul>
+          <li><strong>Low-fat diet</strong>:
+            <ul>
+              <li>Hill's i/d Low-Fat, Royal Canin Gastrointestinal Low Fat</li>
+              <li>Fat &lt; 25% calories (10-15% on dry matter basis)</li>
+              <li>For severe: ultra-low fat (&lt; 8% DM)</li>
+            </ul>
+          </li>
+          <li>Avoid high-fat treats, table scraps</li>
+          <li>Weight loss if obese</li>
+          <li>Recheck TG/cholesterol 4-6 weeks</li>
+        </ul>
+
+        <p><strong>3. Omega-3 fatty acids:</strong></p>
+        <ul>
+          <li>EPA + DHA 50-100 mg/kg/day combined</li>
+          <li>Fish oil supplement</li>
+          <li>Reduces TG modestly</li>
+        </ul>
+
+        <p><strong>4. Fenofibrate (PPAR-α agonist) ✨ — for severe / refractory hyperTG:</strong></p>
+        <ul>
+          <li><strong>Dose: 5-15 mg/kg PO q24h</strong> (start 5, titrate)</li>
+          <li>↑ Lipoprotein lipase activity, ↓ VLDL synthesis</li>
+          <li>Most effective for hyperTG (less for hypercholesterolemia)</li>
+          <li>Monitor liver enzymes (mild ↑ possible)</li>
+          <li>Recheck TG in 4 weeks; adjust</li>
+          <li>Particularly useful for Schnauzer hyperTG</li>
+        </ul>
+
+        <p><strong>5. Bezafibrate — alternative fibrate:</strong></p>
+        <ul>
+          <li>4-10 mg/kg PO q24h</li>
+          <li>Similar efficacy</li>
+        </ul>
+
+        <p><strong>6. Statins (rare use in pets):</strong></p>
+        <ul>
+          <li>Atorvastatin 0.5-1 mg/kg PO q24h</li>
+          <li>For severe hypercholesterolemia refractory to diet</li>
+          <li>Limited veterinary evidence; monitor liver, muscle enzymes</li>
+        </ul>
+
+        <p><strong>7. Niacin — historical, rarely used now:</strong></p>
+        <ul>
+          <li>Side effects (flushing) limit use</li>
+        </ul>
+
+        <p><strong>Goals:</strong></p>
+        <ul>
+          <li>TG &lt; 500 mg/dL (ideally &lt; 200)</li>
+          <li>Cholesterol normalize as much as possible</li>
+          <li>Eliminate clinical signs</li>
+          <li>Prevent pancreatitis recurrence</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>TG + cholesterol q4-6 wk during initial Tx</li>
+          <li>Once stable: q3-6 mo</li>
+          <li>Watch for pancreatitis flares</li>
+          <li>Weight, BCS</li>
+          <li>Liver enzymes if on fenofibrate</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Recurrent pancreatitis</strong> ✗ — can be fatal</li>
+          <li>Atherosclerosis (rare but possible — especially with concurrent hypothyroid)</li>
+          <li>Lipid-laden uveitis, blindness</li>
+          <li>Peripheral neuropathy (Horner's, tibial, radial paralysis)</li>
+          <li>Seizures (Schnauzer especially with TG &gt; 1000)</li>
+          <li>Lipemia retinalis</li>
+          <li>Behavioral changes</li>
+          <li>Lab assay interference → misdiagnosis</li>
+          <li>Xanthomas (cosmetic + ulceration)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Secondary cause + treated underlying disease: <strong>excellent</strong> ✓</li>
+          <li>Schnauzer primary hyperTG with diet + fenofibrate: good — managed lifelong</li>
+          <li>Untreated severe + recurrent pancreatitis: guarded</li>
+          <li>Concurrent endocrine dz: depends on control</li>
+        </ul>
+        <div class="callout">💡 <strong>Schnauzer + hyperTG</strong> = familial; manage with low-fat diet + fenofibrate + omega-3 lifelong<br><br>หา <strong>secondary cause ก่อนเสมอ</strong>: T4, glucose, Cushing's screen, drug history. Hypothyroid + DM + Cushing's = top 3 secondary</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 53 · Hyperkalemia ---------- */
+  {
+    id: 'hyperkalemia',
+    titleEn: 'Hyperkalemia',
+    titleTh: 'โพแทสเซียมในเลือดสูง',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['hyperkalemia', 'urethral obstruction', 'AKI', "Addison's disease", 'cardiac arrhythmia', 'calcium gluconate', 'insulin dextrose', 'pseudohyperkalemia'],
+    aliases: ['high potassium', 'hyperK', 'โพแทสเซียมสูง', 'K สูง'],
+    source: 'Ch. 53 · pp. 956–968',
+    sections: {
+      definition: `
+        <p>K &gt; 5.5 mEq/L — <strong>life-threatening เมื่อ &gt; 7-8</strong> เพราะส่งผลต่อหัวใจ ✗</p>
+        <ul>
+          <li>Mild: 5.5-6.5</li>
+          <li>Moderate: 6.5-7.5</li>
+          <li>Severe: &gt; 7.5 — emergency, ECG changes, arrhythmia risk</li>
+          <li>K is intracellular cation; extracellular shifts → cardiac toxicity</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>4 mechanisms:</strong></p>
+
+        <p><strong>1. ↓ Renal excretion ✨ — most common:</strong></p>
+        <ul>
+          <li><strong>Urethral obstruction (cat blocked)</strong> ✗ ✨</li>
+          <li><strong>Anuric/oliguric AKI</strong> ✗</li>
+          <li>Bladder/urethral rupture (uroabdomen)</li>
+          <li>Bilateral ureteral obstruction</li>
+          <li><strong>Hypoadrenocorticism (Addison's)</strong> ✨ — aldosterone deficiency</li>
+          <li>Drugs: ACEi, ARB, K-sparing diuretics (spironolactone), NSAIDs, trimethoprim</li>
+          <li>Pseudohypoaldosteronism</li>
+        </ul>
+
+        <p><strong>2. Cellular shift (intracellular → extracellular):</strong></p>
+        <ul>
+          <li>Severe acidosis (DKA, lactic, organic acid)</li>
+          <li>Insulin deficiency (DKA)</li>
+          <li>Cell lysis: tumor lysis, severe trauma, rhabdomyolysis, hemolysis (massive)</li>
+          <li>β-blocker toxicity</li>
+          <li>Mineral oil poisoning</li>
+          <li>Severe exercise (transient)</li>
+        </ul>
+
+        <p><strong>3. ↑ Intake (rare):</strong></p>
+        <ul>
+          <li>Iatrogenic K overdose IV</li>
+          <li>Excessive oral KCl supplementation</li>
+        </ul>
+
+        <p><strong>4. Pseudohyperkalemia (lab artifact):</strong></p>
+        <ul>
+          <li>Hemolysis during sampling (especially hemolyzed sample)</li>
+          <li>Akita / Shiba Inu / Jindo / English Springer Spaniel — high RBC K (Asian breeds; aberrant Na/K-ATPase)
+            <ul>
+              <li>Plasma K normal but serum K elevated (clot activates RBC release)</li>
+              <li>Send heparinized plasma for accurate result</li>
+            </ul>
+          </li>
+          <li>Severe leukocytosis or thrombocytosis</li>
+          <li>Delayed processing</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Resting membrane potential dependent on K gradient</li>
+          <li>↑ Extracellular K → ↓ resting potential gradient → cells more excitable initially, then less excitable (paralysis)</li>
+          <li>Cardiac myocytes especially sensitive:
+            <ul>
+              <li>K 6-7: peaked T waves</li>
+              <li>K 7-8: flattened P, prolonged PR</li>
+              <li>K &gt; 8: absent P (atrial standstill), wide QRS</li>
+              <li>K &gt; 10: sine wave, V-fib, asystole ✗</li>
+            </ul>
+          </li>
+          <li>Skeletal muscle weakness → paralysis</li>
+          <li>Acidosis worsens cardiotoxicity (H+ exchanges with K out of cells)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Often mirrors underlying cause (obstruction, AKI, Addison's)</li>
+          <li>Weakness, lethargy</li>
+          <li>Anorexia, vomiting</li>
+          <li>Hypothermia</li>
+          <li>Bradycardia ✗ (paradoxical given shock — should be tachycardic if hypovolemic)</li>
+          <li>Weak pulses</li>
+          <li>Collapse, arrest (severe)</li>
+          <li>Cat blocked: distended firm bladder, repeated unproductive trips to litter box</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Confirm:</strong></p>
+        <ul>
+          <li>Serum K (preferably from heparinized plasma to avoid clot artifact)</li>
+          <li>If suspect pseudohyperK (Akita, hemolyzed sample): repeat with heparinized plasma</li>
+        </ul>
+
+        <p><strong>ECG ✨ — assesses severity functionally:</strong></p>
+        <ul>
+          <li>Tall peaked T waves (early)</li>
+          <li>Shortened QT</li>
+          <li>Flattened/absent P</li>
+          <li>Prolonged PR</li>
+          <li>Wide QRS</li>
+          <li>Atrial standstill</li>
+          <li>Sine wave (severe)</li>
+          <li>V-fib / asystole ✗</li>
+        </ul>
+
+        <p><strong>Etiology workup:</strong></p>
+        <ul>
+          <li>Bladder palpation (cat blocked obvious; AUS if questionable)</li>
+          <li>BUN, Cr, SDMA</li>
+          <li>UA</li>
+          <li>Acid-base (severe acidosis common)</li>
+          <li>Glucose</li>
+          <li>Na/K ratio (Addison's screen)</li>
+          <li>ACTH stim if Addison's suspected</li>
+          <li>Abdominal US — bladder, kidneys, peritoneal fluid (rupture)</li>
+          <li>Abdominocentesis if effusion (uroabdomen → fluid creatinine &gt; serum)</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology</p>`,
+      treatment: `
+        <p><strong>1. Address underlying cause IMMEDIATELY ✨:</strong></p>
+        <ul>
+          <li>Cat blocked: cysto + catheterize</li>
+          <li>Obstruction: relieve</li>
+          <li>Uroabdomen: drain + surgical repair</li>
+          <li>Addison's: fluid + dexamethasone</li>
+          <li>AKI: fluid resuscitation + cause-specific Tx</li>
+        </ul>
+
+        <p><strong>2. Stabilize cardiac (if K &gt; 6.5 with ECG changes):</strong></p>
+
+        <p><strong>Calcium gluconate 10% 0.5-1 mL/kg slow IV over 5-10 min</strong> ✨</p>
+        <ul>
+          <li>= 50-100 mg/kg</li>
+          <li><strong>Cardioprotection</strong> — antagonizes K effect at membrane</li>
+          <li>Doesn't lower K — protects heart while other measures work</li>
+          <li>Effect within minutes, lasts 30-60 min</li>
+          <li>Monitor ECG continuously — STOP if bradycardia worsens</li>
+          <li>Repeat if ECG changes return</li>
+        </ul>
+
+        <p><strong>3. Shift K intracellularly:</strong></p>
+
+        <p><strong>IV fluids (0.9% NaCl) ✨ — first measure</strong>:</p>
+        <ul>
+          <li>Dilutes K + restores volume + improves urinary K excretion</li>
+          <li>Avoid LRS/Plasmalyte initially in severe hyperK (contains K, but only 4 mEq/L — usually OK)</li>
+          <li>Bolus 10-20 mL/kg, then 2-3× maintenance</li>
+        </ul>
+
+        <p><strong>Regular insulin + dextrose</strong>:</p>
+        <ul>
+          <li><strong>Regular insulin 0.25-0.5 U/kg IV + dextrose 50% 1 mL/kg IV</strong> (then add 2.5% dextrose to fluids)</li>
+          <li>Insulin shifts K into cells</li>
+          <li>Effect within 30 min, lasts hours</li>
+          <li>Monitor BG q1-2h (avoid hypoglycemia)</li>
+        </ul>
+
+        <p><strong>Sodium bicarbonate (severe acidosis pH &lt; 7.2):</strong></p>
+        <ul>
+          <li>1-2 mEq/kg slow IV over 20 min</li>
+          <li>Shifts K into cells via H+/K+ exchange</li>
+          <li>Caution: don't give with Ca-containing fluids (precipitate)</li>
+          <li>Avoid in mild acidosis (paradoxical CSF acidosis, hypocalcemia)</li>
+        </ul>
+
+        <p><strong>β-2 agonist (terbutaline):</strong></p>
+        <ul>
+          <li>0.01 mg/kg SC or IV</li>
+          <li>Shifts K into cells</li>
+          <li>Adjunct to other measures</li>
+          <li>Less commonly used</li>
+        </ul>
+
+        <p><strong>4. Definitive lowering:</strong></p>
+        <ul>
+          <li><strong>Relieve obstruction</strong> (cat blocked) ✨ — single best treatment</li>
+          <li>Diuresis with IV fluids ± furosemide (after rehydration; if AKI)</li>
+          <li>Dialysis if anuric AKI refractory (specialty)</li>
+          <li>Sodium polystyrene sulfonate (Kayexalate) — slow PO; rarely used in vet med</li>
+        </ul>
+
+        <p><strong>5. Avoid worsening factors:</strong></p>
+        <ul>
+          <li>No K-containing fluids until K controlled</li>
+          <li>Discontinue ACEi, ARB, K-sparing diuretics</li>
+          <li>Avoid succinylcholine (anesthesia)</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck K q2-4h until normal, then q6-12h</li>
+          <li>Continuous ECG until K &lt; 6</li>
+          <li>BG q1-2h after insulin</li>
+          <li>BUN/Cr, acid-base q6-12h</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Cardiac arrest (V-fib, asystole)</strong> ✗</li>
+          <li>Severe bradycardia / heart block</li>
+          <li>Persistent muscle weakness / paralysis</li>
+          <li>Iatrogenic hypoglycemia (insulin treatment)</li>
+          <li>Iatrogenic hypocalcemia (bicarbonate)</li>
+          <li>Concurrent renal damage (post-obstruction)</li>
+          <li>Death within hours if untreated</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Cat blocked + prompt unblocking: <strong>good</strong> — mortality 5-10% modern era ✓</li>
+          <li>Addison's crisis + treatment: excellent</li>
+          <li>AKI with anuria: guarded; depends on cause + dialysis access</li>
+          <li>Pseudohyperkalemia: no clinical relevance once recognized</li>
+          <li>Severe untreated (K &gt; 9): poor — cardiac arrest imminent</li>
+        </ul>
+        <div class="callout">⚠️ <strong>HyperK = ECG urgency</strong> ✗ — calcium gluconate FIRST (cardioprotection), THEN shift K (insulin/dex, fluids, bicarb), THEN remove K (relieve obstruction, dialysis)<br><br>💡 Akita / Shiba + ↑ K = check pseudohyperkalemia ก่อน emergency Tx</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 53 · Hypokalemia ---------- */
+  {
+    id: 'hypokalemia',
+    titleEn: 'Hypokalemia',
+    titleTh: 'โพแทสเซียมในเลือดต่ำ',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['hypokalemia', 'CKD cat', 'DKA treatment', 'cervical ventroflexion', 'periodic paralysis', 'Burmese cat', 'KCl', 'potassium gluconate'],
+    aliases: ['low potassium', 'hypoK', 'โพแทสเซียมต่ำ', 'K ต่ำ'],
+    source: 'Ch. 53 · pp. 968–976',
+    sections: {
+      definition: `
+        <p>K &lt; 3.5 mEq/L — เจอบ่อยใน <strong>CKD cat</strong> ✨ + DKA treatment + GI losses</p>
+        <ul>
+          <li>Mild: 3.0-3.5</li>
+          <li>Moderate: 2.5-3.0</li>
+          <li>Severe: &lt; 2.5 — emergency, weakness/paralysis, arrhythmia</li>
+          <li>Total body K depletion possible despite normal serum (intracellular shifts)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>1. ↓ Intake:</strong></p>
+        <ul>
+          <li>Anorexia (especially cat with concurrent CKD or other illness)</li>
+          <li>K-restricted diet (rare)</li>
+        </ul>
+
+        <p><strong>2. ↑ Loss — most common ✨:</strong></p>
+        <ul>
+          <li><strong>Renal:</strong>
+            <ul>
+              <li><strong>CKD cat</strong> ✨ — common; K-wasting nephropathy</li>
+              <li>Diuretics (loop, thiazide)</li>
+              <li>DKA treatment ✨ — insulin shifts K intracellular + osmotic diuresis loss</li>
+              <li>Post-obstructive diuresis (cat blocked recovery)</li>
+              <li>Polyuric diseases</li>
+              <li>Distal renal tubular acidosis</li>
+              <li>Hyperaldosteronism (rare cat — Conn syndrome)</li>
+            </ul>
+          </li>
+          <li><strong>GI:</strong>
+            <ul>
+              <li>Vomiting (especially with HCl loss)</li>
+              <li>Diarrhea</li>
+              <li>Pyloric obstruction</li>
+            </ul>
+          </li>
+          <li>Severe burns / wound exudates</li>
+        </ul>
+
+        <p><strong>3. Translocation (extracellular → intracellular):</strong></p>
+        <ul>
+          <li>Insulin therapy (especially DKA)</li>
+          <li>β-2 agonists (terbutaline, albuterol)</li>
+          <li>Alkalemia</li>
+          <li>Refeeding syndrome</li>
+          <li>Catecholamine surge (stress)</li>
+        </ul>
+
+        <p><strong>4. Specific syndromes:</strong></p>
+        <ul>
+          <li><strong>Burmese cat hypokalemic polymyopathy</strong> ✨ — autosomal recessive; episodic weakness; juvenile-young adult</li>
+          <li>Familial periodic paralysis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↓ Extracellular K → hyperpolarized membrane → less excitable</li>
+          <li>Skeletal muscle: weakness, paralysis</li>
+          <li>Cardiac: predispose to arrhythmias (particularly with concurrent digoxin or hypoMg)</li>
+          <li>Renal: ↓ concentrating ability → PU/PD; nephropathy</li>
+          <li>GI: ileus, constipation</li>
+          <li>Severe → rhabdomyolysis</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Mild — often subclinical</strong></p>
+
+        <p><strong>Moderate-severe:</strong></p>
+        <ul>
+          <li><strong>Cervical ventroflexion (cat) ✨</strong> — classic; head dropped, can't lift; pathognomonic in cat</li>
+          <li>Weakness, lethargy</li>
+          <li>Stiff stilted gait</li>
+          <li>Plantigrade stance (cat — must distinguish from DM neuropathy)</li>
+          <li>Anorexia</li>
+          <li>Vomiting, ileus, constipation</li>
+          <li>Polyuria (worsens K loss cycle)</li>
+          <li>Cardiac arrhythmias</li>
+          <li>Severe: rhabdomyolysis (↑ CK), respiratory muscle weakness</li>
+        </ul>
+
+        <p><strong>Burmese cat polymyopathy:</strong></p>
+        <ul>
+          <li>Episodic weakness, ventroflexion, stilted gait</li>
+          <li>Triggered by exercise, stress, fasting</li>
+          <li>↑ CK during episodes</li>
+          <li>Resolves with K supplementation</li>
+        </ul>
+      `,
+      diagnosis: `
+        <ul>
+          <li>Serum K</li>
+          <li>Magnesium (often co-deficient — check Mg)</li>
+          <li>BUN, Cr, USG (CKD)</li>
+          <li>UA</li>
+          <li>Acid-base (alkalosis common)</li>
+          <li>Glucose, ketones (DKA)</li>
+          <li>CK (rhabdomyolysis)</li>
+          <li>ECG: U waves, prolonged QT, arrhythmias</li>
+          <li>If history fits Burmese pattern: genetic testing available</li>
+          <li>If hyperaldosteronism suspected: aldosterone, renin, abdominal US for adrenal mass</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology</p>`,
+      treatment: `
+        <p><strong>1. IV K replacement (acute, symptomatic, K &lt; 3.0):</strong></p>
+        <ul>
+          <li><strong>Add KCl to fluids per sliding scale:</strong>
+            <ul>
+              <li>K 3.0-3.5: add 30 mEq/L</li>
+              <li>K 2.5-3.0: add 40 mEq/L</li>
+              <li>K 2.0-2.5: add 60 mEq/L</li>
+              <li>K &lt; 2.0: add 80 mEq/L (caution rate)</li>
+            </ul>
+          </li>
+          <li><strong>Maximum infusion rate: 0.5 mEq/kg/hr</strong> ✨ — never exceed (cardiac risk)</li>
+          <li>Use central line for high concentrations if possible</li>
+          <li>NEVER bolus IV potassium ✗ — fatal arrhythmia</li>
+          <li>Recheck K q4-6h initially</li>
+          <li>Monitor ECG</li>
+        </ul>
+
+        <p><strong>2. Oral K supplementation (chronic / mild):</strong></p>
+        <ul>
+          <li><strong>Potassium gluconate (Tumil-K, RenaKare)</strong> ✨:
+            <ul>
+              <li>Cat: 2-4 mEq/cat PO q12h</li>
+              <li>Dog: 0.5-1 mEq/kg PO q12h</li>
+              <li>Better tolerated than KCl</li>
+            </ul>
+          </li>
+          <li>KCl (powder, liquid): less palatable, more GI upset</li>
+          <li>Adjust based on serum K q2-4 wk</li>
+        </ul>
+
+        <p><strong>3. Mg supplementation (if hypoMg too):</strong></p>
+        <ul>
+          <li>Refractory hypoK often has hypoMg</li>
+          <li>MgSO4 0.75-1 mEq/kg/day CRI</li>
+          <li>Or oral magnesium gluconate</li>
+        </ul>
+
+        <p><strong>4. Address underlying cause ✨:</strong></p>
+        <ul>
+          <li>CKD cat: long-term oral K + renal diet + SQ fluids</li>
+          <li>DKA: anticipate K drop with treatment; supplement aggressively in fluids</li>
+          <li>Diuretic-induced: reduce diuretic, add K-sparing or supplement</li>
+          <li>Vomiting/diarrhea: treat cause</li>
+          <li>Hyperaldosteronism: spironolactone or adrenalectomy</li>
+          <li>Burmese myopathy: lifelong K supplementation</li>
+        </ul>
+
+        <p><strong>Goals:</strong></p>
+        <ul>
+          <li>Acute symptomatic: K &gt; 3.5 within 12-24h</li>
+          <li>Chronic: maintain K 4.0-5.0</li>
+          <li>Resolve clinical signs</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Acute: K q4-6h until stable</li>
+          <li>Chronic CKD cat: K q1-3 mo</li>
+          <li>Burmese: K q3-6 mo + symptom diary</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Cardiac arrhythmia ✗ (especially with concurrent digoxin/hypoMg)</li>
+          <li>Respiratory muscle weakness → respiratory failure (severe)</li>
+          <li>Rhabdomyolysis</li>
+          <li>Persistent CKD nephropathy (chronic hypoK potentiates renal damage)</li>
+          <li>Iatrogenic hyperK from over-supplementation</li>
+          <li>IV phlebitis from concentrated K solutions</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Acute correctable cause: <strong>excellent</strong> ✓</li>
+          <li>CKD cat with management: good — improves QOL significantly</li>
+          <li>Burmese myopathy: good with lifelong supplementation</li>
+          <li>Hyperaldosteronism with adrenalectomy: excellent if benign tumor</li>
+        </ul>
+        <div class="callout">💡 <strong>Cervical ventroflexion in cat = hypoK until proven otherwise</strong> ✨ — check serum K immediately. Burmese youngster + episodic weakness = polymyopathy<br><br>⚠️ NEVER bolus IV K — max 0.5 mEq/kg/hr</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 53 · Sodium &amp; Water Disorders (Hypernatremia / Hyponatremia) ---------- */
+  {
+    id: 'sodium-disorders',
+    titleEn: 'Sodium &amp; Water Disorders (HyperNa &amp; HypoNa)',
+    titleTh: 'ภาวะโซเดียมผิดปกติ',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['hypernatremia', 'hyponatremia', 'free water deficit', 'diabetes insipidus', 'SIADH', 'osmotic demyelination', 'cerebral edema', 'rapid correction'],
+    aliases: ['Na disorders', 'high sodium', 'low sodium', 'โซเดียมสูง', 'โซเดียมต่ำ'],
+    source: 'Ch. 53 · pp. 976–998',
+    sections: {
+      definition: `
+        <p>Na = main extracellular cation; reflects <strong>water balance</strong> &gt; total body Na</p>
+        <ul>
+          <li>HyperNa: Na &gt; 155 mEq/L = water deficit relative to Na</li>
+          <li>HypoNa: Na &lt; 140 mEq/L = water excess relative to Na</li>
+          <li><strong>Cardinal rule: correct slowly</strong> ✨ — rapid correction = brain damage (cerebral edema or osmotic demyelination)</li>
+          <li>Goal: change Na &lt; 0.5-1 mEq/L/hr; &lt; 10-12 mEq/L/24h</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>HYPERNATREMIA — water deficit relative to Na:</strong></p>
+
+        <p><strong>1. Pure water loss:</strong></p>
+        <ul>
+          <li><strong>Diabetes insipidus (DI):</strong>
+            <ul>
+              <li>Central DI: ↓ ADH from pituitary (trauma, neoplasia, idiopathic)</li>
+              <li>Nephrogenic DI: kidney unresponsive to ADH (CKD, drugs, hyperCa, hypoK, idiopathic)</li>
+            </ul>
+          </li>
+          <li>Lack of access to water + insensible losses</li>
+          <li>Heat stroke ✗</li>
+          <li>Fever, panting (high respiratory water loss)</li>
+        </ul>
+
+        <p><strong>2. Hypotonic fluid loss (water + some Na):</strong></p>
+        <ul>
+          <li>Vomiting, diarrhea (hypotonic losses)</li>
+          <li>Osmotic diuresis (DM, DKA, urea)</li>
+          <li>Burns</li>
+          <li>Third spacing</li>
+        </ul>
+
+        <p><strong>3. Salt gain (rare):</strong></p>
+        <ul>
+          <li>Salt poisoning (homemade play dough, sea water)</li>
+          <li>Hypertonic saline overdose</li>
+          <li>Mineralocorticoid excess (Cushing's, hyperaldosteronism)</li>
+          <li>Iatrogenic Na bicarb administration</li>
+        </ul>
+
+        <p><strong>HYPONATREMIA — water excess relative to Na:</strong></p>
+
+        <p><strong>Categorize by volume status:</strong></p>
+
+        <p><strong>1. Hypovolemic hyponatremia (Na loss &gt; water loss):</strong></p>
+        <ul>
+          <li><strong>Hypoadrenocorticism (Addison's)</strong> ✨ — aldosterone deficiency</li>
+          <li>GI losses with hypotonic fluid replacement</li>
+          <li>Diuretic excess</li>
+          <li>3rd-spacing (pancreatitis, peritonitis, GDV)</li>
+        </ul>
+
+        <p><strong>2. Hypervolemic hyponatremia (water gain &gt; Na gain):</strong></p>
+        <ul>
+          <li><strong>CHF</strong> ✨ — water retention</li>
+          <li><strong>Liver failure / cirrhosis</strong> — ascites, edema</li>
+          <li>Severe nephrotic syndrome</li>
+          <li>Iatrogenic hypotonic fluid overload</li>
+          <li>Psychogenic polydipsia</li>
+        </ul>
+
+        <p><strong>3. Euvolemic hyponatremia:</strong></p>
+        <ul>
+          <li>SIADH (syndrome of inappropriate ADH) — pulmonary, CNS dz, drugs</li>
+          <li>Hypothyroidism (mild)</li>
+          <li>Glucocorticoid deficiency (atypical Addison's)</li>
+          <li>Drugs: diuretics, oxytocin, ADH analogs</li>
+        </ul>
+
+        <p><strong>4. Pseudohyponatremia (artifact):</strong></p>
+        <ul>
+          <li>Severe hyperlipidemia ✨ — displaces water in plasma</li>
+          <li>Severe hyperproteinemia (myeloma)</li>
+          <li>Severe hyperglycemia (true ↓ Na from osmotic effect ~ 1.6 mEq for each 100 mg/dL glucose &gt; 100)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Brain cells equilibrate osmotically with serum:
+            <ul>
+              <li>HyperNa → brain shrinks → torn vessels, hemorrhage; brain adapts in 2-3 d (idiogenic osmoles)</li>
+              <li>HypoNa → brain swells → cerebral edema; brain adapts in 2-3 d (extrudes osmoles)</li>
+            </ul>
+          </li>
+          <li><strong>Rapid correction = catastrophic brain damage:</strong>
+            <ul>
+              <li>Rapid HyperNa correction → cerebral edema</li>
+              <li>Rapid HypoNa correction → osmotic demyelination syndrome (ODS / pontine myelinolysis)</li>
+            </ul>
+          </li>
+          <li>Acute (&lt; 24h) onset: brain not adapted → can correct faster</li>
+          <li>Chronic (&gt; 48h) onset: brain adapted → MUST correct slowly</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>HYPERNATREMIA:</strong></p>
+        <ul>
+          <li>Lethargy → stupor → coma</li>
+          <li>Anorexia, weakness</li>
+          <li>Tremors, seizures (acute or with rapid correction)</li>
+          <li>Polydipsia (early — protective)</li>
+          <li>Dehydration signs</li>
+          <li>Severe (Na &gt; 175): cerebral hemorrhage, brain shrinkage signs</li>
+        </ul>
+
+        <p><strong>HYPONATREMIA:</strong></p>
+        <ul>
+          <li>Often asymptomatic mild-moderate</li>
+          <li>Lethargy, weakness, anorexia</li>
+          <li>Tremors, ataxia (acute)</li>
+          <li>Seizures (severe acute or rapid correction)</li>
+          <li>Coma (severe)</li>
+          <li>Concurrent volume status signs (CHF — dyspnea; Addison's — collapse)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Confirm + categorize:</strong></p>
+        <ul>
+          <li>Serum Na (and Cl)</li>
+          <li>Serum osmolality (calculated or measured): 2(Na+K) + glucose/18 + BUN/2.8</li>
+          <li>Glucose (correct Na for hyperglycemia: + 1.6 mEq/L for each 100 mg/dL glucose &gt; 100)</li>
+          <li>Triglycerides, total protein (rule out pseudo)</li>
+          <li>Urea</li>
+          <li>Volume status assessment (clinical)</li>
+        </ul>
+
+        <p><strong>For hyperNa:</strong></p>
+        <ul>
+          <li>USG — concentrated urine (&gt; 1.030) = appropriate response (volume issue)</li>
+          <li>USG dilute (&lt; 1.020) despite hyperNa = DI (central or nephrogenic)</li>
+          <li>History of water access</li>
+          <li>Drug history (mannitol, hypertonic saline)</li>
+        </ul>
+
+        <p><strong>For hypoNa:</strong></p>
+        <ul>
+          <li>Volume status assessment</li>
+          <li>BUN, Cr, USG</li>
+          <li>UA</li>
+          <li>Urine Na (&lt; 20 = volume depletion; &gt; 20 = SIADH or renal)</li>
+          <li>ACTH stim (Addison's)</li>
+          <li>T4 (hypothyroid)</li>
+          <li>Echocardiogram (CHF)</li>
+          <li>Liver enzymes, bile acids (hepatic)</li>
+        </ul>
+
+        <p><strong>Estimate chronicity ✨ — critical for correction speed:</strong></p>
+        <ul>
+          <li>Acute (&lt; 24-48h): symptoms severe; correct faster acceptable</li>
+          <li>Chronic (&gt; 48h): less symptomatic for level; MUST correct slowly</li>
+        </ul>
+      `,
+      differential: `<p>Categorize by volume status + workup specific cause</p>`,
+      treatment: `
+        <p><strong>Rule #1: CORRECT SLOWLY</strong> ✨ ✗</p>
+        <ul>
+          <li>Maximum rate: <strong>0.5-1 mEq/L/hr</strong></li>
+          <li>Maximum 24h: <strong>10-12 mEq/L/day</strong></li>
+          <li>Acute (&lt; 24h) onset: can correct faster (1-2 mEq/L/hr)</li>
+          <li>Chronic / unknown duration: slow!</li>
+        </ul>
+
+        <p><strong>HYPERNATREMIA:</strong></p>
+
+        <p><strong>1. Calculate free water deficit:</strong></p>
+        <p style="background:#f0f4f8;padding:10px;border-radius:6px;font-family:monospace;">
+        Free water deficit (L) = 0.6 × BW (kg) × [(current Na / normal Na) - 1]
+        </p>
+
+        <p><strong>2. Replace slowly:</strong></p>
+        <ul>
+          <li>Replace deficit over 48-72h (chronic) or 24h (acute)</li>
+          <li>Plus maintenance + ongoing losses</li>
+          <li><strong>Fluid choice:</strong>
+            <ul>
+              <li>Mild-moderate: 0.45% NaCl + 2.5% dextrose</li>
+              <li>Severe: D5W (5% dextrose in water) — pure water replacement
+                <ul>
+                  <li>Caution: monitor glucose</li>
+                  <li>Don't bolus</li>
+                </ul>
+              </li>
+              <li>If hypovolemic: start 0.9% NaCl bolus first (restore volume) → THEN switch to hypotonic for water replacement</li>
+            </ul>
+          </li>
+          <li>Recheck Na q2-4h initially; calculate rate</li>
+          <li>Adjust if Na changing too fast (slow rate or temporarily switch fluids)</li>
+        </ul>
+
+        <p><strong>3. Address underlying cause:</strong></p>
+        <ul>
+          <li>Central DI: DDAVP intranasal/conjunctival 1-4 drops q12-24h</li>
+          <li>Nephrogenic DI: address cause; thiazide diuretic paradoxically</li>
+          <li>Salt poisoning: aggressive water replacement + symptomatic</li>
+          <li>Heat stroke: cooling + supportive</li>
+        </ul>
+
+        <p><strong>HYPONATREMIA:</strong></p>
+
+        <p><strong>1. Asymptomatic / mild — rarely needs urgent correction:</strong></p>
+        <ul>
+          <li>Treat underlying cause</li>
+          <li>Restrict free water (hypervolemic)</li>
+          <li>Salt-replete diet (hypovolemic)</li>
+          <li>Slow correction over days</li>
+        </ul>
+
+        <p><strong>2. Symptomatic (seizures, severe neuro signs) — severe acute:</strong></p>
+        <ul>
+          <li><strong>Hypertonic saline (3%) 1-3 mL/kg slow IV over 10-15 min</strong></li>
+          <li>Goal: ↑ Na 4-6 mEq/L within 1-2h to stop seizures</li>
+          <li>Then SLOW correction (don't exceed 10-12 mEq/L/day total)</li>
+        </ul>
+
+        <p><strong>3. By volume status:</strong></p>
+        <ul>
+          <li><strong>Hypovolemic:</strong> 0.9% NaCl carefully — restore volume slowly</li>
+          <li><strong>Hypervolemic:</strong> water restriction; spironolactone/furosemide for CHF; treat underlying</li>
+          <li><strong>Euvolemic (SIADH):</strong> water restriction (50% of normal); demeclocycline (rare)</li>
+        </ul>
+
+        <p><strong>4. Address cause:</strong></p>
+        <ul>
+          <li>Addison's: DOCP + pred</li>
+          <li>CHF: pimobendan, diuretics (caution)</li>
+          <li>Hypothyroid: levothyroxine</li>
+          <li>SIADH: water restriction; treat underlying</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Serum Na q2-4h initially</li>
+          <li>Calculate rate of change</li>
+          <li>Adjust to stay within target window</li>
+          <li>Mental status assessment</li>
+          <li>Urine output, body weight q6-12h</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Cerebral edema (rapid hyperNa correction)</strong> ✗ — herniation, death</li>
+          <li><strong>Osmotic demyelination syndrome (rapid hypoNa correction)</strong> ✗ — pontine + extrapontine; locked-in syndrome, severe disability</li>
+          <li>Cerebral hemorrhage (severe hyperNa)</li>
+          <li>Seizures (acute Na changes)</li>
+          <li>Coma → death (severe untreated)</li>
+          <li>Underlying disease progression</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild-moderate with proper correction: <strong>excellent</strong> ✓</li>
+          <li>Severe with proper slow correction: good</li>
+          <li>Salt poisoning: variable — mortality 50%+ in severe</li>
+          <li>SIADH with treatment: depends on cause</li>
+          <li>Iatrogenic ODS or cerebral edema: poor — irreversible neuro damage</li>
+        </ul>
+        <div class="callout">⚠️ <strong>NEVER correct Na faster than 0.5-1 mEq/L/hr</strong> ✗ — cerebral catastrophe (edema or demyelination)<br><br>💡 Calculate free water deficit; choose fluid type based on volume status + cause; recheck Na q2-4h; adjust rate</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 54-55 · Acid-Base Disorders ---------- */
+  {
+    id: 'acid-base-disorders',
+    titleEn: 'Acid-Base Disorders',
+    titleTh: 'ภาวะกรด-ด่างผิดปกติ',
+    type: 'disease',
+    system: 'metabolic',
+    species: ['dog', 'cat'],
+    tags: ['metabolic acidosis', 'metabolic alkalosis', 'respiratory acidosis', 'respiratory alkalosis', 'anion gap', 'lactic acidosis', 'DKA', 'compensation'],
+    aliases: ['acidosis', 'alkalosis', 'กรดด่าง', 'pH'],
+    source: 'Ch. 54-55 · pp. 999–1042',
+    sections: {
+      definition: `
+        <p>4 primary disturbances + mixed disorders</p>
+        <ul>
+          <li>Normal pH: 7.35-7.45</li>
+          <li>Normal HCO3: 18-24 mEq/L (dog), 17-22 (cat)</li>
+          <li>Normal pCO2: 35-45 mmHg</li>
+          <li><strong>Acidosis:</strong> ↓ pH (acidemia &lt; 7.35)</li>
+          <li><strong>Alkalosis:</strong> ↑ pH (alkalemia &gt; 7.45)</li>
+          <li>Compensation: respiratory adjusts CO2 within minutes-hours; renal adjusts HCO3 within days</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>METABOLIC ACIDOSIS (↓ HCO3):</strong></p>
+
+        <p><strong>1. ↑ Anion gap (acid added):</strong></p>
+        <ul>
+          <li>"MUDPILES" mnemonic (adapted):
+            <ul>
+              <li><strong>L</strong>actic acidosis ✨ — shock, sepsis, hypoxia, severe exercise, neoplasia</li>
+              <li><strong>U</strong>remia (severe AKI/CKD) ✨ — phosphates, sulfates accumulate</li>
+              <li><strong>D</strong>KA ✨ (β-hydroxybutyrate, acetoacetate)</li>
+              <li>Toxin: <strong>E</strong>thylene glycol ✗ (glycolate, glycoxalate); ASA (salicylate); methanol</li>
+              <li><strong>S</strong>tarvation ketosis</li>
+            </ul>
+          </li>
+          <li>Anion gap = (Na + K) - (Cl + HCO3); normal 12-25 dog, 13-27 cat</li>
+        </ul>
+
+        <p><strong>2. Normal anion gap (HCO3 lost):</strong></p>
+        <ul>
+          <li>Diarrhea ✨ (HCO3 loss in stool)</li>
+          <li>Renal tubular acidosis (proximal or distal)</li>
+          <li>Drug-induced: acetazolamide, ammonium chloride, hyperalimentation</li>
+          <li>Ureteral diversion</li>
+        </ul>
+
+        <p><strong>METABOLIC ALKALOSIS (↑ HCO3):</strong></p>
+        <ul>
+          <li><strong>Vomiting (especially gastric / pyloric obstruction)</strong> ✨ — HCl loss
+            <ul>
+              <li>GDV with foreign body</li>
+              <li>Pyloric outflow obstruction</li>
+              <li>Hyperemesis</li>
+            </ul>
+          </li>
+          <li>Diuretic therapy (loop, thiazide)</li>
+          <li>Hyperaldosteronism, Cushing's</li>
+          <li>Hypochloremia → contraction alkalosis</li>
+          <li>Iatrogenic NaHCO3 over-administration</li>
+          <li>Hypokalemia (severe)</li>
+        </ul>
+
+        <p><strong>RESPIRATORY ACIDOSIS (↑ pCO2):</strong></p>
+        <ul>
+          <li>Hypoventilation:
+            <ul>
+              <li>Anesthesia / sedation</li>
+              <li>Brachycephalic obstruction</li>
+              <li>Laryngeal paralysis</li>
+              <li>Pleural space disease (pneumothorax, pleural effusion)</li>
+              <li>Severe pneumonia, pulmonary edema</li>
+              <li>Diaphragm paralysis (cervical SC dz)</li>
+              <li>Neuromuscular dz (myasthenia, tick paralysis)</li>
+              <li>Drug-induced respiratory depression</li>
+              <li>Severe abdominal distension</li>
+              <li>Tracheal collapse (severe)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>RESPIRATORY ALKALOSIS (↓ pCO2):</strong></p>
+        <ul>
+          <li>Hyperventilation:
+            <ul>
+              <li>Hypoxemia (compensation)</li>
+              <li>Pain, anxiety, fever</li>
+              <li>Sepsis (early)</li>
+              <li>Heat stroke ✗</li>
+              <li>Pulmonary disease (interstitial dz)</li>
+              <li>CHF (compensation for hypoxia)</li>
+              <li>Hepatic encephalopathy</li>
+              <li>CNS disease</li>
+              <li>Mechanical hyperventilation</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Henderson-Hasselbalch: pH = 6.1 + log([HCO3]/0.03×pCO2)</li>
+          <li>Acidosis → compensation:
+            <ul>
+              <li>Metabolic: respiratory hyperventilation → ↓ pCO2 (within hours)</li>
+              <li>Respiratory: renal ↑ HCO3 reabsorption (within days)</li>
+            </ul>
+          </li>
+          <li>Compensation never overcorrects — partial only</li>
+          <li>Severe acidosis (pH &lt; 7.1):
+            <ul>
+              <li>↓ Cardiac contractility</li>
+              <li>↑ Pulmonary vascular resistance</li>
+              <li>Catecholamine resistance</li>
+              <li>Hyperkalemia</li>
+              <li>Insulin resistance</li>
+            </ul>
+          </li>
+          <li>Severe alkalosis (pH &gt; 7.6):
+            <ul>
+              <li>↓ Ionized Ca → tetany</li>
+              <li>Hypokalemia</li>
+              <li>Cerebral vasoconstriction</li>
+              <li>Arrhythmia</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p>Often dominated by underlying cause</p>
+
+        <p><strong>Severe metabolic acidosis:</strong></p>
+        <ul>
+          <li>Tachypnea, Kussmaul respiration (compensation)</li>
+          <li>Lethargy, stupor</li>
+          <li>Vomiting</li>
+          <li>Cardiovascular: ↓ contractility → shock</li>
+          <li>Hypoglycemia (severe)</li>
+        </ul>
+
+        <p><strong>Severe metabolic alkalosis:</strong></p>
+        <ul>
+          <li>Tetany, weakness</li>
+          <li>Mental dullness, seizures</li>
+          <li>Hypoventilation (compensation)</li>
+        </ul>
+
+        <p><strong>Respiratory acidosis:</strong></p>
+        <ul>
+          <li>Underlying respiratory dz signs</li>
+          <li>Cyanosis (often)</li>
+          <li>Mental obtundation</li>
+        </ul>
+
+        <p><strong>Respiratory alkalosis:</strong></p>
+        <ul>
+          <li>Tachypnea/hyperpnea</li>
+          <li>Underlying cause signs</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Blood gas analysis ✨ — essential:</strong></p>
+        <ul>
+          <li>Venous gas adequate for most clinical decisions</li>
+          <li>Arterial preferred for respiratory assessment + SaO2</li>
+        </ul>
+
+        <p><strong>Step-wise interpretation:</strong></p>
+        <ol>
+          <li><strong>Look at pH</strong> — acidemic, alkalemic, or normal?</li>
+          <li><strong>Look at HCO3 + pCO2:</strong>
+            <ul>
+              <li>HCO3 ↓ + pCO2 ↓ = metabolic acidosis</li>
+              <li>HCO3 ↑ + pCO2 ↑ = metabolic alkalosis</li>
+              <li>HCO3 ↑ + pCO2 ↑ = respiratory acidosis</li>
+              <li>HCO3 ↓ + pCO2 ↓ = respiratory alkalosis</li>
+            </ul>
+          </li>
+          <li><strong>Calculate expected compensation:</strong>
+            <ul>
+              <li>Metabolic acidosis: pCO2 = 1.5 × HCO3 + 8 ± 2 (Winter's)</li>
+              <li>Metabolic alkalosis: pCO2 ↑ 0.7 × ↑HCO3</li>
+              <li>Acute respiratory acidosis: HCO3 ↑ 1 mEq per 10 mmHg ↑pCO2</li>
+              <li>Chronic respiratory acidosis: HCO3 ↑ 4 mEq per 10 mmHg ↑pCO2</li>
+            </ul>
+          </li>
+          <li><strong>If compensation outside expected:</strong> mixed disorder!</li>
+          <li><strong>Calculate anion gap (metabolic acidosis):</strong>
+            <ul>
+              <li>AG = (Na + K) - (Cl + HCO3)</li>
+              <li>Normal: 12-25 (dog), 13-27 (cat)</li>
+              <li>↑ AG = added acid (lactic, ketones, toxin, uremia)</li>
+              <li>Normal AG = lost HCO3 (diarrhea, RTA)</li>
+            </ul>
+          </li>
+        </ol>
+
+        <p><strong>Etiology workup:</strong></p>
+        <ul>
+          <li>Lactate (lactic acidosis)</li>
+          <li>Glucose, ketones (DKA)</li>
+          <li>BUN, Cr (uremia)</li>
+          <li>Electrolytes</li>
+          <li>Toxin screen (ethylene glycol, salicylate)</li>
+          <li>UA (RTA, ketones)</li>
+          <li>Imaging (pulmonary, GI obstruction)</li>
+          <li>Endocrine: cortisol (Addison's, Cushing's)</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology — categorize first</p>`,
+      treatment: `
+        <p><strong>General principle: TREAT UNDERLYING CAUSE</strong> ✨</p>
+        <ul>
+          <li>Most acid-base abnormalities resolve when cause addressed</li>
+          <li>Specific correction needed only in severe cases or when impacting management</li>
+        </ul>
+
+        <p><strong>METABOLIC ACIDOSIS:</strong></p>
+        <ul>
+          <li><strong>IV fluids</strong> (LRS, Plasmalyte — buffered) for most cases</li>
+          <li><strong>Sodium bicarbonate</strong> — RARELY indicated:
+            <ul>
+              <li>pH &lt; 7.1 (or HCO3 &lt; 8) with cardiovascular compromise</li>
+              <li>Calculate: dose (mEq) = BW (kg) × 0.4 × (12 - pt HCO3) — give ¼-½ slowly over 4-6h</li>
+              <li>NEVER bolus</li>
+              <li>Caution: paradoxical CSF acidosis, hypokalemia, hypocalcemia, hypernatremia</li>
+            </ul>
+          </li>
+          <li>DKA: insulin + fluid + K (see DKA entry)</li>
+          <li>Lactic acidosis: treat shock + improve perfusion</li>
+          <li>Uremia: dialysis if severe</li>
+          <li>Ethylene glycol: antidote (fomepizole) + supportive</li>
+        </ul>
+
+        <p><strong>METABOLIC ALKALOSIS:</strong></p>
+        <ul>
+          <li>Address volume + Cl deficit:
+            <ul>
+              <li>0.9% NaCl ✨ — Cl-replete; restores volume + corrects alkalosis</li>
+              <li>"Saline-responsive" alkalosis (vomiting, diuretic) responds to NaCl + KCl</li>
+            </ul>
+          </li>
+          <li>Replace K (often hypoK)</li>
+          <li>Treat vomiting cause</li>
+          <li>Severe (pH &gt; 7.6 with arrhythmia/tetany): rare; HCl infusion via central line (specialist only)</li>
+        </ul>
+
+        <p><strong>RESPIRATORY ACIDOSIS:</strong></p>
+        <ul>
+          <li>Address ventilation:
+            <ul>
+              <li>Oxygen supplementation</li>
+              <li>Improve airway patency</li>
+              <li>Drain pleural fluid/air</li>
+              <li>Treat underlying lung dz</li>
+              <li>Mechanical ventilation if severe (pCO2 &gt; 60 + acidosis)</li>
+              <li>Reverse sedation</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>RESPIRATORY ALKALOSIS:</strong></p>
+        <ul>
+          <li>Address cause: hypoxia, pain, anxiety, fever, sepsis</li>
+          <li>Rarely needs specific Tx of alkalosis itself</li>
+        </ul>
+
+        <p><strong>MIXED DISORDERS:</strong></p>
+        <ul>
+          <li>Common in critical patients</li>
+          <li>Examples:
+            <ul>
+              <li>DKA + vomiting = metabolic acidosis + alkalosis (acidosis often dominates)</li>
+              <li>Severe pneumonia + sepsis = respiratory acidosis + metabolic acidosis</li>
+              <li>CHF on diuretics = metabolic alkalosis + respiratory alkalosis</li>
+            </ul>
+          </li>
+          <li>Treat each component based on dominant disturbance + cause</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck blood gas q4-12h initially</li>
+          <li>Monitor electrolytes (especially K)</li>
+          <li>Monitor lactate trend</li>
+          <li>Clinical signs (mental status, RR, perfusion)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Cardiac arrhythmia / arrest</strong> ✗ (severe acid-base disturbance)</li>
+          <li>Cardiovascular collapse (severe acidosis)</li>
+          <li>Seizures (severe alkalosis with ionized hypoCa)</li>
+          <li>Hypoglycemia (severe acidosis)</li>
+          <li>Hyperkalemia (acidosis shifts K out)</li>
+          <li>Iatrogenic complications:
+            <ul>
+              <li>NaHCO3 over-administration → alkalosis, hypocalcemia, hypernatremia, paradoxical CSF acidosis</li>
+              <li>Mechanical ventilation injury</li>
+              <li>Rapid fluid shifts</li>
+            </ul>
+          </li>
+          <li>Underlying disease progression</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Depends on underlying cause primarily</li>
+          <li>Mild-moderate disturbance with treatable cause: excellent ✓</li>
+          <li>Severe (pH &lt; 7.0 or &gt; 7.7) with cardiovascular instability: guarded</li>
+          <li>DKA, sepsis, ethylene glycol: see specific entries</li>
+          <li>Multi-organ failure with mixed acid-base: poor</li>
+        </ul>
+        <div class="callout">💡 <strong>Treat the cause, not the number</strong> ✨ — most acid-base abnormalities resolve with addressing underlying disease<br><br>⚠️ NaHCO3 RARELY needed; never bolus; reserve for pH &lt; 7.1 with cardiovascular compromise<br><br>📊 Anion gap helps categorize metabolic acidosis: ↑ AG = added acid; normal AG = lost HCO3</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     PART 8 — REPRODUCTIVE DISORDERS (Ch 56–58)
+  ============================================================ */
+
+  /* ---------- Pyometra ---------- */
+  {
+    id: 'pyometra',
+    titleEn: 'Pyometra',
+    titleTh: 'มดลูกอักเสบเป็นหนอง',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog', 'cat'],
+    tags: ['pyometra', 'CEH-pyometra complex', 'open pyometra', 'closed pyometra', 'OHE', 'aglepristone', 'progesterone', 'sepsis', 'E. coli', 'diestrus', 'stump pyometra'],
+    aliases: ['pyometra', 'มดลูกเป็นหนอง', 'มดลูกอักเสบ', 'CEH', 'uterine infection'],
+    source: 'Standard veterinary reproductive medicine',
+    sections: {
+      definition: `
+        <p>การติดเชื้อรุนแรงในโพรงมดลูก พร้อมกับมีหนองสะสม — <strong>life-threatening emergency</strong> ✗</p>
+        <ul>
+          <li>เป็นส่วนหนึ่งของ <strong>CEH-pyometra complex (Cystic Endometrial Hyperplasia)</strong> ✨</li>
+          <li>เกิดในช่วง <strong>diestrus</strong> (1-12 wk หลัง heat) — progesterone-mediated</li>
+          <li>หมาเจอบ่อยกว่าแมวมาก ✨</li>
+          <li>Older intact female (&gt; 6 yr typically); risk ↑ with age</li>
+          <li>Predisposed: Bernese, Rough Collie, Rottweiler, Cavalier KCS, Golden, Mini Schnauzer</li>
+          <li>2 forms:
+            <ul>
+              <li><strong>Open pyometra</strong> ~ 60-70% — cervix open, vulvar discharge — easier to recognize</li>
+              <li><strong>Closed pyometra</strong> ~ 30-40% ✗ — cervix closed, no discharge — more dangerous (rupture, sepsis)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Hormonal foundation:</strong>
+            <ul>
+              <li>Progesterone (diestrus) → endometrial proliferation, ↑ glandular secretion, ↓ myometrial contraction, ↓ local immunity</li>
+              <li>Repeated heat cycles → CEH (Cystic Endometrial Hyperplasia) → uterine environment conducive to infection</li>
+            </ul>
+          </li>
+          <li><strong>Bacterial ascent</strong> through cervix (open during proestrus/estrus):
+            <ul>
+              <li><strong>E. coli</strong> ✨ &gt; 60-80% of cases</li>
+              <li>Streptococcus, Staphylococcus, Klebsiella, Proteus, Pseudomonas</li>
+              <li>Anaerobes (mixed infection)</li>
+            </ul>
+          </li>
+          <li><strong>Risk factors:</strong>
+            <ul>
+              <li>Age &gt; 6 years</li>
+              <li>Nulliparous bitches</li>
+              <li>Recent heat (&lt; 12 weeks)</li>
+              <li>Prior progesterone or estrogen administration ✨ (mismating jab, mibolerone)</li>
+              <li>Misalliance contraceptive use</li>
+              <li>Recent breeding history</li>
+            </ul>
+          </li>
+          <li><strong>Stump pyometra:</strong> rare; remnant uterine stump after OHE infected (especially if ovarian remnant present)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Repeated diestrus → cumulative progesterone effect → CEH</li>
+          <li>Hyperplastic endometrium + secretions = ideal media for bacteria</li>
+          <li>Ascending bacterial infection during open cervix phase</li>
+          <li>Closed cervix during diestrus → trapped pus, ↑ pressure</li>
+          <li>Bacterial endotoxins → systemic effects:
+            <ul>
+              <li>SIRS / sepsis</li>
+              <li>Endotoxic shock</li>
+              <li>DIC</li>
+              <li>AKI (immune complex glomerulonephritis + ↓ ADH responsiveness)</li>
+              <li>Toxic neutrophils, hepatocellular damage</li>
+            </ul>
+          </li>
+          <li>Closed pyometra: pressure ↑ → uterine wall thinning → <strong>rupture → septic peritonitis</strong> ✗</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic history:</strong></p>
+        <ul>
+          <li>Intact female, 4 wk - 3 mo after last heat</li>
+          <li>Progressive systemic illness</li>
+        </ul>
+
+        <p><strong>Open pyometra:</strong></p>
+        <ul>
+          <li><strong>Vulvar discharge</strong> ✨ — purulent (yellow, brown, red-brown), foul-smelling</li>
+          <li>Lethargy, anorexia, fever (or hypothermia if septic)</li>
+          <li><strong>PU/PD</strong> ✨ — endotoxin-induced ADH antagonism</li>
+          <li>Vomiting, diarrhea</li>
+          <li>Distended abdomen (mild-moderate)</li>
+          <li>Dehydration</li>
+        </ul>
+
+        <p><strong>Closed pyometra ✗:</strong></p>
+        <ul>
+          <li>Same systemic signs but NO discharge</li>
+          <li>Often more severely ill at presentation (delayed diagnosis)</li>
+          <li><strong>Markedly distended abdomen</strong> ✨</li>
+          <li>Higher rate of sepsis, DIC, AKI</li>
+          <li>Risk of uterine rupture</li>
+        </ul>
+
+        <p><strong>Severe / late presentation ✗:</strong></p>
+        <ul>
+          <li>Sepsis: hypothermia, weak pulses, prolonged CRT, mental dullness</li>
+          <li>Hypotension, shock</li>
+          <li>Anuric AKI</li>
+          <li>DIC: petechiae, melena</li>
+          <li>Septic peritonitis (rupture): severe abdominal pain, distension, dyspnea</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical approach:</strong></p>
+        <ul>
+          <li>History + signalment + signs = strong suspicion</li>
+          <li>Don't delay treatment for definitive imaging if very ill</li>
+        </ul>
+
+        <p><strong>Imaging — confirms diagnosis:</strong></p>
+        <ul>
+          <li><strong>Abdominal ultrasound</strong> ✨ — gold standard
+            <ul>
+              <li>Distended fluid-filled uterus (anechoic to mixed echogenicity)</li>
+              <li>Often 2-5+ cm diameter, multiple loops</li>
+              <li>Identifies free abdominal fluid (rupture)</li>
+              <li>Differentiates from pregnancy (no fetuses if pyometra)</li>
+            </ul>
+          </li>
+          <li>Abdominal radiograph: tubular soft tissue density mass in caudal abdomen; less sensitive
+            <ul>
+              <li>Confirms NOT pregnant if no fetal mineralization (after day 45 fetus visible)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Laboratory:</strong></p>
+        <ul>
+          <li>CBC:
+            <ul>
+              <li><strong>Marked neutrophilia with left shift</strong> ✨ — often 30-50,000+</li>
+              <li>Toxic neutrophils, Döhle bodies</li>
+              <li>Mild anemia (chronic/inflammatory)</li>
+              <li>Severe: leukopenia + degenerative left shift = sepsis ✗</li>
+            </ul>
+          </li>
+          <li>Biochem:
+            <ul>
+              <li>Hyperglobulinemia (chronic)</li>
+              <li>Hypoalbuminemia (sepsis)</li>
+              <li>↑ ALP, ALT (mild-moderate)</li>
+              <li>BUN, Cr — variable; ↑ in AKI ✗</li>
+              <li>Hyponatremia (sepsis, vomiting)</li>
+              <li>Hypoglycemia (sepsis ✗) or hyperglycemia (stress)</li>
+            </ul>
+          </li>
+          <li>UA: dilute (USG &lt; 1.020 typical, hyposthenuric); mild proteinuria</li>
+          <li>UPC: often ↑ (immune complex GN)</li>
+          <li>Coag panel (DIC suspect): PT/PTT, platelets, D-dimer, fibrinogen</li>
+          <li>Lactate (sepsis severity)</li>
+          <li>Vaginal cytology (open): neutrophils + bacteria</li>
+          <li>Vaginal culture (open): identify organism + susceptibility</li>
+        </ul>
+
+        <p><strong>DDx pregnancy:</strong></p>
+        <ul>
+          <li>US: fetal structures absent in pyometra</li>
+          <li>Hx + cytology + clinical signs</li>
+          <li>Relaxin test (positive in pregnancy &gt; 28 d)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Pregnancy</li>
+          <li>Mucometra / hydrometra (sterile fluid; less ill)</li>
+          <li>Cystic endometrial hyperplasia without infection</li>
+          <li>Vaginitis / vaginal discharge from other cause</li>
+          <li>UTI</li>
+          <li>Open pyometra DDx: post-partum metritis, lochia, retained placenta</li>
+          <li>Closed pyometra DDx: hemoabdomen, ascites, organomegaly, neoplasia</li>
+          <li>AKI from other cause (lepto, etc.)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Stabilization first ✗ — sepsis often present:</strong></p>
+        <ul>
+          <li><strong>IV fluid resuscitation</strong>:
+            <ul>
+              <li>LRS or Plasmalyte 10-20 mL/kg bolus, reassess</li>
+              <li>Continue at 2-3× maintenance</li>
+              <li>Restore perfusion, BP, urine output</li>
+            </ul>
+          </li>
+          <li><strong>Empirical broad-spectrum IV antibiotics</strong> ✨ — start before surgery:
+            <ul>
+              <li>Ampicillin-sulbactam 22-30 mg/kg IV q6-8h + enrofloxacin 5-10 mg/kg IV q24h</li>
+              <li>Or amoxicillin-clavulanate IV + enrofloxacin</li>
+              <li>Adjust per culture once available</li>
+              <li>Continue 7-14 days post-op</li>
+            </ul>
+          </li>
+          <li>Anti-emetics: maropitant 1 mg/kg IV q24h</li>
+          <li>Pain management: fentanyl, methadone, buprenorphine (avoid NSAIDs ✗ — AKI risk)</li>
+          <li>Address electrolytes, acid-base</li>
+          <li>Plasma transfusion for severe DIC</li>
+        </ul>
+
+        <p><strong>2. Definitive treatment — Ovariohysterectomy (OHE) ✨ — gold standard:</strong></p>
+        <ul>
+          <li><strong>Indications:</strong> ALL non-breeding bitches; closed pyometra; very sick patients; severely affected uterus</li>
+          <li>Stabilize first when possible (4-12h aggressive supportive care)</li>
+          <li>Anesthesia caution:
+            <ul>
+              <li>Avoid α2 agonists in shock</li>
+              <li>Pre-oxygenate</li>
+              <li>Use IV induction (propofol/fentanyl)</li>
+              <li>Maintain with iso/sevo + IV CRI</li>
+            </ul>
+          </li>
+          <li>Surgery technique:
+            <ul>
+              <li>Careful exteriorization — uterus often friable</li>
+              <li>Triple-clamp pedicles (uterus very vascular when diseased)</li>
+              <li>Avoid uterine spillage (peritonitis risk)</li>
+              <li>Lavage abdomen if any contamination</li>
+              <li>Submit uterus for histopath + culture if not done</li>
+            </ul>
+          </li>
+          <li>Post-op:
+            <ul>
+              <li>Continue IV fluids, antibiotics, pain mgmt</li>
+              <li>Monitor temperature, CBC, electrolytes, urine output</li>
+              <li>Most discharged 2-3 d post-op once eating, no fever, vitals stable</li>
+              <li>Total antibiotic course: 14 days (longer if severe)</li>
+              <li>E-collar to protect incision</li>
+              <li>Recheck 10-14 d for incision + recheck blood work</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Medical management ✨ — for breeding-valuable bitches with OPEN pyometra only:</strong></p>
+        <ul>
+          <li>Strict criteria:
+            <ul>
+              <li>Open cervix (discharge present)</li>
+              <li>Stable patient (no severe sepsis, no organ failure)</li>
+              <li>Owner committed to breeding</li>
+              <li>No concurrent dz precluding pregnancy</li>
+              <li>Owner aware of high recurrence risk + risks</li>
+            </ul>
+          </li>
+          <li><strong>Aglepristone (Alizin) 10 mg/kg SC q24h × 2 doses (Day 1, 2)</strong> ✨ — progesterone receptor antagonist
+            <ul>
+              <li>Repeat on Day 8 if still effusing</li>
+              <li>Causes cervix to remain open + uterine evacuation</li>
+              <li>Combine with antibiotics (per culture or empirical)</li>
+              <li>Best evidence-based medical option</li>
+            </ul>
+          </li>
+          <li>Alternative protocols (older):
+            <ul>
+              <li>PGF2α (dinoprost) 0.1-0.25 mg/kg SC q12-24h × 5-7 d
+                <ul>
+                  <li>Side effects: vomiting, diarrhea, restlessness, panting (pre-treat with atropine, walk dog)</li>
+                  <li>Risk of uterine rupture if cervix closed ✗</li>
+                  <li>Cabergoline added (~ 5 mcg/kg PO q24h) for prolactin suppression</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Continue antibiotics 21-28 d</li>
+          <li>Recheck US weekly until uterus normal</li>
+          <li>Breed at next heat (don't skip — recurrence rate 50-80% if not bred)</li>
+          <li>Spay after breeding career complete</li>
+        </ul>
+
+        <p><strong>4. Stump pyometra (post-OHE):</strong></p>
+        <ul>
+          <li>Suspect in spayed female with PU/PD + signs + uterine stump on US</li>
+          <li>Often associated with ovarian remnant (estrogen drives) — find and remove all gonadal tissue</li>
+          <li>Surgical exploration + remove all uterine + ovarian tissue</li>
+          <li>Antibiotics</li>
+        </ul>
+
+        <p><strong>Owner education:</strong></p>
+        <ul>
+          <li>Pyometra is preventable by spaying</li>
+          <li>If breeding bitch retained: spay after last litter</li>
+          <li>Watch for vulvar discharge, PU/PD, lethargy 1-3 mo after each heat</li>
+          <li>If treated medically: high recurrence risk; discuss spay timing</li>
+          <li>Avoid hormonal contraceptives that ↑ pyometra risk (mibolerone, megestrol — both controversial)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Septic peritonitis from uterine rupture</strong> ✗ — closed pyometra; surgical emergency</li>
+          <li><strong>Sepsis / SIRS / endotoxic shock</strong> ✗</li>
+          <li><strong>DIC</strong> ✗</li>
+          <li>AKI (immune complex GN) — usually reversible after OHE</li>
+          <li>Anuric renal failure — guarded</li>
+          <li>ARDS (severe sepsis)</li>
+          <li>Surgical complications: hemorrhage, dehiscence, infection</li>
+          <li>Adhesions, stump granuloma</li>
+          <li>Stump pyometra (incomplete OHE)</li>
+          <li>Recurrence with medical Tx (50-80% if not bred)</li>
+          <li>Anesthesia complications in compromised patient</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Open pyometra + early OHE: excellent</strong> — &gt; 95% survive ✓</li>
+          <li><strong>Closed pyometra + OHE: good</strong> — 80-90% survive (depends on systemic illness)</li>
+          <li><strong>Septic + AKI: guarded</strong> — mortality 20-40%</li>
+          <li><strong>Ruptured + peritonitis: poor</strong> — mortality 50%+</li>
+          <li>Medical Tx success rate: 50-90% acute resolution; 50-80% recur within 1-2 estrous cycles</li>
+          <li>Pregnancy rate after medical Tx: 40-70% (lower than normal)</li>
+          <li>Cat pyometra: similar; closed pyometra rare in cat (induced ovulator advantage)</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Intact bitch + lethargy + PU/PD + 1-3 mo post-heat = pyometra until proven otherwise</strong> ✨ — abdominal US confirms<br><br>💡 <strong>OHE = treatment of choice</strong> for non-breeding bitches. Medical Tx (aglepristone) reserved for breeding-valuable open pyometra. Stabilize sepsis BEFORE surgery</div>
+      `,
+    },
+  },
+
+  /* ---------- Dystocia ---------- */
+  {
+    id: 'dystocia',
+    titleEn: 'Dystocia',
+    titleTh: 'คลอดยาก',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog', 'cat'],
+    tags: ['dystocia', 'difficult birth', 'whelping', 'queening', 'oxytocin', 'C-section', 'caesarean', 'fetal distress', 'primary uterine inertia', 'secondary uterine inertia'],
+    aliases: ['dystocia', 'คลอดยาก', 'คลอดติด', 'whelping problem', 'C-section'],
+    source: 'Standard veterinary reproductive medicine',
+    sections: {
+      definition: `
+        <p>การคลอดที่<strong>ผิดปกติ</strong> — ไม่สามารถคลอดได้ตามธรรมชาติภายใน normal time frame</p>
+        <ul>
+          <li><strong>Maternal causes:</strong> uterine inertia, narrow pelvis, soft-tissue obstruction</li>
+          <li><strong>Fetal causes:</strong> oversized fetus, malpresentation, malposition, fetal anomaly, fetal death</li>
+          <li><strong>Brachycephalic breeds</strong> (Bulldog, Frenchie, Pug, Boston) ✨ — high C-section rate (50-80% elective)</li>
+          <li>Toy breeds, large litters → ↑ risk</li>
+          <li>Cat: less common dystocia overall; Persian, Himalayan ↑ risk</li>
+          <li>Time-critical emergency — fetal mortality rises rapidly with delay</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Maternal causes (~ 75% of dystocia):</strong></p>
+        <ul>
+          <li><strong>Primary uterine inertia</strong> ✨ — uterus fails to initiate contractions despite normal pregnancy
+            <ul>
+              <li>~ 50% of dystocia cases</li>
+              <li>Single-pup pregnancy (insufficient stretch stimulus)</li>
+              <li>Very large litter (over-stretched, fatigued)</li>
+              <li>Hypocalcemia, hypoglycemia</li>
+              <li>Older bitch</li>
+              <li>Obesity</li>
+              <li>Genetic predisposition</li>
+            </ul>
+          </li>
+          <li><strong>Secondary uterine inertia</strong> — initiated normally but fatigued mid-labor
+            <ul>
+              <li>Prolonged labor with obstruction</li>
+              <li>Exhaustion after partial delivery</li>
+            </ul>
+          </li>
+          <li><strong>Pelvic abnormalities</strong>:
+            <ul>
+              <li>Pelvic fractures (healed asymmetric)</li>
+              <li>Congenital narrow pelvis (some breeds)</li>
+              <li>Pelvic mass</li>
+            </ul>
+          </li>
+          <li>Soft-tissue obstruction:
+            <ul>
+              <li>Vaginal stricture / septum</li>
+              <li>Vaginal mass</li>
+              <li>Persistent hymen</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Fetal causes (~ 25%):</strong></p>
+        <ul>
+          <li><strong>Fetal-pelvic disproportion</strong> ✨ — fetus too large
+            <ul>
+              <li>Brachycephalic breeds (large head) ✨</li>
+              <li>Single-pup syndrome (one large fetus)</li>
+            </ul>
+          </li>
+          <li><strong>Malpresentation:</strong>
+            <ul>
+              <li>Transverse (sideways)</li>
+              <li>Both head + tail entering pelvis (twins simultaneously)</li>
+            </ul>
+          </li>
+          <li><strong>Malposition:</strong>
+            <ul>
+              <li>Head/limb deviation (head turned back, leg retained)</li>
+              <li>Breech with hindlimbs flexed (true breech)</li>
+            </ul>
+          </li>
+          <li>Fetal death (decomposition, anasarca)</li>
+          <li>Congenital fetal anomalies (anasarca, hydrocephalus, gigantism)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Normal labor: 3 stages
+            <ul>
+              <li>Stage 1: cervical dilation, restless, panting (6-12h dog, 4-12h cat); body temp drops &lt; 37.2°C 12-24h before</li>
+              <li>Stage 2: active expulsion of fetus (each pup typically 30-60 min apart; total &lt; 12-24h)</li>
+              <li>Stage 3: passing of placenta (within 15 min of each pup)</li>
+            </ul>
+          </li>
+          <li>Dystocia → prolonged stress on dam + fetuses</li>
+          <li>Fetal hypoxia → bradycardia → death</li>
+          <li>Stillbirth + retained dead fetus → toxic, septic risk</li>
+          <li>Maternal exhaustion, dehydration</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Criteria for dystocia (any of):</strong></p>
+        <ul>
+          <li><strong>Stage 1 labor &gt; 12-24h without progressing to stage 2</strong></li>
+          <li><strong>Strong active straining &gt; 30-45 min without producing pup</strong> ✨</li>
+          <li><strong>Weak/intermittent straining &gt; 2-4h without progress</strong></li>
+          <li><strong>Interval &gt; 2-4h between pups</strong> with more known to come</li>
+          <li>Green vulvar discharge (uteroverdin) without pup within 2-4h ✗ — placental separation, fetal distress
+            <ul>
+              <li>Some green discharge after first pup is normal; before first = abnormal</li>
+            </ul>
+          </li>
+          <li>Bloody/purulent vulvar discharge</li>
+          <li>Visible pup at vulva &gt; 10-15 min (extracted slow)</li>
+          <li>Maternal distress: hypothermia, exhaustion, shock</li>
+          <li>Foul-smelling discharge → fetal death + maternal sepsis</li>
+          <li>Failure to whelp by Day 65-67 from LH peak (or 70 from breeding) — overdue</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>History:</strong></p>
+        <ul>
+          <li>Breeding date(s)</li>
+          <li>Body temperature drop?</li>
+          <li>Onset of labor</li>
+          <li>Number of pups already delivered</li>
+          <li>Time intervals</li>
+          <li>Any abnormal discharge</li>
+          <li>Maternal status</li>
+          <li>Confirmed pregnancy timeline (US, palpation dates)</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Vital signs (TPR, BP)</li>
+          <li>Hydration</li>
+          <li>Mental status, exhaustion level</li>
+          <li>Vaginal exam (sterile glove, lubrication):
+            <ul>
+              <li>Cervix open?</li>
+              <li>Pup palpable in birth canal? Position?</li>
+              <li>Vaginal stricture, mass, septum</li>
+            </ul>
+          </li>
+          <li>Mammary glands — milk let-down indicates labor imminent</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal radiograph</strong> ✨ — count remaining fetuses, assess size + position
+            <ul>
+              <li>Fetal mineralization visible from day 45</li>
+              <li>Identify malpresentation, gross fetal anomalies</li>
+              <li>Compare to pre-whelp count if known</li>
+            </ul>
+          </li>
+          <li><strong>Abdominal ultrasound</strong> ✨ — fetal viability assessment
+            <ul>
+              <li>Fetal heart rate (FHR) ✨:
+                <ul>
+                  <li>Normal: &gt; 200 bpm (~ 1.5-2× maternal)</li>
+                  <li>Stressed: 180-200 bpm</li>
+                  <li>Distress: 150-180 bpm — urgent intervention</li>
+                  <li>Severe distress: &lt; 150 bpm — emergency C-section ✗</li>
+                  <li>No heartbeat: fetal death</li>
+                </ul>
+              </li>
+              <li>Assess each fetus individually</li>
+              <li>Placental detachment, fluid abnormalities</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Laboratory:</strong></p>
+        <ul>
+          <li>BG (hypoglycemia common in protracted labor)</li>
+          <li>iCa (hypocalcemia / eclampsia coexist)</li>
+          <li>Basic CBC + electrolytes</li>
+          <li>Lactate (perfusion)</li>
+          <li>Blood typing (in case transfusion needed)</li>
+        </ul>
+      `,
+      differential: `<p>Categorize cause: maternal vs fetal; assess fetal viability + maternal status</p>`,
+      treatment: `
+        <p><strong>Decision flow ✨:</strong></p>
+
+        <p><strong>1. Assess: Vaginal pup obstructed?</strong></p>
+        <ul>
+          <li>YES → manual delivery attempt (if pup in birth canal, position correctable)</li>
+          <li>NO → next step</li>
+        </ul>
+
+        <p><strong>2. Assess: Pelvic adequacy?</strong></p>
+        <ul>
+          <li>Inadequate (narrow pelvis, large fetus, mass) → <strong>C-section</strong></li>
+          <li>Adequate → next step</li>
+        </ul>
+
+        <p><strong>3. Assess: Fetal viability?</strong></p>
+        <ul>
+          <li>FHR &lt; 180 bpm → <strong>emergency C-section</strong> ✗</li>
+          <li>FHR &gt; 180 bpm + adequate pelvis → medical management trial</li>
+        </ul>
+
+        <p><strong>MEDICAL MANAGEMENT (uterine inertia, viable fetuses, no obstruction):</strong></p>
+
+        <p><strong>1. IV access + supportive care:</strong></p>
+        <ul>
+          <li>IV catheter</li>
+          <li>LRS or Plasmalyte 5-10 mL/kg IV bolus, then maintenance</li>
+          <li>50% dextrose 1-2 mL/kg slow IV (if hypoglycemic) + add 2.5-5% dextrose to fluids</li>
+          <li>10% calcium gluconate 0.5-1 mL/kg slow IV with ECG monitor (if hypocalcemic)</li>
+        </ul>
+
+        <p><strong>2. Oxytocin ✨ — careful use:</strong></p>
+        <ul>
+          <li><strong>Dose: 0.25-2.0 U/dog IV/IM</strong> (NOT 1 U/kg — much smaller dose!)
+            <ul>
+              <li>Cat: 0.25-1.0 U IM</li>
+              <li>Or 0.5-2 U/dog IM/SC q15-30 min, max 3 doses</li>
+              <li>Can repeat once after 30 min if no response</li>
+            </ul>
+          </li>
+          <li><strong>Prerequisites for oxytocin ✨:</strong>
+            <ul>
+              <li>Cervix open</li>
+              <li>No obstruction</li>
+              <li>Adequate Ca + glucose</li>
+              <li>Calcium given first if hypocalcemic</li>
+              <li>Fetuses viable</li>
+            </ul>
+          </li>
+          <li><strong>Contraindications:</strong>
+            <ul>
+              <li>Closed cervix → uterine rupture risk ✗</li>
+              <li>Pelvic obstruction</li>
+              <li>Fetal-pelvic disproportion</li>
+            </ul>
+          </li>
+          <li>Monitor FHR + contractions during/after</li>
+          <li>Walk dog between doses (sometimes helps)</li>
+          <li>If no progress after 2-3 doses → C-section ✨</li>
+        </ul>
+
+        <p><strong>3. Manual delivery (only if pup palpable in canal):</strong></p>
+        <ul>
+          <li>Sterile gloves, copious lubricant</li>
+          <li>Identify presentation; gentle traction during contractions</li>
+          <li>Forceps RARELY (risk vaginal/fetal trauma)</li>
+          <li>If unable to extract → C-section</li>
+        </ul>
+
+        <p><strong>SURGICAL MANAGEMENT (C-section) ✨:</strong></p>
+
+        <p><strong>Indications (any of):</strong></p>
+        <ul>
+          <li>Failed medical management</li>
+          <li>Pelvic obstruction (fetal-pelvic disproportion)</li>
+          <li>Brachycephalic breed elective</li>
+          <li>Fetal distress (FHR &lt; 180)</li>
+          <li>Maternal exhaustion / shock</li>
+          <li>Closed cervix with full-term labor</li>
+          <li>Single-pup pregnancy that failed to initiate</li>
+          <li>Fetal anomaly preventing passage</li>
+          <li>Prolonged dystocia &gt; 2-4h with no progress</li>
+        </ul>
+
+        <p><strong>Anesthesia approach (modern):</strong></p>
+        <ul>
+          <li>Pre-oxygenate dam</li>
+          <li>Pre-clip ventral abdomen prior to induction (minimizes anesthesia time)</li>
+          <li>Premed: minimal sedation; can use opioid (methadone, fentanyl) — short-acting preferred</li>
+          <li>Avoid α2 agonists (xylazine, dexmedetomidine)</li>
+          <li>Induction: propofol 4-6 mg/kg IV (titrated)</li>
+          <li>Maintenance: isoflurane / sevoflurane (lowest possible)</li>
+          <li>Local block (line block at incision) ✨ — reduces inhalant requirement</li>
+          <li>IV fluids throughout</li>
+          <li>Quick surgery — minimize time to fetal extraction</li>
+        </ul>
+
+        <p><strong>Surgical technique (brief):</strong></p>
+        <ul>
+          <li>Ventral midline approach</li>
+          <li>Exteriorize uterus carefully</li>
+          <li>Hysterotomy on dorsal aspect of uterine body (less vascular)</li>
+          <li>Extract pups one at a time, milk through incision</li>
+          <li>Hand to assistant for resuscitation</li>
+          <li>Express any retained fetuses, placentas</li>
+          <li>Two-layer closure (Cushing or Lembert + simple continuous)</li>
+          <li>OHE concurrent if owner pre-consents (en bloc OHE for severely diseased uterus or non-breeding bitch)</li>
+        </ul>
+
+        <p><strong>Neonatal resuscitation ✨:</strong></p>
+        <ul>
+          <li>Clear airway: bulb syringe / suction nose + mouth</li>
+          <li>Vigorous towel rub stimulation</li>
+          <li>If no breathing: provide gentle positive pressure (mouth-to-snout if no equipment)</li>
+          <li>Doxapram 1-2 drops sublingual (controversial — not always recommended now)</li>
+          <li>Naloxone 0.01-0.04 mg sublingual if maternal opioid used</li>
+          <li>Warm (heating pad set low; neonates lose heat rapidly)</li>
+          <li>Check heart rate (should be &gt; 200; if &lt; 100 = poor)</li>
+          <li>Once breathing well, dry, warm, place with dam ASAP</li>
+          <li>Encourage early colostrum (first 24h critical for IgG transfer)</li>
+        </ul>
+
+        <p><strong>Post-op care:</strong></p>
+        <ul>
+          <li>Maternal recovery in warm quiet area; reunite with pups when able to nurse safely</li>
+          <li>Pain management: opioid (low dose, doesn't pass much through milk); avoid NSAIDs while nursing</li>
+          <li>Antibiotics: amoxicillin-clavulanate post-op 5-7 d</li>
+          <li>Watch for retained fetus/placenta → metritis</li>
+          <li>Monitor lactation, mothering behavior</li>
+          <li>Some neonates need bottle feeding initially if dam not ready</li>
+        </ul>
+
+        <p><strong>Prevention:</strong></p>
+        <ul>
+          <li>Pre-breeding evaluation (pelvis, history)</li>
+          <li>Avoid breeding bitches with previous C-section necessity (3 max recommended)</li>
+          <li>Brachycephalic counseling — discuss elective C-section</li>
+          <li>Optimal weight management before breeding</li>
+          <li>Track LH peak and predict whelp date precisely</li>
+          <li>Owner education: monitor labor, know when to call</li>
+        </ul>
+      `,
+      complications: `
+        <p><strong>Maternal:</strong></p>
+        <ul>
+          <li>Uterine rupture ✗</li>
+          <li>Vaginal/cervical trauma</li>
+          <li>Hemorrhage</li>
+          <li>Retained fetus → metritis, peritonitis</li>
+          <li>Retained placenta</li>
+          <li>Eclampsia post-partum (especially toy breeds, large litter)</li>
+          <li>Mastitis</li>
+          <li>Maternal death (severe shock, hemorrhage)</li>
+          <li>Future fertility (post-C-section breeding still possible)</li>
+          <li>Surgical complications</li>
+        </ul>
+
+        <p><strong>Neonatal:</strong></p>
+        <ul>
+          <li>Stillbirth (especially with delayed intervention)</li>
+          <li>Hypoxic brain injury</li>
+          <li>Hypoglycemia</li>
+          <li>Hypothermia</li>
+          <li>Failure of passive transfer (no colostrum)</li>
+          <li>Aspiration during delivery</li>
+          <li>Fading puppy syndrome</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Early intervention + viable fetuses + healthy dam: excellent</strong> ✓
+            <ul>
+              <li>Fetal mortality 5-15% with prompt C-section</li>
+              <li>Maternal survival &gt; 95%</li>
+            </ul>
+          </li>
+          <li>Delayed presentation:
+            <ul>
+              <li>Fetal mortality rises to 30-50% with delay &gt; 6h</li>
+              <li>Septic dam: maternal mortality 10-20%</li>
+            </ul>
+          </li>
+          <li>Single-pup pregnancy: variable; often C-section
+          </li>
+          <li>Brachycephalic elective C-section: excellent outcomes ✓</li>
+          <li>Malpresentation correctable: good</li>
+          <li>Fetal anomaly: poor for that fetus; rest of litter usually OK</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Time = lives</strong> ✗ — fetal mortality rises rapidly with delay. Don't hesitate on C-section if FHR &lt; 180 or no progress after 30-45 min hard labor<br><br>💡 Oxytocin requires: open cervix + no obstruction + adequate Ca/glucose; CONTRAINDICATED with closed cervix or pelvic obstruction (rupture risk)<br><br>📊 FHR target: &gt; 200 bpm normal; &lt; 180 = distress; &lt; 150 = emergency</div>
+      `,
+    },
+  },
+
+  /* ---------- Mastitis ---------- */
+  {
+    id: 'mastitis',
+    titleEn: 'Mastitis',
+    titleTh: 'เต้านมอักเสบ',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog', 'cat'],
+    tags: ['mastitis', 'galactostasis', 'lactating bitch', 'gangrenous mastitis', 'cabergoline', 'galactostasis', 'E. coli', 'Staphylococcus'],
+    aliases: ['mastitis', 'เต้านมอักเสบ', 'mammary infection', 'เต้านมเป็นหนอง'],
+    source: 'Standard veterinary reproductive medicine',
+    sections: {
+      definition: `
+        <p>การอักเสบของเต้านม — ส่วนใหญ่เกิดในช่วง <strong>lactation</strong> (post-partum 1-3 wk) แต่อาจเกิดได้ตลอดเวลา</p>
+        <ul>
+          <li><strong>Acute mastitis</strong> ✨ — most common; bacterial infection</li>
+          <li><strong>Subclinical / chronic mastitis</strong> — often missed; affects pup growth</li>
+          <li><strong>Gangrenous mastitis</strong> ✗ — severe; necrosis, systemic toxicity, life-threatening</li>
+          <li><strong>Galactostasis</strong> — milk stasis without infection (pre-stage)</li>
+          <li>Pseudopregnancy mastitis — non-pregnant bitch with mammary engorgement</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Predisposing factors:</strong></p>
+        <ul>
+          <li>Trauma to nipples (puppy teeth, scratching)</li>
+          <li>Poor hygiene</li>
+          <li>Lack of pup nursing on a gland (mismatched / large litter / loss of pup)</li>
+          <li>Galactostasis (milk accumulation without removal)</li>
+          <li>Suppressive immunity, debilitated dam</li>
+          <li>Concurrent dz (DM, Cushing's)</li>
+          <li>Post-weaning if abrupt</li>
+          <li>Pseudopregnancy</li>
+        </ul>
+
+        <p><strong>Common organisms (ascending from teat orifice):</strong></p>
+        <ul>
+          <li><strong>E. coli</strong> ✨ — most common in gangrenous form</li>
+          <li>Staphylococcus (S. aureus, S. intermedius)</li>
+          <li>Streptococcus</li>
+          <li>Klebsiella, Proteus</li>
+          <li>Mycoplasma (chronic)</li>
+          <li>Mixed infections common</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Bacteria ascend from teat orifice (especially with trauma) → infect mammary tissue</li>
+          <li>Local inflammation: pain, heat, swelling, erythema</li>
+          <li>Milk changes: thicker, may have blood/pus</li>
+          <li>Severe → tissue necrosis, abscess formation</li>
+          <li>Gangrenous: vasculitis → ischemia → necrosis; systemic toxin absorption → SIRS / shock</li>
+          <li>Toxic milk affects nursing pups (toxins, bacteria → fading puppy syndrome)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute mastitis:</strong></p>
+        <ul>
+          <li><strong>One or multiple mammary glands swollen, hot, painful, red</strong> ✨</li>
+          <li>Firm, may have palpable nodules</li>
+          <li>Reluctance to let pups nurse on affected gland</li>
+          <li>Milk abnormal: thick, yellow, brown, blood-tinged, or purulent</li>
+          <li>Cytology: ↑ neutrophils + bacteria</li>
+          <li>Maternal signs: lethargy, fever, anorexia (variable)</li>
+          <li>Pups may show fading signs (poor nursing, vocalize, lose weight)</li>
+        </ul>
+
+        <p><strong>Gangrenous mastitis ✗:</strong></p>
+        <ul>
+          <li>Affected gland: dark purple → black, cold to touch</li>
+          <li>Sloughing tissue, foul odor</li>
+          <li>Severe pain</li>
+          <li><strong>Systemic toxicity</strong> ✗: fever (or hypothermia if septic), severely depressed, dehydration, shock</li>
+          <li>Pups severely affected (toxic milk)</li>
+          <li>Without intervention → maternal death within 24-48h</li>
+        </ul>
+
+        <p><strong>Subclinical:</strong></p>
+        <ul>
+          <li>Mild gland firmness</li>
+          <li>Slow puppy growth (poor weight gain) ✨</li>
+          <li>"Fading puppies" not gaining weight</li>
+          <li>Often only 1-2 glands affected</li>
+        </ul>
+
+        <p><strong>Galactostasis (pre-mastitis):</strong></p>
+        <ul>
+          <li>Glands distended, firm but NOT painful or red</li>
+          <li>Often after weaning or pup loss</li>
+          <li>Owner discomfort dam, pacing</li>
+          <li>If unresolved → progresses to mastitis</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Physical exam ✨:</strong></p>
+        <ul>
+          <li>Palpate every mammary gland systematically</li>
+          <li>Note: warmth, swelling, pain, color, discharge</li>
+          <li>Express small amount of milk (gentle)</li>
+          <li>Check pup body weight, behavior</li>
+        </ul>
+
+        <p><strong>Milk examination:</strong></p>
+        <ul>
+          <li>Gross: color, consistency (normal: white, opaque liquid)</li>
+          <li>Cytology: 
+            <ul>
+              <li>Normal milk: occasional neutrophils, macrophages</li>
+              <li>Mastitis: marked neutrophilia, bacteria, debris</li>
+              <li>Gangrenous: degenerate neutrophils, intracellular bacteria, RBCs</li>
+            </ul>
+          </li>
+          <li>Culture + susceptibility (clean teat, express ≥ 1 mL)</li>
+          <li>pH testing strips (alkaline = abnormal)</li>
+        </ul>
+
+        <p><strong>Maternal lab (if systemic signs):</strong></p>
+        <ul>
+          <li>CBC: leukocytosis, left shift (sepsis = leukopenia ✗)</li>
+          <li>Biochem: ± hypoalbumin, ↑ liver enzymes (sepsis)</li>
+          <li>Lactate, blood gas (severe)</li>
+          <li>Coag panel if DIC concern</li>
+        </ul>
+
+        <p><strong>Imaging (severe / atypical):</strong></p>
+        <ul>
+          <li>US of affected gland: assess abscess, necrosis, fluid pocket</li>
+          <li>Thermal imaging (some clinics) — early detection</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Galactostasis (no infection)</li>
+          <li>Mammary tumor (especially older intact bitch — neoplasia is huge concern; FNA)</li>
+          <li>Mammary trauma (hematoma)</li>
+          <li>Pseudopregnancy mammary engorgement</li>
+          <li>Other systemic illness (postpartum metritis, retained fetus)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Acute uncomplicated mastitis ✨:</strong></p>
+        <ul>
+          <li><strong>Antibiotics</strong> — empirical pending culture:
+            <ul>
+              <li>Amoxicillin-clavulanate 12.5-25 mg/kg PO q12h × 14-21 d ✨</li>
+              <li>Or cephalexin 22 mg/kg PO q12h</li>
+              <li>Adjust per culture</li>
+              <li>Avoid TMS (can affect pups via milk)</li>
+              <li>Avoid fluoroquinolones in nursing pups (cartilage)</li>
+            </ul>
+          </li>
+          <li><strong>Hot compresses</strong> q4-6h × 10-15 min — promotes drainage, milk let-down</li>
+          <li><strong>Manual milk expression</strong> ✨ — frequently empty affected gland (essential!)
+            <ul>
+              <li>Keep nursing if milk grossly normal — pups stimulate let-down</li>
+              <li>Express any abnormal milk</li>
+            </ul>
+          </li>
+          <li>Pain management:
+            <ul>
+              <li>Opioid (low dose) — passes minimally through milk</li>
+              <li>Avoid NSAIDs while nursing (carprofen relatively safer if needed but caution)</li>
+            </ul>
+          </li>
+          <li>Continue nursing if possible (most cases) — empty gland helps</li>
+          <li>Monitor pup growth daily</li>
+        </ul>
+
+        <p><strong>2. Severe / gangrenous mastitis ✗:</strong></p>
+        <ul>
+          <li><strong>EMERGENCY</strong> — hospitalize immediately</li>
+          <li>IV fluids (LRS) — restore perfusion</li>
+          <li><strong>IV broad-spectrum antibiotics</strong>:
+            <ul>
+              <li>Ampicillin-sulbactam 22-30 mg/kg IV q6-8h + enrofloxacin 5-10 mg/kg IV q24h</li>
+              <li>Or amoxicillin-clavulanate IV</li>
+            </ul>
+          </li>
+          <li><strong>Surgical debridement / mastectomy</strong> ✨ — mandatory for gangrenous tissue</li>
+          <li>Wound care: open management, daily lavage, dressing changes</li>
+          <li>Pain control: opioid CRI</li>
+          <li><strong>STOP NURSING</strong> ✨ — toxic milk fatal to pups
+            <ul>
+              <li>Bottle feed pups with milk replacer</li>
+              <li>Cabergoline 5 mcg/kg PO q24h × 5-7 d to dry up dam (after recovery)</li>
+            </ul>
+          </li>
+          <li>Plasma transfusion if DIC</li>
+          <li>Monitor closely 24-48h ICU</li>
+        </ul>
+
+        <p><strong>3. Galactostasis (no infection):</strong></p>
+        <ul>
+          <li>Reduce caloric/water intake of dam (less milk production)</li>
+          <li>Cool compresses (vs hot for mastitis)</li>
+          <li>Don't express (would increase production)</li>
+          <li>Avoid stimulation of mammary gland</li>
+          <li>If post-weaning: time resolves over 1-2 weeks</li>
+          <li>Cabergoline 5 mcg/kg PO q24h × 4-7 d if persistent — prolactin antagonist</li>
+        </ul>
+
+        <p><strong>4. Pseudopregnancy mastitis:</strong></p>
+        <ul>
+          <li>Cabergoline ✨ — first choice
+            <ul>
+              <li>Side effects: vomiting, anorexia, lethargy (transient)</li>
+            </ul>
+          </li>
+          <li>Antibiotics if infected component</li>
+          <li>Spay recommended (recurs each cycle) once recovered</li>
+        </ul>
+
+        <p><strong>5. Subclinical:</strong></p>
+        <ul>
+          <li>Antibiotics per culture × 2-3 weeks</li>
+          <li>Frequent expression of affected gland</li>
+          <li>Supplement pup nursing</li>
+          <li>Monitor pup growth</li>
+        </ul>
+
+        <p><strong>Pup management:</strong></p>
+        <ul>
+          <li>Mild mastitis: continue nursing on unaffected glands; supplement feed</li>
+          <li>Moderate-severe / abnormal milk: STOP nursing affected gland; bottle feed</li>
+          <li>Gangrenous: STOP all nursing; full bottle/tube feeding with milk replacer (Esbilac, KMR)</li>
+          <li>Monitor pup BG, hydration, weight (daily)</li>
+          <li>Resume nursing only when milk normalized (cytology + culture)</li>
+        </ul>
+
+        <p><strong>Prevention:</strong></p>
+        <ul>
+          <li>Clean whelping environment</li>
+          <li>Trim pup nails to prevent teat trauma</li>
+          <li>Watch for matted fur, scratches</li>
+          <li>Pre-whelp: clip and clean abdomen</li>
+          <li>Daily check of mammary glands postpartum</li>
+          <li>Manage litter size (foster excess, supplement small)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Sepsis / SIRS</strong> ✗ (gangrenous mastitis)</li>
+          <li>DIC ✗</li>
+          <li>Mastectomy of affected gland</li>
+          <li>Loss of pups (toxic milk, abandonment, fading)</li>
+          <li>Permanent reduced milk production future pregnancies</li>
+          <li>Recurrent mastitis (subclinical persistence)</li>
+          <li>Abscess formation</li>
+          <li>Maternal death (gangrenous untreated)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Acute mastitis + early Tx: excellent</strong> ✓ — full recovery with continued nursing in most</li>
+          <li>Gangrenous + aggressive Tx: guarded — mortality 25-50%; surviving dam may need single-gland mastectomy</li>
+          <li>Subclinical: good but variable; pup health may be compromised</li>
+          <li>Pseudopregnancy: excellent with cabergoline; spay prevents recurrence</li>
+          <li>Pup survival depends on early recognition</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Gangrenous mastitis = surgical emergency</strong> ✗ — STOP nursing, IV antibiotics, mastectomy, supportive care<br><br>💡 Mild-moderate cases: <strong>continue nursing + antibiotic + warm compress</strong>; pups stimulating let-down helps drainage<br><br>Older bitch with mammary mass: think NEOPLASIA before mastitis — FNA</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 57 · Benign Prostatic Hyperplasia (BPH) ---------- */
+  {
+    id: 'benign-prostatic-hyperplasia',
+    titleEn: 'Benign Prostatic Hyperplasia (BPH)',
+    titleTh: 'BPH — ต่อมลูกหมากโต',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog'],
+    tags: ['BPH', 'benign prostatic hyperplasia', 'intact male', 'castration', 'finasteride', 'osaterone', 'tenesmus', 'hemorrhagic discharge'],
+    aliases: ['prostate enlargement', 'BPH', 'ต่อมลูกหมากโต'],
+    source: 'Ch. 57 · pp. 1015–1024',
+    sections: {
+      definition: `
+        <p>การโตของต่อมลูกหมากแบบไม่ใช่มะเร็ง — เกิดในหมาตัวผู้ <strong>intact &gt; 4-5 ปี</strong></p>
+        <ul>
+          <li>เจอใน &gt; 80% ของหมา intact &gt; 5 ปี (most subclinical)</li>
+          <li>Symmetric, smooth enlargement; non-painful</li>
+          <li>Hormonally driven (testosterone → DHT)</li>
+          <li>Cat: ไม่เจอ BPH (anatomy + hormonal differences)</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Age-related hormonal changes:
+            <ul>
+              <li>↑ Conversion of testosterone → dihydrotestosterone (DHT) by 5α-reductase in prostate</li>
+              <li>DHT → glandular + stromal hyperplasia</li>
+              <li>± Estrogen contribution (relatively ↑ E:T ratio in older intact males)</li>
+            </ul>
+          </li>
+          <li>Predisposed: any breed; common with age</li>
+          <li>Castration → involution within weeks (curative)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Diffuse symmetric glandular enlargement</li>
+          <li>Cystic dilation possible (cystic BPH)</li>
+          <li>Mechanical effects:
+            <ul>
+              <li>Compression of urethra → urinary signs</li>
+              <li>Compression of colon → tenesmus, ribbon stool</li>
+              <li>Capsular stretching → mild pain</li>
+            </ul>
+          </li>
+          <li>Predisposes to:
+            <ul>
+              <li>Bacterial prostatitis (ascending UTI)</li>
+              <li>Prostatic cysts / abscesses</li>
+              <li>Hemorrhagic preputial discharge from prostatic vessels</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Often subclinical — incidental on rectal exam ✨</strong></p>
+
+        <p><strong>When symptomatic:</strong></p>
+        <ul>
+          <li><strong>Hemorrhagic preputial discharge</strong> ✨ — drops of blood from prepuce, often unrelated to urination
+            <ul>
+              <li>Most common presenting sign</li>
+              <li>Owners notice on bedding, floor</li>
+            </ul>
+          </li>
+          <li>Hematuria (gross or microscopic)</li>
+          <li>Tenesmus, dyschezia (rectal compression)</li>
+          <li>Ribbon-like / flattened stool</li>
+          <li>Constipation</li>
+          <li>Mild urethral obstruction (rare)</li>
+          <li>Infertility (variable)</li>
+        </ul>
+
+        <p><strong>Rectal exam:</strong></p>
+        <ul>
+          <li>Symmetric, smooth, enlarged prostate</li>
+          <li>Non-painful</li>
+          <li>Bilobed appearance</li>
+          <li>Median sulcus often present</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>Rectal exam ✨ — first step, often diagnostic</li>
+          <li><strong>Abdominal ultrasound</strong> ✨:
+            <ul>
+              <li>Symmetric enlargement</li>
+              <li>Homogeneous parenchyma (or with small cysts)</li>
+              <li>Smooth contour</li>
+              <li>No focal lesions / mineralization</li>
+              <li>Differentiate from prostatitis (heterogeneous), neoplasia (asymmetric, mineralized), cyst (large fluid-filled)</li>
+              <li>Measure prostate size (normal &lt; 0.7 × distance L7-pubis)</li>
+            </ul>
+          </li>
+          <li>Abdominal radiograph: prostate enlargement, retroflexion of bladder, displacement of colon</li>
+          <li>UA + culture (rule out concurrent UTI, prostatitis)</li>
+          <li>CBC, biochem (often normal)</li>
+        </ul>
+
+        <p><strong>Prostatic fluid evaluation:</strong></p>
+        <ul>
+          <li>Ejaculate or prostatic massage:
+            <ul>
+              <li>BPH: mild RBCs, occasional WBCs, no bacteria</li>
+              <li>Prostatitis: many WBCs + bacteria → culture</li>
+            </ul>
+          </li>
+          <li>FNA (US-guided) — for masses; risk seeding if neoplasia</li>
+        </ul>
+
+        <p><strong>Differentiate from neoplasia:</strong></p>
+        <ul>
+          <li>Prostatic carcinoma in intact OR castrated dog (more common in castrated!)</li>
+          <li>Asymmetric, painful, mineralized, irregular contour</li>
+          <li>FNA / biopsy if suspect</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Bacterial prostatitis (acute or chronic)</li>
+          <li>Prostatic abscess</li>
+          <li>Prostatic / paraprostatic cyst</li>
+          <li>Prostatic carcinoma (transitional cell, adenocarcinoma)</li>
+          <li>Squamous metaplasia (estrogen excess — Sertoli cell tumor)</li>
+          <li>Cystitis</li>
+          <li>Urethritis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Castration ✨ — definitive treatment:</strong></p>
+        <ul>
+          <li>Removes testosterone source → DHT levels drop → prostatic involution</li>
+          <li>Prostate size reduces ~ 50% within 3 weeks; full effect 3-6 months</li>
+          <li>Resolves clinical signs in &gt; 90%</li>
+          <li>Best option if not breeding</li>
+        </ul>
+
+        <p><strong>2. Medical therapy (breeding males):</strong></p>
+        <ul>
+          <li><strong>Finasteride 0.1-0.5 mg/kg PO q24h</strong> ✨ (5α-reductase inhibitor)
+            <ul>
+              <li>Blocks T → DHT conversion</li>
+              <li>Effect within 4-8 weeks</li>
+              <li>Doesn't affect fertility (most studies)</li>
+              <li>Reverses with discontinuation</li>
+              <li>Side effects rare</li>
+            </ul>
+          </li>
+          <li><strong>Osaterone acetate (Ypozane)</strong> ✨ — anti-androgen, EU-licensed
+            <ul>
+              <li>0.25-0.5 mg/kg PO q24h × 7 days</li>
+              <li>Effect within weeks; lasts 5-6 months</li>
+              <li>Single course annually typical</li>
+              <li>Doesn't affect fertility long-term</li>
+            </ul>
+          </li>
+          <li>Estrogens (DES) — historical; bone marrow suppression risk → not recommended</li>
+          <li>GnRH agonists (deslorelin implant — Suprelorin):
+            <ul>
+              <li>Reversible "chemical castration"</li>
+              <li>4-6 mo or 12 mo implants available</li>
+              <li>Initial flare (1-2 wk) before suppression</li>
+              <li>Useful for breeding males or if surgery declined</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Address concurrent issues:</strong></p>
+        <ul>
+          <li>UTI: culture-based antibiotic</li>
+          <li>Prostatitis: see entry</li>
+          <li>Constipation: lactulose, dietary fiber, ↑ water</li>
+          <li>Cysts: drainage / surgical if large</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck rectal + US 3-6 months post-castration / medical Tx</li>
+          <li>Confirm size reduction + resolution of signs</li>
+          <li>Periodic recheck (annually) — consider neoplasia if signs return / new findings</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Bacterial prostatitis (ascending) — most common complication</li>
+          <li>Prostatic abscess (severe complication of prostatitis)</li>
+          <li>Prostatic cysts (with cystic BPH)</li>
+          <li>Severe constipation / megacolon (rare)</li>
+          <li>Urethral obstruction (rare with BPH alone)</li>
+          <li>Persistence with medical-only Tx</li>
+          <li>Iatrogenic in castrated dogs: increased risk of prostatic carcinoma (controversial)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Castration: excellent — definitive cure</strong> ✓</li>
+          <li>Medical management: good for symptom control while breeding intact</li>
+          <li>Without treatment: progressive but usually manageable</li>
+          <li>If complicated by prostatitis / abscess: depends on severity</li>
+        </ul>
+        <div class="callout">💡 <strong>Older intact male + drops of blood from prepuce = BPH until proven otherwise</strong> ✨ — rectal + US confirm; castration = cure<br><br>Breeding males: finasteride or osaterone preserve fertility while controlling signs</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 57 · Bacterial Prostatitis ---------- */
+  {
+    id: 'bacterial-prostatitis',
+    titleEn: 'Bacterial Prostatitis',
+    titleTh: 'ต่อมลูกหมากอักเสบติดเชื้อ',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog'],
+    tags: ['prostatitis', 'acute prostatitis', 'chronic prostatitis', 'prostatic abscess', 'E. coli', 'fluoroquinolone', 'TMS', 'BPH', 'castration', 'lipid-soluble antibiotic'],
+    aliases: ['prostate infection', 'prostatitis', 'ต่อมลูกหมากอักเสบ'],
+    source: 'Ch. 57 · pp. 1024–1030',
+    sections: {
+      definition: `
+        <p>การติดเชื้อแบคทีเรียของต่อมลูกหมาก — มี 3 forms:</p>
+        <ul>
+          <li><strong>Acute bacterial prostatitis</strong> ✗ — septic, severely ill, emergency</li>
+          <li><strong>Chronic bacterial prostatitis</strong> ✨ — recurrent UTI source</li>
+          <li><strong>Prostatic abscess</strong> ✗ — surgical/drainage emergency</li>
+          <li>Almost exclusively intact males with BPH; castrated dogs occasionally if anatomic abnormality</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common pathogens:</strong></p>
+        <ul>
+          <li><strong>E. coli</strong> ✨ — &gt; 70%</li>
+          <li>Staphylococcus pseudintermedius</li>
+          <li>Streptococcus</li>
+          <li>Mycoplasma, Brucella canis (rare but important — zoonotic)</li>
+          <li>Proteus, Klebsiella, Pseudomonas</li>
+        </ul>
+
+        <p><strong>Routes:</strong></p>
+        <ul>
+          <li>Ascending from urethra (most common — UTI complication)</li>
+          <li>Hematogenous (rare — endocarditis, distant infection)</li>
+          <li>Direct extension</li>
+        </ul>
+
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li>BPH (most cases)</li>
+          <li>Concurrent UTI</li>
+          <li>Recent breeding (contamination)</li>
+          <li>Previous prostatic disease</li>
+          <li>Indwelling urinary catheter</li>
+          <li>Immunocompromise</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Acute: rapid onset; severe inflammation, abscess formation possible, septic risk</li>
+          <li>Chronic: low-grade inflammation; intermittent shedding into urine → recurrent UTI</li>
+          <li>Blood-prostate barrier in chronic phase — antibiotics need to penetrate (lipid-soluble, basic pKa)</li>
+          <li>Acute phase: barrier disrupted, most antibiotics penetrate</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute prostatitis ✗:</strong></p>
+        <ul>
+          <li>Fever, lethargy, anorexia</li>
+          <li>Stiff gait, reluctance to move</li>
+          <li>Caudal abdominal pain, painful rectal exam</li>
+          <li>Vomiting</li>
+          <li>Painful urination, hematuria</li>
+          <li>Purulent / hemorrhagic preputial discharge</li>
+          <li>Tenesmus (severe pain)</li>
+          <li>Septic shock signs (severe)</li>
+          <li>Prostate: enlarged, asymmetric, painful, hot on rectal</li>
+        </ul>
+
+        <p><strong>Chronic prostatitis:</strong></p>
+        <ul>
+          <li>Often subtle / waxing-waning</li>
+          <li>Recurrent UTI (most common presentation)</li>
+          <li>Intermittent preputial discharge</li>
+          <li>Mild constitutional signs</li>
+          <li>Infertility</li>
+          <li>Prostate: variably enlarged, possibly painful, sometimes normal</li>
+        </ul>
+
+        <p><strong>Prostatic abscess ✗:</strong></p>
+        <ul>
+          <li>Severe systemic illness (sepsis)</li>
+          <li>Fluctuant prostatic regions on rectal exam</li>
+          <li>Spontaneous rupture → septic peritonitis ✗</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>Rectal exam — enlarged painful prostate (acute); variable (chronic)</li>
+          <li><strong>UA + urine culture ✨</strong> — almost always +; sample by cysto preferred</li>
+          <li>CBC: leukocytosis with left shift (acute), often normal (chronic)</li>
+          <li>Biochem (sepsis effects)</li>
+          <li>Brucella canis serology (BAPA, RSAT) — rule out zoonotic</li>
+          <li><strong>Abdominal ultrasound ✨</strong>:
+            <ul>
+              <li>Heterogeneous parenchyma</li>
+              <li>Hyperechoic regions (inflammation)</li>
+              <li>Cavitary lesions / abscess (anechoic with debris)</li>
+              <li>Asymmetry possible</li>
+              <li>Mineralization (chronic)</li>
+              <li>Periprostatic edema</li>
+            </ul>
+          </li>
+          <li><strong>Prostatic fluid analysis (chronic)</strong>:
+            <ul>
+              <li>Ejaculate (best — third fraction is prostatic)</li>
+              <li>Or prostatic wash (catheter + flush)</li>
+              <li>Cytology: ↑ WBCs, bacteria</li>
+              <li>Culture + susceptibility</li>
+            </ul>
+          </li>
+          <li>FNA (US-guided) — abscess; caution may seed peritoneum if abscess</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>BPH (no infection)</li>
+          <li>Prostatic carcinoma</li>
+          <li>Prostatic / paraprostatic cyst (sterile)</li>
+          <li>Squamous metaplasia (estrogen excess)</li>
+          <li>UTI without prostatitis</li>
+          <li>Cystitis</li>
+          <li>Discospondylitis (back pain mimic)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Acute prostatitis ✗ — emergency:</strong></p>
+        <ul>
+          <li>Hospitalize if septic</li>
+          <li>IV fluids</li>
+          <li>IV antibiotics — broad-spectrum until culture:
+            <ul>
+              <li><strong>Enrofloxacin 5-10 mg/kg IV q24h + ampicillin 22 mg/kg IV q6h</strong> ✨</li>
+              <li>Or cephalosporin (cefazolin) + fluoroquinolone</li>
+            </ul>
+          </li>
+          <li>Pain management (opioid)</li>
+          <li>Anti-emetics</li>
+          <li>Once stable + culture: tailor antibiotic</li>
+          <li>Switch to oral when eating + improving (24-72h)</li>
+          <li><strong>Total 4-6 weeks oral antibiotics</strong> ✨ — penetrates blood-prostate barrier in chronic phase</li>
+        </ul>
+
+        <p><strong>2. Chronic prostatitis ✨:</strong></p>
+        <ul>
+          <li><strong>Lipid-soluble antibiotics</strong> ✨ — penetrate blood-prostate barrier:
+            <ul>
+              <li>Fluoroquinolones: enrofloxacin, marbofloxacin, ciprofloxacin (5-10 mg/kg PO q24h)</li>
+              <li>Trimethoprim-sulfa: 15-30 mg/kg PO q12h</li>
+              <li>Chloramphenicol (50 mg/kg PO q8h dog) — caution adverse effects</li>
+              <li>Doxycycline (5 mg/kg PO q12h) — moderate penetration</li>
+            </ul>
+          </li>
+          <li><strong>Avoid</strong>: amoxicillin, cephalosporins, clavulanate (poor prostatic penetration in chronic)</li>
+          <li>Duration: <strong>4-6 weeks minimum</strong> (some experts 6-8 weeks chronic)</li>
+          <li>Recheck culture 7 days into Tx + 7 days post-Tx</li>
+        </ul>
+
+        <p><strong>3. Prostatic abscess ✗ — surgical/drainage:</strong></p>
+        <ul>
+          <li>IV antibiotics</li>
+          <li><strong>US-guided percutaneous drainage</strong> + culture
+            <ul>
+              <li>May need repeated</li>
+              <li>Risk: peritonitis if leak</li>
+            </ul>
+          </li>
+          <li>Or surgical drainage:
+            <ul>
+              <li>Marsupialization</li>
+              <li>Omentalization (preferred — less recurrence)</li>
+            </ul>
+          </li>
+          <li>Castration recommended at same surgery</li>
+          <li>Long-term antibiotics 4-6 weeks</li>
+        </ul>
+
+        <p><strong>4. Castration ✨ — strongly recommended (after acute resolves):</strong></p>
+        <ul>
+          <li>Removes BPH substrate → ↓ recurrence dramatically</li>
+          <li>Wait 1-2 weeks after acute illness resolves</li>
+          <li>Adjuvant to antibiotics</li>
+          <li>If breeding desired: finasteride / osaterone instead</li>
+        </ul>
+
+        <p><strong>5. Brucella canis ✗:</strong></p>
+        <ul>
+          <li>Zoonotic — owner education</li>
+          <li>Long-term antibiotics (doxy + enrofloxacin combination 4-12 weeks)</li>
+          <li>Castration mandatory</li>
+          <li>Often poor response — consider euthanasia in some cases</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck UA + culture at 7 d, 28 d, 1 wk post-Tx</li>
+          <li>Recheck rectal + US at 4-6 wk</li>
+          <li>Long-term: q3-6 mo monitoring for recurrence</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Sepsis / septic shock</strong> ✗ (acute)</li>
+          <li><strong>Prostatic abscess rupture → septic peritonitis</strong> ✗</li>
+          <li>Recurrent UTI (chronic)</li>
+          <li>Recurrent prostatitis</li>
+          <li>Infertility</li>
+          <li>Discospondylitis (hematogenous spread)</li>
+          <li>Bacterial endocarditis</li>
+          <li>Urethral stricture (rare)</li>
+          <li>Antibiotic resistance from prolonged courses</li>
+          <li>Death (sepsis, abscess rupture)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Acute prompt Tx + castration: <strong>good</strong> ✓</li>
+          <li>Chronic + appropriate Tx + castration: good — &gt; 70% resolution</li>
+          <li>Chronic recurrent without castration: guarded</li>
+          <li>Abscess + drainage + castration: good if no rupture</li>
+          <li>Septic peritonitis (rupture): guarded — high mortality</li>
+          <li>Brucella: poor — chronic carrier</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Acute prostatitis = sepsis risk</strong> ✗ — IV antibiotics + supportive<br><br>💡 <strong>Chronic prostatitis</strong> needs lipid-soluble antibiotic (FQ, TMS) × 4-6 wk + castration<br><br>Brucella canis = zoonotic — owner education + serology</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 57 · Cryptorchidism ---------- */
+  {
+    id: 'cryptorchidism',
+    titleEn: 'Cryptorchidism',
+    titleTh: 'อัณฑะไม่ลงถุง',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog', 'cat'],
+    tags: ['cryptorchidism', 'undescended testicle', 'retained testicle', 'inguinal', 'abdominal', 'Sertoli cell tumor', 'castration', 'genetic'],
+    aliases: ['undescended testicle', 'retained testicle', 'อัณฑะไม่ลง'],
+    source: 'Ch. 57 · pp. 1030–1035',
+    sections: {
+      definition: `
+        <p>การที่ <strong>อัณฑะข้างใดข้างหนึ่งหรือทั้งสองข้างไม่ลงสู่ถุงอัณฑะ</strong> ภายใน 6 เดือนแรก</p>
+        <ul>
+          <li>Normal: ทั้ง 2 ข้างอยู่ใน scrotum ก่อน 4-8 สัปดาห์ ในส่วนใหญ่; ทั้งหมดควรลงก่อน 6 เดือน</li>
+          <li>หลัง 6 เดือน → cryptorchid (วินิจฉัยได้)</li>
+          <li><strong>Right testis &gt; left testis</strong> retained (anatomy of descent)</li>
+          <li>Most common congenital reproductive defect ในหมา</li>
+          <li>Cat: rare; usually inguinal location</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Genetic / hereditary</strong> ✨ — sex-linked or autosomal recessive (varies)</li>
+          <li>Affected breeds:
+            <ul>
+              <li>Toy breeds: Yorkie, Pomeranian, Poodle (toy/mini), Maltese, Chihuahua</li>
+              <li>Boxer, Bulldog (English/French)</li>
+              <li>Cairn Terrier, Mini Schnauzer</li>
+              <li>Sheltie</li>
+              <li>Mini Dachshund</li>
+              <li>Siberian Husky</li>
+              <li>Persian, Himalayan (cat — rare)</li>
+            </ul>
+          </li>
+          <li>Hormonal / developmental factors</li>
+          <li>Environmental (debated)</li>
+          <li><strong>Should NOT be bred — heritable</strong> ✨</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Failure of normal testicular descent through inguinal canal</li>
+          <li>Locations:
+            <ul>
+              <li><strong>Inguinal</strong> — palpable subcutaneously in groin</li>
+              <li><strong>Abdominal</strong> — non-palpable; need imaging</li>
+            </ul>
+          </li>
+          <li>Retained testis at higher temperature (vs scrotum 2-3°C cooler):
+            <ul>
+              <li>↓ Spermatogenesis (sterile if bilateral)</li>
+              <li>Endocrine function preserved (Leydig cells)</li>
+              <li><strong>↑ Risk of neoplasia 9-13×</strong> ✨ ✗
+                <ul>
+                  <li>Sertoli cell tumor (most common — feminizing)</li>
+                  <li>Seminoma</li>
+                  <li>Interstitial (Leydig) cell tumor</li>
+                </ul>
+              </li>
+              <li>↑ Risk testicular torsion (especially abdominal)</li>
+            </ul>
+          </li>
+          <li>Unilateral cryptorchids: still fertile from descended testis</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Most subclinical until complication:</strong></p>
+        <ul>
+          <li>Empty hemiscrotum on palpation</li>
+          <li>Owner notices "only one ball" or "no balls"</li>
+        </ul>
+
+        <p><strong>If Sertoli cell tumor develops (feminization syndrome) ✨:</strong></p>
+        <ul>
+          <li>Bilateral symmetrical alopecia (truncal)</li>
+          <li>Hyperpigmentation</li>
+          <li>Pendulous prepuce</li>
+          <li>Gynecomastia</li>
+          <li>Squamous metaplasia of prostate (BPH-like)</li>
+          <li>Bone marrow suppression (severe — pancytopenia → fatal) ✗</li>
+          <li>Attractive to other males</li>
+          <li>Linear preputial dermatosis</li>
+          <li>Atrophy of contralateral testis (if descended)</li>
+        </ul>
+
+        <p><strong>Testicular torsion (rare emergency ✗):</strong></p>
+        <ul>
+          <li>Acute abdominal pain</li>
+          <li>Vomiting</li>
+          <li>Palpable mass (if inguinal/scrotal)</li>
+          <li>Acute abdomen (if abdominal location)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Palpate scrotum — confirm absence of testis</li>
+          <li>Palpate inguinal area — feel for inguinal testis (often small)</li>
+          <li>Compare contralateral testis size (atrophy if neoplasia)</li>
+          <li>If suspect feminization: examine for alopecia, prepuce, gynecomastia</li>
+        </ul>
+
+        <p><strong>Locating retained testis:</strong></p>
+        <ul>
+          <li><strong>Abdominal ultrasound</strong> ✨ — first-line:
+            <ul>
+              <li>Identifies intra-abdominal testis (~ 80-90% sensitivity in skilled hands)</li>
+              <li>Look near caudal pole of kidney → bladder neck</li>
+              <li>Often near internal inguinal ring</li>
+              <li>Identifies tumor if present</li>
+            </ul>
+          </li>
+          <li>Inguinal ultrasound (for inguinal testis)</li>
+          <li>Surgical exploration if imaging unsuccessful</li>
+          <li>CT (rarely needed)</li>
+        </ul>
+
+        <p><strong>Hormone testing (if neutered status uncertain):</strong></p>
+        <ul>
+          <li>Baseline testosterone — variable, often misleading</li>
+          <li><strong>hCG / GnRH stimulation test</strong> ✨:
+            <ul>
+              <li>Baseline testosterone, then hCG 44 IU/kg IM (max 1500), measure 60 min</li>
+              <li>Or GnRH 50 µg/dog IM (max 100), measure 60 min</li>
+              <li>↑ Testosterone &gt; 2-3× = retained testis present</li>
+              <li>No response = previously neutered</li>
+            </ul>
+          </li>
+          <li>Anti-Mullerian hormone (AMH) — increasingly used; differentiates neutered vs intact</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Previously castrated dog (uncertain history)</li>
+          <li>Monorchidism (true absence — rare; congenital)</li>
+          <li>Testicular atrophy (other cause)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Castration of BOTH testes ✨ — only treatment:</strong></p>
+        <ul>
+          <li>Indications:
+            <ul>
+              <li>Cancer prevention (Sertoli cell tumor risk 9-13×)</li>
+              <li>Prevent breeding (heritable)</li>
+              <li>Treat existing tumor / feminization</li>
+              <li>Convenience / behavioral</li>
+            </ul>
+          </li>
+          <li>Timing: at routine castration age (6 mo+), don't delay</li>
+        </ul>
+
+        <p><strong>Surgical approach:</strong></p>
+        <ul>
+          <li><strong>Inguinal location:</strong> small inguinal incision, identify + ligate, remove
+            <ul>
+              <li>Often through subcutaneous tissue caudal to inguinal ring</li>
+            </ul>
+          </li>
+          <li><strong>Abdominal location:</strong> ventral midline laparotomy; locate retained testis (often near urinary bladder)
+            <ul>
+              <li>Identify by following ductus deferens cranially from prostate</li>
+              <li>Or following testicular vasculature caudally from kidney</li>
+              <li>Laparoscopic option (referral, less invasive)</li>
+            </ul>
+          </li>
+          <li>+ Castration of normally descended testis through standard scrotal incision</li>
+        </ul>
+
+        <p><strong>If feminization syndrome / Sertoli cell tumor:</strong></p>
+        <ul>
+          <li>Pre-op CBC — bone marrow suppression assessment</li>
+          <li>If severe pancytopenia: transfusions, colony-stimulating factors, supportive</li>
+          <li>Castration removes hormonal source — feminization signs resolve weeks-months</li>
+          <li>Bone marrow recovery variable (some dogs don't recover ✗)</li>
+          <li>Screen for metastasis (US, rads — uncommon for testicular tumors though)</li>
+          <li>Long-term f/u every 3-6 mo</li>
+        </ul>
+
+        <p><strong>Hormonal therapy NOT recommended:</strong></p>
+        <ul>
+          <li>hCG / GnRH protocols to induce descent — generally ineffective</li>
+          <li>Don't promote testis descent in true cryptorchid</li>
+          <li>Don't postpone surgery</li>
+        </ul>
+
+        <p><strong>Owner counseling:</strong></p>
+        <ul>
+          <li>Heritable — don't breed</li>
+          <li>Inform breeder if relevant</li>
+          <li>Prognosis excellent with bilateral castration before tumor develops</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Testicular neoplasia</strong> ✗ — Sertoli cell tumor most common
+            <ul>
+              <li>Feminization syndrome</li>
+              <li>Bone marrow suppression → fatal pancytopenia</li>
+              <li>Local invasion</li>
+              <li>Metastasis (rare for Sertoli; ~ 10-15% seminoma)</li>
+            </ul>
+          </li>
+          <li>Testicular torsion ✗ (acute abdomen if abdominal location)</li>
+          <li>Surgical complications: hemorrhage (large retained vessel), infection</li>
+          <li>Failure to find retained testis (rare with US + careful surgery)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Bilateral castration before tumor: excellent</strong> ✓</li>
+          <li>Sertoli cell tumor without bone marrow suppression: excellent</li>
+          <li>Sertoli cell tumor with severe bone marrow suppression: guarded — high mortality</li>
+          <li>Testicular torsion: depends on prompt intervention</li>
+        </ul>
+        <div class="callout">💡 <strong>"Cryptorchid = neutered as soon as feasible"</strong> ✨ — 9-13× cancer risk; abdominal more risk than inguinal<br><br>⚠️ Sertoli cell tumor + bone marrow suppression = fatal if not detected early — castration + supportive<br><br>Don't breed cryptorchids (heritable)</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 58 · Transmissible Venereal Tumor (TVT) ---------- */
+  {
+    id: 'transmissible-venereal-tumor',
+    titleEn: 'Transmissible Venereal Tumor (TVT)',
+    titleTh: 'TVT — มะเร็งติดต่อทางเพศ',
+    type: 'disease',
+    system: 'reproductive',
+    species: ['dog'],
+    tags: ['TVT', 'transmissible venereal tumor', 'Sticker tumor', 'vincristine', 'vaginal mass', 'preputial mass', 'sexually transmitted', 'intact dog'],
+    aliases: ['Sticker tumor', 'TVT', 'CTVT', 'venereal tumor', 'มะเร็งทรานสมิตเทเบิ้ล'],
+    source: 'Ch. 58 · pp. 1035–1042',
+    sections: {
+      definition: `
+        <p><strong>Naturally transmissible cancer</strong> ✨ — เซลล์มะเร็งจริงๆ ติดต่อจากตัวหนึ่งไปอีกตัว (allograft transmission)</p>
+        <ul>
+          <li>เป็น <strong>histiocytic origin</strong> — round cell tumor</li>
+          <li>Transmission: ติดต่อทางเพศสัมพันธ์ (intact dogs); also bite wounds, licking</li>
+          <li><strong>เจอบ่อยใน Thailand, tropical/sub-tropical regions</strong> ✨ — endemic</li>
+          <li>Stray, free-roaming intact dogs: high prevalence</li>
+          <li>Cell line traced back ~ 11,000 yr (single common ancestor across globe)</li>
+          <li>Treatable + curable — vincristine highly effective</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Round cell tumor of histiocytic / hematopoietic origin (clonal)</li>
+          <li>Transmission of viable tumor cells via:
+            <ul>
+              <li>Sexual contact (most common)</li>
+              <li>Bite wounds (during fights)</li>
+              <li>Licking, sniffing infected dog</li>
+            </ul>
+          </li>
+          <li>Cells implant on mucous membranes — genital, oral, nasal, ocular, skin</li>
+          <li>Risk factors:
+            <ul>
+              <li>Intact (sexually active)</li>
+              <li>Free-roaming, stray</li>
+              <li>Tropical/sub-tropical climate</li>
+              <li>Communities with stray dog populations</li>
+              <li>Young-middle aged sexually active dogs</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Tumor cells implant on damaged mucosa during contact</li>
+          <li>Local invasion + growth at site</li>
+          <li>3 phases:
+            <ul>
+              <li><strong>Progressive (P)</strong> — actively growing 4-6 months post-transmission</li>
+              <li><strong>Stable (S)</strong> — slowed growth, persistent</li>
+              <li><strong>Regression (R)</strong> — spontaneous regression in some immunocompetent dogs</li>
+            </ul>
+          </li>
+          <li>Metastasis uncommon (~ 5-15%) — local LN, distant rare</li>
+          <li>Immunosuppressed dogs (puppies, sick, immunosuppressive Tx) → more invasive disease, higher metastasis risk</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Genital location (most common) ✨:</strong></p>
+        <ul>
+          <li><strong>Female:</strong>
+            <ul>
+              <li>Cauliflower-like mass at vagina / vulva ✨</li>
+              <li>Friable, ulcerated, hemorrhagic</li>
+              <li>Sanguineous vaginal discharge (often presenting sign)</li>
+              <li>Owner notices mass, blood</li>
+              <li>Difficulty urinating (large mass)</li>
+            </ul>
+          </li>
+          <li><strong>Male:</strong>
+            <ul>
+              <li>Mass on penis, glans, prepuce ✨</li>
+              <li>Cauliflower-like, friable, bleeding</li>
+              <li>Preputial discharge (sanguineous)</li>
+              <li>Phimosis / paraphimosis</li>
+              <li>Licking</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Extra-genital sites (less common):</strong></p>
+        <ul>
+          <li>Nasal cavity — sneezing, epistaxis, deformity</li>
+          <li>Oral cavity — mass, halitosis, drooling, dysphagia</li>
+          <li>Ocular / periocular — mass, ulceration, discharge</li>
+          <li>Skin — exophytic mass, ulceration</li>
+        </ul>
+
+        <p><strong>Systemic signs:</strong></p>
+        <ul>
+          <li>Usually well otherwise (localized disease)</li>
+          <li>Anemia from chronic bleeding (large lesions)</li>
+          <li>Immunocompromised: more severe + invasive</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Cytology ✨ — diagnostic:</strong></p>
+        <ul>
+          <li>FNA or impression smear of mass</li>
+          <li>Round cells with:
+            <ul>
+              <li>Round-oval nuclei, prominent nucleoli</li>
+              <li>Clear cytoplasm with discrete vacuoles ✨ (diagnostic feature)</li>
+              <li>Mitotic figures common</li>
+              <li>Distinct cell borders</li>
+            </ul>
+          </li>
+          <li>Differentiate from other round cell tumors (lymphoma, mast cell, plasma cell, histiocytoma)</li>
+        </ul>
+
+        <p><strong>Histopathology</strong> — confirms diagnosis if cytology equivocal</p>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>Full physical exam (extra-genital sites)</li>
+          <li>CBC, biochem (often normal; anemia if bleeding)</li>
+          <li>UA</li>
+          <li>FIV/FeLV unlikely (this is dog)</li>
+          <li><strong>Staging:</strong>
+            <ul>
+              <li>Regional LN palpation + FNA if enlarged</li>
+              <li>Thoracic radiograph (rare lung mets)</li>
+              <li>Abdominal US (rare regional spread)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Lymphoma (round cell — different cytology)</li>
+          <li>Mast cell tumor (granules)</li>
+          <li>Plasma cell tumor</li>
+          <li>Squamous cell carcinoma (epithelial — different morphology)</li>
+          <li>Histiocytoma (especially young; spontaneous regression)</li>
+          <li>Granuloma</li>
+          <li>Polyps (vaginal, urethral)</li>
+          <li>Vaginal hyperplasia (estrus-related — recede after estrus)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Vincristine ✨ — gold standard, highly effective:</strong></p>
+        <ul>
+          <li><strong>Dose: 0.5-0.7 mg/m² IV q7 days</strong> (max 1.0 mg total dose typically)
+            <ul>
+              <li>Use vincristine 0.5 mg/mL solution</li>
+              <li>Calculate by BSA</li>
+              <li>Strict IV (extravasation = severe vesicant injury ✗)</li>
+              <li>Use central / running IV catheter</li>
+            </ul>
+          </li>
+          <li>Continue weekly until <strong>2 weeks AFTER complete remission</strong>
+            <ul>
+              <li>Typically 4-8 treatments</li>
+              <li>Most regress 50%+ within 2-3 doses</li>
+              <li>Don't stop early — recurrence risk</li>
+            </ul>
+          </li>
+          <li><strong>Cure rate ~ 90-95%</strong> ✓</li>
+        </ul>
+
+        <p><strong>Vincristine side effects:</strong></p>
+        <ul>
+          <li>Mild GI upset (anorexia, vomiting)</li>
+          <li>Mild myelosuppression (transient leukopenia at 7 d post-dose)</li>
+          <li><strong>Severe extravasation injury</strong> ✗ — vesicant; necrosis if extravasates
+            <ul>
+              <li>Use clean stick, secure IV</li>
+              <li>Test patency thoroughly</li>
+              <li>If extravasation: apply cold compress, hyaluronidase locally, monitor for slough</li>
+            </ul>
+          </li>
+          <li>Peripheral neuropathy (chronic — rare)</li>
+          <li>CBC before each dose (skip if neutrophil &lt; 2000)</li>
+        </ul>
+
+        <p><strong>2. Doxorubicin (refractory cases):</strong></p>
+        <ul>
+          <li>30 mg/m² IV q3 weeks</li>
+          <li>For TVT not responding to vincristine</li>
+          <li>More side effects (cardiotoxicity, severe BM suppression, GI)</li>
+        </ul>
+
+        <p><strong>3. Radiation therapy:</strong></p>
+        <ul>
+          <li>Effective when chemo not feasible</li>
+          <li>Single-dose or fractionated</li>
+          <li>Limited availability</li>
+        </ul>
+
+        <p><strong>4. Surgical excision:</strong></p>
+        <ul>
+          <li>Rarely indicated as primary Tx (high recurrence)</li>
+          <li>Adjuvant if residual after chemo</li>
+        </ul>
+
+        <p><strong>5. Castration / spay:</strong></p>
+        <ul>
+          <li>NOT for tumor treatment</li>
+          <li>Recommended for prevention of transmission to others</li>
+          <li>Don't delay vincristine for surgery</li>
+        </ul>
+
+        <p><strong>6. Immunocompromised dogs:</strong></p>
+        <ul>
+          <li>Higher metastasis risk → more aggressive therapy</li>
+          <li>May need combination chemo</li>
+        </ul>
+
+        <p><strong>Owner education:</strong></p>
+        <ul>
+          <li>Confine until treatment complete</li>
+          <li>Don't allow breeding</li>
+          <li>Spay/neuter recommended</li>
+          <li>Other dogs in household should be examined</li>
+          <li>Stray dog control essential at population level</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Recheck weekly during chemo (mass size, CBC pre-dose)</li>
+          <li>Continue 2 weeks past complete remission</li>
+          <li>Recheck monthly × 3 mo post-Tx, then q3-6 mo × 1-2 yr</li>
+          <li>Recurrence rate &lt; 5% with proper protocol</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Local invasion (large lesions)</li>
+          <li>Bleeding from friable mass (chronic anemia)</li>
+          <li>Secondary infection</li>
+          <li>Metastasis (5-15% — usually regional LN)</li>
+          <li>Severe disease in immunocompromised → systemic spread, fatal</li>
+          <li>Vincristine extravasation injury ✗</li>
+          <li>Recurrence if treatment stopped early</li>
+          <li>Chemo side effects (mild typically)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Vincristine + complete protocol: excellent — &gt; 90% cure</strong> ✓</li>
+          <li>Refractory to vincristine: doxorubicin response ~ 50-70%</li>
+          <li>Immunocompromised: more guarded</li>
+          <li>Metastatic disease: variable</li>
+          <li>Without treatment: progressive locally; regression in some immunocompetent dogs</li>
+        </ul>
+        <div class="callout">💡 <strong>Cauliflower-like genital mass + intact stray = TVT until proven otherwise</strong> ✨ — common in Thailand<br><br>✨ Vincristine 0.5-0.7 mg/m² IV q7d × 4-8 doses = curative &gt; 90%; continue 2 wk past complete remission<br><br>⚠️ Vincristine extravasation = severe vesicant; use central / running IV; test patency carefully</div>
+      `,
+    },
+  },
+
   /* ---------- More entries to come ---------- */
 
 ];
