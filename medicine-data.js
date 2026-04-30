@@ -13905,6 +13905,430 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Procedure · Cystocentesis ---------- */
+  {
+    id: 'proc-cystocentesis',
+    titleEn: 'Cystocentesis',
+    titleTh: 'การเจาะเก็บปัสสาวะจากกระเพาะปัสสาวะ',
+    type: 'procedure',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['cystocentesis', 'urine sample', 'urine culture', 'sterile sample', 'bladder palpation', 'ultrasound-guided'],
+    aliases: ['cysto', 'bladder tap', 'เจาะปัสสาวะ', 'cystocentesis'],
+    source: 'Standard small animal procedure',
+    sections: {
+      definition: `
+        <p>การเจาะ <strong>เข็มเข้า bladder ผ่านผนังหน้าท้อง</strong> เพื่อเก็บปัสสาวะ <strong>sterile</strong></p>
+        <ul>
+          <li><strong>Gold standard sample</strong> สำหรับ urine culture ✨</li>
+          <li>หลีกเลี่ยง contamination จาก urethra/skin/genital</li>
+          <li>ทำได้ง่ายในแมว + หมาตัวเล็ก-กลาง</li>
+          <li>Decompress bladder ใน urethral obstruction (cat blocked) — emergency</li>
+        </ul>
+      `,
+      etiology: `<p>—</p>`,
+      pathophysiology: `<p>—</p>`,
+      symptoms: `<p>—</p>`,
+      diagnosis: `
+        <p><strong>Indications:</strong></p>
+        <ul>
+          <li>Urine culture (sterile sample requirement)</li>
+          <li>UA from immunocompromised / suspected UTI</li>
+          <li><strong>Bladder decompression — urethral obstruction (cat blocked)</strong> ✨ ✗</li>
+          <li>Pre-procedure decompression before anesthesia in obstructed cat</li>
+          <li>UPC sample (avoid free-catch contamination)</li>
+        </ul>
+        <p><strong>Contraindications:</strong></p>
+        <ul>
+          <li>Severe coagulopathy (relative — risk hematoma)</li>
+          <li>Pyometra suspected (uterus may overlie bladder — US guide!)</li>
+          <li>Bladder not palpable / very small (must use US)</li>
+          <li>Severe bladder wall disease (TCC mass at expected entry — US first)</li>
+          <li>Known bladder neoplasia (theoretical risk seeding — controversial)</li>
+        </ul>
+      `,
+      differential: `<p>—</p>`,
+      treatment: `
+        <p><strong>Equipment:</strong></p>
+        <ul>
+          <li>22-gauge × 1.5 inch needle (cat, small dog)</li>
+          <li>22-gauge × 3 inch (large dog)</li>
+          <li>6-12 mL syringe (sample); larger (20-60 mL) for therapeutic decompression</li>
+          <li>Alcohol or chlorhexidine swab</li>
+          <li>Optional: ultrasound machine</li>
+        </ul>
+
+        <p><strong>Patient positioning:</strong></p>
+        <ul>
+          <li><strong>Dorsal recumbency</strong> ✨ — most common; bladder falls back, easy palpation</li>
+          <li>Lateral recumbency — alternative (especially fractious cat); bladder palpated against down side</li>
+          <li>Standing — large calm dog (US-guided)</li>
+        </ul>
+
+        <p><strong>Step-by-step technique (blind/palpation-guided):</strong></p>
+        <ol>
+          <li><strong>Palpate bladder</strong> — caudoventral abdomen; firm but compressible
+            <ul>
+              <li>Need at least moderately full bladder (golf ball size in cat / small fist in dog)</li>
+              <li>If empty → wait 1-2h, encourage water, or use US</li>
+            </ul>
+          </li>
+          <li><strong>Restrain</strong> — second person holds patient firmly; hindlimbs extended caudally; reassure</li>
+          <li><strong>Locate site</strong> — ventral midline, ~ 1-2 cm caudal to bladder apex (so bladder doesn't slip away from needle)
+            <ul>
+              <li>Stabilize bladder with non-dominant hand from above</li>
+            </ul>
+          </li>
+          <li><strong>Prep site</strong> — alcohol/chlorhexidine swab (don't need full surgical prep)</li>
+          <li><strong>Insert needle</strong> at 45-60° angle, aiming caudally toward bladder
+            <ul>
+              <li>Quick smooth motion — don't hesitate</li>
+              <li>Penetrate skin → muscle → bladder wall</li>
+              <li>Feel "give" / sudden ↓ resistance entering bladder</li>
+            </ul>
+          </li>
+          <li><strong>Aspirate gently</strong> with syringe attached
+            <ul>
+              <li>Slow steady pull — too fast = bladder collapse on needle</li>
+              <li>Collect 6-10 mL (more if therapeutic)</li>
+              <li>If no urine returns: needle may be in wrong position — withdraw partially, redirect; or bladder empty</li>
+            </ul>
+          </li>
+          <li><strong>Withdraw needle</strong> in single smooth motion
+            <ul>
+              <li>Apply gentle pressure × 30 sec to prevent leakage</li>
+            </ul>
+          </li>
+        </ol>
+
+        <p><strong>Ultrasound-guided technique ✨ (preferred when available):</strong></p>
+        <ul>
+          <li>Apply gel, identify bladder on US</li>
+          <li>Insert needle from off-probe approach (or in-plane along probe)</li>
+          <li>Visualize needle tip entering bladder lumen</li>
+          <li>Aspirate</li>
+          <li><strong>Indicated when:</strong>
+            <ul>
+              <li>Bladder hard to palpate (obese, fractious, very small)</li>
+              <li>Suspected pyometra (avoid uterus)</li>
+              <li>Mass / wall thickening (avoid)</li>
+              <li>First-time / inexperienced operator</li>
+              <li>Unsuccessful blind attempt</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>For therapeutic decompression (cat blocked) ✗ ✨:</strong></p>
+        <ul>
+          <li>Use 22 g butterfly catheter or extension set + 22 g needle</li>
+          <li>20-60 mL syringe</li>
+          <li>Drain as much urine as comfortably possible (minimize repeated sticks)</li>
+          <li>Send sample for UA + culture</li>
+          <li>Decompress BEFORE general anesthesia — relieves K, helps stabilize</li>
+          <li>Don't be aggressive on aspiration if bladder wall friable (chronic distension)</li>
+        </ul>
+
+        <p><strong>Post-procedure:</strong></p>
+        <ul>
+          <li>Observe briefly for any distress</li>
+          <li>Sample handling:
+            <ul>
+              <li>UA: process within 30 min ideally; refrigerate if delayed</li>
+              <li>Culture: sterile tube; refrigerate; submit ASAP</li>
+              <li>UPC: refrigerate</li>
+            </ul>
+          </li>
+          <li>Document on chart — site, volume, ease, complications</li>
+        </ul>
+
+        <p><strong>Sample interpretation notes:</strong></p>
+        <ul>
+          <li><strong>Microscopic hematuria common</strong> — iatrogenic (small RBCs from needle puncture); doesn't represent true hematuria
+            <ul>
+              <li>If interpreting hematuria → follow up with free-catch sample</li>
+            </ul>
+          </li>
+          <li>Bacteria + WBC = real UTI (cysto sample)</li>
+          <li>Quantitative culture: any growth significant from cysto sample (&gt; 1000 CFU/mL)</li>
+        </ul>
+      `,
+      complications: `
+        <p><strong>Common (minor):</strong></p>
+        <ul>
+          <li>Microscopic hematuria — almost universal, transient</li>
+          <li>Mild patient discomfort during procedure</li>
+          <li>Failure to obtain sample (empty bladder, missed) — retry or use US</li>
+        </ul>
+        <p><strong>Uncommon:</strong></p>
+        <ul>
+          <li>Gross hematuria (resolves &lt; 24h)</li>
+          <li>Vasovagal reaction (rare — brief bradycardia in cats)</li>
+        </ul>
+        <p><strong>Rare but serious ✗:</strong></p>
+        <ul>
+          <li><strong>Bladder rupture</strong> — severe over-distended (chronic obstruction); aspiration too aggressive; friable wall
+            <ul>
+              <li>Especially risk in cat blocked &gt; 24-48h</li>
+              <li>Don't aspirate aggressively in suspected wall compromise</li>
+            </ul>
+          </li>
+          <li>Iatrogenic peritonitis (urine leak from puncture site, especially if cystitis)</li>
+          <li>Hemorrhage (coagulopathy)</li>
+          <li>Inadvertent puncture of: spleen, intestine, uterus (pyometra), adjacent vessel
+            <ul>
+              <li>US guidance prevents these</li>
+            </ul>
+          </li>
+          <li>Urinary tract neoplasia seeding (theoretical, rare)</li>
+        </ul>
+        <p><strong>Pearls:</strong></p>
+        <ul>
+          <li>Wait until bladder is reasonably full</li>
+          <li>One smooth motion — don't fish</li>
+          <li>If unsuccessful 2× → use US or wait</li>
+          <li>Cat blocked: cysto first → general anesthesia later (relieves K, makes anesthesia safer)</li>
+          <li>Don't perform if patient struggling violently (use sedation)</li>
+        </ul>
+        <div class="callout">💡 <strong>Cystocentesis = essential clinical skill</strong> ✨ — easy in practice; gold standard for UA + culture. Cat blocked: cysto BEFORE anesthesia. ใช้ US guide ในกรณีที่ palpate ยาก หรือสงสัย pyometra/mass</div>
+      `,
+    },
+  },
+
+  /* ---------- Procedure · Urinary Catheterization ---------- */
+  {
+    id: 'proc-urinary-catheterization',
+    titleEn: 'Urinary Catheterization',
+    titleTh: 'การสวนปัสสาวะ',
+    type: 'procedure',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['urinary catheter', 'urethral catheterization', 'red rubber catheter', 'tom cat catheter', 'Foley catheter', 'closed collection system', 'urethral obstruction'],
+    aliases: ['catheter', 'catheterization', 'สวนปัสสาวะ', 'foley'],
+    source: 'Standard small animal procedure',
+    sections: {
+      definition: `
+        <p>การ <strong>สอด catheter</strong> ผ่าน urethra เข้า bladder — สำหรับ:</p>
+        <ul>
+          <li>Relieve <strong>urethral obstruction</strong> ✨ ✗ (most common indication)</li>
+          <li>Continuous drainage in critically ill / post-op</li>
+          <li>Sterile urine sample (alternative to cysto when bladder small)</li>
+          <li>Bladder lavage / instillation</li>
+          <li>Contrast cystography</li>
+          <li>Monitor urine output (oliguric AKI, sepsis)</li>
+        </ul>
+      `,
+      etiology: `<p>—</p>`,
+      pathophysiology: `<p>—</p>`,
+      symptoms: `<p>—</p>`,
+      diagnosis: `
+        <p><strong>Indications:</strong></p>
+        <ul>
+          <li><strong>Urethral obstruction (cat blocked)</strong> ✗ ✨ — emergency</li>
+          <li>Urolith retropulsion / voiding urohydropropulsion</li>
+          <li>Post-surgical (PU, cystotomy) — bladder rest</li>
+          <li>AKI with anuria/oliguria — accurate UO monitoring</li>
+          <li>Critically ill / non-ambulatory (sepsis, recumbency)</li>
+          <li>Bladder lavage (clots, debris)</li>
+          <li>Contrast study</li>
+          <li>Urine sample when cysto not feasible (very small bladder, coagulopathy)</li>
+        </ul>
+        <p><strong>Contraindications:</strong></p>
+        <ul>
+          <li>Urethral stricture / mass without imaging</li>
+          <li>Severe coagulopathy (relative)</li>
+          <li>Active urethritis (avoid trauma)</li>
+          <li>Recent urethral surgery</li>
+        </ul>
+      `,
+      differential: `<p>—</p>`,
+      treatment: `
+        <p><strong>Catheter selection:</strong></p>
+        <ul>
+          <li><strong>Tom Cat catheter (3.5 Fr open-ended polypropylene)</strong> ✨ — cat male obstruction; rigid, helps push through plug</li>
+          <li><strong>Red rubber catheter (3.5-8 Fr)</strong> — standard cat / small dog; soft, less traumatic; for indwelling
+            <ul>
+              <li>Cat: 3.5 Fr (5 Fr if larger cat)</li>
+              <li>Small dog &lt; 10 kg: 5-6 Fr</li>
+            </ul>
+          </li>
+          <li><strong>Foley catheter (8-14 Fr)</strong> ✨ — dog; balloon retains in bladder; ideal for indwelling
+            <ul>
+              <li>Medium dog (10-25 kg): 8-10 Fr</li>
+              <li>Large dog (&gt; 25 kg): 10-14 Fr</li>
+            </ul>
+          </li>
+          <li>Slippery Sam (Mila) — silicone, gentler</li>
+          <li>Length: appropriate to patient size — measure externally first</li>
+        </ul>
+
+        <p><strong>Equipment:</strong></p>
+        <ul>
+          <li>Catheter (sterile)</li>
+          <li>Sterile gloves</li>
+          <li>Sterile lubricant (lidocaine gel preferred)</li>
+          <li>Saline flush + syringe</li>
+          <li>Closed collection bag (urine bag)</li>
+          <li>Suture or T-port adapter (for indwelling)</li>
+          <li>Vaginal speculum (female dog) — optional</li>
+          <li>Light source</li>
+        </ul>
+
+        <p><strong>Sedation/anesthesia:</strong></p>
+        <ul>
+          <li><strong>Cat blocked:</strong> sedation needed — propofol 2-4 mg/kg IV slow + opioid; or ketamine + midazolam (caution if uremic)
+            <ul>
+              <li>Stabilize K + acidosis FIRST (see FLUTD entry)</li>
+            </ul>
+          </li>
+          <li>Calm cooperative dog male: local lidocaine sometimes suffices for short catheterization</li>
+          <li>Dog female: usually needs sedation (vaginal exam)</li>
+          <li>Critical patient: minimal sedation as tolerated</li>
+        </ul>
+
+        <p><strong>Technique — Cat male (blocked) ✨:</strong></p>
+        <ol>
+          <li>Patient sedated, dorsal/lateral recumbency</li>
+          <li>Extend penis from prepuce — gentle dorsal pressure on perineum to extrude</li>
+          <li>Clean prepuce/penis with chlorhexidine + sterile saline rinse</li>
+          <li>Sterile gloves, sterile field</li>
+          <li>Lubricate Tom Cat catheter (lidocaine gel)</li>
+          <li><strong>Pass catheter</strong> — gentle steady pressure
+            <ul>
+              <li>Direct catheter dorsally first, then horizontal once past pelvic urethra</li>
+              <li>If meets resistance (plug) → flush with sterile saline retrograde to dislodge
+                <ul>
+                  <li>Attach syringe with saline → push 5-10 mL → expand urethra → push plug back into bladder</li>
+                  <li>May need to pulse-flush several times</li>
+                </ul>
+              </li>
+              <li>Once unblocked → urine flows freely</li>
+            </ul>
+          </li>
+          <li>Empty bladder via catheter (gentle aspiration; or let drain)</li>
+          <li>Lavage bladder with sterile saline 30-60 mL until effluent clear</li>
+          <li><strong>Replace Tom Cat with soft red rubber 3.5 Fr</strong> for indwelling
+            <ul>
+              <li>Tom Cat too rigid for prolonged use → urethral irritation</li>
+            </ul>
+          </li>
+          <li>Suture catheter to prepuce with stay sutures (2-3 sutures around prepuce, then around catheter)</li>
+          <li>Connect to closed sterile collection bag (below patient level)</li>
+          <li>E-collar mandatory</li>
+          <li>Duration: 24-48h typically (until urine clear, K normal, urine output adequate)</li>
+        </ol>
+
+        <p><strong>Technique — Dog male:</strong></p>
+        <ol>
+          <li>Lateral recumbency, hind leg drawn forward</li>
+          <li>Extrude penis from prepuce</li>
+          <li>Clean with chlorhexidine + saline</li>
+          <li>Sterile gloves, lubricate catheter (Foley 8-10 Fr typical)</li>
+          <li>Pass catheter — feel slight resistance at: ischial arch (gentle pressure), then enters bladder</li>
+          <li>Confirm in bladder: urine returns, can flush + aspirate</li>
+          <li>If Foley: inflate balloon with sterile saline (volume per package; usually 3-5 mL)</li>
+          <li>Pull back gently until balloon catches at trigone</li>
+          <li>Connect to closed bag, secure to abdomen with tape, E-collar</li>
+        </ol>
+
+        <p><strong>Technique — Dog female (more challenging):</strong></p>
+        <ol>
+          <li>Sedation usually needed</li>
+          <li>Lateral or sternal recumbency with hind end elevated</li>
+          <li>Wipe vulva clean with chlorhexidine</li>
+          <li>Sterile gloves</li>
+          <li>Methods:
+            <ul>
+              <li><strong>Digital palpation</strong> — feel urethral papilla (cranial vaginal floor, ~ 3-5 cm cranial to vulva); guide catheter onto it</li>
+              <li><strong>Otoscope / vaginal speculum</strong> — visualize urethral opening</li>
+              <li><strong>Cystoscopy-guided</strong> — for difficult cases</li>
+            </ul>
+          </li>
+          <li>Pass Foley 6-10 Fr (smaller breeds 5-6 Fr) — may need rigid stylet to stiffen</li>
+          <li>Confirm with urine return</li>
+          <li>Inflate balloon, secure</li>
+        </ol>
+
+        <p><strong>Technique — Cat female (rarely needed; usually do not block):</strong></p>
+        <ol>
+          <li>Often sedation</li>
+          <li>Otoscope to visualize urethral opening</li>
+          <li>Pass 3.5 Fr red rubber</li>
+          <li>Generally easier than female dog</li>
+        </ol>
+
+        <p><strong>Indwelling catheter management:</strong></p>
+        <ul>
+          <li><strong>Closed collection system</strong> ✨ — IV bag below patient; reduces ascending infection</li>
+          <li>Empty bag q4-6h; record volumes</li>
+          <li>Clean prepuce/vulva q8h with sterile saline + chlorhexidine</li>
+          <li>Inspect insertion site for swelling / discharge</li>
+          <li>E-collar 24/7 — patient will pull out otherwise</li>
+          <li>Catheter care:
+            <ul>
+              <li>Don't disconnect tubing unnecessarily</li>
+              <li>If sample needed: aspirate from sample port (after wiping with alcohol)</li>
+              <li>NEVER reflush retrograde from bag</li>
+            </ul>
+          </li>
+          <li>Duration: keep only as long as needed (CAUTI risk ↑ each day)</li>
+          <li>Don't culture catheter tip — submit urine sample after removal if signs of UTI</li>
+        </ul>
+
+        <p><strong>Post-removal:</strong></p>
+        <ul>
+          <li>Deflate Foley balloon completely before pulling</li>
+          <li>Pull steadily, smoothly</li>
+          <li>Monitor for ability to urinate within 4-6h</li>
+          <li>Check for re-obstruction (cat — 30-40% recurrence)</li>
+          <li>Don't routinely treat asymptomatic post-catheter bacteriuria</li>
+          <li>Continue prazosin / acepromazine 1-2 weeks (cat post-block)</li>
+        </ul>
+      `,
+      complications: `
+        <p><strong>Common:</strong></p>
+        <ul>
+          <li>Mild discomfort during placement</li>
+          <li>Hematuria (transient, mild)</li>
+          <li>Patient resistance / chewing catheter (E-collar essential)</li>
+          <li>Difficult passage in female (especially small / fractious dog)</li>
+        </ul>
+        <p><strong>Uncommon:</strong></p>
+        <ul>
+          <li>Catheter-associated UTI (CAUTI) — risk ↑ with duration; ~ 50% incidence after 5-7 days indwelling</li>
+          <li>Urethral irritation / urethritis</li>
+          <li>Catheter dislodgement (balloon failure or patient pulls)</li>
+          <li>Catheter blockage (debris, clot) — flush gently</li>
+          <li>Urine leak around catheter (Foley balloon underinflated)</li>
+        </ul>
+        <p><strong>Rare but serious ✗:</strong></p>
+        <ul>
+          <li><strong>Urethral rupture / tear</strong> — forceful passage; especially cat male, repeated attempts; or chronic obstruction friable urethra
+            <ul>
+              <li>If suspect → contrast urethrogram → may need surgery</li>
+            </ul>
+          </li>
+          <li><strong>Bladder rupture</strong> — over-distension + balloon inflation against wall; or catheterizing severely obstructed cat with friable bladder</li>
+          <li>Foley balloon ruptures inside bladder → catheter retention (need cystotomy to retrieve fragments)</li>
+          <li>Iatrogenic ascending pyelonephritis (CAUTI → kidneys)</li>
+          <li>Urethral stricture (long-term complication of trauma)</li>
+          <li>Sepsis (immunocompromised patient with CAUTI)</li>
+        </ul>
+        <p><strong>Pearls:</strong></p>
+        <ul>
+          <li><strong>Never force catheter</strong> — if resistance, withdraw + reassess</li>
+          <li>Lubricate generously (lidocaine gel = lubricant + local anesthetic)</li>
+          <li>For cat blocked: stabilize K FIRST, then catheterize under sedation</li>
+          <li>Closed collection &gt; open collection — significantly less CAUTI</li>
+          <li>Remove catheter as soon as clinically appropriate</li>
+          <li>Tom Cat catheter only for unblocking — switch to soft red rubber for indwelling</li>
+          <li>Always use E-collar with indwelling catheter</li>
+          <li>Document insertion: type, size, ease, urine volume drained</li>
+        </ul>
+        <div class="callout">💡 <strong>Catheterization = lifesaving in cat blocked</strong> ✨ ✗ — but stabilize K + acidosis FIRST. Tom Cat for unblocking → switch to soft 3.5 Fr red rubber for indwelling × 24-48h. Closed collection + E-collar mandatory<br><br>⚠️ Never force — urethral rupture = surgical emergency</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
