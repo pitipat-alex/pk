@@ -12435,6 +12435,756 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Ch 42 · UTI / Bacterial Cystitis ---------- */
+  {
+    id: 'urinary-tract-infection',
+    titleEn: 'Bacterial Urinary Tract Infection (UTI)',
+    titleTh: 'ติดเชื้อทางเดินปัสสาวะ',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['UTI', 'cystitis', 'pyelonephritis', 'E. coli', 'Staphylococcus', 'amoxicillin', 'enrofloxacin', 'culture', 'recurrent UTI', 'subclinical bacteriuria'],
+    aliases: ['cystitis', 'urinary infection', 'UTI', 'pyelonephritis', 'ติดเชื้อปัสสาวะ', 'กระเพาะปัสสาวะอักเสบ'],
+    source: 'Ch. 42 · pp. 706–712',
+    sections: {
+      definition: `
+        <p>การติดเชื้อแบคทีเรียในทางเดินปัสสาวะ — แบ่งตาม:</p>
+        <ul>
+          <li><strong>Sporadic UTI</strong> — &lt; 3 ครั้ง/ปี ในตัวที่สุขภาพดี</li>
+          <li><strong>Recurrent UTI</strong> ✨ — &gt; 3 ครั้ง/ปี (relapse vs reinfection)</li>
+          <li><strong>Subclinical bacteriuria</strong> — bacteria + ไม่มี signs (มัก ไม่ต้อง treat)</li>
+          <li><strong>Pyelonephritis</strong> — ติดเชื้อขึ้นไปถึง renal pelvis ✗</li>
+          <li><strong>Cat:</strong> UTI <em>เจอน้อย</em> — &lt; 5% ของ lower urinary signs (ส่วนใหญ่เป็น FIC แทน) ✨</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common pathogens:</strong></p>
+        <ul>
+          <li><strong>E. coli</strong> ✨ — &gt; 50% ของเคส</li>
+          <li>Staphylococcus pseudintermedius</li>
+          <li>Proteus mirabilis (struvite-associated)</li>
+          <li>Streptococcus</li>
+          <li>Enterococcus</li>
+          <li>Klebsiella, Pseudomonas (resistant, hospital-associated)</li>
+          <li>Mycoplasma (special culture needed)</li>
+        </ul>
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li>Female (anatomy — short urethra)</li>
+          <li>Anatomic abnormality: ectopic ureter, recessed vulva, vulvar fold dermatitis</li>
+          <li>Indwelling urinary catheter ✗</li>
+          <li>Bladder dysfunction: incontinence, urinary retention, neurogenic</li>
+          <li>Urolithiasis (especially struvite)</li>
+          <li>Bladder neoplasia (TCC)</li>
+          <li>Immunocompromised: <strong>DM, Cushing's, CKD, immunosuppressive therapy</strong> ✨</li>
+          <li>Dilute urine (CKD, DI)</li>
+          <li>Prostatic disease (intact male)</li>
+          <li>Perineal hernia, fecal incontinence</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Ascending infection from urethra/perineum (most common)</li>
+          <li>Hematogenous (rare — pyelonephritis from bacteremia)</li>
+          <li>Bacterial adherence to uroepithelium → inflammation, dysuria, pollakiuria</li>
+          <li>Pyelonephritis: ascending from bladder up ureter → renal pelvis → renal parenchyma → AKI</li>
+          <li>Persistent infection → biofilm formation, struvite urolith development</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Bacterial cystitis (lower):</strong></p>
+        <ul>
+          <li><strong>Pollakiuria</strong> ✨ — frequent small volume</li>
+          <li><strong>Stranguria, dysuria</strong></li>
+          <li>Hematuria (often end-of-stream)</li>
+          <li>Periuria (going outside litter box)</li>
+          <li>Foul-smelling, cloudy urine</li>
+          <li>Often asymptomatic in dog with concurrent dz (Cushing's, DM)</li>
+        </ul>
+        <p><strong>Pyelonephritis (upper) ✗:</strong></p>
+        <ul>
+          <li>Fever, lethargy, anorexia</li>
+          <li>Vomiting</li>
+          <li>PU/PD</li>
+          <li>Painful kidney(s) on palpation</li>
+          <li>Sometimes acute kidney injury signs</li>
+          <li>Can be subtle in chronic cases — only ↑ Cr + dilute urine</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Urinalysis (UA) ✨:</strong></p>
+        <ul>
+          <li>Pyuria (WBC &gt; 5/hpf) — typical</li>
+          <li>Bacteriuria — visible cocci/rods</li>
+          <li>Hematuria</li>
+          <li>Proteinuria (mild)</li>
+          <li>pH variable (alkaline with urease producers — Proteus, Staph, Klebsiella → struvite)</li>
+          <li>Note: pyuria can be absent in immunocompromised (DM, Cushing's, chemo) ✨</li>
+        </ul>
+
+        <p><strong>Urine culture &amp; susceptibility ✨ — gold standard</strong></p>
+        <ul>
+          <li><strong>Cystocentesis sample</strong> (sterile)</li>
+          <li>Quantitative count (significant: &gt; 1000 CFU/mL cysto, &gt; 10,000 catheter, &gt; 100,000 free-catch)</li>
+          <li>Susceptibility testing — guides antibiotic choice</li>
+          <li><strong>Always culture in:</strong> first UTI in dog (some recommend); recurrent; complicated; pyelonephritis suspect; immunocompromised; before/after treatment of complicated cases</li>
+        </ul>
+
+        <p><strong>Imaging (recurrent / complicated):</strong></p>
+        <ul>
+          <li>Abdominal US — bladder wall thickness, urolith, mass, prostate, kidney size/architecture</li>
+          <li>Abdominal rad — radiopaque uroliths</li>
+          <li>Contrast cystography or CT — anatomic abnormalities (ectopic ureter)</li>
+        </ul>
+
+        <p><strong>Pyelonephritis workup:</strong></p>
+        <ul>
+          <li>CBC: leukocytosis with left shift</li>
+          <li>Biochem: ↑ Cr (acute or worsening), ↑ ALP variable</li>
+          <li>UA: pyuria, bacteriuria, granular casts (active tubular damage)</li>
+          <li>Urine culture POSITIVE</li>
+          <li>US: pelvic dilation, ↑ echogenicity</li>
+          <li>SDMA, BUN/Cr trend</li>
+        </ul>
+
+        <p><strong>Recurrent UTI (&gt; 3/year) — investigate:</strong></p>
+        <ul>
+          <li>Anatomic abnormality (US, CT, cystoscopy)</li>
+          <li>Underlying disease (DM, Cushing's, CKD, hyperthyroid)</li>
+          <li>Culture each episode + susceptibility</li>
+          <li>Differentiate relapse (same organism) vs reinfection (different)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Feline idiopathic cystitis (FIC) ✨ — cat: most common (~ 60-70% of LUTS in cat)</li>
+          <li>Urolithiasis</li>
+          <li>Bladder neoplasia (TCC, especially older female Scottie, Sheltie, terriers)</li>
+          <li>Polypoid cystitis</li>
+          <li>Urethral mass / stricture</li>
+          <li>Prostatic disease (intact male — BPH, prostatitis, abscess, neoplasia)</li>
+          <li>Pseudohyphae / fungal cystitis (rare, immunocompromised)</li>
+          <li>Behavioral periuria (cat)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Sporadic UTI (uncomplicated, dog) ✨:</strong></p>
+        <ul>
+          <li><strong>Empirical first-line: amoxicillin 11-15 mg/kg PO q8h × 3-5 days</strong> ✨ (modern shorter course)
+            <ul>
+              <li>หรือ amoxicillin-clavulanate 12.5-25 mg/kg PO q12h × 3-5 d</li>
+              <li>Most E. coli, Staph, Streptococcus susceptible</li>
+            </ul>
+          </li>
+          <li>Trimethoprim-sulfa 15-30 mg/kg PO q12h × 3-5 d (alternative)</li>
+          <li>Fluoroquinolones — reserve for resistant/complicated; not first-line empirical</li>
+          <li>Recheck UA + culture <em>only if signs persist</em>; don't culture if cured clinically (modern guidelines)</li>
+        </ul>
+
+        <p><strong>2. Complicated UTI (recurrent, immunocompromised, anatomic abnormality):</strong></p>
+        <ul>
+          <li><strong>Culture-based</strong> antibiotic therapy ✨</li>
+          <li>Duration: 7-14 d (some experts 4 wk if complicated)</li>
+          <li>Recheck culture 5-7 d after starting (clinical), 5-7 d post-treatment (microbiologic cure)</li>
+          <li>Address underlying cause (DM control, Cushing's treatment, anatomic correction)</li>
+          <li>Pulse therapy / prophylaxis controversial — generally avoid</li>
+        </ul>
+
+        <p><strong>3. Pyelonephritis ✗ (upper UTI):</strong></p>
+        <ul>
+          <li><strong>Empirical: Enrofloxacin 5-10 mg/kg PO/IV q24h</strong> ✨ (penetrates renal tissue)
+            <ul>
+              <li>Or marbofloxacin 2.75-5.5 mg/kg PO q24h</li>
+            </ul>
+          </li>
+          <li>Once culture: tailor to susceptibility</li>
+          <li><strong>Duration: 4-6 weeks minimum</strong> ✨</li>
+          <li>Recheck culture at 7 d (must be negative), 1 wk post-treatment, then 4-6 wk later</li>
+          <li>IV fluids if dehydrated/azotemic</li>
+          <li>Repeat US to monitor</li>
+        </ul>
+
+        <p><strong>4. Subclinical bacteriuria:</strong></p>
+        <ul>
+          <li><strong>USUALLY DO NOT TREAT</strong> ✨ — modern guidelines</li>
+          <li>Exception: pre-surgical (urethrostomy, urinary tract surgery), immunocompromised with high infection risk, struvite-forming organism (Proteus)</li>
+          <li>Treating subclinical bacteriuria → unnecessary antibiotic exposure, resistance</li>
+        </ul>
+
+        <p><strong>5. Catheter-associated UTI:</strong></p>
+        <ul>
+          <li>Remove catheter ASAP (don't leave indwelling unnecessarily)</li>
+          <li>Don't culture catheter tip — culture urine after removal</li>
+          <li>Treat only if clinical signs after removal</li>
+        </ul>
+
+        <p><strong>6. Antimicrobial stewardship principles ✨:</strong></p>
+        <ul>
+          <li>Choose narrow-spectrum first-line</li>
+          <li>Reserve fluoroquinolones for documented resistance / pyelonephritis</li>
+          <li>Reserve carbapenems for ESBL E. coli</li>
+          <li>Shorter is better (3-5 d for sporadic UTI)</li>
+          <li>Don't treat asymptomatic bacteriuria</li>
+        </ul>
+
+        <p><strong>7. Cranberry / D-mannose / probiotics:</strong></p>
+        <ul>
+          <li>Limited evidence in pets</li>
+          <li>Some owners use; not contraindicated</li>
+          <li>Don't replace antibiotics for active infection</li>
+        </ul>
+
+        <p><strong>Address underlying issues:</strong></p>
+        <ul>
+          <li>Recessed vulva — episioplasty</li>
+          <li>Vulvar fold dermatitis — clip, clean, weight loss</li>
+          <li>DM — improve glycemic control</li>
+          <li>Cushing's — trilostane</li>
+          <li>Urolithiasis — address stones</li>
+          <li>Ectopic ureter — surgical correction</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Pyelonephritis → AKI / progression to CKD</li>
+          <li>Sepsis (rare, severe pyelonephritis)</li>
+          <li>Urolithiasis (struvite from urease producers)</li>
+          <li>Recurrent infection cycle</li>
+          <li>Antimicrobial resistance development (overtreatment)</li>
+          <li>Bladder wall thickening, fibrosis (chronic)</li>
+          <li>Prostatic abscess (intact male)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Sporadic uncomplicated UTI: <strong>excellent</strong> ✓</li>
+          <li>Pyelonephritis with prompt treatment: good if no permanent renal damage</li>
+          <li>Recurrent UTI (anatomic correction): good after correction</li>
+          <li>Recurrent UTI (immunocompromised): variable; depends on underlying control</li>
+          <li>Resistant pathogens: more challenging</li>
+        </ul>
+        <div class="callout">💡 <strong>Cat lower urinary signs ≠ UTI usually</strong> ✨ — &lt; 5% เป็น UTI; ส่วนใหญ่เป็น <strong>FIC</strong>. ใน cat &lt; 10 ปี ที่ไม่มี comorbidity มักไม่ต้องเริ่มด้วย antibiotic. Culture ก่อน treat</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 44 · Feline Lower Urinary Tract Disease (FLUTD) / FIC ---------- */
+  {
+    id: 'flutd-fic',
+    titleEn: 'Feline Lower Urinary Tract Disease (FLUTD) &amp; FIC',
+    titleTh: 'FLUTD / FIC — โรคทางเดินปัสสาวะส่วนล่างในแมว',
+    type: 'disease',
+    system: 'urinary',
+    species: ['cat'],
+    tags: ['FLUTD', 'FIC', 'feline idiopathic cystitis', 'Pandora syndrome', 'urethral obstruction', 'urethral plug', 'environmental enrichment', 'pheromone', 'amitriptyline', 'gabapentin'],
+    aliases: ['FLUTD', 'FIC', 'feline idiopathic cystitis', 'cat blocked', 'แมวขัดเบา', 'แมวอุดตัน'],
+    source: 'Ch. 44 · pp. 743–751',
+    sections: {
+      definition: `
+        <p>กลุ่มอาการของโรคทางเดินปัสสาวะส่วนล่างในแมว — เจอบ่อยมาก!</p>
+        <ul>
+          <li><strong>FIC (Feline Idiopathic Cystitis)</strong> ✨ — most common (60-70%); sterile inflammation, multifactorial</li>
+          <li>Urolithiasis (struvite, CaOx) — ~ 15-20%</li>
+          <li>Urethral plug — protein matrix + crystals (cat male)</li>
+          <li>UTI — &lt; 5%</li>
+          <li>Anatomic, neoplastic — rare</li>
+          <li><strong>Urethral obstruction</strong> ✗ — life-threatening emergency in male cat</li>
+          <li>Now considered part of <strong>"Pandora syndrome"</strong> — multi-system stress-related disorder</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>FIC pathophysiology — multifactorial:</strong></p>
+        <ul>
+          <li>Defective bladder mucosal barrier (↓ GAG layer)</li>
+          <li>Altered sympathetic nervous system response (HPA axis dysregulation)</li>
+          <li>Stress is major trigger ✨ — moves, new pet, changes in routine, multi-cat household</li>
+          <li>↑ pain perception, central sensitization</li>
+          <li>Genetic predisposition</li>
+          <li>Indoor confinement (sedentary, stress)</li>
+        </ul>
+        <p><strong>Risk factors for FIC:</strong></p>
+        <ul>
+          <li>Indoor lifestyle</li>
+          <li>Multi-cat household / conflict</li>
+          <li>Obesity</li>
+          <li>Stressors (recent change)</li>
+          <li>Dry-food only diet</li>
+          <li>Limited litter box access</li>
+          <li>Young to middle-aged (2-7 years)</li>
+        </ul>
+        <p><strong>Urethral obstruction (male cat) ✗:</strong></p>
+        <ul>
+          <li>Urethral plug (matrix + struvite)</li>
+          <li>Urolith</li>
+          <li>Severe FIC with urethral spasm</li>
+          <li>Stricture (post-trauma, post-catheterization)</li>
+          <li>Mass (rare)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>FIC: complex stress-pain-bladder axis</li>
+          <li>Bladder wall edema, hyperemia, submucosal hemorrhage</li>
+          <li>Disrupted GAG layer → urine irritates underlying tissue</li>
+          <li>Neurogenic inflammation</li>
+          <li>Most episodes self-limiting 3-7 days</li>
+          <li>Obstruction: post-renal AKI, hyperkalemia, bladder rupture</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Non-obstructive FIC / FLUTD:</strong></p>
+        <ul>
+          <li>Pollakiuria, stranguria, dysuria</li>
+          <li>Hematuria (gross or microscopic) ✨</li>
+          <li><strong>Periuria</strong> ✨ — peeing outside litter box (often misinterpreted as behavioral)</li>
+          <li>Excessive licking of perineum</li>
+          <li>Vocalization while urinating</li>
+          <li>Episodic — flares 3-7 days, resolves, may recur</li>
+        </ul>
+        <p><strong>Urethral obstruction (male cat) — emergency ✗:</strong></p>
+        <ul>
+          <li>Repeated unproductive trips to litter box</li>
+          <li><strong>Vocalization, restlessness</strong></li>
+          <li><strong>Distended firm painful bladder</strong> ✨ — palpable like baseball</li>
+          <li>Eventually: lethargy → collapse → bradycardia (hyperK) → coma → death within 24-48h ✗</li>
+          <li>Vomiting (uremic)</li>
+          <li>Hypothermia (severe)</li>
+          <li>Owners often think "constipation" — must distinguish ✨</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Non-obstructive FLUTD/FIC:</strong></p>
+        <ul>
+          <li>UA — hematuria, occasionally crystals (struvite, CaOx); rarely WBC + bacteria</li>
+          <li>Urine culture (if pyuria, immunocompromised, &gt; 10 yr) — usually negative ✨</li>
+          <li>Abdominal rad — radiopaque uroliths</li>
+          <li>Abdominal US — bladder wall thickness, uroliths, masses</li>
+          <li>FIC = diagnosis of exclusion ✨</li>
+        </ul>
+
+        <p><strong>Urethral obstruction:</strong></p>
+        <ul>
+          <li><strong>Physical exam — distended firm painful bladder</strong> ✨ (don't squeeze too hard — rupture risk)</li>
+          <li>Lab:
+            <ul>
+              <li>Severe hyperkalemia (often &gt; 7-8 mEq/L) ✗</li>
+              <li>Severe metabolic acidosis</li>
+              <li>↑ BUN, Cr (post-renal azotemia)</li>
+              <li>Hyponatremia, hyperphosphatemia</li>
+              <li>Stress leukogram</li>
+            </ul>
+          </li>
+          <li>ECG — bradycardia, peaked T waves, prolonged PR, atrial standstill (hyperK changes ✗)</li>
+          <li>Imaging after stabilization: rad/US for cause</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Bacterial UTI (uncommon in young cat)</li>
+          <li>Urolithiasis</li>
+          <li>Bladder neoplasia (TCC — older cat, persistent signs despite treatment)</li>
+          <li>Behavioral periuria (no signs of dysuria; clean cytology)</li>
+          <li>Constipation (very different — not stranguria; tenesmus + hard stool palpable)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Urethral obstruction — emergency protocol ✨ ✗</strong></p>
+        <ul>
+          <li><strong>Step 1 - Stabilize hyperkalemia FIRST (before anesthesia):</strong>
+            <ul>
+              <li>IV catheter → bolus 10-20 mL/kg LRS or Plasmalyte (avoid K-containing if K extremely high; LRS K = 4 mEq/L is OK in most cases — reverses post-renal acidosis)</li>
+              <li>Calcium gluconate 10% 0.5-1 mL/kg slow IV (cardioprotection)</li>
+              <li>Regular insulin 0.25 U/kg IV + dextrose 50% 1 mL/kg (drives K intracellular)</li>
+              <li>Sodium bicarbonate 1-2 mEq/kg IV slow if severe acidosis</li>
+              <li>Beta-agonist (terbutaline) — adjunct</li>
+              <li>Recheck K + ECG before sedation</li>
+            </ul>
+          </li>
+          <li><strong>Step 2 - Anesthesia + relieve obstruction:</strong>
+            <ul>
+              <li>Sedation: propofol + opioid (low dose), or ketamine 2-5 mg/kg + midazolam (caution if severely uremic)</li>
+              <li>Cystocentesis to decompress bladder (relieves pressure + reduces ureteral back-pressure on kidneys)</li>
+              <li>Urethral catheterization with sterile technique:
+                <ul>
+                  <li>Open-ended polypropylene catheter (Tom Cat) → flush retrograde to dislodge plug</li>
+                  <li>Once unblocked, place soft red rubber catheter</li>
+                  <li>Suture in place + closed collection system</li>
+                </ul>
+              </li>
+              <li>Empty bladder, lavage with saline until clear</li>
+            </ul>
+          </li>
+          <li><strong>Step 3 - Post-obstruction management:</strong>
+            <ul>
+              <li>Indwelling catheter 24-48h (until urine clears, K normalizes, urine output good)</li>
+              <li>IV fluids — 2-3× maintenance to flush + manage post-obstructive diuresis (can be massive)</li>
+              <li>Monitor K, BUN/Cr q12h until normal</li>
+              <li>Pain mgmt: buprenorphine 0.02 mg/kg IV/IM/OTM q6-8h</li>
+              <li>Anti-spasmodic for urethra:
+                <ul>
+                  <li>Prazosin 0.25-0.5 mg/cat PO q12h ✨ — alpha blocker, reduce urethral spasm</li>
+                  <li>Or tamsulosin 0.004-0.006 mg/kg PO q24h</li>
+                  <li>Acepromazine 0.05-0.1 mg/kg SC/PO q8h — adjunct</li>
+                </ul>
+              </li>
+              <li>Continue 1-2 weeks after catheter removal</li>
+            </ul>
+          </li>
+          <li><strong>Step 4 - Long-term prevention:</strong>
+            <ul>
+              <li>FIC management (see below)</li>
+              <li>Wet diet, environmental enrichment</li>
+              <li>Owner education — recognize early signs</li>
+              <li>Recurrence rate ~ 30-40% within 6 months</li>
+              <li>Consider <strong>perineal urethrostomy (PU)</strong> ✨ if 2-3+ obstruction episodes — surgical widening; less recurrence</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Non-obstructive FIC — multimodal environmental therapy (MEMO) ✨</strong></p>
+
+        <p><strong>Environmental enrichment (cornerstone — &gt; medication):</strong></p>
+        <ul>
+          <li><strong>Litter boxes:</strong> n cats + 1 boxes; clean daily; large; uncovered preferred; multiple locations; quiet; clay litter unscented usually preferred</li>
+          <li><strong>Resources distributed:</strong> food, water, scratching, perches, hiding spots — separate from each other + away from litter</li>
+          <li><strong>Vertical space:</strong> cat trees, shelves</li>
+          <li><strong>Hiding/safe spots:</strong> boxes, beds in quiet areas</li>
+          <li><strong>Play / hunting simulation:</strong> wand toys, food puzzles, 10-15 min/day interactive play</li>
+          <li><strong>Routine consistency:</strong> feeding, playtime predictable</li>
+          <li><strong>Reduce stressors:</strong> identify + address (new pet, construction, schedule changes)</li>
+          <li><strong>Multi-cat conflict:</strong> separate resources, watch for bullying, consider rehoming if severe</li>
+        </ul>
+
+        <p><strong>Diet:</strong></p>
+        <ul>
+          <li><strong>Wet food (canned)</strong> ✨ — increases water intake, dilutes urine
+            <ul>
+              <li>Hill's c/d Multicare Stress, Royal Canin Urinary SO Calm</li>
+              <li>Improves outcomes vs dry food alone</li>
+            </ul>
+          </li>
+          <li>Add water/broth to food</li>
+          <li>Multiple water sources (fountains often preferred ✨)</li>
+        </ul>
+
+        <p><strong>Pheromones:</strong></p>
+        <ul>
+          <li><strong>Feliway Classic / Multicat (synthetic feline facial pheromone)</strong> ✨ — diffuser plug-in; reduce stress
+            <ul>
+              <li>Place in main areas where cat spends time</li>
+              <li>Refill q4 wk</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Pain management (acute episode):</strong></p>
+        <ul>
+          <li><strong>Buprenorphine 0.01-0.02 mg/kg OTM q6-8h × 3-5 d</strong> ✨</li>
+          <li>Avoid NSAIDs in dehydrated cat or acute episode</li>
+          <li>Can use meloxicam if hydration confirmed + no kidney concerns</li>
+        </ul>
+
+        <p><strong>Anti-spasmodic / smooth muscle relaxant (urethral spasm):</strong></p>
+        <ul>
+          <li>Prazosin 0.25-0.5 mg/cat PO q12h × 1-2 wk</li>
+          <li>Acepromazine 0.05-0.1 mg/cat PO q8-12h</li>
+        </ul>
+
+        <p><strong>Refractory FIC — adjunctive medications:</strong></p>
+        <ul>
+          <li><strong>Amitriptyline 5-10 mg/cat PO q24h at night</strong> ✨ — TCA; for severe recurrent FIC; takes 4-6 wk to see effect
+            <ul>
+              <li>Anti-inflammatory + analgesic + anti-anxiety</li>
+              <li>Side effects: sedation, weight gain, urinary retention paradoxically</li>
+              <li>Reserved for refractory cases</li>
+            </ul>
+          </li>
+          <li><strong>Gabapentin 5-10 mg/kg PO q8-12h</strong> — neuropathic pain + anxiety</li>
+          <li>Glucosamine + chondroitin (Cystaid, Cosequin) — repair GAG layer; debated efficacy</li>
+          <li>Pentosan polysulfate (Elmiron) — GAG-like; limited availability</li>
+          <li>Fluoxetine 0.5-1 mg/kg PO q24h — refractory FIC with strong stress component</li>
+        </ul>
+
+        <p><strong>Antibiotics — NOT routinely indicated in FIC ✨</strong></p>
+        <ul>
+          <li>Common mistake: empirical antibiotic for "suspected UTI"</li>
+          <li>UTI &lt; 5% in young cat with LUTS</li>
+          <li>Use only if culture-proven OR cat &gt; 10 yr / immunocompromised / dilute urine</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Urethral obstruction → death within 24-48h</strong> ✗</li>
+          <li>Bladder rupture (delayed diagnosis or attempted manual decompression)</li>
+          <li>Hyperkalemic cardiac arrest</li>
+          <li>Post-renal AKI → CKD progression</li>
+          <li>Recurrent obstruction (30-40% within 6 mo)</li>
+          <li>Stricture from catheterization trauma</li>
+          <li>Catheter-associated UTI</li>
+          <li>FIC recurrence (~ 50% in 6 mo without environmental changes)</li>
+          <li>Behavioral / relinquishment (chronic periuria)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Non-obstructive FIC with proper environmental management: <strong>good</strong> — most flares self-resolve in 3-7 d ✓</li>
+          <li>FIC long-term: variable; recurrence common but manageable</li>
+          <li>First obstruction with prompt treatment: good (mortality 5-10% in modern era)</li>
+          <li>Recurrent obstruction → PU surgery: excellent post-op (resolves obstruction permanently; complication rate 25-30% mostly minor)</li>
+          <li>Severely uremic at presentation (K &gt; 8, severe acidosis): guarded</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Owner education:</strong> "แมวตัวผู้ที่นั่งในกะบะแล้วเบ่งไม่ออก หรือร้องเสียงดัง = emergency ภายใน 24 ชม.! โทรหาหมอทันที — ไม่ใช่ท้องผูก ✗"<br><br>"FIC ไม่ใช่ติดเชื้อ — เป็นเรื่อง stress + bladder. การให้ antibiotic ไม่ช่วย. ต้องปรับสิ่งแวดล้อม + อาหารเปียก + Feliway"</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 43 · Urolithiasis ---------- */
+  {
+    id: 'urolithiasis',
+    titleEn: 'Canine &amp; Feline Urolithiasis',
+    titleTh: 'นิ่วทางเดินปัสสาวะ',
+    type: 'disease',
+    system: 'urinary',
+    species: ['dog', 'cat'],
+    tags: ['urolith', 'struvite', 'calcium oxalate', 'urate', 'cystine', 'cystotomy', 'voiding urohydropropulsion', 'dietary dissolution', 'Dalmatian', 'Schnauzer'],
+    aliases: ['bladder stones', 'kidney stones', 'urolith', 'นิ่ว', 'นิ่วในกระเพาะปัสสาวะ'],
+    source: 'Ch. 43 · pp. 712–743',
+    sections: {
+      definition: `
+        <p>การก่อ <strong>uroliths (นิ่ว)</strong> ใน urinary tract — kidney, ureter, bladder, urethra</p>
+        <ul>
+          <li>เจอบ่อยในคลินิก — recurrent in many cases</li>
+          <li>Composition แตกต่างกัน → treatment + prevention ต่างกัน</li>
+          <li><strong>Stone analysis</strong> ✨ — essential for proper management</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Common types in dog:</strong></p>
+        <ul>
+          <li><strong>Struvite (magnesium ammonium phosphate)</strong> ~ 40% ✨
+            <ul>
+              <li>Female &gt; male</li>
+              <li><strong>UTI-associated</strong> — Proteus, Staph, Klebsiella (urease producers raise pH + ammonia)</li>
+              <li>Alkaline urine</li>
+              <li>Radiopaque</li>
+            </ul>
+          </li>
+          <li><strong>Calcium oxalate (CaOx)</strong> ~ 35-40% ✨
+            <ul>
+              <li>Mini Schnauzer, Yorkie, Bichon, Lhasa Apso, Shih Tzu — predisposed ✨</li>
+              <li>Male &gt; female</li>
+              <li>Acidic urine, hypercalciuria</li>
+              <li>Radiopaque</li>
+              <li>Rule out hypercalcemia (PTH, PTHrp, vitamin D toxicity)</li>
+              <li><strong>Cannot be dissolved</strong> — must remove ✗</li>
+            </ul>
+          </li>
+          <li><strong>Urate</strong> ~ 5-10%
+            <ul>
+              <li><strong>Dalmatian</strong> ✨ — purine metabolism defect (autosomal recessive SLC2A9 mutation, almost all carriers)</li>
+              <li>English Bulldog</li>
+              <li><strong>Hepatic dysfunction (PSS, severe hepatitis)</strong> ✨ — failed urea cycle</li>
+              <li>Acidic urine</li>
+              <li>Radiolucent — needs US</li>
+            </ul>
+          </li>
+          <li><strong>Cystine</strong> ~ 1-2%
+            <ul>
+              <li>Newfoundland, English Bulldog, Mastiff (some), Dachshund</li>
+              <li>Genetic defect renal tubular reabsorption</li>
+              <li>Acidic urine</li>
+              <li>Faintly radiopaque</li>
+            </ul>
+          </li>
+          <li><strong>Mixed/compound</strong> — common</li>
+          <li>Silica, calcium phosphate — uncommon</li>
+        </ul>
+        <p><strong>Common types in cat:</strong></p>
+        <ul>
+          <li><strong>Calcium oxalate</strong> ✨ ~ 50% — increasing trend
+            <ul>
+              <li>Burmese, Persian, Himalayan predisposed</li>
+              <li>Older cats</li>
+            </ul>
+          </li>
+          <li><strong>Struvite</strong> ✨ ~ 40% — different from dog!
+            <ul>
+              <li>Cat struvite USUALLY <strong>STERILE</strong> (not UTI-associated like dog) ✨</li>
+              <li>Younger cats often</li>
+              <li>Diet-associated (high pH, high Mg/P)</li>
+            </ul>
+          </li>
+          <li>Urate, cystine — uncommon</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Supersaturation of urine with mineral → crystal precipitation → growth into urolith</li>
+          <li>Factors: pH, mineral concentration, urine volume, infection, diet, anatomic stagnation</li>
+          <li>Clinical signs from: bladder wall irritation, urethral obstruction, ureteral obstruction → hydronephrosis → AKI</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Lower urinary (bladder/urethra):</strong></p>
+        <ul>
+          <li>Pollakiuria, stranguria, dysuria</li>
+          <li>Hematuria ✨</li>
+          <li>Recurrent UTI (struvite especially)</li>
+          <li>Urethral obstruction (especially male) ✗ — emergency</li>
+        </ul>
+        <p><strong>Upper urinary (kidney/ureter):</strong></p>
+        <ul>
+          <li>Often subclinical — incidental finding</li>
+          <li>Acute ureteral obstruction: anorexia, vomiting, lethargy, painful kidney, AKI signs ✗</li>
+          <li>Chronic — gradual CKD progression</li>
+          <li>Cat: ureteral obstruction increasingly recognized; "big kidney little kidney" syndrome ✨</li>
+          <li>Pyelonephritis with infected stones</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal radiograph</strong> ✨ — radiopaque stones (struvite, CaOx, mixed) — most uroliths visible
+            <ul>
+              <li>2 views (lateral + VD)</li>
+              <li>Identify size, number, location</li>
+            </ul>
+          </li>
+          <li><strong>Abdominal ultrasound</strong> ✨ — radiolucent stones (urate, cystine, occasionally CaOx), hydronephrosis, hydroureter, bladder wall</li>
+          <li>Contrast cystography — small/radiolucent stones</li>
+          <li>CT — gold standard for ureteral stones (cat)</li>
+        </ul>
+        <p><strong>Laboratory:</strong></p>
+        <ul>
+          <li>UA: pH, crystals (clue but not definitive — must analyze stones)</li>
+          <li>Urine culture (struvite often UTI-associated dog)</li>
+          <li>CBC, biochem (calcium for CaOx, BUN/Cr for ureteral obstruction)</li>
+          <li>Bile acids if urate suspected (PSS)</li>
+          <li>Ionized Ca + PTH if hypercalcemia</li>
+        </ul>
+        <p><strong>Stone analysis ✨ — essential:</strong></p>
+        <ul>
+          <li>Send recovered stones to lab (Minnesota Urolith Center, UC Davis)</li>
+          <li>Quantitative analysis (core + outer layer)</li>
+          <li>Determines treatment + prevention strategy</li>
+        </ul>
+      `,
+      differential: `<p>FLUTD/FIC (cat), UTI, neoplasia, polyps</p>`,
+      treatment: `
+        <p><strong>Approach depends on stone type + location + clinical status:</strong></p>
+
+        <p><strong>1. Struvite (dog) — DISSOLVABLE ✨</strong></p>
+        <ul>
+          <li>If UTI-associated: <strong>treat UTI first</strong> + dissolution diet
+            <ul>
+              <li>Hill's s/d, Royal Canin Urinary SO</li>
+              <li>↓ protein, ↓ Mg, ↓ P, urinary acidifier</li>
+              <li>Dissolves in 4-12 weeks</li>
+              <li>Recheck UA + radiograph monthly</li>
+            </ul>
+          </li>
+          <li>Antibiotics: full duration (7-14 d simple, 4-6 wk if pyelo)</li>
+          <li>Often dissolves while still on diet without surgery</li>
+        </ul>
+
+        <p><strong>2. Struvite (cat) — DISSOLVABLE ✨</strong></p>
+        <ul>
+          <li>Royal Canin Urinary SO, Hill's c/d, Purina UR</li>
+          <li>Acidify urine, ↓ Mg/P</li>
+          <li>Dissolves in 4-8 weeks usually</li>
+          <li>Wet food preferred</li>
+          <li>UTI uncommon — antibiotics rarely needed</li>
+        </ul>
+
+        <p><strong>3. Calcium Oxalate — NON-DISSOLVABLE ✗ → must remove</strong></p>
+        <ul>
+          <li>Surgical or minimally invasive removal:
+            <ul>
+              <li><strong>Cystotomy</strong> — gold standard for bladder stones</li>
+              <li><strong>Voiding urohydropropulsion (VUH)</strong> ✨ — small smooth stones (≤ 5 mm female, ≤ 3 mm male); fill bladder via catheter, hold cat upright, express manually → stones flush out urethra</li>
+              <li><strong>Cystoscopy + basket retrieval</strong> — referral; female + small stones</li>
+              <li><strong>Laparoscopic cystotomy</strong> — minimally invasive</li>
+              <li><strong>Lithotripsy (laser, shock-wave)</strong> — referral; ureteral, kidney</li>
+            </ul>
+          </li>
+          <li>Prevention diet:
+            <ul>
+              <li>Hill's c/d Multicare, Royal Canin Urinary SO + Calm, Purina UR</li>
+              <li>Wet food (very important)</li>
+              <li>↓ Ca, ↓ Na, alkalinizing</li>
+              <li>Adequate protein</li>
+            </ul>
+          </li>
+          <li>Address hypercalcemia (workup PTH, PTHrp, vitamin D)</li>
+          <li>Potassium citrate 50-150 mg/kg PO q12h — alkalinize urine, citrate binds Ca</li>
+          <li>Hydrochlorothiazide 2-4 mg/kg PO q12h — ↓ urine Ca (refractory)</li>
+          <li>Recurrence rate &gt; 50% within 3 yr without prevention</li>
+        </ul>
+
+        <p><strong>4. Urate (Dalmatian / PSS):</strong></p>
+        <ul>
+          <li>Address PSS surgically if applicable</li>
+          <li>Diet: Royal Canin Urinary UC, Hill's u/d — low purine, alkalinizing</li>
+          <li>Allopurinol 10-15 mg/kg PO q12h — xanthine oxidase inhibitor (Dalmatian)</li>
+          <li>Dissolution possible with diet + allopurinol; can take months</li>
+          <li>Surgical removal if obstructive or non-responsive</li>
+        </ul>
+
+        <p><strong>5. Cystine:</strong></p>
+        <ul>
+          <li>Diet: Royal Canin Urinary UC, low protein/methionine, alkalinizing</li>
+          <li>2-MPG (tiopronin) 15-20 mg/kg PO q12h — chelator</li>
+          <li>D-penicillamine alternative</li>
+          <li>Castration (intact male — hormonal influence)</li>
+          <li>Surgical removal as needed</li>
+        </ul>
+
+        <p><strong>6. Urethral stone obstruction (male) ✗:</strong></p>
+        <ul>
+          <li>Stabilize hyperkalemia (cat protocol — see FLUTD entry)</li>
+          <li>Retrograde flushing into bladder + cystotomy</li>
+          <li>Or surgical urethrotomy / urethrostomy if severe</li>
+        </ul>
+
+        <p><strong>7. Ureteral stone (cat) ✨:</strong></p>
+        <ul>
+          <li>Acute obstruction = AKI emergency</li>
+          <li>Medical management trial (24-48h): IV fluids, mannitol, prazosin, pain mgmt</li>
+          <li>If not passing → <strong>SUB (subcutaneous ureteral bypass)</strong> or <strong>ureteral stent</strong> ✨ — referral; bypass obstruction</li>
+          <li>Outcomes much better than traditional surgical (ureterotomy → high stricture rate)</li>
+          <li>Bilateral SUBs sometimes needed</li>
+        </ul>
+
+        <p><strong>General prevention principles:</strong></p>
+        <ul>
+          <li>Wet food / increase water intake</li>
+          <li>Stone-specific diet</li>
+          <li>Recheck UA + imaging q3-6 mo</li>
+          <li>Treat UTIs promptly</li>
+          <li>Address underlying cause (PSS, hypercalcemia)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Urethral obstruction</strong> ✗ — male especially; AKI, hyperK, death</li>
+          <li>Ureteral obstruction → hydronephrosis → renal damage / AKI</li>
+          <li>Recurrent UTI (struvite cycle)</li>
+          <li>Recurrence after removal (CaOx 50%+ at 3 yr)</li>
+          <li>Surgical complications: dehiscence, leak, infection, stricture</li>
+          <li>Bladder rupture (severe obstruction)</li>
+          <li>CKD development from chronic obstruction</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Struvite dissolved + UTI controlled: <strong>excellent</strong> ✓</li>
+          <li>CaOx with surgical removal + prevention: good but recurrence ~ 50% at 3 yr</li>
+          <li>Urate (Dalmatian) with diet + allopurinol: good lifelong management</li>
+          <li>Ureteral cat stones with SUB: 70-90% improvement</li>
+          <li>Untreated obstructive: very poor without intervention</li>
+        </ul>
+        <div class="callout">💡 <strong>Stone analysis = roadmap:</strong> ทุกเคส uroliths ที่ remove ได้ → ส่ง analyze เสมอ ✨ — ต่างชนิด ต่าง treatment + prevention <br><br>Struvite (dog) = treat UTI + dissolution diet — ไม่ต้องผ่า<br>CaOx = ผ่าออก + prevention diet (recurrence สูง)<br>Urate Dalmatian = allopurinol + diet</div>
+      `,
+    },
+  },
+
 
   /* ============================================================
      PART 6 — ENDOCRINE (Ch 46–50) — existing entry
