@@ -88,7 +88,9 @@
         <div class="lock-title">สวัสดี</div>
         <p class="lock-sub">เว็บส่วนตัวของ Alex</p>
         <p class="msg error" id="loginMsg" aria-live="polite"></p>
-        <button class="btn btn-google" type="button" id="googleSignInBtn">
+        <button class="btn btn-google" type="button" id="googleSignInBtn"
+                onclick="if(window.PK_TriggerSignIn) window.PK_TriggerSignIn(); else alert('Sign-in not ready, please refresh');">
+
           <svg class="g-logo" viewBox="0 0 18 18" aria-hidden="true">
             <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/>
             <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.583-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/>
@@ -106,6 +108,10 @@
           <button onclick="window.PK_DEBUG.hide()" style="background:#c00;color:#fff;border:0;padding:4px 10px;border-radius:4px;cursor:pointer;">ปิด ✕</button>
         </div>
       </div>
+      <!-- Always-visible debug trigger (small, bottom right) -->
+      <button onclick="window.PK_DEBUG && window.PK_DEBUG.show()"
+              style="position:fixed;bottom:8px;right:8px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,0.4);color:#fff;font-size:16px;cursor:pointer;z-index:1001;touch-action:manipulation;"
+              aria-label="Debug">🔧</button>
     </div>
   `;
 
@@ -278,47 +284,67 @@
   });
 
   // ---------- Google Sign-in -------------------------------------
+  // Define the sign-in function globally so inline onclick can call it
+  // even if event listener attachment failed
+  async function performGoogleSignIn() {
+    DEBUG.add('▶ performGoogleSignIn() called', 'ok');
+    if (!googleBtn) {
+      DEBUG.add('No button reference — aborting', 'error');
+      return;
+    }
+    googleBtn.disabled = true;
+    if (loginMsg) loginMsg.textContent = '';
+
+    const redirectTo = window.location.origin + window.location.pathname;
+    DEBUG.add('Redirect to: ' + redirectTo, 'info');
+
+    try {
+      DEBUG.add('Calling signInWithOAuth...', 'info');
+      const { data, error } = await sb.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: redirectTo,
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'select_account',
+          },
+        },
+      });
+      if (error) {
+        googleBtn.disabled = false;
+        DEBUG.add('OAuth error: ' + error.message, 'error');
+        DEBUG.show();
+        flashError('เกิดข้อผิดพลาด: ' + error.message);
+      } else {
+        DEBUG.add('OAuth call OK. URL: ' + (data && data.url ? data.url.substring(0,80) : '(none)'), 'ok');
+        // browser will redirect to Google now
+      }
+    } catch (err) {
+      googleBtn.disabled = false;
+      DEBUG.add('Exception: ' + (err.message || err), 'error');
+      DEBUG.show();
+      flashError('เชื่อมต่อ Google ไม่ได้: ' + (err.message || err));
+    }
+  }
+
+  // Expose globally — used by inline onclick fallback
+  window.PK_TriggerSignIn = performGoogleSignIn;
+  DEBUG.add('✓ window.PK_TriggerSignIn registered', 'ok');
+
   if (googleBtn) {
     DEBUG.add('✓ Google button found, attaching handler', 'ok');
-    googleBtn.addEventListener('click', async function(ev) {
-      DEBUG.add('▶ Google button TAPPED', 'ok');
-      googleBtn.disabled = true;
-      loginMsg.textContent = '';
-
-      // Build redirectTo: origin + pathname (no query, no hash)
-      // This MUST be whitelisted in Supabase Dashboard → Authentication → URL Configuration
-      const redirectTo = window.location.origin + window.location.pathname;
-      DEBUG.add('Redirect to: ' + redirectTo, 'info');
-
-      try {
-        DEBUG.add('Calling signInWithOAuth...', 'info');
-        const { data, error } = await sb.auth.signInWithOAuth({
-          provider: 'google',
-          options: {
-            redirectTo: redirectTo,
-            queryParams: {
-              access_type: 'offline',
-              prompt: 'select_account',
-            },
-          },
-        });
-        if (error) {
-          googleBtn.disabled = false;
-          DEBUG.add('OAuth error: ' + error.message, 'error');
-          DEBUG.show();
-          flashError('เกิดข้อผิดพลาด: ' + error.message);
-        } else {
-          DEBUG.add('OAuth call OK. URL: ' + (data && data.url ? data.url.substring(0,80) : '(none)'), 'ok');
-          // On success, browser redirects to Google → returns to redirectTo URL with ?code=...
-          // detectSessionInUrl handles the code exchange automatically
-        }
-      } catch (err) {
-        googleBtn.disabled = false;
-        DEBUG.add('Exception: ' + (err.message || err), 'error');
-        DEBUG.show();
-        flashError('เชื่อมต่อ Google ไม่ได้: ' + (err.message || err));
-      }
+    // Modern click handler (works for mouse + most touch)
+    googleBtn.addEventListener('click', function(ev) {
+      DEBUG.add('▶ button click event', 'ok');
+      ev.preventDefault();
+      performGoogleSignIn();
     });
+    // Touch fallback for older iPad Safari
+    googleBtn.addEventListener('touchend', function(ev) {
+      DEBUG.add('▶ button touchend event', 'ok');
+      ev.preventDefault();
+      performGoogleSignIn();
+    }, { passive: false });
   } else {
     DEBUG.add('FATAL: Google button NOT FOUND in DOM', 'error');
     DEBUG.show();

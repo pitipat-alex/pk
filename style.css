@@ -495,6 +495,16 @@ html.checking .lock-screen { visibility: hidden; }
 html.locked   .wrap        { visibility: hidden; }
 html.locked   body         { overflow: hidden; }
 
+/* iPad fix: hide ALL ambient/animated elements when locked
+   to prevent compositor layers from blocking touch on lock-card */
+html.locked .blobs,
+html.locked .blob {
+  display: none !important;
+}
+html.locked .lock-screen::before {
+  display: none !important;
+}
+
 .lock-screen {
   position: fixed;
   top: 0;
@@ -502,6 +512,7 @@ html.locked   body         { overflow: hidden; }
   bottom: 0;
   left: 0;
   z-index: 1000;
+  isolation: isolate;
   display: none;
   align-items: center;
   justify-content: center;
