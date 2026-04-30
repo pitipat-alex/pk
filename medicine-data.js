@@ -21278,6 +21278,13769 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Ch 65 · IVDD Type I (Hansen Type I) ---------- */
+  {
+    id: 'ivdd-type-1',
+    titleEn: 'Intervertebral Disc Disease (Hansen Type I)',
+    titleTh: 'หมอนรองกระดูกเคลื่อน (Type I)',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['IVDD', 'Hansen Type I', 'disc extrusion', 'Dachshund', 'chondrodystrophic', 'paraplegia', 'deep pain', 'hemilaminectomy', 'thoracolumbar', 'cervical disc', 'modified Frankel score'],
+    aliases: ['herniated disc', 'slipped disc', 'disc extrusion', 'หมอนรองกระดูกเคลื่อน', 'IVDD'],
+    source: 'Ch. 65 · pp. 1130–1155',
+    sections: {
+      definition: `
+        <p>การปลิ้นออกของ <strong>nucleus pulposus</strong> ผ่าน annulus fibrosus เข้าไปกดเส้นประสาทไขสันหลัง — <strong>acute extrusion</strong> ✨</p>
+        <ul>
+          <li>เกิดในหมา <strong>chondrodystrophic breeds</strong> ✨ — Dachshund, French Bulldog, Pekingese, Shih Tzu, Beagle, Basset, Cocker, Corgi</li>
+          <li>Onset acute (hours-days)</li>
+          <li>Age 3-7 yr typical</li>
+          <li>Locations:
+            <ul>
+              <li><strong>Thoracolumbar (T11-L3)</strong> ✨ — most common (~ 65-85%)</li>
+              <li><strong>Cervical (C2-C5)</strong> — ~ 15-20%; severe neck pain ± tetraparesis</li>
+              <li>Lumbosacral — uncommon Type I; usually Type II</li>
+            </ul>
+          </li>
+          <li>Cat: rare</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Chondroid metaplasia of nucleus pulposus → loss of hydration → calcification → fragility</li>
+          <li>Often asymptomatic calcified discs visible on radiograph in chondrodystrophic breeds</li>
+          <li>Trauma / activity → annulus tear → explosive extrusion of nuclear material into spinal canal</li>
+          <li>Genetic: <strong>FGF4 retrogene mutation</strong> in chondrodystrophic breeds (recently identified)</li>
+          <li>Risk factors: obesity, age 3-7, breed</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Extruded material → physical compression of spinal cord</li>
+          <li>+ Concussive injury (high-velocity extrusion)</li>
+          <li>Secondary effects:
+            <ul>
+              <li>Vasogenic edema</li>
+              <li>Hemorrhage</li>
+              <li>Ischemia</li>
+              <li>Inflammatory cascade (free radicals, cytokines)</li>
+              <li>Excitotoxicity (glutamate)</li>
+            </ul>
+          </li>
+          <li>Severity correlates with: speed of compression + degree of compression + duration</li>
+          <li>UMN signs caudal to lesion (T3-L3): exaggerated reflexes hindlimbs, ↑ tone</li>
+          <li>LMN signs at lesion (L4-S3): ↓ reflexes, ↓ tone</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Modified Frankel grading scale ✨ — critical for prognosis:</strong></p>
+        <table style="border-collapse:collapse;width:100%;margin:10px 0;">
+        <tr><th style="border:1px solid #ccc;padding:6px;">Grade</th><th style="border:1px solid #ccc;padding:6px;">Description</th></tr>
+        <tr><td style="border:1px solid #ccc;padding:6px;"><strong>0/I</strong></td><td style="border:1px solid #ccc;padding:6px;">Pain only — no neurologic deficit</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:6px;"><strong>II</strong></td><td style="border:1px solid #ccc;padding:6px;">Ambulatory paraparesis — can walk but ataxic, weak</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:6px;"><strong>III</strong></td><td style="border:1px solid #ccc;padding:6px;">Non-ambulatory paraparesis — can move legs but can't walk/stand</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:6px;"><strong>IV</strong></td><td style="border:1px solid #ccc;padding:6px;">Paraplegia with intact deep pain perception</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:6px;"><strong>V</strong></td><td style="border:1px solid #ccc;padding:6px;"><strong>Paraplegia with absent deep pain</strong> ✗ — emergency surgical</td></tr>
+        </table>
+
+        <p><strong>Thoracolumbar IVDD:</strong></p>
+        <ul>
+          <li>Acute back pain (yelping, reluctance to move, arched back)</li>
+          <li>Progressive weakness in hindlimbs (paraparesis)</li>
+          <li>Ataxia, knuckling</li>
+          <li>Decreased / absent proprioception (paw replacement)</li>
+          <li>Crossed extensor reflex (UMN)</li>
+          <li>Urinary retention / incontinence</li>
+          <li>Fecal incontinence</li>
+          <li>"Dropped tail" (severe)</li>
+          <li>Schiff-Sherrington posture (severe T3-L3): rigid extension thoracic limbs + flaccid hindlimbs (cosmetic, not predictive)</li>
+        </ul>
+
+        <p><strong>Cervical IVDD:</strong></p>
+        <ul>
+          <li><strong>Severe neck pain</strong> ✨ — often presenting sign; vocal, reluctant to move neck, neck guarding, carrying head low</li>
+          <li>Tetraparesis (variable)</li>
+          <li>Lameness "root signature" if foraminal compression</li>
+          <li>Less likely to lose deep pain</li>
+        </ul>
+
+        <p><strong>Deep pain perception (DPP) testing ✨ — CRITICAL:</strong></p>
+        <ul>
+          <li>Apply forceps/hemostat firmly to <strong>BONE</strong> of digit (squeeze across nailbed/digit, not skin)</li>
+          <li>Look for <strong>conscious behavioral response</strong> — turning head, vocalizing, biting (NOT just leg withdrawal — that's reflex)</li>
+          <li>Withdrawal alone = LMN reflex, NOT proof of DPP</li>
+          <li>Test BOTH hindlimbs + tail base</li>
+          <li>Absent DPP &gt; 24-48h = grave prognosis</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Localization first:</strong></p>
+        <ul>
+          <li>C1-C5: tetraparesis, normal/exaggerated all 4 limb reflexes</li>
+          <li>C6-T2: tetraparesis, ↓ thoracic limb reflexes, ↑ pelvic limb reflexes</li>
+          <li>T3-L3: paraparesis with normal/exaggerated pelvic reflexes (UMN)</li>
+          <li>L4-S3: paraparesis with ↓ pelvic reflexes (LMN)</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li><strong>Radiograph (survey):</strong>
+            <ul>
+              <li>Calcified discs (often incidental in chondrodystrophic)</li>
+              <li>Narrowed disc space</li>
+              <li>Calcified material in spinal canal (rarely visible)</li>
+              <li>Rules out fracture, gross neoplasia</li>
+              <li>NOT diagnostic for IVDD by itself</li>
+            </ul>
+          </li>
+          <li><strong>MRI</strong> ✨ — gold standard:
+            <ul>
+              <li>T2 hyperintense disc material in canal</li>
+              <li>Cord compression severity</li>
+              <li>Localizes precise level (essential for surgery)</li>
+              <li>Detects intramedullary changes (hemorrhage, edema, myelomalacia)</li>
+              <li>Differentiates from FCE, neoplasia</li>
+            </ul>
+          </li>
+          <li>CT — alternative; good for calcified extrusions</li>
+          <li>CT myelography — older, still useful if MRI unavailable</li>
+        </ul>
+
+        <p><strong>Other:</strong></p>
+        <ul>
+          <li>CBC, biochem (pre-anesthesia)</li>
+          <li>Bladder size assessment (most have urinary retention)</li>
+          <li>UA</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>FCE (acute, non-painful, often asymmetric)</li>
+          <li>ANNPE (acute non-compressive nucleus pulposus extrusion — "low-volume, high-velocity")</li>
+          <li>Spinal neoplasia (older, progressive)</li>
+          <li>Discospondylitis (febrile, chronic)</li>
+          <li>Meningitis (SRMA — neck pain, young large breed)</li>
+          <li>Trauma / fracture</li>
+          <li>Degenerative myelopathy (older large breed, chronic, non-painful)</li>
+          <li>Spinal arachnoid diverticulum</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment based on grade ✨:</strong></p>
+
+        <p><strong>1. Grade I (pain only) / Grade II (ambulatory paraparesis):</strong></p>
+        <ul>
+          <li><strong>Conservative management option</strong>:
+            <ul>
+              <li>Strict cage rest 4-6 weeks ✨ — non-negotiable</li>
+              <li>NO running, jumping, stairs</li>
+              <li>Walked on leash for elimination only</li>
+              <li>Pain management:
+                <ul>
+                  <li>NSAID (carprofen, meloxicam) if no contraindication</li>
+                  <li>+ Gabapentin 10-20 mg/kg PO q8h (neuropathic pain)</li>
+                  <li>± Methocarbamol 20-30 mg/kg PO q8h (muscle spasm)</li>
+                  <li>± Tramadol 2-5 mg/kg PO q8-12h (limited efficacy in dog)</li>
+                  <li>Avoid concurrent steroid + NSAID</li>
+                </ul>
+              </li>
+              <li>Physical rehabilitation after acute phase (3-4 wk)</li>
+            </ul>
+          </li>
+          <li>Recovery rate: 50-85% with conservative for grade I/II</li>
+          <li>Recurrence rate: 30-50% lifetime</li>
+          <li>Surgery option if: not improving in 5-7 d, worsening, recurrent, severe pain refractory</li>
+        </ul>
+
+        <p><strong>2. Grade III (non-ambulatory paraparesis):</strong></p>
+        <ul>
+          <li><strong>Surgery recommended</strong> ✨ — best outcomes</li>
+          <li>Recovery rate with surgery: 85-95%</li>
+          <li>Conservative possible but: longer recovery, ~ 50-70% recovery, more nursing</li>
+          <li>Refer to surgery as soon as feasible (within 24-48h)</li>
+        </ul>
+
+        <p><strong>3. Grade IV (paraplegia, DPP intact):</strong></p>
+        <ul>
+          <li><strong>Surgery strongly recommended</strong> ✨</li>
+          <li>Recovery rate with surgery: 80-95%</li>
+          <li>Time matters — sooner = better</li>
+          <li>Refer ASAP (within 24h)</li>
+        </ul>
+
+        <p><strong>4. Grade V (paraplegia, NO DPP) ✗ — surgical emergency:</strong></p>
+        <ul>
+          <li><strong>Surgery within 24h critical</strong> ✨ ✗</li>
+          <li>DPP loss &lt; 24h: surgery → ~ 50-60% recovery</li>
+          <li>DPP loss 24-48h: surgery → ~ 30-50% recovery</li>
+          <li>DPP loss &gt; 48h: surgery → ~ &lt; 10-20% recovery</li>
+          <li>Without surgery: ~ 5-10% recovery</li>
+          <li>Risk of <strong>progressive myelomalacia</strong> ✗ (necrosis ascending) — fatal in 3-7 d (~ 10-15% of grade V)</li>
+        </ul>
+
+        <p><strong>Surgical procedures:</strong></p>
+        <ul>
+          <li><strong>Hemilaminectomy</strong> ✨ — thoracolumbar standard
+            <ul>
+              <li>Remove dorsolateral lamina + facet</li>
+              <li>Decompress + remove extruded material</li>
+              <li>Single-side approach</li>
+            </ul>
+          </li>
+          <li><strong>Mini-hemilaminectomy</strong> — less bone removal, faster recovery</li>
+          <li><strong>Ventral slot</strong> — cervical IVDD standard
+            <ul>
+              <li>Approach through ventral neck</li>
+              <li>Remove disc material from ventral canal</li>
+            </ul>
+          </li>
+          <li><strong>Dorsal laminectomy</strong> — alternative; broader access</li>
+          <li>Fenestration (prophylactic): controversial; some surgeons fenestrate adjacent discs</li>
+        </ul>
+
+        <p><strong>Post-op care ✨:</strong></p>
+        <ul>
+          <li>Pain management (multimodal — opioid + gabapentin + NSAID)</li>
+          <li>Bladder management (manual express q6-8h or indwelling catheter; bethanechol if hypotonic)</li>
+          <li>Bedding (padded, turn q4-6h)</li>
+          <li>Eye lubrication if recumbent</li>
+          <li>Physical rehabilitation early (PROM, hydrotherapy)</li>
+          <li>Strict cage rest 4-6 wk</li>
+          <li>Gradual return to activity over 8-12 weeks</li>
+          <li>Long-term: weight management, restricted activity, jumping/stairs</li>
+        </ul>
+
+        <p><strong>Steroids ✗ — NOT recommended:</strong></p>
+        <ul>
+          <li>Methylprednisolone sodium succinate (MPSS) historically used</li>
+          <li>Modern evidence: NO benefit, MORE complications (GI ulceration, perforation, hemorrhage)</li>
+          <li>Don't combine with NSAID ever</li>
+          <li>Dex 0.1-0.2 mg/kg used in some cases (anti-edema) but evidence weak</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Progressive myelomalacia</strong> ✗ — ascending necrosis; fatal 3-7 d (~ 10-15% grade V)
+            <ul>
+              <li>Loss of cutaneous trunci reflex ascending cranially = sign</li>
+              <li>Paraplegia → tetraparesis → respiratory paralysis → death</li>
+              <li>No treatment</li>
+            </ul>
+          </li>
+          <li>UTI from urinary retention</li>
+          <li>Decubital ulcers</li>
+          <li>Aspiration pneumonia (cervical, recumbent)</li>
+          <li>Surgical: hemorrhage, infection, dehiscence, durotomy</li>
+          <li>Recurrence at adjacent disc (~ 30%)</li>
+          <li>Persistent neurologic deficits</li>
+          <li>Chronic pain</li>
+          <li>Iatrogenic GI ulceration (NSAID + recumbency)</li>
+          <li>Self-mutilation (paresthesia post-recovery)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Grade I-II: <strong>excellent</strong> ✓ (85-95% with conservative or surgery)</li>
+          <li>Grade III-IV with surgery: <strong>excellent</strong> (85-95%)</li>
+          <li>Grade V (DPP+) with surgery: 50-70%</li>
+          <li>Grade V (DPP-) within 24h: 50-60%</li>
+          <li>Grade V (DPP-) &gt; 48h: &lt; 20%</li>
+          <li>Time to recovery: weeks to months</li>
+          <li>Recurrence lifetime: 30-50% in chondrodystrophic</li>
+          <li>Adjacent disc disease common (consider prophylactic fenestration controversial)</li>
+        </ul>
+        <div class="callout">⚠️ <strong>DPP loss = surgical emergency within 24h</strong> ✗ — every hour matters; refer immediately<br><br>💡 <strong>Test DPP correctly</strong>: hemostat across BONE of digit + look for CONSCIOUS response (head turn, vocal, bite); withdrawal alone = reflex, not DPP<br><br>Strict cage rest 4-6 weeks = non-negotiable. Steroids NOT recommended (modern evidence).</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 65 · IVDD Type II (Hansen Type II) ---------- */
+  {
+    id: 'ivdd-type-2',
+    titleEn: 'Intervertebral Disc Disease (Hansen Type II)',
+    titleTh: 'หมอนรองกระดูกโป่ง (Type II)',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog'],
+    tags: ['IVDD Type II', 'Hansen Type II', 'disc protrusion', 'large breed', 'chronic compression', 'GSD', 'Lab', 'progressive', 'older dog'],
+    aliases: ['disc protrusion', 'chronic IVDD', 'disc bulge', 'หมอนรองกระดูกโป่ง'],
+    source: 'Ch. 65 · pp. 1130–1155',
+    sections: {
+      definition: `
+        <p>การโป่งของ <strong>annulus fibrosus</strong> ที่เสื่อม → กดเส้นประสาทไขสันหลังเรื้อรัง — <strong>protrusion</strong> ไม่ใช่ extrusion</p>
+        <ul>
+          <li>เกิดในหมา <strong>non-chondrodystrophic large breed</strong> ✨ — GSD, Lab, Golden, Doberman, Rottweiler</li>
+          <li>Onset chronic (months) — slow progressive</li>
+          <li>Older dogs (median 7-9 yr)</li>
+          <li>Locations: thoracolumbar, cervical (Wobbler-related), lumbosacral</li>
+          <li>Often multilevel disease</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Fibroid metaplasia of nucleus + annulus → annular hypertrophy + protrusion</li>
+          <li>Slow degenerative process (vs acute Type I)</li>
+          <li>No FGF4 retrogene mutation</li>
+          <li>Concurrent: spondylosis, ligamentum flavum hypertrophy → spinal stenosis</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Chronic compression → demyelination, axonal damage</li>
+          <li>Less acute concussive injury than Type I</li>
+          <li>Slow adaptation by cord (better prognosis for compression rate)</li>
+          <li>Multilevel often → cumulative effect</li>
+          <li>± Concurrent dynamic compression (with movement)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Slowly progressive paresis / ataxia (months)</li>
+          <li>Difficulty rising</li>
+          <li>"Bunny-hopping," scuffing toes</li>
+          <li>Reluctance to climb stairs / jump</li>
+          <li>Pain less prominent than Type I (often)</li>
+          <li>Fecal/urinary signs late</li>
+          <li>Cervical Type II (Wobbler component): tetraparesis, head ventroflexion, "wobbly" gait</li>
+          <li>Neurologic exam: UMN deficits caudal to lesion (T3-L3 location); LMN if lumbosacral</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>MRI</strong> ✨ — gold standard:</p>
+        <ul>
+          <li>Diffuse disc degeneration (loss of T2 signal)</li>
+          <li>Annular bulging without herniation</li>
+          <li>Multilevel often</li>
+          <li>Spinal stenosis</li>
+          <li>± Spondylosis</li>
+          <li>Cord changes (T2 hyperintensity in chronic compression)</li>
+        </ul>
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (pre-op + age-related screening)</li>
+          <li>Thoracic radiograph (older large breed — neoplasia screen)</li>
+          <li>UA</li>
+          <li>Differentiate from degenerative myelopathy (especially GSD)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Degenerative myelopathy (similar progression GSD, but non-painful, ascending)</li>
+          <li>Spinal neoplasia</li>
+          <li>Discospondylitis</li>
+          <li>Cervical spondylomyelopathy (Wobbler)</li>
+          <li>Lumbosacral disease</li>
+          <li>Bilateral CCL injury (mimics paraparesis)</li>
+          <li>Bilateral hip dysplasia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Conservative — first-line:</strong></p>
+        <ul>
+          <li>NSAID + gabapentin (long-term often needed)</li>
+          <li>Activity modification — restricted (no jumping, controlled walks)</li>
+          <li>Weight management (essential)</li>
+          <li>Physical rehabilitation:
+            <ul>
+              <li>Hydrotherapy</li>
+              <li>Underwater treadmill</li>
+              <li>Strength training</li>
+              <li>PROM</li>
+            </ul>
+          </li>
+          <li>Acupuncture (some evidence)</li>
+          <li>Joint supplements (chondroitin/glucosamine — limited evidence)</li>
+        </ul>
+
+        <p><strong>2. Surgical — selected cases:</strong></p>
+        <ul>
+          <li>Indications: progressive deficits despite conservative, severe deficits, focal lesion identified</li>
+          <li>Procedures: hemilaminectomy, dorsal laminectomy, ventral slot</li>
+          <li>Outcomes more variable than Type I (~ 50-70% improve)
+            <ul>
+              <li>Chronic compression less reversible</li>
+              <li>Multilevel disease limits surgical effectiveness</li>
+              <li>Older dogs, comorbidities</li>
+            </ul>
+          </li>
+          <li>Realistic expectations — slow recovery, may not return to normal</li>
+        </ul>
+
+        <p><strong>3. Long-term management:</strong></p>
+        <ul>
+          <li>Chronic pain management</li>
+          <li>Mobility aids (harnesses, ramps, carts if needed)</li>
+          <li>Physical rehab maintenance</li>
+          <li>Weight control</li>
+          <li>Recheck q3-6 mo</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Progressive deterioration despite treatment</li>
+          <li>UTI from incontinence</li>
+          <li>Decubital ulcers (recumbent stage)</li>
+          <li>Concurrent age-related disease (CKD, cardiac)</li>
+          <li>Surgical complications (more in older patients)</li>
+          <li>Adjacent segment disease post-op</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Conservative + early stage: <strong>good for QOL maintenance</strong> ✓</li>
+          <li>Progressive disease: guarded</li>
+          <li>Surgery selected cases: 50-70% improvement</li>
+          <li>Long-term progressive nature — most dogs eventually decline</li>
+          <li>Lifespan often determined by other comorbidities</li>
+        </ul>
+        <div class="callout">💡 <strong>Type II = chronic compression in older large breed</strong> — slow progressive vs acute Type I. Conservative management + weight + rehab = first-line. Surgery less successful than Type I — set realistic expectations</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 65 · Fibrocartilaginous Embolism (FCE) ---------- */
+  {
+    id: 'fibrocartilaginous-embolism',
+    titleEn: 'Fibrocartilaginous Embolism (FCE)',
+    titleTh: 'FCE — เส้นเลือดไขสันหลังอุดตัน',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['FCE', 'fibrocartilaginous embolism', 'ischemic myelopathy', 'spinal stroke', 'asymmetric', 'non-painful', 'large breed', 'Mini Schnauzer', 'acute non-progressive'],
+    aliases: ['spinal stroke', 'ischemic myelopathy', 'FCE', 'เส้นเลือดไขสันหลังตัน'],
+    source: 'Ch. 65 · pp. 1135–1145',
+    sections: {
+      definition: `
+        <p>การอุดตันของ <strong>spinal artery / vein ด้วยเส้นใยกระดูกอ่อน (fibrocartilage) จาก nucleus pulposus</strong> → infarct ของไขสันหลัง</p>
+        <ul>
+          <li>"<strong>Spinal stroke</strong>" — analogous to cerebral infarct</li>
+          <li>Acute, non-progressive after onset (peaks within 24h, doesn't worsen)</li>
+          <li>Non-painful ✨ (key differentiator from IVDD)</li>
+          <li>Often during exercise / play / sudden activity</li>
+          <li>Predisposed:
+            <ul>
+              <li>Large breeds: GSD, Lab, Doberman, Boxer, Great Dane</li>
+              <li><strong>Miniature Schnauzer</strong> ✨ (small breed exception)</li>
+              <li>Young-middle aged (3-7 yr typical)</li>
+            </ul>
+          </li>
+          <li>Cat: rare</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Fragments of nucleus pulposus enter spinal vasculature (mechanism debated):
+            <ul>
+              <li>Theory: anomalous communication between disc + radicular vessels</li>
+              <li>Tear in vertebral endplate</li>
+              <li>Disc herniation into vertebral body (Schmorl's-like)</li>
+            </ul>
+          </li>
+          <li>Triggers: vigorous exercise, jumping, slipping, occasionally trauma</li>
+          <li>Often no specific trigger identified</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Embolism → arterial / venous occlusion → ischemia</li>
+          <li>Spinal cord infarction</li>
+          <li>Asymmetric infarct → asymmetric clinical signs ✨</li>
+          <li>No compression → no surgical lesion (typically)</li>
+          <li>Acute peak within 24h, then stable / improving</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic features ✨:</strong></p>
+        <ul>
+          <li><strong>Hyperacute onset</strong> ✨ — often during activity; peak within hours</li>
+          <li><strong>Non-painful</strong> ✨ — key differentiator from IVDD
+            <ul>
+              <li>May be brief discomfort at onset (vocalization)</li>
+              <li>No persistent pain on spinal palpation</li>
+            </ul>
+          </li>
+          <li><strong>Asymmetric deficits</strong> ✨ — one side worse than other (one limb worse than contralateral)</li>
+          <li>Non-progressive after 24h — actually improves often</li>
+          <li>Severity ranges: mild paresis to plegia</li>
+          <li>Signs depend on location:
+            <ul>
+              <li>Cervical: tetraparesis (asymmetric)</li>
+              <li>Thoracolumbar: paraparesis (asymmetric)</li>
+              <li>L4-S3: LMN signs in pelvic limbs ± urinary/fecal</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>MRI</strong> ✨ — gold standard:</p>
+        <ul>
+          <li>Focal intramedullary T2 hyperintensity</li>
+          <li>Often asymmetric (lateralized)</li>
+          <li>NO compression / NO disc material in canal</li>
+          <li>± Mild cord swelling</li>
+          <li>± Diffusion-weighted imaging (DWI) — restricted diffusion = acute infarct</li>
+          <li>Differentiates from IVDD, neoplasia, inflammatory</li>
+        </ul>
+
+        <p><strong>CSF analysis (if MRI not definitive):</strong></p>
+        <ul>
+          <li>Often normal or mildly elevated protein</li>
+          <li>Rules out inflammatory myelitis</li>
+        </ul>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (rule out hypercoagulable state, severe systemic dz)</li>
+          <li>Coag panel (some patients)</li>
+          <li>Thoracic radiograph</li>
+          <li>UA</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>IVDD Type I (painful, often symmetric)</li>
+          <li>ANNPE (similar — acute, non-progressive, non-compressive disc; harder to differentiate from FCE on MRI)</li>
+          <li>Spinal trauma (history)</li>
+          <li>Spinal neoplasia (older, progressive)</li>
+          <li>Myelitis (CSF abnormal)</li>
+          <li>Discospondylitis (febrile, painful)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>NO SURGERY</strong> ✨ — no compression to decompress</p>
+
+        <p><strong>Supportive care ✨:</strong></p>
+        <ul>
+          <li>Cage rest 2-4 weeks (prevent re-injury, support recovery)</li>
+          <li>Pain management — usually minimal needed (gabapentin if any)</li>
+          <li>Bladder management (manual express, diapers)</li>
+          <li>Eye lubrication, turn q4-6h if recumbent</li>
+          <li>Padded bedding</li>
+          <li>Nursing care</li>
+        </ul>
+
+        <p><strong>Physical rehabilitation ✨ — cornerstone:</strong></p>
+        <ul>
+          <li>Start within days of diagnosis (when stable)</li>
+          <li>PROM (passive range of motion) q4-6h</li>
+          <li>Hydrotherapy, underwater treadmill</li>
+          <li>Massage</li>
+          <li>Electrical stimulation</li>
+          <li>Strength training as recovers</li>
+          <li>Cart / sling support for ambulation</li>
+        </ul>
+
+        <p><strong>Steroids — NOT recommended:</strong></p>
+        <ul>
+          <li>Historically used; modern evidence shows no benefit</li>
+          <li>Avoid GI complications</li>
+        </ul>
+
+        <p><strong>Recovery timeline:</strong></p>
+        <ul>
+          <li>Most improvement in first 2-4 weeks</li>
+          <li>Plateau by 6-12 weeks</li>
+          <li>Some continued slow improvement up to 6-12 months</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Persistent neurologic deficits (residual paresis common)</li>
+          <li>Urinary incontinence / retention</li>
+          <li>UTI</li>
+          <li>Decubital ulcers (severely affected)</li>
+          <li>Self-trauma to anesthetic limbs</li>
+          <li>Aspiration pneumonia (severely affected, recumbent)</li>
+          <li>Recurrence rare (&lt; 5%)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Often good to excellent</strong> — 60-85% recover ambulation ✓</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Absent deep pain (similar to IVDD — poor)</li>
+              <li>LMN signs at lesion (lumbar intumescence affected)</li>
+              <li>Symmetric severe deficits</li>
+              <li>Lumbosacral location (lower recovery rates)</li>
+            </ul>
+          </li>
+          <li>DPP intact + asymmetric: excellent recovery ~ 80-90%</li>
+          <li>DPP absent: poor (~ 25-35% recover ambulation)</li>
+          <li>Most owners + dogs adapt well to residual deficits</li>
+        </ul>
+        <div class="callout">💡 <strong>Acute non-painful asymmetric paresis during activity = FCE</strong> ✨ — large breed especially, Mini Schnauzer exception<br><br>NO surgery (no compression). Supportive + intensive rehab = treatment. <strong>60-85% recover</strong> with time + work — set realistic expectations</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 65 · Cervical Spondylomyelopathy (Wobbler Syndrome) ---------- */
+  {
+    id: 'wobbler-syndrome',
+    titleEn: 'Cervical Spondylomyelopathy (Wobbler Syndrome)',
+    titleTh: 'Wobbler — กระดูกคอกดเส้นประสาท',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog'],
+    tags: ['Wobbler syndrome', 'CSM', 'cervical spondylomyelopathy', 'Doberman', 'Great Dane', 'tetraparesis', 'cervical IVDD', 'disc-associated', 'osseous-associated', 'distraction stabilization'],
+    aliases: ['CSM', 'cervical spondylomyelopathy', 'Wobblers', 'Wobbler', 'wobbly', 'กระดูกคอ'],
+    source: 'Ch. 65 · pp. 1145–1155',
+    sections: {
+      definition: `
+        <p>Compressive disorder ของ <strong>caudal cervical spinal cord</strong> (C5-C7 mostly) — เกิดจากการรวมกันของ disc protrusion + bony malformation</p>
+        <ul>
+          <li>Term "Wobbler" หมายถึงท่าทาง wobbly gait</li>
+          <li>2 forms (overlap):
+            <ul>
+              <li><strong>Disc-associated CSM (DA-CSM)</strong> ✨ — Doberman classic; middle-older age (5-10 yr); chronic disc protrusion + ligament hypertrophy at C5-C7</li>
+              <li><strong>Osseous-associated CSM (OA-CSM)</strong> — Great Dane, Mastiff, young giant breeds; vertebral bone malformation; younger (1-3 yr)</li>
+            </ul>
+          </li>
+          <li>Predisposed: <strong>Doberman</strong> ✨ (most classic), Great Dane, Mastiff, Bullmastiff, Rottweiler, Lab, Newfoundland, Weimaraner</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Multifactorial:</strong></p>
+        <ul>
+          <li>Genetic predisposition (breed-associated)</li>
+          <li>Conformation (long neck, large head)</li>
+          <li>Disc degeneration (Type II) at C5-C6, C6-C7</li>
+          <li>Vertebral malformation</li>
+          <li>Ligamentum flavum hypertrophy</li>
+          <li>Joint capsule hypertrophy</li>
+          <li>Vertebral body stenosis (giant breeds)</li>
+          <li>Osteoarthritis of articular facets</li>
+          <li>Excessive growth (giant breeds — nutritional contribution debated)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Static compression + dynamic compression (with neck movement)</li>
+          <li>Chronic cord compression → demyelination, axonal damage</li>
+          <li>Spinal cord most damaged in lateral funiculi (UMN to all 4 limbs)</li>
+          <li>Caudal cervical lesion → tetraparesis, but pelvic limbs typically more affected (long tracts) — paradoxical sometimes</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Wobbly gait</strong> ✨ — ataxia all 4 limbs, especially pelvic</li>
+          <li>"Two-engine gait" — pelvic limbs ataxic + thoracic limbs short-strided/stiff</li>
+          <li>Tetraparesis (variable severity)</li>
+          <li>Long stride hindlimbs, short stride forelimbs</li>
+          <li>Knuckling, scuffing</li>
+          <li>Difficulty rising</li>
+          <li>Falling, especially on turns</li>
+          <li>Cervical pain — variable; often surprisingly minimal in DA-CSM</li>
+          <li>Atrophy of muscles, especially shoulder area (severe chronic)</li>
+          <li>Slow progression over months-years (DA-CSM)</li>
+          <li>Acute deterioration possible (acute disc extrusion superimposed)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>MRI ✨ — gold standard:</strong></p>
+        <ul>
+          <li>Compression at C5-C6 / C6-C7 (most common)</li>
+          <li>DA-CSM: disc protrusion ventrally + ligamentum hypertrophy dorsally → "double compression"</li>
+          <li>OA-CSM: vertebral malformation, articular facet osteophytes, central canal stenosis</li>
+          <li>Cord changes (T2 hyperintensity in chronic compression)</li>
+          <li>Multilevel disease often</li>
+          <li>Stress views (flexion/extension) sometimes used</li>
+        </ul>
+
+        <p><strong>Other:</strong></p>
+        <ul>
+          <li>Survey radiograph: vertebral malformation visible (OA-CSM); disc space narrowing</li>
+          <li>CT myelography — alternative if MRI unavailable</li>
+          <li>CSF — usually normal or mild ↑ protein (rule out myelitis)</li>
+          <li>Pre-anesthetic labs</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Cervical IVDD Type I (acute extrusion, similar breeds + age)</li>
+          <li>Spinal neoplasia</li>
+          <li>Discospondylitis</li>
+          <li>SRMA (acute neck pain in young large breeds)</li>
+          <li>Atlantoaxial instability (small breeds; toy)</li>
+          <li>Caudal occipital malformation syndrome (CKCS)</li>
+          <li>Trauma</li>
+          <li>Degenerative myelopathy (different progression — pelvic only initially)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Conservative management ✨ — first-line for mild cases:</strong></p>
+        <ul>
+          <li>Activity restriction (controlled walks, no rough play)</li>
+          <li>NSAID + gabapentin</li>
+          <li>Avoid neck collar — use harness ✨</li>
+          <li>Weight management</li>
+          <li>Physical rehabilitation</li>
+          <li>Reasonable choice for: mild signs, slow progression, owner reluctance for surgery</li>
+          <li>Outcomes: 30-50% improve / stabilize; 50-70% progress</li>
+        </ul>
+
+        <p><strong>2. Surgical management — for moderate-severe:</strong></p>
+        <p>Multiple techniques; choice depends on lesion type, surgeon expertise:</p>
+        <ul>
+          <li><strong>Ventral slot</strong> — disc removal + decompression
+            <ul>
+              <li>Standard for single-level DA-CSM</li>
+              <li>Doesn't address dorsal compression well</li>
+            </ul>
+          </li>
+          <li><strong>Distraction-stabilization (PMMA-pin, screw-rod, custom plate)</strong>:
+            <ul>
+              <li>Distracts vertebrae → relieves both ventral + dorsal compression</li>
+              <li>Stabilizes joint → prevents recurrence at adjacent levels</li>
+              <li>Higher technical demand</li>
+              <li>Better for multi-level disease</li>
+            </ul>
+          </li>
+          <li><strong>Dorsal laminectomy</strong> — for OA-CSM with dorsal compression</li>
+          <li>Custom 3D-printed implants increasingly available</li>
+          <li>Multi-level disease challenging — staged surgeries sometimes</li>
+        </ul>
+
+        <p><strong>Surgical outcomes:</strong></p>
+        <ul>
+          <li>Improvement: ~ 70-80%</li>
+          <li>Recurrence at adjacent levels (~ 15-20%) — "domino effect"</li>
+          <li>Long-term outcomes variable — many improve initially then progress</li>
+          <li>Pre-op severity correlates with outcome</li>
+        </ul>
+
+        <p><strong>3. Long-term:</strong></p>
+        <ul>
+          <li>Continued physical rehabilitation</li>
+          <li>Weight management</li>
+          <li>Activity modification</li>
+          <li>Recheck q3-6 mo</li>
+          <li>Watch for adjacent disc disease post-op</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Progressive deterioration despite conservative</li>
+          <li>Adjacent segment disease post-op (~ 15-20% — "domino effect")</li>
+          <li>Surgical: hemorrhage from vertebral venous sinus ✗, implant failure, infection, dehiscence</li>
+          <li>Persistent neurologic deficits</li>
+          <li>Concurrent disease in older patients</li>
+          <li>Acute deterioration from superimposed disc extrusion</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild cases conservative: variable; 30-50% improve / stable</li>
+          <li>Moderate-severe with surgery: 70-80% improvement</li>
+          <li>Long-term progression possible despite intervention</li>
+          <li>Doberman with severe disease: guarded long-term</li>
+          <li>Young giant breeds (OA-CSM) with surgical correction: variable; growth may exacerbate</li>
+          <li>Owner expectations: improvement, not necessarily cure</li>
+        </ul>
+        <div class="callout">💡 <strong>Doberman with wobbly gait + tetraparesis = Wobbler until proven otherwise</strong> ✨<br><br>Use harness, NOT neck collar! MRI = gold standard. Distraction-stabilization for multi-level disease; outcomes better than ventral slot alone in many cases<br><br>~ 15-20% adjacent segment disease post-op = "domino effect"</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 65 · Lumbosacral Disease (Cauda Equina Syndrome) ---------- */
+  {
+    id: 'lumbosacral-disease',
+    titleEn: 'Lumbosacral Disease (Cauda Equina Syndrome)',
+    titleTh: 'โรคข้อต่อหลังกระเบนเหน็บ',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog'],
+    tags: ['lumbosacral', 'cauda equina', 'DLSS', 'degenerative lumbosacral stenosis', 'GSD', 'lameness', 'tail pain', 'urinary incontinence', 'L7-S1', 'foraminal stenosis'],
+    aliases: ['cauda equina syndrome', 'LS disease', 'DLSS', 'lumbosacral stenosis', 'หลังกระเบนเหน็บ'],
+    source: 'Ch. 65 · pp. 1148–1158',
+    sections: {
+      definition: `
+        <p>Compression ของ <strong>cauda equina</strong> (caudal lumbar + sacral nerve roots) at L7-S1 junction</p>
+        <ul>
+          <li>Most common = <strong>degenerative lumbosacral stenosis (DLSS)</strong> ✨ — multifactorial</li>
+          <li>Predisposed: <strong>German Shepherd</strong> ✨ (most classic), large working breeds, Boxer</li>
+          <li>Middle-aged-older (5-10 yr typical)</li>
+          <li>Active working dogs over-represented</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>DLSS components (combined):</strong></p>
+        <ul>
+          <li>Type II disc protrusion at L7-S1</li>
+          <li>Hypertrophy of dorsal interarcuate ligament + ligamentum flavum</li>
+          <li>Articular facet hypertrophy</li>
+          <li>Spondylosis</li>
+          <li>Lumbosacral instability</li>
+          <li>Transitional vertebral anomalies (predisposing)</li>
+          <li>Hereditary predisposition GSD</li>
+        </ul>
+
+        <p><strong>Other causes:</strong></p>
+        <ul>
+          <li>Discospondylitis L7-S1</li>
+          <li>Neoplasia (nerve sheath tumor, bone)</li>
+          <li>Trauma / fracture</li>
+          <li>Congenital malformation</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Compression of cauda equina (L7, sacral, caudal nerve roots)</li>
+          <li>Affects:
+            <ul>
+              <li>Sciatic nerve (L7) — pelvic limb function, lameness</li>
+              <li>Pudendal (S1-S3) — urinary/fecal continence</li>
+              <li>Caudal (Cd nerves) — tail function</li>
+            </ul>
+          </li>
+          <li>Dynamic compression worsens with extension (ascending stairs, jumping)</li>
+          <li>Foraminal compression → nerve root pain (sciatica-like)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic signs:</strong></p>
+        <ul>
+          <li><strong>Lumbosacral pain</strong> ✨ — pain on:
+            <ul>
+              <li>Direct palpation L7-S1</li>
+              <li>Tail dorsiflexion ("tail-jack test")</li>
+              <li>Hip extension</li>
+              <li>Rising / sitting</li>
+            </ul>
+          </li>
+          <li><strong>Difficulty rising</strong></li>
+          <li>Reluctance to climb stairs, jump</li>
+          <li>"Bunny-hopping" gait sometimes</li>
+          <li><strong>Hindlimb lameness</strong> — often unilateral; sciatic neuropathy</li>
+          <li>Knuckling, scuffing toes (proprioceptive deficits)</li>
+          <li>Muscle atrophy of hindlimbs</li>
+          <li>Tail flaccidity / weakness</li>
+          <li><strong>Urinary incontinence</strong> ✗ — late sign; LMN bladder (dribbling)</li>
+          <li>Fecal incontinence (severe)</li>
+          <li>Self-mutilation / chewing (paresthesia)</li>
+        </ul>
+
+        <p><strong>Neurologic exam:</strong></p>
+        <ul>
+          <li>↓ Patellar reflex (variable, often preserved)</li>
+          <li>↓ Sciatic reflex (cranial tibial, gastrocnemius)</li>
+          <li>↓ Withdrawal of pelvic limbs</li>
+          <li>↓ Anal tone, perianal reflex</li>
+          <li>↓ Tail tone</li>
+          <li>± Postural reaction deficits</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>MRI ✨ — gold standard:</strong></p>
+        <ul>
+          <li>L7-S1 disc protrusion</li>
+          <li>Foraminal stenosis</li>
+          <li>Nerve root impingement</li>
+          <li>Endplate changes (osteoarthritis)</li>
+          <li>Transitional vertebra (anomaly)</li>
+          <li>Stress views (flexion/extension) helpful</li>
+        </ul>
+
+        <p><strong>Other imaging:</strong></p>
+        <ul>
+          <li>Survey radiograph: spondylosis, narrowed L7-S1, transitional vertebra, sclerosis</li>
+          <li>CT — alternative; bony anatomy excellent</li>
+          <li>Discography (rare now)</li>
+        </ul>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem</li>
+          <li>UA + culture (UTI from incontinence)</li>
+          <li>Hip radiograph (often concurrent hip dysplasia in GSD)</li>
+          <li>Differentiate: orthopedic causes (hip, stifle) vs neurologic</li>
+          <li>Rectal exam (mass, prostate)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Hip dysplasia / OA</li>
+          <li>Bilateral cruciate disease</li>
+          <li>Discospondylitis L7-S1</li>
+          <li>Spinal neoplasia</li>
+          <li>Nerve sheath tumor (chronic monoparesis with pain)</li>
+          <li>Degenerative myelopathy (non-painful, ascending)</li>
+          <li>Iliopsoas strain</li>
+          <li>Prostate disease (intact male)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Conservative — first-line for mild:</strong></p>
+        <ul>
+          <li>Activity restriction (no jumping, stairs, agility)</li>
+          <li>NSAID</li>
+          <li>Gabapentin (neuropathic pain)</li>
+          <li>Methocarbamol (muscle spasm)</li>
+          <li>Tramadol or amantadine for chronic pain</li>
+          <li>Weight management (essential)</li>
+          <li>Physical rehabilitation:
+            <ul>
+              <li>Hydrotherapy</li>
+              <li>Core strengthening</li>
+              <li>Cavalettis</li>
+            </ul>
+          </li>
+          <li>Acupuncture, laser (some evidence)</li>
+          <li>Outcomes: 50-70% manage with conservative</li>
+        </ul>
+
+        <p><strong>2. Epidural injection:</strong></p>
+        <ul>
+          <li>Methylprednisolone acetate epidural — 0.5-1 mg/kg</li>
+          <li>For chronic pain refractory to NSAID</li>
+          <li>May provide weeks-months of relief</li>
+          <li>Repeatable</li>
+          <li>Best done under fluoroscopy or imaging-guided</li>
+        </ul>
+
+        <p><strong>3. Surgery — for refractory / severe:</strong></p>
+        <ul>
+          <li><strong>Dorsal laminectomy of L7-S1</strong> ✨ — most common
+            <ul>
+              <li>Decompresses cauda equina</li>
+              <li>Disc removal (partial or full)</li>
+              <li>± Foraminotomy if foraminal stenosis</li>
+            </ul>
+          </li>
+          <li>Distraction-stabilization (screws, pins, PMMA) — for instability cases</li>
+          <li>Outcomes: 70-90% improvement</li>
+          <li>Lameness from concurrent hip dysplasia not improved by LS surgery</li>
+        </ul>
+
+        <p><strong>4. Long-term:</strong></p>
+        <ul>
+          <li>Activity modification</li>
+          <li>Weight maintenance</li>
+          <li>Maintenance physical rehab</li>
+          <li>Recheck q3-6 mo</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Persistent urinary incontinence (LMN bladder)</li>
+          <li>UTI (recurrent)</li>
+          <li>Persistent fecal incontinence</li>
+          <li>Tail flaccidity (cosmetic + cleanliness issue)</li>
+          <li>Surgical: hemorrhage, infection, instability post-decompression</li>
+          <li>Adjacent segment disease</li>
+          <li>Concurrent hip dysplasia limiting overall mobility</li>
+          <li>Self-mutilation</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild cases conservative: <strong>good</strong> — 50-70% manage long-term ✓</li>
+          <li>Surgery for refractory: 70-90% improvement</li>
+          <li>Negative prognostic: severe deficits at presentation, urinary incontinence chronic, multilevel disease</li>
+          <li>Working dog return to work: variable — often retire to companion role</li>
+          <li>Concurrent hip dysplasia complicates outcome</li>
+        </ul>
+        <div class="callout">💡 <strong>Older GSD with difficulty rising + hindlimb lameness + tail pain = LS disease</strong> ✨<br><br>Tail-jack test + hip extension elicit pain. Conservative + weight + rehab first; surgery if refractory or urinary incontinence develops</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 65 · Degenerative Myelopathy ---------- */
+  {
+    id: 'degenerative-myelopathy',
+    titleEn: 'Degenerative Myelopathy (DM)',
+    titleTh: 'DM — โรคไขสันหลังเสื่อม',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog'],
+    tags: ['degenerative myelopathy', 'DM', 'GSD', 'SOD1', 'genetic test', 'progressive', 'non-painful', 'paraparesis', 'cell-mediated', 'ascending'],
+    aliases: ['DM', 'CDRM', 'chronic degenerative radiculomyelopathy', 'ไขสันหลังเสื่อม'],
+    source: 'Ch. 65 · pp. 1155–1165',
+    sections: {
+      definition: `
+        <p>Adult-onset, progressive, <strong>non-painful</strong> degeneration ของไขสันหลัง — <strong>"ALS-like"</strong> ในหมา</p>
+        <ul>
+          <li>Cause: <strong>SOD1 gene mutation</strong> ✨ (autosomal recessive incomplete penetrance)</li>
+          <li>Onset typically &gt; 8 yr (range 5-14 yr)</li>
+          <li>Predisposed: <strong>German Shepherd</strong> ✨, Boxer, Pembroke Welsh Corgi, Rhodesian Ridgeback, Chesapeake Bay Retriever, Cardigan Welsh Corgi</li>
+          <li>Genetic test (SOD1) available — predictive but not diagnostic alone</li>
+          <li>Affects ~ 0.2% of all dogs; up to 2% of GSDs</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>SOD1 mutation</strong> — superoxide dismutase 1 gene
+            <ul>
+              <li>Same gene mutated in some forms of human ALS</li>
+              <li>Misfolded protein accumulation → motor neuron degeneration</li>
+            </ul>
+          </li>
+          <li>Autosomal recessive with incomplete penetrance:
+            <ul>
+              <li>Homozygous (at-risk): may or may not develop disease</li>
+              <li>Heterozygous (carrier): typically don't develop but transmit</li>
+              <li>Wild type: not affected</li>
+            </ul>
+          </li>
+          <li>Other genetic modifiers contribute</li>
+          <li>NOT autoimmune (despite older theories)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Axonal degeneration + demyelination of <strong>thoracolumbar spinal cord white matter</strong></li>
+          <li>Particularly affects: dorsolateral funiculi (UMN to hindlimbs)</li>
+          <li>Initially T3-L3 region → ascends with time</li>
+          <li>Eventually motor neurons of brainstem affected</li>
+          <li>Progressive but no inflammation, no compression, no infection</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Stages — typical progression over 6-12 months ✨:</strong></p>
+
+        <p><strong>Early (Stage 1):</strong></p>
+        <ul>
+          <li>Asymmetric pelvic limb proprioceptive ataxia</li>
+          <li>Knuckling on one or both pelvic feet</li>
+          <li>Scuffing nails (worn at ends)</li>
+          <li>Subtle weakness, occasional stumbling</li>
+          <li>Owner notices "dragging back legs"</li>
+          <li><strong>NON-PAINFUL</strong> ✨ (key feature)</li>
+          <li>Normal spinal reflexes (intact reflexes ✨)</li>
+          <li>UMN signs in pelvic limbs</li>
+        </ul>
+
+        <p><strong>Mid (Stage 2):</strong></p>
+        <ul>
+          <li>Progressive paraparesis</li>
+          <li>Can't rise from sitting position</li>
+          <li>Falling, wobbliness</li>
+          <li>Loss of voluntary movement</li>
+          <li>Crossed extensor reflex</li>
+          <li>Reflexes still intact</li>
+          <li>Urinary continence usually preserved early</li>
+        </ul>
+
+        <p><strong>Advanced (Stage 3):</strong></p>
+        <ul>
+          <li>Paraplegia — non-ambulatory</li>
+          <li>LMN signs developing (↓ reflexes — disease ascends to lumbar intumescence)</li>
+          <li>Muscle atrophy of hindlimbs</li>
+          <li>Urinary + fecal incontinence</li>
+          <li>Pressure sores</li>
+        </ul>
+
+        <p><strong>End-stage (Stage 4):</strong></p>
+        <ul>
+          <li>Tetraparesis / tetraplegia (ascends to thoracic)</li>
+          <li>Difficulty swallowing, vocalizing</li>
+          <li>Respiratory muscle involvement</li>
+          <li>Most owners euthanize before end-stage</li>
+        </ul>
+
+        <p><strong>Hallmarks ✨:</strong></p>
+        <ul>
+          <li>Adult-onset (&gt; 5-8 yr)</li>
+          <li>Slowly progressive (months)</li>
+          <li>Non-painful</li>
+          <li>Symmetric (eventually)</li>
+          <li>UMN signs initially → LMN later</li>
+          <li>Predisposed breed</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis = exclusion of other compressive/inflammatory diseases ✨</strong></p>
+
+        <p><strong>1. Compatible signalment + clinical course</strong></p>
+
+        <p><strong>2. Rule out other causes (essential):</strong></p>
+        <ul>
+          <li><strong>MRI</strong> ✨ — exclude IVDD Type II, neoplasia, FCE, myelitis, Wobbler, LS disease
+            <ul>
+              <li>DM: cord usually appears normal (no compression)</li>
+              <li>± Mild atrophy in advanced cases</li>
+              <li>Critical to rule out treatable conditions!</li>
+            </ul>
+          </li>
+          <li>CSF: usually normal or mildly elevated protein (rules out myelitis)</li>
+          <li>CBC, biochem (rules out metabolic causes)</li>
+        </ul>
+
+        <p><strong>3. SOD1 genetic test:</strong></p>
+        <ul>
+          <li>Buccal swab or blood</li>
+          <li>OFA, breed-specific labs</li>
+          <li><strong>Interpretation:</strong>
+            <ul>
+              <li>Homozygous (at-risk + clinical signs + ruled out other causes) = strong DM diagnosis</li>
+              <li>Heterozygous = unlikely to have DM (look for other causes)</li>
+              <li>Negative for mutation = rules out classic SOD1-DM (but other forms exist rarely)</li>
+            </ul>
+          </li>
+          <li>Many at-risk dogs never develop disease — test alone doesn't diagnose</li>
+        </ul>
+
+        <p><strong>4. Definitive: histopathology post-mortem (degenerative changes in white matter)</strong></p>
+      `,
+      differential: `
+        <ul>
+          <li>IVDD Type II (compression — visible on MRI)</li>
+          <li>Wobbler (cervical signs)</li>
+          <li>Lumbosacral disease (painful, lameness)</li>
+          <li>Spinal neoplasia (more rapid, painful often)</li>
+          <li>Discospondylitis (febrile, painful)</li>
+          <li>Myelitis (CSF abnormal)</li>
+          <li>Bilateral CCL disease (orthopedic — different exam findings)</li>
+          <li>Hip dysplasia (lameness, painful)</li>
+          <li>Cauda equina syndrome</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>NO CURE ✗ — supportive care only</strong></p>
+
+        <p><strong>1. Physical rehabilitation ✨ — cornerstone:</strong></p>
+        <ul>
+          <li>Best evidence-based intervention</li>
+          <li>Slows progression, maintains QOL</li>
+          <li>Components:
+            <ul>
+              <li>Underwater treadmill 2-3×/week</li>
+              <li>Hydrotherapy</li>
+              <li>PROM (passive range of motion)</li>
+              <li>Gentle strength exercises</li>
+              <li>Balance / proprioception work (cavalettis)</li>
+              <li>Massage</li>
+            </ul>
+          </li>
+          <li>Studies show prolonged ambulation by 6+ months with intensive rehab</li>
+          <li>Owner can be taught to do daily home exercises</li>
+        </ul>
+
+        <p><strong>2. Mobility aids:</strong></p>
+        <ul>
+          <li>Boots / socks (protect dragging feet)</li>
+          <li>Carts / wheelchairs ✨ (Walkin' Wheels, custom)
+            <ul>
+              <li>Most dogs adapt well</li>
+              <li>Maintains exercise + QOL</li>
+              <li>Use as needed; not full-time</li>
+            </ul>
+          </li>
+          <li>Harnesses / slings (RuffWear, Help-Em-Up)</li>
+          <li>Yoga mats / non-slip flooring at home</li>
+          <li>Ramps</li>
+          <li>Raised food/water bowls</li>
+        </ul>
+
+        <p><strong>3. Nursing care:</strong></p>
+        <ul>
+          <li>Bladder management (express, catheter, diapers)</li>
+          <li>Skin care (turn, padded bedding, monitor for sores)</li>
+          <li>Coat care (clean of urine/feces)</li>
+          <li>Eye lubrication when prolonged recumbency</li>
+          <li>Prevent self-trauma (boots, monitor)</li>
+        </ul>
+
+        <p><strong>4. Antioxidants / supplements (limited evidence):</strong></p>
+        <ul>
+          <li>Vitamin E 2000 IU/day</li>
+          <li>Vitamin C</li>
+          <li>Selenium</li>
+          <li>S-adenosylmethionine (SAMe)</li>
+          <li>Coenzyme Q10</li>
+          <li>Omega-3 fatty acids</li>
+          <li>None proven effective; commonly tried; minimal harm</li>
+        </ul>
+
+        <p><strong>5. Avoid:</strong></p>
+        <ul>
+          <li>Aminocaproic acid — historical, no benefit</li>
+          <li>Steroids — no benefit, significant side effects</li>
+        </ul>
+
+        <p><strong>6. Owner counseling ✨:</strong></p>
+        <ul>
+          <li>Educate on inevitable progression — be honest</li>
+          <li>Discuss QOL milestones early:
+            <ul>
+              <li>When non-ambulatory + nursing demands exceed family capacity</li>
+              <li>When QOL deteriorates (loss of joy, persistent distress)</li>
+            </ul>
+          </li>
+          <li>Hospice / palliative approach</li>
+          <li>Plan for euthanasia when appropriate (often when cart-bound + incontinent + signs spreading)</li>
+          <li>Genetic implications — siblings, breeding stock testing</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>UTI (incontinence — common)</li>
+          <li>Pressure sores / decubital ulcers</li>
+          <li>Self-trauma to feet</li>
+          <li>Aspiration pneumonia (advanced)</li>
+          <li>Concurrent age-related disease</li>
+          <li>Caretaker burnout (large breed, prolonged nursing)</li>
+          <li>Cost of physical therapy + equipment</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Inevitably progressive — no cure</strong> ✗</li>
+          <li>Median survival from onset to euthanasia: <strong>6-12 months</strong> (without rehab)</li>
+          <li>With intensive rehab: <strong>extended ambulatory phase to 12-24 months</strong></li>
+          <li>QOL good in early-mid stages; declines progressively</li>
+          <li>Most owners euthanize when:
+            <ul>
+              <li>Non-ambulatory despite cart</li>
+              <li>Persistent incontinence</li>
+              <li>Disease ascending to forelimbs</li>
+              <li>Loss of joy / distress</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Older GSD with progressive non-painful pelvic limb ataxia + intact reflexes = DM</strong> ✨ — but ALWAYS rule out IVDD Type II first with MRI<br><br>SOD1 genetic test = supportive but not diagnostic alone. <strong>Physical rehabilitation = best intervention</strong> — slows progression, extends ambulatory time. Mobility aids + nursing + honest owner counseling = good QOL while it lasts</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 64 · Meningoencephalitis of Unknown Etiology (MUE/GME) ---------- */
+  {
+    id: 'meningoencephalitis-unknown-etiology',
+    titleEn: 'Meningoencephalitis of Unknown Etiology (MUE/GME/NME/NLE)',
+    titleTh: 'MUE — สมองอักเสบไม่ทราบสาเหตุ',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog'],
+    tags: ['MUE', 'MUO', 'GME', 'granulomatous meningoencephalitis', 'NME', 'necrotizing meningoencephalitis', 'NLE', 'pug encephalitis', 'cytosine arabinoside', 'cytarabine', 'cyclosporine', 'leflunomide', 'prednisolone', 'small breed'],
+    aliases: ['MUE', 'MUO', 'GME', 'pug encephalitis', 'sterile meningoencephalitis', 'สมองอักเสบ'],
+    source: 'Ch. 64 · pp. 1117–1130',
+    sections: {
+      definition: `
+        <p>กลุ่มโรคสมองอักเสบที่ <strong>ไม่ใช่ติดเชื้อ</strong> — น่าจะเป็น immune-mediated</p>
+        <ul>
+          <li>"<strong>MUE</strong>" (Meningoencephalitis of Unknown Etiology) หรือ "MUO" = umbrella term ปัจจุบัน</li>
+          <li>3 histologic subtypes (definitive dx ต้อง biopsy / necropsy):
+            <ul>
+              <li><strong>GME</strong> (Granulomatous ME) — ทุก breed; multifocal granulomas perivascular</li>
+              <li><strong>NME</strong> (Necrotizing ME) — Pug, Maltese, Yorkie, Chihuahua, Shih Tzu, French Bulldog ✨</li>
+              <li><strong>NLE</strong> (Necrotizing Leukoencephalitis) — Yorkie, French Bulldog, Maltese</li>
+            </ul>
+          </li>
+          <li>เจอบ่อยใน <strong>young-middle aged small/toy breeds</strong> ✨ — Pug, Yorkie, Maltese, Chihuahua, Toy Poodle</li>
+          <li>Female slightly &gt; male</li>
+          <li>Median age 4-6 yr</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Suspected immune-mediated / autoimmune</strong> — exact trigger unknown</li>
+          <li>Possible genetic predisposition (breed clustering — DLA haplotypes in some)</li>
+          <li>Possible infectious trigger (viral?) initiating autoimmune response</li>
+          <li>NOT contagious</li>
+          <li>NOT directly inherited but breed predisposition strong</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>T-cell-mediated CNS inflammation</li>
+          <li>Perivascular cuffing of lymphocytes + macrophages → granulomas (GME)</li>
+          <li>Necrosis of brain tissue (NME — gray matter, NLE — white matter)</li>
+          <li>Distribution:
+            <ul>
+              <li>Focal (10-20%) — single mass-like lesion (mimics neoplasia)</li>
+              <li>Multifocal (most) — multiple regions</li>
+              <li>Disseminated (rare) — diffuse CNS</li>
+              <li>Ocular (rare) — optic neuritis</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p>Highly variable — depends on lesion location:</p>
+        <ul>
+          <li><strong>Forebrain signs (most common):</strong>
+            <ul>
+              <li>Seizures ✨</li>
+              <li>Behavioral changes (aggression, dullness, disorientation)</li>
+              <li>Compulsive walking / circling</li>
+              <li>Cortical blindness</li>
+              <li>Mentation changes</li>
+            </ul>
+          </li>
+          <li><strong>Brainstem signs:</strong>
+            <ul>
+              <li>Cranial nerve deficits (multiple — V, VII, VIII, IX, X, XII)</li>
+              <li>Vestibular signs (central pattern)</li>
+              <li>Tetraparesis / hemiparesis</li>
+            </ul>
+          </li>
+          <li><strong>Cerebellar signs:</strong>
+            <ul>
+              <li>Intention tremor</li>
+              <li>Hypermetria</li>
+              <li>Ataxia</li>
+            </ul>
+          </li>
+          <li><strong>Spinal cord signs (myelitis component):</strong>
+            <ul>
+              <li>Paraparesis, tetraparesis</li>
+              <li>Spinal pain</li>
+            </ul>
+          </li>
+          <li><strong>Ocular:</strong>
+            <ul>
+              <li>Optic neuritis → blindness (sudden)</li>
+              <li>Anisocoria</li>
+              <li>Uveitis</li>
+            </ul>
+          </li>
+          <li><strong>Pattern:</strong>
+            <ul>
+              <li>Acute or subacute onset (days-weeks)</li>
+              <li>Often progressive</li>
+              <li>Multifocal signs (vs single localization)</li>
+              <li>Pug NME often: rapid + severe seizures, prosencephalic signs ✗</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Antemortem diagnosis = presumptive</strong> ✨ — based on:</p>
+        <ol>
+          <li>Compatible clinical signs</li>
+          <li>Compatible MRI</li>
+          <li>Compatible CSF</li>
+          <li>Exclusion of infectious causes</li>
+        </ol>
+
+        <p><strong>1. MRI ✨ — essential:</strong></p>
+        <ul>
+          <li>T2 hyperintensities (multifocal usually)</li>
+          <li>Variable contrast enhancement</li>
+          <li>Meningeal enhancement</li>
+          <li>Mass-effect lesions (focal GME — mimics tumor)</li>
+          <li>NME: characteristic loss of gray-white differentiation in cortex</li>
+          <li>Asymmetric or symmetric patterns</li>
+          <li>Rules out neoplasia, hydrocephalus, structural lesions</li>
+        </ul>
+
+        <p><strong>2. CSF analysis ✨ — typical findings:</strong></p>
+        <ul>
+          <li><strong>Mononuclear pleocytosis</strong> ✨ — typically lymphocytes &gt; macrophages
+            <ul>
+              <li>WBC 10-1000+ cells/µL (variable)</li>
+              <li>Mixed lymphocytic-histiocytic typical for GME</li>
+              <li>Neutrophilic possible (acute / NME)</li>
+            </ul>
+          </li>
+          <li>↑ Protein (50-1000 mg/dL)</li>
+          <li>± Eosinophils (uncommon)</li>
+          <li>Submit sample for infectious workup parallel</li>
+          <li>CSF can be normal in some GME cases (focal mass without communication)</li>
+        </ul>
+
+        <p><strong>3. Rule out infectious causes ✨ — CRITICAL:</strong></p>
+        <ul>
+          <li>Toxoplasma gondii titers (IgG, IgM) — serum + CSF ratio</li>
+          <li>Neospora caninum titers</li>
+          <li>Cryptococcus latex agglutination (serum + CSF)</li>
+          <li>Ehrlichia, Anaplasma serology</li>
+          <li>Rickettsia (RMSF)</li>
+          <li>CDV (canine distemper) — serology, PCR</li>
+          <li>Bacterial culture CSF</li>
+          <li>Fungal culture / cytology</li>
+          <li>WHY: immunosuppression for MUE worsens infectious causes ✗</li>
+        </ul>
+
+        <p><strong>4. Other workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (often normal; rule out other systemic disease)</li>
+          <li>UA</li>
+          <li>BP</li>
+          <li>Thoracic radiograph + abdominal US (rule out other systemic dz / metastatic disease)</li>
+        </ul>
+
+        <p><strong>Definitive diagnosis = histopathology (biopsy or necropsy)</strong></p>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Infectious meningoencephalitis</strong> ✨ — CRITICAL to rule out
+            <ul>
+              <li>Toxoplasmosis, neosporosis</li>
+              <li>Cryptococcosis</li>
+              <li>Bacterial (extension from middle ear, sinus)</li>
+              <li>Rickettsia, Ehrlichia, RMSF</li>
+              <li>Distemper</li>
+              <li>FIP (cat — but this is dog entry)</li>
+              <li>Aspergillosis, blastomycosis</li>
+              <li>Protothecal</li>
+            </ul>
+          </li>
+          <li>Brain tumor (focal GME mimics)</li>
+          <li>SRMA (cervical pain, young dog — different signs)</li>
+          <li>Toxic encephalopathy (history)</li>
+          <li>Stroke / vascular event</li>
+          <li>Lysosomal storage diseases (juvenile)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Goal: immunosuppression to control inflammation</strong></p>
+
+        <p><strong>1. Glucocorticoids ✨ — first-line:</strong></p>
+        <ul>
+          <li><strong>Prednisolone 1-2 mg/kg PO q12h initially</strong> ✨
+            <ul>
+              <li>Or higher (2 mg/kg q12h) for severe cases</li>
+              <li>Continue induction dose 2-4 weeks</li>
+              <li>Then taper gradually over months</li>
+            </ul>
+          </li>
+          <li>Severe / status: dexamethasone SP 0.1-0.2 mg/kg IV initially
+            <ul>
+              <li>Anti-edema effect</li>
+              <li>Switch to oral pred when stable</li>
+            </ul>
+          </li>
+          <li>Long-term: typically months to lifelong</li>
+          <li>Side effects: PU/PD, polyphagia, panting, behavioral changes, iatrogenic Cushing's signs</li>
+        </ul>
+
+        <p><strong>2. Cytosine arabinoside (Cytarabine, Ara-C) ✨ — adjunct:</strong></p>
+        <ul>
+          <li><strong>Protocol: 50 mg/m² SC q12h × 4 doses (= 2 days), then repeat every 3-4 weeks</strong>
+            <ul>
+              <li>Crosses blood-brain barrier</li>
+              <li>Cytotoxic to lymphocytes</li>
+              <li>Synergistic with prednisolone</li>
+            </ul>
+          </li>
+          <li>Alternative: continuous infusion 200 mg/m² IV over 24h q3-4 wk</li>
+          <li><strong>Side effects:</strong>
+            <ul>
+              <li>Myelosuppression (CBC q1-2 wk initially, then before each cycle)</li>
+              <li>GI upset (transient)</li>
+              <li>Generally well-tolerated</li>
+            </ul>
+          </li>
+          <li>Best evidence for improved outcomes vs steroids alone</li>
+          <li>Continue 1-2 yr or longer based on response</li>
+        </ul>
+
+        <p><strong>3. Cyclosporine — alternative / adjunct:</strong></p>
+        <ul>
+          <li>5-10 mg/kg PO q12h</li>
+          <li>Calcineurin inhibitor — T-cell suppression</li>
+          <li>Goal trough level 200-400 ng/mL</li>
+          <li>Side effects: GI upset, gingival hyperplasia, hirsutism, opportunistic infections</li>
+          <li>Less commonly used than Ara-C currently</li>
+        </ul>
+
+        <p><strong>4. Leflunomide:</strong></p>
+        <ul>
+          <li>2-4 mg/kg PO q24h</li>
+          <li>Pyrimidine synthesis inhibitor</li>
+          <li>Adjunct or alternative</li>
+          <li>Monitor liver enzymes</li>
+        </ul>
+
+        <p><strong>5. Mycophenolate mofetil:</strong></p>
+        <ul>
+          <li>10-20 mg/kg PO q12h</li>
+          <li>Increasingly used adjunct</li>
+          <li>Side effects: GI upset, myelosuppression</li>
+        </ul>
+
+        <p><strong>6. Other adjuncts:</strong></p>
+        <ul>
+          <li>Procarbazine (alkylating) — older protocol</li>
+          <li>Lomustine (CCNU) — for refractory; myelosuppressive</li>
+          <li>Radiation therapy — for focal mass-like GME (specialty)</li>
+        </ul>
+
+        <p><strong>Concurrent management:</strong></p>
+        <ul>
+          <li><strong>Anticonvulsants</strong> if seizures (phenobarbital, levetiracetam — see seizure entry)</li>
+          <li>Anti-edema (mannitol if acute herniation concern)</li>
+          <li>Supportive nursing</li>
+          <li>Address ocular involvement (topical steroid for uveitis/optic neuritis)</li>
+        </ul>
+
+        <p><strong>Common protocol:</strong></p>
+        <ol>
+          <li>Pred 1-2 mg/kg PO q12h × 2-4 wk</li>
+          <li>+ Ara-C 50 mg/m² SC q12h × 4 doses, repeat q3-4 wk</li>
+          <li>Slowly taper pred over 6-12+ months</li>
+          <li>Continue Ara-C cycles 1-2 yr (or longer)</li>
+          <li>Monitor: clinical signs, repeat MRI / CSF at 3-6 mo to assess response</li>
+        </ol>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical response — neuro exam q2-4 wk initially</li>
+          <li>CBC + biochem q2-4 wk × 2-3 mo, then monthly, then q3 mo</li>
+          <li>CBC before each Ara-C cycle</li>
+          <li>Repeat MRI ± CSF at 3-6 months — assess inflammation resolution</li>
+          <li>UA q3 mo (UTI from steroids)</li>
+          <li>Watch for: relapse signs, infection (immunosuppression), drug side effects</li>
+        </ul>
+
+        <p><strong>Relapse:</strong></p>
+        <ul>
+          <li>Common (30-50% relapse during taper)</li>
+          <li>Increase immunosuppression back to induction levels</li>
+          <li>Add or escalate adjunct</li>
+          <li>Re-image to confirm</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Status epilepticus</strong> ✗ — common cause of death</li>
+          <li>Cerebral edema → herniation ✗</li>
+          <li>Progression of disease despite treatment</li>
+          <li>Iatrogenic Cushing's (long-term steroids)</li>
+          <li>Opportunistic infections (immunosuppression):
+            <ul>
+              <li>UTI</li>
+              <li>Pyoderma, demodex</li>
+              <li>Pneumonia</li>
+              <li>Toxoplasmosis reactivation</li>
+            </ul>
+          </li>
+          <li>GI: gastric ulceration (steroids), pancreatitis</li>
+          <li>Diabetes mellitus (steroid-induced)</li>
+          <li>Drug-specific side effects (Ara-C myelosuppression, cyclosporine GI/skin)</li>
+          <li>Persistent neurologic deficits</li>
+          <li>Permanent blindness (optic neuritis, cortical)</li>
+          <li>Caretaker burden + financial burden</li>
+        </ul>
+        <p><strong>Prognosis ✨:</strong></p>
+        <ul>
+          <li><strong>Variable — depends on subtype + response to Tx:</strong></li>
+          <li>GME (focal): MST 12-24 months with treatment</li>
+          <li>GME (multifocal): MST 6-18 months</li>
+          <li>NME (Pug): poor — MST 1-12 months despite Tx ✗</li>
+          <li>NLE: poor — MST &lt; 6 months</li>
+          <li>~ 30-40% achieve good response and prolonged survival (&gt; 1 yr)</li>
+          <li>~ 30% partial response</li>
+          <li>~ 30% poor response → euthanasia within months</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Status epilepticus at presentation</li>
+              <li>Brainstem involvement</li>
+              <li>NME / NLE subtype</li>
+              <li>Severe MRI changes</li>
+              <li>High CSF protein / cells</li>
+              <li>Pug breed</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Young-middle aged small breed + acute neurologic signs (seizures, behavioral, multifocal) = MUE until proven otherwise</strong> ✨ — Pug, Yorkie, Maltese, Chihuahua especially<br><br>💡 <strong>Rule out infectious before immunosuppression</strong> ✗ — Toxo, Neospora, Crypto, RMSF; immunosuppressing infectious worsens outcome<br><br>Prednisolone + cytarabine (Ara-C) protocol = standard. Long-term Tx, watch for relapse during taper</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 64 · Steroid-Responsive Meningitis-Arteritis (SRMA) ---------- */
+  {
+    id: 'steroid-responsive-meningitis-arteritis',
+    titleEn: 'Steroid-Responsive Meningitis-Arteritis (SRMA)',
+    titleTh: 'SRMA — เยื่อหุ้มสมองอักเสบในหมาวัยรุ่น',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog'],
+    tags: ['SRMA', 'beagle pain syndrome', 'aseptic meningitis', 'cervical pain', 'neutrophilic pleocytosis', 'IgA elevated', 'young large breed', 'Boxer', 'Beagle', 'BMD', 'prednisolone', 'fever'],
+    aliases: ['SRMA', 'beagle pain syndrome', 'aseptic meningitis', 'corticosteroid-responsive meningitis', 'เยื่อหุ้มสมองอักเสบ'],
+    source: 'Ch. 64 · pp. 1117–1130',
+    sections: {
+      definition: `
+        <p>โรค <strong>immune-mediated meningitis + arteritis</strong> ในหมาวัยรุ่น — ตอบสนองต่อ steroids ดี ✨</p>
+        <ul>
+          <li>เจอใน <strong>young-middle aged dogs (6 mo - 2 yr typically)</strong> ✨</li>
+          <li>Predisposed: <strong>Beagle</strong> (Beagle pain syndrome), <strong>Boxer</strong>, <strong>Bernese Mountain Dog</strong>, <strong>Nova Scotia Duck Tolling Retriever</strong>, Whippet, Wirehaired Pointer</li>
+          <li>NOT contagious; suspected immune-mediated</li>
+          <li>2 forms:
+            <ul>
+              <li><strong>Acute (classic) form</strong> ✨ — most common</li>
+              <li><strong>Protracted form</strong> — chronic, multiple relapses, progressive neurologic dz</li>
+            </ul>
+          </li>
+          <li>Excellent prognosis with treatment</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Suspected immune-mediated</strong> — exact trigger unknown</li>
+          <li>Genetic predisposition (BMD: DLA class II haplotypes identified)</li>
+          <li>↑ IgA in serum + CSF (hallmark biomarker)</li>
+          <li>NOT bacterial / viral (despite "aseptic meningitis" alternative term)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Immune-mediated vasculitis of leptomeningeal arteries (arteritis)</li>
+          <li>+ Neutrophilic meningitis</li>
+          <li>Cervical region most affected (spinal arteries)</li>
+          <li>Severe pain due to:
+            <ul>
+              <li>Meningeal inflammation</li>
+              <li>Arterial wall inflammation (vasa nervorum)</li>
+            </ul>
+          </li>
+          <li>Rarely affects brain parenchyma (vs MUE)</li>
+          <li>Protracted form: chronic inflammation + secondary fibrosis → permanent vascular damage, secondary CNS dysfunction</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic acute presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Severe cervical pain</strong> ✨ — hallmark
+            <ul>
+              <li>Reluctant to move neck</li>
+              <li>Yelps when picked up</li>
+              <li>Hunched posture, neck guarding</li>
+              <li>Holds head low</li>
+              <li>Severe pain on neck palpation/manipulation</li>
+            </ul>
+          </li>
+          <li><strong>Fever</strong> ✨ (often 39.5-41°C / 103-106°F)</li>
+          <li>Lethargy, depression</li>
+          <li>Anorexia</li>
+          <li>Stiff gait, generalized hyperesthesia</li>
+          <li>Reluctance to move</li>
+          <li>Vocalizing</li>
+          <li><strong>NO neurologic deficits typically</strong> ✨ (key feature — pain only)
+            <ul>
+              <li>If neurologic deficits present → atypical / protracted form / advanced disease</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Protracted form:</strong></p>
+        <ul>
+          <li>Chronic / waxing-waning</li>
+          <li>Multiple relapses</li>
+          <li>Eventually develop neurologic deficits:
+            <ul>
+              <li>Tetraparesis</li>
+              <li>Ataxia</li>
+              <li>Cranial nerve deficits</li>
+              <li>Seizures (rare)</li>
+            </ul>
+          </li>
+          <li>Less responsive to steroids over time</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Hallmark findings ✨:</strong></p>
+
+        <p><strong>1. CBC + biochem:</strong></p>
+        <ul>
+          <li><strong>Leukocytosis with marked neutrophilia (often 20,000-40,000+)</strong> ✨ + left shift
+            <ul>
+              <li>"Inflammatory leukogram"</li>
+              <li>Mimics bacterial infection</li>
+            </ul>
+          </li>
+          <li>± Mild non-regenerative anemia (chronic disease)</li>
+          <li>Mildly elevated globulins</li>
+          <li>± ↑ ALP (mild)</li>
+        </ul>
+
+        <p><strong>2. CSF analysis ✨ — diagnostic:</strong></p>
+        <ul>
+          <li><strong>Marked neutrophilic pleocytosis</strong> ✨ — &gt; 500-1000 WBC/µL with &gt; 80% non-degenerate neutrophils
+            <ul>
+              <li>Can mimic bacterial meningitis</li>
+              <li>BUT culture sterile</li>
+            </ul>
+          </li>
+          <li>Markedly ↑ protein</li>
+          <li>NO bacteria seen on cytology</li>
+          <li>NO neoplastic cells</li>
+          <li>Bacterial culture: NEGATIVE ✨</li>
+        </ul>
+
+        <p><strong>3. IgA measurement ✨ — supportive:</strong></p>
+        <ul>
+          <li>↑ Serum + CSF IgA — characteristic biomarker</li>
+          <li>Persistently elevated even during remission</li>
+          <li>Useful for monitoring relapse</li>
+          <li>Available at specialty labs (Glasgow vet school + others)</li>
+        </ul>
+
+        <p><strong>4. MRI:</strong></p>
+        <ul>
+          <li>Often normal (acute form, especially early)</li>
+          <li>Meningeal contrast enhancement</li>
+          <li>Cervical changes</li>
+          <li>Vasculitic changes</li>
+          <li>Rules out other causes</li>
+        </ul>
+
+        <p><strong>5. Rule out other causes (essential before steroids):</strong></p>
+        <ul>
+          <li>Infectious meningitis (bacterial, fungal, protozoal)</li>
+          <li>Discospondylitis (radiograph + culture)</li>
+          <li>Cervical IVDD (MRI)</li>
+          <li>Cervical spondylomyelopathy</li>
+          <li>Polyarthritis (joint taps if multiple joints painful — overlap with SRMA can occur)</li>
+          <li>Polymyositis</li>
+          <li>Tick-borne diseases (titers)</li>
+        </ul>
+
+        <p><strong>6. Other:</strong></p>
+        <ul>
+          <li>UA + culture</li>
+          <li>Joint taps (if polyarthritis features)</li>
+          <li>Tick-borne disease panels</li>
+          <li>Thoracic radiograph</li>
+          <li>Coag panel (some centers)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Bacterial meningitis (need CSF culture to confirm sterile)</li>
+          <li>Cervical IVDD</li>
+          <li>Discospondylitis</li>
+          <li>Polyarthritis (immune-mediated)</li>
+          <li>Tick-borne disease (RMSF, Ehrlichia, Anaplasma)</li>
+          <li>Polymyositis</li>
+          <li>MUE / GME (older signal, neurologic deficits more prominent)</li>
+          <li>Neoplasia</li>
+          <li>Trauma</li>
+          <li>Atlantoaxial instability (toy breeds — different signal)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Prednisolone ✨ — highly effective, dramatic response:</strong></p>
+        <ul>
+          <li><strong>Initial dose: 2-4 mg/kg PO q24h × 1-2 weeks</strong> ✨
+            <ul>
+              <li>Or higher: 4 mg/kg q24h initially for severe cases</li>
+              <li>Some clinicians use 1-2 mg/kg q12h</li>
+              <li>Dramatic clinical improvement within 24-48h typical</li>
+            </ul>
+          </li>
+          <li><strong>Slow taper over 6 months minimum</strong> ✨:
+            <ul>
+              <li>Week 1-2: induction dose</li>
+              <li>Reduce by 25-30% q3-4 weeks</li>
+              <li>Reach 0.5-1 mg/kg/day by 2-3 mo</li>
+              <li>Continue alternate-day low dose 0.25-0.5 mg/kg until 6+ months total</li>
+              <li>Don't taper too fast — relapse common</li>
+            </ul>
+          </li>
+          <li>Continue 6-12 months total in most cases</li>
+          <li>Some discontinue successfully; others need lifelong low-dose</li>
+        </ul>
+
+        <p><strong>Adjunct therapy (refractory or protracted):</strong></p>
+        <ul>
+          <li><strong>Azathioprine</strong> 1-2 mg/kg PO q24-48h
+            <ul>
+              <li>Adjunct steroid-sparing</li>
+              <li>Monitor CBC + biochem (myelosuppression, hepatotoxicity)</li>
+            </ul>
+          </li>
+          <li>Cytosine arabinoside (similar to MUE protocol) — for protracted form</li>
+          <li>Cyclosporine 5-10 mg/kg PO q12h</li>
+          <li>Mycophenolate mofetil</li>
+          <li>Leflunomide</li>
+        </ul>
+
+        <p><strong>Concurrent management:</strong></p>
+        <ul>
+          <li>Pain management initial:
+            <ul>
+              <li>Opioid (methadone, buprenorphine)</li>
+              <li>Avoid NSAIDs once steroids started ✗ (GI ulceration)</li>
+              <li>Gabapentin acceptable</li>
+            </ul>
+          </li>
+          <li>Anti-emetics if needed</li>
+          <li>Soft food, encourage drinking</li>
+        </ul>
+
+        <p><strong>Owner education:</strong></p>
+        <ul>
+          <li>Steroid side effects: PU/PD, polyphagia, behavioral changes, weight gain</li>
+          <li>Don't miss doses</li>
+          <li>Don't stop suddenly</li>
+          <li>Watch for relapse during taper</li>
+          <li>Recheck visits important</li>
+          <li>Long-term commitment (months-yr)</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical response (pain resolution, fever, energy) within 24-48h confirms diagnosis</li>
+          <li>CBC + biochem at 2 wk, 1 mo, 3 mo, 6 mo, then q6 mo</li>
+          <li>Recheck CSF if relapse / not responding (some centers do confirmatory recheck at 3 mo)</li>
+          <li>UA + culture q3-6 mo</li>
+          <li>IgA levels (if available) trend</li>
+          <li>Watch for: weight gain, iatrogenic Cushing's, UTI, pyoderma</li>
+        </ul>
+
+        <p><strong>Relapse management:</strong></p>
+        <ul>
+          <li>Common during taper (30-50%)</li>
+          <li>Return to induction dose (2-4 mg/kg q24h)</li>
+          <li>Slower taper next time</li>
+          <li>Add adjunct (azathioprine or cytarabine)</li>
+          <li>If multiple relapses → likely protracted form; commit to long-term Tx</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Iatrogenic Cushing's (long-term steroids)</li>
+          <li>UTI (steroids — common; culture every recheck)</li>
+          <li>Demodex / pyoderma (immunosuppression)</li>
+          <li>Pancreatitis</li>
+          <li>GI ulceration</li>
+          <li>Diabetes mellitus (steroid-induced)</li>
+          <li>Behavioral changes</li>
+          <li>Weight gain → orthopedic stress</li>
+          <li>Relapse during taper (common)</li>
+          <li>Progression to protracted form (~ 5-10%)</li>
+          <li>Permanent neurologic deficits (protracted)</li>
+          <li>Drug-specific (azathioprine: hepatotoxicity, BM suppression)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Acute (classic) form: excellent</strong> ✨ ✓ — &gt; 90% recover with treatment</li>
+          <li>Most achieve complete remission within 6-12 months Tx</li>
+          <li>Successful drug discontinuation in 50-70%</li>
+          <li>Relapse during taper: 30-50%; usually responds to re-treatment</li>
+          <li>Protracted form (5-10%): guarded; chronic Tx needed; quality of life variable</li>
+          <li>Permanent neurologic deficits: rare in acute form; possible in protracted</li>
+          <li>Lifespan: most achieve normal lifespan with management</li>
+        </ul>
+        <div class="callout">💡 <strong>Young large breed + severe neck pain + fever + neutrophilic CSF (sterile) = SRMA</strong> ✨<br><br>Beagle, Boxer, BMD, Nova Scotia Duck Toller especially. Dramatic response to prednisolone within 24-48h confirms diagnosis<br><br>⚠️ Slow taper (6+ months) ป้องกัน relapse — taper เร็วไป = relapse</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 64 · Brain Tumors ---------- */
+  {
+    id: 'brain-tumors',
+    titleEn: 'Brain Tumors (Primary &amp; Metastatic)',
+    titleTh: 'เนื้องอกในสมอง',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['brain tumor', 'meningioma', 'glioma', 'astrocytoma', 'oligodendroglioma', 'choroid plexus tumor', 'pituitary tumor', 'metastatic', 'radiation therapy', 'craniotomy', 'CCNU', 'lomustine'],
+    aliases: ['CNS neoplasia', 'intracranial mass', 'meningioma', 'glioma', 'เนื้องอกสมอง'],
+    source: 'Ch. 64 · pp. 1117–1130',
+    sections: {
+      definition: `
+        <p>เนื้องอกในสมอง — primary หรือ metastatic; เจอบ่อยใน <strong>older dogs &gt; 7-9 yr</strong> ✨</p>
+        <ul>
+          <li>Annual incidence ~ 14-20/100,000 dogs</li>
+          <li>Cat: meningioma is most common (often slow-growing, surgically resectable) ✨</li>
+          <li>Predisposed breeds:
+            <ul>
+              <li>Boxer, Boston Terrier, Bulldog: gliomas (brachycephalic susceptibility)</li>
+              <li>Golden Retriever, Lab: meningioma</li>
+              <li>Most older large/medium breeds</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary brain tumors:</strong></p>
+        <ul>
+          <li><strong>Meningioma</strong> ✨ — most common in dog + cat; arises from arachnoid cap cells
+            <ul>
+              <li>Cat: typically benign, well-encapsulated, surgically resectable</li>
+              <li>Dog: variable behavior; often grade I-II</li>
+            </ul>
+          </li>
+          <li><strong>Glioma</strong> (astrocytoma, oligodendroglioma, glioblastoma) — 2nd most common in dog
+            <ul>
+              <li>Boxer, Boston Terrier, Bulldog predisposed</li>
+              <li>Often more invasive than meningioma</li>
+            </ul>
+          </li>
+          <li><strong>Choroid plexus tumor</strong> — uncommon; arise from choroid plexus
+            <ul>
+              <li>Often cause obstructive hydrocephalus</li>
+              <li>Can metastasize within CNS (drop metastases)</li>
+            </ul>
+          </li>
+          <li><strong>Pituitary tumor</strong>:
+            <ul>
+              <li>Functional (Cushing's, acromegaly cat) — see endocrine entries</li>
+              <li>Non-functional macroadenoma → mass effect → neurologic signs</li>
+            </ul>
+          </li>
+          <li>Ependymoma, medulloblastoma (rare)</li>
+          <li>Lymphoma — rare primary CNS but can occur</li>
+        </ul>
+
+        <p><strong>Metastatic:</strong></p>
+        <ul>
+          <li>Hemangiosarcoma ✨ — common metastatic to brain in dog</li>
+          <li>Mammary carcinoma</li>
+          <li>Pulmonary carcinoma</li>
+          <li>Multiple myeloma</li>
+          <li>Other carcinomas, sarcomas</li>
+        </ul>
+
+        <p><strong>Local extension (from skull/sinus):</strong></p>
+        <ul>
+          <li>Nasal carcinoma</li>
+          <li>Skull osteosarcoma</li>
+          <li>Multilobular tumor of bone</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mass effect:
+            <ul>
+              <li>Compression of adjacent brain</li>
+              <li>Midline shift</li>
+              <li>Obstruction of CSF flow → hydrocephalus</li>
+              <li>Brain herniation in severe / acute</li>
+            </ul>
+          </li>
+          <li>Peritumoral edema (vasogenic) — often greater than tumor itself</li>
+          <li>Disruption of blood-brain barrier</li>
+          <li>Seizure focus</li>
+          <li>Endocrine effects (functional pituitary tumors)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Onset typically gradual but can be acute (hemorrhage, herniation)</strong></p>
+
+        <p><strong>Forebrain signs (rostral) ✨ — most common location:</strong></p>
+        <ul>
+          <li>Seizures ✨ — often first sign in older dog</li>
+          <li>Behavioral changes (dullness, aggression, disorientation)</li>
+          <li>Compulsive walking, circling (toward lesion side)</li>
+          <li>Cortical blindness (one or both eyes — contralateral menace deficit)</li>
+          <li>Mental dullness, stupor, coma</li>
+          <li>Head pressing</li>
+          <li>Loss of training, "personality change"</li>
+        </ul>
+
+        <p><strong>Brainstem signs:</strong></p>
+        <ul>
+          <li>Multiple cranial nerve deficits</li>
+          <li>Vestibular signs (central pattern)</li>
+          <li>Tetraparesis / hemiparesis</li>
+          <li>Severe mentation changes</li>
+        </ul>
+
+        <p><strong>Cerebellar signs:</strong></p>
+        <ul>
+          <li>Intention tremor, hypermetria</li>
+          <li>Truncal sway</li>
+          <li>Wide-based stance</li>
+          <li>Paradoxical vestibular signs</li>
+        </ul>
+
+        <p><strong>Pituitary macroadenoma ✨:</strong></p>
+        <ul>
+          <li>Mentation changes (subtle initially)</li>
+          <li>Compulsive behaviors, aggression</li>
+          <li>Head pressing, vacant staring</li>
+          <li>Cortical blindness</li>
+          <li>Adipsia (lack of thirst)</li>
+          <li>Seizures (advanced)</li>
+          <li>Concurrent endocrine: PDH (Cushing's), acromegaly cat, central DI</li>
+        </ul>
+
+        <p><strong>Acute deterioration ✗:</strong></p>
+        <ul>
+          <li>Tumor hemorrhage</li>
+          <li>Brain herniation (transtentorial, foramen magnum)</li>
+          <li>Severe edema</li>
+          <li>Status epilepticus</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. MRI ✨ — gold standard:</strong></p>
+        <ul>
+          <li>Best modality for brain tumors</li>
+          <li>Identifies: location, size, edema, mass effect, hydrocephalus</li>
+          <li>Contrast enhancement patterns suggest tumor type:
+            <ul>
+              <li>Meningioma: extra-axial, dural tail, uniform enhancement</li>
+              <li>Glioma: intra-axial, ring or non-uniform enhancement</li>
+              <li>Choroid plexus: intraventricular, marked enhancement</li>
+              <li>Pituitary: sellar mass, often large</li>
+              <li>Metastatic: multiple, peripheral cortical, ring-enhancing</li>
+            </ul>
+          </li>
+          <li>Pre + post-contrast images</li>
+          <li>Definitive type requires biopsy/histopath</li>
+        </ul>
+
+        <p><strong>2. CT — alternative if MRI unavailable:</strong></p>
+        <ul>
+          <li>Less sensitive for small tumors</li>
+          <li>Better for bony involvement (skull tumors)</li>
+          <li>Faster, cheaper</li>
+        </ul>
+
+        <p><strong>3. CSF analysis (controversial in mass lesions — herniation risk):</strong></p>
+        <ul>
+          <li>Generally avoid if increased ICP suspected on MRI ✗</li>
+          <li>If safe: may show ↑ protein, mild pleocytosis</li>
+          <li>Usually not specific for tumor type</li>
+        </ul>
+
+        <p><strong>4. Brain biopsy (definitive):</strong></p>
+        <ul>
+          <li>Stereotactic or open biopsy</li>
+          <li>Specialty centers</li>
+          <li>Helps direct treatment</li>
+          <li>Risk: hemorrhage, infection, seizures, exacerbation</li>
+        </ul>
+
+        <p><strong>5. Staging for systemic disease:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>Thoracic radiograph (3-view) — primary lung neoplasia, metastasis</li>
+          <li>Abdominal ultrasound — primary tumor / metastasis</li>
+          <li>Cardiac evaluation if hemangiosarcoma suspected</li>
+          <li>Endocrine workup if pituitary suspected (LDDST, ACTH, IGF-1)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>MUE/GME (especially focal — mimics tumor on MRI)</li>
+          <li>Stroke / cerebrovascular accident</li>
+          <li>Brain abscess (rare)</li>
+          <li>Granuloma (fungal, bacterial)</li>
+          <li>Hydrocephalus (other cause)</li>
+          <li>Encephalitis</li>
+          <li>Trauma / hematoma</li>
+          <li>Cyst (arachnoid, dermoid)</li>
+          <li>Storage disease</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Acute / palliative supportive ✨:</strong></p>
+        <ul>
+          <li><strong>Glucocorticoids — anti-edema:</strong>
+            <ul>
+              <li>Prednisolone 0.5-1 mg/kg PO q24h (or split q12h)</li>
+              <li>Reduces vasogenic edema → significant clinical improvement temporarily (weeks-months)</li>
+              <li>"Steroid honeymoon" then disease progresses</li>
+              <li>Median survival on steroids alone: <strong>2-4 months</strong></li>
+            </ul>
+          </li>
+          <li><strong>Anticonvulsants if seizures:</strong>
+            <ul>
+              <li>Phenobarbital, levetiracetam (see seizure entry)</li>
+            </ul>
+          </li>
+          <li>Mannitol 0.5-1 g/kg IV slow over 20-30 min for acute herniation</li>
+          <li>Pain management (subtle in brain tumors; use cautiously)</li>
+        </ul>
+
+        <p><strong>2. Surgery ✨ — for accessible tumors:</strong></p>
+        <ul>
+          <li><strong>Best for:</strong>
+            <ul>
+              <li>Meningioma (especially cat) — often curative</li>
+              <li>Surface-located rostral tumors</li>
+              <li>Choroid plexus tumors (selected)</li>
+            </ul>
+          </li>
+          <li>Specialty referral required</li>
+          <li>Cat meningioma: often complete resection possible; MST 2-3+ years ✨</li>
+          <li>Dog meningioma: more challenging; partial resection often; MST 8-18 mo (with adjuvant RT to ~ 24+ mo)</li>
+          <li>Glioma: surgery rarely curative due to invasion</li>
+          <li>Complications: hemorrhage, infection, seizures, deterioration</li>
+        </ul>
+
+        <p><strong>3. Radiation therapy (RT) ✨ — gold standard for many:</strong></p>
+        <ul>
+          <li>Stereotactic radiation (SRT) — fewer fractions (3-5), targeted</li>
+          <li>Conventional fractionated RT — more fractions (15-20)</li>
+          <li><strong>Best for:</strong>
+            <ul>
+              <li>Meningioma (post-op or sole therapy)</li>
+              <li>Pituitary macroadenoma ✨</li>
+              <li>Glioma (alternative to surgery)</li>
+            </ul>
+          </li>
+          <li>Outcomes:
+            <ul>
+              <li>Meningioma: MST 12-24 months (RT alone); &gt; 24 mo (surgery + RT)</li>
+              <li>Pituitary macroadenoma: MST 12-24 months</li>
+              <li>Glioma: MST 6-15 months</li>
+            </ul>
+          </li>
+          <li>Specialty centers; cost significant</li>
+          <li>Acute side effects: skin reaction, otitis, mild somnolence</li>
+          <li>Late effects: leukoencephalopathy, brain necrosis (rare)</li>
+        </ul>
+
+        <p><strong>4. Chemotherapy:</strong></p>
+        <ul>
+          <li>Limited blood-brain barrier penetration</li>
+          <li><strong>Lomustine (CCNU)</strong> 60-90 mg/m² PO q3-6 wk
+            <ul>
+              <li>Crosses BBB</li>
+              <li>For glioma especially</li>
+              <li>Hepatotoxic, myelosuppressive</li>
+              <li>MST glioma with CCNU: 6-12 mo</li>
+            </ul>
+          </li>
+          <li>Hydroxyurea (meningioma) — older protocol</li>
+          <li>Toceranib (Palladia) — anecdotal</li>
+        </ul>
+
+        <p><strong>5. Targeted therapies (emerging):</strong></p>
+        <ul>
+          <li>Convection-enhanced delivery (CED)</li>
+          <li>Tumor immunotherapy (research)</li>
+          <li>Anti-angiogenic agents</li>
+        </ul>
+
+        <p><strong>6. Pituitary macroadenoma specific:</strong></p>
+        <ul>
+          <li>Hypophysectomy (transsphenoidal — limited centers worldwide)</li>
+          <li>Stereotactic radiation</li>
+          <li>Cabergoline (some functional tumors)</li>
+          <li>Trilostane for cortisol control concurrent</li>
+        </ul>
+
+        <p><strong>Owner counseling:</strong></p>
+        <ul>
+          <li>Discuss prognosis honestly</li>
+          <li>Quality of life paramount</li>
+          <li>Cost of advanced therapy (RT $5000-10000+; surgery similar)</li>
+          <li>Palliative steroid + anticonvulsant = reasonable for many</li>
+          <li>Hospice / euthanasia planning when QOL deteriorates</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Status epilepticus</strong> ✗ — common cause of crisis/death</li>
+          <li><strong>Brain herniation</strong> ✗ — transtentorial, foramen magnum (acute deterioration)</li>
+          <li>Tumor hemorrhage</li>
+          <li>Hydrocephalus (obstructive)</li>
+          <li>Persistent neurologic deficits</li>
+          <li>Cortical blindness</li>
+          <li>Behavioral problems / aggression</li>
+          <li>Concurrent endocrine effects (pituitary)</li>
+          <li>Iatrogenic Cushing's (long-term steroids)</li>
+          <li>Surgical: hemorrhage, infection, deterioration</li>
+          <li>RT: skin/ear effects, late effects (years)</li>
+          <li>Chemotherapy side effects</li>
+          <li>Caretaker emotional + financial burden</li>
+          <li>Death from progression / herniation / status</li>
+        </ul>
+        <p><strong>Prognosis ✨:</strong></p>
+        <ul>
+          <li><strong>By tumor type + treatment:</strong></li>
+          <li><strong>Cat meningioma + surgery:</strong> excellent — MST 2-3+ years ✓</li>
+          <li><strong>Dog meningioma + surgery + RT:</strong> 18-24+ months</li>
+          <li><strong>Dog meningioma + RT alone:</strong> 12-18 months</li>
+          <li><strong>Dog meningioma + steroids alone:</strong> 4-7 months</li>
+          <li><strong>Glioma + RT:</strong> 6-15 months</li>
+          <li><strong>Glioma + steroids alone:</strong> 2-4 months</li>
+          <li><strong>Pituitary macroadenoma + RT:</strong> 12-24 months</li>
+          <li><strong>Choroid plexus tumor:</strong> 4-12 months</li>
+          <li><strong>Metastatic:</strong> typically &lt; 3 months</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Status epilepticus presentation</li>
+              <li>Severe mass effect / midline shift</li>
+              <li>Brainstem location</li>
+              <li>Gliomas (vs meningioma)</li>
+              <li>Multiple lesions / metastatic</li>
+              <li>Older patient + comorbidities</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Older dog with new-onset seizures = brain tumor until proven otherwise</strong> ✨ — MRI gold standard<br><br>Cat meningioma = often surgically curable ✓; dog meningioma = surgery + RT for best outcomes<br><br>Steroid alone = palliative (2-4 mo); RT extends survival significantly. Honest cost / QOL discussion essential</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 66 · Myasthenia Gravis ---------- */
+  {
+    id: 'myasthenia-gravis',
+    titleEn: 'Myasthenia Gravis',
+    titleTh: 'มัยแอสทีเนีย — โรคกล้ามเนื้ออ่อนแรง',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['myasthenia gravis', 'MG', 'acquired MG', 'congenital MG', 'AChR antibody', 'megaesophagus', 'pyridostigmine', 'edrophonium test', 'thymoma', 'aspiration pneumonia', 'focal MG'],
+    aliases: ['MG', 'myasthenia', 'มัยแอสทีเนีย', 'กล้ามเนื้ออ่อนแรง'],
+    source: 'Ch. 66 · pp. 1158–1174',
+    sections: {
+      definition: `
+        <p>โรค <strong>กล้ามเนื้ออ่อนแรงจากการส่งสัญญาณ neuromuscular junction ผิดปกติ</strong></p>
+        <ul>
+          <li>2 forms:
+            <ul>
+              <li><strong>Acquired MG</strong> ✨ — autoimmune; antibodies blocking acetylcholine receptors (AChR); most common</li>
+              <li><strong>Congenital MG</strong> — rare; deficiency of AChR (Jack Russell, Smooth Fox Terrier, Springer Spaniel)</li>
+            </ul>
+          </li>
+          <li>3 clinical patterns:
+            <ul>
+              <li><strong>Generalized MG</strong> ✨ — exercise-induced weakness all 4 limbs</li>
+              <li><strong>Focal MG</strong> — only esophagus/pharynx/face affected (megaesophagus alone)</li>
+              <li><strong>Acute fulminating MG</strong> ✗ — rapid generalized + respiratory paralysis</li>
+            </ul>
+          </li>
+          <li>Predisposed: GSD, Golden Retriever, Lab, Akita, Newfoundland; cat: Abyssinian, Somali</li>
+          <li>Bimodal age distribution: 2-4 yr + 9-13 yr</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Acquired MG (autoimmune):</strong></p>
+        <ul>
+          <li>IgG antibodies against postsynaptic acetylcholine receptors (AChR)</li>
+          <li>↓ Functional AChRs at neuromuscular junction → failure of muscle contraction</li>
+          <li>Fatigue with repeated stimulation</li>
+          <li>Concurrent associations:
+            <ul>
+              <li><strong>Thymoma</strong> ✨ ✗ — thymic neoplasia in 3-15% (especially older dogs)</li>
+              <li>Hypothyroidism (5-10%)</li>
+              <li>Hypoadrenocorticism (Addison's)</li>
+              <li>Other autoimmune diseases (IMHA, polyarthritis)</li>
+              <li>Drug-induced (rare): trimethoprim-sulfa, methimazole</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Congenital MG:</strong></p>
+        <ul>
+          <li>Genetic deficiency of AChR (autosomal recessive)</li>
+          <li>Onset 6-8 weeks of age</li>
+          <li>Specific breeds: Jack Russell, Smooth Fox Terrier, Springer Spaniel</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Normal: nerve releases ACh → ACh binds AChR → muscle contracts</li>
+          <li>MG: AChR antibodies → ↓ effective receptors → weaker contraction with each impulse</li>
+          <li>Repeated stimulation depletes ACh stores faster than receptors can recover → exercise-induced weakness ✨</li>
+          <li>Esophagus has many AChRs → particularly vulnerable → megaesophagus very common</li>
+          <li>Diaphragm + intercostals affected in fulminating form → respiratory failure</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Generalized MG ✨ — classic:</strong></p>
+        <ul>
+          <li><strong>Exercise-induced weakness</strong> ✨ — hallmark
+            <ul>
+              <li>Walks normally then progressively weakens</li>
+              <li>Stops, lies down, recovers with rest</li>
+              <li>Symmetric, all 4 limbs (often hindlimbs first noticeable)</li>
+              <li>"Bunny-hopping," collapse</li>
+            </ul>
+          </li>
+          <li>Stiff, choppy gait</li>
+          <li>Decreased palpebral reflex with repetition</li>
+          <li>Voice change (laryngeal weakness)</li>
+          <li>Difficulty swallowing</li>
+          <li>Excessive drooling</li>
+          <li>Regurgitation ✗ (megaesophagus — see below)</li>
+        </ul>
+
+        <p><strong>Megaesophagus complications ✨ — major presentation:</strong></p>
+        <ul>
+          <li><strong>~ 80-90% of MG dogs have megaesophagus</strong> ✨</li>
+          <li>Regurgitation (passive, undigested food, with mucus tube-shaped)</li>
+          <li>Distinguish from vomiting (no abdominal effort)</li>
+          <li><strong>Aspiration pneumonia</strong> ✗ — leading cause of mortality in MG</li>
+          <li>Weight loss</li>
+          <li>Often presenting sign in focal MG</li>
+        </ul>
+
+        <p><strong>Focal MG:</strong></p>
+        <ul>
+          <li>Megaesophagus / regurgitation alone</li>
+          <li>Pharyngeal/facial weakness</li>
+          <li>NO appendicular muscle weakness</li>
+          <li>~ 25-40% of acquired MG cases</li>
+          <li>Often misdiagnosed initially</li>
+        </ul>
+
+        <p><strong>Acute fulminating MG ✗:</strong></p>
+        <ul>
+          <li>Rapid onset within hours-days</li>
+          <li>Tetraparesis → tetraplegia</li>
+          <li>Respiratory paralysis → ventilator dependent</li>
+          <li>Mortality high without aggressive intervention</li>
+          <li>Often associated with thymoma</li>
+        </ul>
+
+        <p><strong>Cat MG:</strong></p>
+        <ul>
+          <li>Often atypical presentation</li>
+          <li>Generalized weakness, ventroflexion of neck (similar to hypoK)</li>
+          <li>Megaesophagus less common than dog</li>
+          <li>Often associated with thymoma in cat</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Acetylcholine receptor antibody titer ✨ — gold standard:</strong></p>
+        <ul>
+          <li><strong>Sensitivity ~ 98% for generalized MG</strong> ✨ — definitive when positive</li>
+          <li>Sensitivity ~ 80% for focal MG (lower)</li>
+          <li>Send to Comparative Neuromuscular Lab (UC San Diego)</li>
+          <li>Serum sample (chilled, prompt shipping)</li>
+          <li>Doesn't help with congenital MG (antibody negative)</li>
+          <li>False negatives: very acute (&lt; 1 wk), immunosuppression, rare seronegative cases</li>
+        </ul>
+
+        <p><strong>2. Edrophonium (Tensilon) test:</strong></p>
+        <ul>
+          <li><strong>Edrophonium 0.1-0.2 mg/kg IV</strong> (short-acting cholinesterase inhibitor)
+            <ul>
+              <li>Inhibits ACh breakdown → temporarily ↑ ACh available</li>
+              <li>Dramatic transient improvement in weakness within 30-60 sec confirms MG</li>
+              <li>Effect lasts 2-5 min</li>
+            </ul>
+          </li>
+          <li>Have atropine ready (cholinergic crisis: bradycardia, hypersalivation, bronchospasm) ✗</li>
+          <li>Useful for rapid bedside diagnosis</li>
+          <li>Less specific than antibody test (false +/-)</li>
+          <li>Best for generalized form (focal MG often non-responsive)</li>
+        </ul>
+
+        <p><strong>3. Imaging:</strong></p>
+        <ul>
+          <li><strong>Thoracic radiograph ✨ — ALWAYS:</strong>
+            <ul>
+              <li>Megaesophagus (3-view including esophagram if not visible)</li>
+              <li>Mediastinal mass — <strong>thymoma</strong> ✨ ✗</li>
+              <li>Aspiration pneumonia (cranial / right middle lobes)</li>
+            </ul>
+          </li>
+          <li>Esophageal contrast study if megaesophagus questionable</li>
+          <li>Thoracic CT if mediastinal mass suspected — better characterization</li>
+        </ul>
+
+        <p><strong>4. Other workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (rule out other systemic dz)</li>
+          <li><strong>T4 + TSH ✨</strong> — concurrent hypothyroidism (5-10%)</li>
+          <li>ACTH stim — if Addison's suspected</li>
+          <li>UA</li>
+          <li>CK (usually normal — distinguishes from myopathy)</li>
+          <li>Repetitive nerve stimulation (EMG) — specialty; decremental response (&gt; 10% drop) with rapid stimulation</li>
+          <li>Single fiber EMG — research tool</li>
+        </ul>
+
+        <p><strong>5. Differentiate from cholinergic crisis (drug overdose):</strong></p>
+        <ul>
+          <li>Same clinical signs but caused by too much pyridostigmine</li>
+          <li>Edrophonium test paradoxically worsens (don't repeat if no improvement)</li>
+          <li>Pupillary signs, hypersalivation, bradycardia (parasympathomimetic)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Polyradiculoneuritis (acute, ascending, hyporeflexia)</li>
+          <li>Tick paralysis (history, ticks present)</li>
+          <li>Botulism (severe, descending)</li>
+          <li>Hypokalemic myopathy (cat — check K)</li>
+          <li>Polymyositis (CK ↑)</li>
+          <li>Hypothyroidism (concurrent often)</li>
+          <li>Addison's (concurrent)</li>
+          <li>Spinal disease (gait deficits but not exercise-induced)</li>
+          <li>Cardiac disease (exercise intolerance)</li>
+          <li>Megaesophagus other causes (idiopathic, congenital, secondary to other dz)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Anticholinesterase ✨ — symptomatic mainstay:</strong></p>
+        <ul>
+          <li><strong>Pyridostigmine bromide (Mestinon)</strong>:
+            <ul>
+              <li>1-3 mg/kg PO q8-12h initially</li>
+              <li>Titrate to clinical response (improved strength)</li>
+              <li>Range: 0.5-3 mg/kg q8h</li>
+              <li>Available 60 mg tablets (compounding for small dogs/cats)</li>
+              <li>Onset 30-60 min; duration 4-8h</li>
+            </ul>
+          </li>
+          <li><strong>Side effects (cholinergic — too much drug):</strong>
+            <ul>
+              <li>GI: vomiting, diarrhea, salivation</li>
+              <li>Pupillary constriction</li>
+              <li>Bradycardia</li>
+              <li>Worsening weakness ("cholinergic crisis") — paradoxical</li>
+              <li>Reduce dose if seen</li>
+            </ul>
+          </li>
+          <li>If can't tolerate oral (megaesophagus / regurg): neostigmine 0.04 mg/kg SC q6h initially → switch to oral when megaeso resolves</li>
+          <li>Compounded liquid pyridostigmine for cats / small dogs</li>
+        </ul>
+
+        <p><strong>2. Megaesophagus management ✨ — equally critical:</strong></p>
+        <ul>
+          <li><strong>Upright feeding ("Bailey chair")</strong> ✨ — feed in vertical position 15-20 min after meal
+            <ul>
+              <li>Gravity-assisted esophageal transit</li>
+              <li>Cornerstone of management</li>
+              <li>3-4 small meals / day</li>
+            </ul>
+          </li>
+          <li>Slurry diet vs solid (variable — find what works for individual)</li>
+          <li>Elevated water bowls / water through Bailey chair</li>
+          <li>Anti-reflux medications:
+            <ul>
+              <li>Omeprazole 1 mg/kg PO q12-24h</li>
+              <li>Sucralfate 0.5-1 g PO q8h on empty stomach</li>
+              <li>Cisapride 0.1-0.5 mg/kg PO q8h (limited evidence)</li>
+              <li>Maropitant 1 mg/kg q24h (anti-emetic)</li>
+            </ul>
+          </li>
+          <li>Esophageal feeding tube if cannot maintain weight</li>
+          <li>Monitor for aspiration pneumonia</li>
+        </ul>
+
+        <p><strong>3. Immunosuppression ✨ — for refractory or severe:</strong></p>
+        <ul>
+          <li><strong>Indications:</strong>
+            <ul>
+              <li>Inadequate response to pyridostigmine alone</li>
+              <li>Acute fulminating MG</li>
+              <li>Persistent megaesophagus (some)</li>
+              <li>Rapid progression</li>
+            </ul>
+          </li>
+          <li><strong>Glucocorticoids:</strong>
+            <ul>
+              <li>Prednisolone 1-2 mg/kg PO q12-24h initially</li>
+              <li><strong>Caution:</strong> initial worsening can occur (start low, titrate up)</li>
+              <li>Don't use during active aspiration pneumonia (delay)</li>
+              <li>Slow taper over months</li>
+            </ul>
+          </li>
+          <li><strong>Mycophenolate mofetil</strong> 10-20 mg/kg PO q12h — increasingly preferred adjunct</li>
+          <li>Azathioprine 1-2 mg/kg PO q24h</li>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Avoid: methotrexate</li>
+        </ul>
+
+        <p><strong>4. Thymoma management:</strong></p>
+        <ul>
+          <li>Thoracotomy + thymectomy if discrete mass</li>
+          <li>MG often improves dramatically post-thymectomy</li>
+          <li>± RT for invasive tumors</li>
+          <li>Pre-op stabilization with anticholinesterase critical</li>
+        </ul>
+
+        <p><strong>5. Acute fulminating MG ✗ — emergency:</strong></p>
+        <ul>
+          <li>Mechanical ventilation may be needed</li>
+          <li>Aggressive immunosuppression (high-dose pred, mycophenolate)</li>
+          <li>IV pyridostigmine (1/30 of oral dose, slow IV) or neostigmine</li>
+          <li>± IVIG (intravenous immunoglobulin) — if available</li>
+          <li>± Plasmapheresis — specialty centers</li>
+          <li>Address aspiration pneumonia aggressively</li>
+          <li>Mortality high without ICU care</li>
+        </ul>
+
+        <p><strong>6. Address concurrent dz:</strong></p>
+        <ul>
+          <li>Hypothyroid: levothyroxine</li>
+          <li>Addison's: DOCP + pred</li>
+          <li>Aspiration pneumonia: IV antibiotics, oxygen, supportive (see entry)</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical response (exercise tolerance, regurgitation frequency)</li>
+          <li>Recheck thoracic radiograph at 4-6 wk, 3 mo, 6 mo (megaesophagus resolution? aspiration?)</li>
+          <li>Recheck AChR titer at 6-12 months
+            <ul>
+              <li>Falling titer = improvement</li>
+              <li>Some achieve <strong>immunologic remission</strong> ✨ — antibody negative — can attempt drug withdrawal</li>
+            </ul>
+          </li>
+          <li>CBC, biochem, UA q3 mo (drug monitoring)</li>
+          <li>Watch for aspiration pneumonia signs (cough, fever, dyspnea) — recheck immediately</li>
+        </ul>
+
+        <p><strong>Remission ✨:</strong></p>
+        <ul>
+          <li>Spontaneous remission in ~ 80% of dogs with focal/generalized MG within 6-18 months</li>
+          <li>Defined as: resolved clinical signs + AChR antibody titer normal</li>
+          <li>Drugs can be withdrawn gradually</li>
+          <li>Relapse possible (~ 10-20%)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Aspiration pneumonia</strong> ✗ — major cause of mortality</li>
+          <li>Acute respiratory failure (fulminating form)</li>
+          <li>Cholinergic crisis (drug overdose)</li>
+          <li>Esophagitis from chronic regurg</li>
+          <li>Esophageal stricture (rare, post-aspiration)</li>
+          <li>Persistent megaesophagus despite Tx (~ 20%)</li>
+          <li>Weight loss / cachexia</li>
+          <li>Concurrent thymoma — surgical risk + paraneoplastic syndromes</li>
+          <li>Drug side effects (steroids, mycophenolate, etc.)</li>
+          <li>Iatrogenic immunosuppression complications</li>
+          <li>Relapse during taper or after remission</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Without aspiration pneumonia + spontaneous remission: excellent</strong> ✓ — 80% remit within 6-18 mo</li>
+          <li>With megaesophagus alone: variable; depends on aspiration prevention</li>
+          <li>With aspiration pneumonia: guarded — mortality 50%+ from pneumonia</li>
+          <li>Acute fulminating: poor without ventilator support</li>
+          <li>Thymoma + thymectomy: often dramatic improvement</li>
+          <li>Median survival overall: 1-2 years, often longer with good management</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Aspiration pneumonia at presentation</li>
+              <li>Acute fulminating presentation</li>
+              <li>Thymoma (especially invasive)</li>
+              <li>Severe megaesophagus</li>
+              <li>Concurrent autoimmune disease</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Exercise-induced weakness + regurgitation = MG until proven otherwise</strong> ✨ — AChR antibody titer = gold standard<br><br>💡 <strong>Always thoracic radiograph</strong>: megaesophagus + thymoma + aspiration pneumonia<br><br>Pyridostigmine + Bailey chair feeding + omeprazole = mainstay. **Aspiration pneumonia = #1 killer** — owner education critical</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 66 · Polyradiculoneuritis (Coonhound Paralysis / ACIN) ---------- */
+  {
+    id: 'polyradiculoneuritis',
+    titleEn: 'Acute Polyradiculoneuritis (Coonhound Paralysis)',
+    titleTh: 'Coonhound Paralysis — เส้นประสาทอักเสบเฉียบพลัน',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['polyradiculoneuritis', 'coonhound paralysis', 'acute canine idiopathic polyradiculoneuritis', 'ACIP', 'ACIN', 'Guillain-Barre-like', 'ascending paralysis', 'raccoon', 'LMN tetraparesis', 'IVIG'],
+    aliases: ['coonhound paralysis', 'ACIP', 'ACIN', 'Guillain-Barre dog', 'เส้นประสาทอักเสบเฉียบพลัน'],
+    source: 'Ch. 66 · pp. 1158–1174',
+    sections: {
+      definition: `
+        <p>โรค <strong>peripheral nerve / ventral nerve root อักเสบเฉียบพลัน</strong> — analog ของ Guillain-Barré syndrome ในคน</p>
+        <ul>
+          <li>"<strong>Coonhound paralysis</strong>" — เกิดหลัง raccoon bite/scratch ~ 7-14 วัน (classic North American)</li>
+          <li><strong>"Acute Canine Idiopathic Polyradiculoneuritis (ACIP/ACIN)"</strong> — รูปแบบอื่นที่ไม่เกี่ยวกับ raccoon</li>
+          <li>Acute, ascending, symmetric LMN tetraparesis</li>
+          <li>Most dogs recover spontaneously over weeks-months</li>
+          <li>Cat: rare</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Suspected immune-mediated</strong> — autoimmune attack on peripheral nerves (myelin + axons)</p>
+
+        <p><strong>Triggers:</strong></p>
+        <ul>
+          <li><strong>Raccoon saliva exposure (Coonhound paralysis classic)</strong> ✨ — bite/scratch from raccoon
+            <ul>
+              <li>Onset 7-14 days after exposure</li>
+              <li>Antigens in saliva trigger autoimmunity</li>
+              <li>North American hunting/working dogs especially</li>
+            </ul>
+          </li>
+          <li><strong>ACIN — non-raccoon associated:</strong>
+            <ul>
+              <li>Idiopathic</li>
+              <li>Recent vaccination (controversial)</li>
+              <li>Recent infection (GI, respiratory)</li>
+              <li>Raw chicken consumption (Campylobacter? — recent evidence)</li>
+              <li>Tick exposure</li>
+            </ul>
+          </li>
+          <li>Potential associations: Toxoplasma, Neospora, vaccines, other antigens</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Immune-mediated attack on:
+            <ul>
+              <li>Ventral nerve roots (more affected)</li>
+              <li>Peripheral nerves (myelin + axons)</li>
+            </ul>
+          </li>
+          <li>Demyelination + axonal damage</li>
+          <li>↓ Conduction in motor nerves</li>
+          <li>Sensory + autonomic typically spared (or mild)</li>
+          <li>Cranial nerves can be affected (severe form)</li>
+          <li>Phrenic nerve / respiratory muscles affected → respiratory failure (severe)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Ascending paralysis</strong> ✨ — starts in pelvic limbs → progresses to thoracic over 24-72h</li>
+          <li>Symmetric weakness</li>
+          <li>Within 1-5 days: severe tetraparesis to flaccid tetraplegia</li>
+          <li><strong>LMN signs</strong> ✨:
+            <ul>
+              <li>↓ Or absent spinal reflexes (areflexia)</li>
+              <li>↓ Muscle tone (flaccid)</li>
+              <li>Severe muscle atrophy if prolonged</li>
+            </ul>
+          </li>
+          <li><strong>Mentation NORMAL</strong> ✨ — important differentiator from CNS disease</li>
+          <li><strong>Sensation INTACT</strong> ✨ — pain perception preserved (test by pinching toe — withdrawal absent but consciously responsive)</li>
+          <li>Cranial nerves usually spared (mild facial weakness possible)</li>
+          <li>Voice change (laryngeal nerve affected)</li>
+          <li>Difficulty eating (severe form)</li>
+          <li><strong>Respiratory paralysis</strong> ✗ in severe cases (~ 5-10%) — diaphragm involvement</li>
+          <li>NO bladder dysfunction typically (autonomic spared)</li>
+        </ul>
+
+        <p><strong>Recovery pattern:</strong></p>
+        <ul>
+          <li>Plateau 1-2 weeks after onset</li>
+          <li>Gradual improvement over 3-12 weeks</li>
+          <li>Most regain ambulation within 6-12 weeks</li>
+          <li>Some persistent deficits (especially with severe axonal damage)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical diagnosis primarily ✨:</strong></p>
+        <ul>
+          <li>Compatible signalment + history (exposure)</li>
+          <li>Acute ascending symmetric LMN tetraparesis</li>
+          <li>Normal mentation, intact sensation</li>
+          <li>Reflex changes</li>
+        </ul>
+
+        <p><strong>Workup to support / rule out:</strong></p>
+
+        <p><strong>1. CBC, biochem, UA:</strong></p>
+        <ul>
+          <li>Usually unremarkable</li>
+          <li>Rules out metabolic causes</li>
+        </ul>
+
+        <p><strong>2. CSF analysis (sometimes diagnostic):</strong></p>
+        <ul>
+          <li><strong>Albuminocytologic dissociation</strong> ✨ — ↑ protein WITH normal cell count
+            <ul>
+              <li>Hallmark finding (similar to Guillain-Barré in humans)</li>
+              <li>Especially in lumbar CSF tap (closer to lesion)</li>
+              <li>May be normal in early disease</li>
+            </ul>
+          </li>
+          <li>Cisterna magna CSF often normal</li>
+        </ul>
+
+        <p><strong>3. Electrodiagnostics (specialty / referral):</strong></p>
+        <ul>
+          <li>EMG: spontaneous activity (fibrillation potentials, positive sharp waves) after 5-7 days</li>
+          <li>Motor nerve conduction velocity: slowed</li>
+          <li>F-wave abnormalities</li>
+          <li>Confirms diagnosis but not always available</li>
+        </ul>
+
+        <p><strong>4. Tick search:</strong></p>
+        <ul>
+          <li>Thorough body exam — rule out tick paralysis</li>
+          <li>Clip and inspect</li>
+        </ul>
+
+        <p><strong>5. History critical ✨:</strong></p>
+        <ul>
+          <li>Recent raccoon contact</li>
+          <li>Recent vaccination</li>
+          <li>Recent illness (GI, respiratory)</li>
+          <li>Tick exposure</li>
+          <li>Travel</li>
+          <li>Diet (raw chicken)</li>
+        </ul>
+
+        <p><strong>6. Other:</strong></p>
+        <ul>
+          <li>Thoracic radiograph (megaesophagus rare; aspiration pneumonia)</li>
+          <li>AChR antibody (rule out MG — different pattern)</li>
+          <li>Tick-borne disease titers</li>
+          <li>CK (usually normal — distinguishes from myopathy)</li>
+          <li>Toxoplasma / Neospora titers (consider)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Tick paralysis</strong> ✨ ✗ — search for ticks (treatable!)</li>
+          <li>Botulism (descending pattern, autonomic involvement)</li>
+          <li>Myasthenia gravis (acute fulminating form)</li>
+          <li>Polymyositis (CK elevated)</li>
+          <li>Toxin (organophosphate, ionophore)</li>
+          <li>Hypokalemia / hypoCa</li>
+          <li>Spinal cord disease (sensory loss, UMN signs)</li>
+          <li>Hypothyroid neuropathy (chronic, not acute)</li>
+          <li>Inherited polyneuropathies (Alaskan Malamute, GR, etc. — chronic)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>NO SPECIFIC TREATMENT</strong> — supportive care primarily ✨</p>
+
+        <p><strong>1. Intensive nursing care ✨ — cornerstone:</strong></p>
+        <ul>
+          <li>Padded bedding</li>
+          <li>Turn every 4-6 hours (prevent decubital ulcers)</li>
+          <li>Passive range of motion (PROM) all 4 limbs q4-6h</li>
+          <li>Massage</li>
+          <li>Eye lubrication if reduced blink (some)</li>
+          <li>Bladder management (manual express; usually preserved tone)</li>
+          <li>Hand-feeding / syringe feeding upright</li>
+          <li>Hydration support (IV fluids if not drinking)</li>
+        </ul>
+
+        <p><strong>2. Respiratory monitoring ✗:</strong></p>
+        <ul>
+          <li>Critical 24-48h watch for respiratory weakness</li>
+          <li>Signs: ↑ RR, paradoxical breathing, cyanosis, dyspnea</li>
+          <li>Arterial blood gas if available</li>
+          <li>If respiratory failure: <strong>mechanical ventilation</strong> (referral)</li>
+          <li>Mortality without ventilation if respiratory paralysis: high</li>
+        </ul>
+
+        <p><strong>3. Aspiration pneumonia prevention/treatment:</strong></p>
+        <ul>
+          <li>Upright feeding</li>
+          <li>Watch for cough, fever, dyspnea</li>
+          <li>Antibiotics if pneumonia develops (ampicillin + enrofloxacin)</li>
+        </ul>
+
+        <p><strong>4. Physical rehabilitation ✨:</strong></p>
+        <ul>
+          <li>Begin early (PROM from day 1)</li>
+          <li>Hydrotherapy when stable (week 2+)</li>
+          <li>Underwater treadmill</li>
+          <li>Sling support for early ambulation</li>
+          <li>Strengthen exercises as recovery progresses</li>
+          <li>Continues 6-12+ weeks</li>
+          <li>Speeds recovery + minimizes residual deficits</li>
+        </ul>
+
+        <p><strong>5. Specific therapies (controversial / limited evidence):</strong></p>
+        <ul>
+          <li><strong>IVIG (Human Intravenous Immunoglobulin)</strong> 0.5-1 g/kg IV over 8-12h
+            <ul>
+              <li>Anecdotal benefit in severe / rapid progression cases</li>
+              <li>Cost significant</li>
+              <li>Limited availability</li>
+            </ul>
+          </li>
+          <li>Plasmapheresis — specialty centers; emerging evidence</li>
+          <li>Corticosteroids — controversial; some evidence of NO benefit; many avoid</li>
+        </ul>
+
+        <p><strong>6. Address triggers:</strong></p>
+        <ul>
+          <li>Treat any underlying infection</li>
+          <li>Tick-borne disease workup (treat if positive)</li>
+          <li>Avoid further raccoon exposure</li>
+        </ul>
+
+        <p><strong>7. Owner education:</strong></p>
+        <ul>
+          <li>Recovery takes weeks-months — be patient</li>
+          <li>Daily home care intensive</li>
+          <li>Recheck weekly initially</li>
+          <li>Watch for: respiratory difficulty, aspiration signs, decubital ulcers, UTI</li>
+          <li>Most recover well</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Respiratory failure</strong> ✗ — ~ 5-10% develop diaphragmatic involvement</li>
+          <li>Aspiration pneumonia</li>
+          <li>Decubital ulcers</li>
+          <li>UTI</li>
+          <li>Muscle atrophy → prolonged weakness</li>
+          <li>Persistent neurologic deficits (~ 20-30%)
+            <ul>
+              <li>Mild residual weakness</li>
+              <li>Muscle atrophy</li>
+              <li>Hyporeflexia long-term</li>
+            </ul>
+          </li>
+          <li>Recurrence (rare ~ 5%)</li>
+          <li>Owner / family burnout (intensive nursing)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Generally good with supportive care</strong> ✓ — &gt; 80% recover ambulation</li>
+          <li>Recovery: 3-12 weeks typical; may take months</li>
+          <li>Most regain near-normal function</li>
+          <li>Mild residual deficits common (~ 20-30%)</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Respiratory paralysis (without ventilator)</li>
+              <li>Cranial nerve involvement</li>
+              <li>Severe axonal damage on EMG</li>
+              <li>Aspiration pneumonia</li>
+            </ul>
+          </li>
+          <li>With respiratory support: survivors often recover well</li>
+          <li>Death: usually from respiratory failure or aspiration pneumonia</li>
+        </ul>
+        <div class="callout">💡 <strong>Acute ascending symmetric LMN tetraparesis + normal mentation + intact sensation = polyradiculoneuritis</strong> ✨ — search for ticks first! (treatable)<br><br>**No specific treatment** — supportive care + intensive nursing + physical rehab = recovery 3-12 weeks. Watch respiratory function carefully — refer for ventilation if needed</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 66 · Tick Paralysis ---------- */
+  {
+    id: 'tick-paralysis',
+    titleEn: 'Tick Paralysis',
+    titleTh: 'อัมพาตจากเห็บ',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['tick paralysis', 'Dermacentor', 'Ixodes', 'tick toxin', 'ascending paralysis', 'rapid recovery', 'tick removal', 'amitraz', 'fipronil', 'isoxazoline'],
+    aliases: ['tick-induced paralysis', 'tick toxicosis', 'อัมพาตจากเห็บ', 'tick-borne paralysis'],
+    source: 'Ch. 66 · pp. 1158–1174',
+    sections: {
+      definition: `
+        <p>โรค <strong>flaccid paralysis ที่เกิดจาก toxin ของเห็บ</strong> — <strong>treatable + rapid recovery หลังเอาเห็บออก</strong> ✨</p>
+        <ul>
+          <li>เกิดจากเห็บเพศเมียผสมพันธุ์แล้ว ปล่อย salivary neurotoxin ในขณะดูดเลือด</li>
+          <li>Onset 5-9 วันหลังเห็บเริ่มดูด</li>
+          <li>2 main geographic forms:
+            <ul>
+              <li><strong>North American (Dermacentor variabilis, D. andersoni)</strong> — milder; rapid recovery hours-days after tick removal</li>
+              <li><strong>Australian (Ixodes holocyclus)</strong> ✗ — much more severe; toxin persists; high mortality without antitoxin</li>
+            </ul>
+          </li>
+          <li>Thailand: rare but possible; Rhipicephalus sanguineus less commonly causes paralysis</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Engorged adult female ticks</strong> secrete salivary neurotoxin
+            <ul>
+              <li>Holocyclotoxin (Ixodes holocyclus — Australian)</li>
+              <li>Various toxins from Dermacentor (North American)</li>
+            </ul>
+          </li>
+          <li>Toxin blocks acetylcholine release at neuromuscular junction (presynaptic)</li>
+          <li>Several days of feeding required to deliver enough toxin</li>
+          <li>Tick locations:
+            <ul>
+              <li>Anywhere on body — ALL areas need careful inspection</li>
+              <li>Common: ears, head, neck, between toes, axilla, perineum, ventral thorax</li>
+              <li>Often single tick is enough</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Salivary toxin enters bloodstream during prolonged feeding (5-9 days typical)</li>
+          <li>Toxin acts at presynaptic neuromuscular junction</li>
+          <li>Blocks acetylcholine release</li>
+          <li>Result: flaccid paralysis (LMN signs)</li>
+          <li>NO direct CNS effect — mentation normal</li>
+          <li>Australian ticks: toxin persists after removal → continued progression for hours-days</li>
+          <li>North American ticks: rapid improvement after toxin source removed</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Pattern ✨:</strong></p>
+        <ul>
+          <li><strong>Acute ascending paralysis</strong> ✨ — pelvic limbs first → progresses to thoracic over 24-48h</li>
+          <li>Symmetric flaccid paralysis</li>
+          <li>LMN signs:
+            <ul>
+              <li>↓ Or absent spinal reflexes</li>
+              <li>↓ Muscle tone</li>
+              <li>Areflexia</li>
+            </ul>
+          </li>
+          <li><strong>Mentation NORMAL</strong> ✨</li>
+          <li><strong>Sensation INTACT</strong> ✨</li>
+          <li>Voice change (laryngeal weakness)</li>
+          <li>Megaesophagus possible</li>
+          <li>Difficulty eating, swallowing</li>
+          <li>Excessive salivation (some — autonomic)</li>
+          <li>Severe cases: respiratory paralysis ✗</li>
+        </ul>
+
+        <p><strong>Australian Ixodes holocyclus ✗ — much more severe:</strong></p>
+        <ul>
+          <li>Pulmonary edema</li>
+          <li>Megaesophagus prominent</li>
+          <li>Cardiac dysrhythmia, myocarditis</li>
+          <li>Continues to worsen 24-48h AFTER tick removal</li>
+          <li>Mortality 10-20% even with treatment</li>
+        </ul>
+
+        <p><strong>Distinguishing from polyradiculoneuritis:</strong></p>
+        <ul>
+          <li>History/exposure to ticks</li>
+          <li>Faster onset (5-9 days post-attachment vs 7-14 days post-raccoon)</li>
+          <li>Tick on physical exam</li>
+          <li>Rapid response to tick removal (Dermacentor) — diagnostic</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical recognition + tick discovery ✨:</strong></p>
+
+        <p><strong>1. Thorough physical exam ✨ — find the tick(s):</strong></p>
+        <ul>
+          <li>Check ENTIRE body — every area</li>
+          <li>Common: ears, head, neck, axilla, perineum, between toes, around tail</li>
+          <li>Multiple ticks possible</li>
+          <li>Engorged adult female ticks (looking for fed engorged ticks, not necessarily large numbers)</li>
+          <li>If long hair: <strong>clip thoroughly</strong> for inspection</li>
+          <li>Use a fine-tooth flea comb</li>
+          <li>Even 1 tick can cause severe disease</li>
+        </ul>
+
+        <p><strong>2. History:</strong></p>
+        <ul>
+          <li>Outdoor exposure (woods, parks, hunting areas)</li>
+          <li>Geographic location (endemic areas)</li>
+          <li>Recent travel</li>
+          <li>Tick prevention status</li>
+          <li>Onset of signs (usually 5-9 days post-attachment)</li>
+        </ul>
+
+        <p><strong>3. Workup similar to polyradiculoneuritis:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA — usually normal</li>
+          <li>CSF — usually normal (different from polyradiculoneuritis)</li>
+          <li>Thoracic radiograph (aspiration, megaesophagus, pulmonary edema if Australian)</li>
+          <li>EMG: NMJ-like findings (presynaptic)</li>
+        </ul>
+
+        <p><strong>4. Therapeutic test ✨:</strong></p>
+        <ul>
+          <li>Remove all ticks + apply acaricide</li>
+          <li>If signs improve dramatically within 24h → confirms tick paralysis (Dermacentor)</li>
+          <li>If no improvement / worsening → consider Australian Ixodes (need antitoxin) or other diagnosis</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Polyradiculoneuritis (similar presentation; no ticks; CSF protein ↑)</li>
+          <li>Botulism (autonomic involvement, descending pattern)</li>
+          <li>Myasthenia gravis (exercise-induced fluctuating, AChR ab+)</li>
+          <li>Hypokalemia (cervical ventroflexion cat)</li>
+          <li>Toxin (organophosphate, ionophore)</li>
+          <li>Spinal cord disease</li>
+          <li>Polymyositis (CK ↑)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Tick removal ✨ — IMMEDIATE PRIORITY:</strong></p>
+        <ul>
+          <li><strong>Find and remove ALL ticks</strong></li>
+          <li>Use fine-tipped tweezers / tick remover at base of tick — pull straight up steadily</li>
+          <li>Don't crush or twist (releases more saliva)</li>
+          <li>Remove embedded mouthparts if separated</li>
+          <li>Submit for identification if possible</li>
+        </ul>
+
+        <p><strong>2. Acaricidal treatment ✨ — kill any missed ticks:</strong></p>
+        <ul>
+          <li><strong>Isoxazoline class (modern preferred)</strong>:
+            <ul>
+              <li>Fluralaner (Bravecto) 25-56 mg/kg PO single dose</li>
+              <li>Afoxolaner (NexGard) 2.5-7 mg/kg PO single dose</li>
+              <li>Sarolaner (Simparica) 2-4 mg/kg PO single dose</li>
+              <li>Lotilaner (Credelio) 20-43 mg/kg PO single dose</li>
+              <li>Onset hours; kills ticks within 4-12h</li>
+              <li>Excellent safety profile</li>
+            </ul>
+          </li>
+          <li>Fipronil spray (Frontline Spray) — alternative; immediate kill on contact</li>
+          <li>Amitraz dip (Mitaban) — historical, less commonly used now</li>
+          <li>Apply per product label</li>
+          <li>Don't use multiple acaricides simultaneously</li>
+        </ul>
+
+        <p><strong>3. Supportive care:</strong></p>
+        <ul>
+          <li>IV fluids</li>
+          <li>Recumbent care: turn q4-6h, padded bedding, eye lubrication</li>
+          <li>Bladder care</li>
+          <li>Upright feeding if megaesophagus</li>
+          <li>Watch for aspiration</li>
+        </ul>
+
+        <p><strong>4. Respiratory monitoring ✗:</strong></p>
+        <ul>
+          <li>Critical 24-48h watch for respiratory paralysis</li>
+          <li>Mechanical ventilation if respiratory failure</li>
+        </ul>
+
+        <p><strong>5. Australian Ixodes holocyclus specific ✗:</strong></p>
+        <ul>
+          <li><strong>Tick antitoxin serum (TAS)</strong> ✨ — specific antibody
+            <ul>
+              <li>Available in Australia</li>
+              <li>Given IV slowly</li>
+              <li>Can cause anaphylaxis — premedicate</li>
+              <li>Most effective if given early</li>
+            </ul>
+          </li>
+          <li>Aggressive supportive care</li>
+          <li>Mechanical ventilation often needed</li>
+          <li>Cardiac monitoring (arrhythmias, myocarditis)</li>
+          <li>Specialty referral</li>
+        </ul>
+
+        <p><strong>6. Cool environment:</strong></p>
+        <ul>
+          <li>Avoid stress + heat (Australian Ixodes paralysis worsens with heat)</li>
+          <li>Air conditioning if possible</li>
+          <li>Minimize handling</li>
+          <li>Quiet environment</li>
+        </ul>
+
+        <p><strong>7. Avoid:</strong></p>
+        <ul>
+          <li>NO sedatives / CNS depressants (additive respiratory depression)</li>
+          <li>Caution with anesthesia (compound respiratory paralysis)</li>
+          <li>NO steroids</li>
+          <li>NO strenuous exercise during recovery</li>
+        </ul>
+
+        <p><strong>Prevention going forward:</strong></p>
+        <ul>
+          <li>Year-round tick prevention (isoxazoline preferred)</li>
+          <li>Tick checks after outdoor activity</li>
+          <li>Tick avoidance in endemic areas</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Respiratory paralysis ✗ (especially Australian)</li>
+          <li>Aspiration pneumonia</li>
+          <li>Pulmonary edema (Australian)</li>
+          <li>Cardiac arrhythmia, myocarditis (Australian)</li>
+          <li>Megaesophagus residual</li>
+          <li>Decubital ulcers</li>
+          <li>Anaphylaxis to antitoxin (Australian)</li>
+          <li>Concurrent tick-borne disease (Ehrlichia, Anaplasma — coinfection)</li>
+          <li>Death (mostly Australian; rare Dermacentor)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>North American (Dermacentor): excellent</strong> ✓ — recovery within 24-72h after tick removal</li>
+          <li>Australian Ixodes holocyclus: guarded — 10-20% mortality even with treatment
+            <ul>
+              <li>Continues to worsen 24-48h post-removal</li>
+              <li>Severe cases need ICU + ventilation + antitoxin</li>
+            </ul>
+          </li>
+          <li>If respiratory failure develops: depends on ventilation availability</li>
+          <li>Rapid response to tick removal = diagnostic + good prognosis</li>
+        </ul>
+        <div class="callout">⚠️ <strong>ALWAYS search for ticks in any acute paralysis</strong> ✨ — single tick can cause it; treatable!<br><br>💡 Dermacentor (NA): rapid recovery 24-72h after removal. Ixodes holocyclus (Australia): severe ✗ — needs antitoxin + ventilator support<br><br>Tick removal + isoxazoline + supportive care = mainstay. Watch respiratory function 24-48h</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 67 · Inflammatory Myopathies (MMM &amp; Polymyositis) ---------- */
+  {
+    id: 'inflammatory-myopathies',
+    titleEn: 'Inflammatory Myopathies (Masticatory Muscle Myositis &amp; Polymyositis)',
+    titleTh: 'กล้ามเนื้ออักเสบ — MMM และ Polymyositis',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['MMM', 'masticatory muscle myositis', 'polymyositis', '2M antibody', 'CK elevated', 'jaw pain', 'trismus', 'muscle atrophy', 'biopsy', 'prednisolone', 'immune-mediated'],
+    aliases: ['MMM', 'masticatory myositis', 'polymyositis', 'กล้ามเนื้ออักเสบ', 'eosinophilic myositis'],
+    source: 'Ch. 67 · pp. 1174–1188',
+    sections: {
+      definition: `
+        <p>กลุ่มโรคกล้ามเนื้ออักเสบจากระบบภูมิคุ้มกัน — <strong>2 main forms:</strong></p>
+        <ul>
+          <li><strong>Masticatory Muscle Myositis (MMM)</strong> ✨:
+            <ul>
+              <li>Specific autoimmune attack on <strong>type 2M muscle fibers</strong> (only in masticatory muscles — temporalis, masseter, pterygoid)</li>
+              <li>Predisposed: GSD ✨, Lab, Doberman, Golden, Cavalier, large breeds</li>
+              <li>Median age 3 yr (range 4 mo - 14 yr)</li>
+            </ul>
+          </li>
+          <li><strong>Polymyositis (PM)</strong>:
+            <ul>
+              <li>Generalized inflammatory myopathy — affects multiple muscle groups</li>
+              <li>Predisposed: Boxer, Newfoundland, Vizsla, Hungarian Vizsla; older dogs</li>
+              <li>Often associated with: SLE, neoplasia (paraneoplastic), infection (Toxo, Neospora, Ehrlichia, Leptospira)</li>
+            </ul>
+          </li>
+          <li>Cat: rare; if present, often secondary to Toxoplasma</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>MMM:</strong></p>
+        <ul>
+          <li>Autoimmune attack against <strong>type 2M fibers</strong> ✨ — unique to masticatory muscles
+            <ul>
+              <li>2M fibers express unique myosin isoforms not found elsewhere</li>
+              <li>Antibodies cross-react with these antigens</li>
+            </ul>
+          </li>
+          <li>Trigger unknown</li>
+          <li>Genetic predisposition (large breed)</li>
+        </ul>
+
+        <p><strong>Polymyositis:</strong></p>
+        <ul>
+          <li>Idiopathic immune-mediated</li>
+          <li>Secondary causes (must rule out):
+            <ul>
+              <li>Infectious: Toxoplasma, Neospora, Leptospira, Ehrlichia, Anaplasma, Hepatozoon</li>
+              <li>Paraneoplastic: lymphoma, carcinoma</li>
+              <li>SLE / other autoimmune syndromes</li>
+              <li>Drug-induced (rare)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>T-cell + antibody-mediated muscle inflammation</li>
+          <li>MMM: confined to masticatory muscles only (selective targeting)</li>
+          <li>PM: multifocal/diffuse muscle inflammation</li>
+          <li>Acute phase: muscle fiber necrosis, inflammatory infiltration → swelling, pain</li>
+          <li>Chronic phase: muscle fibrosis, atrophy, fatty replacement</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>MMM ✨:</strong></p>
+        <ul>
+          <li><strong>Acute phase:</strong>
+            <ul>
+              <li>Severe pain on opening jaw / palpation of masticatory muscles</li>
+              <li>Reluctance to eat (jaw pain on chewing)</li>
+              <li><strong>Swollen masticatory muscles</strong> ✨ — temporalis + masseter visibly swollen</li>
+              <li>Periorbital swelling (proptosis-like — exophthalmos from temporalis swelling)</li>
+              <li>Difficulty opening mouth</li>
+              <li>Fever, lethargy</li>
+              <li>Submandibular lymphadenopathy</li>
+            </ul>
+          </li>
+          <li><strong>Chronic phase ✗:</strong>
+            <ul>
+              <li><strong>Trismus (inability to open mouth)</strong> ✨ — pathognomonic late finding</li>
+              <li>Severe atrophy of masticatory muscles → "skull-like" appearance ("temporal hollows")</li>
+              <li>Difficulty / inability to eat solid food</li>
+              <li>Weight loss</li>
+              <li>Owners often present at chronic stage with atrophy</li>
+            </ul>
+          </li>
+          <li>Eyes / orbits: exophthalmos (acute swelling) → enophthalmos (chronic atrophy)</li>
+          <li>Limb function: NORMAL (limbs unaffected) ✨</li>
+        </ul>
+
+        <p><strong>Polymyositis:</strong></p>
+        <ul>
+          <li>Generalized weakness, exercise intolerance</li>
+          <li>Stiff gait</li>
+          <li>Muscle pain on palpation (variable)</li>
+          <li>Muscle atrophy (chronic)</li>
+          <li>Megaesophagus / dysphagia (esophageal muscles)</li>
+          <li>Voice change (laryngeal muscles)</li>
+          <li>Aspiration pneumonia risk</li>
+          <li>Fever (variable)</li>
+          <li>Lameness (variable)</li>
+          <li>Reluctance to rise / exercise</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>MMM:</strong></p>
+
+        <p><strong>1. Clinical signs + signalment</strong></p>
+
+        <p><strong>2. 2M antibody titer ✨ — gold standard:</strong></p>
+        <ul>
+          <li>Sensitivity ~ 85-90%, specificity &gt; 99%</li>
+          <li>Send to Comparative Neuromuscular Lab (UC San Diego)</li>
+          <li>Serum sample</li>
+          <li><strong>Test BEFORE starting steroids</strong> ✨ — false negatives if on steroids &gt; 7-14 days</li>
+          <li>Negative test in late chronic phase (depleted antigens)</li>
+        </ul>
+
+        <p><strong>3. CK elevation:</strong></p>
+        <ul>
+          <li>↑ CK during active phase (often 1000s)</li>
+          <li>May be normal or mildly elevated in chronic</li>
+          <li>Less sensitive than 2M antibody for MMM (because mass smaller)</li>
+        </ul>
+
+        <p><strong>4. Muscle biopsy:</strong></p>
+        <ul>
+          <li>Definitive — when 2M antibody equivocal or chronic disease</li>
+          <li>Histopathology: myofiber necrosis, mononuclear infiltration, eosinophils sometimes</li>
+          <li>2M-positive immunohistochemistry confirms</li>
+          <li>Sample from affected masticatory muscle</li>
+        </ul>
+
+        <p><strong>5. Imaging (advanced):</strong></p>
+        <ul>
+          <li>MRI of head: hyperintensity in masticatory muscles, contrast enhancement</li>
+          <li>CT: muscle swelling acute; atrophy chronic</li>
+        </ul>
+
+        <p><strong>Polymyositis diagnostic workup:</strong></p>
+
+        <p><strong>1. Clinical signs + exam</strong></p>
+
+        <p><strong>2. CK ✨</strong> — markedly elevated (often 5000-50,000+)
+          <ul><li>Best screening test</li></ul>
+        </p>
+
+        <p><strong>3. Other lab:</strong></p>
+        <ul>
+          <li>↑ AST, LDH</li>
+          <li>± ANA positive (SLE association)</li>
+          <li>CBC: variable</li>
+        </ul>
+
+        <p><strong>4. Muscle biopsy ✨ — gold standard:</strong></p>
+        <ul>
+          <li>Multifocal mononuclear inflammation</li>
+          <li>Myofiber necrosis</li>
+          <li>Fiber atrophy</li>
+          <li>Helps rule out infectious causes (special stains for protozoa)</li>
+        </ul>
+
+        <p><strong>5. Rule out underlying cause (CRITICAL):</strong></p>
+        <ul>
+          <li>Toxoplasma + Neospora titers</li>
+          <li>Leptospira</li>
+          <li>Ehrlichia, Anaplasma</li>
+          <li>SNAP 4Dx</li>
+          <li>Thoracic radiograph + abdominal US (paraneoplastic — neoplasia)</li>
+          <li>ANA</li>
+          <li>Joint taps (concurrent polyarthritis with SLE)</li>
+        </ul>
+
+        <p><strong>6. EMG:</strong></p>
+        <ul>
+          <li>Spontaneous activity (fibrillation, positive sharp waves) in affected muscles</li>
+          <li>Helps localize for biopsy</li>
+        </ul>
+      `,
+      differential: `
+        <p><strong>MMM:</strong></p>
+        <ul>
+          <li>Retrobulbar abscess (acute swelling, fever — but more localized)</li>
+          <li>Salivary mucocele</li>
+          <li>Tetanus (trismus + generalized stiffness)</li>
+          <li>TMJ luxation</li>
+          <li>Skull/jaw neoplasia</li>
+          <li>Trigeminal nerve disease</li>
+          <li>Coral snake envenomation (acute trismus)</li>
+        </ul>
+
+        <p><strong>Polymyositis:</strong></p>
+        <ul>
+          <li>Polyradiculoneuritis (LMN signs distinct)</li>
+          <li>Myasthenia gravis (exercise-induced, AChR antibody)</li>
+          <li>Hypothyroid myopathy</li>
+          <li>Endocrine myopathy (Cushing's)</li>
+          <li>Inherited muscular dystrophy</li>
+          <li>Tick-borne disease (often cause)</li>
+          <li>Toxin / drug</li>
+          <li>Polyarthritis (similar stiffness)</li>
+          <li>Spinal cord disease</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. MMM treatment ✨:</strong></p>
+
+        <p><strong>Immunosuppression — high-dose steroid:</strong></p>
+        <ul>
+          <li><strong>Prednisolone 2 mg/kg PO q12h × 2-4 weeks</strong> ✨
+            <ul>
+              <li>Anti-inflammatory + immunosuppressive doses</li>
+              <li>Dramatic clinical improvement within days</li>
+              <li>Continue until normal mouth opening + no pain (2-4 wk minimum)</li>
+            </ul>
+          </li>
+          <li><strong>Slow taper over 4-6 months minimum</strong>:
+            <ul>
+              <li>Reduce by 25% q3-4 wk</li>
+              <li>Reach 0.5 mg/kg q24h by month 3</li>
+              <li>Continue alternate-day low dose 6+ months</li>
+              <li>Goal: lowest effective dose to maintain remission</li>
+            </ul>
+          </li>
+          <li>Some need indefinite maintenance steroid</li>
+        </ul>
+
+        <p><strong>Adjunct (steroid-sparing or refractory):</strong></p>
+        <ul>
+          <li>Azathioprine 1-2 mg/kg PO q24-48h</li>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Mycophenolate mofetil 10-20 mg/kg PO q12h</li>
+          <li>Leflunomide 2-4 mg/kg PO q24h</li>
+        </ul>
+
+        <p><strong>Supportive:</strong></p>
+        <ul>
+          <li>Soft food / slurry initial (chronic trismus may need feeding tube)</li>
+          <li>Pain management (gabapentin; avoid NSAID with steroids)</li>
+          <li>Eye lubrication (exophthalmos / enophthalmos)</li>
+          <li>Physical therapy: gentle jaw opening exercises after acute phase resolves</li>
+          <li>Hand-feeding if needed</li>
+        </ul>
+
+        <p><strong>Prognosis depends on stage at presentation:</strong></p>
+        <ul>
+          <li>Acute (early intervention): excellent — return to normal function</li>
+          <li>Chronic (severe atrophy, fibrosis): variable — may have permanent restriction</li>
+          <li>Don't expect full muscle mass recovery in chronic cases</li>
+        </ul>
+
+        <p><strong>2. Polymyositis treatment:</strong></p>
+
+        <p><strong>Address underlying cause first ✨:</strong></p>
+        <ul>
+          <li>Toxoplasma / Neospora: clindamycin 12.5-25 mg/kg PO q12h × 4-6 wk</li>
+          <li>Leptospira: doxycycline 5 mg/kg PO q12h × 2-3 wk</li>
+          <li>Ehrlichia: doxycycline 5 mg/kg PO q12h × 4 wk</li>
+          <li>Neoplasia: chemotherapy / surgery as appropriate</li>
+          <li>SLE: immunosuppression for SLE</li>
+        </ul>
+
+        <p><strong>Idiopathic / immune-mediated:</strong></p>
+        <ul>
+          <li>Prednisolone 1-2 mg/kg PO q12h initially × 2-4 wk</li>
+          <li>Slow taper over 4-6 mo</li>
+          <li>Adjunct steroid-sparing (azathioprine, mycophenolate, etc.)</li>
+        </ul>
+
+        <p><strong>Supportive:</strong></p>
+        <ul>
+          <li>Pain management</li>
+          <li>Address megaesophagus / aspiration risk (upright feeding, anti-reflux)</li>
+          <li>Nutritional support</li>
+          <li>Physical rehabilitation when stable</li>
+        </ul>
+
+        <p><strong>Monitoring (both):</strong></p>
+        <ul>
+          <li>Clinical signs (mouth opening for MMM, gait/strength for PM)</li>
+          <li>CK (PM mainly)</li>
+          <li>2M antibody (MMM follow-up — falling titer = response)</li>
+          <li>CBC, biochem q2-4 wk × 2 mo, then q3 mo</li>
+          <li>UA q3 mo</li>
+          <li>Watch for relapse during taper</li>
+          <li>Watch for steroid side effects (PU/PD, polyphagia, infections)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Permanent trismus / jaw restriction</strong> (chronic MMM) ✗ — irreversible fibrosis</li>
+          <li>Severe muscle atrophy (cosmetic + functional)</li>
+          <li>Difficulty eating → weight loss / cachexia</li>
+          <li>Aspiration pneumonia (PM with megaesophagus)</li>
+          <li>Iatrogenic Cushing's (long-term steroids)</li>
+          <li>Drug side effects (steroids: PU/PD, infections; cyclosporine: GI; azathioprine: hepatotoxicity, BM)</li>
+          <li>UTI (steroid-induced)</li>
+          <li>Pancreatitis</li>
+          <li>Diabetes mellitus (steroid)</li>
+          <li>Relapse during taper</li>
+          <li>Concurrent infectious / neoplastic disease (PM)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>MMM acute (early Tx): excellent</strong> ✓ — return to normal function</li>
+          <li>MMM chronic: variable — permanent atrophy, may need feeding tube, restricted mouth opening</li>
+          <li>Polymyositis idiopathic with appropriate Tx: good — most respond well</li>
+          <li>Polymyositis paraneoplastic: depends on underlying neoplasia</li>
+          <li>Polymyositis infectious: depends on pathogen + response to specific Tx</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Late presentation (chronic atrophy)</li>
+              <li>Severe esophageal involvement</li>
+              <li>Aspiration pneumonia</li>
+              <li>Refractory to steroids</li>
+              <li>Underlying neoplasia</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Trismus + masticatory muscle atrophy = MMM</strong> ✨ — 2M antibody before steroid; treat early to prevent permanent fibrosis<br><br>💡 <strong>Polymyositis: ALWAYS rule out infectious + paraneoplastic causes</strong> — Toxo/Neospora/tick-borne titers + thoracic rads + abd US BEFORE immunosuppression<br><br>Pred 2 mg/kg q12h × 2-4 wk → slow taper over 4-6 months. Watch for aspiration in PM</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     PART 10 — JOINT DISORDERS (Ch 68–71)
+  ============================================================ */
+
+  /* ---------- Ch 69 · Osteoarthritis (OA / DJD) ---------- */
+  {
+    id: 'osteoarthritis',
+    titleEn: 'Osteoarthritis (Degenerative Joint Disease)',
+    titleTh: 'OA — ข้อเสื่อม',
+    type: 'disease',
+    system: 'joint',
+    species: ['dog', 'cat'],
+    tags: ['OA', 'osteoarthritis', 'DJD', 'degenerative joint disease', 'NSAID', 'carprofen', 'meloxicam', 'gabapentin', 'amantadine', 'librela', 'solensia', 'glucosamine', 'chondroitin', 'omega-3', 'hip dysplasia', 'CCL', 'multimodal'],
+    aliases: ['DJD', 'arthritis', 'ข้อเสื่อม', 'OA'],
+    source: 'Ch. 69 · pp. 1188–1208',
+    sections: {
+      definition: `
+        <p>โรค <strong>ข้อเสื่อมเรื้อรัง</strong> — น่าจะเป็นโรคเรื้อรังที่พบบ่อยที่สุดในหมา/แมวแก่</p>
+        <ul>
+          <li><strong>~ 20% ของหมาทุกอายุ; &gt; 60% ของหมาแก่</strong> ✨</li>
+          <li><strong>~ 60-90% ของแมว &gt; 12 ปี</strong> ✨ — under-diagnosed อย่างมากในแมว</li>
+          <li>Joints affected: hip, elbow, stifle, shoulder, carpus/tarsus, spine</li>
+          <li>2 categories:
+            <ul>
+              <li><strong>Primary OA</strong> — idiopathic, age-related</li>
+              <li><strong>Secondary OA</strong> ✨ — most common in dogs; from underlying joint disease (hip dysplasia, elbow dysplasia, OCD, CCL rupture, patellar luxation)</li>
+            </ul>
+          </li>
+          <li>Progressive + irreversible — focus on QOL maintenance, not cure</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary causes:</strong></p>
+        <ul>
+          <li>Age-related cartilage degeneration</li>
+          <li>Genetic predisposition</li>
+          <li>Joint biomechanics (conformation)</li>
+        </ul>
+
+        <p><strong>Secondary (most cases dog) ✨:</strong></p>
+        <ul>
+          <li><strong>Hip dysplasia</strong> ✨ — Lab, Golden, GSD, Rottweiler, large breeds</li>
+          <li><strong>Elbow dysplasia</strong> ✨ — same breeds, also Bernese, Newfoundland</li>
+          <li><strong>OCD</strong> (osteochondritis dissecans) — shoulder, elbow, stifle, hock</li>
+          <li><strong>CCL rupture</strong> ✨ — predisposing AND consequence of OA</li>
+          <li><strong>Patellar luxation</strong> — small breeds especially</li>
+          <li>Trauma / fracture</li>
+          <li>Septic arthritis (post-recovery)</li>
+          <li>Immune-mediated arthritis (chronic)</li>
+          <li>Obesity ✨ — major modifiable risk factor</li>
+          <li>Excessive activity in young growing dogs</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Articular cartilage degeneration → ↓ shock absorption</li>
+          <li>Subchondral bone changes (sclerosis, cysts)</li>
+          <li>Osteophyte formation (bone spurs at joint margins)</li>
+          <li>Synovial inflammation (synovitis)</li>
+          <li>Joint capsule fibrosis → ↓ ROM</li>
+          <li>Periarticular muscle atrophy</li>
+          <li>Pain → guarding → atrophy → more pain (vicious cycle)</li>
+          <li>Central sensitization in chronic disease (neuropathic component)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Dog ✨:</strong></p>
+        <ul>
+          <li><strong>Stiffness after rest</strong> ✨ — "warming-up lameness"; improves with light activity then worsens with prolonged exercise</li>
+          <li>Lameness (variable; one or more limbs)</li>
+          <li>Reluctance to: jump, climb stairs, exercise</li>
+          <li>"Slowing down" (often attributed to age — actually pain)</li>
+          <li>Difficulty rising</li>
+          <li>Behavior changes: irritability, aggression, withdrawal</li>
+          <li>Muscle atrophy (chronic — especially hindlimb)</li>
+          <li>Reduced ROM on examination</li>
+          <li>Crepitus on joint manipulation</li>
+          <li>Pain on palpation/manipulation</li>
+          <li>Joint effusion (variable)</li>
+          <li>Bony enlargement (osteophytes palpable)</li>
+        </ul>
+
+        <p><strong>Cat ✨ — often subtle:</strong></p>
+        <ul>
+          <li><strong>Reduced jumping</strong> ✨ — most common owner-noticed sign
+            <ul>
+              <li>Won't jump on counters / favorite spots</li>
+              <li>Uses lower furniture or stairs to reach high places</li>
+            </ul>
+          </li>
+          <li>↓ Activity, increased sleeping</li>
+          <li>↓ Grooming → unkempt coat, mats</li>
+          <li>Stiff gait, hesitance to climb stairs</li>
+          <li>Inappropriate elimination (can't get to/in litter box)</li>
+          <li>Behavior changes: hiding, aggression when handled</li>
+          <li>Difficulty getting in/out of litter box</li>
+          <li>Lameness rarely overt (cats compensate)</li>
+          <li>Owner often misses signs ("just getting old")</li>
+          <li>Common joints: elbow, hip, stifle, hock, lumbosacral, shoulder</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. History + physical exam ✨:</strong></p>
+        <ul>
+          <li>Owner activity questionnaires (LOAD, HCPI for dog; FMPI for cat) — validated</li>
+          <li>Gait analysis (visual)</li>
+          <li>Joint palpation: pain, swelling, effusion, ROM, crepitus, instability</li>
+          <li>Muscle mass assessment (atrophy)</li>
+          <li>Body condition score (obesity = aggravating)</li>
+        </ul>
+
+        <p><strong>2. Radiograph ✨:</strong></p>
+        <ul>
+          <li>Joint-specific views (hip OFA, elbow flexed, stifle)</li>
+          <li>Findings:
+            <ul>
+              <li>Osteophytes (bone spurs at joint margins)</li>
+              <li>Subchondral sclerosis</li>
+              <li>Subchondral cysts</li>
+              <li>Joint space narrowing</li>
+              <li>Joint effusion (soft tissue density)</li>
+              <li>Enthesophytes (bone formation at ligament attachments)</li>
+            </ul>
+          </li>
+          <li>Severity correlates poorly with pain (radiographic vs clinical disconnect)</li>
+        </ul>
+
+        <p><strong>3. Advanced imaging:</strong></p>
+        <ul>
+          <li>CT — bony detail superior</li>
+          <li>MRI — soft tissue (cartilage, menisci, ligaments)</li>
+          <li>Arthroscopy — visualization + biopsy + treatment (referral)</li>
+        </ul>
+
+        <p><strong>4. Joint tap (rule out other causes):</strong></p>
+        <ul>
+          <li>OA: low cell count (&lt; 5,000), mostly mononuclear, slightly ↑ viscosity</li>
+          <li>Septic: very high cells (&gt; 50,000), neutrophilic, bacteria</li>
+          <li>Immune-mediated: high cells, neutrophilic, no bacteria</li>
+        </ul>
+
+        <p><strong>5. Pre-treatment workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (NSAID safety)</li>
+          <li>UA</li>
+          <li>BP (older patients, NSAID consideration)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Immune-mediated polyarthritis (joint tap differentiates)</li>
+          <li>Septic arthritis (acute, severe, single joint usually)</li>
+          <li>Neoplasia (osteosarcoma especially in older large breed dogs)</li>
+          <li>Soft tissue injury (ligament, tendon)</li>
+          <li>CCL rupture (positive drawer / cranial tibial thrust)</li>
+          <li>Discospondylitis</li>
+          <li>Spinal disease (IVDD, lumbosacral)</li>
+          <li>Neurologic disease (DM, neuropathy)</li>
+          <li>Fracture (history/imaging)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Multimodal approach ✨ — combination is more effective than single modality:</strong></p>
+
+        <p><strong>1. Weight management ✨ — most important non-pharmacologic intervention:</strong></p>
+        <ul>
+          <li>Even 5-10% weight loss dramatically improves OA pain</li>
+          <li>Calorie restriction + prescription diet (Hill's j/d, Royal Canin Mobility, Purina JM)</li>
+          <li>Body condition score 4-5/9 target</li>
+          <li>Slow loss: 1-2% body weight/week max</li>
+          <li>Re-weigh monthly</li>
+        </ul>
+
+        <p><strong>2. Exercise modification:</strong></p>
+        <ul>
+          <li>Controlled, regular, moderate exercise (avoid weekend warrior syndrome)</li>
+          <li>Leash walks 15-30 min × 2-3/day</li>
+          <li>Avoid: long high-impact activities, jumping, ball chasing</li>
+          <li>Swimming/hydrotherapy = ideal (low-impact)</li>
+          <li>Maintain muscle mass without joint stress</li>
+        </ul>
+
+        <p><strong>3. NSAIDs ✨ — first-line pharmacological:</strong></p>
+        <ul>
+          <li><strong>Dog options:</strong>
+            <ul>
+              <li>Carprofen 2.2 mg/kg PO q12h (or 4.4 mg/kg q24h)</li>
+              <li>Meloxicam 0.1 mg/kg PO q24h (initial 0.2 mg/kg day 1)</li>
+              <li>Firocoxib (Previcox) 5 mg/kg PO q24h</li>
+              <li>Robenacoxib (Onsior) 1 mg/kg PO q24h</li>
+              <li>Deracoxib (Deramaxx) 1-2 mg/kg PO q24h</li>
+              <li>Grapiprant (Galliprant) 2 mg/kg PO q24h — EP4 antagonist; safer GI/renal profile</li>
+            </ul>
+          </li>
+          <li><strong>Cat options ✨ — limited:</strong>
+            <ul>
+              <li>Meloxicam 0.05 mg/kg PO q24h (controversial chronic use; AAFP supports for chronic OA)</li>
+              <li>Robenacoxib (Onsior) 1-2.4 mg/kg PO q24h (officially labeled for 3 days only; used longer off-label)</li>
+              <li>Avoid: aspirin, ibuprofen, naproxen, acetaminophen ✗</li>
+            </ul>
+          </li>
+          <li><strong>Side effects monitoring:</strong>
+            <ul>
+              <li>GI: vomiting, diarrhea, melena (most common)</li>
+              <li>Hepatotoxicity (idiosyncratic; check ALT q3-6 mo)</li>
+              <li>Nephrotoxicity (especially in CKD, dehydration)</li>
+              <li>BP elevation</li>
+              <li>Don't combine NSAID + steroid ever ✗</li>
+              <li>5-7 day washout when switching NSAIDs</li>
+            </ul>
+          </li>
+          <li>Recheck CBC + biochem at 2-4 wk, then q3-6 mo</li>
+        </ul>
+
+        <p><strong>4. Anti-NGF monoclonal antibodies ✨ — newer, game-changing:</strong></p>
+        <ul>
+          <li><strong>Bedinvetmab (Librela) — for dogs</strong>:
+            <ul>
+              <li>Monthly SC injection, weight-based dosing</li>
+              <li>Targets nerve growth factor (NGF) — key pain mediator</li>
+              <li>Excellent efficacy</li>
+              <li>Excellent safety profile (no liver/kidney concerns)</li>
+              <li>Use as monotherapy or with NSAID</li>
+            </ul>
+          </li>
+          <li><strong>Frunevetmab (Solensia) — for cats</strong> ✨:
+            <ul>
+              <li>Monthly SC injection</li>
+              <li>~ 60-70% of cats respond</li>
+              <li>Particularly valuable given limited cat NSAID options</li>
+              <li>Owner-noted improvement in mobility, jumping, grooming</li>
+            </ul>
+          </li>
+          <li>Cost moderate; long-term commitment</li>
+        </ul>
+
+        <p><strong>5. Adjunct analgesics:</strong></p>
+        <ul>
+          <li><strong>Gabapentin 10-20 mg/kg PO q8-12h</strong> — neuropathic pain, central sensitization</li>
+          <li><strong>Amantadine 3-5 mg/kg PO q24h</strong> — NMDA antagonist; central sensitization
+            <ul>
+              <li>Useful adjunct for refractory chronic pain</li>
+              <li>Combination with NSAID synergistic</li>
+            </ul>
+          </li>
+          <li>Tramadol 2-5 mg/kg PO q8-12h — limited efficacy in dogs (debated); cat 1-4 mg/kg q12h</li>
+          <li>Acetaminophen (paracetamol) — DOG ONLY, 10-15 mg/kg PO q12h
+            <ul>
+              <li><strong>NEVER cat ✗</strong> — fatal hepatotoxicity</li>
+              <li>Don't combine with NSAID (additive hepatotoxicity)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>6. Disease-modifying agents (DMOAs):</strong></p>
+        <ul>
+          <li><strong>Polysulfated glycosaminoglycan (Adequan)</strong> 4.4 mg/kg IM 2×/wk × 4 wk, then maintenance
+            <ul>
+              <li>↑ Hyaluronate synthesis, ↓ cartilage degradation</li>
+              <li>Modest evidence; widely used</li>
+            </ul>
+          </li>
+          <li><strong>Glucosamine + chondroitin</strong> (oral nutraceutical):
+            <ul>
+              <li>Variable evidence</li>
+              <li>Many products; quality variable</li>
+              <li>Safe; long-term</li>
+              <li>Cosequin, Dasuquin etc.</li>
+            </ul>
+          </li>
+          <li><strong>Omega-3 fatty acids (EPA/DHA)</strong> 50-100 mg/kg/day combined:
+            <ul>
+              <li>Anti-inflammatory</li>
+              <li>Modest improvement in clinical signs</li>
+              <li>Safe; widely recommended</li>
+            </ul>
+          </li>
+          <li>Avocado-soybean unsaponifiables (ASU)</li>
+          <li>Green-lipped mussel</li>
+          <li>UC-II (collagen)</li>
+        </ul>
+
+        <p><strong>7. Intra-articular therapy:</strong></p>
+        <ul>
+          <li>Hyaluronic acid injection</li>
+          <li>Platelet-rich plasma (PRP) — emerging, variable evidence</li>
+          <li>Stem cell therapy — investigational</li>
+          <li>Corticosteroid (methylprednisolone) — controversial; cartilage damage long-term</li>
+          <li>Specialty centers</li>
+        </ul>
+
+        <p><strong>8. Physical rehabilitation ✨:</strong></p>
+        <ul>
+          <li>Hydrotherapy / underwater treadmill</li>
+          <li>Therapeutic exercises (PROM, isometric)</li>
+          <li>Manual therapy (massage, mobilization)</li>
+          <li>Therapeutic ultrasound</li>
+          <li>Cold laser (PBM)</li>
+          <li>TENS</li>
+          <li>Acupuncture (some evidence)</li>
+          <li>Recommended for all OA cases — slows progression + improves QOL</li>
+        </ul>
+
+        <p><strong>9. Environmental modifications ✨:</strong></p>
+        <ul>
+          <li>Non-slip flooring (yoga mats, runners)</li>
+          <li>Ramps for stairs / car / sofa</li>
+          <li>Orthopedic bedding (memory foam)</li>
+          <li>Raised food/water bowls</li>
+          <li>Heated bed (can help; avoid burns)</li>
+          <li>Cat: low-sided litter box, ramps to favorite perches, multiple resting spots</li>
+        </ul>
+
+        <p><strong>10. Surgical options (selected):</strong></p>
+        <ul>
+          <li>Total hip replacement (severe hip OA)</li>
+          <li>Femoral head ostectomy (FHO) — salvage</li>
+          <li>Arthroscopic debridement (specific lesions)</li>
+          <li>Joint fusion (severe single-joint disease)</li>
+          <li>Specialty referral</li>
+        </ul>
+
+        <p><strong>Stepwise approach ✨:</strong></p>
+        <ol>
+          <li>Weight + exercise + environment + omega-3</li>
+          <li>Add NSAID OR anti-NGF mAb</li>
+          <li>Add gabapentin or amantadine if inadequate</li>
+          <li>Adjunct DMOAs (Adequan, glucosamine)</li>
+          <li>Physical rehab</li>
+          <li>Refractory: combination therapy, intra-articular, surgery</li>
+        </ol>
+      `,
+      complications: `
+        <ul>
+          <li>Progressive functional decline — eventually limited mobility</li>
+          <li>NSAID side effects: GI ulceration, hepatotoxicity, nephrotoxicity</li>
+          <li>Concurrent CKD progression with NSAIDs</li>
+          <li>Decreased QOL → euthanasia decision</li>
+          <li>Secondary complications:
+            <ul>
+              <li>Muscle atrophy → falls, weakness</li>
+              <li>Obesity worsens (less activity)</li>
+              <li>Behavioral changes (chronic pain → aggression, withdrawal)</li>
+              <li>Inappropriate elimination (cat — can't get to box)</li>
+              <li>Dental disease (cat — ↓ grooming)</li>
+            </ul>
+          </li>
+          <li>Iatrogenic from incorrect drug combinations</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Progressive but very manageable with multimodal Tx</strong> ✓</li>
+          <li>Most achieve good QOL for years</li>
+          <li>Anti-NGF mAbs (Librela, Solensia) have transformed prognosis</li>
+          <li>Cat OA: under-recognized but very treatable when diagnosed</li>
+          <li>Surgical options for select severe cases (THR especially)</li>
+          <li>Lifespan often determined by comorbidities, not OA itself</li>
+          <li>Owner education + commitment = key to success</li>
+        </ul>
+        <div class="callout">💡 <strong>Multimodal &gt; single drug</strong> ✨ — weight + exercise + NSAID/Librela + omega-3 + rehab + environment<br><br>**Cat OA**: under-diagnosed; reduced jumping = cardinal sign. Solensia (frunevetmab) game-changer<br><br>**Librela (bedinvetmab) for dogs** = monthly injection, transformative. Combine with NSAID safely</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 70 · Immune-Mediated Polyarthritis (IMPA) ---------- */
+  {
+    id: 'immune-mediated-polyarthritis',
+    titleEn: 'Immune-Mediated Polyarthritis (IMPA)',
+    titleTh: 'IMPA — โรคข้ออักเสบจากภูมิคุ้มกัน',
+    type: 'disease',
+    system: 'joint',
+    species: ['dog', 'cat'],
+    tags: ['IMPA', 'immune-mediated polyarthritis', 'non-erosive', 'erosive', 'rheumatoid arthritis', 'SLE', 'joint tap', 'neutrophilic', 'shifting lameness', 'fever of unknown origin', 'prednisolone', 'leflunomide', 'cyclosporine'],
+    aliases: ['IMPA', 'polyarthritis', 'immune-mediated arthritis', 'IMP', 'ข้ออักเสบภูมิคุ้มกัน'],
+    source: 'Ch. 70 · pp. 1208–1220',
+    sections: {
+      definition: `
+        <p>โรค <strong>ข้ออักเสบหลายข้อจากระบบภูมิคุ้มกัน</strong> — ไม่ติดเชื้อ; ตอบสนองต่อ steroids ✨</p>
+        <ul>
+          <li>2 main categories:
+            <ul>
+              <li><strong>Non-erosive IMPA (NEIMPA)</strong> ✨ — most common (95%); no joint destruction; multiple subtypes (Type I-IV)</li>
+              <li><strong>Erosive IMPA (EIMPA)</strong> — rare (5%); destructive (rheumatoid-like); poor prognosis</li>
+            </ul>
+          </li>
+          <li>NEIMPA Types:
+            <ul>
+              <li>Type I — idiopathic (most common; ~ 50%)</li>
+              <li>Type II — reactive (associated with infection elsewhere)</li>
+              <li>Type III — enteropathic (associated with GI disease)</li>
+              <li>Type IV — neoplastic (paraneoplastic)</li>
+            </ul>
+          </li>
+          <li>Often presents as <strong>"fever of unknown origin (FUO)"</strong> ✨ + lameness</li>
+          <li>Median age 5-6 yr (range any age)</li>
+          <li>Predisposed: any breed; some over-represented (German Shepherd, Akita, Bernese Mountain Dog, Spaniels)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>NEIMPA Type I (idiopathic):</strong></p>
+        <ul>
+          <li>Unknown trigger; suspected immune dysregulation</li>
+          <li>Possibly self-antigens or molecular mimicry</li>
+        </ul>
+
+        <p><strong>NEIMPA Type II (reactive):</strong></p>
+        <ul>
+          <li>Infection at distant site → immune complex deposition in joints</li>
+          <li>Common triggers:
+            <ul>
+              <li>UTI</li>
+              <li>Pyometra</li>
+              <li>Pyoderma</li>
+              <li>Endocarditis</li>
+              <li>Bacterial pneumonia</li>
+              <li>Chronic infections</li>
+            </ul>
+          </li>
+          <li>Treatment of underlying infection often resolves arthritis</li>
+        </ul>
+
+        <p><strong>NEIMPA Type III (enteropathic):</strong></p>
+        <ul>
+          <li>Associated with chronic GI disease (IBD, food sensitivity)</li>
+          <li>Treatment of GI disease improves arthritis</li>
+        </ul>
+
+        <p><strong>NEIMPA Type IV (neoplastic / paraneoplastic):</strong></p>
+        <ul>
+          <li>Underlying neoplasia (lymphoma, carcinoma)</li>
+          <li>Workup: thoracic radiograph + abdominal US + LN</li>
+        </ul>
+
+        <p><strong>EIMPA:</strong></p>
+        <ul>
+          <li>Canine "rheumatoid arthritis" — small breeds especially (Yorkie, Toy Poodle)</li>
+          <li>Genetic + immune-mediated joint destruction</li>
+          <li>Antibodies against type II collagen, RF in some</li>
+        </ul>
+
+        <p><strong>Drug-induced (rare but important):</strong></p>
+        <ul>
+          <li>Trimethoprim-sulfa ✨ — Doberman especially</li>
+          <li>Cephalexin</li>
+          <li>Phenobarbital</li>
+          <li>Vaccines (very rare)</li>
+        </ul>
+
+        <p><strong>SLE-associated:</strong></p>
+        <ul>
+          <li>Polyarthritis as one feature of SLE</li>
+          <li>+ IMHA, ITP, glomerulonephritis, dermatologic signs</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Immune complex deposition in synovium → complement activation → neutrophil influx</li>
+          <li>Neutrophilic synovitis</li>
+          <li>NEIMPA: no cartilage/bone destruction (immune attack on synovium only)</li>
+          <li>EIMPA: cartilage + bone destruction → joint deformity</li>
+          <li>Multiple joints affected — typically symmetric, distal joints (carpus, tarsus)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Shifting lameness</strong> ✨ — different limb affected day to day</li>
+          <li>Stiffness (after rest), reluctance to walk</li>
+          <li>"Walking on eggshells" — short choppy gait</li>
+          <li><strong>Fever</strong> ✨ — often high (39.5-41°C); waxing-waning</li>
+          <li>Lethargy, depression</li>
+          <li>Anorexia, weight loss</li>
+          <li>Joint swelling (variable, often subtle):
+            <ul>
+              <li>Distal joints most affected: <strong>carpus + tarsus</strong> ✨</li>
+              <li>Bilateral symmetric</li>
+              <li>Stifle, elbow also</li>
+            </ul>
+          </li>
+          <li>Pain on joint manipulation</li>
+          <li>Muscle pain / stiffness (myositis component sometimes)</li>
+          <li>Lymphadenopathy (generalized — esp. with reactive form)</li>
+          <li><strong>FUO presentation</strong>: ~ 30% of FUO cases in dog are IMPA — always tap multiple joints!</li>
+        </ul>
+
+        <p><strong>EIMPA specific:</strong></p>
+        <ul>
+          <li>Joint deformity over time</li>
+          <li>Subluxation of carpus/tarsus</li>
+          <li>Muscle atrophy</li>
+          <li>Chronic course</li>
+          <li>More severe lameness</li>
+        </ul>
+
+        <p><strong>SLE features (if present):</strong></p>
+        <ul>
+          <li>Skin lesions (ulcerative, depigmenting)</li>
+          <li>Anemia (IMHA)</li>
+          <li>Thrombocytopenia (ITP)</li>
+          <li>Proteinuria (glomerulonephritis)</li>
+          <li>Polymyositis</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Joint tap (arthrocentesis) ✨ — ESSENTIAL diagnostic:</strong></p>
+        <ul>
+          <li><strong>Tap MULTIPLE joints</strong> ✨ — typically 4-6 joints (both carpi, both tarsi, ± stifles, elbows)
+            <ul>
+              <li>Single joint may be spared even in disease — multi-joint sampling needed</li>
+            </ul>
+          </li>
+          <li>Sedation often needed</li>
+          <li>Sterile technique critical</li>
+          <li><strong>Findings ✨:</strong>
+            <ul>
+              <li><strong>↑ Cell count: 5,000-100,000+ WBC/µL</strong></li>
+              <li><strong>Predominantly neutrophils (&gt; 80%)</strong> ✨</li>
+              <li>Non-degenerate neutrophils (vs degenerate in septic)</li>
+              <li><strong>NO bacteria</strong> on cytology</li>
+              <li>Normal viscosity to mildly decreased</li>
+              <li>Normal: &lt; 3,000 cells, mostly mononuclear, high viscosity</li>
+              <li>OA: &lt; 5,000 cells, mostly mononuclear, slightly ↓ viscosity</li>
+              <li>Septic: very high (&gt; 100,000), degenerate neutrophils, ± bacteria</li>
+            </ul>
+          </li>
+          <li>Aerobic culture (rule out septic — should be negative)</li>
+          <li>Anaerobic culture if suspect</li>
+        </ul>
+
+        <p><strong>Workup to find underlying cause (Type II/III/IV):</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>UA + culture (UTI screen)</li>
+          <li>Thoracic radiograph + abdominal US (neoplasia, infection)</li>
+          <li>Cardiac evaluation (endocarditis)</li>
+          <li>Tick-borne disease testing (SNAP 4Dx, specific titers — Anaplasma, Ehrlichia, Borrelia)</li>
+          <li>Fecal (parasites, especially Giardia)</li>
+          <li>Drug history review</li>
+          <li>If GI signs: pancreatitis (cPL/fPL), intestinal biopsy</li>
+        </ul>
+
+        <p><strong>SLE workup (if multisystemic signs):</strong></p>
+        <ul>
+          <li><strong>ANA</strong> ✨ — antinuclear antibody (positive in &gt; 50% SLE cases)</li>
+          <li>RF (rheumatoid factor) — variable; not specific</li>
+          <li>CBC for IMHA/ITP</li>
+          <li>UA + UPC for glomerulonephritis</li>
+          <li>Coombs test if anemic</li>
+          <li>Skin biopsy if dermatologic signs</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Joint radiograph:
+            <ul>
+              <li>NEIMPA: usually normal or only soft tissue swelling</li>
+              <li>EIMPA: subchondral erosions, joint space narrowing, osteopenia, deformity</li>
+            </ul>
+          </li>
+          <li>Chest + abdominal imaging (paraneoplastic)</li>
+        </ul>
+
+        <p><strong>Synovial biopsy</strong> — for refractory/atypical cases; specialty</p>
+      `,
+      differential: `
+        <ul>
+          <li>Septic arthritis (single joint usually, very high cell count, bacteria)</li>
+          <li>Tick-borne polyarthritis (Anaplasma, Ehrlichia, Borrelia — treat empirically with doxy + steroid)</li>
+          <li>OA (low cell count joint tap, chronic, no fever)</li>
+          <li>Trauma</li>
+          <li>Discospondylitis (vertebral focus)</li>
+          <li>Polymyositis (CK ↑, muscle biopsy)</li>
+          <li>Vasculitis</li>
+          <li>Bacterial endocarditis (joints can be involved)</li>
+          <li>Polymyalgia rheumatica</li>
+          <li>Drug-induced</li>
+          <li>FUO from other causes</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Address underlying cause (Types II-IV) ✨ — CRITICAL:</strong></p>
+        <ul>
+          <li>Type II (reactive): treat infection (UTI, pyoderma, pneumonia, endocarditis) → arthritis often resolves</li>
+          <li>Type III (enteropathic): treat IBD (diet trial, immunosuppression)</li>
+          <li>Type IV (paraneoplastic): treat neoplasia (chemotherapy, surgery)</li>
+          <li>Drug-induced: discontinue offending drug; arthritis resolves typically</li>
+        </ul>
+
+        <p><strong>2. Empirical doxycycline trial (tick-borne suspect):</strong></p>
+        <ul>
+          <li>5-10 mg/kg PO q12-24h × 4 wk</li>
+          <li>Especially if:
+            <ul>
+              <li>Tick exposure history</li>
+              <li>Endemic area</li>
+              <li>Pending titer results</li>
+              <li>Atypical features</li>
+            </ul>
+          </li>
+          <li>If responds → tick-borne polyarthritis</li>
+          <li>If no response → IMPA</li>
+        </ul>
+
+        <p><strong>3. Immunosuppression — primary IMPA:</strong></p>
+
+        <p><strong>Prednisolone ✨ — first-line:</strong></p>
+        <ul>
+          <li><strong>Induction: 2 mg/kg PO q12-24h × 2-4 weeks</strong> ✨
+            <ul>
+              <li>Cat: 2-4 mg/kg PO q24h</li>
+              <li>Dramatic improvement within 24-72h typical</li>
+            </ul>
+          </li>
+          <li><strong>Slow taper over 4-6 months minimum:</strong>
+            <ul>
+              <li>Reduce by 25% q3-4 wk</li>
+              <li>Goal: lowest effective dose to maintain remission</li>
+              <li>Some require lifelong low-dose</li>
+            </ul>
+          </li>
+          <li>Recheck joint tap at 4-6 wk to confirm cytologic remission (some clinicians)</li>
+        </ul>
+
+        <p><strong>Adjunct (steroid-sparing or refractory):</strong></p>
+        <ul>
+          <li><strong>Leflunomide 2-4 mg/kg PO q24h</strong> ✨ — increasingly first-line adjunct
+            <ul>
+              <li>Pyrimidine synthesis inhibitor</li>
+              <li>Monitor liver enzymes</li>
+              <li>Particularly effective for IMPA</li>
+            </ul>
+          </li>
+          <li><strong>Azathioprine 1-2 mg/kg PO q24-48h</strong> (DOG ONLY — fatal in cat ✗)
+            <ul>
+              <li>Monitor CBC + biochem (myelosuppression, hepatotoxicity)</li>
+            </ul>
+          </li>
+          <li>Mycophenolate mofetil 10-20 mg/kg PO q12h</li>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Cyclophosphamide (rare; severe cases)</li>
+          <li>Methotrexate (EIMPA — like rheumatoid arthritis treatment)</li>
+        </ul>
+
+        <p><strong>4. EIMPA management:</strong></p>
+        <ul>
+          <li>More aggressive immunosuppression often needed</li>
+          <li>Combination therapy (pred + leflunomide or methotrexate)</li>
+          <li>Joint surgery (arthrodesis) for severely deformed joints</li>
+          <li>Pain management adjunct (gabapentin)</li>
+        </ul>
+
+        <p><strong>5. Supportive:</strong></p>
+        <ul>
+          <li>NSAID — generally avoid concurrent with steroid; for pain after steroid taper</li>
+          <li>Gabapentin for pain</li>
+          <li>Physical rehab (when stable)</li>
+          <li>Weight management</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Clinical response (lameness, fever, energy) — within days for IMPA</li>
+          <li>CBC, biochem at 2 wk, 1 mo, 3 mo, then q3 mo</li>
+          <li>UA + culture q3 mo (UTI from steroids)</li>
+          <li>Recheck joint tap at 4-6 wk if not responding</li>
+          <li>Watch for steroid side effects, drug-specific toxicity</li>
+          <li>Watch for relapse during taper</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Iatrogenic Cushing's (long-term steroids)</li>
+          <li>UTI (steroid effect)</li>
+          <li>Pyoderma, demodex (immunosuppression)</li>
+          <li>Pancreatitis</li>
+          <li>GI ulceration</li>
+          <li>Diabetes mellitus (steroid)</li>
+          <li>Drug-specific (azathioprine: BM/liver; leflunomide: liver; cyclosporine: GI/skin)</li>
+          <li>Permanent joint deformity (EIMPA)</li>
+          <li>Relapse during taper (~ 30%)</li>
+          <li>Concurrent autoimmune disease (SLE complications)</li>
+          <li>Underlying cause progression (paraneoplastic)</li>
+          <li>Aspiration pneumonia (recumbent severe cases)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>NEIMPA Type I idiopathic with appropriate Tx: good</strong> ✓ — &gt; 80% achieve remission</li>
+          <li>NEIMPA Types II-IV: depends on underlying cause</li>
+            <ul>
+              <li>Reactive (Type II): excellent if infection treatable</li>
+              <li>Enteropathic (Type III): good with IBD control</li>
+              <li>Paraneoplastic (Type IV): depends on neoplasia</li>
+            </ul>
+          <li>Drug-induced: excellent — resolves with drug withdrawal</li>
+          <li>EIMPA: guarded — progressive joint destruction; poor without aggressive Tx</li>
+          <li>SLE: variable; depends on multisystem involvement severity</li>
+          <li>Median Tx duration: 6-12 months; some need lifelong</li>
+          <li>Relapse rate ~ 30% during taper</li>
+        </ul>
+        <div class="callout">⚠️ <strong>FUO + lameness = tap multiple joints</strong> ✨ — IMPA = ~ 30% of FUO cases<br><br>💡 ALWAYS workup underlying cause (Type II reactive, Type III enteropathic, Type IV paraneoplastic) before lifelong immunosuppression<br><br>**Empirical doxycycline** if tick-borne possible. Pred 2 mg/kg q12h induction → slow taper 4-6 months</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 71 · Septic Arthritis ---------- */
+  {
+    id: 'septic-arthritis',
+    titleEn: 'Septic Arthritis (Bacterial)',
+    titleTh: 'ข้อติดเชื้อ — ข้อเป็นหนอง',
+    type: 'disease',
+    system: 'joint',
+    species: ['dog', 'cat'],
+    tags: ['septic arthritis', 'bacterial arthritis', 'joint infection', 'staph', 'strep', 'E. coli', 'lavage', 'arthroscopy', 'joint tap', 'monoarthritis', 'IV antibiotics', 'culture'],
+    aliases: ['joint infection', 'pyarthrosis', 'septic joint', 'ข้อเป็นหนอง', 'ข้อติดเชื้อ'],
+    source: 'Ch. 71 · pp. 1220–1230',
+    sections: {
+      definition: `
+        <p>การติดเชื้อ <strong>แบคทีเรีย</strong> ในข้อ — emergency เพราะทำลายข้อภายในชั่วโมง-วัน ✗</p>
+        <ul>
+          <li>มักเป็น <strong>monoarthritis</strong> ✨ (ข้อเดียว) — ต่างจาก IMPA (หลายข้อ)</li>
+          <li>Pre-existing joint disease, surgery, trauma เพิ่มความเสี่ยง</li>
+          <li>หากไม่รักษาทันที → permanent cartilage damage, deformity</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Routes:</strong></p>
+        <ul>
+          <li><strong>Hematogenous</strong> — most common in dog
+            <ul>
+              <li>Bacteremia from distant infection</li>
+              <li>Bacterial endocarditis</li>
+              <li>Discospondylitis (concurrent)</li>
+              <li>UTI</li>
+              <li>Skin/dental infection</li>
+            </ul>
+          </li>
+          <li><strong>Direct inoculation:</strong>
+            <ul>
+              <li>Penetrating wound (bite, foreign body)</li>
+              <li>Joint surgery (TPLO, FHO, etc.)</li>
+              <li>Joint injection / arthrocentesis (rare with proper technique)</li>
+            </ul>
+          </li>
+          <li><strong>Local extension:</strong>
+            <ul>
+              <li>Adjacent osteomyelitis</li>
+              <li>Cellulitis</li>
+              <li>Open fracture</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Common pathogens:</strong></p>
+        <ul>
+          <li><strong>Staphylococcus pseudintermedius</strong> ✨ — most common</li>
+          <li>Staphylococcus aureus (including MRSA)</li>
+          <li>Streptococcus</li>
+          <li>E. coli (immunocompromised)</li>
+          <li>Pseudomonas (post-surgical)</li>
+          <li>Pasteurella (cat bites)</li>
+          <li>Anaerobes (penetrating wounds)</li>
+          <li>Mycoplasma (occasional)</li>
+          <li>Borrelia burgdorferi (Lyme — serology + history)</li>
+          <li>Mycobacterium (rare)</li>
+        </ul>
+
+        <p><strong>Risk factors:</strong></p>
+        <ul>
+          <li>Pre-existing OA / immune-mediated arthritis</li>
+          <li>Joint surgery (especially with implants)</li>
+          <li>Immune compromise: DM, Cushing's, neoplasia, immunosuppressive Tx</li>
+          <li>Older age</li>
+          <li>Bite wounds</li>
+          <li>Penetrating foreign body</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Bacterial proliferation in synovium → cytokine release → severe inflammation</li>
+          <li>Neutrophilic enzymes + bacterial toxins → cartilage destruction within HOURS-DAYS ✗</li>
+          <li>↑ Synovial fluid → joint distension → pain, effusion</li>
+          <li>Bone involvement (osteomyelitis) in chronic / severe</li>
+          <li>If not treated: irreversible joint damage, ankylosis, chronic infection</li>
+          <li>Bacteremia possible from joint focus</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Severe lameness on one limb</strong> ✨ — non-weight bearing typically</li>
+          <li><strong>Single joint affected</strong> (monoarthritis) ✨</li>
+          <li>Joint signs:
+            <ul>
+              <li><strong>Hot</strong></li>
+              <li><strong>Swollen</strong> — visibly enlarged</li>
+              <li><strong>Painful</strong> — severe, even at rest</li>
+              <li>Erythema overlying skin</li>
+              <li>Effusion palpable</li>
+              <li>↓ ROM</li>
+            </ul>
+          </li>
+          <li><strong>Fever</strong> ✨ (often)</li>
+          <li>Lethargy, anorexia</li>
+          <li>Recent history (often):
+            <ul>
+              <li>Surgery</li>
+              <li>Bite wound</li>
+              <li>Penetrating injury</li>
+              <li>Distant infection (UTI, skin)</li>
+              <li>Endocarditis features</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Common joints affected:</strong></p>
+        <ul>
+          <li>Stifle (most common — large joint, often surgery)</li>
+          <li>Elbow</li>
+          <li>Hock</li>
+          <li>Carpus</li>
+          <li>Hip (rare; hard to detect)</li>
+        </ul>
+
+        <p><strong>Chronic / sub-acute presentation:</strong></p>
+        <ul>
+          <li>Less dramatic; chronic mild lameness</li>
+          <li>Mild effusion</li>
+          <li>± Fever</li>
+          <li>May develop osteomyelitis</li>
+          <li>Often post-surgical infection</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Joint tap (arthrocentesis) ✨ — DIAGNOSTIC:</strong></p>
+        <ul>
+          <li>Sterile prep, sedation often</li>
+          <li><strong>Findings ✨:</strong>
+            <ul>
+              <li><strong>Markedly elevated cell count: &gt; 50,000-100,000+ WBC/µL</strong> ✨</li>
+              <li><strong>Predominantly neutrophils (&gt; 90%)</strong> with <strong>degenerate neutrophils</strong> (toxic changes)</li>
+              <li>Bacteria visible on cytology (~ 50% of cases — absence doesn't rule out)</li>
+              <li>Decreased viscosity (turbid, purulent)</li>
+              <li>Color: yellow-green, cloudy</li>
+              <li>Compare with IMPA: similar cell count but non-degenerate, no bacteria</li>
+            </ul>
+          </li>
+          <li><strong>Aerobic + anaerobic culture ✨</strong> — submit fluid and synovial membrane fragment if possible
+            <ul>
+              <li>Culture from blood culture bottles often best yield</li>
+              <li>Sensitivity ~ 60-80% (false negatives common)</li>
+              <li>Hold for fastidious organisms</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Other workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (leukocytosis with left shift typical; rule out endocarditis)</li>
+          <li>Blood culture × 2-3 (especially if febrile, distant primary suspected)</li>
+          <li>UA + culture</li>
+          <li>Joint radiograph:
+            <ul>
+              <li>Acute: soft tissue swelling, effusion</li>
+              <li>Chronic / severe: subchondral bone changes, osteolysis, periosteal reaction → osteomyelitis</li>
+            </ul>
+          </li>
+          <li>Echocardiogram if endocarditis suspected (murmur, fever, joint signs)</li>
+          <li>Lyme + tick-borne titers (endemic areas)</li>
+          <li>Fungal cultures if endemic</li>
+        </ul>
+
+        <p><strong>Advanced imaging:</strong></p>
+        <ul>
+          <li>CT/MRI for chronic cases (osteomyelitis, foreign body, abscess)</li>
+          <li>Arthroscopy — diagnostic + therapeutic (joint lavage, debridement, biopsy)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Immune-mediated polyarthritis (multiple joints, non-degenerate cells, no bacteria)</li>
+          <li>OA (chronic, low cell count)</li>
+          <li>Trauma / soft tissue injury (history, normal joint tap)</li>
+          <li>Hemarthrosis (RBC predominant; coag, neoplasia)</li>
+          <li>Crystal arthropathy (rare in pets)</li>
+          <li>Tick-borne polyarthritis (multiple joints; titers)</li>
+          <li>CCL rupture with effusion</li>
+          <li>Synovial neoplasia (rare; chronic single joint)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Joint lavage ✨ — cornerstone:</strong></p>
+        <ul>
+          <li>Under sedation/anesthesia + sterile prep</li>
+          <li><strong>Through-and-through joint lavage:</strong>
+            <ul>
+              <li>Place 2 needles (or arthrotomy)</li>
+              <li>Flush with sterile saline (1-2+ L)</li>
+              <li>Until clear effluent</li>
+            </ul>
+          </li>
+          <li><strong>Arthroscopy (preferred when available)</strong>:
+            <ul>
+              <li>Direct visualization</li>
+              <li>Debride fibrin, necrotic tissue</li>
+              <li>Lavage</li>
+              <li>Better outcomes than needle lavage alone</li>
+            </ul>
+          </li>
+          <li><strong>Open arthrotomy</strong> — for severe / complicated cases:
+            <ul>
+              <li>Open joint, debride, lavage, place drain</li>
+              <li>Especially if foreign body, chronic, refractory</li>
+            </ul>
+          </li>
+          <li>May need repeat lavage q24-48h × several treatments</li>
+        </ul>
+
+        <p><strong>2. Antibiotic therapy ✨:</strong></p>
+        <ul>
+          <li><strong>Empirical IV (initial)</strong> until culture:
+            <ul>
+              <li><strong>Cefazolin 22 mg/kg IV q8h + enrofloxacin 5-10 mg/kg IV q24h</strong> ✨</li>
+              <li>Or amoxicillin-clavulanate 22 mg/kg IV q8h</li>
+              <li>+ Anaerobe coverage (metronidazole 10 mg/kg q12h) if penetrating wound / bite</li>
+              <li>Cover Staph, Strep, gram-negative</li>
+            </ul>
+          </li>
+          <li>Adjust per culture + susceptibility</li>
+          <li>Continue IV until clinical improvement + transition to oral when eating</li>
+          <li><strong>Total duration: 4-6 weeks (uncomplicated); 6-12 weeks if osteomyelitis</strong></li>
+          <li>Choose oral with good bone/joint penetration:
+            <ul>
+              <li>Cephalexin 22 mg/kg PO q8-12h</li>
+              <li>Amoxicillin-clavulanate</li>
+              <li>Clindamycin (anaerobes, Staph)</li>
+              <li>Fluoroquinolone (Pseudomonas, gram-negative)</li>
+              <li>Trimethoprim-sulfa</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Address underlying source:</strong></p>
+        <ul>
+          <li>Treat distant infection (UTI, endocarditis, dental, skin)</li>
+          <li>Remove foreign body</li>
+          <li>Surgical debridement of wound</li>
+          <li>Implant removal if surgical infection (after fracture healing)</li>
+          <li>Address osteomyelitis (specialty)</li>
+        </ul>
+
+        <p><strong>4. Pain management:</strong></p>
+        <ul>
+          <li>Opioid (methadone, buprenorphine) initially</li>
+          <li>NSAID after stable + eating (carprofen, meloxicam)</li>
+          <li>Avoid steroid ✗</li>
+          <li>Joint immobilization (splint, padded bandage) for first few days</li>
+        </ul>
+
+        <p><strong>5. Activity:</strong></p>
+        <ul>
+          <li>Cage rest 2-4 weeks</li>
+          <li>Gradual return to controlled activity</li>
+          <li>Physical rehabilitation when infection cleared</li>
+        </ul>
+
+        <p><strong>6. Monitoring ✨:</strong></p>
+        <ul>
+          <li>Clinical: lameness improvement, joint signs, fever resolution within 48-72h typical</li>
+          <li><strong>Repeat joint tap at 7-14 d</strong>:
+            <ul>
+              <li>Confirm cytologic improvement</li>
+              <li>Repeat culture</li>
+              <li>If persistent infection → consider extended antibiotics + surgical debridement</li>
+            </ul>
+          </li>
+          <li>CBC at 1 wk, 4 wk</li>
+          <li>Joint radiograph at 4-6 wk (osteomyelitis development)</li>
+          <li>If not responding: investigate fastidious organisms, foreign body, immune compromise</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Permanent cartilage damage</strong> ✗ — within hours-days; even with treatment</li>
+          <li>Osteomyelitis (chronic infection of bone)</li>
+          <li>Joint deformity, ankylosis</li>
+          <li>Persistent infection / resistant organism</li>
+          <li>Sepsis / bacteremia (especially severe cases)</li>
+          <li>Endocarditis (concurrent or source)</li>
+          <li>Need for amputation / joint fusion (severe refractory)</li>
+          <li>Iatrogenic from prolonged antibiotic (resistance, GI, AKI)</li>
+          <li>Implant infection (post-surgical) — often need removal</li>
+          <li>Secondary OA (long-term — even if infection cleared)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Acute, treated promptly + appropriate antibiotic + lavage: good</strong> ✓ — 70-85% return to function</li>
+          <li>Delayed treatment / chronic: guarded — significant cartilage damage, secondary OA</li>
+          <li>Implant-associated: may require implant removal; long Tx</li>
+          <li>Septic + endocarditis: variable; depends on cardiac involvement</li>
+          <li>MRSA / multidrug-resistant: poor without specialty culture-guided therapy</li>
+          <li>Osteomyelitis develops: prolonged Tx (3-6 mo), guarded for full recovery</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Delayed diagnosis / treatment</li>
+              <li>Multidrug resistance</li>
+              <li>Implant infection</li>
+              <li>Concurrent osteomyelitis</li>
+              <li>Immunocompromised host</li>
+              <li>Multiple joints (rare in septic)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Acute monoarthritis + fever = septic until proven otherwise</strong> ✗ — joint tap STAT! Don't delay<br><br>💡 Key: JOINT TAP first, then empirical IV antibiotics + lavage. Repeat tap at 7-14 d to confirm clearing<br><br>**Total duration 4-6 weeks** (longer if osteomyelitis). Search for source: surgery, wound, distant infection</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 68 · Cranial Cruciate Ligament Disease (CCL Rupture) ---------- */
+  {
+    id: 'cranial-cruciate-ligament-disease',
+    titleEn: 'Cranial Cruciate Ligament (CCL) Disease',
+    titleTh: 'CCL — เส้นเอ็นไขว้หน้าฉีกขาด',
+    type: 'disease',
+    system: 'joint',
+    species: ['dog', 'cat'],
+    tags: ['CCL', 'cranial cruciate ligament', 'CCLR', 'cruciate rupture', 'TPLO', 'TTA', 'lateral suture', 'extracapsular', 'meniscus tear', 'partial tear', 'drawer test', 'cranial tibial thrust', 'Lab', 'Rottweiler'],
+    aliases: ['CCL rupture', 'cruciate disease', 'ACL dog', 'CCLR', 'เส้นเอ็นไขว้หน้า'],
+    source: 'Ch. 68 · pp. 1180–1188',
+    sections: {
+      definition: `
+        <p>โรค <strong>cranial cruciate ligament rupture</strong> — โรค orthopedic ที่พบบ่อยที่สุดในหมา ✨</p>
+        <ul>
+          <li><strong>Most common cause of pelvic limb lameness in dog</strong> ✨</li>
+          <li>Different from human ACL injury — usually <strong>chronic degenerative process</strong> ✨ (not acute trauma)</li>
+          <li>Bilateral disease in 30-60% (one side ruptures, other follows within 1-2 yr)</li>
+          <li>Predisposed: <strong>Lab, Golden, Rottweiler, Newfoundland, Boxer, Bulldog</strong> ✨ — overweight middle-aged especially</li>
+          <li>Cat: rare; usually traumatic</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Predominant theory: chronic degeneration ✨ (not acute injury)</strong></p>
+        <ul>
+          <li>Multifactorial:
+            <ul>
+              <li>Genetic predisposition</li>
+              <li>Conformation (excessive tibial plateau angle &gt; 25°)</li>
+              <li>Obesity ✨ — major modifiable risk factor</li>
+              <li>Age (middle-aged + older)</li>
+              <li>Spay/neuter status (early spay/neuter = ↑ risk in some breeds)</li>
+              <li>Activity level extremes (sedentary or hyperactive)</li>
+              <li>Chronic synovitis</li>
+              <li>Concurrent immune-mediated component</li>
+            </ul>
+          </li>
+          <li>Progressive ligament fiber failure → partial tear → complete rupture</li>
+          <li>True acute traumatic rupture rare in dog (more common in cat)</li>
+          <li>Concurrent meniscal injury (~ 50% — usually medial meniscus, especially caudal pole)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>CCL prevents:
+            <ul>
+              <li>Cranial drawer movement (tibia forward on femur)</li>
+              <li>Internal rotation of tibia</li>
+              <li>Hyperextension of stifle</li>
+            </ul>
+          </li>
+          <li>With tibial plateau slope, weight-bearing creates cranial tibial thrust → CCL tension</li>
+          <li>Chronic loading + degeneration → fibers fail progressively</li>
+          <li>Partial tear → painful instability → progressive complete rupture</li>
+          <li>Instability → meniscus stress → tear (especially medial meniscus caudal pole) ✨</li>
+          <li>Synovitis perpetuates degeneration</li>
+          <li>Eventually severe OA develops</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute partial / complete rupture:</strong></p>
+        <ul>
+          <li>Sudden hindlimb lameness (often during play / exercise)</li>
+          <li>Toe-touching to non-weight bearing</li>
+          <li>"Sat down weird"</li>
+          <li>"Yelped after running"</li>
+        </ul>
+
+        <p><strong>Chronic / partial CCL ✨:</strong></p>
+        <ul>
+          <li>Intermittent lameness, often months</li>
+          <li>"Stiff after rest, warms out of it"</li>
+          <li>Worse after exercise</li>
+          <li>"Sit test" abnormal — sits with affected leg out to side (not tucked under)</li>
+          <li>Difficulty rising</li>
+          <li>Reluctance to jump</li>
+          <li>Hindlimb muscle atrophy (chronic)</li>
+          <li>Medial buttress (palpable thickening on medial stifle = chronic disease) ✨</li>
+        </ul>
+
+        <p><strong>Bilateral disease:</strong></p>
+        <ul>
+          <li>"Off in the back end"</li>
+          <li>Both hindlimbs short-strided</li>
+          <li>Mistaken for spinal disease often</li>
+        </ul>
+
+        <p><strong>Meniscal tear (~ 50%):</strong></p>
+        <ul>
+          <li>Acute lameness</li>
+          <li><strong>Audible "click"</strong> with stifle ROM ✨ — pathognomonic for meniscal tear</li>
+          <li>Can occur initially or after CCL surgery (post-operative meniscal injury)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Physical examination ✨ — primary diagnostic:</strong></p>
+
+        <p><strong>1. Cranial drawer test ✨:</strong></p>
+        <ul>
+          <li>Stabilize femur, manipulate tibia cranially</li>
+          <li>Cranial movement = positive (CCL incompetent)</li>
+          <li>Compare with normal contralateral side</li>
+          <li>Often need sedation (especially large breeds) to prevent guarding</li>
+          <li>Negative drawer doesn't rule out partial tear</li>
+        </ul>
+
+        <p><strong>2. Cranial tibial thrust (compression) test ✨:</strong></p>
+        <ul>
+          <li>Holds stifle extended, flex hock</li>
+          <li>Cranial movement of tibial tuberosity = positive</li>
+          <li>Often more reliable than drawer in conscious patients (less guarding)</li>
+        </ul>
+
+        <p><strong>3. Sit test:</strong></p>
+        <ul>
+          <li>Affected dog sits with leg out to side (not tucked)</li>
+          <li>Suggestive of CCL disease</li>
+        </ul>
+
+        <p><strong>4. Joint palpation:</strong></p>
+        <ul>
+          <li>Effusion (palpable on either side of patellar tendon)</li>
+          <li>Medial buttress (fibrosis from chronic instability) ✨</li>
+          <li>Pain on hyperextension</li>
+          <li>Crepitus / click (meniscus)</li>
+        </ul>
+
+        <p><strong>5. Radiographs:</strong></p>
+        <ul>
+          <li>Lateral + craniocaudal stifle</li>
+          <li>Findings:
+            <ul>
+              <li>Joint effusion (cranial displacement of fat pad)</li>
+              <li>Periarticular osteophytes (chronic cases)</li>
+              <li>Patellar position (ddx luxation)</li>
+              <li>Caudal cranial drawer in lateral view (positive sit-and-stress views)</li>
+              <li>Tibial plateau angle measurement (TPA) — for surgical planning</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>6. MRI (rare in dog; specialty):</strong></p>
+        <ul>
+          <li>Direct visualization of CCL</li>
+          <li>Meniscal tears</li>
+          <li>For atypical / complex cases</li>
+        </ul>
+
+        <p><strong>7. Arthroscopy or arthrotomy:</strong></p>
+        <ul>
+          <li>At time of surgery</li>
+          <li>Direct CCL inspection</li>
+          <li>Meniscal evaluation + treatment</li>
+        </ul>
+
+        <p><strong>8. Joint tap (if effusion + atypical):</strong></p>
+        <ul>
+          <li>CCL: mild ↑ cells, mononuclear</li>
+          <li>Rule out septic / immune-mediated arthritis</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Patellar luxation (especially small breed)</li>
+          <li>Hip OA (concurrent often)</li>
+          <li>Iliopsoas strain</li>
+          <li>Neoplasia (osteosarcoma — older large breed)</li>
+          <li>Septic arthritis (acute, severe, fever)</li>
+          <li>IMPA (multiple joints)</li>
+          <li>Meniscal tear (without CCL — rare)</li>
+          <li>Long digital extensor avulsion</li>
+          <li>Caudal cruciate rupture (rare; opposite drawer)</li>
+          <li>Lumbosacral disease (mimics)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Conservative management — selected cases:</strong></p>
+
+        <p><strong>Indications:</strong></p>
+        <ul>
+          <li>Small dogs (&lt; 15 kg)</li>
+          <li>Cats</li>
+          <li>Owner declines surgery / financial constraints</li>
+          <li>High anesthetic risk patients</li>
+          <li>Partial tear with mild signs</li>
+        </ul>
+
+        <p><strong>Components:</strong></p>
+        <ul>
+          <li>Strict rest 6-8 weeks</li>
+          <li>Weight management ✨ — essential</li>
+          <li>NSAID</li>
+          <li>Physical rehabilitation
+            <ul>
+              <li>Hydrotherapy</li>
+              <li>Underwater treadmill</li>
+              <li>PROM</li>
+              <li>Strengthening</li>
+            </ul>
+          </li>
+          <li>Custom stifle braces (limited evidence)</li>
+          <li>Outcomes: 50-70% acceptable function in dogs &lt; 15 kg
+            <ul>
+              <li>Larger dogs: poorer with conservative; surgery preferred</li>
+            </ul>
+          </li>
+          <li>OA progresses regardless of conservative vs surgical (less with surgery)</li>
+        </ul>
+
+        <p><strong>2. Surgical management ✨ — recommended for most dogs &gt; 15 kg:</strong></p>
+
+        <p><strong>Tibial Plateau Leveling Osteotomy (TPLO) ✨ — gold standard:</strong></p>
+        <ul>
+          <li>Most common procedure now</li>
+          <li>Cuts tibial plateau, rotates to ~ 5° slope, fixes with plate</li>
+          <li>Eliminates cranial tibial thrust → no longer needs CCL function</li>
+          <li>Outcomes: 90-95% return to good function</li>
+          <li>Faster recovery than other procedures</li>
+          <li>Cost moderate-high; specialty surgeon</li>
+        </ul>
+
+        <p><strong>Tibial Tuberosity Advancement (TTA):</strong></p>
+        <ul>
+          <li>Advances tibial tuberosity → straightens patellar tendon perpendicular to tibial plateau</li>
+          <li>Eliminates cranial tibial thrust by different mechanism</li>
+          <li>Outcomes similar to TPLO</li>
+          <li>Less common now (TPLO has more evidence)</li>
+        </ul>
+
+        <p><strong>Lateral suture / extracapsular technique:</strong></p>
+        <ul>
+          <li>Heavy synthetic suture between fabella + tibial tuberosity</li>
+          <li>Mimics CCL function during initial healing</li>
+          <li>Suture stretches/breaks within months — relies on periarticular fibrosis</li>
+          <li>Outcomes: variable; better in small dogs (&lt; 20 kg)</li>
+          <li>Less expensive than TPLO/TTA</li>
+          <li>Higher rate of post-op complications, slower recovery</li>
+          <li>Reasonable for small dogs / financial constraints</li>
+        </ul>
+
+        <p><strong>TightRope / TightRope CCL technique:</strong></p>
+        <ul>
+          <li>Synthetic ligament (FiberWire) anchored with bone tunnels</li>
+          <li>Modern variant of extracapsular</li>
+          <li>Outcomes intermediate</li>
+        </ul>
+
+        <p><strong>CBLO (Cora-Based Leveling Osteotomy):</strong></p>
+        <ul>
+          <li>Newer alternative to TPLO</li>
+          <li>Variations of osteotomy</li>
+        </ul>
+
+        <p><strong>Arthroscopy + meniscectomy:</strong></p>
+        <ul>
+          <li>At time of TPLO/TTA</li>
+          <li>Inspect + treat meniscal tear</li>
+          <li>Partial meniscectomy if tear (~ 50% of cases)</li>
+          <li>Improves outcomes</li>
+        </ul>
+
+        <p><strong>Cat CCL:</strong></p>
+        <ul>
+          <li>Lateral suture technique</li>
+          <li>Conservative often successful (cats are smaller, lower demand)</li>
+        </ul>
+
+        <p><strong>3. Post-operative care ✨:</strong></p>
+        <ul>
+          <li>Cage rest / leash walk only × 6-8 weeks</li>
+          <li>Pain management:
+            <ul>
+              <li>Multimodal analgesia</li>
+              <li>NSAID</li>
+              <li>Gabapentin</li>
+              <li>Opioid initial</li>
+              <li>Cold compression first 48-72h</li>
+            </ul>
+          </li>
+          <li>Physical rehabilitation:
+            <ul>
+              <li>Day 1: PROM</li>
+              <li>Week 1-2: short controlled walks</li>
+              <li>Week 4+: hydrotherapy, underwater treadmill</li>
+              <li>Week 8+: gradual return to activity</li>
+              <li>Full return at 12-16 weeks</li>
+            </ul>
+          </li>
+          <li>Recheck radiograph at 6-8 wk (bone healing)</li>
+          <li>Watch for: incision issues, lameness recurrence, opposite limb development of CCL</li>
+          <li>Long-term weight management critical</li>
+        </ul>
+
+        <p><strong>4. Long-term:</strong></p>
+        <ul>
+          <li>OA management (NSAID, weight, rehab, glucosamine, omega-3)</li>
+          <li>Watch for opposite stifle CCL (30-60% within 1-2 yr) — early intervention if signs</li>
+          <li>Maintain fitness with low-impact exercise</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Meniscal tear (initial or post-operative — "post-liminal" meniscal tear)</li>
+          <li>Implant complications (infection, loosening, breakage)</li>
+          <li>Persistent lameness (15-25% of TPLO)</li>
+          <li>Tibial fracture (rare TPLO)</li>
+          <li>Septic arthritis (post-surgical)</li>
+          <li>Patellar tendonitis</li>
+          <li>Progression to OA (inevitable but slowed)</li>
+          <li>Opposite limb CCL rupture (30-60% — bilateral disease)</li>
+          <li>Conservative failure → still need surgery later</li>
+          <li>NSAID side effects long-term</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>TPLO: <strong>excellent</strong> — 90-95% good-excellent function ✓</li>
+          <li>TTA: similar to TPLO</li>
+          <li>Lateral suture: variable; 60-85% acceptable function</li>
+          <li>Conservative (small dogs): 50-70% acceptable function</li>
+          <li>Conservative (large dogs): poor — 25-50% acceptable</li>
+          <li>OA inevitable — slowed but not prevented by surgery</li>
+          <li>Meniscal tear: increases morbidity; surgery + meniscectomy usually OK</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Late meniscal tears</li>
+              <li>Septic arthritis post-op</li>
+              <li>Implant failure</li>
+              <li>Concurrent OA severe</li>
+              <li>Obesity not corrected</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>CCL = #1 cause of hindlimb lameness in dog</strong> ✨ — chronic degenerative, NOT acute trauma typically<br><br>**Sit test** abnormal + cranial drawer + medial buttress = chronic CCL. **TPLO** = gold standard surgery for dogs &gt; 15 kg. Conservative reasonable for small dogs<br><br>⚠️ **30-60% develop opposite CCL** within 1-2 yr — counsel owner!</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     PART 11 — IMMUNE-MEDIATED DISEASES (Ch 72–75)
+  ============================================================ */
+
+  /* ---------- Ch 72 · Immune-Mediated Hemolytic Anemia (IMHA) ---------- */
+  {
+    id: 'immune-mediated-hemolytic-anemia',
+    titleEn: 'Immune-Mediated Hemolytic Anemia (IMHA)',
+    titleTh: 'IMHA — โลหิตจางจากภูมิคุ้มกัน',
+    type: 'disease',
+    system: 'immune',
+    species: ['dog', 'cat'],
+    tags: ['IMHA', 'AIHA', 'hemolytic anemia', 'spherocytes', 'autoagglutination', 'Coombs test', 'prednisolone', 'mycophenolate', 'azathioprine', 'cyclosporine', 'thromboembolism', 'PTE', 'clopidogrel', 'transfusion'],
+    aliases: ['IMHA', 'AIHA', 'autoimmune hemolytic anemia', 'โลหิตจางภูมิคุ้มกัน'],
+    source: 'Ch. 72 · pp. 1232–1252',
+    sections: {
+      definition: `
+        <p>โรค <strong>autoimmune hemolytic anemia</strong> — แอนติบอดีไปจับเซลล์เม็ดเลือดแดง → ทำลาย</p>
+        <ul>
+          <li><strong>Most common autoimmune disease in dog</strong> ✨</li>
+          <li>Mortality 30-70% — โรคที่ร้ายแรงมาก ✗</li>
+          <li>Major killer: <strong>pulmonary thromboembolism (PTE)</strong> ✗</li>
+          <li>2 categories:
+            <ul>
+              <li><strong>Primary (idiopathic) IMHA</strong> ✨ — ~ 60-75%; no underlying cause identified</li>
+              <li><strong>Secondary (associative) IMHA</strong> — ~ 25-40%; trigger identified (infection, neoplasia, drug, vaccine, transfusion, IBD)</li>
+            </ul>
+          </li>
+          <li>Predisposed: <strong>Cocker Spaniel</strong> ✨ (most), Springer Spaniel, Poodle, Old English Sheepdog, Collie, Irish Setter</li>
+          <li>Female &gt; male; median age 5-6 yr</li>
+          <li>Cat: less common; usually secondary (FeLV, Mycoplasma, lymphoma)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary:</strong></p>
+        <ul>
+          <li>Idiopathic; suspected genetic + environmental triggers</li>
+          <li>Type II hypersensitivity — IgG/IgM bind RBC surface antigens</li>
+          <li>Often part of broader autoimmune dysregulation</li>
+        </ul>
+
+        <p><strong>Secondary causes ✨ — must search for:</strong></p>
+        <ul>
+          <li><strong>Infectious:</strong>
+            <ul>
+              <li>Babesia spp. (B. canis, B. gibsoni — direct parasitism + immune trigger) ✨</li>
+              <li>Mycoplasma haemocanis / haemofelis (cat especially) ✨</li>
+              <li>Ehrlichia, Anaplasma</li>
+              <li>Leptospirosis</li>
+              <li>FeLV (cat ✨)</li>
+              <li>Heartworm</li>
+              <li>Leishmaniasis</li>
+            </ul>
+          </li>
+          <li><strong>Neoplasia (paraneoplastic):</strong>
+            <ul>
+              <li>Lymphoma</li>
+              <li>Hemangiosarcoma</li>
+              <li>Other carcinomas</li>
+            </ul>
+          </li>
+          <li><strong>Drugs:</strong>
+            <ul>
+              <li>Trimethoprim-sulfa ✨</li>
+              <li>Cephalosporins</li>
+              <li>Penicillins</li>
+              <li>Methimazole, propylthiouracil (cat)</li>
+              <li>NSAIDs (rare)</li>
+            </ul>
+          </li>
+          <li><strong>Vaccine-associated</strong> — within 1 month of vaccination (controversial)</li>
+          <li><strong>Transfusion incompatibility</strong></li>
+          <li><strong>Other autoimmune:</strong> SLE, Evans syndrome (IMHA + ITP)</li>
+          <li>Inflammatory: pancreatitis, IBD</li>
+          <li>Bee sting (rare; severe reaction)</li>
+          <li>Zinc toxicity (rare; pennies, hardware)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Antibodies (IgG, IgM, ± complement) bind RBC surface antigens</li>
+          <li>Two mechanisms of destruction:
+            <ul>
+              <li><strong>Extravascular hemolysis (most common):</strong> antibody-coated RBCs phagocytosed by macrophages in spleen, liver → bilirubin generated; mild hemoglobinemia</li>
+              <li><strong>Intravascular hemolysis:</strong> complement-mediated lysis; severe; hemoglobinemia + hemoglobinuria; very poor prognosis ✗</li>
+            </ul>
+          </li>
+          <li>Bone marrow response: ↑ erythropoiesis → reticulocytosis (regeneration)</li>
+          <li><strong>Non-regenerative IMHA</strong> ✗ — antibodies attack precursors in bone marrow → no reticulocytes; very poor prognosis</li>
+          <li><strong>Pulmonary thromboembolism (PTE)</strong> ✗ — major cause of death:
+            <ul>
+              <li>Hypercoagulable state from inflammation</li>
+              <li>Glucocorticoids worsen</li>
+              <li>Free hemoglobin → endothelial damage</li>
+              <li>Up to 30-50% develop clinically</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Severe lethargy, weakness, collapse</strong> ✨</li>
+          <li><strong>Pale mucous membranes</strong> ✨ — often startlingly white</li>
+          <li>Tachycardia, tachypnea</li>
+          <li>Hyperdynamic pulses</li>
+          <li>Heart murmur (functional from anemia)</li>
+          <li>Anorexia</li>
+          <li><strong>Icterus</strong> ✨ — bilirubin from RBC breakdown</li>
+          <li><strong>Hemoglobinuria (port-wine urine)</strong> ✨ — intravascular hemolysis ✗ (poor prognosis)</li>
+          <li>Bilirubinuria</li>
+          <li>Splenomegaly, hepatomegaly</li>
+          <li>Lymphadenopathy (variable)</li>
+          <li>Vomiting (sometimes)</li>
+          <li>Fever (variable)</li>
+          <li>Pigmenturia (orange-red urine)</li>
+        </ul>
+
+        <p><strong>Chronic / non-regenerative:</strong></p>
+        <ul>
+          <li>Slowly progressive lethargy</li>
+          <li>Less dramatic at presentation</li>
+          <li>May not have icterus</li>
+          <li>BMS suppression workup needed</li>
+        </ul>
+
+        <p><strong>PTE signs ✗:</strong></p>
+        <ul>
+          <li>Acute respiratory distress</li>
+          <li>Tachypnea, dyspnea</li>
+          <li>Cyanosis</li>
+          <li>Often during hospitalization or within first 1-2 weeks of diagnosis</li>
+          <li>Often fatal even with intervention</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnostic criteria for IMHA ✨ — 2019 ACVIM consensus:</strong></p>
+        <p>Need <strong>1+ from each of 3 categories:</strong></p>
+
+        <p><strong>Category 1 — Hemolysis:</strong></p>
+        <ul>
+          <li>Spherocytes ≥ 5/HPF (dog) on smear ✨</li>
+          <li>Hyperbilirubinemia / icterus / bilirubinuria</li>
+          <li>Hemoglobinemia / hemoglobinuria (intravascular)</li>
+          <li>Erythrocyte ghosts on smear</li>
+        </ul>
+
+        <p><strong>Category 2 — Immune-mediated:</strong></p>
+        <ul>
+          <li>Persistent autoagglutination after saline dilution (1:4) ✨ ✨ — pathognomonic when present
+            <ul>
+              <li>Mix 1 drop blood + 4 drops saline on slide</li>
+              <li>True autoagglutination = grape-like clumps</li>
+              <li>Differentiate from rouleaux (RBCs in stacks like coins)</li>
+            </ul>
+          </li>
+          <li>Positive Coombs test (DAT) — direct antiglobulin test
+            <ul>
+              <li>Sensitivity ~ 60-70%</li>
+              <li>Detects IgG, IgM, complement on RBC surface</li>
+              <li>Negative doesn't rule out IMHA</li>
+            </ul>
+          </li>
+          <li>Flow cytometry for RBC-bound antibodies (sensitive but availability limited)</li>
+        </ul>
+
+        <p><strong>Category 3 — Anemia:</strong></p>
+        <ul>
+          <li>HCT below reference (mild &gt; 25%, severe &lt; 15%)</li>
+        </ul>
+
+        <p><strong>Workup essential ✨:</strong></p>
+
+        <p><strong>1. CBC + smear:</strong></p>
+        <ul>
+          <li>Severe anemia (often HCT 10-20%)</li>
+          <li>Reticulocytosis (regenerative); reticulocyte count critical
+            <ul>
+              <li>Aggregate retics &gt; 60,000/µL (dog) = regenerative</li>
+              <li>Note: takes 3-5 days for marrow response → early IMHA may appear non-regenerative ("pre-regenerative")</li>
+            </ul>
+          </li>
+          <li><strong>Spherocytes</strong> ✨ — small dense RBCs lacking central pallor; pathognomonic-supportive</li>
+          <li>Polychromasia (regeneration)</li>
+          <li>Nucleated RBCs (release from marrow)</li>
+          <li>Howell-Jolly bodies</li>
+          <li>± RBC ghosts (intravascular hemolysis)</li>
+          <li>± Schistocytes (DIC, microangiopathic — less typical)</li>
+          <li>Inflammatory leukogram (neutrophilia, left shift, monocytosis)</li>
+          <li>Thrombocytopenia (40-70% concurrent — may be Evans syndrome with ITP)</li>
+        </ul>
+
+        <p><strong>2. Biochem:</strong></p>
+        <ul>
+          <li>↑ Total bilirubin (with normal liver function — pre-hepatic)</li>
+          <li>± ↑ ALT, ALP (hepatic from RBC processing or drug effect)</li>
+          <li>BUN, Cr (often normal; ↑ with severe shock)</li>
+          <li>Globulins variable</li>
+        </ul>
+
+        <p><strong>3. UA:</strong></p>
+        <ul>
+          <li>Bilirubinuria (significant in dog)</li>
+          <li>Hemoglobinuria if intravascular</li>
+          <li>USG variable</li>
+        </ul>
+
+        <p><strong>4. Coag panel ✨:</strong></p>
+        <ul>
+          <li>D-dimers (often elevated — hypercoagulable)</li>
+          <li>PT, aPTT — DIC screen if severe</li>
+          <li>Fibrinogen (often elevated — acute phase)</li>
+          <li>Antithrombin (often decreased)</li>
+          <li>Thromboelastography (TEG) if available</li>
+        </ul>
+
+        <p><strong>5. Search for secondary cause ✨:</strong></p>
+        <ul>
+          <li>Tick-borne disease panel (Babesia, Ehrlichia, Anaplasma) ✨ — Babesia gibsoni especially important; treatment changes prognosis dramatically</li>
+          <li>Heartworm test</li>
+          <li>FeLV / FIV (cat)</li>
+          <li>Mycoplasma haemofelis PCR (cat)</li>
+          <li>Drug history review</li>
+          <li>Vaccine history (within 1 month?)</li>
+          <li>Transfusion history</li>
+          <li>Thoracic radiograph (3-view)</li>
+          <li>Abdominal ultrasound — splenomegaly, hepatomegaly, neoplasia</li>
+          <li>Cardiac evaluation (endocarditis, neoplasia)</li>
+          <li>ANA (concurrent SLE)</li>
+          <li>Bone marrow aspirate if non-regenerative</li>
+        </ul>
+
+        <p><strong>6. Pre-treatment baseline:</strong></p>
+        <ul>
+          <li>BP</li>
+          <li>SpO2</li>
+          <li>Lactate</li>
+          <li>Body weight</li>
+          <li>UA + culture (baseline before steroids)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other regenerative anemias:
+            <ul>
+              <li>Babesia (treat first if positive!)</li>
+              <li>Mycoplasma</li>
+              <li>Acute hemorrhage (no spherocytes)</li>
+              <li>Heinz body anemia (oxidative — onion, garlic, acetaminophen cat, zinc)</li>
+              <li>Microangiopathic (DIC, HSA, splenic torsion)</li>
+              <li>Heritable (PK deficiency, PFK deficiency)</li>
+            </ul>
+          </li>
+          <li>Non-regenerative anemias:
+            <ul>
+              <li>BM disease (aplastic, leukemia, myelofibrosis)</li>
+              <li>Chronic disease anemia</li>
+              <li>CKD (low EPO)</li>
+              <li>Pure red cell aplasia</li>
+              <li>Iron deficiency</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Treat underlying cause first ✨ — CRITICAL:</strong></p>
+        <ul>
+          <li>Babesia: imidocarb 6.6 mg/kg IM × 2 doses 14 d apart (B. canis); atovaquone + azithromycin (B. gibsoni)</li>
+          <li>Mycoplasma: doxycycline 5 mg/kg PO q12h × 4 wk</li>
+          <li>Drug-induced: discontinue offending drug</li>
+          <li>Neoplasia: chemotherapy / surgery</li>
+          <li>FeLV: supportive care; test for response to immunosuppression</li>
+        </ul>
+
+        <p><strong>2. Immunosuppression ✨ — primary IMHA:</strong></p>
+
+        <p><strong>Glucocorticoids — first-line:</strong></p>
+        <ul>
+          <li><strong>Prednisolone 2 mg/kg PO q12h</strong> ✨ (or split: 1 mg/kg q12h initially in some)
+            <ul>
+              <li>Continue until HCT stable + clinical improvement (2-4 weeks)</li>
+              <li>Dexamethasone 0.2-0.4 mg/kg IV q24h if vomiting / not tolerating PO</li>
+            </ul>
+          </li>
+          <li><strong>Slow taper over 3-6 months minimum</strong>:
+            <ul>
+              <li>Reduce by 25% q3-4 wk if HCT stable</li>
+              <li>Goal: lowest effective dose</li>
+              <li>Don't taper too fast → relapse common</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Adjunct second agent ✨ — START EARLY (Day 1-7):</strong></p>
+        <ul>
+          <li>Modern evidence: combination therapy from start has better outcomes than steroid alone</li>
+          <li><strong>Mycophenolate mofetil 10 mg/kg PO q12h</strong> ✨ — increasingly first-line adjunct
+            <ul>
+              <li>Less hepatotoxic than azathioprine</li>
+              <li>Effect within 1-2 weeks</li>
+              <li>Side effects: GI upset (often transient)</li>
+            </ul>
+          </li>
+          <li><strong>Azathioprine 2 mg/kg PO q24h × 2 weeks → q48h</strong> (DOG ONLY ✗ — fatal in cat)
+            <ul>
+              <li>Effect 2-4 weeks (slow onset)</li>
+              <li>Monitor CBC + biochem (myelosuppression, hepatotoxicity, pancreatitis)</li>
+            </ul>
+          </li>
+          <li><strong>Cyclosporine 5 mg/kg PO q12h</strong> — alternative
+            <ul>
+              <li>Trough level monitoring</li>
+              <li>GI upset, gingival hyperplasia</li>
+            </ul>
+          </li>
+          <li>Leflunomide, cyclophosphamide — less commonly used now</li>
+          <li>Human IVIG 0.5-1 g/kg IV over 8-12h — for severe / refractory; cost limiting</li>
+        </ul>
+
+        <p><strong>3. Antithrombotic therapy ✨ ✨ — ALL IMHA cases:</strong></p>
+        <ul>
+          <li><strong>Clopidogrel 1-2 mg/kg PO q24h</strong> ✨ — start at diagnosis</li>
+          <li>+ Or instead of: rivaroxaban 1-2 mg/kg PO q24h</li>
+          <li>± Aspirin 0.5-1 mg/kg PO q24h (older protocol)</li>
+          <li>± Low-molecular-weight heparin (dalteparin 100-150 IU/kg SC q12h)</li>
+          <li>Continue throughout immunosuppression</li>
+          <li>2019 ACVIM consensus: clopidogrel for all IMHA — strong recommendation</li>
+          <li>Reduces PTE risk significantly</li>
+        </ul>
+
+        <p><strong>4. Blood transfusion ✨:</strong></p>
+        <ul>
+          <li><strong>pRBC (packed red cells)</strong> if HCT &lt; 15% or clinical signs (weakness, tachycardia, dyspnea)
+            <ul>
+              <li>10-15 mL/kg slowly over 4 hours</li>
+              <li>Cross-match if possible (autoagglutination makes it difficult)</li>
+              <li>Type DEA 1.1 (dog) / AB (cat) at minimum</li>
+            </ul>
+          </li>
+          <li>Watch for transfusion reactions (more difficult in IMHA)</li>
+          <li>May need multiple transfusions during initial week</li>
+          <li>Hemoglobin glutamer-based oxygen carrier (Oxyglobin) — historical alternative</li>
+        </ul>
+
+        <p><strong>5. Supportive care:</strong></p>
+        <ul>
+          <li>IV fluids (cautious — avoid overload; especially with anemia + cardiac concern)</li>
+          <li>Oxygen supplementation</li>
+          <li>Anti-emetics (maropitant)</li>
+          <li>Anti-acid: omeprazole, sucralfate (steroids ulcer risk)</li>
+          <li>Nutritional support (often anorexic)</li>
+          <li>Monitor for infection (immunosuppression — UTI, pyoderma)</li>
+          <li>BP management</li>
+          <li>Pain management as needed</li>
+        </ul>
+
+        <p><strong>6. Monitor:</strong></p>
+        <ul>
+          <li><strong>HCT q12-24h initially</strong> until stable</li>
+          <li>Reticulocyte count (regeneration adequate?)</li>
+          <li>CBC, biochem 2× weekly initially → weekly → q2 wk → monthly</li>
+          <li>Spherocyte count (decreasing = improvement)</li>
+          <li>Bilirubin trend</li>
+          <li>UA + culture q3 mo (UTI from steroids)</li>
+          <li>Clinical signs: energy, appetite, weight</li>
+          <li>Watch for: relapse during taper, infection, drug side effects, PTE</li>
+        </ul>
+
+        <p><strong>7. Complications management:</strong></p>
+        <ul>
+          <li>PTE (acute dyspnea): oxygen, low-dose alteplase consideration (specialty), supportive</li>
+          <li>DIC: blood products, address underlying</li>
+          <li>Severe ulceration: anti-acid, sucralfate, possible drug change</li>
+          <li>Hospital-acquired infection: appropriate antibiotic</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Pulmonary thromboembolism (PTE)</strong> ✗ ✨ — major killer; 30-50% develop</li>
+          <li><strong>DIC</strong> ✗ — disseminated intravascular coagulation</li>
+          <li>Severe transfusion reaction</li>
+          <li>Iatrogenic Cushing's (long-term steroid)</li>
+          <li>UTI (steroid-induced; very common)</li>
+          <li>GI ulceration (steroid + stress)</li>
+          <li>Pancreatitis (azathioprine, steroid)</li>
+          <li>Hepatotoxicity (azathioprine, methimazole)</li>
+          <li>Diabetes mellitus (steroid)</li>
+          <li>Severe immunosuppression infections (pyoderma, demodex, opportunistic)</li>
+          <li>Relapse during taper (~ 30-50%)</li>
+          <li>Non-regenerative IMHA (BM antibody attack) — even worse prognosis ✗</li>
+          <li>Death (mortality 30-70%)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Mortality 30-70% overall</strong> — IMHA is a serious disease ✗</li>
+          <li>1-year survival: ~ 50-70% (improving with modern protocols)</li>
+          <li>Most deaths within first 2 weeks (PTE, severe disease)</li>
+          <li>If survives first 2 weeks → much better long-term prognosis</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Intravascular hemolysis (hemoglobinuria) ✗</li>
+              <li>Severe hyperbilirubinemia (&gt; 5-10 mg/dL)</li>
+              <li>Severe leukocytosis (&gt; 30,000)</li>
+              <li>Autoagglutination persistent</li>
+              <li>Non-regenerative anemia ✗</li>
+              <li>Persistent thrombocytopenia (Evans syndrome)</li>
+              <li>DIC at presentation</li>
+              <li>Concurrent disease (CKD, neoplasia)</li>
+              <li>Failure of HCT to stabilize within 7 days</li>
+              <li>PTE develops</li>
+            </ul>
+          </li>
+          <li>Relapse rate ~ 30-50% — many need lifelong low-dose immunosuppression</li>
+          <li>Secondary IMHA: prognosis depends on underlying cause (treatable Babesia = good)</li>
+        </ul>
+        <div class="callout">⚠️ <strong>IMHA = ICU emergency</strong> ✗ — mortality 30-70%; PTE = #1 killer<br><br>💡 <strong>Antithrombotic (clopidogrel)</strong> for ALL IMHA — strong evidence reduces PTE<br><br>**Babesia testing essential** — treat-treatable cause vs lifelong immunosuppression<br><br>Pred 2 mg/kg q12h + mycophenolate from day 1 (combination &gt; mono); slow taper 3-6 months</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 73 · Immune-Mediated Thrombocytopenia (ITP) ---------- */
+  {
+    id: 'immune-mediated-thrombocytopenia',
+    titleEn: 'Immune-Mediated Thrombocytopenia (ITP)',
+    titleTh: 'ITP — เกล็ดเลือดต่ำจากภูมิคุ้มกัน',
+    type: 'disease',
+    system: 'immune',
+    species: ['dog', 'cat'],
+    tags: ['ITP', 'IMTP', 'immune-mediated thrombocytopenia', 'petechiae', 'ecchymoses', 'epistaxis', 'melena', 'platelet count', 'prednisolone', 'vincristine', 'vincristine pulse', 'mycophenolate', 'human IVIG'],
+    aliases: ['ITP', 'IMTP', 'autoimmune thrombocytopenia', 'เกล็ดเลือดต่ำภูมิคุ้มกัน', 'platelet'],
+    source: 'Ch. 73 · pp. 1252–1268',
+    sections: {
+      definition: `
+        <p>โรค <strong>autoimmune destruction of platelets</strong> ทำให้เกล็ดเลือดต่ำมาก ✗</p>
+        <ul>
+          <li>เกล็ดเลือดปกติ: 200,000-500,000/µL; ITP มัก &lt; 50,000; severe &lt; 20,000</li>
+          <li><strong>Spontaneous bleeding risk เมื่อ &lt; 30,000/µL</strong> ✗</li>
+          <li>2 categories:
+            <ul>
+              <li><strong>Primary (idiopathic) ITP</strong> ✨ — most common</li>
+              <li><strong>Secondary ITP</strong> — infection, neoplasia, drug</li>
+            </ul>
+          </li>
+          <li>Predisposed: <strong>Cocker Spaniel</strong> ✨, Old English Sheepdog, Poodle, Dachshund, Lhasa Apso</li>
+          <li>Female &gt; male; median age 5-7 yr</li>
+          <li><strong>Evans syndrome</strong> = ITP + IMHA combined (concurrent)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary:</strong></p>
+        <ul>
+          <li>Idiopathic; antibody-mediated platelet destruction (in spleen)</li>
+          <li>± Antibody attack on megakaryocytes (impaired production)</li>
+        </ul>
+
+        <p><strong>Secondary causes ✨:</strong></p>
+        <ul>
+          <li><strong>Infectious:</strong>
+            <ul>
+              <li>Tick-borne: Ehrlichia ✨, Anaplasma ✨, Rickettsia (RMSF), Babesia</li>
+              <li>Leptospirosis</li>
+              <li>Heartworm</li>
+              <li>Leishmaniasis</li>
+              <li>FIV, FeLV (cat)</li>
+              <li>FIP (cat)</li>
+              <li>Hepatozoonosis</li>
+              <li>Distemper (rare)</li>
+            </ul>
+          </li>
+          <li><strong>Neoplasia:</strong>
+            <ul>
+              <li>Lymphoma</li>
+              <li>Hemangiosarcoma</li>
+              <li>Other</li>
+            </ul>
+          </li>
+          <li><strong>Drugs:</strong>
+            <ul>
+              <li>Trimethoprim-sulfa</li>
+              <li>Cephalosporins</li>
+              <li>Phenobarbital</li>
+              <li>Vaccines (within 1 mo, controversial)</li>
+              <li>Estrogen</li>
+              <li>Methimazole</li>
+              <li>Heparin (HIT)</li>
+            </ul>
+          </li>
+          <li><strong>Other autoimmune:</strong> SLE, Evans syndrome (with IMHA)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Antibodies bind platelet surface → spleen + liver phagocytosis</li>
+          <li>± Antibodies attack megakaryocytes → impaired production</li>
+          <li>Severe drop usually peripheral destruction (BM still active)</li>
+          <li>Platelet half-life shortened from days to hours</li>
+          <li>Bleeding risk:
+            <ul>
+              <li>&gt; 50,000: usually safe</li>
+              <li>30,000-50,000: surgical bleeding risk</li>
+              <li>&lt; 30,000: spontaneous mucocutaneous bleeding</li>
+              <li>&lt; 10,000: intracranial / pulmonary hemorrhage risk ✗</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Bleeding pattern (mucocutaneous) ✨:</strong></p>
+        <ul>
+          <li><strong>Petechiae</strong> ✨ — pinpoint hemorrhages; oral mucosa, ventral abdomen, sclera, vulva, prepuce
+            <ul>
+              <li>Look in mouth + on belly + on conjunctiva</li>
+            </ul>
+          </li>
+          <li><strong>Ecchymoses</strong> ✨ — larger bruise-like lesions</li>
+          <li><strong>Epistaxis</strong> ✨ — nose bleeds (common)</li>
+          <li><strong>Melena</strong> — black tarry stool (GI bleeding) ✗</li>
+          <li>Hematuria, hematochezia</li>
+          <li>Hyphema (blood in eye)</li>
+          <li>Subconjunctival hemorrhage</li>
+          <li>Vaginal / preputial bleeding</li>
+          <li>Prolonged bleeding from venipuncture sites</li>
+          <li><strong>NO joint hemorrhage</strong> (vs coagulation factor disorders)</li>
+          <li><strong>NO body cavity bleeds</strong> typically (unless concurrent vasculitis or trauma)</li>
+        </ul>
+
+        <p><strong>Severe ITP ✗:</strong></p>
+        <ul>
+          <li>Lethargy, weakness</li>
+          <li>Pallor (concurrent anemia from blood loss)</li>
+          <li>Tachycardia, weak pulses (severe blood loss)</li>
+          <li>CNS signs (intracranial hemorrhage)</li>
+          <li>Acute respiratory distress (pulmonary hemorrhage)</li>
+        </ul>
+
+        <p><strong>Evans syndrome (concurrent IMHA + ITP):</strong></p>
+        <ul>
+          <li>All IMHA signs + bleeding</li>
+          <li>More severe; mortality higher</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. CBC + smear ✨:</strong></p>
+        <ul>
+          <li><strong>Severe thrombocytopenia (often &lt; 30,000)</strong></li>
+          <li><strong>Always confirm with blood smear</strong> ✨ — automated counts can be falsely low (clumping)
+            <ul>
+              <li>Look at feathered edge for clumps</li>
+              <li>Manual count: 1 platelet/HPF ≈ 15,000-20,000/µL</li>
+            </ul>
+          </li>
+          <li>Macroplatelets / shift platelets (regeneration response)</li>
+          <li>± Concurrent anemia (Evans syndrome or blood loss)</li>
+          <li>WBC variable</li>
+        </ul>
+
+        <p><strong>2. Coag panel ✨:</strong></p>
+        <ul>
+          <li>PT, aPTT — should be normal (unlike DIC, anticoag rodenticide)</li>
+          <li>Buccal mucosal bleeding time (BMBT) — prolonged (&gt; 4 min)</li>
+          <li>Fibrinogen normal</li>
+          <li>D-dimers normal-mild ↑</li>
+          <li>Helps differentiate ITP from DIC, anticoag toxicity</li>
+        </ul>
+
+        <p><strong>3. Biochem, UA</strong> — usually unremarkable (rule out other dz)</p>
+
+        <p><strong>4. Search for secondary cause ✨:</strong></p>
+        <ul>
+          <li><strong>Tick-borne disease panel</strong> ✨ — Ehrlichia, Anaplasma, Babesia, RMSF
+            <ul>
+              <li>SNAP 4Dx</li>
+              <li>Specific titers / PCR</li>
+              <li>Empirical doxycycline often appropriate</li>
+            </ul>
+          </li>
+          <li>Heartworm test</li>
+          <li>FeLV/FIV (cat)</li>
+          <li>Drug history</li>
+          <li>Vaccine history</li>
+          <li>Thoracic radiograph (3-view)</li>
+          <li>Abdominal ultrasound (splenomegaly, neoplasia)</li>
+          <li>ANA (SLE)</li>
+        </ul>
+
+        <p><strong>5. Bone marrow aspirate (selected cases):</strong></p>
+        <ul>
+          <li>Indications: persistent thrombocytopenia despite Tx, concurrent cytopenias, suspected BM disease</li>
+          <li>ITP: ↑ Megakaryocytes (or normal)</li>
+          <li>BM disease: ↓ Megakaryocytes</li>
+          <li>Lymphoma, leukemia, myelodysplasia possible</li>
+        </ul>
+
+        <p><strong>6. Other:</strong></p>
+        <ul>
+          <li>Antiplatelet antibody testing (limited availability + sensitivity)</li>
+          <li>Coombs (concurrent IMHA suspected)</li>
+          <li>Coag time (specific factor levels if PT/aPTT abnormal)</li>
+        </ul>
+
+        <p><strong>Definitive diagnosis = exclusion of secondary causes</strong> + clinical response to immunosuppression</p>
+      `,
+      differential: `
+        <ul>
+          <li>Tick-borne disease (Ehrlichia, RMSF, Anaplasma) ✨ — treatable!</li>
+          <li>DIC (PT/aPTT prolonged, schistocytes, ↑ D-dimers)</li>
+          <li>Anticoagulant rodenticide (PT severely prolonged)</li>
+          <li>Bone marrow disease (lymphoma, leukemia, myelofibrosis, aplasia)</li>
+          <li>Hypersplenism / sequestration</li>
+          <li>Severe sepsis (consumption)</li>
+          <li>Hemangiosarcoma (consumption)</li>
+          <li>Hepatic disease severe</li>
+          <li>Inherited platelet disorders (rare)</li>
+          <li>Pseudothrombocytopenia (clumping artifact — always check smear!)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Treat underlying cause ✨ — CRITICAL:</strong></p>
+        <ul>
+          <li><strong>Empirical doxycycline 5-10 mg/kg PO q12h × 28 days</strong> ✨ — for tick-borne disease (start while titers pending)</li>
+          <li>Discontinue offending drugs</li>
+          <li>Treat neoplasia / underlying disease</li>
+        </ul>
+
+        <p><strong>2. Immunosuppression — primary ITP:</strong></p>
+
+        <p><strong>Prednisolone ✨ — first-line:</strong></p>
+        <ul>
+          <li><strong>2-4 mg/kg PO q12h</strong> ✨
+            <ul>
+              <li>Higher doses than IMHA often used</li>
+              <li>Dexamethasone SP 0.4-0.6 mg/kg IV q24h if vomiting / not eating</li>
+              <li>Effect: platelet count typically rises within 3-7 days</li>
+            </ul>
+          </li>
+          <li><strong>Slow taper over 3-6 months minimum</strong>:
+            <ul>
+              <li>Reduce by 25% q3-4 wk if stable</li>
+              <li>Goal: lowest effective dose</li>
+              <li>Many achieve remission and discontinuation; some need lifelong low-dose</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Vincristine ✨ — adjunct for severe / acute:</strong></p>
+        <ul>
+          <li><strong>Vincristine 0.02 mg/kg (or 0.5-0.7 mg/m²) IV single dose</strong> ✨
+            <ul>
+              <li>Causes early platelet release from megakaryocytes</li>
+              <li>Effect within 4-7 days</li>
+              <li>Often used at presentation for severe (&lt; 20,000)</li>
+              <li>Modern evidence: reduces hospitalization time + improves early platelet recovery</li>
+              <li>Strict IV (vesicant — extravasation = severe necrosis ✗)</li>
+              <li>One dose typically; rarely repeated</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Adjunct second agent (if refractory or steroid-sparing):</strong></p>
+        <ul>
+          <li><strong>Mycophenolate mofetil 10 mg/kg PO q12h</strong> ✨ — modern preferred</li>
+          <li>Azathioprine 2 mg/kg PO q24h × 2 wk → q48h (DOG ONLY — fatal in cat ✗)</li>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Cyclophosphamide (rare; specialty)</li>
+        </ul>
+
+        <p><strong>Human IVIG (refractory):</strong></p>
+        <ul>
+          <li>0.5-1 g/kg IV slow infusion</li>
+          <li>Rapid platelet rise within 24h</li>
+          <li>Cost prohibitive often; limited availability</li>
+          <li>Useful for life-threatening bleeding while awaiting steroid effect</li>
+        </ul>
+
+        <p><strong>Splenectomy — refractory:</strong></p>
+        <ul>
+          <li>For chronic relapsing / steroid-dependent ITP</li>
+          <li>Consider after 4-6 months of medical management failure</li>
+          <li>Removes major site of platelet destruction</li>
+          <li>~ 50-70% achieve long-term remission</li>
+          <li>Complications: surgical, infection, post-splenectomy sepsis</li>
+        </ul>
+
+        <p><strong>3. Supportive care:</strong></p>
+        <ul>
+          <li><strong>Strict cage rest</strong> ✨ — minimize trauma; avoid jumping, rough play, walks</li>
+          <li>Soft food (avoid GI mucosal trauma)</li>
+          <li>Avoid IM injections, jugular venipuncture, cystocentesis (use peripheral veins, voided urine)</li>
+          <li>Anti-acid (omeprazole, sucralfate) — GI ulcer prevention with steroids</li>
+          <li>Antifibrinolytics:
+            <ul>
+              <li>Aminocaproic acid 50 mg/kg PO q8h</li>
+              <li>Tranexamic acid 10-15 mg/kg PO/IV q8h</li>
+              <li>For active bleeding</li>
+            </ul>
+          </li>
+          <li>Anti-emetics (maropitant)</li>
+          <li>Yunnan Baiyao (Chinese herb) — controversial; some evidence</li>
+        </ul>
+
+        <p><strong>4. Blood transfusion:</strong></p>
+        <ul>
+          <li><strong>Platelet products limited availability in vet med</strong>:
+            <ul>
+              <li>Fresh whole blood (FWB) — provides some platelets</li>
+              <li>Platelet-rich plasma (PRP) — must be very fresh</li>
+              <li>Platelet concentrate — rare in vet med</li>
+              <li>Effect transient (hours-1 day) — antibodies destroy transfused platelets</li>
+              <li>Use ONLY for life-threatening bleeding (intracranial, pulmonary, severe internal)</li>
+            </ul>
+          </li>
+          <li>pRBC for severe blood loss anemia</li>
+          <li>Watch transfusion reactions</li>
+        </ul>
+
+        <p><strong>5. Monitor:</strong></p>
+        <ul>
+          <li><strong>Platelet count daily</strong> until &gt; 50,000 (or trending up clearly)</li>
+          <li>Then 2× weekly → weekly → q2 wk → monthly</li>
+          <li>CBC, biochem at baseline, 2 wk, monthly</li>
+          <li>UA + culture q3 mo (UTI from steroids)</li>
+          <li>Watch bleeding signs (petechiae, melena, epistaxis)</li>
+          <li>Watch drug side effects</li>
+          <li>Watch for relapse during taper</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Severe / fatal hemorrhage</strong> ✗ — intracranial, pulmonary, GI</li>
+          <li>Concurrent anemia from chronic blood loss</li>
+          <li>Iatrogenic Cushing's (long-term steroid)</li>
+          <li>UTI (steroid-induced)</li>
+          <li>GI ulceration</li>
+          <li>Pancreatitis</li>
+          <li>Pyoderma, demodex (immunosuppression)</li>
+          <li>Diabetes mellitus (steroid)</li>
+          <li>Drug-specific (vincristine extravasation, azathioprine BM/liver)</li>
+          <li>Relapse during taper (~ 30%)</li>
+          <li>Steroid-refractory disease</li>
+          <li>Evans syndrome progression</li>
+          <li>Death (mortality 10-30%)</li>
+          <li>Splenectomy complications (post-op infection, abdominal hemorrhage)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Generally better than IMHA</strong> ✓ — overall survival 70-90%</li>
+          <li>Most respond to steroids + supportive within 1-2 weeks</li>
+          <li>Long-term remission achievable in 60-70%</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe bleeding at presentation (intracranial, pulmonary)</li>
+              <li>Evans syndrome (concurrent IMHA)</li>
+              <li>Failure to respond within 7-10 days</li>
+              <li>Concurrent disease</li>
+              <li>Persistent thrombocytopenia despite Tx</li>
+              <li>Bone marrow disease underlying</li>
+            </ul>
+          </li>
+          <li>Relapse rate ~ 30% — many during taper; some lifelong low-dose</li>
+          <li>Tick-borne ITP: excellent prognosis with doxycycline (often resolves without immunosuppression)</li>
+          <li>Splenectomy: 50-70% long-term remission for refractory cases</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Severe thrombocytopenia + petechiae = ITP</strong> ✗ — always check tick-borne disease + drug history first<br><br>💡 <strong>Empirical doxycycline + pred 2-4 mg/kg q12h + vincristine single dose</strong> = standard initial. Vincristine speeds platelet recovery<br><br>**Strict cage rest** + avoid IM/jugular sticks. Platelet transfusion only for life-threatening bleeding (transient effect)</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 74 · Systemic Lupus Erythematosus (SLE) ---------- */
+  {
+    id: 'systemic-lupus-erythematosus',
+    titleEn: 'Systemic Lupus Erythematosus (SLE)',
+    titleTh: 'SLE — โรคลูปัส',
+    type: 'disease',
+    system: 'immune',
+    species: ['dog', 'cat'],
+    tags: ['SLE', 'lupus', 'systemic lupus erythematosus', 'ANA', 'multisystem autoimmune', 'polyarthritis', 'IMHA', 'ITP', 'glomerulonephritis', 'discoid lupus', 'mucocutaneous'],
+    aliases: ['SLE', 'lupus', 'systemic lupus', 'autoimmune disease', 'ลูปัส'],
+    source: 'Ch. 74 · pp. 1268–1278',
+    sections: {
+      definition: `
+        <p>โรค <strong>multisystem autoimmune disease</strong> — antibodies attack many tissues (skin, joints, kidney, blood cells)</p>
+        <ul>
+          <li>Rare in pets compared to humans</li>
+          <li>Predisposed: <strong>German Shepherd</strong> ✨, Collie, Shetland Sheepdog, Beagle, Poodle, Old English Sheepdog</li>
+          <li>Female &gt; male; median age 3-7 yr</li>
+          <li>Cat: very rare</li>
+          <li><strong>Discoid lupus erythematosus (DLE)</strong> = cutaneous-only form (much more common than SLE in pets) — separate disease</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Genetic predisposition (breed-related)</li>
+          <li>Immunoregulatory dysfunction</li>
+          <li>Possible triggers:
+            <ul>
+              <li>Infection (viral, bacterial)</li>
+              <li>Drugs (sulfa especially)</li>
+              <li>UV light exposure</li>
+              <li>Hormonal influence (female predominance)</li>
+            </ul>
+          </li>
+          <li>Antinuclear antibodies (ANA) — characteristic; cause immune complex deposition in tissues</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Loss of self-tolerance → autoantibodies against:
+            <ul>
+              <li>Nuclear antigens (DNA, histones, ribonucleoprotein)</li>
+              <li>RBCs → IMHA</li>
+              <li>Platelets → ITP</li>
+              <li>Joint synovium → polyarthritis</li>
+              <li>Glomerular basement membrane → glomerulonephritis</li>
+              <li>Skin → cutaneous lesions</li>
+              <li>Muscle → polymyositis</li>
+              <li>Endothelium → vasculitis</li>
+              <li>Other tissues</li>
+            </ul>
+          </li>
+          <li>Type II (anti-cell) + Type III (immune complex) hypersensitivity</li>
+          <li>Multisystem damage cumulative</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Multisystem disease — diverse presentations:</strong></p>
+
+        <p><strong>1. Polyarthritis ✨ — most common (~ 75-90%):</strong></p>
+        <ul>
+          <li>Shifting lameness</li>
+          <li>Stiffness</li>
+          <li>Joint swelling (especially carpus, tarsus)</li>
+          <li>Fever</li>
+          <li>See IMPA entry for details</li>
+        </ul>
+
+        <p><strong>2. Skin lesions ✨ (~ 60%):</strong></p>
+        <ul>
+          <li>Mucocutaneous lesions (face, ears, nose, lips, periocular)</li>
+          <li>Erythema, depigmentation</li>
+          <li>Crusting, ulceration, scarring</li>
+          <li>Photosensitive (worse with UV)</li>
+          <li>Alopecia</li>
+          <li>Footpad ulceration</li>
+          <li>Nasal planum depigmentation + ulceration</li>
+          <li>"Butterfly" pattern over nose (less common in dogs than humans)</li>
+        </ul>
+
+        <p><strong>3. Hematologic (~ 30-50%):</strong></p>
+        <ul>
+          <li><strong>IMHA</strong> — see entry</li>
+          <li><strong>ITP</strong> — see entry</li>
+          <li>Both = Evans syndrome</li>
+          <li>Lymphopenia</li>
+        </ul>
+
+        <p><strong>4. Renal — glomerulonephritis (~ 30-50%):</strong></p>
+        <ul>
+          <li>Proteinuria (often substantial)</li>
+          <li>Progressive CKD</li>
+          <li>Hypertension</li>
+          <li>Nephrotic syndrome (edema, ascites)</li>
+          <li>See PLN entry</li>
+        </ul>
+
+        <p><strong>5. Polymyositis (~ 10-20%):</strong></p>
+        <ul>
+          <li>Muscle weakness, stiff gait</li>
+          <li>Pain on muscle palpation</li>
+          <li>↑ CK</li>
+          <li>Atrophy (chronic)</li>
+        </ul>
+
+        <p><strong>6. Other:</strong></p>
+        <ul>
+          <li>Fever (constitutional)</li>
+          <li>Lethargy, anorexia, weight loss</li>
+          <li>Lymphadenopathy</li>
+          <li>Splenomegaly</li>
+          <li>Pleuritis / pericarditis</li>
+          <li>Vasculitis (peripheral signs)</li>
+          <li>Neurologic (seizures, behavioral, central) — rare in pets</li>
+          <li>Thrombocytopenia</li>
+          <li>Oral ulceration</li>
+        </ul>
+
+        <p><strong>Pattern ✨:</strong></p>
+        <ul>
+          <li>Multiple organ systems involved (≥ 2 typically for diagnosis)</li>
+          <li>Often gradual onset, waxing-waning</li>
+          <li>Some present with single dominant manifestation initially → develop other features over time</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnostic criteria (ARA-modified for pets — &gt; 2 features needed):</strong></p>
+
+        <p><strong>1. ANA (antinuclear antibody) ✨ — primary screening:</strong></p>
+        <ul>
+          <li><strong>High titer (&gt; 1:160 typically) supportive</strong> ✨</li>
+          <li>~ 70-90% sensitive in SLE</li>
+          <li>NOT specific (positive in: ehrlichiosis, drug-induced lupus, other autoimmune dz, neoplasia)</li>
+          <li>Pattern (homogeneous, speckled, etc.) less useful in vet med</li>
+          <li>Send to specialty lab</li>
+        </ul>
+
+        <p><strong>2. Multisystem involvement ✨ — at least 2:</strong></p>
+        <ul>
+          <li>Polyarthritis (joint tap: neutrophilic non-degenerate)</li>
+          <li>Skin lesions (biopsy: interface dermatitis)</li>
+          <li>IMHA (Coombs +, spherocytes)</li>
+          <li>ITP (low platelet)</li>
+          <li>Glomerulonephritis (proteinuria, biopsy if available)</li>
+          <li>Polymyositis (CK ↑, biopsy)</li>
+          <li>Other organ involvement</li>
+        </ul>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (multiple cytopenias possible)</li>
+          <li>UA, UPC (proteinuria)</li>
+          <li>Joint tap (multiple joints if any joint signs)</li>
+          <li>Coombs test if anemic</li>
+          <li>Skin biopsy if cutaneous lesions</li>
+          <li>Muscle biopsy + CK if PM signs</li>
+          <li>Renal biopsy (specialty) for glomerular dz characterization</li>
+          <li>Thoracic radiograph (pleural effusion, cardiac)</li>
+          <li>Abdominal US (lymphadenopathy, splenomegaly, organ involvement)</li>
+          <li>BP measurement (renal involvement)</li>
+        </ul>
+
+        <p><strong>Rule out other causes ✨:</strong></p>
+        <ul>
+          <li>Tick-borne disease (especially Ehrlichia — can cause + ANA, multisystem signs)</li>
+          <li>Leishmaniasis (similar presentation in endemic areas)</li>
+          <li>Drug-induced lupus (TMS, hydralazine, procainamide, propylthiouracil)</li>
+          <li>Other autoimmune (idiopathic IMPA, IMHA, ITP)</li>
+          <li>Lymphoma / paraneoplastic</li>
+          <li>FIP (cat)</li>
+        </ul>
+
+        <p><strong>Other autoantibodies (specialty):</strong></p>
+        <ul>
+          <li>Anti-dsDNA (specific but low sensitivity)</li>
+          <li>Anti-Sm</li>
+          <li>Antiphospholipid antibodies</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Tick-borne disease (Ehrlichia, RMSF) — multisystem signs + ANA possibly positive</li>
+          <li>Leishmaniasis (endemic areas — similar presentation)</li>
+          <li>Drug-induced lupus (history)</li>
+          <li>Idiopathic IMPA, IMHA, ITP (single autoimmune disease vs SLE)</li>
+          <li>Lymphoma (multisystem signs, paraneoplastic)</li>
+          <li>FIP (cat, multisystem)</li>
+          <li>Discoid lupus erythematosus (cutaneous only)</li>
+          <li>Pemphigus complex (cutaneous primarily)</li>
+          <li>Vasculitis</li>
+          <li>Other systemic autoimmune syndromes</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Immunosuppression ✨:</strong></p>
+
+        <p><strong>Glucocorticoids — first-line:</strong></p>
+        <ul>
+          <li><strong>Prednisolone 2 mg/kg PO q12h</strong> ✨ × 2-4 weeks
+            <ul>
+              <li>Higher in severe cases</li>
+              <li>Continue until clinical improvement</li>
+            </ul>
+          </li>
+          <li><strong>Slow taper over 4-6 months minimum</strong>:
+            <ul>
+              <li>Goal: lowest effective dose</li>
+              <li>Most need long-term low-dose maintenance</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Adjunct (multisystem disease often needs combination):</strong></p>
+        <ul>
+          <li><strong>Mycophenolate mofetil 10 mg/kg PO q12h</strong> — modern preferred adjunct</li>
+          <li>Azathioprine 2 mg/kg PO q24h (DOG ONLY — fatal in cat ✗)</li>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Cyclophosphamide (severe; specialty)</li>
+          <li>Leflunomide 2-4 mg/kg PO q24h</li>
+        </ul>
+
+        <p><strong>2. Organ-specific therapy:</strong></p>
+        <ul>
+          <li><strong>Polyarthritis:</strong> immunosuppression as above; gabapentin for pain</li>
+          <li><strong>IMHA:</strong> see IMHA entry; transfusion if severe</li>
+          <li><strong>ITP:</strong> see ITP entry; vincristine adjunct</li>
+          <li><strong>Glomerulonephritis:</strong>
+            <ul>
+              <li>ACEi (enalapril, benazepril) for proteinuria</li>
+              <li>± Telmisartan</li>
+              <li>Renal diet</li>
+              <li>Antithrombotic (clopidogrel) if severely proteinuric</li>
+              <li>BP management</li>
+            </ul>
+          </li>
+          <li><strong>Skin lesions:</strong>
+            <ul>
+              <li>Topical tacrolimus 0.1% q12-24h</li>
+              <li>Sunblock (when going outside)</li>
+              <li>Avoid UV exposure</li>
+              <li>Topical corticosteroid for flares</li>
+            </ul>
+          </li>
+          <li><strong>Polymyositis:</strong> see entry; immunosuppression</li>
+        </ul>
+
+        <p><strong>3. Discontinue triggering drugs:</strong></p>
+        <ul>
+          <li>Avoid sulfas, hydralazine</li>
+          <li>Limit unnecessary medications</li>
+        </ul>
+
+        <p><strong>4. Supportive:</strong></p>
+        <ul>
+          <li>Anti-acid (omeprazole, sucralfate) — chronic steroid</li>
+          <li>UTI surveillance + treatment</li>
+          <li>Nutritional support if needed</li>
+          <li>Limit UV exposure (skin)</li>
+          <li>Monitor for opportunistic infections</li>
+        </ul>
+
+        <p><strong>5. Monitor:</strong></p>
+        <ul>
+          <li>Clinical signs (multiple organ systems)</li>
+          <li>CBC, biochem, UA + UPC q2-4 wk × 2-3 mo, then monthly, then q3 mo</li>
+          <li>BP q3 mo (renal involvement)</li>
+          <li>ANA — falling titer suggests improvement (some clinicians monitor)</li>
+          <li>Watch for relapse, drug side effects, opportunistic infection</li>
+          <li>Long-term: maintain on lowest effective immunosuppression</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Progression of any organ system involvement → permanent damage:
+            <ul>
+              <li>Joint destruction (rare; usually NEIMPA component)</li>
+              <li>Renal failure (CKD progression)</li>
+              <li>Severe / fatal IMHA / ITP</li>
+              <li>Permanent skin scarring</li>
+              <li>Polymyositis fibrosis</li>
+            </ul>
+          </li>
+          <li>Iatrogenic Cushing's (long-term steroid)</li>
+          <li>UTI, pyoderma, opportunistic infections</li>
+          <li>GI ulceration, pancreatitis</li>
+          <li>Diabetes mellitus (steroid)</li>
+          <li>Drug-specific (azathioprine BM/liver, mycophenolate GI, cyclosporine GI/skin)</li>
+          <li>PTE (especially with IMHA component)</li>
+          <li>Relapse during taper (~ 30-50%)</li>
+          <li>Concurrent infections (immunosuppression)</li>
+          <li>End-stage renal failure (glomerulonephritis)</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Variable — depends on which organ systems most affected</li>
+          <li>Single dominant feature with appropriate Tx: good</li>
+          <li>Multisystem with severe glomerulonephritis: guarded long-term (renal failure)</li>
+          <li>IMHA/ITP component: depends on response</li>
+          <li>Median survival: 1-3+ years with management</li>
+          <li>Long-term remission achievable in some</li>
+          <li>Many require lifelong immunosuppression</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe glomerulonephritis (PLN)</li>
+              <li>Concurrent IMHA + ITP (Evans)</li>
+              <li>Multiorgan failure at presentation</li>
+              <li>Refractory to multimodal Tx</li>
+              <li>Major intercurrent infection</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>SLE = multisystem autoimmune; need ≥ 2 organ systems + supporting ANA</strong> ✨<br><br>**Always rule out tick-borne disease + leishmaniasis + drug-induced** before SLE diagnosis<br><br>Pred + mycophenolate combination + organ-specific Tx (ACEi for GN, vincristine for ITP, etc.). Long-term management most cases</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 75 · Vasculitis ---------- */
+  {
+    id: 'vasculitis',
+    titleEn: 'Cutaneous &amp; Systemic Vasculitis',
+    titleTh: 'Vasculitis — เส้นเลือดอักเสบ',
+    type: 'disease',
+    system: 'immune',
+    species: ['dog', 'cat'],
+    tags: ['vasculitis', 'cutaneous vasculitis', 'systemic vasculitis', 'immune complex', 'tick-borne', 'rabies vaccine', 'pinnal vasculitis', 'pentoxifylline', 'tacrolimus', 'glucocorticoids'],
+    aliases: ['vasculitis', 'angiitis', 'เส้นเลือดอักเสบ'],
+    source: 'Ch. 75 · pp. 1278–1284',
+    sections: {
+      definition: `
+        <p>การอักเสบของผนังหลอดเลือด — ทำให้เกิดเลือดออก, ขาดเลือด, เนื้อตาย</p>
+        <ul>
+          <li>2 main categories:
+            <ul>
+              <li><strong>Cutaneous vasculitis</strong> ✨ — most common; affects skin small vessels</li>
+              <li><strong>Systemic vasculitis</strong> — multi-organ; less common, more severe</li>
+            </ul>
+          </li>
+          <li>By vessel size: large, medium, small</li>
+          <li>Often <strong>secondary</strong> ✨ — drug, infection, neoplasia, immune-mediated; primary idiopathic uncommon</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Drug / vaccine-induced ✨:</strong></p>
+        <ul>
+          <li><strong>Rabies vaccine-induced ischemic dermatopathy</strong> ✨ — small breeds (Toy/Mini Poodle, Yorkie, Maltese, Silky Terrier especially)
+            <ul>
+              <li>Onset 1-6 mo post-vaccine</li>
+              <li>Focal alopecia + scarring at injection site → can become generalized</li>
+            </ul>
+          </li>
+          <li>Sulfonamides ✨</li>
+          <li>Itraconazole, fluconazole</li>
+          <li>NSAIDs (rare)</li>
+          <li>Vaccines (other)</li>
+        </ul>
+
+        <p><strong>Infectious:</strong></p>
+        <ul>
+          <li>Tick-borne: Ehrlichia, Rickettsia (RMSF) ✨</li>
+          <li>Leishmaniasis</li>
+          <li>FIP (cat) — vasculitis is hallmark ✨</li>
+          <li>Bartonella</li>
+          <li>Sepsis</li>
+        </ul>
+
+        <p><strong>Immune-mediated / idiopathic:</strong></p>
+        <ul>
+          <li>Cutaneous primary (idiopathic)</li>
+          <li>SLE</li>
+          <li>Rheumatoid arthritis</li>
+          <li>Familial cutaneous vasculopathy of GSD (juvenile)</li>
+          <li>Pinnal margin vasculitis (Dachshund, Jack Russell)</li>
+        </ul>
+
+        <p><strong>Neoplasia (paraneoplastic):</strong></p>
+        <ul>
+          <li>Lymphoma, carcinoma, hemangiosarcoma</li>
+        </ul>
+
+        <p><strong>Cold-related:</strong></p>
+        <ul>
+          <li>Cryoglobulinemia / cryofibrinogenemia</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Immune complex deposition in vessel walls → complement activation → neutrophil infiltration → vessel wall damage</li>
+          <li>↓ Blood flow → ischemia → tissue necrosis</li>
+          <li>Petechiae, ecchymoses, purpura from capillary leak</li>
+          <li>Larger vessel occlusion → infarction</li>
+          <li>Skin (most common): well-defined ulcerations, crusts, depigmentation, alopecia</li>
+          <li>Other organs (systemic): organ-specific signs from regional ischemia</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Cutaneous vasculitis ✨:</strong></p>
+        <ul>
+          <li>Distal extremity locations (cold, less perfused):
+            <ul>
+              <li><strong>Pinnae (ear margins)</strong> ✨ — pinnal margin vasculitis</li>
+              <li>Tail tip</li>
+              <li>Paws / digits / nail beds</li>
+              <li>Scrotum</li>
+              <li>Periocular, periauricular</li>
+              <li>Footpads</li>
+            </ul>
+          </li>
+          <li>Skin lesions:
+            <ul>
+              <li>Erythematous to purple macules / patches</li>
+              <li>Punched-out ulcers (well-defined edges)</li>
+              <li>Crusts</li>
+              <li>Hyperpigmentation</li>
+              <li>Alopecia</li>
+              <li>Depigmentation</li>
+              <li>Atrophic scarring</li>
+              <li>Necrosis (severe)</li>
+            </ul>
+          </li>
+          <li>Often painful (especially digits)</li>
+          <li>Lameness if footpads / digits</li>
+        </ul>
+
+        <p><strong>Vaccine-induced ischemic dermatopathy ✨:</strong></p>
+        <ul>
+          <li>Focal alopecia + skin atrophy at injection site (3-6 mo post-vaccine)</li>
+          <li>Can progress to generalized syndrome involving:
+            <ul>
+              <li>Pinnae</li>
+              <li>Periocular</li>
+              <li>Footpads</li>
+              <li>Tail tip</li>
+            </ul>
+          </li>
+          <li>Toy/small breeds especially</li>
+        </ul>
+
+        <p><strong>Pinnal margin vasculitis:</strong></p>
+        <ul>
+          <li>Dachshund, Jack Russell predisposed</li>
+          <li>Pinnal margin notching, crusting, alopecia</li>
+          <li>Often bilateral</li>
+        </ul>
+
+        <p><strong>Systemic vasculitis ✗:</strong></p>
+        <ul>
+          <li>Fever, lethargy</li>
+          <li>Weight loss</li>
+          <li>Lameness (joint vessels affected — IMPA-like)</li>
+          <li>GI signs (mesenteric vessels)</li>
+          <li>Renal disease (glomerular vessels)</li>
+          <li>Neurologic signs (CNS vessels)</li>
+          <li>Pulmonary signs</li>
+          <li>Cardiac (rare)</li>
+          <li>FIP cat — multisystemic, often pleural/peritoneal effusion</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Clinical recognition + history ✨:</strong></p>
+        <ul>
+          <li>Distribution suggestive (distal, dependent areas)</li>
+          <li>Drug history (recent vaccine, sulfa)</li>
+          <li>Travel history (tick exposure)</li>
+          <li>Concurrent systemic signs (fever, joint pain, etc.)</li>
+        </ul>
+
+        <p><strong>2. Skin biopsy ✨ — diagnostic:</strong></p>
+        <ul>
+          <li>Punch biopsy from active lesion edge (NOT necrotic center)</li>
+          <li>Multiple samples</li>
+          <li>Histopathology:
+            <ul>
+              <li>Inflammatory infiltrate in vessel walls (neutrophilic, lymphocytic, mixed)</li>
+              <li>Vessel wall necrosis (fibrinoid)</li>
+              <li>Hemorrhage</li>
+              <li>Thrombosis</li>
+              <li>Tissue necrosis surrounding</li>
+            </ul>
+          </li>
+          <li>Direct immunofluorescence (specialty) — immune complex deposition</li>
+        </ul>
+
+        <p><strong>3. Workup for underlying cause ✨:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>UPC, BP (renal involvement)</li>
+          <li>Tick-borne disease panel ✨ (Ehrlichia, Anaplasma, RMSF, Babesia)</li>
+          <li>Drug history review (especially recent vaccines, sulfa)</li>
+          <li>Thoracic radiograph + abdominal US (paraneoplastic, infection)</li>
+          <li>Coag panel (DIC)</li>
+          <li>ANA (SLE)</li>
+          <li>Coombs (concurrent IMHA)</li>
+          <li>Joint tap if joint signs</li>
+          <li>Cryoglobulin / cryofibrinogen if cold-related</li>
+          <li>Cat: FIP workup (effusion fluid analysis, serum protein electrophoresis, FCoV PCR)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Pyoderma (deep)</li>
+          <li>Demodicosis</li>
+          <li>Dermatophytosis</li>
+          <li>Pemphigus complex</li>
+          <li>SLE (cutaneous form)</li>
+          <li>Discoid lupus erythematosus</li>
+          <li>Cutaneous lymphoma</li>
+          <li>Mast cell tumor (ulceration)</li>
+          <li>Cold agglutinin disease</li>
+          <li>Frost bite</li>
+          <li>Erythema multiforme / TEN</li>
+          <li>Scleroderma</li>
+          <li>Ischemic necrosis (other cause)</li>
+          <li>Ehrlichia / RMSF (treat empirically)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Address underlying cause ✨:</strong></p>
+        <ul>
+          <li>Tick-borne disease: doxycycline 5-10 mg/kg PO q12h × 28+ days ✨</li>
+          <li>Drug-induced: discontinue offending drug</li>
+          <li>Vaccine-induced: avoid future vaccines if non-essential; consider titer-based protocols</li>
+          <li>FIP: GS-441524 antiviral (cat)</li>
+          <li>Neoplasia: chemotherapy / surgery</li>
+          <li>Underlying autoimmune: treat per disease (SLE, etc.)</li>
+        </ul>
+
+        <p><strong>2. Pentoxifylline ✨ — first-line for cutaneous vasculitis:</strong></p>
+        <ul>
+          <li><strong>10-25 mg/kg PO q8-12h</strong> (most use 25 mg/kg q8h)</li>
+          <li>Improves microcirculation, anti-inflammatory, anti-platelet</li>
+          <li>Effect within 4-8 weeks</li>
+          <li>Excellent safety profile</li>
+          <li>Combine with vitamin E (200-400 IU/day) — anti-oxidant adjunct</li>
+          <li>Available as 400 mg tablets (often need to compound for small dogs/cats)</li>
+        </ul>
+
+        <p><strong>3. Topical therapy:</strong></p>
+        <ul>
+          <li><strong>Tacrolimus 0.1% topical q12-24h</strong> — for localized lesions
+            <ul>
+              <li>Calcineurin inhibitor</li>
+              <li>Effective for cutaneous vasculitis</li>
+              <li>Long-term safe</li>
+            </ul>
+          </li>
+          <li>Topical corticosteroid (mild-moderate; short courses)</li>
+          <li>Wound care for ulcers (sterile dressings, atraumatic)</li>
+          <li>Sunblock if photosensitive component</li>
+        </ul>
+
+        <p><strong>4. Glucocorticoids (severe / generalized):</strong></p>
+        <ul>
+          <li>Prednisolone 1-2 mg/kg PO q12-24h × 2-4 wk → taper</li>
+          <li>For severe / refractory / systemic vasculitis</li>
+          <li>Combine with pentoxifylline (synergistic)</li>
+        </ul>
+
+        <p><strong>5. Adjunct (refractory):</strong></p>
+        <ul>
+          <li>Cyclosporine 5 mg/kg PO q12h</li>
+          <li>Mycophenolate mofetil 10 mg/kg PO q12h</li>
+          <li>Azathioprine 1-2 mg/kg PO q24h (DOG ONLY ✗)</li>
+          <li>Doxycycline 5 mg/kg PO q12h (for anti-inflammatory effect, even without infection)</li>
+          <li>Niacinamide + tetracycline combination (alternative)</li>
+        </ul>
+
+        <p><strong>6. Supportive:</strong></p>
+        <ul>
+          <li>Pain management (gabapentin, acetaminophen DOG ONLY)</li>
+          <li>Wound care for ulcerations</li>
+          <li>Avoid cold exposure (worsens distal vasculitis)</li>
+          <li>Avoid trauma to affected areas</li>
+          <li>Protective booties for footpad lesions</li>
+          <li>Sunblock + sun avoidance</li>
+        </ul>
+
+        <p><strong>7. Vaccine-induced specific:</strong></p>
+        <ul>
+          <li>Treat with pentoxifylline + tacrolimus topical</li>
+          <li>Avoid future rabies vaccines if possible (titer-based; legal exemption letter for high-risk dogs)</li>
+          <li>Use single-vaccine protocols, not combination</li>
+          <li>Avoid same site re-vaccination</li>
+          <li>Lifelong cosmetic management often needed</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Lesion progression</li>
+          <li>New lesions</li>
+          <li>Systemic signs</li>
+          <li>CBC, biochem q2-4 wk × 2 mo, then q3 mo</li>
+          <li>UA q3 mo</li>
+          <li>Watch for: relapse, drug side effects, secondary infection</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Permanent scarring + alopecia (cosmetic)</li>
+          <li>Tissue necrosis / loss (severe — digits, ear margins)</li>
+          <li>Secondary bacterial infection of ulcers</li>
+          <li>Pain / discomfort (chronic)</li>
+          <li>Progression to systemic involvement</li>
+          <li>Drug side effects (steroid, calcineurin inhibitors)</li>
+          <li>Underlying disease progression (FIP, neoplasia)</li>
+          <li>Recurrence (variable)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Cutaneous vasculitis localized: good with treatment</strong> ✓</li>
+          <li>Drug-induced (discontinued): excellent — resolves over weeks-months</li>
+          <li>Vaccine-induced: variable; permanent cosmetic changes; may recur with revaccination</li>
+          <li>Tick-borne: excellent with doxycycline</li>
+          <li>SLE-associated: depends on systemic disease</li>
+          <li>FIP cat: poor without antiviral (GS-441524 transformative)</li>
+          <li>Idiopathic: variable; long-term management often</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Systemic involvement</li>
+              <li>Multiple organs</li>
+              <li>Refractory to therapy</li>
+              <li>Underlying neoplasia / FIP</li>
+              <li>Severe digit / extremity necrosis</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Distal extremity ulceration / depigmentation = consider vasculitis</strong> ✨ — biopsy confirms<br><br>**Always search for trigger**: drugs (sulfa), vaccines (rabies in small breeds), tick-borne disease, FIP (cat)<br><br>**Pentoxifylline 25 mg/kg q8h + topical tacrolimus** = first-line for cutaneous; pred + adjunct for systemic</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     PART 12 — ONCOLOGY (Ch 76–83)
+  ============================================================ */
+
+  /* ---------- Ch 77 · Lymphoma ---------- */
+  {
+    id: 'lymphoma',
+    titleEn: 'Lymphoma (Lymphosarcoma)',
+    titleTh: 'มะเร็งต่อมน้ำเหลือง',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['lymphoma', 'multicentric lymphoma', 'GI lymphoma', 'mediastinal', 'cutaneous lymphoma', 'CHOP', 'doxorubicin', 'vincristine', 'cyclophosphamide', 'prednisolone', 'B-cell', 'T-cell', 'flow cytometry', 'PARR', 'FeLV'],
+    aliases: ['lymphosarcoma', 'LSA', 'มะเร็งต่อมน้ำเหลือง'],
+    source: 'Ch. 77 · pp. 1289–1310',
+    sections: {
+      definition: `
+        <p><strong>Most common hematopoietic malignancy in dog + cat</strong> ✨ — heterogeneous group of lymphoid tumors</p>
+        <ul>
+          <li>Dog: 1 of top 3 most common cancers; ~ 24/100,000/year incidence</li>
+          <li>Cat: most common with FeLV; declining with vaccination</li>
+          <li>Median age: dog 6-9 yr; cat 9-13 yr (FeLV-negative trend older)</li>
+          <li>Predisposed (dog): Boxer, Bullmastiff, Basset, Saint Bernard, Scottish Terrier, Airedale, Bulldog, Golden Retriever</li>
+          <li><strong>Anatomic forms ✨:</strong>
+            <ul>
+              <li><strong>Multicentric</strong> ✨ ~ 80% in dog — generalized lymphadenopathy</li>
+              <li><strong>Alimentary (GI)</strong> ~ 5-10% in dog; <strong>most common in cat</strong> ✨</li>
+              <li><strong>Mediastinal</strong> ~ 5% — thymic mass; young cat (FeLV+)</li>
+              <li><strong>Cutaneous</strong> — epitheliotropic vs non-epitheliotropic</li>
+              <li>Extranodal — CNS, ocular, renal, nasal</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Most cases: idiopathic / multifactorial</li>
+          <li>Genetic predisposition (breed clustering)</li>
+          <li><strong>FeLV-associated (cat) ✨:</strong>
+            <ul>
+              <li>Mediastinal (thymic) lymphoma in young cats — almost always FeLV+</li>
+              <li>Multicentric in young cats</li>
+              <li>Vaccination has dramatically reduced incidence</li>
+            </ul>
+          </li>
+          <li>FIV — increases lymphoma risk 5×</li>
+          <li>Chronic inflammation (IBD → small cell GI lymphoma cat)</li>
+          <li>Helicobacter, environmental tobacco smoke (cat — debated)</li>
+          <li>Pesticide exposure (dog — debated)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Clonal proliferation of lymphocytes (B-cell or T-cell)</li>
+          <li>~ 75% B-cell in dog (better response, longer MST)</li>
+          <li>~ 25% T-cell in dog (poorer prognosis, hypercalcemia association)</li>
+          <li>Cat GI: small cell low-grade T-cell ~ 50-75% (better prognosis); large cell intermediate-high grade</li>
+          <li>Spread:
+            <ul>
+              <li>Lymphadenopathy → splenic + hepatic involvement → bone marrow infiltration → leukemic phase</li>
+              <li>Multiorgan in advanced disease</li>
+            </ul>
+          </li>
+          <li>Paraneoplastic syndromes:
+            <ul>
+              <li>Hypercalcemia (T-cell) ✨</li>
+              <li>Anemia of chronic disease</li>
+              <li>Myasthenia gravis (rare)</li>
+              <li>Polyarthritis (rare)</li>
+              <li>Hypergammaglobulinemia / monoclonal gammopathy</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Multicentric (most common dog) ✨:</strong></p>
+        <ul>
+          <li><strong>Generalized peripheral lymphadenopathy</strong> ✨ — non-painful, mobile, firm
+            <ul>
+              <li>Submandibular, prescapular, inguinal, popliteal most palpable</li>
+              <li>Often massive (3-10× normal)</li>
+              <li>Bilateral</li>
+            </ul>
+          </li>
+          <li>Often <strong>asymptomatic at presentation</strong> — owner found "lump"</li>
+          <li>± Lethargy, anorexia, weight loss (advanced)</li>
+          <li>± Fever</li>
+          <li>± Vomiting / diarrhea (GI involvement)</li>
+          <li>Hepatosplenomegaly</li>
+          <li>± PU/PD (hypercalcemia of malignancy)</li>
+          <li>Substage:
+            <ul>
+              <li><strong>Substage a</strong> — asymptomatic (better prognosis)</li>
+              <li><strong>Substage b</strong> — clinical signs present (worse prognosis)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Alimentary (most common cat) ✨:</strong></p>
+        <ul>
+          <li>Chronic vomiting, diarrhea, weight loss</li>
+          <li>Anorexia or polyphagia (variable)</li>
+          <li>Palpable abdominal mass (intestinal mass or LN)</li>
+          <li>Diffuse intestinal thickening (small cell)</li>
+          <li>Hepatomegaly, splenomegaly</li>
+          <li>Cat small cell GI lymphoma: looks like IBD; need biopsy ✨</li>
+        </ul>
+
+        <p><strong>Mediastinal (cat young, FeLV+):</strong></p>
+        <ul>
+          <li>Dyspnea, tachypnea (pleural effusion + thymic mass) ✗</li>
+          <li>Open-mouth breathing</li>
+          <li>Muffled heart/lung sounds</li>
+          <li>Caval compression, pre-caval syndrome</li>
+          <li>Coughing</li>
+          <li>Regurgitation (esophageal compression)</li>
+          <li>Loss of compressibility of cranial chest</li>
+        </ul>
+
+        <p><strong>Cutaneous:</strong></p>
+        <ul>
+          <li><strong>Epitheliotropic (mycosis fungoides):</strong>
+            <ul>
+              <li>Generalized scaly, depigmented dermatitis</li>
+              <li>Mucocutaneous junctions</li>
+              <li>Plaques, nodules, ulcers</li>
+              <li>Often misdiagnosed as "stubborn dermatitis"</li>
+            </ul>
+          </li>
+          <li>Non-epitheliotropic: nodular dermal lesions</li>
+        </ul>
+
+        <p><strong>Extranodal:</strong></p>
+        <ul>
+          <li>CNS: seizures, behavioral changes, paresis</li>
+          <li>Renal (cat): renomegaly, AKI, polyuria</li>
+          <li>Nasal: epistaxis, sneezing, facial deformity</li>
+          <li>Ocular: uveitis, mass</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Cytology (FNA of LN) ✨ — first step:</strong></p>
+        <ul>
+          <li>Aspirate enlarged LN (avoid mandibular if possible — reactive)</li>
+          <li>Submandibular, prescapular, popliteal best</li>
+          <li>Findings:
+            <ul>
+              <li>Monomorphic population of large lymphoblasts (high-grade)</li>
+              <li>Or small lymphocyte predominance (low-grade)</li>
+              <li>Lymphoglandular bodies (cytoplasmic fragments)</li>
+              <li>Often diagnostic without biopsy</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Biopsy + histopathology — confirm + classify:</strong></p>
+        <ul>
+          <li>Excisional LN biopsy preferred (architecture preserved)</li>
+          <li>Tru-cut for organs</li>
+          <li>Endoscopic GI biopsy (cat alimentary)</li>
+          <li>Histologic grade: low / intermediate / high</li>
+          <li>WHO classification</li>
+        </ul>
+
+        <p><strong>3. Immunophenotyping ✨ — prognostic + treatment:</strong></p>
+        <ul>
+          <li><strong>Flow cytometry</strong> ✨ — fresh sample (LN aspirate or blood):
+            <ul>
+              <li>B-cell vs T-cell</li>
+              <li>Cell size (large vs small)</li>
+              <li>CD markers (CD3, CD4, CD8, CD21, CD79a)</li>
+              <li>B-cell &gt; T-cell prognosis in dog</li>
+            </ul>
+          </li>
+          <li><strong>PARR (PCR for antigen receptor rearrangement)</strong>:
+            <ul>
+              <li>Confirms clonality (lymphoma vs reactive)</li>
+              <li>Useful when cytology equivocal</li>
+              <li>Sample: blood, LN, tissue</li>
+            </ul>
+          </li>
+          <li>Immunohistochemistry (IHC) on biopsy</li>
+        </ul>
+
+        <p><strong>4. Staging workup:</strong></p>
+        <ul>
+          <li>CBC + differential (lymphocytosis, anemia, thrombocytopenia, blasts)</li>
+          <li>Biochem (Ca, BUN, Cr, liver enzymes)</li>
+          <li>Ionized Ca (T-cell hyperCa)</li>
+          <li>UA</li>
+          <li>Thoracic radiographs (3-view) — mediastinal mass, mets</li>
+          <li>Abdominal US — splenic, hepatic, mesenteric LN, GI</li>
+          <li>FNA spleen, liver if abnormal</li>
+          <li>Bone marrow aspirate (stage V — leukemic)</li>
+          <li>FeLV/FIV (cat)</li>
+          <li>Coombs test if anemic</li>
+        </ul>
+
+        <p><strong>5. Modified WHO clinical staging:</strong></p>
+        <ul>
+          <li>Stage I — single LN</li>
+          <li>Stage II — multiple LN, regional</li>
+          <li>Stage III — generalized LN ✨ (most common)</li>
+          <li>Stage IV — + liver/spleen</li>
+          <li>Stage V — + bone marrow / blood / extranodal</li>
+          <li>Substage a (asymptomatic) / b (symptomatic)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Reactive lymphadenopathy (infection — Ehrlichia, Bartonella, fungal)</li>
+          <li>Tick-borne disease</li>
+          <li>Other neoplasia metastatic to LN</li>
+          <li>Mycobacterial / fungal lymphadenitis</li>
+          <li>Drug-induced lymphadenopathy</li>
+          <li>Cat IBD (vs small cell GI lymphoma)</li>
+          <li>Other CKD / GI causes (cat)</li>
+          <li>Mast cell tumor (LN involvement)</li>
+          <li>Thymoma (cat — vs mediastinal lymphoma)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. CHOP-based combination chemotherapy ✨ — gold standard:</strong></p>
+        <p><strong>"CHOP" = Cyclophosphamide, Hydroxydaunorubicin (doxorubicin), Oncovin (vincristine), Prednisone</strong></p>
+        <ul>
+          <li>Various protocols: UW-Madison, Wisconsin-Madison, Tufts VELCAP, etc.</li>
+          <li>~ 19-25 weeks induction</li>
+          <li><strong>Typical UW-Madison protocol:</strong>
+            <ul>
+              <li>Week 1: vincristine 0.5-0.7 mg/m² IV</li>
+              <li>Week 2: cyclophosphamide 200-250 mg/m² PO/IV</li>
+              <li>Week 3: vincristine 0.5-0.7 mg/m² IV</li>
+              <li>Week 4: doxorubicin 30 mg/m² IV slow (1 mg/kg if &lt; 15 kg)</li>
+              <li>+ Prednisolone 2 mg/kg PO q24h × 1 wk → taper over 4 wk</li>
+              <li>Cycle repeats q3 wk × 4 cycles (16-19 weeks total)</li>
+              <li>± L-asparaginase, methotrexate (some protocols)</li>
+            </ul>
+          </li>
+          <li>Dog response:
+            <ul>
+              <li>Complete remission: 80-90% (B-cell), 60-70% (T-cell)</li>
+              <li>Median first remission: 6-9 mo</li>
+              <li>MST overall: 12 months (range 6-24+) for B-cell multicentric</li>
+              <li>T-cell: MST 6-9 months</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Single-agent doxorubicin:</strong></p>
+        <ul>
+          <li>30 mg/m² IV q3 wk × 5 cycles</li>
+          <li>Less effective than CHOP but simpler + cheaper</li>
+          <li>MST 6-9 months</li>
+        </ul>
+
+        <p><strong>3. Single-agent prednisolone (palliative):</strong></p>
+        <ul>
+          <li>2 mg/kg PO q24h × 1 wk → 1 mg/kg q24h</li>
+          <li>For owners declining chemotherapy / financial constraints</li>
+          <li>Initial response common but short-lived</li>
+          <li>MST 1-3 months</li>
+          <li><strong>Pred BEFORE chemo induces resistance — avoid if planning chemo!</strong></li>
+        </ul>
+
+        <p><strong>4. CCNU (lomustine) for relapse / rescue:</strong></p>
+        <ul>
+          <li>60-90 mg/m² PO q3 wk</li>
+          <li>For T-cell, refractory, relapse</li>
+          <li>Hepatotoxic, myelosuppressive — monitor CBC + ALT</li>
+        </ul>
+
+        <p><strong>5. Cat lymphoma treatment:</strong></p>
+        <ul>
+          <li><strong>Small cell GI lymphoma</strong> ✨ — most cats:
+            <ul>
+              <li>Chlorambucil 2 mg/cat PO q24-48h (or 20 mg/m² PO q14d) + prednisolone 1-2 mg/kg PO q24h</li>
+              <li>Excellent response: 75-90% remission</li>
+              <li>MST 1.5-3 years</li>
+              <li>Well-tolerated</li>
+            </ul>
+          </li>
+          <li><strong>Large cell GI / multicentric / mediastinal:</strong>
+            <ul>
+              <li>CHOP-based protocol modified for cat</li>
+              <li>Lower doxorubicin dose (1 mg/kg vs 30 mg/m²) — renal toxicity in cat ✗</li>
+              <li>MST 6-12 months</li>
+            </ul>
+          </li>
+          <li>FeLV+ : poorer prognosis</li>
+        </ul>
+
+        <p><strong>6. Cutaneous lymphoma:</strong></p>
+        <ul>
+          <li>Lomustine (CCNU) 60 mg/m² PO q3 wk — best evidence</li>
+          <li>± Prednisolone</li>
+          <li>Topical corticosteroid for localized</li>
+          <li>Retinoids (isotretinoin) — variable</li>
+          <li>MST 6-15 months</li>
+        </ul>
+
+        <p><strong>7. Hypercalcemia management:</strong></p>
+        <ul>
+          <li>IV fluids 0.9% NaCl + furosemide</li>
+          <li>Avoid pred until cytology obtained (can mask lymphoma!)</li>
+          <li>Once diagnosed: pred + chemo resolves Ca</li>
+          <li>Severe: pamidronate</li>
+        </ul>
+
+        <p><strong>8. Supportive:</strong></p>
+        <ul>
+          <li>Anti-emetics (maropitant, ondansetron) — chemo nausea</li>
+          <li>Anti-acid (omeprazole)</li>
+          <li>Nutritional support</li>
+          <li>Anti-diarrheal as needed</li>
+          <li>CBC before each chemo dose (skip if neutrophil &lt; 1500-2000)</li>
+          <li>Monitor for: GI side effects, neutropenia, cardiac (doxo cumulative dose &lt; 180 mg/m² lifetime), renal (cat doxo)</li>
+          <li>UA, biochem q4-8 wk</li>
+        </ul>
+
+        <p><strong>9. Owner education:</strong></p>
+        <ul>
+          <li>Realistic expectations — chemotherapy aims for QOL + extended life, not cure (mostly)</li>
+          <li>Cure rate ~ 5-10% (rare; sustained remission &gt; 2 yr)</li>
+          <li>~ 80% achieve remission; 60-70% experience improved QOL</li>
+          <li>Most dogs tolerate chemo very well (different from human chemo)</li>
+          <li>Cost commitment significant ($3000-8000+ for full protocol)</li>
+          <li>Watch for relapse signs (return of LN swelling, weight loss)</li>
+          <li>Hospice / palliative when relapsed + refractory</li>
+        </ul>
+
+        <p><strong>10. Rescue protocols (relapse):</strong></p>
+        <ul>
+          <li>Re-induction with CHOP (if &gt; 6 mo since last)</li>
+          <li>MOPP (mechlorethamine, vincristine, procarbazine, prednisolone)</li>
+          <li>CCNU + L-asparaginase</li>
+          <li>Tanovea (rabacfosadine — anti-cancer specific for lymphoma)</li>
+          <li>Toceranib (Palladia) — variable</li>
+          <li>Lomustine + cyclophosphamide</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Tumor lysis syndrome (rapid response in high-grade): hyperK, hyperP, hypoCa, AKI ✗</li>
+          <li>Chemotherapy side effects:
+            <ul>
+              <li>GI upset (vomiting, diarrhea, anorexia) — common, manageable</li>
+              <li>Myelosuppression / neutropenia → sepsis risk ✗</li>
+              <li>Doxorubicin: cardiotoxicity (cumulative; max 180 mg/m² dog), extravasation injury ✗</li>
+              <li>Vincristine: extravasation = severe vesicant ✗</li>
+              <li>Cyclophosphamide: sterile hemorrhagic cystitis ✗</li>
+              <li>Drug-specific allergic reactions</li>
+              <li>Renal toxicity (cat doxo, methotrexate)</li>
+            </ul>
+          </li>
+          <li>Steroid side effects (long-term)</li>
+          <li>Lymphoma progression / relapse (most cases eventually)</li>
+          <li>Resistance to subsequent chemotherapy</li>
+          <li>Opportunistic infections (immunosuppression)</li>
+          <li>Caval syndrome (mediastinal mass)</li>
+          <li>Renal failure (cat lymphoma renal involvement)</li>
+          <li>CNS involvement → seizures, neurologic decline</li>
+          <li>Death (most cases — eventual disease progression)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Dog multicentric B-cell + CHOP:</strong>
+            <ul>
+              <li>Stage III, substage a: MST 12 months</li>
+              <li>Stage IV: MST 8-10 months</li>
+              <li>Stage V: MST 5-6 months</li>
+              <li>~ 5-10% achieve "cure" (sustained remission &gt; 2 yr)</li>
+            </ul>
+          </li>
+          <li>Dog T-cell: MST 6-9 months (poorer; often hyperCa)</li>
+          <li>Cat small cell GI: MST 1.5-3 years ✓ — excellent</li>
+          <li>Cat large cell GI: MST 6-12 months</li>
+          <li>Cat mediastinal (FeLV+): MST 3-6 months</li>
+          <li>Cutaneous (epitheliotropic): MST 6-15 months</li>
+          <li>Single-agent prednisolone alone: MST 1-3 months</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>T-cell phenotype (dog)</li>
+              <li>Hypercalcemia</li>
+              <li>Substage b (clinical signs)</li>
+              <li>Stage V (BM/leukemic)</li>
+              <li>Mediastinal location</li>
+              <li>FeLV+ (cat)</li>
+              <li>Pre-treatment with steroids</li>
+              <li>Failed initial response</li>
+              <li>High histologic grade (large cell)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Generalized lymphadenopathy in dog = lymphoma until proven otherwise</strong> ✨ — FNA first; cheap, often diagnostic<br><br>**Cat: small cell GI lymphoma** = looks like IBD; chlorambucil + pred = MST 1.5-3 yr (excellent!) ✨<br><br>⚠️ <strong>Don't give pred before cytology</strong> — induces partial remission, masks diagnosis, induces resistance. CHOP = gold standard for dog</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 78 · Mast Cell Tumor (MCT) ---------- */
+  {
+    id: 'mast-cell-tumor',
+    titleEn: 'Mast Cell Tumor (MCT)',
+    titleTh: 'มะเร็งมาสต์เซลล์',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['mast cell tumor', 'MCT', 'Patnaik grade', 'Kiupel grade', 'c-kit', 'KIT', 'toceranib', 'Palladia', 'masitinib', 'vinblastine', 'lomustine', 'Boxer', 'Pug', 'Bulldog', 'paraneoplastic'],
+    aliases: ['MCT', 'mast cell', 'mastocytoma', 'cutaneous MCT', 'มะเร็งมาสต์เซลล์'],
+    source: 'Ch. 78 · pp. 1310–1325',
+    sections: {
+      definition: `
+        <p>มะเร็งของ <strong>mast cells</strong> — เป็น <strong>most common skin tumor in dog</strong> ✨</p>
+        <ul>
+          <li><strong>~ 16-21% of all canine skin tumors</strong> ✨</li>
+          <li>Cat: 2nd most common skin tumor; also visceral form (splenic) common</li>
+          <li>"<strong>Great pretender</strong>" — can look like ANY skin lesion (lipoma-like, ulcerated, papular, cyst-like) ✨</li>
+          <li>Predisposed (dog): <strong>Boxer</strong> ✨, Pug, Boston Terrier, English Bulldog, Pit Bull, Weimaraner, Lab, Golden, Beagle, Shar-Pei (aggressive form)</li>
+          <li>Cat: Siamese (cutaneous), DSH (visceral)</li>
+          <li>Median age dog 8-9 yr; cat 9-10 yr</li>
+          <li>Wide spectrum from benign (low-grade) to highly aggressive (high-grade)</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>c-KIT (KIT) mutations</strong> ✨ — receptor tyrosine kinase
+            <ul>
+              <li>~ 30-40% of dog MCTs have KIT mutations (especially exon 11 ITD)</li>
+              <li>Predicts aggressive behavior</li>
+              <li>Targets for tyrosine kinase inhibitors (toceranib, masitinib)</li>
+            </ul>
+          </li>
+          <li>Genetic predisposition (breed)</li>
+          <li>Chronic inflammation (debated)</li>
+          <li>Cat: less defined; some FeLV-associated</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mast cell granules contain: histamine, heparin, serotonin, chymase, tryptase, TNF-α, etc.</li>
+          <li>Tumor mast cells release granules → systemic + local effects</li>
+          <li>Local: erythema, edema, ulceration, "Darier's sign" (manipulation → red flare)</li>
+          <li>Systemic (paraneoplastic) ✨:
+            <ul>
+              <li><strong>Gastric ulceration</strong> ✨ — histamine → ↑ gastric acid → ulcer (most common paraneoplastic)</li>
+              <li>Hypotension, bronchospasm</li>
+              <li>Coagulopathy (heparin)</li>
+              <li>Delayed wound healing</li>
+              <li>Edema at surgical sites</li>
+            </ul>
+          </li>
+          <li>Metastasis via lymphatics → regional LN → spleen, liver, bone marrow</li>
+          <li>Pulmonary mets uncommon (vs OSA, HSA)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Cutaneous MCT (most common dog) ✨:</strong></p>
+        <ul>
+          <li><strong>Solitary or multiple skin masses</strong></li>
+          <li>Locations:
+            <ul>
+              <li>Trunk most common (~ 50%)</li>
+              <li>Limbs ~ 25%</li>
+              <li>Head/neck ~ 10%</li>
+              <li>Perineal/genital region — often more aggressive ✗</li>
+            </ul>
+          </li>
+          <li><strong>Variable appearance ✨ — "great pretender":</strong>
+            <ul>
+              <li>Soft / firm / nodular</li>
+              <li>Skin-colored / red / pigmented</li>
+              <li>Hairless / haired</li>
+              <li>Smooth / ulcerated</li>
+              <li>Looks like lipoma, cyst, papilloma, granuloma, etc.</li>
+              <li><strong>ALWAYS aspirate skin masses before excision</strong> ✨</li>
+            </ul>
+          </li>
+          <li><strong>Darier's sign</strong> ✨ — manipulation → red, swollen, edematous (degranulation); pathognomonic-supportive</li>
+          <li>Variable size + duration:
+            <ul>
+              <li>Slowly growing / waxing-waning (typical low-grade)</li>
+              <li>Rapidly growing, ulcerated (high-grade)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Paraneoplastic signs ✨:</strong></p>
+        <ul>
+          <li><strong>Gastric ulceration</strong> ✨ — vomiting, melena, anorexia, hematemesis ✗</li>
+          <li>Vomiting (chronic)</li>
+          <li>Hypotension during manipulation (degranulation)</li>
+          <li>Coagulopathy (rare; heparin-mediated)</li>
+          <li>Bronchospasm at surgery</li>
+        </ul>
+
+        <p><strong>Visceral / splenic MCT (cat especially) ✨:</strong></p>
+        <ul>
+          <li>Most common splenic tumor in cat</li>
+          <li>Splenomegaly</li>
+          <li>Vomiting (chronic), anorexia, weight loss</li>
+          <li>Hepatomegaly (LN, hepatic involvement)</li>
+          <li>± Abdominal effusion (mast cell rich)</li>
+          <li>Mast cell leukemia possible</li>
+        </ul>
+
+        <p><strong>GI MCT (cat):</strong></p>
+        <ul>
+          <li>Intestinal mass</li>
+          <li>Chronic vomiting, weight loss, diarrhea</li>
+          <li>Often aggressive</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. FNA cytology ✨ — diagnostic for cutaneous:</strong></p>
+        <ul>
+          <li>Easy, sensitive, often diagnostic without biopsy</li>
+          <li>Findings:
+            <ul>
+              <li>Round cells with prominent purple/dark cytoplasmic granules ✨</li>
+              <li>Eosinophils often present</li>
+              <li>Round nuclei</li>
+            </ul>
+          </li>
+          <li>Cytology can suggest grade (well-differentiated vs poorly-differentiated):
+            <ul>
+              <li>Well-differentiated: prominent uniform granules, low N:C ratio</li>
+              <li>Poorly-differentiated: few/absent granules, anisocytosis, anisokaryosis</li>
+            </ul>
+          </li>
+          <li>"Cytologic high-grade MCT" markers (newer):
+            <ul>
+              <li>Multinucleation</li>
+              <li>Mitotic figures</li>
+              <li>Anisokaryosis &gt; 50%</li>
+              <li>Predicts aggressive behavior</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Histopathology + grading ✨ — definitive:</strong></p>
+        <ul>
+          <li>Excisional biopsy (treatment AND diagnosis simultaneously)</li>
+          <li>Margins: 2-3 cm wide + 1 fascial plane deep recommended</li>
+          <li>Submit margins separately if possible</li>
+
+          <p><strong>Patnaik grading (3-tier — historical):</strong></p>
+          <ul>
+            <li>Grade I — well-differentiated; benign (~ 90% cure with surgery alone)</li>
+            <li>Grade II — intermediate; ~ 70% cured; variable behavior</li>
+            <li>Grade III — poorly-differentiated; aggressive; high metastasis (~ 60-90%)</li>
+          </ul>
+
+          <p><strong>Kiupel grading (2-tier — modern, preferred) ✨:</strong></p>
+          <ul>
+            <li><strong>Low-grade</strong>:
+              <ul>
+                <li>Better prognosis</li>
+                <li>Mortality &lt; 10% at 2 years</li>
+                <li>Surgery often curative</li>
+              </ul>
+            </li>
+            <li><strong>High-grade</strong>:
+              <ul>
+                <li>Poor prognosis</li>
+                <li>Mortality &gt; 80% at 2 years</li>
+                <li>Often metastatic at presentation</li>
+                <li>Multimodal Tx required</li>
+              </ul>
+            </li>
+            <li>Criteria: mitotic count, multinucleation, bizarre nuclei, karyomegaly</li>
+          </ul>
+        </ul>
+
+        <p><strong>3. Other prognostic markers:</strong></p>
+        <ul>
+          <li><strong>Mitotic count</strong> ✨ — &gt; 5/10 HPF = aggressive
+            <ul>
+              <li>Single most powerful prognostic factor</li>
+            </ul>
+          </li>
+          <li>Ki67 proliferation index</li>
+          <li>AgNOR count</li>
+          <li>KIT mutation testing — predicts response to TKIs</li>
+          <li>KIT immunohistochemistry pattern (cytoplasmic = aggressive)</li>
+        </ul>
+
+        <p><strong>4. Staging (high-grade or high-risk lesions):</strong></p>
+        <ul>
+          <li>Regional LN aspirate (even if not enlarged) ✨ — micrometastasis common</li>
+          <li>Abdominal US — splenic, hepatic; FNA if abnormal</li>
+          <li>Thoracic radiograph (rare lung mets)</li>
+          <li>Bone marrow aspirate (mast cell leukemia rule out)</li>
+          <li>Buffy coat smear (mast cells in peripheral blood — advanced)</li>
+        </ul>
+
+        <p><strong>5. Pre-surgical workup:</strong></p>
+        <ul>
+          <li>CBC + biochem</li>
+          <li>UA</li>
+          <li>Coagulation if concerned (heparin from tumor)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Lipoma (cytology — fat cells)</li>
+          <li>Cutaneous histiocytoma</li>
+          <li>Cutaneous lymphoma</li>
+          <li>Sebaceous adenoma</li>
+          <li>Plasmacytoma</li>
+          <li>Soft tissue sarcoma</li>
+          <li>Squamous cell carcinoma</li>
+          <li>Other round cell tumors</li>
+          <li>Granuloma</li>
+          <li>Cyst</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Surgical excision ✨ — primary treatment:</strong></p>
+        <ul>
+          <li><strong>Wide margins: 2-3 cm laterally + 1 fascial plane deep</strong> ✨
+            <ul>
+              <li>Recent evidence: 2 cm + 1 fascial plane often adequate for low-grade</li>
+              <li>3 cm + fascial plane for suspicious / high-grade</li>
+            </ul>
+          </li>
+          <li>Submit ENTIRE tumor for histopath + margin evaluation</li>
+          <li>If margins clean (Patnaik I/II low-grade): often curative ✓</li>
+          <li>If incomplete margins:
+            <ul>
+              <li>Re-excision (best)</li>
+              <li>Adjuvant radiation therapy</li>
+            </ul>
+          </li>
+          <li>Premedication ✨:
+            <ul>
+              <li><strong>H1 blocker: diphenhydramine 2 mg/kg IM</strong> 30 min pre-op</li>
+              <li>± H2 blocker: famotidine 0.5-1 mg/kg IV/PO</li>
+              <li>Reduces degranulation reactions during surgery</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Adjuvant therapy (high-grade, incomplete margins, metastatic):</strong></p>
+
+        <p><strong>Radiation therapy:</strong></p>
+        <ul>
+          <li>Indication: incomplete margins, regional LN involvement, palliative</li>
+          <li>Excellent local control (~ 85-95% for incomplete margins)</li>
+          <li>Specialty centers</li>
+          <li>Cost moderate-high</li>
+        </ul>
+
+        <p><strong>Chemotherapy:</strong></p>
+        <ul>
+          <li><strong>Vinblastine 2 mg/m² IV q1-2 wk × 4-8 doses</strong> + prednisolone:
+            <ul>
+              <li>Standard adjuvant for high-grade</li>
+              <li>Vesicant — IV care</li>
+            </ul>
+          </li>
+          <li>Lomustine (CCNU) 60-90 mg/m² PO q3-4 wk:
+            <ul>
+              <li>Alternative; oral; hepatotoxic</li>
+              <li>Monitor CBC + ALT</li>
+            </ul>
+          </li>
+          <li>Vinblastine + lomustine alternating: more aggressive protocol</li>
+        </ul>
+
+        <p><strong>Tyrosine kinase inhibitors (TKIs) ✨ — game-changing for KIT-mutant or refractory:</strong></p>
+        <ul>
+          <li><strong>Toceranib (Palladia)</strong> ✨:
+            <ul>
+              <li>2.5-2.75 mg/kg PO 3×/wk (M-W-F) — better tolerated than daily</li>
+              <li>Or 3.25 mg/kg PO MWF</li>
+              <li>FDA-approved for canine MCT</li>
+              <li>Response: ~ 40-50% (objective response in advanced disease)</li>
+              <li>Side effects: GI upset (vomiting, diarrhea, anorexia), neutropenia, proteinuria, hypertension</li>
+              <li>Monitor: CBC, biochem, UA, BP q4-6 wk</li>
+            </ul>
+          </li>
+          <li>Masitinib (Masivet) — EU/Asia; less commonly available</li>
+          <li>Prefer in: KIT-mutant, metastatic, recurrent post-surgery, non-resectable</li>
+        </ul>
+
+        <p><strong>Prednisolone:</strong></p>
+        <ul>
+          <li>1-2 mg/kg PO q24h initially</li>
+          <li>Combined with vinblastine</li>
+          <li>Or alone for palliative</li>
+          <li>Many MCTs steroid-responsive</li>
+        </ul>
+
+        <p><strong>3. Paraneoplastic management ✨:</strong></p>
+        <ul>
+          <li><strong>Gastric ulcer prophylaxis ✨</strong> — for ALL patients with significant tumor burden:
+            <ul>
+              <li>Famotidine 0.5-1 mg/kg PO q12h, OR</li>
+              <li>Omeprazole 1 mg/kg PO q12-24h ✨ (preferred)</li>
+              <li>Sucralfate 0.5-1 g PO q8h on empty stomach (if active ulcer)</li>
+            </ul>
+          </li>
+          <li>H1 blocker (diphenhydramine 2 mg/kg PO q8h) for systemic symptoms</li>
+          <li>Continue throughout chemotherapy</li>
+        </ul>
+
+        <p><strong>4. Cat MCT specific:</strong></p>
+        <ul>
+          <li>Cutaneous: surgery (1-2 cm margins often adequate; less aggressive than dog)</li>
+          <li>Visceral / splenic: <strong>splenectomy ✨</strong> — often dramatic improvement (MST 1-2+ yr post-splenectomy)</li>
+          <li>Lomustine (CCNU) for systemic chemo (cat)</li>
+          <li>Toceranib (Palladia) — used off-label in cat</li>
+        </ul>
+
+        <p><strong>5. Multifocal cutaneous MCTs:</strong></p>
+        <ul>
+          <li>Multiple individual masses → each excised with margins</li>
+          <li>Doesn't necessarily indicate metastasis (multiple primaries common)</li>
+          <li>Some breeds (Pug, Boxer) have multiple low-grade lifelong</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck excision site q3-6 mo for recurrence</li>
+          <li>Lifelong skin examination — new lesions common</li>
+          <li>FNA any new mass</li>
+          <li>Owner education: feel for new masses monthly</li>
+          <li>If on TKI: CBC, biochem, UA, BP q4-6 wk</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Gastric ulceration</strong> ✗ — perforation, hemorrhage, anemia</li>
+          <li><strong>Anaphylactic reaction during manipulation</strong> ✗ — degranulation</li>
+          <li>Coagulopathy (heparin-mediated)</li>
+          <li>Delayed wound healing post-surgery</li>
+          <li>Recurrence at surgical site (incomplete margins)</li>
+          <li>New primary tumors (especially predisposed breeds)</li>
+          <li>Metastasis (LN, spleen, liver, BM)</li>
+          <li>Mast cell leukemia (advanced)</li>
+          <li>Chemotherapy side effects (vinblastine: BM, GI; CCNU: liver, BM)</li>
+          <li>TKI side effects (proteinuria, GI, neutropenia, hypertension, lameness — Palladia)</li>
+          <li>Iatrogenic from incomplete staging</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Low-grade (Kiupel) / Patnaik I-II + complete excision: excellent</strong> ✓
+            <ul>
+              <li>2-year survival &gt; 90%</li>
+              <li>Often curative</li>
+            </ul>
+          </li>
+          <li><strong>High-grade (Kiupel) / Patnaik III: poor</strong>
+            <ul>
+              <li>MST 4-12 months even with multimodal Tx</li>
+              <li>2-year survival &lt; 20%</li>
+              <li>Most metastatic at presentation</li>
+            </ul>
+          </li>
+          <li>Mitotic count &gt; 5/10 HPF: poor regardless of grade</li>
+          <li>KIT mutation +: better TKI response, often aggressive</li>
+          <li>Cat cutaneous: usually good</li>
+          <li>Cat splenic + splenectomy: surprisingly good (MST 1-2+ years) ✓</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>High Kiupel grade / Patnaik III</li>
+              <li>High mitotic count</li>
+              <li>Metastasis (LN, spleen, liver)</li>
+              <li>Incomplete excision</li>
+              <li>Anatomic location (perineal, oral, genital, paw)</li>
+              <li>Shar-Pei breed (aggressive form)</li>
+              <li>Multiple primary tumors at presentation</li>
+              <li>Systemic signs at presentation</li>
+              <li>KIT mutation in some grading systems</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>FNA every skin mass</strong> ✨ — MCT is the great pretender; can look like anything<br><br>💡 <strong>Surgery + 2-3 cm margins + histopath grading</strong> = mainstay. Famotidine/omeprazole prophylaxis for gastric ulcer<br><br>**Toceranib (Palladia)** = game-changer for high-grade / metastatic / KIT-mutant. **Cat splenic MCT + splenectomy** = MST 1-2+ years ✓</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 79 · Hemangiosarcoma (HSA) ---------- */
+  {
+    id: 'hemangiosarcoma',
+    titleEn: 'Hemangiosarcoma (HSA)',
+    titleTh: 'มะเร็งหลอดเลือด',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['hemangiosarcoma', 'HSA', 'splenic mass', 'hemoabdomen', 'cardiac HSA', 'right atrial mass', 'pericardial effusion', 'cutaneous HSA', 'doxorubicin', 'GSD', 'Golden Retriever', 'Labrador', 'Yunnan Baiyao', 'metastasis'],
+    aliases: ['HSA', 'hemangiosarcoma', 'splenic HSA', 'cardiac HSA', 'มะเร็งหลอดเลือด'],
+    source: 'Ch. 79 · pp. 1325–1335',
+    sections: {
+      definition: `
+        <p>มะเร็งของ <strong>endothelial cells (เซลล์เยื่อบุหลอดเลือด)</strong> — <strong>highly aggressive, malignant</strong> ✗</p>
+        <ul>
+          <li>1 of most aggressive cancers in dog</li>
+          <li><strong>~ 5-7% of all canine malignancies</strong></li>
+          <li>Predisposed (dog): <strong>German Shepherd</strong> ✨, <strong>Golden Retriever</strong> ✨, <strong>Labrador</strong>, Boxer, Doberman, Great Dane, English Setter</li>
+          <li>Median age 8-10 yr</li>
+          <li>Cat: rare; less aggressive than dog</li>
+          <li><strong>Anatomic forms:</strong>
+            <ul>
+              <li><strong>Splenic</strong> ✨ — most common; ~ 50%</li>
+              <li><strong>Right atrial / cardiac</strong> ✨ — ~ 25%; pericardial effusion</li>
+              <li><strong>Cutaneous / subcutaneous</strong> — better prognosis</li>
+              <li>Other: liver, kidney, retroperitoneal, bone</li>
+            </ul>
+          </li>
+          <li><strong>"Two-thirds rule"</strong> ✨ — 2/3 of splenic masses are malignant; 2/3 of malignant splenic = HSA</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Most cases: idiopathic</li>
+          <li>UV exposure (cutaneous HSA — ventral abdomen, sparsely-haired areas) ✨</li>
+          <li>Genetic predisposition (specific breed clusters)</li>
+          <li>Hereditary (Golden Retriever — possible familial)</li>
+          <li>Cat: less defined</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Arises from endothelial precursor cells</li>
+          <li>Forms blood-filled cavities + vascular channels</li>
+          <li>Tumors are friable, bleed easily → spontaneous rupture → hemoabdomen ✗</li>
+          <li>Often metastatic at diagnosis (~ 50-90%)</li>
+          <li>Common metastasis sites:
+            <ul>
+              <li>Liver</li>
+              <li>Lung</li>
+              <li>Mesentery</li>
+              <li>CNS (especially brain)</li>
+              <li>Other organs</li>
+            </ul>
+          </li>
+          <li>Pericardial effusion → cardiac tamponade (cardiac HSA) ✗</li>
+          <li>Coagulopathy / DIC common (consumption from bleeding tumor)</li>
+          <li>Microangiopathic hemolytic anemia (schistocytes)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Splenic HSA presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Acute collapse from hemoabdomen</strong> ✗ — most common emergency presentation
+            <ul>
+              <li>Splenic mass ruptures spontaneously</li>
+              <li>Severe internal bleeding</li>
+              <li>Hypovolemic shock: pale MM, weak pulses, tachycardia, lethargy/collapse</li>
+              <li>Distended abdomen</li>
+              <li>± Episodes of "weak spell" → recovery (intermittent bleeds with self-resolution)</li>
+            </ul>
+          </li>
+          <li>Chronic / non-acute: weight loss, exercise intolerance, intermittent lethargy</li>
+          <li>Splenomegaly on palpation</li>
+          <li>Pale MM (anemia from bleeding)</li>
+          <li>Sometimes incidental on routine US</li>
+        </ul>
+
+        <p><strong>Cardiac HSA (right atrial) ✗:</strong></p>
+        <ul>
+          <li>Acute collapse from cardiac tamponade ✨</li>
+          <li>Pericardial effusion → ↓ cardiac filling → low-output failure</li>
+          <li>Muffled heart sounds</li>
+          <li>Jugular distension, ↑ CVP</li>
+          <li>Pulsus paradoxus</li>
+          <li>Right-sided CHF signs (ascites, peripheral edema)</li>
+          <li>Exercise intolerance</li>
+          <li>Syncope</li>
+        </ul>
+
+        <p><strong>Cutaneous HSA:</strong></p>
+        <ul>
+          <li>Dermal: red-purple nodules; sparsely-haired areas (ventral abdomen, prepuce, scrotum, eyelids)</li>
+          <li>Often UV-induced</li>
+          <li>Subcutaneous: deeper masses; behave more aggressively</li>
+          <li>Less metastatic than visceral</li>
+        </ul>
+
+        <p><strong>Other forms:</strong></p>
+        <ul>
+          <li>Hepatic HSA: hepatomegaly, hemoabdomen</li>
+          <li>Renal HSA: hematuria, abdominal mass</li>
+          <li>Bone HSA (rare): lameness, swelling</li>
+          <li>CNS metastasis: seizures, behavioral, paresis</li>
+        </ul>
+
+        <p><strong>Bleeding tendency signs:</strong></p>
+        <ul>
+          <li>Petechiae, ecchymoses (consumption coagulopathy)</li>
+          <li>Schistocytes on smear (microangiopathic hemolysis)</li>
+          <li>Pre-DIC findings</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Hemoabdomen workup ✨ (acute):</strong></p>
+        <ul>
+          <li>Abdominal radiograph: loss of detail (effusion)</li>
+          <li>FAST ultrasound — bedside; effusion + splenic mass</li>
+          <li>Abdominocentesis: hemorrhagic fluid; PCV similar to peripheral; doesn't clot</li>
+          <li>Confirms hemoabdomen → emergency stabilization</li>
+        </ul>
+
+        <p><strong>2. Imaging ✨:</strong></p>
+        <ul>
+          <li><strong>Abdominal ultrasound</strong> ✨:
+            <ul>
+              <li>Splenic mass / cavitated lesion</li>
+              <li>Hepatic mets (hyperechoic / hypoechoic nodules)</li>
+              <li>Mesenteric implants</li>
+              <li>Free abdominal fluid</li>
+              <li>"Cavitated" appearance — fluid + tissue</li>
+            </ul>
+          </li>
+          <li><strong>Echocardiogram</strong> ✨ — for any large breed dog with collapse:
+            <ul>
+              <li>Right atrial mass</li>
+              <li>Pericardial effusion</li>
+              <li>Cardiac tamponade signs</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiographs (3-view)</strong> ✨ — pulmonary mets at diagnosis (~ 30-50%)</li>
+          <li>CT — superior for staging in some cases</li>
+        </ul>
+
+        <p><strong>3. Pre-surgical / pre-treatment workup ✨:</strong></p>
+        <ul>
+          <li>CBC: regenerative anemia (or pre-regenerative if very acute), schistocytes, thrombocytopenia, leukocytosis</li>
+          <li>Biochem: hypoalbuminemia, mild ↑ liver enzymes</li>
+          <li>Coag panel ✨: PT, aPTT, fibrinogen, D-dimers — DIC frequent</li>
+          <li>UA</li>
+          <li>BP</li>
+          <li>Type + cross (transfusion likely)</li>
+        </ul>
+
+        <p><strong>4. Definitive diagnosis = histopathology of mass:</strong></p>
+        <ul>
+          <li><strong>Splenectomy + histopath</strong> — mass too friable for safe FNA</li>
+          <li>Histology: malignant endothelial cells forming vascular channels</li>
+          <li>Differentiate from:
+            <ul>
+              <li>Hemangioma (benign — purely vascular)</li>
+              <li>Hematoma (organized blood)</li>
+              <li>Nodular hyperplasia</li>
+              <li>Other splenic tumors (lymphoma, sarcoma)</li>
+            </ul>
+          </li>
+          <li>Histologic grade I/II/III (some labs)</li>
+        </ul>
+
+        <p><strong>5. Staging:</strong></p>
+        <ul>
+          <li>Stage I — confined to primary site</li>
+          <li>Stage II — ruptured primary or LN involvement</li>
+          <li>Stage III — distant metastasis</li>
+          <li>Most splenic HSA at presentation = Stage II (ruptured)</li>
+        </ul>
+      `,
+      differential: `
+        <p><strong>For splenic mass (older large breed dog):</strong></p>
+        <ul>
+          <li>Hematoma / nodular hyperplasia (benign — but indistinguishable on imaging — need histopath)</li>
+          <li>Hemangioma (benign)</li>
+          <li>Lymphoma</li>
+          <li>Other sarcoma (leiomyosarcoma)</li>
+          <li>Mast cell tumor (cat especially)</li>
+          <li>Metastatic disease</li>
+        </ul>
+        <p><strong>For cardiac mass:</strong></p>
+        <ul>
+          <li>Heart base tumor (chemodectoma) — Boxers, Bulldogs</li>
+          <li>Lymphoma</li>
+          <li>Other cardiac neoplasia</li>
+          <li>Idiopathic pericardial effusion</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Acute stabilization ✗ — emergency:</strong></p>
+        <ul>
+          <li>IV fluid resuscitation (LRS, then blood products)</li>
+          <li>Whole blood / pRBC transfusion (often needed)</li>
+          <li>Fresh frozen plasma if coagulopathy</li>
+          <li>Abdominal pressure wrap (light) — limit ongoing bleeding</li>
+          <li>Pain management</li>
+          <li>Address shock</li>
+          <li>Yunnan Baiyao 250 mg/cap — 1 cap per 10 kg PO q12h (controversial; some evidence)</li>
+        </ul>
+
+        <p><strong>2. Cardiac tamponade emergency ✗:</strong></p>
+        <ul>
+          <li><strong>Pericardiocentesis</strong> — life-saving:
+            <ul>
+              <li>Right 4-5 ICS, sterile prep, 16-18g IV catheter</li>
+              <li>Drain 50-200 mL pericardial fluid</li>
+              <li>Reassess hemodynamics</li>
+              <li>Fluid often hemorrhagic</li>
+            </ul>
+          </li>
+          <li>Echocardiogram post-tap to assess tumor</li>
+          <li>± IV fluids cautiously (high CVP — too much worsens)</li>
+          <li>Recurrent tamponade common — pericardial window or pericardectomy referral</li>
+        </ul>
+
+        <p><strong>3. Surgery (splenic) ✨:</strong></p>
+        <ul>
+          <li><strong>Total splenectomy</strong> — primary treatment after stabilization
+            <ul>
+              <li>Definitive diagnosis</li>
+              <li>Stops ongoing bleeding</li>
+              <li>Removes primary tumor</li>
+              <li>Doesn't address metastasis</li>
+              <li>Median survival surgery alone: 1-3 months ✗</li>
+            </ul>
+          </li>
+          <li>Submit spleen + ALL nodules separately for histopath</li>
+          <li>Inspect liver, mesentery for visible lesions (sample if seen)</li>
+          <li>Watch for arrhythmias intra-op (catecholamine surge from spleen manipulation)</li>
+          <li>Post-op: monitor for ongoing bleeding, arrhythmias, sepsis</li>
+        </ul>
+
+        <p><strong>4. Adjuvant chemotherapy ✨ — improves MST significantly:</strong></p>
+        <ul>
+          <li><strong>Doxorubicin 30 mg/m² IV q3 wk × 4-6 cycles</strong> ✨
+            <ul>
+              <li>Standard adjuvant after splenectomy</li>
+              <li>Improves MST from 1-3 mo (surgery alone) to 6-9 months</li>
+              <li>Cumulative cardiotoxicity (max 180 mg/m² lifetime)</li>
+              <li>Echo before each dose if &gt; 90 mg/m²</li>
+            </ul>
+          </li>
+          <li>± Cyclophosphamide adjunct (VAC protocol)</li>
+          <li>Metronomic chemotherapy (continuous low-dose):
+            <ul>
+              <li>Cyclophosphamide 10-15 mg/m² PO q24h</li>
+              <li>± COX-2 inhibitor (firocoxib, piroxicam)</li>
+              <li>Anti-angiogenic</li>
+              <li>Better tolerated long-term</li>
+              <li>Some evidence of MST improvement</li>
+            </ul>
+          </li>
+          <li>Newer: tigilanol tiglate, anti-angiogenic agents — research</li>
+        </ul>
+
+        <p><strong>5. Cardiac HSA treatment:</strong></p>
+        <ul>
+          <li>Surgical resection of right atrial mass + pericardectomy (specialty)
+            <ul>
+              <li>Median survival 1-4 months</li>
+            </ul>
+          </li>
+          <li>Pericardectomy alone (palliative — controls effusion)
+            <ul>
+              <li>Avoids recurrent tamponade</li>
+              <li>Median 4-6 months</li>
+            </ul>
+          </li>
+          <li>Doxorubicin adjuvant</li>
+          <li>Many owners elect palliation only given prognosis</li>
+        </ul>
+
+        <p><strong>6. Cutaneous HSA:</strong></p>
+        <ul>
+          <li><strong>Wide surgical excision</strong> with margins</li>
+          <li>Often curative for purely dermal lesions</li>
+          <li>Subcutaneous: more aggressive — often metastasizes</li>
+          <li>± Adjuvant doxorubicin for aggressive forms</li>
+          <li>Sun protection for predisposed dogs (dermal form)</li>
+        </ul>
+
+        <p><strong>7. Palliative care:</strong></p>
+        <ul>
+          <li>Yunnan Baiyao 250 mg/cap — 1 cap per 10 kg PO q12h (anti-bleeding herbal; mixed evidence)</li>
+          <li>Chinese herbal: I'm Yunity (PSP/PSK polysaccharopeptide) — some evidence MST extension</li>
+          <li>Quality of life management</li>
+          <li>Pain management</li>
+          <li>Address recurrent bleeds</li>
+          <li>Hospice approach when refractory</li>
+        </ul>
+
+        <p><strong>Owner education ✨:</strong></p>
+        <ul>
+          <li>Realistic expectations — HSA is highly aggressive, mostly fatal</li>
+          <li>Even with full multimodal Tx: MST 6-9 months</li>
+          <li>~ 10% reach 1-year survival</li>
+          <li>Cure rare</li>
+          <li>Discuss QOL throughout course</li>
+          <li>Watch for: re-bleeding signs (collapse, pale, weakness), metastasis (cough, neurologic, weight loss)</li>
+          <li>Hospice / euthanasia planning</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Recurrent hemoabdomen / cardiac tamponade</strong> ✗ — from metastasis</li>
+          <li><strong>DIC</strong> ✗ — common</li>
+          <li>Microangiopathic hemolytic anemia</li>
+          <li>Metastasis (liver, lung, CNS, other) — most cases progress</li>
+          <li>CNS hemorrhage from brain mets ✗</li>
+          <li>Cardiac tamponade (recurrent or new)</li>
+          <li>Surgical: hemorrhage, arrhythmias, sepsis, dehiscence</li>
+          <li>Doxorubicin: cardiotoxicity, GI, BM, extravasation injury ✗</li>
+          <li>Pericardial constriction (chronic)</li>
+          <li>Concurrent disease (older patients)</li>
+          <li>Death (most cases — ~ 90%+)</li>
+        </ul>
+        <p><strong>Prognosis ✗:</strong></p>
+        <ul>
+          <li><strong>Splenic HSA:</strong>
+            <ul>
+              <li>Surgery alone: MST 1-3 months</li>
+              <li>Surgery + doxorubicin: <strong>MST 5-9 months</strong></li>
+              <li>1-year survival: ~ 10%</li>
+              <li>2-year survival: &lt; 5%</li>
+            </ul>
+          </li>
+          <li><strong>Cardiac HSA:</strong>
+            <ul>
+              <li>Pericardiocentesis alone: weeks-months</li>
+              <li>Pericardectomy: 4-6 months</li>
+              <li>Surgery + doxorubicin: MST 4-8 months</li>
+            </ul>
+          </li>
+          <li><strong>Cutaneous (dermal) HSA:</strong>
+            <ul>
+              <li>Surgical excision: often curative</li>
+              <li>1-year survival 70-80%</li>
+            </ul>
+          </li>
+          <li><strong>Subcutaneous HSA:</strong> intermediate — MST 6-12 months</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Hemoabdomen at presentation</li>
+              <li>Stage II-III (ruptured, mets)</li>
+              <li>High histologic grade</li>
+              <li>Concurrent DIC</li>
+              <li>Multiple primary sites</li>
+              <li>Large breed (intrinsic aggression)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Acute collapse + hemoabdomen + older large breed = HSA until proven</strong> ✗ — splenectomy + histopath; doxorubicin adjuvant<br><br>**Cardiac tamponade**: pericardiocentesis = lifesaving<br><br>💡 <strong>"Two-thirds rule"</strong>: 2/3 splenic masses malignant; 2/3 of malignant = HSA. Most aggressive cancer in dog — set realistic expectations</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 80 · Osteosarcoma (OSA) ---------- */
+  {
+    id: 'osteosarcoma',
+    titleEn: 'Osteosarcoma (OSA)',
+    titleTh: 'มะเร็งกระดูก',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['osteosarcoma', 'OSA', 'bone cancer', 'appendicular OSA', 'amputation', 'limb-sparing', 'carboplatin', 'cisplatin', 'doxorubicin', 'palliative radiation', 'pamidronate', 'pulmonary metastasis', 'Greyhound', 'Rottweiler'],
+    aliases: ['OSA', 'bone cancer', 'osteogenic sarcoma', 'มะเร็งกระดูก'],
+    source: 'Ch. 80 · pp. 1335–1349',
+    sections: {
+      definition: `
+        <p>มะเร็งของ <strong>osteoblasts</strong> — เป็น <strong>most common primary bone tumor in dog</strong> ✨</p>
+        <ul>
+          <li><strong>~ 85% of all canine bone tumors</strong> ✨</li>
+          <li>~ 8000 cases/year in US dogs</li>
+          <li>Predisposed: <strong>Large + giant breeds</strong> ✨ — <strong>Rottweiler, Great Dane, Greyhound, Saint Bernard, Irish Wolfhound, Mastiff, Doberman, Boxer, Lab, Golden</strong>
+            <ul>
+              <li>Body weight strongest risk factor (&gt; 30 kg)</li>
+              <li>Tall breeds especially</li>
+            </ul>
+          </li>
+          <li>Median age 7-9 yr; bimodal (young 1-2 yr in giant breeds, older majority)</li>
+          <li>Cat: rare; less aggressive than dog</li>
+          <li><strong>Anatomic distribution ✨:</strong>
+            <ul>
+              <li><strong>Appendicular ~ 75%</strong> ✨ — long bones, distal radius/proximal humerus most common ("away from elbow, towards knee" rule)</li>
+              <li><strong>Axial ~ 25%</strong> — skull, mandible, vertebrae, ribs, pelvis (better prognosis if resectable)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Most cases: idiopathic in large/giant breeds</li>
+          <li>Risk factors:
+            <ul>
+              <li><strong>Large body size + tall stature</strong> ✨ — strongest factor</li>
+              <li>Genetic predisposition</li>
+              <li>Prior bone trauma / fracture (rare association)</li>
+              <li>Metallic bone implants (rare; old techniques)</li>
+              <li>Fracture nonunion / chronic osteomyelitis</li>
+              <li>Bone infarcts (rare)</li>
+              <li>Early gonadectomy (Rottweilers — controversial)</li>
+              <li>Radiation therapy (rare; distant complication)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Malignant osteoblasts producing osteoid (immature bone matrix)</li>
+          <li>Aggressive local bone destruction + production (lytic + proliferative)</li>
+          <li>Pathologic fractures common ✗</li>
+          <li><strong>Highly metastatic ✨ ✗</strong>:
+            <ul>
+              <li>~ 90% have micrometastasis at diagnosis (often radiographically silent)</li>
+              <li>Lung &gt; bone (other) &gt; LN &gt; abdominal organs</li>
+              <li>Median time to gross pulmonary mets: 4-6 months without chemotherapy</li>
+            </ul>
+          </li>
+          <li>Severe pain due to:
+            <ul>
+              <li>Periosteal stretching</li>
+              <li>Bone destruction</li>
+              <li>Microfractures</li>
+              <li>Inflammatory mediators</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Appendicular OSA ✨:</strong></p>
+        <ul>
+          <li><strong>Lameness — progressive over weeks</strong> ✨
+            <ul>
+              <li>Often acute exacerbation (microfracture)</li>
+              <li>"Won't walk on the leg"</li>
+              <li>Weight-shifting</li>
+              <li>Severe pain on palpation of affected bone</li>
+            </ul>
+          </li>
+          <li><strong>Visible / palpable swelling</strong> at metaphyseal region</li>
+          <li>Heat over affected bone</li>
+          <li>Pathologic fracture ✗ (occurs without trauma) — often presenting sign in some cases</li>
+          <li>Muscle atrophy (chronic)</li>
+          <li>Weight loss (advanced)</li>
+          <li><strong>Common locations (mnemonic "away from the elbow, towards the knee"):</strong>
+            <ul>
+              <li><strong>Distal radius</strong> ✨ — most common</li>
+              <li>Proximal humerus</li>
+              <li>Distal femur</li>
+              <li>Proximal/distal tibia</li>
+              <li>Less common: distal humerus, proximal radius/ulna</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Axial OSA:</strong></p>
+        <ul>
+          <li>Mandibular/maxillary: facial deformity, oral mass, dysphagia, halitosis</li>
+          <li>Vertebral: spinal pain, paresis, neurologic deficits</li>
+          <li>Rib: chest wall mass, dyspnea (with pleural involvement)</li>
+          <li>Cranial: neurologic signs depending on location</li>
+          <li>Pelvic: lameness, difficulty rising</li>
+        </ul>
+
+        <p><strong>Pulmonary metastasis (advanced):</strong></p>
+        <ul>
+          <li>Cough (sometimes)</li>
+          <li>Exercise intolerance, dyspnea</li>
+          <li>Weight loss</li>
+          <li>Often subclinical until advanced</li>
+        </ul>
+
+        <p><strong>Paraneoplastic:</strong></p>
+        <ul>
+          <li>Hypertrophic osteopathy (rare; from pulmonary mets) — diffuse periosteal proliferation distal limbs</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Radiograph — primary lesion ✨:</strong></p>
+        <ul>
+          <li>2-view of affected bone</li>
+          <li>Findings:
+            <ul>
+              <li><strong>Lytic + proliferative bone changes</strong> ✨ — "moth-eaten" appearance</li>
+              <li>Cortical destruction</li>
+              <li>Periosteal reaction (sunburst, palisading)</li>
+              <li>Codman's triangle (elevated periosteum at edge)</li>
+              <li>Pathologic fracture sometimes</li>
+              <li>Soft tissue swelling</li>
+              <li><strong>Doesn't cross joint line</strong> ✨ — important differentiator (vs synovial cell carcinoma)</li>
+            </ul>
+          </li>
+          <li>Highly suggestive in metaphyseal region of large breed dog</li>
+        </ul>
+
+        <p><strong>2. Thoracic radiographs ✨ — STAGING:</strong></p>
+        <ul>
+          <li><strong>3-view thoracic radiograph mandatory</strong> before treatment</li>
+          <li>Detects gross pulmonary metastasis (~ 10% at diagnosis radiographically; many more micromets)</li>
+          <li>Critical for prognosis discussion + treatment planning</li>
+        </ul>
+
+        <p><strong>3. Bone biopsy — definitive:</strong></p>
+        <ul>
+          <li>Indicated if:
+            <ul>
+              <li>Atypical signalment / location</li>
+              <li>Limb-sparing surgery planned</li>
+              <li>Differentiation from other bone tumors needed</li>
+            </ul>
+          </li>
+          <li>Methods:
+            <ul>
+              <li>Jamshidi or Michelle trephine (open or closed)</li>
+              <li>FNA (limited; can suggest)</li>
+              <li>Always biopsy from CENTER of lesion (not periphery — reactive bone only)</li>
+            </ul>
+          </li>
+          <li>Histopath: osteoid production by malignant cells confirms OSA</li>
+          <li>Risks: pathologic fracture from biopsy site (especially compromised bones)</li>
+          <li>Many oncologists proceed with amputation + histopath given strongly suggestive radiograph</li>
+        </ul>
+
+        <p><strong>4. Other staging:</strong></p>
+        <ul>
+          <li>CBC + biochem (rule out other dz; ALP elevated may be prognostic indicator)</li>
+          <li>UA</li>
+          <li>Abdominal US — uncommon abdominal mets (less than HSA)</li>
+          <li>Bone scan / scintigraphy — detects multiple bone lesions (multifocal OSA, mets)</li>
+          <li>CT (chest) — more sensitive than radiographs for pulmonary mets</li>
+          <li>Aspirate regional LN (uncommon route but stage if enlarged)</li>
+          <li>Cardiac evaluation (older patient pre-chemo)</li>
+        </ul>
+
+        <p><strong>5. Prognostic markers:</strong></p>
+        <ul>
+          <li><strong>↑ Serum ALP at diagnosis</strong> ✨ — negative prognostic
+            <ul>
+              <li>↑ ALP correlates with shorter MST</li>
+              <li>Usually returns to normal post-amputation if isolated OSA</li>
+            </ul>
+          </li>
+          <li>Histologic grade</li>
+          <li>Age, body weight, serum LDH</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other primary bone tumors:
+            <ul>
+              <li>Chondrosarcoma (often skull, ribs)</li>
+              <li>Fibrosarcoma</li>
+              <li>Hemangiosarcoma (bone)</li>
+              <li>Multilobular tumor of bone (skull)</li>
+            </ul>
+          </li>
+          <li>Metastatic bone disease (carcinoma)</li>
+          <li>Multiple myeloma (multiple sites, M-spike)</li>
+          <li>Lymphoma (bone)</li>
+          <li>Bacterial osteomyelitis (history, culture)</li>
+          <li>Fungal osteomyelitis (blastomycosis, coccidioidomycosis — endemic areas)</li>
+          <li>Synovial cell carcinoma (CROSSES joint — key differentiator)</li>
+          <li>Bone cyst (benign)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Goals: pain control + extend life + maintain QOL</strong></p>
+
+        <p><strong>1. Surgical management (primary tumor):</strong></p>
+
+        <p><strong>A. Amputation ✨ — gold standard for appendicular:</strong></p>
+        <ul>
+          <li><strong>Definitive pain relief</strong> ✨ — most dogs adapt well within days</li>
+          <li>Most dogs (even large/giant breeds with concurrent OA) ambulate well on 3 legs</li>
+          <li>Removes source of pain entirely</li>
+          <li>Surgery alone: MST 4-6 months (death from metastasis)</li>
+          <li>Pre-op: confirm 3-leg viability (severe OA, neuro disease may contraindicate)</li>
+          <li>Forelimb: scapular disarticulation</li>
+          <li>Hindlimb: coxofemoral disarticulation</li>
+          <li>Most owners surprised by quality of life post-amputation</li>
+        </ul>
+
+        <p><strong>B. Limb-sparing surgery (selected cases):</strong></p>
+        <ul>
+          <li>Specialty centers</li>
+          <li>Indicated for: small lesions (&lt; 50% bone affected), distal radius location, owner preference, contraindication to amputation</li>
+          <li>Techniques: cortical allograft, endoprosthesis, pasteurized autograft, regenerated bone</li>
+          <li>Outcomes similar to amputation when successful</li>
+          <li>Complications: implant failure, infection, fracture, recurrence</li>
+        </ul>
+
+        <p><strong>C. Stereotactic radiosurgery (SRS / SRT) — emerging alternative:</strong></p>
+        <ul>
+          <li>1-3 high-dose fractions of radiation</li>
+          <li>Limb-preserving</li>
+          <li>Specialty centers</li>
+          <li>Outcomes: comparable MST to amputation</li>
+          <li>Pathologic fracture risk after RT</li>
+          <li>Cost significant</li>
+        </ul>
+
+        <p><strong>2. Chemotherapy ✨ — extends MST significantly:</strong></p>
+        <ul>
+          <li><strong>Adjuvant chemotherapy STANDARD after surgery</strong> ✨ — addresses micrometastasis</li>
+          <li><strong>Carboplatin 300 mg/m² IV q3 wk × 4-6 cycles</strong> ✨
+            <ul>
+              <li>Most commonly used currently</li>
+              <li>Better tolerated than cisplatin</li>
+              <li>No renal toxicity vs cisplatin</li>
+              <li>Side effects: BM (neutropenia), GI</li>
+              <li>MST: 8-12 months</li>
+            </ul>
+          </li>
+          <li><strong>Cisplatin 70 mg/m² IV q3 wk × 4-6 cycles</strong> — historical
+            <ul>
+              <li>Effective but more side effects</li>
+              <li>Renal toxicity, severe vomiting</li>
+              <li>Requires aggressive saline diuresis</li>
+              <li>Largely replaced by carboplatin</li>
+            </ul>
+          </li>
+          <li><strong>Doxorubicin 30 mg/m² IV q3 wk × 5 cycles</strong> — alternative</li>
+          <li>Combination protocols (carboplatin + doxorubicin alternating) — slight improvement</li>
+          <li>Combination with surgery: <strong>MST extends to 10-14 months</strong></li>
+          <li>Without chemotherapy: MST 4-6 months from surgery</li>
+        </ul>
+
+        <p><strong>3. Palliative therapy (when amputation declined / metastatic disease):</strong></p>
+
+        <p><strong>Palliative radiation therapy ✨:</strong></p>
+        <ul>
+          <li>Indication: pain control without amputation</li>
+          <li>3-4 fractions over 1-3 weeks</li>
+          <li>Pain relief: ~ 75-90% within 1-3 weeks</li>
+          <li>Duration of effect: 2-4 months (then often pain returns)</li>
+          <li>Specialty centers</li>
+          <li>Combined with bisphosphonates + analgesics</li>
+        </ul>
+
+        <p><strong>Bisphosphonates ✨:</strong></p>
+        <ul>
+          <li><strong>Pamidronate 1-2 mg/kg IV in 0.9% NaCl over 2h q4 wk</strong>
+            <ul>
+              <li>Inhibits osteoclasts → reduces bone destruction → analgesic</li>
+              <li>Pain relief in 60-70%</li>
+              <li>Adjunct to other modalities</li>
+            </ul>
+          </li>
+          <li>Zoledronate — newer alternative; longer-acting</li>
+          <li>Monitor renal function</li>
+        </ul>
+
+        <p><strong>Multimodal pain management:</strong></p>
+        <ul>
+          <li>NSAID (carprofen, meloxicam)</li>
+          <li>Gabapentin 10-20 mg/kg PO q8h (high doses for severe bone pain)</li>
+          <li>Tramadol 2-5 mg/kg PO q8h</li>
+          <li>Acetaminophen (DOG ONLY) 10-15 mg/kg PO q12h</li>
+          <li>Amantadine 3-5 mg/kg PO q24h</li>
+          <li>Buprenorphine for severe pain (transmucosal cat)</li>
+          <li>Strong combination usually needed</li>
+        </ul>
+
+        <p><strong>4. Cat OSA:</strong></p>
+        <ul>
+          <li>Less aggressive than dog</li>
+          <li>Lower metastatic rate</li>
+          <li>Surgical excision often sufficient (amputation)</li>
+          <li>MST &gt; 2 years often achievable</li>
+          <li>Adjuvant chemotherapy controversial</li>
+        </ul>
+
+        <p><strong>5. Owner counseling:</strong></p>
+        <ul>
+          <li>Discuss prognosis honestly</li>
+          <li>3-leg ambulation expectations (most do well)</li>
+          <li>Cost of surgery + chemo (~ $4000-8000+)</li>
+          <li>Watch for: recurrence, pulmonary mets symptoms, contralateral OSA (rare)</li>
+          <li>Hospice / euthanasia planning when QOL declines</li>
+          <li>Pulmonary mets typically how disease progresses</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck thoracic radiograph q3 mo (mets surveillance)</li>
+          <li>CBC before each chemo dose</li>
+          <li>Biochem q3-6 mo</li>
+          <li>Watch for: bone pain elsewhere, weight loss, cough, lethargy</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Pulmonary metastasis</strong> ✗ — most common cause of death</li>
+          <li><strong>Pathologic fracture</strong> ✗ — often catastrophic if pre-amputation; can occur at unrelated bones (mets)</li>
+          <li>Refractory pain</li>
+          <li>Surgical complications:
+            <ul>
+              <li>Hemorrhage (high-vascular bone)</li>
+              <li>Infection</li>
+              <li>Wound dehiscence</li>
+              <li>Implant failure (limb-sparing)</li>
+            </ul>
+          </li>
+          <li>3-leg ambulation difficulties (rare; severe concurrent disease)</li>
+          <li>Chemotherapy side effects:
+            <ul>
+              <li>Cisplatin: nephrotoxicity, severe GI</li>
+              <li>Carboplatin: BM, GI</li>
+              <li>Doxorubicin: cardiotoxicity</li>
+            </ul>
+          </li>
+          <li>Radiation: skin reaction, rare bone fracture</li>
+          <li>Bisphosphonate: renal effects, jaw osteonecrosis (rare)</li>
+          <li>Concurrent disease (older patients): CKD, cardiac, OA</li>
+          <li>Contralateral OSA (rare)</li>
+          <li>Death (most cases — disease progression)</li>
+        </ul>
+        <p><strong>Prognosis ✗:</strong></p>
+        <ul>
+          <li><strong>Surgery alone (amputation): MST 4-6 months</strong></li>
+          <li><strong>Surgery + chemotherapy: MST 10-14 months</strong> ✨</li>
+          <li>1-year survival: ~ 50% with multimodal Tx</li>
+          <li>2-year survival: ~ 20-30%</li>
+          <li>"Cure" rare (&lt; 10%)</li>
+          <li>Without treatment / palliation only: MST 1-3 months</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>↑ ALP at diagnosis</li>
+              <li>Pulmonary mets at diagnosis (gross)</li>
+              <li>Proximal humerus location (worse than distal radius)</li>
+              <li>Axial location (varies — mandibular better than vertebral)</li>
+              <li>High histologic grade</li>
+              <li>Telangiectatic OSA variant (poor)</li>
+              <li>Younger age (more aggressive)</li>
+              <li>Concurrent comorbidities</li>
+            </ul>
+          </li>
+          <li>Mandibular OSA: better — hemi-mandibulectomy + chemo, MST &gt; 2 yr</li>
+          <li>Cat OSA: better — MST &gt; 2 yr often</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Lameness + lytic/proliferative bone lesion + large breed = OSA until proven</strong> ✨ — radiograph metaphysis<br><br>**"Away from elbow, towards knee"** = classic distribution. Distal radius = #1<br><br>💡 <strong>Amputation + carboplatin = MST 10-14 months</strong>; surgery alone 4-6 mo. Pulmonary mets = how patients die. Most large-breed dogs adapt very well to 3 legs ✓</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 81 · Mammary Tumors ---------- */
+  {
+    id: 'mammary-tumors',
+    titleEn: 'Mammary Tumors',
+    titleTh: 'มะเร็งเต้านม',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['mammary tumor', 'mammary carcinoma', 'mammary adenocarcinoma', 'mastectomy', 'OHE', 'spay', 'inflammatory mammary carcinoma', 'IMC', 'lymphatic invasion', 'progesterone', 'estrogen'],
+    aliases: ['mammary carcinoma', 'breast cancer', 'มะเร็งเต้านม', 'เนื้องอกเต้านม'],
+    source: 'Ch. 81 · pp. 1349–1358',
+    sections: {
+      definition: `
+        <p>เนื้องอกของเต้านม — common in intact / late-spayed females</p>
+        <ul>
+          <li><strong>Dog:</strong> ~ 50% benign, ~ 50% malignant ✨ ("rule of halves")</li>
+          <li><strong>Cat:</strong> &gt; 85-90% malignant ✗ — much more aggressive than dog</li>
+          <li>Predisposed dog: Poodle, Dachshund, Cocker, Spaniel, Shih Tzu, Yorkshire Terrier, GSD, Maltese</li>
+          <li>Cat: Siamese predisposed; younger age</li>
+          <li>Median age: dog 9-11 yr; cat 10-12 yr</li>
+          <li>Hormonal influence ✨ — early spay dramatically reduces risk</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Hormonal influence ✨ — strongest factor (dog):</strong></p>
+        <ul>
+          <li>Spay before first estrus: risk reduction 99% (~ 0.5%)</li>
+          <li>Spay before 2nd estrus: 92% reduction (~ 8%)</li>
+          <li>Spay before 2.5 yr: 74% reduction (~ 26%)</li>
+          <li>Spay after 2.5 yr: minimal protective benefit</li>
+          <li>Cat: similar but less dramatic; spay before 6 mo = ~ 91% reduction; before 2 yr = ~ 86%</li>
+        </ul>
+        <p><strong>Other factors:</strong></p>
+        <ul>
+          <li>Progestin therapy ✗ (mismating, suppression of estrus) — significantly increases risk</li>
+          <li>Obesity at young age (dog)</li>
+          <li>Genetic predisposition (breed)</li>
+          <li>Increasing age</li>
+          <li>Cat: less hormonal-dependent than dog</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Mammary tissue: 5 paired glands in dog (M1-M5); 4 pairs in cat</li>
+          <li>Caudal glands more commonly affected (M4-M5 in dog)</li>
+          <li><strong>Histology variable (dog):</strong>
+            <ul>
+              <li>Benign: simple/complex adenoma, fibroadenoma, benign mixed</li>
+              <li>Malignant: simple/complex carcinoma, anaplastic carcinoma, sarcoma, inflammatory carcinoma</li>
+              <li>Multiple histologic types within same animal common</li>
+            </ul>
+          </li>
+          <li><strong>Cat: most are tubulopapillary or solid carcinoma — almost always malignant</strong></li>
+          <li>Metastasis pattern: regional LN → lung → other organs</li>
+          <li><strong>Inflammatory mammary carcinoma (IMC) ✗</strong> — highly aggressive variant; rapidly progressive; lymphatic invasion; very poor prognosis</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Mass detection:</strong></p>
+        <ul>
+          <li>Single or multiple firm nodules along mammary chain</li>
+          <li>Often discovered incidentally by owner</li>
+          <li>Caudal glands most commonly affected</li>
+          <li>Bilateral mammary tissue should be examined</li>
+          <li>Size: pea-sized to massive</li>
+        </ul>
+
+        <p><strong>Clinical features suggesting malignancy:</strong></p>
+        <ul>
+          <li>Rapid growth ✗</li>
+          <li>Adherent to skin / underlying tissue (fixed)</li>
+          <li>Ulceration ✗</li>
+          <li>Inflamed / erythematous</li>
+          <li>Edematous overlying skin</li>
+          <li>Multiple masses</li>
+          <li>Regional LN enlargement</li>
+          <li>Discharge from nipple (less common)</li>
+          <li>Lameness if bone mets / IMC</li>
+        </ul>
+
+        <p><strong>Inflammatory mammary carcinoma (IMC) ✗:</strong></p>
+        <ul>
+          <li>Diffuse swelling, edema of all mammary tissue</li>
+          <li>Erythema, warmth, pain</li>
+          <li>Looks like infection / mastitis ✗ — often misdiagnosed</li>
+          <li>Pitting edema of hindlimbs (lymphatic obstruction)</li>
+          <li>Rapid progression</li>
+          <li>Severe systemic illness</li>
+          <li>DIC common</li>
+        </ul>
+
+        <p><strong>Cat presentation:</strong></p>
+        <ul>
+          <li>Often presents with multiple masses</li>
+          <li>Ulceration common at presentation</li>
+          <li>Often fixed / adherent</li>
+          <li>Caudal glands most</li>
+        </ul>
+
+        <p><strong>Pulmonary metastasis:</strong></p>
+        <ul>
+          <li>Often subclinical until advanced</li>
+          <li>Cough, dyspnea (advanced)</li>
+          <li>Weight loss</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Physical examination ✨:</strong></p>
+        <ul>
+          <li>Palpate ALL mammary glands bilaterally</li>
+          <li>Check regional LN (axillary, inguinal)</li>
+          <li>Note: size, fixation, ulceration, multiplicity</li>
+          <li>Examine for systemic signs</li>
+        </ul>
+
+        <p><strong>2. FNA / cytology — limited utility:</strong></p>
+        <ul>
+          <li>Benign vs malignant often inconclusive</li>
+          <li>Useful to rule out other tumors (MCT, lymphoma)</li>
+          <li>Definitive diagnosis requires histopath</li>
+        </ul>
+
+        <p><strong>3. Staging ✨:</strong></p>
+        <ul>
+          <li><strong>Thoracic radiographs (3-view)</strong> ✨ — pulmonary mets:
+            <ul>
+              <li>~ 25-50% have radiographic mets at diagnosis (cat especially)</li>
+              <li>Critical for prognosis + treatment planning</li>
+              <li>Visible mets generally indicate poor prognosis</li>
+            </ul>
+          </li>
+          <li>Abdominal US — abdominal mets, regional LN</li>
+          <li>Regional LN aspirate (axillary, inguinal) — even if not enlarged</li>
+        </ul>
+
+        <p><strong>4. Pre-surgical workup:</strong></p>
+        <ul>
+          <li>CBC + biochem</li>
+          <li>UA</li>
+          <li>Coag panel if IMC suspected</li>
+        </ul>
+
+        <p><strong>5. Surgical biopsy / excision = definitive diagnosis ✨:</strong></p>
+        <ul>
+          <li>Histopathology determines: type, grade, margin status, lymphatic invasion</li>
+          <li>Submit ALL nodules separately (multiple histologies common)</li>
+          <li>WHO staging:
+            <ul>
+              <li>T1 (&lt; 3 cm), T2 (3-5 cm), T3 (&gt; 5 cm), T4 (inflammatory)</li>
+              <li>N0 / N1 (LN involvement)</li>
+              <li>M0 / M1 (distant mets)</li>
+            </ul>
+          </li>
+          <li>Histologic grade correlates with prognosis</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Mastitis (history of lactation; fever, pain, milk changes)</li>
+          <li>Mammary cyst / hyperplasia</li>
+          <li>Lipoma</li>
+          <li>Other skin tumor (MCT — always FNA first)</li>
+          <li>Inguinal hernia</li>
+          <li>Granuloma</li>
+          <li>Cat: feline mammary fibroepithelial hyperplasia (in young intact / progestin-treated)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Surgical excision ✨ — primary treatment:</strong></p>
+
+        <p><strong>Approaches:</strong></p>
+        <ul>
+          <li><strong>Lumpectomy / nodulectomy</strong> — small, well-defined, benign-appearing</li>
+          <li><strong>Simple mastectomy</strong> — single gland</li>
+          <li><strong>Regional mastectomy</strong> — ipsilateral chain, multiple glands
+            <ul>
+              <li>Most common in dog</li>
+              <li>Considers lymphatic drainage patterns</li>
+            </ul>
+          </li>
+          <li><strong>Radical / unilateral chain mastectomy</strong> — entire mammary chain
+            <ul>
+              <li>Cat: standard recommendation given high malignancy</li>
+              <li>Dog: for multiple masses on one side</li>
+            </ul>
+          </li>
+          <li><strong>Bilateral mastectomy</strong> — both chains; multiple stages or single surgery (cat especially)</li>
+          <li>Take regional LN (axillary, inguinal) if enlarged or histologically suspicious</li>
+        </ul>
+
+        <p><strong>2. Concurrent ovariohysterectomy (OHE) — controversial:</strong></p>
+        <ul>
+          <li><strong>Dog:</strong> traditionally considered helpful but evidence mixed
+            <ul>
+              <li>Recent evidence: OHE at time of mastectomy may improve outcomes for some types</li>
+              <li>Recommended for benign, mixed tumors</li>
+              <li>Doesn't typically alter prognosis for established malignancy</li>
+              <li>Eliminates progestin influence on remaining mammary tissue</li>
+              <li>Reduces ovarian/uterine pathology risk</li>
+            </ul>
+          </li>
+          <li><strong>Cat:</strong> often recommended; evidence less clear</li>
+          <li>Discuss with owner — generally recommended</li>
+        </ul>
+
+        <p><strong>3. Adjuvant chemotherapy ✨ — for malignant types, especially cat:</strong></p>
+        <ul>
+          <li><strong>Doxorubicin 30 mg/m² IV q3 wk × 4-5 cycles</strong>
+            <ul>
+              <li>Cat: 1 mg/kg (renal toxicity at higher doses)</li>
+              <li>Most evidence for use post-mastectomy in malignant cases</li>
+              <li>Improves MST in cat malignant cases</li>
+              <li>Dog evidence variable</li>
+            </ul>
+          </li>
+          <li>± Cyclophosphamide</li>
+          <li>± Carboplatin (cat alternative)</li>
+          <li>Mitoxantrone (alternative)</li>
+          <li>Modest benefit; helps subset</li>
+        </ul>
+
+        <p><strong>4. Inflammatory mammary carcinoma (IMC) ✗:</strong></p>
+        <ul>
+          <li><strong>Surgery contraindicated</strong> ✗ — disseminated disease, surgery worsens</li>
+          <li>Palliative only:
+            <ul>
+              <li>NSAIDs (firocoxib, piroxicam) — anti-inflammatory + anti-tumor</li>
+              <li>Pain management</li>
+              <li>Anti-edema (compression bandaging)</li>
+              <li>Anti-coagulant if DIC</li>
+              <li>Chemotherapy (doxorubicin) — limited response</li>
+            </ul>
+          </li>
+          <li>MST 1-2 months ✗</li>
+        </ul>
+
+        <p><strong>5. Targeted / adjunct therapies (emerging):</strong></p>
+        <ul>
+          <li>Aromatase inhibitors — research</li>
+          <li>NSAIDs (chronic; piroxicam, firocoxib) — anti-cancer effects via COX-2</li>
+          <li>Hormonal therapy (less developed than human breast cancer)</li>
+        </ul>
+
+        <p><strong>6. Cat-specific considerations:</strong></p>
+        <ul>
+          <li><strong>Aggressive bilateral chain mastectomy</strong> recommended (even if 1 side affected)
+            <ul>
+              <li>Reduces local recurrence</li>
+              <li>Often staged 4-6 wk apart</li>
+            </ul>
+          </li>
+          <li>Adjuvant chemotherapy strongly recommended (doxorubicin)</li>
+          <li>Tumor size at surgery is critical: tumors &lt; 2 cm = much better prognosis</li>
+          <li>Recheck regularly for recurrence</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck physical + thoracic radiograph q3 mo × 1 yr, then q6 mo</li>
+          <li>Watch for: recurrence, contralateral mass, pulmonary mets</li>
+          <li>Self-examine at home — owner taught monthly</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Pulmonary metastasis (most common cause of death)</li>
+          <li>Local recurrence</li>
+          <li>Contralateral / new primary tumors</li>
+          <li>Surgical complications:
+            <ul>
+              <li>Wound dehiscence (large surgical area)</li>
+              <li>Seroma formation</li>
+              <li>Infection</li>
+              <li>Hemorrhage</li>
+            </ul>
+          </li>
+          <li>IMC: severe systemic illness, DIC, refractory edema</li>
+          <li>Chemotherapy side effects</li>
+          <li>Concurrent disease (older patients)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Dog ✨:</strong>
+            <ul>
+              <li>Benign: excellent — surgical cure ✓</li>
+              <li>Malignant + complete excision + low grade + no LN: 1-year survival 70-80%</li>
+              <li>Malignant + LN involvement / high grade: 1-year survival ~ 30-40%</li>
+              <li>MST overall malignant: 12-24 months</li>
+              <li>Tumor size &lt; 3 cm: better prognosis</li>
+              <li>IMC: MST 1-2 months ✗</li>
+            </ul>
+          </li>
+          <li><strong>Cat ✗:</strong>
+            <ul>
+              <li>~ 85-90% malignant — generally guarded prognosis</li>
+              <li>Tumor &lt; 2 cm + radical mastectomy: MST &gt; 3 yr</li>
+              <li>Tumor 2-3 cm: MST 1-2 yr</li>
+              <li>Tumor &gt; 3 cm: MST 4-6 months</li>
+              <li>LN positive: MST &lt; 6 months</li>
+              <li>Visible mets: MST 2-4 months</li>
+              <li>Adjuvant doxorubicin extends MST modestly</li>
+            </ul>
+          </li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Larger size (most important)</li>
+              <li>LN involvement</li>
+              <li>High histologic grade</li>
+              <li>Lymphatic invasion</li>
+              <li>Inflammatory carcinoma</li>
+              <li>Metastasis at diagnosis</li>
+              <li>Late spay / intact</li>
+              <li>Multiple masses (cat)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Cat mammary tumors = ~ 90% malignant</strong> ✗ — radical bilateral chain mastectomy + doxorubicin<br><br>💡 <strong>Dog "rule of halves"</strong>: 50% benign, 50% malignant. Spay before 1st estrus = 99% risk reduction ✨<br><br>**Always thoracic radiographs** before surgery. **IMC = surgery contraindicated** — palliative only</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 82 · Soft Tissue Sarcomas (STS) ---------- */
+  {
+    id: 'soft-tissue-sarcomas',
+    titleEn: 'Soft Tissue Sarcomas (STS)',
+    titleTh: 'มะเร็งเนื้อเยื่ออ่อน',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['soft tissue sarcoma', 'STS', 'fibrosarcoma', 'peripheral nerve sheath tumor', 'PNST', 'hemangiopericytoma', 'feline injection-site sarcoma', 'FISS', 'wide margins', 'radiation therapy', 'metronomic chemotherapy'],
+    aliases: ['STS', 'fibrosarcoma', 'sarcoma', 'PNST', 'มะเร็งเนื้อเยื่ออ่อน'],
+    source: 'Ch. 82 · pp. 1358–1370',
+    sections: {
+      definition: `
+        <p>กลุ่มมะเร็งของ <strong>mesenchymal cells</strong> — multiple histologies behaving similarly</p>
+        <ul>
+          <li><strong>~ 15% of all skin/SC tumors in dog</strong> ✨</li>
+          <li>Includes: fibrosarcoma, peripheral nerve sheath tumor (PNST/schwannoma/hemangiopericytoma), liposarcoma, myxosarcoma, undifferentiated pleomorphic sarcoma, rhabdomyosarcoma, leiomyosarcoma</li>
+          <li>Classified by histologic features but managed similarly clinically</li>
+          <li>Predisposed dog: Golden Retriever, Lab, large breeds; older (median 8-10 yr)</li>
+          <li><strong>Feline Injection-Site Sarcoma (FISS) ✗ ✨</strong> — important specific syndrome
+            <ul>
+              <li>Cat develops fibrosarcoma at vaccine / injection site (1-10 yr post)</li>
+              <li>Aggressive, infiltrative, locally invasive</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Most idiopathic in dog</strong></p>
+        <ul>
+          <li>Spontaneous mutation in mesenchymal cells</li>
+          <li>Genetic predisposition</li>
+          <li>Chronic inflammation / scar (rare; "Marjolin ulcer")</li>
+          <li>Radiation-induced (rare; years after RT)</li>
+          <li>Foreign body granuloma sites</li>
+        </ul>
+
+        <p><strong>FISS (cat) ✨:</strong></p>
+        <ul>
+          <li>Inflammation at injection site → chronic stimulation → malignant transformation</li>
+          <li>Vaccines associated:
+            <ul>
+              <li>Rabies (especially adjuvanted)</li>
+              <li>FeLV (especially adjuvanted)</li>
+              <li>Other adjuvanted vaccines</li>
+            </ul>
+          </li>
+          <li>Other injectable products: long-acting injections (penicillin, microchip, methylprednisolone)</li>
+          <li>Genetic predisposition (specific cats susceptible)</li>
+          <li>Risk: ~ 1-10/10,000 vaccinations</li>
+          <li><strong>WSAVA recommendation: vaccinate at distal limb sites</strong> for ease of amputation if FISS develops:
+            <ul>
+              <li>Rabies: distal right pelvic limb</li>
+              <li>FeLV: distal left pelvic limb</li>
+              <li>FVRCP: right shoulder area (or distal right thoracic limb)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Slow-growing typically (months-years)</li>
+          <li><strong>Locally aggressive</strong> ✨ — pseudocapsule with finger-like invasive projections beyond gross mass</li>
+          <li>Recurrence rate high if marginal excision</li>
+          <li><strong>Low-moderate metastatic rate</strong> (~ 15-20% high-grade; &lt; 5% low-grade) — better than most other sarcomas</li>
+          <li>Lung most common metastatic site</li>
+          <li>FISS more aggressive: faster growth, higher metastatic rate (10-25%)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Slowly enlarging firm subcutaneous / dermal mass</strong> ✨</li>
+          <li>Often skin movable over mass (vs MCT — Darier's sign)</li>
+          <li>Deep-seated, ill-defined margins</li>
+          <li>Variable size at presentation</li>
+          <li>Locations:
+            <ul>
+              <li>Trunk, limbs, flank most common (dog)</li>
+              <li>Axilla, neck, hindquarters</li>
+              <li>FISS: between scapulae, dorsolateral abdomen (historical injection sites)</li>
+            </ul>
+          </li>
+          <li>Often painless</li>
+          <li>Larger masses may ulcerate, become infected</li>
+          <li>Functional limitations if near joints / nerves</li>
+          <li>Lameness if PNST involves nerve</li>
+          <li>Often present after months of slow growth</li>
+        </ul>
+
+        <p><strong>FISS ✗ specific:</strong></p>
+        <ul>
+          <li>Mass at vaccine / injection site (between scapulae, intrascapular, lumbar)</li>
+          <li>Often noticed weeks-months-years post-injection</li>
+          <li>Firm, fixed, infiltrative</li>
+          <li>"3-2-1 rule" for biopsy decision: persists &gt; 3 mo, &gt; 2 cm, growing &gt; 1 mo after vaccine</li>
+          <li>Rapid growth in some cases</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. FNA cytology — limited utility:</strong></p>
+        <ul>
+          <li>Often non-diagnostic (low cell yield from sarcomas)</li>
+          <li>Mesenchymal cells (spindle-shaped) suggest diagnosis</li>
+          <li>Rules out other tumors (MCT, lymphoma, lipoma)</li>
+          <li>Doesn't differentiate STS subtypes or grade</li>
+        </ul>
+
+        <p><strong>2. Incisional biopsy ✨ — preferred for confirmation + grading:</strong></p>
+        <ul>
+          <li>Especially before aggressive treatment</li>
+          <li>Take biopsy through incision that can be removed at definitive surgery</li>
+          <li>Avoid en bloc disruption (may cause seeding)</li>
+        </ul>
+
+        <p><strong>3. Excisional biopsy:</strong></p>
+        <ul>
+          <li>Acceptable for small accessible lesions</li>
+          <li>Wide margins essential</li>
+          <li>Submit entire specimen with margins evaluated</li>
+        </ul>
+
+        <p><strong>4. Histopathology + grading ✨:</strong></p>
+        <ul>
+          <li><strong>3-tier grading (most predictive of prognosis):</strong>
+            <ul>
+              <li>Grade I (low) — &lt; 5 mitoses/10 HPF; &lt; 50% necrosis; well-differentiated; metastasis &lt; 5%</li>
+              <li>Grade II (intermediate) — 5-9 mitoses/10 HPF; intermediate features; metastasis ~ 10-15%</li>
+              <li>Grade III (high) — &gt; 9 mitoses/10 HPF; &gt; 50% necrosis; poor differentiation; metastasis 25-40%</li>
+            </ul>
+          </li>
+          <li>Mitotic count = single most powerful prognostic factor</li>
+          <li>Margins critical (clean / dirty)</li>
+        </ul>
+
+        <p><strong>5. Imaging — staging:</strong></p>
+        <ul>
+          <li><strong>3-view thoracic radiograph</strong> ✨ — pulmonary mets</li>
+          <li>Regional LN aspirate (less common metastatic route, but evaluate if enlarged)</li>
+          <li><strong>Advanced imaging (CT/MRI) ✨</strong> for surgical planning:
+            <ul>
+              <li>Defines true extent (often larger than palpable)</li>
+              <li>Crucial for FISS — invasive boundaries</li>
+              <li>Plan margins, identify involved structures</li>
+            </ul>
+          </li>
+          <li>Abdominal US (some cases)</li>
+        </ul>
+
+        <p><strong>6. Pre-surgical workup:</strong></p>
+        <ul>
+          <li>CBC + biochem</li>
+          <li>UA</li>
+          <li>Coag panel</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Lipoma (cytology — fat cells)</li>
+          <li>Mast cell tumor (FNA before excision essential)</li>
+          <li>Cutaneous lymphoma</li>
+          <li>Histiocytic sarcoma</li>
+          <li>Granuloma (foreign body, infection)</li>
+          <li>Cyst</li>
+          <li>Hematoma / seroma</li>
+          <li>Other neoplasia (carcinoma)</li>
+          <li>Cat: vaccine reaction (granuloma) — biopsy if persists &gt; 3 mo</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Surgical excision ✨ — primary treatment:</strong></p>
+        <ul>
+          <li><strong>Wide margins ESSENTIAL</strong> ✨:
+            <ul>
+              <li><strong>2-3 cm lateral + 1 fascial plane deep (low-grade)</strong></li>
+              <li><strong>3-5 cm lateral + 1-2 fascial planes deep (high-grade)</strong></li>
+              <li>FISS: <strong>5 cm lateral + 2 fascial planes deep minimum</strong> ✗</li>
+            </ul>
+          </li>
+          <li>"Compartmental excision" — remove tumor + entire muscle compartment when possible</li>
+          <li>Submit entire tumor + margins for evaluation</li>
+          <li>Plan first surgery carefully — best chance for cure</li>
+          <li>Marginal excision = high recurrence (40-70%)</li>
+          <li>Wide / radical excision = much better outcomes (5-15% recurrence)</li>
+          <li>Limb amputation may be necessary for limb-located large STS</li>
+          <li>Pre-op imaging guides margins</li>
+        </ul>
+
+        <p><strong>2. Radiation therapy ✨ — adjuvant for incomplete margins:</strong></p>
+        <ul>
+          <li>Indication: incomplete / narrow surgical margins, unresectable tumors</li>
+          <li>Adjuvant external beam RT (definitive 16-20 fractions)</li>
+          <li>Local control rate 70-90% for incomplete margins</li>
+          <li>Stereotactic RT (SRT) emerging — fewer fractions, similar outcomes</li>
+          <li>Cost moderate-high; specialty centers</li>
+        </ul>
+
+        <p><strong>3. Metronomic chemotherapy ✨ — emerging adjuvant:</strong></p>
+        <ul>
+          <li>Continuous low-dose oral chemo:
+            <ul>
+              <li>Cyclophosphamide 10-15 mg/m² PO q24h</li>
+              <li>+ COX-2 inhibitor (firocoxib 5 mg/kg PO q24h, or piroxicam)</li>
+              <li>± Doxycycline (anti-angiogenic)</li>
+            </ul>
+          </li>
+          <li>Indications: high-grade, incomplete margins, recurrent</li>
+          <li>Anti-angiogenic effect</li>
+          <li>Better tolerated than conventional chemo</li>
+          <li>Modest evidence of MST extension</li>
+          <li>Monitor: UA q3 mo (hemorrhagic cystitis from cyclo)</li>
+        </ul>
+
+        <p><strong>4. Conventional chemotherapy:</strong></p>
+        <ul>
+          <li>Doxorubicin 30 mg/m² IV q3 wk × 4-5 cycles
+            <ul>
+              <li>For high-grade, metastatic, or unresectable</li>
+              <li>Modest evidence of benefit</li>
+            </ul>
+          </li>
+          <li>± Carboplatin alternative</li>
+          <li>Toceranib (Palladia) 2.5-2.75 mg/kg MWF — TKI for advanced/refractory</li>
+        </ul>
+
+        <p><strong>5. FISS-specific management ✨:</strong></p>
+        <ul>
+          <li><strong>Aggressive surgical excision essential</strong> ✗:
+            <ul>
+              <li>5 cm lateral + 2 fascial planes deep minimum</li>
+              <li>Often involves muscle resection, body wall reconstruction</li>
+              <li>Specialty surgical referral</li>
+            </ul>
+          </li>
+          <li>Pre-op CT / MRI mandatory — true extent often surprising</li>
+          <li>Adjuvant radiation therapy strongly recommended (high recurrence rate)</li>
+          <li>Adjuvant chemotherapy (doxorubicin) — standard</li>
+          <li>Median survival: 1-2 years with multimodal</li>
+          <li>Median survival: 6-12 months with surgery alone</li>
+          <li>Recurrence rate without complete excision + RT: 40-70%</li>
+          <li><strong>Prevention</strong>: AAFP/WSAVA distal limb vaccination protocols ✨</li>
+        </ul>
+
+        <p><strong>6. Owner education:</strong></p>
+        <ul>
+          <li>Realistic expectations — first surgery best chance for cure</li>
+          <li>Wide margins on first surgery dramatically improves outcome</li>
+          <li>Recheck regularly — local recurrence + new masses</li>
+          <li>Cost of multimodal Tx</li>
+          <li>FISS prevention going forward (vaccination practices)</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck physical + thoracic radiograph q3 mo × 1-2 yr, then q6 mo</li>
+          <li>Watch for: local recurrence, regional LN, pulmonary mets</li>
+          <li>Self-examination at home (owner — feel for new masses)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Local recurrence</strong> ✗ — main issue with marginal excision</li>
+          <li>Pulmonary metastasis (~ 15-20% high-grade; less for low-grade)</li>
+          <li>Surgical complications (wound dehiscence, infection, hemorrhage)</li>
+          <li>Functional impairment if near joints / nerves</li>
+          <li>RT side effects: skin reaction (acute), bone necrosis (rare late)</li>
+          <li>Chemotherapy side effects</li>
+          <li>FISS: aggressive recurrence, multiple surgeries</li>
+          <li>Concurrent disease (older patients)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Low-grade (Grade I) + complete excision: excellent</strong> ✓ — MST &gt; 3 yr; cure often achievable</li>
+          <li>Intermediate-grade (Grade II) + complete excision: good — MST 2-3 yr</li>
+          <li>High-grade (Grade III) + complete excision: guarded — MST 1-2 yr</li>
+          <li>Marginal excision: high recurrence; MST varies by additional Tx</li>
+          <li>Wide / radical excision: recurrence &lt; 15%; long-term survival good</li>
+          <li>Adjuvant RT for incomplete margins: 70-90% local control</li>
+          <li>FISS: multimodal MST 1-2 yr; surgery alone 6-12 mo</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>High mitotic count (most powerful)</li>
+              <li>Incomplete excision</li>
+              <li>Tumor size &gt; 5 cm</li>
+              <li>Histologic grade III</li>
+              <li>Lymphatic / vascular invasion</li>
+              <li>Metastasis at diagnosis</li>
+              <li>FISS at vaccine site</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>STS = "first surgery is the best chance"</strong> ✨ — wide margins (2-3 cm + 1 fascial plane minimum); pre-op CT/MRI for planning<br><br>**Mitotic count = #1 prognostic factor**. Radiation for incomplete margins (90% local control)<br><br>⚠️ <strong>FISS (cat)</strong> = aggressive; 5 cm margins + 2 fascial planes; vaccinate distal limb to allow amputation if needed</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 83 · Transitional Cell Carcinoma (TCC) of Bladder ---------- */
+  {
+    id: 'transitional-cell-carcinoma',
+    titleEn: 'Transitional Cell Carcinoma (TCC) — Bladder/Urethra',
+    titleTh: 'มะเร็งกระเพาะปัสสาวะ',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['TCC', 'transitional cell carcinoma', 'urothelial carcinoma', 'bladder cancer', 'piroxicam', 'mitoxantrone', 'BRAF mutation', 'CADET BRAF', 'Scottish Terrier', 'Sheltie', 'BMC', 'ureteral stent'],
+    aliases: ['TCC', 'urothelial carcinoma', 'bladder cancer', 'มะเร็งกระเพาะ', 'มะเร็งทางเดินปัสสาวะ'],
+    source: 'Ch. 83 · pp. 1370–1379',
+    sections: {
+      definition: `
+        <p>มะเร็งของ <strong>urothelium</strong> — most common bladder tumor in dog (~ 90%)</p>
+        <ul>
+          <li>~ 1-2% of all canine cancers</li>
+          <li>Predisposed: <strong>Scottish Terrier (~ 18× risk)</strong> ✨, Shetland Sheepdog, West Highland White Terrier, Beagle, Wire Fox Terrier, Eskimo Dog</li>
+          <li>Median age 9-11 yr; female &gt; male in some studies</li>
+          <li>Cat: rare</li>
+          <li><strong>Locations:</strong>
+            <ul>
+              <li>Trigone region of bladder (~ 60-70%) ✨ — common cause of obstruction</li>
+              <li>Body of bladder</li>
+              <li>Urethra (extension or primary)</li>
+              <li>Prostate (male — concurrent)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Genetic predisposition (Scottie risk especially) ✨</li>
+          <li><strong>BRAF V595E mutation</strong> ✨ — present in ~ 80% of canine TCC; targeted by CADET BRAF urine test
+            <ul>
+              <li>Allows non-invasive screening + diagnosis</li>
+              <li>Same mutation as in some human melanomas</li>
+            </ul>
+          </li>
+          <li>Environmental:
+            <ul>
+              <li>Lawn herbicides (especially older 2,4-D, controversial)</li>
+              <li>Lawn-care chemicals</li>
+              <li>Topical insecticide exposure</li>
+            </ul>
+          </li>
+          <li>Female &gt; male (housing accumulates urinary metabolites)</li>
+          <li>Obesity</li>
+          <li>NOT typically chronic UTI-associated (unlike human bladder cancer with schistosomiasis)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Malignant urothelial cells</li>
+          <li>Tumors typically <strong>papillary, infiltrative</strong> at trigone</li>
+          <li>Often involve ureteral openings → hydronephrosis ✗</li>
+          <li>Urethral involvement → urinary obstruction ✗</li>
+          <li><strong>Metastasis ~ 50% at diagnosis</strong>:
+            <ul>
+              <li>Lungs (most common)</li>
+              <li>Regional LN</li>
+              <li>Bone (paraneoplastic hypertrophic osteopathy possible)</li>
+              <li>Distant organs</li>
+            </ul>
+          </li>
+          <li>Concurrent UTI very common (secondary)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Lower urinary signs ✨ — mimic chronic UTI:</strong></p>
+        <ul>
+          <li><strong>Hematuria</strong> ✨ — gross or microscopic; persistent</li>
+          <li><strong>Stranguria</strong> ✨ — straining to urinate</li>
+          <li><strong>Pollakiuria</strong> ✨ — frequent small urinations</li>
+          <li><strong>Dysuria</strong> — painful urination</li>
+          <li>Urinary incontinence (sometimes)</li>
+          <li>Bilateral hindlimb edema (severe — if iliac LN obstruction)</li>
+          <li><strong>Often initially treated as chronic UTI ✗</strong> — antibiotic-responsive temporarily; relapses</li>
+        </ul>
+
+        <p><strong>Advanced / complications:</strong></p>
+        <ul>
+          <li><strong>Urethral obstruction</strong> ✗ — emergency:
+            <ul>
+              <li>Stranguria → anuria</li>
+              <li>Severe abdominal pain</li>
+              <li>Post-renal AKI</li>
+              <li>Hyperkalemia, uremia</li>
+            </ul>
+          </li>
+          <li><strong>Ureteral obstruction</strong> ✗ — hydronephrosis, post-renal AKI</li>
+          <li>Lameness (osseous mets, hypertrophic osteopathy)</li>
+          <li>Cough, dyspnea (pulmonary mets)</li>
+          <li>Weight loss</li>
+          <li>Anorexia (advanced)</li>
+        </ul>
+
+        <p><strong>Pattern ✨:</strong></p>
+        <ul>
+          <li>Older small-medium breed dog with persistent / recurrent lower urinary signs</li>
+          <li>Refractory to multiple courses of antibiotics</li>
+          <li>± Hindlimb edema</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. UA + culture ✨:</strong></p>
+        <ul>
+          <li><strong>Don't catheterize / cysto if TCC suspected</strong> ✗ — risk of seeding through abdominal wall (cysto) or urethra (catheter); use voided urine</li>
+          <li>Hematuria (often gross), pyuria, sometimes glucosuria</li>
+          <li>Concurrent UTI common (treat empirically while workup)</li>
+          <li>Sediment: may see neoplastic cells (low sensitivity)</li>
+        </ul>
+
+        <p><strong>2. Imaging ✨:</strong></p>
+        <ul>
+          <li><strong>Abdominal ultrasound</strong> ✨ — preferred:
+            <ul>
+              <li>Bladder wall thickening (diffuse or focal mass)</li>
+              <li>Most commonly trigone</li>
+              <li>Pedunculated or sessile masses</li>
+              <li>Ureteral dilation (obstruction)</li>
+              <li>Hydronephrosis (advanced)</li>
+              <li>Regional LN (medial iliac)</li>
+              <li>Prostate involvement (male)</li>
+              <li>Hepatic mets sometimes</li>
+            </ul>
+          </li>
+          <li>Contrast cystography — alternative; pneumocystogram or contrast</li>
+          <li>CT — detailed staging; vascular involvement</li>
+          <li>Cystoscopy (specialty) — direct visualization + biopsy</li>
+        </ul>
+
+        <p><strong>3. Biopsy / cytology ✨:</strong></p>
+        <ul>
+          <li><strong>Avoid cystocentesis FNA / catheter sampling</strong> ✗ — risk of seeding</li>
+          <li>Acceptable methods:
+            <ul>
+              <li><strong>Traumatic catheterization (TC)</strong> ✨ — sterile catheter into mass area, suction biopsy
+                <ul>
+                  <li>Less invasive</li>
+                  <li>~ 70% diagnostic yield</li>
+                </ul>
+              </li>
+              <li><strong>Cystoscopic biopsy</strong> — best yield, specialty
+                <ul>
+                  <li>Direct visualization + multiple samples</li>
+                  <li>Can also place stents at same time</li>
+                </ul>
+              </li>
+              <li>Surgical biopsy (cystotomy) — if other approaches not possible</li>
+              <li>Voided urine cytology — low sensitivity</li>
+            </ul>
+          </li>
+          <li>Histopathology = definitive diagnosis</li>
+        </ul>
+
+        <p><strong>4. Molecular testing ✨ — game-changer:</strong></p>
+        <ul>
+          <li><strong>CADET BRAF urine test</strong> ✨:
+            <ul>
+              <li>Detects BRAF V595E mutation in urine cell-free DNA</li>
+              <li>~ 80% sensitivity for canine TCC</li>
+              <li>Highly specific (rare false positives)</li>
+              <li>Non-invasive (just submit urine)</li>
+              <li>Earlier diagnosis possible</li>
+              <li>Monitoring response to therapy</li>
+              <li>Available at Antech Diagnostics</li>
+            </ul>
+          </li>
+          <li>BRAF + UMI (urinary microsatellite instability) — even higher sensitivity (~ 95%)</li>
+          <li>Useful for screening at-risk breeds (Scotties)</li>
+        </ul>
+
+        <p><strong>5. Staging:</strong></p>
+        <ul>
+          <li>Thoracic radiograph (3-view) — pulmonary mets</li>
+          <li>Abdominal US — LN, hepatic, splenic mets</li>
+          <li>Skeletal radiograph if lameness</li>
+          <li>CBC + biochem (renal function — concurrent obstruction; ↑ ALP if hepatic mets)</li>
+          <li>Coag panel</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Chronic / recurrent UTI</li>
+          <li>Sterile cystitis (idiopathic — uncommon dog)</li>
+          <li>Urolithiasis (uroliths visible on imaging)</li>
+          <li>Polypoid cystitis</li>
+          <li>Bladder fibroma / leiomyoma (benign)</li>
+          <li>Other bladder tumor (squamous, adenocarcinoma — rare)</li>
+          <li>Prostatic disease (male — TCC also affects prostate)</li>
+          <li>Urethritis</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Goal: control disease + maintain QOL (rarely cured ✗):</strong></p>
+
+        <p><strong>1. Surgery — limited role:</strong></p>
+        <ul>
+          <li><strong>Most TCC at trigone — not surgically resectable</strong> ✗</li>
+          <li>Resection compromises ureteral openings, urethra</li>
+          <li>Apical / body tumors: partial cystectomy possible (uncommon location)</li>
+          <li>Even with surgery: high recurrence rate</li>
+          <li>Not recommended as sole modality typically</li>
+        </ul>
+
+        <p><strong>2. NSAID monotherapy ✨ — first-line palliative:</strong></p>
+        <ul>
+          <li><strong>Piroxicam 0.3 mg/kg PO q24h</strong> ✨ — historical standard
+            <ul>
+              <li>COX-2 inhibitor with anti-tumor activity in TCC</li>
+              <li>Response rate ~ 20% (objective tumor regression)</li>
+              <li>Stable disease ~ 50%</li>
+              <li>MST 6-9 months (similar to single-agent chemo)</li>
+              <li>Side effects: GI ulceration, AKI; concurrent omeprazole + sucralfate</li>
+            </ul>
+          </li>
+          <li><strong>Firocoxib 5 mg/kg PO q24h</strong> — newer COX-2 specific; better safety profile
+            <ul>
+              <li>Similar efficacy to piroxicam</li>
+              <li>Less GI toxicity</li>
+              <li>Increasingly preferred</li>
+            </ul>
+          </li>
+          <li>Cost low; well-tolerated; quality of life good</li>
+        </ul>
+
+        <p><strong>3. NSAID + chemotherapy combination ✨ — improved outcomes:</strong></p>
+        <ul>
+          <li><strong>Vinblastine + piroxicam</strong>:
+            <ul>
+              <li>Vinblastine 2 mg/m² IV q1-2 wk + piroxicam 0.3 mg/kg PO q24h</li>
+              <li>Modern preferred protocol</li>
+              <li>Response rate ~ 60-70%</li>
+              <li>MST 8-12 months</li>
+            </ul>
+          </li>
+          <li><strong>Mitoxantrone + piroxicam</strong>:
+            <ul>
+              <li>Mitoxantrone 5-5.5 mg/m² IV q3 wk + piroxicam</li>
+              <li>Alternative; less BM toxicity than other agents</li>
+              <li>MST 8-9 months</li>
+            </ul>
+          </li>
+          <li>Carboplatin + piroxicam — alternative</li>
+          <li>Cisplatin (rare; renal toxicity concern)</li>
+        </ul>
+
+        <p><strong>4. Tyrosine kinase inhibitors:</strong></p>
+        <ul>
+          <li>Toceranib (Palladia) 2.5-2.75 mg/kg PO MWF</li>
+          <li>For advanced / refractory cases</li>
+          <li>Combined with NSAID often</li>
+          <li>Modest response rate</li>
+        </ul>
+
+        <p><strong>5. Radiation therapy:</strong></p>
+        <ul>
+          <li>Stereotactic body radiation therapy (SBRT) — emerging
+            <ul>
+              <li>Local control improved</li>
+              <li>Limited availability</li>
+              <li>Cost significant</li>
+            </ul>
+          </li>
+          <li>Conventional fractionated RT — limited use due to bowel toxicity</li>
+        </ul>
+
+        <p><strong>6. Address obstruction ✨:</strong></p>
+        <ul>
+          <li><strong>Urethral obstruction</strong> ✗:
+            <ul>
+              <li>Pass catheter (gentle — avoid trauma)</li>
+              <li>Cystocentesis if obstruction</li>
+              <li><strong>Urethral stent placement</strong> ✨ — palliative:
+                <ul>
+                  <li>Self-expanding metallic stent</li>
+                  <li>Maintains urethral patency for months</li>
+                  <li>Improves QOL dramatically</li>
+                  <li>Specialty interventional procedure</li>
+                </ul>
+              </li>
+              <li>Urinary diversion surgery (last resort): cystostomy tube, ureteral implantation in skin</li>
+            </ul>
+          </li>
+          <li><strong>Ureteral obstruction</strong>:
+            <ul>
+              <li>Subcutaneous ureteral bypass (SUB) — specialty</li>
+              <li>Or ureteral stent</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>7. Concurrent UTI management:</strong></p>
+        <ul>
+          <li>Culture-based antibiotics</li>
+          <li>Long courses (often 3-4 wk for chronic)</li>
+          <li>Often recurrent — ongoing surveillance</li>
+        </ul>
+
+        <p><strong>8. Supportive:</strong></p>
+        <ul>
+          <li>Pain management (gabapentin, opioid for severe)</li>
+          <li>Anti-acid (steroid + NSAID combination concerns)</li>
+          <li>Anti-emetics</li>
+          <li>Diet (renal-supportive if AKI)</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck abdominal US q2-3 mo (tumor size, ureters)</li>
+          <li>UA + culture q1-2 mo (UTI surveillance)</li>
+          <li>CBC + biochem q4-6 wk (renal function, drug toxicity)</li>
+          <li>Thoracic radiograph q3 mo</li>
+          <li>BRAF urine PCR (response to therapy if available)</li>
+          <li>Watch for: obstruction signs, AKI, mets progression</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Urethral / ureteral obstruction</strong> ✗ — common, often emergency</li>
+          <li>Post-renal AKI</li>
+          <li>Recurrent UTI (often resistant)</li>
+          <li>Pulmonary metastasis (most common cause of death)</li>
+          <li>Bone metastasis → pathologic fracture, severe pain</li>
+          <li>Hypertrophic osteopathy (paraneoplastic)</li>
+          <li>NSAID side effects: GI ulceration, AKI, hepatic</li>
+          <li>Chemotherapy side effects</li>
+          <li>Hemorrhage from tumor (severe hematuria)</li>
+          <li>Persistent dysuria → poor QOL → euthanasia decision</li>
+          <li>Concurrent age-related disease</li>
+        </ul>
+        <p><strong>Prognosis ✗:</strong></p>
+        <ul>
+          <li><strong>Generally guarded — incurable but manageable</strong></li>
+          <li>NSAID alone (piroxicam/firocoxib): MST 6-9 months</li>
+          <li>NSAID + chemotherapy: MST 8-12 months</li>
+          <li>Multimodal (NSAID + chemo + stent): MST 8-15 months</li>
+          <li>Apical tumors with successful resection: MST &gt; 18 months</li>
+          <li>1-year survival: ~ 30-50% with treatment</li>
+          <li>2-year survival: &lt; 15%</li>
+          <li>QOL: generally maintainable for 6-12 months</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Trigone location (most cases)</li>
+              <li>Urethral involvement</li>
+              <li>Bilateral ureteral obstruction</li>
+              <li>Distant metastasis at diagnosis</li>
+              <li>Anorexia / weight loss at presentation</li>
+              <li>Lameness from osseous mets</li>
+              <li>Concurrent renal failure</li>
+            </ul>
+          </li>
+          <li>Most dogs eventually require euthanasia for: refractory dysuria, obstruction, pulmonary mets, QOL decline</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Persistent / recurrent UTI signs in older small breed = TCC until proven</strong> ✨ — Scottie especially!<br><br>**CADET BRAF urine test** = non-invasive screening / diagnosis ✨ — &gt; 80% sensitivity<br><br>💡 **Don't catheterize / cysto if TCC suspected** — seeding risk. Vinblastine + piroxicam = preferred combination. Urethral stent dramatically improves QOL with obstruction</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 76 · Oral Tumors (Melanoma, SCC, Fibrosarcoma) ---------- */
+  {
+    id: 'oral-tumors',
+    titleEn: 'Oral Tumors (Melanoma, SCC, Fibrosarcoma)',
+    titleTh: 'มะเร็งช่องปาก',
+    type: 'disease',
+    system: 'oncology',
+    species: ['dog', 'cat'],
+    tags: ['oral melanoma', 'oral SCC', 'oral fibrosarcoma', 'mandibulectomy', 'maxillectomy', 'melanoma vaccine', 'Oncept', 'feline oral SCC', 'pulmonary metastasis', 'malignant melanoma'],
+    aliases: ['oral cancer', 'mouth tumor', 'maxillary tumor', 'mandibular tumor', 'มะเร็งปาก', 'เนื้องอกในปาก'],
+    source: 'Ch. 76 · pp. 1289–1310',
+    sections: {
+      definition: `
+        <p>เนื้องอกของช่องปาก — common location (4th most common cancer site in dog)</p>
+        <ul>
+          <li><strong>Top 3 oral malignancies in dog:</strong>
+            <ul>
+              <li><strong>Malignant melanoma</strong> ✨ — most common (~ 30-40%); aggressive</li>
+              <li><strong>Squamous cell carcinoma (SCC)</strong> — ~ 20-30%; tonsillar form especially aggressive</li>
+              <li><strong>Fibrosarcoma</strong> — ~ 15-20%; less metastatic but locally invasive</li>
+            </ul>
+          </li>
+          <li>Cat: <strong>SCC ~ 75% of oral tumors</strong> ✨ — most common feline oral cancer</li>
+          <li>Other: acanthomatous ameloblastoma (locally invasive but rarely metastatic; benign-like)</li>
+          <li>Median age dog 9-11 yr; cat 10-12 yr</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Oral melanoma:</strong></p>
+        <ul>
+          <li>Predisposed: heavily-pigmented oral mucosa breeds (Cocker Spaniel, Poodle, GSD, Scottish Terrier)</li>
+          <li>Genetic predisposition</li>
+          <li>Often pigmented but can be amelanotic (50%)</li>
+        </ul>
+
+        <p><strong>Oral SCC (dog):</strong></p>
+        <ul>
+          <li>UV exposure (less than skin SCC)</li>
+          <li>Tonsillar SCC: highly aggressive, metastatic (75% mets at diagnosis)</li>
+        </ul>
+
+        <p><strong>Oral SCC (cat) ✨:</strong></p>
+        <ul>
+          <li><strong>Environmental tobacco smoke</strong> ✨ — strongest known risk</li>
+          <li>Flea collars (debated)</li>
+          <li>Canned food (debated)</li>
+          <li>Older cats</li>
+        </ul>
+
+        <p><strong>Oral fibrosarcoma:</strong></p>
+        <ul>
+          <li>Large breed dogs (Golden, Lab)</li>
+          <li>"Histologically low-grade, biologically high-grade" variant: looks low-grade but very aggressive locally</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li><strong>Melanoma ✗:</strong>
+            <ul>
+              <li>Highly aggressive locally + metastatic</li>
+              <li>Pulmonary mets ~ 70% by 1 yr</li>
+              <li>Regional LN, bone mets</li>
+              <li>Resists conventional chemo</li>
+            </ul>
+          </li>
+          <li><strong>SCC dog:</strong>
+            <ul>
+              <li>Rostral mandibular: less metastatic, locally invasive</li>
+              <li>Tonsillar: very aggressive; LN + lung mets common</li>
+            </ul>
+          </li>
+          <li><strong>SCC cat ✗:</strong>
+            <ul>
+              <li>Locally invasive, often involves bone</li>
+              <li>Rapid progression</li>
+              <li>Less metastatic than dog (~ 10-20%)</li>
+              <li>Almost always fatal due to local progression / inability to eat</li>
+            </ul>
+          </li>
+          <li><strong>Fibrosarcoma:</strong>
+            <ul>
+              <li>Highly locally invasive</li>
+              <li>Lower metastatic rate (15-20%)</li>
+              <li>Often late diagnosis (large at presentation)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Common signs ✨:</strong></p>
+        <ul>
+          <li><strong>Oral mass</strong> — gum, palate, tongue, tonsil, pharynx</li>
+          <li>Halitosis (foul breath) ✨</li>
+          <li>Drooling, sometimes blood-tinged</li>
+          <li>Reluctance to eat / dysphagia</li>
+          <li>Weight loss</li>
+          <li>Facial deformity (large tumors)</li>
+          <li>Tooth displacement / loosening (bone invasion)</li>
+          <li>Ulceration of mass</li>
+          <li>Bleeding from mouth</li>
+          <li>Pawing at face, head shaking</li>
+          <li>Regional LN enlargement (mandibular, retropharyngeal)</li>
+          <li>Coughing (advanced — pulmonary mets)</li>
+          <li>Cat may hide signs longer than dog</li>
+        </ul>
+
+        <p><strong>Specific patterns:</strong></p>
+        <ul>
+          <li><strong>Melanoma:</strong>
+            <ul>
+              <li>Often pigmented (black, gray) — but 50% amelanotic</li>
+              <li>Frequently ulcerated</li>
+              <li>Common locations: gingiva, lip, tongue, palate</li>
+              <li>Variable size at presentation</li>
+            </ul>
+          </li>
+          <li><strong>SCC:</strong>
+            <ul>
+              <li>Ulcerative, irregular masses</li>
+              <li>Locations: gingiva (rostral mandible/maxilla), tongue, tonsil</li>
+              <li>Cat: often sublingual / mandibular bone invasion</li>
+            </ul>
+          </li>
+          <li><strong>Fibrosarcoma:</strong>
+            <ul>
+              <li>Firm, fleshy, often non-ulcerated</li>
+              <li>Maxilla &gt; mandible</li>
+              <li>Often arise between molars / palate</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Oral exam (sedation often needed):</strong></p>
+        <ul>
+          <li>Examine entire mouth thoroughly</li>
+          <li>Photograph lesions</li>
+          <li>Note location, size, tooth involvement</li>
+        </ul>
+
+        <p><strong>2. Biopsy ✨ — definitive:</strong></p>
+        <ul>
+          <li>Incisional biopsy under sedation/anesthesia</li>
+          <li>Histopathology + special stains (melanocytic markers for melanoma)</li>
+          <li>Submit deeper biopsy (avoid surface ulceration only)</li>
+          <li>Avoid excisional unless small, accessible</li>
+        </ul>
+
+        <p><strong>3. Imaging — staging:</strong></p>
+        <ul>
+          <li><strong>Skull radiograph or CT</strong> ✨ — bone invasion (helps determine resectability)
+            <ul>
+              <li>CT preferred for detail + surgical planning</li>
+              <li>CT also evaluates regional LN</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiographs (3-view)</strong> — pulmonary mets</li>
+          <li>Regional LN aspirate (mandibular, retropharyngeal)</li>
+          <li>Cat: dental radiograph (extent of bone involvement)</li>
+        </ul>
+
+        <p><strong>4. Pre-surgical workup:</strong></p>
+        <ul>
+          <li>CBC + biochem</li>
+          <li>UA</li>
+          <li>Coag panel</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other oral tumors:
+            <ul>
+              <li>Acanthomatous ameloblastoma (benign-like, locally invasive)</li>
+              <li>Peripheral odontogenic fibroma (benign epulis)</li>
+              <li>Osteosarcoma (mandible/maxilla)</li>
+              <li>Chondrosarcoma</li>
+              <li>Mast cell tumor (cat oral)</li>
+              <li>Lymphoma (cat oral)</li>
+              <li>Plasmacytoma</li>
+            </ul>
+          </li>
+          <li>Inflammatory:
+            <ul>
+              <li>Severe periodontal disease</li>
+              <li>Eosinophilic granuloma (cat — different appearance)</li>
+              <li>Stomatitis (cat — diffuse)</li>
+              <li>Osteomyelitis</li>
+            </ul>
+          </li>
+          <li>Foreign body / trauma</li>
+          <li>Cyst</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Surgical excision ✨ — primary for most:</strong></p>
+        <ul>
+          <li><strong>Mandibulectomy</strong> — partial or hemi-mandibulectomy
+            <ul>
+              <li>Most dogs adapt remarkably well functionally</li>
+              <li>Cosmetic concerns; tongue may protrude</li>
+            </ul>
+          </li>
+          <li><strong>Maxillectomy</strong> — partial or hemi-maxillectomy
+            <ul>
+              <li>More challenging; oronasal communication concern</li>
+              <li>Reconstruction often needed</li>
+            </ul>
+          </li>
+          <li>Wide margins essential (1-2 cm typically)</li>
+          <li>For specific tumors:
+            <ul>
+              <li>Small rostral SCC, fibrosarcoma: surgical cure possible</li>
+              <li>Acanthomatous ameloblastoma: surgical cure achievable (rarely metastasizes)</li>
+              <li>Melanoma: surgery + adjuvant essential (high metastasis risk)</li>
+            </ul>
+          </li>
+          <li>Cat oral SCC: <strong>often unresectable due to extent</strong> ✗ — palliative care more typical</li>
+        </ul>
+
+        <p><strong>2. Radiation therapy ✨:</strong></p>
+        <ul>
+          <li>Adjuvant for incomplete margins, unresectable tumors</li>
+          <li>Definitive for radiosensitive tumors:
+            <ul>
+              <li>Acanthomatous ameloblastoma: highly radiosensitive — RT alone often curative</li>
+              <li>Oral melanoma: hypofractionated RT (3-6 fractions) — palliative response 70-80%</li>
+              <li>SCC: variable response</li>
+              <li>Fibrosarcoma: less radiosensitive but RT helpful</li>
+            </ul>
+          </li>
+          <li>Stereotactic RT (SRT) — fewer fractions</li>
+          <li>Specialty centers</li>
+        </ul>
+
+        <p><strong>3. Melanoma-specific therapy ✨:</strong></p>
+
+        <p><strong>Oncept melanoma vaccine (canine) ✨:</strong></p>
+        <ul>
+          <li>Xenogeneic DNA vaccine (human tyrosinase)</li>
+          <li>Indications: dogs with stage II-III oral melanoma after local control (surgery / RT)</li>
+          <li>Protocol: 4 doses 2 weeks apart, then booster q6 mo</li>
+          <li>Outcomes: extends MST in some patients (controversial; RCT data mixed)</li>
+          <li>Few side effects</li>
+          <li>Cost moderate</li>
+          <li>Specialty / oncology centers</li>
+        </ul>
+
+        <p><strong>Chemotherapy for melanoma:</strong></p>
+        <ul>
+          <li>Carboplatin 300 mg/m² IV q3 wk × 4-5 cycles</li>
+          <li>Limited efficacy compared to other tumors</li>
+          <li>Combined with surgery + RT + vaccine in multimodal approach</li>
+        </ul>
+
+        <p><strong>4. Cat oral SCC management ✗:</strong></p>
+        <ul>
+          <li>Most cases: palliative only (extent precludes surgery)</li>
+          <li>Tube feeding (esophagostomy tube) — supports through Tx</li>
+          <li>Pain management (multimodal)</li>
+          <li>Anti-inflammatory (meloxicam — cautious)</li>
+          <li>Radiation therapy ± chemotherapy (variable response)</li>
+          <li>Some success with bleomycin / electrochemotherapy</li>
+          <li>Mandibulectomy if rostral mandibular only (rare candidate)</li>
+          <li>Quality of life often deteriorates rapidly — most owners elect humane euthanasia within 2-4 months</li>
+        </ul>
+
+        <p><strong>5. Acanthomatous ameloblastoma:</strong></p>
+        <ul>
+          <li>Locally invasive but doesn't metastasize</li>
+          <li>Surgical excision often curative</li>
+          <li>Radiation therapy alternative — &gt; 80% long-term control</li>
+          <li>Excellent prognosis</li>
+        </ul>
+
+        <p><strong>6. Pain management + supportive care:</strong></p>
+        <ul>
+          <li>Multimodal analgesia:
+            <ul>
+              <li>NSAIDs (firocoxib, meloxicam — cautious cat)</li>
+              <li>Gabapentin</li>
+              <li>Buprenorphine (especially cat — transmucosal)</li>
+              <li>Tramadol</li>
+              <li>Opioid for severe</li>
+            </ul>
+          </li>
+          <li>Nutritional support:
+            <ul>
+              <li>Soft / liquid food</li>
+              <li>Esophagostomy tube placement (often life-saving for cat oral SCC)</li>
+              <li>Nutritional formulas (Recovery, Hill's a/d)</li>
+            </ul>
+          </li>
+          <li>Oral hygiene (gentle)</li>
+          <li>Antibiotics for secondary infection</li>
+          <li>Anti-inflammatory mouth rinses</li>
+        </ul>
+
+        <p><strong>7. Owner counseling:</strong></p>
+        <ul>
+          <li>Discuss tumor type-specific prognosis</li>
+          <li>Functional outcomes after surgery (dog adapts remarkably well)</li>
+          <li>Cosmetic concerns secondary to function</li>
+          <li>Cat oral SCC: realistic — usually palliative, MST 1-3 mo</li>
+          <li>Hospice / euthanasia planning when QOL declines</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck oral exam q1-3 mo</li>
+          <li>Thoracic radiograph q3-6 mo</li>
+          <li>Local site for recurrence</li>
+          <li>Regional LN</li>
+          <li>Body weight, BCS, eating ability</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Local recurrence (especially incomplete excision)</li>
+          <li>Pulmonary metastasis (melanoma, tonsillar SCC, fibrosarcoma)</li>
+          <li>Bone metastasis</li>
+          <li>Inability to eat — cachexia, malnutrition</li>
+          <li>Aspiration pneumonia (cat oral SCC, post-surgical)</li>
+          <li>Surgical complications:
+            <ul>
+              <li>Wound dehiscence</li>
+              <li>Oronasal fistula (maxillectomy)</li>
+              <li>Mandibular drift</li>
+              <li>Difficulty prehending food</li>
+              <li>Hemorrhage</li>
+              <li>Infection</li>
+            </ul>
+          </li>
+          <li>Radiation side effects: oral mucositis, osteoradionecrosis (rare)</li>
+          <li>Chemotherapy side effects</li>
+          <li>Severe oral pain → euthanasia decision</li>
+          <li>Concurrent disease (older patients)</li>
+        </ul>
+        <p><strong>Prognosis ✨:</strong></p>
+        <ul>
+          <li><strong>Acanthomatous ameloblastoma + surgery or RT:</strong> excellent — cure ✓</li>
+          <li><strong>Rostral mandibular SCC + complete excision:</strong> good — MST &gt; 18 mo</li>
+          <li><strong>Maxillary SCC + surgery:</strong> MST 9-15 mo</li>
+          <li><strong>Tonsillar SCC:</strong> poor — MST 3-6 mo (75% metastatic at diagnosis)</li>
+          <li><strong>Oral fibrosarcoma + surgery:</strong>
+            <ul>
+              <li>Complete excision: MST 12-24 mo</li>
+              <li>Incomplete: MST 6-12 mo</li>
+            </ul>
+          </li>
+          <li><strong>Oral melanoma:</strong>
+            <ul>
+              <li>Stage I (small) + surgery + Oncept: MST 12-18 mo</li>
+              <li>Stage II-III + multimodal: MST 6-12 mo</li>
+              <li>Stage IV (mets): MST 1-3 mo</li>
+              <li>Without treatment: MST 1-3 mo ✗</li>
+            </ul>
+          </li>
+          <li><strong>Cat oral SCC:</strong> poor ✗ — MST 1-3 months
+            <ul>
+              <li>With multimodal Tx: 3-6 mo</li>
+              <li>Mandibular vs maxillary: similar</li>
+            </ul>
+          </li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Caudal location (vs rostral)</li>
+              <li>Bone invasion</li>
+              <li>LN metastasis</li>
+              <li>Distant metastasis</li>
+              <li>Tumor size &gt; 4 cm</li>
+              <li>Cat species (oral SCC particularly)</li>
+              <li>Tonsillar location (specifically SCC)</li>
+              <li>Anorexia / weight loss at presentation</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Tumor type drives prognosis</strong> ✨ — biopsy first; don't generalize<br><br>**Mandibulectomy/maxillectomy = remarkably well-tolerated functionally**. Acanthomatous ameloblastoma curable; melanoma needs multimodal + Oncept vaccine<br><br>⚠️ <strong>Cat oral SCC = grave prognosis</strong> ✗ — most are palliative; esophagostomy tube + pain management; MST 1-3 mo</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     PART 13 — HEMATOLOGY (Ch 84–90)
+  ============================================================ */
+
+  /* ---------- Ch 85 · Anemia (Diagnostic Approach) ---------- */
+  {
+    id: 'anemia-approach',
+    titleEn: 'Anemia — Diagnostic Approach',
+    titleTh: 'แนวทางวินิจฉัยโลหิตจาง',
+    type: 'disease',
+    system: 'hematology',
+    species: ['dog', 'cat'],
+    tags: ['anemia', 'regenerative', 'non-regenerative', 'reticulocytes', 'iron deficiency', 'CKD anemia', 'EPO', 'darbepoetin', 'aplastic anemia', 'pure red cell aplasia', 'hemolysis'],
+    aliases: ['anemia', 'low PCV', 'low HCT', 'โลหิตจาง', 'ซีด'],
+    source: 'Ch. 85 · pp. 1404–1424',
+    sections: {
+      definition: `
+        <p>HCT/PCV ต่ำกว่าค่าปกติ (dog &lt; 37%, cat &lt; 30%) — เป็น <strong>สัญญาณของโรค ไม่ใช่ตัวโรคเอง</strong> ✨</p>
+        <ul>
+          <li>Severity:
+            <ul>
+              <li>Mild: PCV 30-37% (dog), 25-30% (cat)</li>
+              <li>Moderate: PCV 20-30% (dog), 15-25% (cat)</li>
+              <li>Severe: PCV &lt; 20% (dog), &lt; 15% (cat) ✗</li>
+            </ul>
+          </li>
+          <li>Classification:
+            <ul>
+              <li><strong>Regenerative</strong> ✨ — bone marrow responds (blood loss / hemolysis)</li>
+              <li><strong>Non-regenerative</strong> ✨ — BM doesn't respond (chronic disease, BM disease, CKD)</li>
+            </ul>
+          </li>
+          <li>By RBC indices:
+            <ul>
+              <li>Microcytic hypochromic (↓ MCV, ↓ MCHC) → iron deficiency, PSS</li>
+              <li>Normocytic normochromic → CKD, chronic disease, BM disease</li>
+              <li>Macrocytic ± ↑ MCHC → regeneration, FeLV (cat)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>3 mechanisms:</strong></p>
+
+        <p><strong>1. Blood loss (hemorrhage):</strong></p>
+        <ul>
+          <li>External: trauma, surgery, GI bleed (melena, hematemesis), epistaxis, hematuria</li>
+          <li>Internal: hemoabdomen (HSA, splenic mass), hemothorax, retroperitoneal</li>
+          <li>Coagulopathy (rodenticide, hepatic failure, DIC, hemophilia, thrombocytopenia)</li>
+          <li>Parasitism: hookworm, Trichuris, fleas (severe), tick burden</li>
+          <li>GI ulceration, neoplasia</li>
+        </ul>
+
+        <p><strong>2. Hemolysis:</strong></p>
+        <ul>
+          <li>Immune-mediated (IMHA — see entry)</li>
+          <li>Infectious: Babesia ✨, Mycoplasma haemofelis (cat), Cytauxzoon, Leptospira, Ehrlichia</li>
+          <li>Oxidative: onion/garlic toxicity, acetaminophen (cat ✗), zinc, propylene glycol, vitamin K3, naphthalene, copper</li>
+          <li>Heritable: PK deficiency, PFK deficiency, hereditary spherocytosis</li>
+          <li>Microangiopathic (DIC, HSA, splenic torsion, vasculitis)</li>
+          <li>Heat stroke, severe burn, near-drowning</li>
+          <li>Bee/snake envenomation</li>
+          <li>Hypophosphatemia (severe ✗ — refeeding, DKA Tx)</li>
+        </ul>
+
+        <p><strong>3. Decreased production:</strong></p>
+        <ul>
+          <li><strong>CKD anemia</strong> ✨ — ↓ EPO production (most common non-regenerative in older pets)</li>
+          <li>Anemia of chronic disease / inflammation</li>
+          <li>Endocrine: hypothyroidism, hypoadrenocorticism, hypopituitarism</li>
+          <li>Iron deficiency (chronic blood loss → finally depletes Fe)</li>
+          <li>Bone marrow disease:
+            <ul>
+              <li>Aplastic anemia (estrogen, idiopathic, drug, infectious)</li>
+              <li>Pure red cell aplasia (PRCA)</li>
+              <li>Myelofibrosis</li>
+              <li>Myelodysplastic syndrome</li>
+              <li>Lymphoma, leukemia infiltration</li>
+              <li>Multiple myeloma</li>
+            </ul>
+          </li>
+          <li>Drug-induced: chemotherapy, chloramphenicol, TMS, phenobarbital, methimazole, estrogen ✗</li>
+          <li>Infectious: FeLV ✨ ✗ (cat), Ehrlichia chronic, parvovirus (transient)</li>
+          <li>Nutritional: B12 deficiency (rare), folate deficiency</li>
+          <li>Iron sequestration (chronic inflammation)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>RBC lifespan: dog ~ 110-120 days; cat ~ 70-80 days (cats less reserve)</li>
+          <li>BM produces ~ 1% RBC/day in healthy; can ↑ to 5-10% with regeneration</li>
+          <li>Reticulocyte = young RBC; takes 2-4 days to lose RNA; appears in circulation for 1-2 days</li>
+          <li>Regeneration takes 3-5 days to develop after acute event → "<strong>pre-regenerative anemia</strong>" (early hemolysis/blood loss may appear non-regenerative)</li>
+          <li>Cat has 2 reticulocyte forms:
+            <ul>
+              <li>Aggregate retics (recent release — equivalent to dog retics)</li>
+              <li>Punctate retics (older — only count aggregates for regeneration)</li>
+            </ul>
+          </li>
+          <li>EPO from kidney → BM stimulation; major fall in CKD</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Severity-dependent:</strong></p>
+        <ul>
+          <li>Mild: often asymptomatic; subtle fatigue</li>
+          <li>Moderate:
+            <ul>
+              <li>Pale mucous membranes ✨</li>
+              <li>Lethargy, reduced exercise tolerance</li>
+              <li>Tachycardia (compensatory)</li>
+              <li>Heart murmur (functional from low viscosity)</li>
+            </ul>
+          </li>
+          <li>Severe ✗:
+            <ul>
+              <li>Marked pallor, weakness, collapse</li>
+              <li>Tachycardia, tachypnea, dyspnea</li>
+              <li>Hyperdynamic pulses</li>
+              <li>Mental dullness</li>
+              <li>± Heart murmur</li>
+              <li>Cold extremities (hypoperfusion)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Pattern clues:</strong></p>
+        <ul>
+          <li>Acute onset → hemorrhage / acute hemolysis</li>
+          <li>Chronic gradual → CKD, chronic disease, BM disease</li>
+          <li>Icterus → hemolysis</li>
+          <li>Petechiae → concurrent thrombocytopenia (Evans, BM disease, DIC)</li>
+          <li>Splenomegaly → hemolysis, neoplasia</li>
+          <li>Lymphadenopathy → infection, neoplasia</li>
+          <li>Melena/hematemesis → GI bleed</li>
+          <li>Polyuria/polydipsia → CKD-related anemia</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Step 1: Confirm anemia + classify ✨:</strong></p>
+        <ul>
+          <li>CBC + smear (always look at smear ✨):
+            <ul>
+              <li>HCT/PCV/Hgb</li>
+              <li>RBC indices: MCV, MCHC, RDW</li>
+              <li>Spherocytes (IMHA)</li>
+              <li>Schistocytes (microangiopathic)</li>
+              <li>Heinz bodies (oxidative — onion, garlic, acetaminophen)</li>
+              <li>Howell-Jolly bodies (regeneration, splenectomy)</li>
+              <li>Polychromasia (regeneration)</li>
+              <li>Nucleated RBCs</li>
+              <li>Parasites (Babesia, Mycoplasma)</li>
+              <li>Concurrent leukogram</li>
+              <li>Platelet count + concurrent thrombocytopenia</li>
+            </ul>
+          </li>
+          <li><strong>Reticulocyte count ✨</strong> — critical for classification:
+            <ul>
+              <li>Dog: aggregate retics &gt; 60,000/µL = regenerative; &gt; 110,000 = strongly regenerative</li>
+              <li>Cat: aggregate retics &gt; 50,000/µL = regenerative</li>
+              <li>Note: takes 3-5 days to develop response → pre-regenerative possible</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Step 2: Determine cause based on regeneration:</strong></p>
+
+        <p><strong>If regenerative anemia:</strong></p>
+        <ul>
+          <li>Look for blood loss vs hemolysis</li>
+          <li>Bilirubin, icterus, hemoglobinuria → hemolysis</li>
+          <li>Melena, hematemesis, hematuria → blood loss</li>
+          <li>Coag panel + platelets → coagulopathy</li>
+          <li>Imaging (abdominal/thoracic) → internal bleeding, mass</li>
+          <li>Saline agglutination + Coombs → IMHA</li>
+          <li>Smear for spherocytes, Heinz bodies, parasites</li>
+          <li>Tick-borne PCR/serology</li>
+          <li>Toxin history (onion/garlic/acetaminophen/zinc)</li>
+          <li>Cat: Mycoplasma PCR, Cytauxzoon (endemic)</li>
+        </ul>
+
+        <p><strong>If non-regenerative anemia:</strong></p>
+        <ul>
+          <li>Biochem: BUN, Cr, electrolytes (CKD)</li>
+          <li>UA + UPC</li>
+          <li>T4 (hypothyroid)</li>
+          <li>ACTH stim (Addison's)</li>
+          <li>Iron panel (ferritin, serum iron, TIBC) → iron deficiency vs chronic disease</li>
+          <li>FeLV / FIV (cat) ✨</li>
+          <li>Tick-borne disease (Ehrlichia chronic phase)</li>
+          <li>Imaging: thoracic + abdominal radiograph + US (occult disease)</li>
+          <li><strong>Bone marrow aspirate ± core biopsy ✨</strong> — gold standard for non-regenerative when systemic causes ruled out:
+            <ul>
+              <li>Cellularity, M:E ratio</li>
+              <li>Megakaryocytes</li>
+              <li>Stage of erythroid maturation arrest</li>
+              <li>Infiltration (lymphoma, MCT, histiocytic, mets)</li>
+              <li>Myelofibrosis (need core biopsy)</li>
+              <li>Aplasia, dysplasia</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Step 3: Specific workup based on findings</strong></p>
+      `,
+      differential: `
+        <p>See etiology — comprehensive list. Common scenarios:</p>
+        <ul>
+          <li>Older dog with regenerative anemia + spherocytes + icterus → IMHA</li>
+          <li>Older dog with non-regenerative + ↑ BUN/Cr + isosthenuria → CKD anemia</li>
+          <li>Cat young with non-regenerative → FeLV until proven otherwise</li>
+          <li>Acute collapse + pale + abdominal distension older large breed → HSA</li>
+          <li>Tick exposure + thrombocytopenia + anemia → tick-borne disease</li>
+          <li>Acute oxidative + cat → acetaminophen, onion, propylene glycol</li>
+          <li>Microcytic hypochromic → iron deficiency (chronic GI bleed, parasitism)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Address underlying cause ✨:</strong></p>
+        <ul>
+          <li>IMHA → immunosuppression (see entry)</li>
+          <li>Babesia → imidocarb / atovaquone-azithromycin</li>
+          <li>Mycoplasma → doxycycline 5 mg/kg PO q12h × 4 wk</li>
+          <li>Hemorrhage → control source + transfusion</li>
+          <li>Coagulopathy → vitamin K, FFP, platelets</li>
+          <li>CKD → fluid management, EPO/darbepoetin</li>
+          <li>Hypothyroid → levothyroxine</li>
+          <li>Endocrine → specific replacement</li>
+          <li>Iron deficiency → iron supplementation + address bleed source</li>
+          <li>Toxin → decontaminate, antidote, supportive</li>
+          <li>Neoplasia → chemo / surgery</li>
+          <li>FeLV → supportive, antivirals (research)</li>
+          <li>Tick-borne → doxycycline 4 weeks</li>
+        </ul>
+
+        <p><strong>2. Blood transfusion ✨ — when needed:</strong></p>
+
+        <p><strong>Indications:</strong></p>
+        <ul>
+          <li>HCT &lt; 15-20% (dog) or &lt; 12-15% (cat) — severe anemia</li>
+          <li>Clinical signs of hypoxia (regardless of HCT): lethargy, weakness, tachycardia, dyspnea</li>
+          <li>Acute hemorrhage with rapid drop</li>
+          <li>Anticipated surgery in patient with marginal HCT</li>
+          <li>Trend matters more than absolute number</li>
+        </ul>
+
+        <p><strong>Products:</strong></p>
+        <ul>
+          <li><strong>Packed red blood cells (pRBC) ✨</strong> — preferred for anemia
+            <ul>
+              <li>10-15 mL/kg slowly over 4 hours (faster only if exsanguination)</li>
+              <li>1 mL/kg pRBC raises HCT ~ 1%</li>
+            </ul>
+          </li>
+          <li>Fresh whole blood — for active hemorrhage, coagulopathy</li>
+          <li>FFP — coagulopathy without anemia</li>
+          <li>Hemoglobin glutamer-200 (Oxyglobin) — historical alternative when limited blood</li>
+        </ul>
+
+        <p><strong>Blood typing + cross-match:</strong></p>
+        <ul>
+          <li>Dog: DEA 1.1 type at minimum (more common); first transfusion safer in dogs</li>
+          <li>Cat: A, B, AB types ✨ — <strong>type ALWAYS before first transfusion in cat</strong> ✗ (acute hemolytic reaction in type B receiving type A)</li>
+          <li>Cross-match for: 2nd+ transfusion, autoagglutination, prior reaction, IMHA</li>
+          <li>Major cross-match: donor RBC + recipient plasma</li>
+        </ul>
+
+        <p><strong>Transfusion reactions ✗:</strong></p>
+        <ul>
+          <li>Acute hemolytic (type-mismatched cat) — fatal</li>
+          <li>Allergic (urticaria, pruritus)</li>
+          <li>Febrile non-hemolytic</li>
+          <li>TRALI (transfusion-related acute lung injury)</li>
+          <li>Volume overload (esp. cardiac patients)</li>
+          <li>Citrate toxicity (massive transfusion)</li>
+          <li>Vector-borne disease transmission (donor screening important)</li>
+        </ul>
+
+        <p><strong>Monitor during transfusion:</strong></p>
+        <ul>
+          <li>TPR every 15 min × 1 hr, then q30 min</li>
+          <li>Watch for: fever, hives, vomiting, dyspnea, hemoglobinuria</li>
+          <li>Stop if reaction → diphenhydramine, dexamethasone, supportive</li>
+          <li>HCT/PCV at end of transfusion + 12-24h post</li>
+        </ul>
+
+        <p><strong>3. Erythropoiesis-stimulating agents ✨ — for CKD anemia:</strong></p>
+        <ul>
+          <li><strong>Darbepoetin alfa (Aranesp)</strong> ✨ — preferred:
+            <ul>
+              <li>Dog: 0.45 µg/kg SC q1-2 wk</li>
+              <li>Cat: 1 µg/kg SC q1-2 wk</li>
+              <li>Lower antibody risk vs human EPO</li>
+              <li>Goal HCT 30-35%</li>
+              <li>Monitor BP (hypertension common)</li>
+              <li>Monitor iron status (will become deficient → supplement)</li>
+            </ul>
+          </li>
+          <li>Human recombinant EPO (Epogen) — older; antibody-mediated PRCA risk</li>
+          <li>Iron supplementation concurrent: iron dextran 50-100 mg IM monthly, or oral ferrous sulfate</li>
+        </ul>
+
+        <p><strong>4. Iron supplementation:</strong></p>
+        <ul>
+          <li>For iron-deficiency anemia or concurrent with EPO</li>
+          <li>Ferrous sulfate 100-300 mg/dog PO q24h or 50-100 mg/cat PO q24h</li>
+          <li>Iron dextran 10-20 mg/kg IM single dose</li>
+          <li>Monitor: ferritin, % saturation</li>
+          <li>Address ongoing blood loss source</li>
+        </ul>
+
+        <p><strong>5. Supportive:</strong></p>
+        <ul>
+          <li>Oxygen supplementation (severe; minimal effect on tissue oxygenation in anemia)</li>
+          <li>Cage rest</li>
+          <li>Nutritional support (protein for RBC synthesis)</li>
+          <li>Cobalamin supplementation if low</li>
+          <li>Treat secondary issues</li>
+          <li>Avoid: drugs causing oxidative damage (acetaminophen cat, onion-containing foods)</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Recheck CBC frequency depends on cause:
+            <ul>
+              <li>Acute hemolysis: q12-24h initially</li>
+              <li>Chronic stable: weekly → monthly</li>
+              <li>Chronic disease management: q3-6 mo</li>
+            </ul>
+          </li>
+          <li>Reticulocyte count for response monitoring</li>
+          <li>BP (EPO patients)</li>
+          <li>Iron parameters in chronic Tx</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe hypoxia / multi-organ failure (severe anemia)</li>
+          <li>Cardiac decompensation (chronic anemia → high-output failure)</li>
+          <li>Pulmonary thromboembolism (IMHA)</li>
+          <li>Transfusion reactions ✗</li>
+          <li>Vector-borne transmission from donors</li>
+          <li>EPO-induced PRCA (antibody-mediated; mostly with human EPO)</li>
+          <li>Iron overload (excessive supplementation)</li>
+          <li>Underlying disease progression</li>
+          <li>Death from severe anemia or underlying cause</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Depends entirely on underlying cause</li>
+          <li>Treatable causes (Babesia, hookworm, IMHA managed): often excellent</li>
+          <li>CKD anemia: manageable with EPO long-term</li>
+          <li>BM disease (aplastic, MDS, neoplasia): guarded-poor</li>
+          <li>FeLV-associated: poor</li>
+          <li>Acute severe hemorrhage: depends on source control</li>
+        </ul>
+        <div class="callout">💡 <strong>Anemia approach:</strong> 1) Confirm + classify (CBC + smear + retics), 2) Determine mechanism (loss/hemolysis/decreased production), 3) Find underlying cause, 4) Treat cause + supportive (transfusion if severe)<br><br>**Cat: type ALWAYS before transfusion** ✗ — type B receiving type A = fatal hemolytic reaction. **Bone marrow** for non-regenerative when systemic causes ruled out</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 86 · Polycythemia / Erythrocytosis ---------- */
+  {
+    id: 'polycythemia',
+    titleEn: 'Polycythemia / Erythrocytosis',
+    titleTh: 'เม็ดเลือดแดงสูง',
+    type: 'disease',
+    system: 'hematology',
+    species: ['dog', 'cat'],
+    tags: ['polycythemia', 'erythrocytosis', 'PV', 'polycythemia vera', 'absolute polycythemia', 'relative polycythemia', 'EPO', 'phlebotomy', 'hydroxyurea', 'hyperviscosity'],
+    aliases: ['polycythemia vera', 'erythrocytosis', 'PV', 'high HCT', 'เม็ดเลือดแดงสูง'],
+    source: 'Ch. 86 · pp. 1424–1432',
+    sections: {
+      definition: `
+        <p>HCT/PCV สูงผิดปกติ (dog &gt; 55-60%, cat &gt; 45-50%)</p>
+        <ul>
+          <li>3 categories:
+            <ul>
+              <li><strong>Relative polycythemia</strong> — dehydration; ↑ HCT from ↓ plasma volume; not true ↑ RBC mass</li>
+              <li><strong>Absolute polycythemia</strong> — true ↑ RBC mass:
+                <ul>
+                  <li><strong>Primary (Polycythemia Vera, PV)</strong> ✨ — myeloproliferative disorder; rare</li>
+                  <li><strong>Secondary</strong> — appropriate (chronic hypoxia → ↑ EPO) or inappropriate (renal/hepatic neoplasia → ↑ EPO)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Relative (most common):</strong></p>
+        <ul>
+          <li>Dehydration (vomiting, diarrhea, panting, ↓ intake) ✨</li>
+          <li>Splenic contraction (excitement, exercise) — transient</li>
+        </ul>
+
+        <p><strong>Primary (PV):</strong></p>
+        <ul>
+          <li>Myeloproliferative disorder — uncontrolled erythroid line proliferation</li>
+          <li>EPO-independent (low-normal serum EPO)</li>
+          <li>JAK2 mutation in some (similar to human PV)</li>
+          <li>Rare; older patients</li>
+        </ul>
+
+        <p><strong>Secondary appropriate (chronic hypoxia → ↑ EPO):</strong></p>
+        <ul>
+          <li>Right-to-left shunting cardiac disease (PDA reversed, tetralogy of Fallot, VSD with reversed shunt)</li>
+          <li>Chronic respiratory disease (severe COPD-like, pulmonary fibrosis)</li>
+          <li>High altitude (chronic adaptation)</li>
+          <li>Methemoglobinemia (chronic — ↓ O2 carrying)</li>
+          <li>Carboxyhemoglobinemia (chronic CO exposure — rare)</li>
+          <li>Sleep apnea (rare in pets)</li>
+        </ul>
+
+        <p><strong>Secondary inappropriate (↑ EPO without hypoxia):</strong></p>
+        <ul>
+          <li>Renal neoplasia (renal cell carcinoma) ✨</li>
+          <li>Renal cyst, hydronephrosis (rare)</li>
+          <li>Hepatic neoplasia (HCC) — rarely produces EPO</li>
+          <li>Pheochromocytoma (rare)</li>
+          <li>Other endocrine tumors</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>↑ HCT → ↑ blood viscosity (exponential above 60%)</li>
+          <li>Sluggish blood flow → tissue hypoxia paradox (despite high RBC count)</li>
+          <li>Microcirculation impaired</li>
+          <li>Thrombosis risk ↑↑</li>
+          <li>↑ Cardiac work</li>
+          <li>Bleeding tendency (paradoxical — platelet dysfunction at high HCT)</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Brick-red mucous membranes ("plethora")</strong> ✨ — dark red MM</li>
+          <li>Lethargy, depression</li>
+          <li>Polyuria/polydipsia</li>
+          <li>Exercise intolerance</li>
+          <li>Hyperviscosity signs:
+            <ul>
+              <li>Neurologic: seizures ✗, ataxia, behavioral changes, blindness</li>
+              <li>Bleeding: epistaxis, hyphema, retinal hemorrhage (paradoxical)</li>
+              <li>Vascular: thrombosis events</li>
+            </ul>
+          </li>
+          <li>Splenomegaly (PV)</li>
+          <li>Hepatomegaly</li>
+          <li>Hindlimb weakness (caudal aortic thrombosis — like cat HCM)</li>
+          <li>Pruritus (rare; some PV cases)</li>
+          <li>Cyanosis if severe right-to-left shunt</li>
+          <li>Heart murmur if cardiac shunt</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Confirm + classify ✨:</strong></p>
+        <ul>
+          <li>CBC: ↑ HCT, ↑ Hgb, ↑ RBC count
+            <ul>
+              <li>± Concurrent ↑ WBC, ↑ platelets in PV</li>
+            </ul>
+          </li>
+          <li>Differentiate relative vs absolute:
+            <ul>
+              <li>Hydration status, USG (concentrated urine = dehydration)</li>
+              <li>Resolves with rehydration → relative polycythemia</li>
+              <li>Persistent after rehydration → absolute polycythemia</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Differentiate primary vs secondary (absolute polycythemia):</strong></p>
+
+        <p><strong>Serum EPO measurement ✨ — key:</strong></p>
+        <ul>
+          <li>Send to specialty lab (UC Davis Endocrinology)</li>
+          <li><strong>Low-normal EPO + high HCT = Polycythemia Vera</strong> ✨</li>
+          <li>↑ EPO + high HCT = secondary polycythemia</li>
+        </ul>
+
+        <p><strong>Look for hypoxia (secondary appropriate):</strong></p>
+        <ul>
+          <li>SpO2 / arterial blood gas (PaO2)</li>
+          <li>Echocardiogram (right-to-left shunt with bubble study)</li>
+          <li>Thoracic radiograph + cardiac evaluation</li>
+          <li>Methemoglobin level if cyanosis without hypoxia</li>
+        </ul>
+
+        <p><strong>Look for EPO-secreting tumor (secondary inappropriate):</strong></p>
+        <ul>
+          <li>Abdominal ultrasound — kidney, liver lesions</li>
+          <li>Thoracic radiograph (3-view)</li>
+          <li>CT if US inconclusive</li>
+          <li>UA + culture (renal cyst, hydronephrosis)</li>
+        </ul>
+
+        <p><strong>Bone marrow aspirate (PV diagnosis support):</strong></p>
+        <ul>
+          <li>Erythroid hyperplasia, all 3 lines may be hyperplastic in PV</li>
+        </ul>
+
+        <p><strong>3. Pre-treatment workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>BP</li>
+          <li>Coag panel</li>
+          <li>Liver enzymes (hepatic neoplasia)</li>
+          <li>Cardiac evaluation</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Dehydration (most common — relative polycythemia)</li>
+          <li>Splenic contraction (transient — excitement)</li>
+          <li>Right-to-left cardiac shunts</li>
+          <li>Chronic respiratory disease</li>
+          <li>Renal neoplasia (RCC)</li>
+          <li>Hepatic neoplasia</li>
+          <li>Pheochromocytoma (rare)</li>
+          <li>Polycythemia vera (true PV)</li>
+          <li>Methemoglobinemia chronic</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Treat underlying cause ✨ — when possible:</strong></p>
+        <ul>
+          <li>Dehydration: rehydrate (relative polycythemia resolves)</li>
+          <li>Renal/hepatic tumor: surgery (nephrectomy if RCC)</li>
+          <li>Cardiac shunt: surgical correction if feasible</li>
+          <li>Chronic respiratory: optimize (limited reversibility)</li>
+        </ul>
+
+        <p><strong>2. Phlebotomy (therapeutic bleeding) ✨ — primary symptomatic Tx:</strong></p>
+        <ul>
+          <li><strong>Volume: 10-20 mL/kg blood removal</strong> while replacing with isotonic crystalloids</li>
+          <li>Goal: lower HCT to upper-normal range (50-55% dog, 40-45% cat)</li>
+          <li>Frequency: as needed based on HCT response (weeks-months between)</li>
+          <li>Acute relief of hyperviscosity symptoms within hours</li>
+          <li>Procedure:
+            <ul>
+              <li>IV catheter in jugular or large peripheral</li>
+              <li>Slow withdrawal over 30-60 min</li>
+              <li>Concurrent crystalloid replacement (volume-volume)</li>
+              <li>Monitor BP, ECG, mentation</li>
+            </ul>
+          </li>
+          <li>For PV: long-term repeated phlebotomy as needed</li>
+          <li>For secondary appropriate: cautious (compensatory mechanism — don't drop too fast)</li>
+        </ul>
+
+        <p><strong>3. Hydroxyurea (Hydrea) ✨ — long-term suppression for PV:</strong></p>
+        <ul>
+          <li><strong>30-50 mg/kg PO q24h initially × 1-2 weeks → 25-30 mg/kg q24-48h maintenance</strong></li>
+          <li>Antimetabolite; suppresses BM</li>
+          <li>Goal: maintain HCT 50-55%</li>
+          <li>Side effects:
+            <ul>
+              <li>BM suppression (monitor CBC)</li>
+              <li>GI upset</li>
+              <li>Methemoglobinemia (rare)</li>
+              <li>Cataracts (rare; long-term)</li>
+              <li>Hepatotoxicity</li>
+            </ul>
+          </li>
+          <li>Monitor CBC q1-2 wk initially, then monthly</li>
+          <li>Don't combine with phlebotomy in same week</li>
+        </ul>
+
+        <p><strong>4. Anti-platelet therapy:</strong></p>
+        <ul>
+          <li>Aspirin 0.5-1 mg/kg PO q24h (low-dose)</li>
+          <li>Or clopidogrel 1-2 mg/kg PO q24h</li>
+          <li>For PV with thrombosis risk</li>
+        </ul>
+
+        <p><strong>5. Adjuncts (PV refractory):</strong></p>
+        <ul>
+          <li>Anagrelide (rare)</li>
+          <li>Interferon-α (research)</li>
+          <li>Newer JAK2 inhibitors (research)</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>HCT q1-2 wk initially, then monthly, then q3 mo when stable</li>
+          <li>CBC + biochem + UA q3 mo (PV on hydroxyurea)</li>
+          <li>BP</li>
+          <li>Watch for: thrombosis signs, bleeding, neurologic signs</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Thromboembolism</strong> ✗ — pulmonary, aortic, cerebrovascular, splenic</li>
+          <li><strong>Seizures</strong> ✗ — hyperviscosity → cerebral hypoxia</li>
+          <li>Heart failure (high-output)</li>
+          <li>Bleeding (paradoxical)</li>
+          <li>Iron deficiency from repeated phlebotomies</li>
+          <li>Hydroxyurea: BM suppression, GI, hepatotoxicity</li>
+          <li>Splenic infarction</li>
+          <li>Underlying disease progression</li>
+          <li>Death from thrombosis or underlying cause</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>PV with hydroxyurea + phlebotomy:</strong> good — MST 1-3+ yr ✓</li>
+          <li>Secondary appropriate (cardiac shunt corrected): excellent</li>
+          <li>Secondary inappropriate (RCC + nephrectomy): excellent if no metastasis</li>
+          <li>Untreated severe: poor (thrombosis)</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Recurrent thrombosis</li>
+              <li>Underlying neoplasia metastasis</li>
+              <li>Severe cardiac shunt non-resectable</li>
+              <li>Refractory to phlebotomy + hydroxyurea</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Brick-red MM + ↑ HCT</strong> ✨ — first hydrate (rule out relative); persistent = absolute polycythemia<br><br>**EPO measurement** differentiates PV (low) vs secondary (high). Phlebotomy = primary Tx; hydroxyurea long-term for PV<br><br>⚠️ Always abdominal US for renal tumor (RCC = treatable cause of secondary inappropriate)</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 87 · Disorders of Leukocytes (Neutropenia) ---------- */
+  {
+    id: 'neutropenia',
+    titleEn: 'Neutropenia &amp; Disorders of Leukocytes',
+    titleTh: 'เม็ดเลือดขาวต่ำ',
+    type: 'disease',
+    system: 'hematology',
+    species: ['dog', 'cat'],
+    tags: ['neutropenia', 'leukopenia', 'sepsis', 'parvovirus', 'panleukopenia', 'FeLV', 'chemotherapy-induced', 'estrogen', 'aplastic anemia', 'pancytopenia', 'broad-spectrum antibiotics', 'GCSF'],
+    aliases: ['neutropenia', 'leukopenia', 'low WBC', 'เม็ดเลือดขาวต่ำ'],
+    source: 'Ch. 87 · pp. 1432–1442',
+    sections: {
+      definition: `
+        <p>เม็ดเลือดขาวกลุ่ม neutrophil ต่ำ — เพิ่มความเสี่ยงต่อการติดเชื้อ ✗</p>
+        <ul>
+          <li>Reference: dog 3,000-11,500/µL; cat 2,500-8,500/µL</li>
+          <li>Severity:
+            <ul>
+              <li>Mild: 1,500-3,000/µL</li>
+              <li>Moderate: 1,000-1,500/µL</li>
+              <li><strong>Severe: 500-1,000/µL</strong> — high infection risk</li>
+              <li><strong>Profound: &lt; 500/µL</strong> ✗ — sepsis emergency</li>
+            </ul>
+          </li>
+          <li>Concurrent leukogram patterns:
+            <ul>
+              <li>Isolated neutropenia → drug, immune-mediated</li>
+              <li>Neutropenia + thrombocytopenia → BM disease</li>
+              <li>Pancytopenia (all 3 lines) → severe BM disease, FeLV, aplastic anemia, parvovirus</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>1. Decreased production (BM cause):</strong></p>
+        <ul>
+          <li><strong>Parvovirus (CPV)</strong> ✨ — dog; severe neutropenia transient</li>
+          <li><strong>Panleukopenia (FPV)</strong> ✨ — cat; profound leukopenia</li>
+          <li><strong>FeLV</strong> ✨ — cat; chronic non-regenerative</li>
+          <li>Distemper (variable, usually transient)</li>
+          <li>Drug-induced ✨:
+            <ul>
+              <li><strong>Chemotherapy</strong> — most common iatrogenic; predictable nadir 7-14 d</li>
+              <li><strong>Estrogen</strong> ✗ — exogenous (mismating shots, mismating) or endogenous (Sertoli cell tumor)</li>
+              <li>TMS (sulfa)</li>
+              <li>Phenobarbital</li>
+              <li>Methimazole / propylthiouracil (cat)</li>
+              <li>Chloramphenicol</li>
+              <li>Cephalosporins, penicillins (rare)</li>
+              <li>NSAIDs (rare)</li>
+            </ul>
+          </li>
+          <li>Aplastic anemia (idiopathic, drug, infectious)</li>
+          <li>Myelophthisic disease (BM infiltration):
+            <ul>
+              <li>Lymphoma, leukemia, myeloma, MCT</li>
+              <li>Histiocytic sarcoma</li>
+              <li>Metastatic disease</li>
+              <li>Myelofibrosis</li>
+            </ul>
+          </li>
+          <li>Cyclic hematopoiesis (Gray Collie syndrome) — congenital cyclic neutropenia</li>
+          <li>Tick-borne disease (chronic Ehrlichia)</li>
+          <li>Cobalamin deficiency (rare)</li>
+        </ul>
+
+        <p><strong>2. Increased consumption / sequestration:</strong></p>
+        <ul>
+          <li><strong>Severe sepsis ✗</strong> — overwhelming consumption (e.g., parvo, peritonitis, pyometra)</li>
+          <li>Bacterial infection severe (especially gram-negative)</li>
+          <li>Endotoxemia</li>
+          <li>Splenic sequestration</li>
+        </ul>
+
+        <p><strong>3. Immune-mediated:</strong></p>
+        <ul>
+          <li>Immune-mediated neutropenia (rare; antibodies vs neutrophils)</li>
+          <li>SLE</li>
+          <li>Drug-induced antibody (TMS)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Neutrophil half-life ~ 6-8 hours in circulation</li>
+          <li>BM produces and stores; ↑ release with infection (neutrophilia)</li>
+          <li>BM production failure → progressive depletion 5-7 days</li>
+          <li>Severe neutropenia → impaired bacterial killing → endogenous flora translocation</li>
+          <li>GI mucosa especially vulnerable → enteric bacterial sepsis ✗</li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Often asymptomatic if mild-moderate without infection</li>
+          <li>Severe + infection ✗:
+            <ul>
+              <li>Fever (sometimes hypothermia in severe sepsis)</li>
+              <li>Lethargy, anorexia</li>
+              <li>Vomiting, diarrhea (especially parvo)</li>
+              <li>Stomatitis, gingivitis, oral ulceration</li>
+              <li>Pneumonia signs</li>
+              <li>Sepsis signs: tachycardia, weak pulses, hypothermia, mentation changes</li>
+              <li>Petechiae if concurrent thrombocytopenia</li>
+            </ul>
+          </li>
+          <li>Specific cause-related:
+            <ul>
+              <li>Parvo: vomiting, hemorrhagic diarrhea, dehydration</li>
+              <li>FeLV: chronic illness, anemia, lymphoma</li>
+              <li>Estrogen: bleeding tendency, alopecia, gynecomastia, vulvar enlargement</li>
+              <li>Sertoli cell tumor: feminization signs in male</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Confirm + classify (CBC + smear) ✨:</strong></p>
+        <ul>
+          <li>Manual differential confirmation</li>
+          <li>Look for: toxic changes (suggesting infection / response), left shift, bands, neoplastic cells, parasites, abnormal morphology</li>
+          <li>Concurrent thrombocytopenia / anemia → suggests BM cause</li>
+        </ul>
+
+        <p><strong>2. Investigate cause:</strong></p>
+        <ul>
+          <li>History: drug exposure (chemotherapy, TMS, phenobarbital, estrogen), vaccination status, signalment</li>
+          <li>Biochem (organ function, sepsis screening)</li>
+          <li>UA + culture</li>
+          <li>Blood culture (suspect sepsis)</li>
+          <li>Parvovirus SNAP (dog with vomiting/diarrhea)</li>
+          <li>FeLV / FIV (cat)</li>
+          <li>Distemper PCR/serology (suspect)</li>
+          <li>Tick-borne disease panel (Ehrlichia, RMSF, Anaplasma)</li>
+          <li>Estrogen-related: testicular palpation, abdominal US (Sertoli cell tumor), serum estradiol</li>
+          <li>Thoracic + abdominal imaging (occult disease, mass)</li>
+          <li>Cobalamin level (if also macrocytic)</li>
+          <li>ANA (immune-mediated)</li>
+        </ul>
+
+        <p><strong>3. Bone marrow aspirate ± core biopsy ✨ — when unexplained:</strong></p>
+        <ul>
+          <li>Indications: persistent neutropenia, pancytopenia, no obvious cause, suspected BM disease</li>
+          <li>Findings:
+            <ul>
+              <li>Hypoplastic / aplastic (low cellularity)</li>
+              <li>Hyperplastic with dysplasia (MDS)</li>
+              <li>Maturation arrest (immune-mediated, drugs)</li>
+              <li>Infiltration (lymphoma, leukemia, MCT, myeloma, metastatic)</li>
+              <li>Myelofibrosis (need core biopsy)</li>
+              <li>Granulomatous (fungal, mycobacterial)</li>
+            </ul>
+          </li>
+          <li>Often combined with culture, special stains, flow cytometry</li>
+        </ul>
+      `,
+      differential: `
+        <p>See etiology — comprehensive list. Common scenarios:</p>
+        <ul>
+          <li>Young unvaccinated dog with vomiting + bloody diarrhea + neutropenia → parvovirus</li>
+          <li>Cat with chronic non-regenerative anemia + neutropenia + thrombocytopenia → FeLV</li>
+          <li>Recent chemotherapy → expected nadir</li>
+          <li>Recent estrogen / mismating shot → estrogen toxicity</li>
+          <li>Older intact male + feminization + neutropenia → Sertoli cell tumor</li>
+          <li>Sulfa drug + neutropenia → drug-induced</li>
+          <li>Septic abdomen / pyometra → consumption</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Address underlying cause ✨:</strong></p>
+        <ul>
+          <li>Discontinue offending drug (if drug-induced)</li>
+          <li>Treat sepsis (IV antibiotics, source control)</li>
+          <li>Treat parvo / panleukopenia (supportive)</li>
+          <li>Sertoli cell tumor — castration</li>
+          <li>FeLV — supportive, antivirals (research)</li>
+          <li>Tick-borne — doxycycline</li>
+          <li>Neoplasia — chemotherapy / surgery</li>
+          <li>Immune-mediated — immunosuppression (pred 2 mg/kg q12h)</li>
+        </ul>
+
+        <p><strong>2. Empirical broad-spectrum antibiotics ✨ — for fever or profound neutropenia:</strong></p>
+        <ul>
+          <li>Indications:
+            <ul>
+              <li>Neutropenia &lt; 1000/µL + fever (febrile neutropenia ✗ — emergency)</li>
+              <li>Profound neutropenia &lt; 500/µL even if afebrile</li>
+              <li>Suspected sepsis</li>
+            </ul>
+          </li>
+          <li><strong>Empirical regimen — broad-spectrum:</strong>
+            <ul>
+              <li><strong>Ampicillin 22 mg/kg IV q8h + enrofloxacin 5-10 mg/kg IV q24h</strong></li>
+              <li>Or amoxicillin-clavulanate 22 mg/kg IV q8h</li>
+              <li>Or ceftiofur 2.2 mg/kg SC q12-24h</li>
+              <li>Cover gram-positive + gram-negative + anaerobes</li>
+              <li>Adjust per culture + susceptibility</li>
+            </ul>
+          </li>
+          <li>For parvo: ampicillin + enrofloxacin standard</li>
+          <li>Severity-based escalation (carbapenem if resistant suspected, specialty)</li>
+          <li>Continue until: neutrophil count &gt; 1,500-2,000 + clinical improvement + 3 days afebrile</li>
+        </ul>
+
+        <p><strong>3. Granulocyte-colony stimulating factor (G-CSF):</strong></p>
+        <ul>
+          <li>Filgrastim (Neupogen) 5 µg/kg SC q24h</li>
+          <li>Stimulates neutrophil production</li>
+          <li>Indications:
+            <ul>
+              <li>Severe / profound neutropenia</li>
+              <li>Failure to recover</li>
+              <li>Concurrent sepsis</li>
+            </ul>
+          </li>
+          <li>Effect within 1-3 days</li>
+          <li>Recombinant human form — antibody risk with prolonged use (canine antibody develops)</li>
+          <li>Expensive; specialty</li>
+          <li>Not used routinely; reserve for severe</li>
+        </ul>
+
+        <p><strong>4. Supportive care ✨:</strong></p>
+        <ul>
+          <li>IV fluids</li>
+          <li>Anti-emetics (maropitant, ondansetron)</li>
+          <li>Anti-acid (omeprazole)</li>
+          <li>Nutritional support — encourage early feeding (especially parvo); tube feeding if needed</li>
+          <li>Strict isolation (parvo, panleukopenia — highly contagious ✗)</li>
+          <li>Reverse barrier nursing (severe neutropenia — protect FROM environmental pathogens)</li>
+          <li>Avoid: rectal temperatures (bacterial translocation risk in severe neutropenia)</li>
+          <li>Hand hygiene meticulous</li>
+        </ul>
+
+        <p><strong>5. Specific scenarios:</strong></p>
+
+        <p><strong>Chemotherapy-induced neutropenia (predictable nadir 7-14 d):</strong></p>
+        <ul>
+          <li>If asymptomatic + neutrophil &gt; 1500: monitor</li>
+          <li>If asymptomatic + neutrophil 500-1500: empirical PO antibiotic (TMS or amox-clav) + recheck CBC 5-7 d</li>
+          <li>If febrile + neutrophil &lt; 1500: hospitalize, IV antibiotics (febrile neutropenia ✗)</li>
+          <li>Adjust subsequent chemo dose if severe (75% next dose)</li>
+          <li>Consider G-CSF for high-risk protocols</li>
+        </ul>
+
+        <p><strong>Estrogen toxicity:</strong></p>
+        <ul>
+          <li>Discontinue estrogen / treat source</li>
+          <li>Supportive care during pancytopenia</li>
+          <li>BM recovery may take weeks-months; some don't recover ✗</li>
+          <li>Pred 2 mg/kg PO q12h sometimes used</li>
+          <li>Transfusions as needed</li>
+          <li>Antibiotics for infections</li>
+          <li>Prognosis: variable — guarded if profound/prolonged pancytopenia</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>CBC daily during neutropenia or until trending up</li>
+          <li>Recheck CBC q3-7 d once recovering</li>
+          <li>Clinical signs: fever, lethargy, mucous membrane color</li>
+          <li>Watch for: oral ulcers, sepsis, bleeding (concurrent thrombocytopenia)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Sepsis ✗</strong> — major risk, often fatal in severe neutropenia</li>
+          <li>Septic shock</li>
+          <li>Pneumonia (aspiration or hospital-acquired)</li>
+          <li>Bacterial translocation (GI mucosa)</li>
+          <li>Persistent neutropenia (BM failure)</li>
+          <li>Concurrent thrombocytopenia → bleeding</li>
+          <li>Concurrent anemia from BM disease</li>
+          <li>Drug toxicity ongoing</li>
+          <li>Death from sepsis or underlying cause</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Drug-induced (after withdrawal): usually good — recovers in 7-14 d</li>
+          <li>Chemotherapy-induced: expected; recovers</li>
+          <li>Parvovirus: variable; with aggressive Tx mortality 5-30%</li>
+          <li>FeLV-associated: poor</li>
+          <li>Estrogen toxicity: guarded — some don't recover ✗</li>
+          <li>Aplastic anemia: variable; some recover with immunosuppression</li>
+          <li>BM neoplasia: depends on tumor type</li>
+          <li>Sertoli cell tumor + castration: usually good recovery</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Profound neutropenia &lt; 500</li>
+              <li>Concurrent pancytopenia</li>
+              <li>Sepsis at presentation</li>
+              <li>BM failure (aplastic, MDS, myelofibrosis)</li>
+              <li>Underlying neoplasia</li>
+              <li>Estrogen toxicity profound</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Febrile neutropenia &lt; 1500/µL = ICU emergency</strong> ✗ — broad-spectrum IV antibiotics + supportive<br><br>💡 **Always check parvo SNAP** in young dog with V/D + neutropenia. **FeLV** in cat with chronic cytopenias<br><br>**Estrogen toxicity** = mismating shot or Sertoli tumor — can cause irreversible aplasia ✗</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 89 · Disorders of Hemostasis (Coagulopathies) ---------- */
+  {
+    id: 'coagulopathies',
+    titleEn: 'Disorders of Hemostasis (Coagulopathies)',
+    titleTh: 'ความผิดปกติของการแข็งตัวของเลือด',
+    type: 'disease',
+    system: 'hematology',
+    species: ['dog', 'cat'],
+    tags: ['coagulopathy', 'DIC', 'rodenticide', 'vitamin K', 'PT', 'aPTT', 'hemophilia', 'von Willebrand', 'vWD', 'thromboembolism', 'TEG', 'FFP', 'cryoprecipitate', 'desmopressin', 'DDAVP'],
+    aliases: ['bleeding disorder', 'coagulopathy', 'DIC', 'rodenticide', 'vWD', 'hemophilia', 'เลือดออกง่าย'],
+    source: 'Ch. 89 · pp. 1452–1480',
+    sections: {
+      definition: `
+        <p>กลุ่มโรคที่ <strong>การแข็งตัวของเลือดผิดปกติ</strong> — เลือดออกง่ายหรือลิ่มเลือดผิดปกติ</p>
+        <ul>
+          <li>3 phases of hemostasis:
+            <ul>
+              <li><strong>Primary hemostasis</strong> — platelet plug formation; involves vasoconstriction, platelets, von Willebrand factor</li>
+              <li><strong>Secondary hemostasis</strong> — fibrin clot formation; coagulation cascade (intrinsic, extrinsic, common pathways)</li>
+              <li><strong>Fibrinolysis</strong> — clot dissolution; plasmin, antithrombin</li>
+            </ul>
+          </li>
+          <li>Bleeding pattern clues:
+            <ul>
+              <li><strong>Primary defects:</strong> petechiae, ecchymoses, mucosal bleeding (epistaxis, GI, hematuria), small vessel</li>
+              <li><strong>Secondary defects:</strong> body cavity bleeding (hemothorax, hemoabdomen, hemarthrosis), large hematomas, delayed bleeding</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary hemostasis disorders:</strong></p>
+        <ul>
+          <li><strong>Thrombocytopenia</strong> ✨ (see ITP entry):
+            <ul>
+              <li>Immune-mediated</li>
+              <li>Tick-borne disease (Ehrlichia, Anaplasma, RMSF)</li>
+              <li>Drug-induced</li>
+              <li>BM disease</li>
+              <li>DIC (consumption)</li>
+              <li>Hypersplenism</li>
+            </ul>
+          </li>
+          <li><strong>von Willebrand Disease (vWD)</strong> ✨:
+            <ul>
+              <li>Most common inherited bleeding disorder in dog</li>
+              <li>3 types (Type I most common; Doberman classic ✨)</li>
+              <li>Other breeds: Scottish Terrier (Type III severe), Shetland Sheepdog, Pembroke Welsh Corgi, Standard Poodle, GSD</li>
+              <li>Reduced quantity / function of vWF → impaired platelet adhesion</li>
+            </ul>
+          </li>
+          <li>Thrombopathies (rare):
+            <ul>
+              <li>Inherited platelet function defects (Basset Hound thrombopathia, GSD thrombopathia)</li>
+              <li>Drug-induced (NSAIDs, clopidogrel)</li>
+              <li>Uremia</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Secondary hemostasis disorders:</strong></p>
+        <ul>
+          <li><strong>Anticoagulant rodenticide toxicity</strong> ✨ ✗ — most common acquired:
+            <ul>
+              <li>1st generation: warfarin (rare now)</li>
+              <li>2nd generation: brodifacoum, bromadiolone, difenacoum (most common; long-acting)</li>
+              <li>Vitamin K antagonist → ↓ factors II, VII, IX, X</li>
+              <li>Onset 3-5 days post-ingestion</li>
+            </ul>
+          </li>
+          <li><strong>Vitamin K deficiency:</strong>
+            <ul>
+              <li>Severe cholestasis (no bile salts → no fat-soluble vitamin absorption)</li>
+              <li>Severe small intestinal disease / malabsorption</li>
+              <li>Antibiotic-induced (rare; gut flora destruction)</li>
+            </ul>
+          </li>
+          <li><strong>Hepatic failure</strong> ✨:
+            <ul>
+              <li>↓ Synthesis of all factors except vWF and VIII</li>
+              <li>Fulminant or end-stage chronic</li>
+            </ul>
+          </li>
+          <li><strong>Inherited factor deficiencies (rare):</strong>
+            <ul>
+              <li><strong>Hemophilia A (Factor VIII deficiency)</strong> ✨ — X-linked recessive; male; GSD especially</li>
+              <li>Hemophilia B (Factor IX) — less common</li>
+              <li>Factor XII deficiency (cat — common but asymptomatic)</li>
+              <li>Other rare factor deficiencies</li>
+            </ul>
+          </li>
+          <li><strong>DIC</strong> ✗ — disseminated intravascular coagulation; secondary to many diseases</li>
+        </ul>
+
+        <p><strong>Fibrinolysis disorders:</strong></p>
+        <ul>
+          <li>Hyperfibrinolysis (Greyhound post-surgical bleeding syndrome)</li>
+          <li>DIC (mixed)</li>
+        </ul>
+
+        <p><strong>Hypercoagulable states (thromboembolism risk):</strong></p>
+        <ul>
+          <li>IMHA</li>
+          <li>Protein-losing nephropathy / enteropathy (loss of antithrombin)</li>
+          <li>Cushing's</li>
+          <li>Cardiac disease (cat HCM)</li>
+          <li>Neoplasia</li>
+          <li>Sepsis</li>
+          <li>DIC</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Coagulation cascade:
+            <ul>
+              <li>Intrinsic pathway: factors XII, XI, IX, VIII (assessed by aPTT)</li>
+              <li>Extrinsic pathway: factor VII (assessed by PT)</li>
+              <li>Common pathway: factors X, V, II (prothrombin), I (fibrinogen)</li>
+            </ul>
+          </li>
+          <li>Vitamin K-dependent factors: II, VII, IX, X (and proteins C, S)</li>
+          <li>Factor VII has shortest half-life → PT prolongs FIRST in vitamin K antagonism (within 24-48h before aPTT)</li>
+          <li>vWF cofactor for VIII and platelet adhesion</li>
+          <li>DIC: simultaneous thrombosis + bleeding due to consumption</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Primary hemostasis (platelet/vWD):</strong></p>
+        <ul>
+          <li><strong>Mucocutaneous bleeding</strong> ✨:
+            <ul>
+              <li>Petechiae</li>
+              <li>Ecchymoses</li>
+              <li>Epistaxis</li>
+              <li>Melena, hematuria</li>
+              <li>Vaginal/preputial bleeding</li>
+              <li>Hyphema</li>
+              <li>Excessive bleeding from venipuncture / minor cuts</li>
+            </ul>
+          </li>
+          <li>Prolonged surgical bleeding</li>
+          <li>vWD: often silent until surgical / dental procedure → unexpected bleeding</li>
+        </ul>
+
+        <p><strong>Secondary hemostasis (factor deficiency / rodenticide):</strong></p>
+        <ul>
+          <li><strong>Body cavity / large vessel bleeding</strong> ✨:
+            <ul>
+              <li>Hemothorax → dyspnea ✗</li>
+              <li>Hemoabdomen → distension, pallor, shock</li>
+              <li>Hemarthrosis (joint) — uncommon in pets</li>
+              <li>Pulmonary hemorrhage → hemoptysis</li>
+              <li>Intracranial hemorrhage → neurologic signs ✗</li>
+              <li>Mediastinal hematoma</li>
+              <li>Retroperitoneal hematoma</li>
+            </ul>
+          </li>
+          <li>Large hematomas</li>
+          <li>Delayed bleeding (after seemingly minor trauma)</li>
+          <li>Severe lethargy, pallor, collapse from blood loss</li>
+        </ul>
+
+        <p><strong>Rodenticide toxicity ✨:</strong></p>
+        <ul>
+          <li>Onset 3-5 days post-ingestion</li>
+          <li>Often dyspnea / coughing (hemothorax / pulmonary hemorrhage) — most common presenting sign in dogs ✗</li>
+          <li>Lameness (hemarthrosis or muscle hematoma)</li>
+          <li>Pale MM, weakness, collapse (severe)</li>
+          <li>Sometimes subtle: lethargy + cough only initially</li>
+        </ul>
+
+        <p><strong>DIC ✗:</strong></p>
+        <ul>
+          <li>Mixed bleeding + thrombotic signs</li>
+          <li>Underlying critical illness (sepsis, neoplasia, severe pancreatitis, IMHA, heat stroke)</li>
+          <li>Petechiae + body cavity bleeds + organ dysfunction</li>
+          <li>Often near-terminal</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Bleeding pattern + history:</strong></p>
+        <ul>
+          <li>Pattern guides primary vs secondary defect</li>
+          <li>History: rodenticide access, trauma, drug history, recent vaccine (rare ITP), tick exposure, breed</li>
+        </ul>
+
+        <p><strong>2. CBC + smear ✨:</strong></p>
+        <ul>
+          <li><strong>Platelet count</strong> ✨ — ALWAYS:
+            <ul>
+              <li>Confirm with smear (clumping artifact)</li>
+              <li>Assess size (macroplatelets = regeneration)</li>
+            </ul>
+          </li>
+          <li>Anemia (from blood loss)</li>
+          <li>Schistocytes (microangiopathic, DIC)</li>
+        </ul>
+
+        <p><strong>3. Coag panel ✨:</strong></p>
+        <ul>
+          <li><strong>PT (Prothrombin Time)</strong> — extrinsic + common pathways
+            <ul>
+              <li>Sensitive for vitamin K antagonism (factor VII shortest half-life)</li>
+              <li>Prolongs FIRST in rodenticide</li>
+            </ul>
+          </li>
+          <li><strong>aPTT (activated Partial Thromboplastin Time)</strong> — intrinsic + common pathways
+            <ul>
+              <li>Prolongs in hemophilia A/B, severe rodenticide, hepatic dysfunction</li>
+            </ul>
+          </li>
+          <li><strong>Fibrinogen</strong>:
+            <ul>
+              <li>↓ in DIC (consumption), severe hepatic disease</li>
+              <li>↑ in inflammation (acute phase)</li>
+            </ul>
+          </li>
+          <li><strong>D-dimers / FDPs</strong>:
+            <ul>
+              <li>↑ in DIC, thromboembolism, hemoabdomen, IMHA</li>
+              <li>Sensitive but not specific</li>
+            </ul>
+          </li>
+          <li><strong>Antithrombin (AT)</strong>:
+            <ul>
+              <li>↓ in DIC, PLN, hepatic disease</li>
+              <li>Predicts thrombosis risk</li>
+            </ul>
+          </li>
+          <li><strong>Buccal mucosal bleeding time (BMBT)</strong>:
+            <ul>
+              <li>Tests primary hemostasis</li>
+              <li>Normal &lt; 4 min</li>
+              <li>Prolonged with thrombocytopenia, vWD, thrombopathy</li>
+            </ul>
+          </li>
+          <li><strong>Thromboelastography (TEG / ROTEM)</strong> — comprehensive global hemostasis:
+            <ul>
+              <li>Detects hyper- and hypocoagulable states</li>
+              <li>Reaction time, clot strength, fibrinolysis</li>
+              <li>Specialty tool</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. Specific tests:</strong></p>
+        <ul>
+          <li><strong>vWF antigen (vWF:Ag)</strong>:
+            <ul>
+              <li>For vWD diagnosis</li>
+              <li>Send specialty lab (Cornell, Auburn)</li>
+              <li>&lt; 50% suggestive; &lt; 25% diagnostic; &lt; 5% severe</li>
+              <li>Also genetic test (Doberman Type I, Scottish Terrier Type III)</li>
+            </ul>
+          </li>
+          <li>Specific factor assays (hemophilia diagnosis):
+            <ul>
+              <li>Factor VIII activity (hemophilia A)</li>
+              <li>Factor IX activity (hemophilia B)</li>
+              <li>Specialty labs</li>
+            </ul>
+          </li>
+          <li>PIVKA (proteins induced by vitamin K absence):
+            <ul>
+              <li>Detects vitamin K antagonism</li>
+              <li>More sensitive than PT alone</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>5. Workup for underlying cause:</strong></p>
+        <ul>
+          <li>Tick-borne disease panel (Ehrlichia, RMSF — thrombocytopenia)</li>
+          <li>Hepatic profile (synthetic function — albumin, BUN, glucose, cholesterol)</li>
+          <li>Bile acids (hepatic dysfunction)</li>
+          <li>Imaging: thoracic + abdominal radiograph + US (effusion, mass)</li>
+          <li>Cytology of effusions if present</li>
+        </ul>
+
+        <p><strong>DIC diagnostic criteria (need 3+ of):</strong></p>
+        <ul>
+          <li>Thrombocytopenia</li>
+          <li>Prolonged PT</li>
+          <li>Prolonged aPTT</li>
+          <li>↓ Fibrinogen</li>
+          <li>↓ Antithrombin</li>
+          <li>↑ D-dimers / FDPs</li>
+          <li>+ Schistocytes on smear</li>
+          <li>+ Compatible underlying disease</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Anticoagulant rodenticide ✨ (most common acquired secondary)</li>
+          <li>Thrombocytopenia (ITP, tick-borne, BM)</li>
+          <li>vWD (inherited)</li>
+          <li>Hemophilia (inherited)</li>
+          <li>DIC (secondary to critical illness)</li>
+          <li>Hepatic failure</li>
+          <li>Severe cholestasis (vit K malabsorption)</li>
+          <li>Drug-induced (anticoagulants, NSAIDs)</li>
+          <li>Acute trauma without coagulopathy</li>
+          <li>Snake envenomation</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Vitamin K1 (anticoagulant rodenticide) ✨:</strong></p>
+        <ul>
+          <li><strong>Vitamin K1 (phytonadione) 2.5-5 mg/kg PO q12-24h × 4 weeks</strong> ✨
+            <ul>
+              <li>For 2nd generation rodenticides (brodifacoum, bromadiolone, etc.) — long-acting</li>
+              <li>1st generation (warfarin): 1 week course</li>
+              <li>Always give WITH food (fat-soluble; better absorption)</li>
+              <li>Start with SC route initially if severe (NOT IV — anaphylaxis ✗; NOT IM — hematoma)</li>
+              <li>Switch to PO when stable</li>
+            </ul>
+          </li>
+          <li>Recheck PT 48-72h AFTER stopping vitamin K — confirm normal</li>
+          <li>If PT prolonged → continue another 1-2 weeks</li>
+          <li>Vitamin K3 (menadione) — DO NOT USE ✗ (oxidative hemolysis)</li>
+          <li>Patient should not bleed within 24-48h with adequate Tx</li>
+        </ul>
+
+        <p><strong>2. Decontamination (rodenticide ingestion known &lt; 4-6h):</strong></p>
+        <ul>
+          <li>Induce emesis (apomorphine 0.03 mg/kg IV) if asymptomatic + recent</li>
+          <li>Activated charcoal 1-3 g/kg PO + sorbitol</li>
+          <li>Then start vitamin K (PO) prophylactically × 4 weeks</li>
+          <li>Recheck PT at 48h post-exposure (without vitamin K Tx if monitoring) — if normal, asymptomatic, can stop</li>
+        </ul>
+
+        <p><strong>3. Plasma transfusion ✨:</strong></p>
+        <ul>
+          <li><strong>Fresh frozen plasma (FFP)</strong> 10-15 mL/kg IV
+            <ul>
+              <li>Provides all coagulation factors</li>
+              <li>For: actively bleeding rodenticide patient (vitamin K takes 12-24h to work)</li>
+              <li>Hemophilia bleeding episode</li>
+              <li>DIC</li>
+              <li>Hepatic failure with bleeding</li>
+              <li>vWD bleeding</li>
+            </ul>
+          </li>
+          <li><strong>Cryoprecipitate</strong> — concentrated factor VIII, vWF, fibrinogen, fibronectin
+            <ul>
+              <li>For: hemophilia A, vWD, hypofibrinogenemia</li>
+              <li>Smaller volume than FFP</li>
+              <li>Specialty / referral availability</li>
+            </ul>
+          </li>
+          <li>Whole blood transfusion (severe blood loss + coagulopathy)</li>
+        </ul>
+
+        <p><strong>4. Desmopressin (DDAVP) — for vWD bleeding:</strong></p>
+        <ul>
+          <li>1 µg/kg SC, 30 min before procedure</li>
+          <li>Releases stored vWF from endothelium</li>
+          <li>Effect lasts 2-4 hours</li>
+          <li>Helps Type I vWD (most common form, especially Doberman)</li>
+          <li>Doesn't help Type III (severe; need cryoprecipitate / FFP)</li>
+          <li>Use prophylactically before surgery in known vWD dogs</li>
+        </ul>
+
+        <p><strong>5. Hemostatic adjuncts:</strong></p>
+        <ul>
+          <li>Antifibrinolytics:
+            <ul>
+              <li>Aminocaproic acid 50 mg/kg PO q8h</li>
+              <li>Tranexamic acid 10-15 mg/kg IV/PO q8h</li>
+              <li>For Greyhound bleeding syndrome, vWD, hyperfibrinolysis</li>
+            </ul>
+          </li>
+          <li>Yunnan Baiyao (Chinese herbal — controversial; some evidence)</li>
+        </ul>
+
+        <p><strong>6. DIC management ✗:</strong></p>
+        <ul>
+          <li>Treat underlying disease (most critical)</li>
+          <li>FFP for active bleeding</li>
+          <li>± Heparin (controversial; usually not in active bleeding stage)</li>
+          <li>Antithrombin support (FFP provides)</li>
+          <li>RBC transfusion for anemia</li>
+          <li>Aggressive supportive care</li>
+          <li>Often near-terminal — guide owner expectations</li>
+        </ul>
+
+        <p><strong>7. Hereditary disease management:</strong></p>
+        <ul>
+          <li><strong>vWD</strong>:
+            <ul>
+              <li>Genetic testing for breeding decisions (Doberman, Scottie)</li>
+              <li>Avoid drugs affecting platelets (NSAIDs)</li>
+              <li>DDAVP / cryoprecipitate before surgery / dental</li>
+              <li>Preoperative buccal mucosal bleeding time</li>
+            </ul>
+          </li>
+          <li><strong>Hemophilia</strong>:
+            <ul>
+              <li>Avoid trauma</li>
+              <li>FFP / cryoprecipitate for bleeding episodes</li>
+              <li>Surgery requires careful planning + factor replacement</li>
+              <li>Genetic testing for carriers</li>
+              <li>X-linked — affects males primarily</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>8. Hypercoagulable states (thromboprophylaxis):</strong></p>
+        <ul>
+          <li>Clopidogrel 1-2 mg/kg PO q24h</li>
+          <li>± Aspirin 0.5-1 mg/kg PO q24h</li>
+          <li>Rivaroxaban 1-2 mg/kg PO q24h (newer — direct factor Xa inhibitor)</li>
+          <li>Low-molecular-weight heparin (dalteparin 100-150 IU/kg SC q12h)</li>
+          <li>For: IMHA, PLN, cardiac (cat HCM), Cushing's, neoplasia, post-op high-risk</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Bleeding signs</li>
+          <li>HCT trend</li>
+          <li>Coag panel (PT/aPTT)</li>
+          <li>Plasma transfusion: monitor for fluid overload, allergic reaction</li>
+          <li>Vitamin K Tx: PT 48-72h after stopping (rodenticide)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Fatal hemorrhage</strong> ✗ — intracranial, pulmonary, hemothorax, hemoabdomen</li>
+          <li>Severe anemia from blood loss</li>
+          <li>Hypovolemic shock</li>
+          <li>Surgical bleeding (vWD undiagnosed)</li>
+          <li>DIC progression</li>
+          <li>Multi-organ failure (DIC, thrombosis)</li>
+          <li>Plasma transfusion reactions</li>
+          <li>Vitamin K1 anaphylaxis (rare; especially IV — avoid)</li>
+          <li>Underlying disease progression</li>
+          <li>Re-bleeding after Tx stopped (rodenticide — if stopped too early)</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Anticoagulant rodenticide + vitamin K Tx + supportive: excellent</strong> ✓ — &gt; 95% with adequate Tx</li>
+          <li>vWD: usually excellent with management; surgical prophylaxis</li>
+          <li>Hemophilia: variable; lifelong careful management</li>
+          <li>DIC: poor — depends on underlying disease (often near-terminal)</li>
+          <li>Hepatic failure with coagulopathy: poor</li>
+          <li>Tick-borne thrombocytopenia: excellent with doxycycline</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe active bleeding at presentation</li>
+              <li>Intracranial / pulmonary hemorrhage</li>
+              <li>DIC</li>
+              <li>Hepatic synthetic failure</li>
+              <li>Untreated rodenticide for &gt; 1 wk</li>
+              <li>Type III vWD severity</li>
+              <li>Underlying neoplasia or critical illness</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Bleeding pattern guides workup</strong>: petechiae/mucosal = primary; body cavity = secondary<br><br>💡 **PT prolongs FIRST in rodenticide** — factor VII shortest half-life. **Vitamin K1 4 weeks** (2nd gen long-acting); FFP for active bleeding<br><br>**vWD Doberman classic** ✨ — DDAVP + cryoprecipitate. **Always check coag pre-op** in predisposed breeds</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     PART 14 — INFECTIOUS DISEASES (Ch 91–99)
+  ============================================================ */
+
+  /* ---------- Ch 92 · Canine Parvovirus (CPV) ---------- */
+  {
+    id: 'canine-parvovirus',
+    titleEn: 'Canine Parvovirus (CPV)',
+    titleTh: 'พาร์โว — ลำไส้อักเสบจากไวรัส',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog'],
+    tags: ['parvovirus', 'CPV', 'parvo', 'hemorrhagic diarrhea', 'puppy', 'unvaccinated', 'CPV-2', 'CPV-2a', 'CPV-2b', 'CPV-2c', 'SNAP test', 'IV fluids', 'antibiotics', 'maropitant', 'isolation'],
+    aliases: ['parvovirus', 'parvo', 'CPV', 'พาร์โว', 'ลำไส้อักเสบไวรัส'],
+    source: 'Ch. 92 · pp. 1488–1499',
+    sections: {
+      definition: `
+        <p>โรค <strong>ติดเชื้อไวรัสพาร์โวที่ลำไส้</strong> — เป็นสาเหตุการตายอันดับ 1 ในลูกหมาที่ไม่ได้รับวัคซีน ✗</p>
+        <ul>
+          <li><strong>CPV-2 strains:</strong> CPV-2a, CPV-2b, CPV-2c (most common globally now)</li>
+          <li>Modern vaccines protect against all variants</li>
+          <li>Predisposed:
+            <ul>
+              <li>Unvaccinated puppies 6 weeks - 6 months ✨</li>
+              <li>Incomplete vaccination series</li>
+              <li>Breeds: Rottweiler, Doberman, Pit Bull, Labrador, GSD (genetic susceptibility)</li>
+            </ul>
+          </li>
+          <li>Highly contagious + environmentally hardy (months-year on surfaces) ✨</li>
+          <li>Mortality: untreated 70-90%; with aggressive Tx 5-30% ✗</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Single-stranded DNA virus, family Parvoviridae</li>
+          <li>Affects rapidly dividing cells:
+            <ul>
+              <li>Intestinal crypt cells → severe enteritis ✗</li>
+              <li>Bone marrow → neutropenia ✗</li>
+              <li>Lymphoid tissue → immunosuppression</li>
+              <li>Myocardium (rare; neonatal — myocarditis form, mostly historical)</li>
+            </ul>
+          </li>
+          <li>Transmission: fecal-oral; environmental contamination</li>
+          <li>Incubation: 4-14 days (typically 4-7)</li>
+          <li>Shedding: starts 3-4 days post-infection, continues for 2-3 weeks (or longer)</li>
+          <li>Survives in environment 1+ year (resistant to many disinfectants)</li>
+          <li>Inactivated by: <strong>1:30 bleach</strong> ✨, accelerated hydrogen peroxide, potassium peroxymonosulfate</li>
+          <li>NOT inactivated by: most quaternary ammonium, alcohol, phenols</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Virus replicates in oropharyngeal lymphoid tissue → viremia → targets rapidly dividing cells</li>
+          <li>Intestinal crypt destruction → villus collapse → severe malabsorption + protein loss + bacterial translocation</li>
+          <li>Bone marrow suppression → severe neutropenia → secondary bacterial sepsis ✗</li>
+          <li>Lymphoid depletion → immunosuppression</li>
+          <li>Sepsis → endotoxemia → SIRS → DIC</li>
+          <li>Severe vomiting + diarrhea → severe dehydration + electrolyte derangements</li>
+          <li>Death from: sepsis (most common), severe dehydration/shock, DIC, hypoglycemia, severe hypoK</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic presentation ✨:</strong></p>
+        <ul>
+          <li><strong>Vomiting</strong> ✨ — usually first sign; profuse, protracted</li>
+          <li><strong>Hemorrhagic diarrhea</strong> ✨ — foul-smelling, often with frank blood; pathognomonic appearance ✨</li>
+          <li><strong>Severe lethargy</strong></li>
+          <li><strong>Anorexia</strong></li>
+          <li>Dehydration (often severe → shock)</li>
+          <li>Fever (often hypothermia in severe sepsis ✗)</li>
+          <li>Abdominal pain</li>
+          <li>Rapid weight loss</li>
+          <li>Pale MM, prolonged CRT</li>
+          <li>Tachycardia → bradycardia (severe shock)</li>
+          <li>Seizures (severe — hypoglycemia, sepsis, electrolytes)</li>
+          <li>Cardiac signs (rare neonatal myocarditis form)</li>
+        </ul>
+
+        <p><strong>Sequence of progression:</strong></p>
+        <ol>
+          <li>Day 1-2: lethargy, anorexia, fever</li>
+          <li>Day 2-3: vomiting starts</li>
+          <li>Day 3-5: hemorrhagic diarrhea, severe dehydration</li>
+          <li>Day 5-7: critical period — sepsis, death OR turning point</li>
+          <li>Day 7-10: improvement if survives</li>
+        </ol>
+      `,
+      diagnosis: `
+        <p><strong>1. SNAP fecal antigen test ✨ — primary diagnostic:</strong></p>
+        <ul>
+          <li><strong>Rapid in-house test (IDEXX SNAP Parvo)</strong>:
+            <ul>
+              <li>Sensitivity ~ 80-90%</li>
+              <li>Specificity ~ 90-95%</li>
+              <li>15-min result</li>
+              <li>Submit fresh fecal swab</li>
+            </ul>
+          </li>
+          <li>False positives:
+            <ul>
+              <li>Recent MLV vaccination (3-15 days post — common!)</li>
+              <li>Always interpret in clinical context</li>
+            </ul>
+          </li>
+          <li>False negatives:
+            <ul>
+              <li>Early infection (before fecal shedding)</li>
+              <li>Late infection (shedding declining)</li>
+              <li>Test again in 24-48h if clinical suspicion high</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. CBC ✨:</strong></p>
+        <ul>
+          <li><strong>Severe neutropenia / leukopenia ✨</strong> — hallmark
+            <ul>
+              <li>Often profound (&lt; 500-1000/µL)</li>
+              <li>Severity correlates with mortality</li>
+              <li>Concurrent lymphopenia</li>
+            </ul>
+          </li>
+          <li>± Mild anemia (later, blood loss)</li>
+          <li>Thrombocytopenia (DIC)</li>
+        </ul>
+
+        <p><strong>3. Biochem:</strong></p>
+        <ul>
+          <li>Hypoglycemia (especially small puppies, severe sepsis) ✗</li>
+          <li>Hypokalemia (vomiting, anorexia, fluid losses)</li>
+          <li>Hyponatremia, hypochloremia</li>
+          <li>↑ ALT mild (transient)</li>
+          <li>Hypoalbuminemia (PLE)</li>
+          <li>Pre-renal azotemia (dehydration)</li>
+          <li>Lactate ↑ (sepsis, hypoperfusion)</li>
+        </ul>
+
+        <p><strong>4. Other:</strong></p>
+        <ul>
+          <li>UA (USG variable, ketones)</li>
+          <li>Coag panel (DIC if severe)</li>
+          <li>Abdominal radiograph (rule out FB, ileus)</li>
+          <li>Abdominal US (intussusception risk)</li>
+          <li>Blood culture if severe sepsis</li>
+          <li>PCR fecal (if SNAP equivocal)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other infectious enteritis:
+            <ul>
+              <li>Coronavirus</li>
+              <li>Rotavirus</li>
+              <li>Distemper (with neuro signs)</li>
+              <li>Salmonella</li>
+              <li>Campylobacter</li>
+              <li>Clostridium perfringens / difficile</li>
+              <li>Giardia</li>
+              <li>Cryptosporidium</li>
+              <li>Hookworm, roundworm severe</li>
+            </ul>
+          </li>
+          <li>Hemorrhagic gastroenteritis (HGE / AHDS — older terminology) — Ch 30</li>
+          <li>Foreign body / GI obstruction</li>
+          <li>Intussusception</li>
+          <li>Garbage gastroenteritis</li>
+          <li>Severe pancreatitis</li>
+          <li>Hypoadrenocorticism (Addison's)</li>
+          <li>Toxin (heavy metals, plants)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Hospitalization + isolation ✨ — critical:</strong></p>
+        <ul>
+          <li><strong>Strict isolation ward</strong> ✨ — separate from other patients
+            <ul>
+              <li>Dedicated equipment, PPE</li>
+              <li>Hand hygiene meticulous</li>
+              <li>Footbath / disposable booties</li>
+              <li>Clean with bleach 1:30</li>
+            </ul>
+          </li>
+          <li>Outpatient protocol (limited resources): possible but mortality higher; close monitoring</li>
+        </ul>
+
+        <p><strong>2. Aggressive fluid therapy ✨ — cornerstone:</strong></p>
+        <ul>
+          <li><strong>IV fluid resuscitation</strong>:
+            <ul>
+              <li>LRS or other balanced crystalloid</li>
+              <li>Initial bolus: 10-20 mL/kg over 15-30 min</li>
+              <li>Repeat as needed for shock</li>
+              <li>Once stabilized: maintenance + replace deficit + ongoing losses (significant!)</li>
+            </ul>
+          </li>
+          <li>Calculate ongoing losses (vomit + diarrhea + insensible)</li>
+          <li>Often need 2-3× maintenance rate during peak losses</li>
+          <li><strong>Add KCl supplementation</strong>: based on serum K (typical 20-40 mEq/L; max 0.5 mEq/kg/h)</li>
+          <li><strong>Add dextrose 2.5-5%</strong>: if hypoglycemic; especially small puppies prone</li>
+          <li>Colloids (hydroxyethyl starch, plasma) if severe hypoalbuminemia</li>
+          <li>Monitor: TPR, BP, mentation, urine output, lactate, electrolytes q4-6h</li>
+        </ul>
+
+        <p><strong>3. Anti-emetics ✨:</strong></p>
+        <ul>
+          <li><strong>Maropitant (Cerenia) 1 mg/kg SC q24h</strong> ✨ — first-line
+            <ul>
+              <li>NK1 receptor antagonist; very effective</li>
+              <li>± Visceral pain control benefit</li>
+              <li>Use in puppies &gt; 8 weeks (label) or off-label younger</li>
+            </ul>
+          </li>
+          <li>Ondansetron 0.5-1 mg/kg IV q8-12h — adjunct or if maropitant inadequate</li>
+          <li>Metoclopramide 1-2 mg/kg/d CRI (if no GI obstruction concern)</li>
+          <li>Prochlorperazine — alternative</li>
+        </ul>
+
+        <p><strong>4. Empirical antibiotics ✨:</strong></p>
+        <ul>
+          <li>Indication: ALL parvo cases (severe neutropenia + bacterial translocation risk)</li>
+          <li><strong>Ampicillin 22 mg/kg IV q8h + enrofloxacin 5-10 mg/kg IV q24h</strong> ✨ — standard combination
+            <ul>
+              <li>Cover gram-positive + gram-negative + anaerobes</li>
+              <li>Watch enrofloxacin in young puppies (cartilage development; use lower 5 mg/kg if &lt; 6 mo)</li>
+            </ul>
+          </li>
+          <li>Alternatives: ceftiofur, amox-clav</li>
+          <li>If severe sepsis: imipenem (specialty)</li>
+          <li>Continue 5-10 days or until CBC + clinical recovery</li>
+        </ul>
+
+        <p><strong>5. Nutritional support ✨ — early enteral nutrition:</strong></p>
+        <ul>
+          <li><strong>Modern evidence: early enteral nutrition (within 12-24h of admission) improves outcomes</strong> ✨</li>
+          <li>Start small amounts of bland food (Recovery, Hill's a/d) as soon as not vomiting × 4-6h</li>
+          <li>Naso-esophageal or nasogastric tube if persistent vomiting (within 24h)</li>
+          <li>Don't NPO for prolonged periods (worsens villus atrophy)</li>
+          <li>Increases survival, reduces hospital stay</li>
+        </ul>
+
+        <p><strong>6. Anti-acid (controversial — usually not needed):</strong></p>
+        <ul>
+          <li>Omeprazole 1 mg/kg PO/IV q12-24h (some clinicians)</li>
+          <li>Sucralfate 250-500 mg PO q6-8h (if ulcer suspected)</li>
+        </ul>
+
+        <p><strong>7. Pain management:</strong></p>
+        <ul>
+          <li>Buprenorphine 0.01-0.02 mg/kg IV/IM q6-8h</li>
+          <li>Maropitant has analgesic effect for visceral pain</li>
+          <li>Avoid NSAIDs (GI ulceration, AKI risk)</li>
+        </ul>
+
+        <p><strong>8. Plasma transfusion (severe cases):</strong></p>
+        <ul>
+          <li>FFP 10-15 mL/kg IV — for:
+            <ul>
+              <li>Severe hypoalbuminemia (&lt; 1.5-2 g/dL)</li>
+              <li>DIC</li>
+              <li>Coagulopathy</li>
+            </ul>
+          </li>
+          <li>Albumin oncotic support; some passive immunity</li>
+          <li>Hyperimmune serum (anti-parvo antibodies) — limited evidence; controversial</li>
+        </ul>
+
+        <p><strong>9. Adjunct therapies (variable evidence):</strong></p>
+        <ul>
+          <li>Recombinant feline interferon-omega — some evidence; expensive</li>
+          <li>G-CSF (filgrastim) — for severe persistent neutropenia</li>
+          <li>Tamiflu (oseltamivir) — anecdotal; not evidence-based</li>
+        </ul>
+
+        <p><strong>10. Monitoring ✨:</strong></p>
+        <ul>
+          <li>Vital signs q2-4h initially</li>
+          <li>Body weight 2× daily</li>
+          <li>BP q4-6h</li>
+          <li>CBC q24h initially</li>
+          <li>Biochem + electrolytes q12-24h</li>
+          <li>Glucose q4-6h (small puppies)</li>
+          <li>BG, lactate</li>
+          <li>I/O calculations</li>
+          <li>Watch for: deterioration (sepsis, DIC), intussusception (sudden change in pattern)</li>
+        </ul>
+
+        <p><strong>11. Owner education + prevention ✨:</strong></p>
+        <ul>
+          <li>Discuss survival rate: 70-95% with aggressive Tx; 5-30% without</li>
+          <li>Cost of intensive care</li>
+          <li>Environmental decontamination at home (bleach 1:30)</li>
+          <li>Quarantine 4-6 weeks from other dogs</li>
+          <li>Dog continues shedding 2-3+ weeks after recovery</li>
+          <li>Future vaccination schedule (won't get parvo again — strong immunity)</li>
+        </ul>
+
+        <p><strong>Vaccination ✨ — prevention is key:</strong></p>
+        <ul>
+          <li>WSAVA recommendations:
+            <ul>
+              <li>First dose at 6-8 weeks</li>
+              <li>q3-4 weeks until 16 weeks (last puppy dose)</li>
+              <li>Booster 6-12 months later</li>
+              <li>Then q3 years (DHP component MLV)</li>
+            </ul>
+          </li>
+          <li>High-risk breeds (Rottweiler, Doberman): consider extra dose at 18-20 weeks</li>
+          <li>Titer testing alternative for dose confirmation</li>
+          <li>Don't bring unvaccinated puppy to high-risk areas (parks, training, etc.) until series complete</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Septic shock</strong> ✗ — major killer</li>
+          <li><strong>Severe hypoglycemia</strong> ✗ — small puppies</li>
+          <li>DIC ✗</li>
+          <li>Intussusception ✗ — often fatal; sudden clinical change</li>
+          <li>Severe hypokalemia → arrhythmias</li>
+          <li>Severe hypoalbuminemia → edema, effusions</li>
+          <li>Acute kidney injury (pre-renal → intrinsic if not corrected)</li>
+          <li>Aspiration pneumonia (severe vomiting)</li>
+          <li>Pulmonary edema (overzealous fluids)</li>
+          <li>Catheter-related infection</li>
+          <li>Long-term: chronic GI sensitivity (rare)</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>With aggressive in-hospital Tx: 70-95% survival ✓</strong></li>
+          <li>Outpatient protocol (limited resources): 50-75% survival</li>
+          <li>Without treatment: 10-30% survival ✗</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe leukopenia (especially &lt; 500/µL)</li>
+              <li>Severe hypoglycemia</li>
+              <li>Severe hypoalbuminemia</li>
+              <li>Severe hypothermia (sepsis sign)</li>
+              <li>Coagulopathy / DIC</li>
+              <li>Intussusception</li>
+              <li>Concurrent disease (parasites, distemper)</li>
+              <li>Very young puppy (&lt; 8 wk)</li>
+              <li>Delayed presentation</li>
+              <li>Predisposed breeds (Rottweiler etc.)</li>
+            </ul>
+          </li>
+          <li>If survives 5-7 days post-admission: usually full recovery</li>
+          <li>Long-term: full recovery typical; lifelong immunity</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Young unvaccinated dog + V/D + neutropenia = parvo</strong> ✨ — SNAP test confirms<br><br>💡 **Aggressive hospital Tx** (IV fluids + antibiotics + maropitant + early enteral nutrition) → 70-95% survival<br><br>**Vaccination = prevention** — complete puppy series. **Bleach 1:30** for environmental decontamination. Quarantine 4-6 wk post-recovery</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 92 · Canine Distemper Virus (CDV) ---------- */
+  {
+    id: 'canine-distemper',
+    titleEn: 'Canine Distemper Virus (CDV)',
+    titleTh: 'ไข้หัดสุนัข',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog'],
+    tags: ['distemper', 'CDV', 'morbillivirus', 'hyperkeratosis', 'hard pad', 'myoclonus', 'chorioretinitis', 'old dog encephalitis', 'PCR', 'vaccination'],
+    aliases: ['distemper', 'CDV', 'hard pad disease', 'ไข้หัดหมา'],
+    source: 'Ch. 92 · pp. 1499–1505',
+    sections: {
+      definition: `
+        <p>โรค <strong>ติดเชื้อไวรัสมัลติซิสเต็ม</strong> — ทำให้เกิดอาการ respiratory + GI + neurologic + cutaneous</p>
+        <ul>
+          <li>Family Paramyxoviridae, genus Morbillivirus (เกี่ยวข้องกับ measles ในคน)</li>
+          <li>เคยเป็น #1 fatal infectious disease in dog ก่อนวัคซีน</li>
+          <li>ปัจจุบันลดลงมากในประเทศที่มีโครงการวัคซีน</li>
+          <li>Predisposed: <strong>unvaccinated puppies 3-6 months</strong> ✨</li>
+          <li>Adult dog (vaccinated long ago, immunocompromised) — possible</li>
+          <li>Wildlife reservoirs: raccoons, foxes, ferrets, skunks → can re-emerge in unvaccinated populations</li>
+          <li>Mortality 50-90% in symptomatic untreated cases ✗</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Single-stranded RNA virus, enveloped</li>
+          <li>Transmission: respiratory droplets (close contact); also fecal/urine, fomites</li>
+          <li>Incubation: 3-6 days for initial signs; up to 3 weeks for full multisystem progression</li>
+          <li>Shedding: 60-90 days post-infection</li>
+          <li>Environmental survival short (vs parvo): days at room temp</li>
+          <li>Inactivated by most disinfectants, heat, UV light</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Initial replication: lymphoid tissue (tonsils, LN) → viremia → multi-organ spread</li>
+          <li>Targets: respiratory epithelium, GI, lymphoid, CNS, skin (footpads, nasal planum)</li>
+          <li>Severe lymphopenia → immunosuppression → opportunistic infections (especially bacterial pneumonia)</li>
+          <li>CNS invasion in 30-50%:
+            <ul>
+              <li>Demyelination (white matter)</li>
+              <li>Polioencephalitis (gray matter)</li>
+              <li>Persistent infection in some areas → late neurologic disease</li>
+            </ul>
+          </li>
+          <li>Death usually from: secondary bacterial pneumonia, neurologic decline, severe systemic illness</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Multi-system disease — variable presentation:</strong></p>
+
+        <p><strong>Phase 1 — Acute (first 1-2 weeks):</strong></p>
+        <ul>
+          <li>Fever (biphasic — initial peak day 3-6, second peak day 10-14)</li>
+          <li>Lethargy, anorexia</li>
+          <li>Mucopurulent oculonasal discharge ✨</li>
+          <li>Cough (interstitial pneumonia)</li>
+          <li>Vomiting, diarrhea</li>
+          <li>Tonsillitis</li>
+        </ul>
+
+        <p><strong>Phase 2 — Multi-system (week 2-4):</strong></p>
+        <ul>
+          <li>Respiratory: bronchopneumonia (often secondary bacterial)</li>
+          <li>GI: severe vomiting, diarrhea (mimics parvo)</li>
+          <li>Cutaneous:
+            <ul>
+              <li><strong>"Hard pad" disease</strong> ✨ — hyperkeratosis of footpads + nasal planum (pathognomonic-supportive in late disease)</li>
+              <li>Pustular dermatitis (puppies)</li>
+            </ul>
+          </li>
+          <li>Ocular: chorioretinitis, optic neuritis, "gold-medallion" lesions on fundus</li>
+          <li>Dental: <strong>enamel hypoplasia</strong> ✨ in dogs infected as puppies (during tooth development) — pitted brown teeth ✨</li>
+        </ul>
+
+        <p><strong>Phase 3 — Neurologic (any time, weeks-months later):</strong></p>
+        <ul>
+          <li><strong>Myoclonus / "chewing gum fits"</strong> ✨ — rhythmic muscle twitching (often facial); pathognomonic-suggestive
+            <ul>
+              <li>Persists even when dog appears well</li>
+              <li>Continues during sleep</li>
+            </ul>
+          </li>
+          <li>Seizures (focal or generalized) ✗</li>
+          <li>Cerebellar signs (hypermetria, intention tremor)</li>
+          <li>Ataxia, paresis</li>
+          <li>Behavioral changes</li>
+          <li>Cranial nerve deficits</li>
+          <li>Vestibular signs</li>
+          <li>Optic neuritis → blindness</li>
+          <li>Progressive neurologic decline → death or euthanasia</li>
+        </ul>
+
+        <p><strong>Old dog encephalitis (rare):</strong></p>
+        <ul>
+          <li>Adult dogs with previous CDV exposure</li>
+          <li>Persistent CNS infection reactivates</li>
+          <li>Progressive neurologic disease</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Clinical recognition + history:</strong></p>
+        <ul>
+          <li>Unvaccinated young dog</li>
+          <li>Multisystem signs (respiratory + GI + neuro)</li>
+          <li>Hard pad / enamel hypoplasia (later)</li>
+        </ul>
+
+        <p><strong>2. PCR ✨ — most sensitive:</strong></p>
+        <ul>
+          <li>RT-PCR on:
+            <ul>
+              <li>Conjunctival swab</li>
+              <li>Nasal swab</li>
+              <li>Urine</li>
+              <li>Whole blood / buffy coat</li>
+              <li>CSF (neurologic phase)</li>
+            </ul>
+          </li>
+          <li>Best in early disease (acute phase)</li>
+          <li>Specificity good; sensitivity variable by stage</li>
+          <li>Send specialty lab</li>
+        </ul>
+
+        <p><strong>3. Inclusion bodies (cytology):</strong></p>
+        <ul>
+          <li>Buffy coat smear, conjunctival scraping</li>
+          <li>Eosinophilic intracytoplasmic / intranuclear inclusions in:
+            <ul>
+              <li>Lymphocytes</li>
+              <li>Neutrophils</li>
+              <li>Erythrocytes</li>
+              <li>Epithelial cells</li>
+            </ul>
+          </li>
+          <li>Specific but insensitive (transient)</li>
+        </ul>
+
+        <p><strong>4. Serology:</strong></p>
+        <ul>
+          <li>IgM (acute infection); IgG (past infection or vaccine)</li>
+          <li>Distinguish from vaccine: paired titers (rising), CSF IgG (CNS infection)</li>
+        </ul>
+
+        <p><strong>5. CSF analysis (neurologic form):</strong></p>
+        <ul>
+          <li>↑ Protein</li>
+          <li>Mononuclear pleocytosis</li>
+          <li>CDV-specific IgG (intrathecal production)</li>
+        </ul>
+
+        <p><strong>6. Other workup:</strong></p>
+        <ul>
+          <li>CBC: lymphopenia, neutropenia (variable), ± thrombocytopenia</li>
+          <li>Biochem (organ function)</li>
+          <li>UA</li>
+          <li>Thoracic radiograph (interstitial / bronchopneumonia)</li>
+          <li>MRI (severe CNS form — demyelination patterns)</li>
+          <li>Fundic exam (chorioretinitis lesions)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other respiratory: kennel cough complex (Bordetella, parainfluenza, adeno)</li>
+          <li>Other GI: parvovirus, severe parasitism, food intolerance</li>
+          <li>Other neurologic: MUE, neoplasia, toxin, lead poisoning, hypoglycemia</li>
+          <li>Severe pneumonia (bacterial, fungal)</li>
+          <li>Leptospirosis</li>
+          <li>Tick-borne disease</li>
+          <li>Vaccine reaction (rare)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>NO SPECIFIC ANTIVIRAL — supportive care only ✨</strong></p>
+
+        <p><strong>1. Supportive care (acute phase):</strong></p>
+        <ul>
+          <li>IV fluid therapy</li>
+          <li>Anti-emetics (maropitant, ondansetron)</li>
+          <li>Anti-tussives (if pneumonia not bacterial)</li>
+          <li>Nutritional support (NE/NG tube if needed)</li>
+          <li>Eye lubrication / cleaning (mucopurulent discharge)</li>
+          <li>Nasal cleaning</li>
+          <li>Steam / nebulization for respiratory comfort</li>
+          <li>Isolation (highly contagious)</li>
+        </ul>
+
+        <p><strong>2. Antibiotics — for secondary bacterial infections:</strong></p>
+        <ul>
+          <li>Indicated for:
+            <ul>
+              <li>Bronchopneumonia (very common secondary)</li>
+              <li>Pyoderma</li>
+              <li>Suspected sepsis</li>
+            </ul>
+          </li>
+          <li>Empirical: doxycycline 5-10 mg/kg PO q12h or amoxicillin-clavulanate</li>
+          <li>Severe pneumonia: enrofloxacin + ampicillin IV</li>
+          <li>Adjust per culture / response</li>
+        </ul>
+
+        <p><strong>3. Anticonvulsants (neurologic phase):</strong></p>
+        <ul>
+          <li>Phenobarbital, levetiracetam, KBr (see seizure entry)</li>
+          <li>For seizures, myoclonus, status epilepticus</li>
+          <li>Benzodiazepines (diazepam) for acute seizure</li>
+          <li>Myoclonus often persists despite Tx — usually doesn't bother dog</li>
+        </ul>
+
+        <p><strong>4. Anti-edema (severe CNS):</strong></p>
+        <ul>
+          <li>Mannitol 0.5-1 g/kg IV slow for cerebral edema (use cautiously)</li>
+        </ul>
+
+        <p><strong>5. Adjunct therapies (variable evidence):</strong></p>
+        <ul>
+          <li>Recombinant feline interferon-omega — some evidence in early disease</li>
+          <li>Hyperimmune serum (passive antibodies) — limited evidence; controversial</li>
+          <li>Ribavirin (antiviral) — limited evidence</li>
+          <li>NDV (Newcastle disease virus) administration — research</li>
+          <li>Vitamin A — supportive (research)</li>
+        </ul>
+
+        <p><strong>6. Long-term management (survivors):</strong></p>
+        <ul>
+          <li>Persistent myoclonus often (cosmetic, not life-threatening)</li>
+          <li>Anticonvulsants if seizures recurrent</li>
+          <li>Optic neuritis residual blindness</li>
+          <li>Dental issues (enamel defects)</li>
+          <li>Some achieve full recovery; others have residual deficits</li>
+        </ul>
+
+        <p><strong>7. Owner education + isolation:</strong></p>
+        <ul>
+          <li>Strict isolation 60-90 days (shedding period)</li>
+          <li>Discuss prognosis: variable; neurologic involvement = worse</li>
+          <li>Future vaccination of contacts</li>
+          <li>Environmental decontamination (most disinfectants effective)</li>
+        </ul>
+
+        <p><strong>Vaccination ✨ — prevention is key:</strong></p>
+        <ul>
+          <li>WSAVA: DHP core vaccine
+            <ul>
+              <li>First dose 6-8 weeks</li>
+              <li>q3-4 weeks until 16 weeks</li>
+              <li>Booster 6-12 mo</li>
+              <li>Then q3 yr</li>
+            </ul>
+          </li>
+          <li>Recombinant CDV vaccine (Recombitek, Nobivac) — alternative; safer in some scenarios</li>
+          <li>MLV vaccines: very effective; rare vaccine-associated CDV in immunocompromised (avoid in some immunosuppressed)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Bacterial bronchopneumonia (very common)</li>
+          <li>Severe respiratory failure</li>
+          <li>Persistent neurologic disease ✗</li>
+          <li>Status epilepticus</li>
+          <li>Permanent blindness (optic neuritis)</li>
+          <li>Persistent myoclonus</li>
+          <li>Permanent CNS damage</li>
+          <li>Behavioral changes (long-term)</li>
+          <li>Dental enamel hypoplasia (lifelong)</li>
+          <li>"Hard pad" persistent</li>
+          <li>Chronic ocular changes</li>
+          <li>Old dog encephalitis (years later)</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Survival depends heavily on neurologic involvement:
+            <ul>
+              <li>No CNS signs + supportive care: 50-70% survival</li>
+              <li>Mild CNS signs: variable (50%)</li>
+              <li>Severe CNS / seizures: poor (20-30%) ✗</li>
+              <li>Status epilepticus: very poor</li>
+            </ul>
+          </li>
+          <li>Survivors may have residual deficits (myoclonus, mild ataxia, blindness, enamel defects)</li>
+          <li>Some achieve near-normal QOL</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe CNS signs at presentation</li>
+              <li>Status epilepticus</li>
+              <li>Severe pneumonia</li>
+              <li>Concurrent parvovirus / parasitism</li>
+              <li>Very young (&lt; 12 weeks)</li>
+              <li>Delayed presentation</li>
+              <li>Severe lymphopenia</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Unvaccinated young dog + multisystem signs (resp + GI + neuro)</strong> ✨ — PCR confirms<br><br>**No specific antiviral** — supportive only. **Prevention = DHP vaccination** (start 6-8 wk, complete by 16 wk)<br><br>⚠️ **Hard pad + enamel hypoplasia + myoclonus** = pathognomonic combination late disease. Survivors often have residual neuro deficits</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 94 · Feline Coronavirus &amp; FIP ---------- */
+  {
+    id: 'feline-infectious-peritonitis',
+    titleEn: 'Feline Infectious Peritonitis (FIP)',
+    titleTh: 'FIP — โรคเยื่อบุช่องท้องอักเสบในแมว',
+    type: 'disease',
+    system: 'infectious',
+    species: ['cat'],
+    tags: ['FIP', 'feline coronavirus', 'FCoV', 'wet FIP', 'effusive FIP', 'dry FIP', 'GS-441524', 'remdesivir', 'molnupiravir', 'pyogranulomatous', 'vasculitis', 'A:G ratio', 'serum protein electrophoresis'],
+    aliases: ['FIP', 'feline infectious peritonitis', 'wet FIP', 'dry FIP', 'effusive FIP'],
+    source: 'Ch. 94 · pp. 1517–1525',
+    sections: {
+      definition: `
+        <p>โรคที่เกิดจาก <strong>mutated feline coronavirus (FCoV)</strong> — เคยเป็นโรค fatal นิรนาม ก่อนยุค antiviral ใหม่</p>
+        <ul>
+          <li>FCoV: common asymptomatic GI virus (~ 25-90% of cats — multi-cat households especially)</li>
+          <li>~ 5-10% of FCoV-infected cats develop FIP from mutation (FIP-causing strain emerges within individual cat)</li>
+          <li>NOT contagious cat-to-cat as FIP itself (only FCoV transmissible)</li>
+          <li>2 forms ✨:
+            <ul>
+              <li><strong>Effusive (wet) FIP ✨</strong> — ~ 60-70%; cavity effusion (peritoneal, pleural, pericardial)</li>
+              <li><strong>Non-effusive (dry) FIP ✨</strong> — ~ 30-40%; granulomatous lesions in organs</li>
+            </ul>
+          </li>
+          <li>Predisposed:
+            <ul>
+              <li>Young cats (3 mo - 3 yr) ✨</li>
+              <li>Multi-cat households, shelters, catteries</li>
+              <li>Pedigree breeds (Birman, Bengal, Ragdoll, Persian, Abyssinian)</li>
+              <li>Immunocompromised (FeLV, recent stress, surgery)</li>
+            </ul>
+          </li>
+          <li><strong>Until ~ 2018: nearly 100% fatal</strong> ✗</li>
+          <li><strong>2020s: GS-441524 antiviral revolutionized treatment ✨</strong> — &gt; 85% cure rate ✓</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Feline coronavirus (FCoV) — 2 biotypes:</strong>
+            <ul>
+              <li>Feline enteric coronavirus (FECV) — benign GI virus, common</li>
+              <li>Feline infectious peritonitis virus (FIPV) — mutated form within cat</li>
+            </ul>
+          </li>
+          <li>Mutation theory: FECV mutates within individual cat → tropism shifts from enterocytes to macrophages → systemic disease</li>
+          <li>Mutated virus (FIPV) NOT contagious cat-to-cat as FIP</li>
+          <li>FECV transmissible: fecal-oral; high in multi-cat environments</li>
+          <li>Risk factors for mutation:
+            <ul>
+              <li>Young age (immune system development)</li>
+              <li>Stress (rehoming, surgery, vaccination)</li>
+              <li>Genetic susceptibility</li>
+              <li>High viral load (multi-cat exposure)</li>
+              <li>Immunosuppression</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>FIPV infects monocytes/macrophages → systemic spread</li>
+          <li>Immune complex deposition + Type III + IV hypersensitivity</li>
+          <li><strong>Vasculitis</strong> ✨ — hallmark (small + medium vessels)</li>
+          <li>Pyogranulomatous inflammation in organs</li>
+          <li>Effusive form: vasculitis → protein-rich exudation into body cavities</li>
+          <li>Non-effusive form: granulomas in organs (kidney, liver, CNS, eyes, intestinal LN)</li>
+          <li>Mixed forms common</li>
+          <li>Polyclonal hypergammaglobulinemia (chronic immune stimulation)</li>
+          <li>Death (without Tx) from multi-organ failure</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Effusive (wet) FIP ✨ — most common:</strong></p>
+        <ul>
+          <li><strong>Abdominal distension</strong> (ascites) — pear-shaped abdomen</li>
+          <li><strong>Pleural effusion</strong> → dyspnea, tachypnea, exercise intolerance</li>
+          <li>± Pericardial effusion → cardiac signs (rare)</li>
+          <li>Effusion characteristics: <strong>yellow, viscous, sticky, high protein</strong> ✨</li>
+        </ul>
+
+        <p><strong>Non-effusive (dry) FIP ✨ — diverse presentation by organ:</strong></p>
+        <ul>
+          <li>Constitutional:
+            <ul>
+              <li>Chronic fluctuating fever (cyclic, antibiotic-unresponsive) ✨</li>
+              <li>Weight loss, anorexia</li>
+              <li>Lethargy</li>
+            </ul>
+          </li>
+          <li>Ocular ~ 30%:
+            <ul>
+              <li>Anterior uveitis (cloudy iris, aqueous flare, hypopyon, hyphema)</li>
+              <li>Chorioretinitis</li>
+              <li>Iris color change</li>
+              <li>"Mutton-fat" keratic precipitates</li>
+            </ul>
+          </li>
+          <li>CNS ~ 30%:
+            <ul>
+              <li>Seizures, behavioral changes</li>
+              <li>Ataxia, paresis</li>
+              <li>Cranial nerve deficits</li>
+              <li>Hyperesthesia</li>
+              <li>Hydrocephalus (chronic)</li>
+            </ul>
+          </li>
+          <li>Renal: granulomatous renal lesions, AKI/CKD</li>
+          <li>Hepatic: hepatomegaly, icterus</li>
+          <li>GI: chronic diarrhea, palpable mesenteric mass / lymphadenopathy</li>
+        </ul>
+
+        <p><strong>Common physical findings:</strong></p>
+        <ul>
+          <li>Pyrexia (cyclic)</li>
+          <li>Pale or icteric MM</li>
+          <li>Mesenteric lymphadenopathy</li>
+          <li>Hepatosplenomegaly</li>
+          <li>Renomegaly with irregular contour (bumpy kidneys)</li>
+          <li>Ocular changes (need fundic + slit lamp)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis is challenging — combination of findings ✨:</strong></p>
+
+        <p><strong>1. Effusion analysis (effusive FIP) ✨ — diagnostic gold:</strong></p>
+        <ul>
+          <li><strong>Modified transudate / exudate characteristics:</strong>
+            <ul>
+              <li><strong>Color:</strong> yellow, sometimes amber</li>
+              <li><strong>Viscous, sticky</strong> ✨ — froths when shaken</li>
+              <li><strong>Total protein &gt; 3.5 g/dL</strong> (often 5-12 g/dL)</li>
+              <li>Globulin predominance</li>
+              <li>Cell count: 1,000-25,000 cells/µL</li>
+              <li>Mixed inflammatory: neutrophils + macrophages + lymphocytes</li>
+              <li>Nucleated:erythrocyte ratio &gt; 1</li>
+            </ul>
+          </li>
+          <li><strong>Rivalta's test ✨</strong> — bedside test:
+            <ul>
+              <li>1 drop effusion in 8 mL distilled water with 1 drop acetic acid</li>
+              <li>Positive (suggesting FIP): drop maintains shape, falls slowly, jellyfish appearance</li>
+              <li>Negative: drop dissolves immediately</li>
+              <li>Sensitivity ~ 90%, specificity ~ 80%</li>
+            </ul>
+          </li>
+          <li>FCoV PCR on effusion (highly sensitive + specific for FIP)</li>
+        </ul>
+
+        <p><strong>2. Bloodwork supportive findings ✨:</strong></p>
+        <ul>
+          <li><strong>Albumin/globulin (A:G) ratio &lt; 0.4-0.6</strong> ✨ — strongly suggestive
+            <ul>
+              <li>Hyperglobulinemia (polyclonal)</li>
+              <li>Hypoalbuminemia</li>
+              <li>Low A:G has reasonable diagnostic value</li>
+            </ul>
+          </li>
+          <li>Lymphopenia</li>
+          <li>Mild non-regenerative anemia</li>
+          <li>Hyperbilirubinemia (without significant ALT/ALP elevation)</li>
+          <li>Mild ↑ liver enzymes</li>
+          <li>± Azotemia</li>
+          <li>↑ Acute phase proteins (haptoglobin, AGP, SAA)</li>
+          <li>Serum protein electrophoresis: polyclonal gammopathy</li>
+        </ul>
+
+        <p><strong>3. FCoV serology — limited utility:</strong></p>
+        <ul>
+          <li>FCoV antibodies common in healthy cats (especially multi-cat homes)</li>
+          <li>High titer doesn't confirm FIP</li>
+          <li>Negative titer doesn't rule out FIP</li>
+          <li>Useful only in single-cat households for screening</li>
+        </ul>
+
+        <p><strong>4. PCR ✨:</strong></p>
+        <ul>
+          <li>FCoV PCR on effusion: high sensitivity for FIP</li>
+          <li>FCoV PCR on blood: variable sensitivity</li>
+          <li>Quantitative PCR — high viral load suggests FIP</li>
+          <li>S-gene mutation PCR — controversial; doesn't reliably distinguish FECV vs FIPV</li>
+          <li>Tissue PCR (granuloma, FNA) — sensitive</li>
+        </ul>
+
+        <p><strong>5. Imaging:</strong></p>
+        <ul>
+          <li>Abdominal US: ascites, mesenteric lymphadenopathy, organ lesions, granulomas</li>
+          <li>Thoracic radiograph: pleural effusion</li>
+          <li>Echocardiogram: pericardial effusion (rare)</li>
+          <li>MRI / CT: CNS lesions in dry FIP</li>
+        </ul>
+
+        <p><strong>6. Cytology / histopathology (definitive):</strong></p>
+        <ul>
+          <li>FNA / biopsy of granulomas, mesenteric LN</li>
+          <li>Pyogranulomatous inflammation + vasculitis</li>
+          <li>Immunohistochemistry for FCoV antigen (specific)</li>
+        </ul>
+
+        <p><strong>7. CSF analysis (CNS form):</strong></p>
+        <ul>
+          <li>↑ Protein (often markedly)</li>
+          <li>Mononuclear or mixed pleocytosis</li>
+          <li>FCoV PCR on CSF</li>
+          <li>± Cytology of inflammatory cells</li>
+        </ul>
+
+        <p><strong>Diagnostic score systems exist (Norsworthy, Riemer)</strong> — combine clinical + lab findings + imaging</p>
+      `,
+      differential: `
+        <ul>
+          <li>Cardiac disease (effusion — rule out with echocardiogram)</li>
+          <li>Hepatic disease (cirrhosis, neoplasia)</li>
+          <li>Lymphoma</li>
+          <li>Cholangitis</li>
+          <li>Toxoplasmosis</li>
+          <li>Cryptococcosis</li>
+          <li>Septic peritonitis</li>
+          <li>Other systemic neoplasia</li>
+          <li>FIV / FeLV-associated illness</li>
+          <li>Mycobacterial infection</li>
+          <li>Other granulomatous disease</li>
+          <li>Polycystic kidney disease</li>
+          <li>Idiopathic effusion (rare)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Antiviral therapy ✨ ✨ — REVOLUTION (since ~ 2018-2020):</strong></p>
+
+        <p><strong>GS-441524 (and remdesivir derivative) ✨ — game-changer:</strong></p>
+        <ul>
+          <li>Nucleoside analog (RNA polymerase inhibitor)</li>
+          <li>Multiple compounded sources globally; growing legality / availability</li>
+          <li><strong>Standard protocol:</strong>
+            <ul>
+              <li>Effusive FIP: 4-6 mg/kg SC q24h × 12 weeks</li>
+              <li>Non-effusive FIP: 6-8 mg/kg SC q24h × 12 weeks</li>
+              <li>Ocular FIP: 8-10 mg/kg SC q24h × 12 weeks</li>
+              <li>CNS FIP: 10-12+ mg/kg SC q24h × 12 weeks (higher dose for CNS penetration)</li>
+            </ul>
+          </li>
+          <li>Daily SC injection — owners learn to administer at home</li>
+          <li>OR oral GS-441524 (newer): 2× SC dose PO q24h × 12 weeks</li>
+          <li><strong>Cure rate &gt; 85% with proper protocol ✓</strong></li>
+          <li>Most cats clinically improve within 1-2 weeks</li>
+          <li>Continue full 12-week course even if asymptomatic earlier (relapse risk if stopped early)</li>
+          <li>Monitor: CBC, biochem, A:G, AGP, weight q2-4 weeks</li>
+          <li>Side effects:
+            <ul>
+              <li>Injection site reactions (sterile abscesses) — common</li>
+              <li>Mild ↑ liver enzymes (transient)</li>
+              <li>Anorexia (early)</li>
+              <li>Rare hematologic changes</li>
+            </ul>
+          </li>
+          <li>Treatment failure ✗ — relapse possible:
+            <ul>
+              <li>Increase dose (often successful)</li>
+              <li>Extend treatment</li>
+              <li>Switch to remdesivir IV</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Remdesivir (Veklury) ✨:</strong></p>
+        <ul>
+          <li>FDA-approved human drug (COVID-19); converts to GS-441524 in vivo</li>
+          <li>IV protocol: 10-15 mg/kg slow IV q24h × 7-10 days, then transition to oral GS-441524</li>
+          <li>Useful for acute initial treatment in critical cats</li>
+          <li>Legal availability variable globally</li>
+        </ul>
+
+        <p><strong>Molnupiravir (Lagevrio) ✨ — newer alternative:</strong></p>
+        <ul>
+          <li>Human COVID-19 drug; orally bioavailable</li>
+          <li>12.5-25 mg/kg PO q12h × 12 weeks</li>
+          <li>Alternative when GS-441524 unavailable / failed</li>
+          <li>Higher doses sometimes needed</li>
+        </ul>
+
+        <p><strong>2. Supportive care ✨:</strong></p>
+        <ul>
+          <li><strong>Therapeutic effusion drainage</strong>:
+            <ul>
+              <li>Abdominocentesis if severe ascites (comfort)</li>
+              <li>Thoracocentesis if pleural effusion → respiratory distress</li>
+              <li>Pericardiocentesis if cardiac tamponade</li>
+              <li>Don't drain repeatedly without antiviral (just delays)</li>
+            </ul>
+          </li>
+          <li>IV fluids if dehydrated</li>
+          <li>Anti-emetics (maropitant)</li>
+          <li>Appetite stimulants:
+            <ul>
+              <li>Mirtazapine 1.88 mg/cat PO q72h or transdermal q24h</li>
+              <li>Capromorelin (Elura)</li>
+            </ul>
+          </li>
+          <li>Nutritional support (esophagostomy tube if severe anorexia)</li>
+          <li>Pain management</li>
+          <li>Address ocular inflammation: topical prednisolone acetate, atropine if uveitis</li>
+          <li>Anticonvulsants if seizures</li>
+          <li>Erythropoietin if severe anemia (rare)</li>
+        </ul>
+
+        <p><strong>3. Avoid (historical/ineffective):</strong></p>
+        <ul>
+          <li>Glucocorticoids alone — palliative only; doesn't cure ✗ (used briefly historically)</li>
+          <li>Cyclophosphamide, chlorambucil — ineffective</li>
+          <li>Polyprenyl immunostimulant — limited evidence</li>
+          <li>Pentoxifylline — anti-vasculitis effect; supportive only</li>
+          <li>Corticosteroid + supportive: previous "best" Tx; obsolete with GS-441524</li>
+        </ul>
+
+        <p><strong>4. Owner education + commitment ✨:</strong></p>
+        <ul>
+          <li>Daily injections × 12 weeks (significant commitment)</li>
+          <li>Cost considerable ($3000-10000+ depending on cat size, source)</li>
+          <li>Source / legality varies globally — research available products</li>
+          <li>Compounding pharmacies; some breeds-specific groups</li>
+          <li>Recheck visits q2-4 weeks</li>
+          <li>Watch for relapse signs after Tx (within 12 weeks observation period)</li>
+          <li>Emotional support — recovery very rewarding ✓</li>
+        </ul>
+
+        <p><strong>5. Post-treatment observation:</strong></p>
+        <ul>
+          <li>"Observation period" 12 weeks after Tx ends</li>
+          <li>Monitor CBC, biochem monthly × 3 months</li>
+          <li>If no relapse → considered cured ✓</li>
+          <li>Some cats develop different clinical syndromes later (different mutation events)</li>
+        </ul>
+
+        <p><strong>6. Multi-cat household management:</strong></p>
+        <ul>
+          <li>FCoV is contagious → other cats may carry virus</li>
+          <li>FIP itself is NOT cat-to-cat contagious</li>
+          <li>Other cats: usually fine; rarely develop FIP themselves</li>
+          <li>Reduce stress, optimize hygiene (litter boxes, regular cleaning)</li>
+          <li>Quarantine new cats</li>
+          <li>FCoV likely persists in environment; may not eliminate</li>
+          <li>Genetic susceptibility individual</li>
+        </ul>
+
+        <p><strong>Vaccination:</strong></p>
+        <ul>
+          <li>Intranasal FIP vaccine (Primucell) exists — controversial; questionable efficacy; not WSAVA-recommended core vaccine</li>
+          <li>Best prevention: stress reduction, optimal husbandry, isolation of FCoV-positive cats (ideal but rarely practical)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Without GS-441524 / molnupiravir: nearly 100% fatal ✗</li>
+          <li>Treatment relapse (with antivirals) — increase dose / extend</li>
+          <li>Injection site reactions / sterile abscesses</li>
+          <li>Severe respiratory distress (pleural effusion)</li>
+          <li>CNS deterioration → seizures, coma</li>
+          <li>Permanent vision loss (uveitis)</li>
+          <li>Chronic kidney disease (granulomatous lesions)</li>
+          <li>Hepatic dysfunction</li>
+          <li>Severe anorexia → cachexia</li>
+          <li>Cost of treatment significant</li>
+          <li>Concurrent disease progression</li>
+        </ul>
+        <p><strong>Prognosis ✨:</strong></p>
+        <ul>
+          <li><strong>With GS-441524 antiviral: &gt; 85% cure rate ✓ ✨</strong> — revolutionary</li>
+          <li>Without antiviral: nearly 100% fatal within weeks-months ✗</li>
+          <li>Effusive form responds slightly better than non-effusive (often)</li>
+          <li>CNS involvement: needs higher doses, longer Tx, but still treatable</li>
+          <li>Ocular involvement: usually treatable; vision recovery variable</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe CNS involvement</li>
+              <li>Multi-organ failure at presentation</li>
+              <li>Concurrent FIV / FeLV</li>
+              <li>Late presentation</li>
+              <li>Inadequate dosing / shortened Tx course</li>
+            </ul>
+          </li>
+          <li>Cured cats: usually full recovery, normal lifespan</li>
+        </ul>
+        <div class="callout">⚠️ <strong>FIP suspicion in young cat with cyclic fever + ascites + low A:G + hyperglobulinemia</strong> ✨ — Rivalta's test + effusion analysis<br><br>💡 **GS-441524 antiviral revolution ✨** — &gt; 85% cure rate ✓ (was nearly 100% fatal before 2018!)<br><br>**12-week protocol** — daily SC injection; owners learn at home. CNS form needs higher dose. **Don't shorten Tx** even if asymptomatic — relapse risk</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 95 · FeLV &amp; FIV ---------- */
+  {
+    id: 'felv-fiv',
+    titleEn: 'Feline Leukemia Virus (FeLV) &amp; Feline Immunodeficiency Virus (FIV)',
+    titleTh: 'FeLV และ FIV',
+    type: 'disease',
+    system: 'infectious',
+    species: ['cat'],
+    tags: ['FeLV', 'FIV', 'feline leukemia virus', 'feline immunodeficiency virus', 'retrovirus', 'SNAP combo test', 'vaccination', 'lymphoma', 'leukemia', 'pancytopenia', 'opportunistic infection'],
+    aliases: ['FeLV', 'FIV', 'feline leukemia', 'feline AIDS', 'retrovirus cat', 'ลูคีเมียแมว'],
+    source: 'Ch. 95 · pp. 1525–1540',
+    sections: {
+      definition: `
+        <p>2 retrovirus ที่สำคัญในแมว — เป็นสาเหตุของภาวะ immunosuppression + neoplasia + cytopenias</p>
+        <ul>
+          <li><strong>FeLV (Feline Leukemia Virus)</strong>:
+            <ul>
+              <li>Gammaretrovirus, ssRNA</li>
+              <li>Causes: lymphoma ✨, leukemia, immunosuppression, anemia, immune-mediated disease</li>
+              <li>Worldwide prevalence ~ 2-3% in healthy cats; up to 30% in sick cats</li>
+              <li>Highly contagious in close contact (same household)</li>
+              <li>Most common in: kittens, multi-cat households, outdoor cats, intact males</li>
+            </ul>
+          </li>
+          <li><strong>FIV (Feline Immunodeficiency Virus)</strong>:
+            <ul>
+              <li>Lentivirus (related to HIV but species-specific)</li>
+              <li>Causes: immunosuppression, secondary infections, neoplasia (slower progression than FeLV)</li>
+              <li>Worldwide prevalence 1-15% in healthy cats; up to 30% in sick cats</li>
+              <li>Bite-wound transmission ✨ — outdoor intact males most at risk</li>
+              <li>Slower progression than FeLV (cats often live many years)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>FeLV transmission ✨:</strong></p>
+        <ul>
+          <li>Saliva (mutual grooming, shared bowls) — primary route</li>
+          <li>Respiratory secretions (sneezing)</li>
+          <li>Bite wounds</li>
+          <li>Transplacental + milk (queens to kittens) — high vertical transmission</li>
+          <li>Iatrogenic (rare; transfusion, contaminated equipment)</li>
+          <li>"<strong>Friendly cat virus</strong>" ✨ — close prolonged contact required</li>
+          <li>Cats &lt; 4 mo: high susceptibility (10× higher than adults)</li>
+          <li>Adult cats develop "age-related immunity"</li>
+        </ul>
+
+        <p><strong>FeLV outcomes after exposure (4 categories):</strong></p>
+        <ul>
+          <li><strong>Abortive infection (~ 40%)</strong>: clears virus, develops immunity, antibody+ but antigen-negative</li>
+          <li><strong>Regressive infection (~ 30%)</strong>: virus integrated as provirus in BM; antigen-negative; can reactivate with stress; not contagious</li>
+          <li><strong>Progressive infection (~ 30%)</strong>: persistent viremia, antigen-positive, contagious; develop FeLV-related disease (median survival 2-5 years)</li>
+          <li><strong>Focal infection (rare)</strong>: localized to specific tissue (mammary, eye)</li>
+        </ul>
+
+        <p><strong>FIV transmission ✨:</strong></p>
+        <ul>
+          <li><strong>Bite wounds primary route</strong> ✨ — virus in saliva</li>
+          <li>"Fighting cat virus" — outdoor intact males most at risk</li>
+          <li>Vertical transmission rare (vs FeLV)</li>
+          <li>Sexual transmission possible but minor</li>
+          <li>Minimal casual contact transmission</li>
+          <li>Persistent infection always (no clearance)</li>
+        </ul>
+
+        <p><strong>FIV stages (slow progression like HIV):</strong></p>
+        <ul>
+          <li><strong>Acute</strong>: 4-12 weeks post-infection; mild illness, lymphadenopathy, fever; often missed</li>
+          <li><strong>Asymptomatic carrier</strong>: years (many years, even lifetime)</li>
+          <li><strong>FAIDS (Feline AIDS)</strong>: progressive immunosuppression, opportunistic infections, neoplasia; usually late life</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <p><strong>FeLV:</strong></p>
+        <ul>
+          <li>Retrovirus → integrates DNA into host genome → persistent infection</li>
+          <li>Tropism: bone marrow precursors, lymphoid tissue, intestinal mucosa</li>
+          <li>Subgroups:
+            <ul>
+              <li>FeLV-A: most common, all infected cats have</li>
+              <li>FeLV-B: mediates neoplasia (lymphoma)</li>
+              <li>FeLV-C: causes pure red cell aplasia (anemia)</li>
+              <li>FeLV-T: T-cell immunodeficiency</li>
+            </ul>
+          </li>
+          <li>BM dysfunction → cytopenias</li>
+          <li>Immune dysfunction → opportunistic infections</li>
+          <li>Insertional mutagenesis → lymphoma, leukemia</li>
+        </ul>
+
+        <p><strong>FIV:</strong></p>
+        <ul>
+          <li>Lentivirus → infects CD4+ T-cells, macrophages, B-cells</li>
+          <li>Progressive CD4+ T-cell decline (analogous to HIV)</li>
+          <li>Immunosuppression slowly progressive</li>
+          <li>Cats live years asymptomatic</li>
+          <li>Late disease: opportunistic infections, neoplasia</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>FeLV-related diseases ✨ — diverse:</strong></p>
+        <ul>
+          <li><strong>Anemia ✨</strong>:
+            <ul>
+              <li>Non-regenerative (most common)</li>
+              <li>Pure red cell aplasia (FeLV-C)</li>
+              <li>± Macrocytic without reticulocytosis</li>
+            </ul>
+          </li>
+          <li><strong>Lymphoma ✨</strong> — mediastinal (young cats), GI, multicentric</li>
+          <li><strong>Leukemia</strong> — myeloid, lymphoid</li>
+          <li>Pancytopenia (BM failure)</li>
+          <li>Recurrent / chronic infections (URI, abscess, stomatitis)</li>
+          <li>Reproductive: abortion, fading kitten syndrome, infertility</li>
+          <li>Immune-mediated disease: IMHA, glomerulonephritis</li>
+          <li>Enteritis (FeLV-associated)</li>
+          <li>Neurologic: anisocoria, paresis, seizures (rare; lymphoma or direct virus)</li>
+          <li>Stomatitis / gingivitis</li>
+          <li>Wasting, weight loss</li>
+          <li>Often subtle chronic illness</li>
+        </ul>
+
+        <p><strong>FIV-related (often only late):</strong></p>
+        <ul>
+          <li>Most cats asymptomatic for years</li>
+          <li>Late stage:
+            <ul>
+              <li><strong>Chronic gingivostomatitis</strong> ✨ — severe, refractory</li>
+              <li>Recurrent / chronic infections</li>
+              <li>Weight loss, wasting</li>
+              <li>Lymphadenopathy</li>
+              <li>Diarrhea (chronic)</li>
+              <li>Skin disease (recurrent abscess, demodex, ringworm)</li>
+              <li>URI (chronic, recurrent)</li>
+              <li>Lymphoma (~ 5× increased risk)</li>
+              <li>Anemia (mild-moderate)</li>
+              <li>Neurologic signs (rare; behavior change, seizure)</li>
+              <li>Ocular (uveitis, chorioretinitis)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. SNAP test ✨ — initial screening:</strong></p>
+        <ul>
+          <li><strong>SNAP FeLV/FIV Combo (IDEXX)</strong>:
+            <ul>
+              <li>FeLV: detects p27 antigen (active infection)</li>
+              <li>FIV: detects antibody (chronic infection — antibody persists for life)</li>
+              <li>15-min in-house</li>
+            </ul>
+          </li>
+          <li><strong>Always test ALL new cats</strong> ✨ ✨:
+            <ul>
+              <li>Initial veterinary visit</li>
+              <li>Post-bite incident (especially outdoor cats)</li>
+              <li>Sick cats (especially with cytopenias, infections)</li>
+              <li>Before vaccinating against FeLV</li>
+              <li>Pregnant queens</li>
+              <li>Donor cats for transfusion</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>FeLV interpretation:</strong></p>
+        <ul>
+          <li>Positive: active viremia (progressive infection); recheck in 30-60 days to differentiate transient vs persistent
+            <ul>
+              <li>Persistent positive: progressive infection — guarded prognosis</li>
+              <li>Becomes negative: regressive or abortive (better prognosis)</li>
+            </ul>
+          </li>
+          <li>Negative: no active viremia (could be regressive/abortive infection — antigen negative)</li>
+          <li>Confirmation: PCR (proviral DNA on whole blood) — detects regressive infections</li>
+        </ul>
+
+        <p><strong>FIV interpretation:</strong></p>
+        <ul>
+          <li>Positive: antibody present
+            <ul>
+              <li>Adult cat: confirms infection (likely persistent)</li>
+              <li>Kitten &lt; 6 mo: maternal antibody possible — retest at 6 mo</li>
+              <li>FIV-vaccinated cat: produces antibody (false-positive on SNAP) ✗ — distinguish with PCR or Western blot</li>
+            </ul>
+          </li>
+          <li>Negative: usually no infection (window period 4-12 wk in early infection)</li>
+          <li>Confirmation: Western blot, PCR (proviral DNA)</li>
+        </ul>
+
+        <p><strong>2. PCR (proviral DNA) ✨:</strong></p>
+        <ul>
+          <li>For confirmation, regressive infections, vaccine-positive FIV</li>
+          <li>Whole blood sample</li>
+          <li>Detects integrated viral DNA</li>
+          <li>Can distinguish infection from vaccination (FIV)</li>
+        </ul>
+
+        <p><strong>3. Other workup:</strong></p>
+        <ul>
+          <li>CBC + smear (cytopenias, atypical cells)</li>
+          <li>Biochem (organ involvement)</li>
+          <li>UA</li>
+          <li>Bone marrow aspirate (if cytopenias unexplained)</li>
+          <li>Imaging (lymphoma screening, organ involvement)</li>
+          <li>Specific tests for opportunistic infections</li>
+        </ul>
+      `,
+      differential: `
+        <p>FeLV/FIV-related illness diverse — differentiate from non-retrovirus causes:</p>
+        <ul>
+          <li>Other causes of cytopenias (BM disease, drugs, immune-mediated)</li>
+          <li>Lymphoma not associated with FeLV</li>
+          <li>Other infections causing similar signs</li>
+          <li>Hepatic, renal disease</li>
+          <li>Neoplasia other</li>
+          <li>Mycoplasma (concurrent often)</li>
+          <li>Toxoplasma (concurrent often)</li>
+          <li>Coronavirus / FIP</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>NO CURE for either ✗ — supportive + manage complications</strong></p>
+
+        <p><strong>1. General management ✨:</strong></p>
+        <ul>
+          <li><strong>Indoor-only living</strong> ✨ — protect from infections, prevent spread:
+            <ul>
+              <li>Reduces stress</li>
+              <li>Reduces opportunistic infection exposure</li>
+              <li>Prevents transmission to other cats</li>
+            </ul>
+          </li>
+          <li><strong>Spay/neuter</strong> — reduces fighting (FIV transmission), heat stress</li>
+          <li>Optimal nutrition (high-quality diet)</li>
+          <li>Avoid raw meat (Salmonella, Toxoplasma risk in immunocompromised)</li>
+          <li>Regular health checks (q6 mo for asymptomatic; more frequent if symptomatic)</li>
+          <li>CBC, biochem, UA q6-12 mo</li>
+          <li>Annual fecal + parasite prevention</li>
+          <li>Aggressive treatment of concurrent illness</li>
+        </ul>
+
+        <p><strong>2. Antivirals (limited efficacy):</strong></p>
+        <ul>
+          <li><strong>FeLV:</strong>
+            <ul>
+              <li>Recombinant feline interferon-omega — some evidence; expensive</li>
+              <li>Zidovudine (AZT) — modest efficacy; BM toxicity</li>
+              <li>GS-441524 — emerging; some success in select cases</li>
+            </ul>
+          </li>
+          <li><strong>FIV:</strong>
+            <ul>
+              <li>Zidovudine — modest benefit late stage; BM toxicity</li>
+              <li>Recombinant feline interferon-omega</li>
+              <li>Newer antiretrovirals (research)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Treat concurrent infections ✨:</strong></p>
+        <ul>
+          <li>Aggressive antibiotics for bacterial infections</li>
+          <li>Mycoplasma haemofelis: doxycycline 5-10 mg/kg PO q12h × 4 wk</li>
+          <li>Toxoplasma: clindamycin 12.5-25 mg/kg PO q12h × 4 wk</li>
+          <li>Cryptococcus: fluconazole / itraconazole</li>
+          <li>Stomatitis: dental cleaning, full-mouth extractions, immunosuppression</li>
+          <li>URI: appropriate antibiotics (chronic bacterial component)</li>
+        </ul>
+
+        <p><strong>4. Treat lymphoma (FeLV-associated):</strong></p>
+        <ul>
+          <li>CHOP-based chemotherapy or chlorambucil (small cell GI)</li>
+          <li>Outcomes poorer than FeLV-negative cats</li>
+          <li>FeLV+: MST 3-6 months</li>
+          <li>FeLV−: MST 6-12+ months</li>
+        </ul>
+
+        <p><strong>5. Address cytopenias:</strong></p>
+        <ul>
+          <li>EPO/darbepoetin for non-regenerative anemia (CKD-like)</li>
+          <li>Transfusion for severe anemia</li>
+          <li>G-CSF for severe neutropenia</li>
+          <li>Antibiotics if febrile neutropenia</li>
+        </ul>
+
+        <p><strong>6. Pain / palliative:</strong></p>
+        <ul>
+          <li>Pain management (oral disease, neoplasia)</li>
+          <li>Appetite stimulants (mirtazapine)</li>
+          <li>Anti-emetics (maropitant)</li>
+          <li>Quality of life focus</li>
+        </ul>
+
+        <p><strong>7. Multi-cat household management:</strong></p>
+        <ul>
+          <li>Test ALL cats in household</li>
+          <li>Separate FeLV+ from FeLV− cats (FIV less stringent — minimal casual transmission)</li>
+          <li>Don't introduce new cats to FeLV+ household</li>
+          <li>Test new cats at adoption</li>
+          <li>FeLV+ cats: separate food/water bowls, litter boxes</li>
+          <li>FIV+ cats: can share resources with negative cats (low transmission risk without fighting)</li>
+        </ul>
+
+        <p><strong>8. Vaccination ✨:</strong></p>
+
+        <p><strong>FeLV vaccine:</strong></p>
+        <ul>
+          <li>Non-core vaccine</li>
+          <li><strong>Recommended for at-risk cats</strong>:
+            <ul>
+              <li>Outdoor cats</li>
+              <li>Multi-cat households with FeLV+ cat</li>
+              <li>Kittens (initial series often given as default — risk-benefit)</li>
+            </ul>
+          </li>
+          <li>Initial: 2 doses 3-4 wk apart starting at 8-12 weeks</li>
+          <li>Booster 1 year, then q2-3 yr (some labels q3 yr)</li>
+          <li>Test FeLV-negative before vaccinating</li>
+          <li>FISS risk consideration (vaccinate distal limb)</li>
+        </ul>
+
+        <p><strong>FIV vaccine:</strong></p>
+        <ul>
+          <li>Available but controversial</li>
+          <li>Causes positive SNAP test → diagnostic confusion</li>
+          <li>Low protective efficacy</li>
+          <li>NOT routinely recommended; specific high-risk cats only</li>
+          <li>If used: requires PCR for any future FIV testing</li>
+        </ul>
+
+        <p><strong>Owner counseling:</strong></p>
+        <ul>
+          <li>Both viruses non-curable; manage rest of life</li>
+          <li>FIV: many cats live normal lifespan with good management</li>
+          <li>FeLV (progressive): MST 2-5 years from diagnosis</li>
+          <li>Quality of life maintainable for years</li>
+          <li>Cost of long-term management</li>
+          <li>Watch for: lymphoma signs, infections, cytopenias</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>FeLV-associated lymphoma / leukemia ✗</strong> — common</li>
+          <li>Pancytopenia / BM failure ✗</li>
+          <li>Severe opportunistic infections (sepsis)</li>
+          <li>Stomatitis (refractory in FIV especially)</li>
+          <li>Toxoplasmosis activation</li>
+          <li>Mycoplasma flares</li>
+          <li>Reproductive losses (queens)</li>
+          <li>Wasting / cachexia</li>
+          <li>Kidney disease (CKD progression)</li>
+          <li>Neurologic disease (rare; lymphoma)</li>
+          <li>Death from complications</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>FeLV progressive:</strong>
+            <ul>
+              <li>MST 2-5 years from diagnosis</li>
+              <li>~ 50% of progressive cats die within 2-3 years</li>
+              <li>Asymptomatic carriers can live longer</li>
+            </ul>
+          </li>
+          <li><strong>FeLV regressive:</strong> often near-normal lifespan; reactivation possible</li>
+          <li><strong>FIV:</strong>
+            <ul>
+              <li><strong>Often near-normal lifespan</strong> with appropriate management ✓</li>
+              <li>Many cats die from non-FIV-related causes</li>
+              <li>Late stage: opportunistic infections; lymphoma 5× more common</li>
+              <li>Quality of life good for years</li>
+            </ul>
+          </li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Concurrent FeLV + FIV</li>
+              <li>Active lymphoma / leukemia</li>
+              <li>Severe BM failure</li>
+              <li>Recurrent severe infections</li>
+              <li>Concurrent CKD</li>
+              <li>Younger age at infection (FeLV)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Test EVERY new cat for FeLV/FIV</strong> ✨ ✨ — SNAP combo test essential<br><br>**FeLV "friendly cat virus"** (close contact); **FIV "fighting cat virus"** (bite wounds — outdoor intact males)<br><br>⚠️ **No cure** — both lifelong. **FIV often near-normal lifespan**; FeLV progressive MST 2-5 yr. Indoor-only + spay/neuter + treat concurrent infections aggressively</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 91 · Leptospirosis ---------- */
+  {
+    id: 'leptospirosis',
+    titleEn: 'Leptospirosis',
+    titleTh: 'เลปโตสไปโรซิส',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog'],
+    tags: ['leptospirosis', 'lepto', 'AKI', 'hepatic injury', 'pulmonary hemorrhage syndrome', 'LPHS', 'doxycycline', 'penicillin', 'MAT', 'PCR', 'zoonotic', 'icterohaemorrhagiae', 'canicola', 'pomona', 'grippotyphosa', 'bratislava'],
+    aliases: ['lepto', 'leptospira', 'leptospirosis', 'เลปโต', 'ฉี่หนู'],
+    source: 'Ch. 91 · pp. 1485–1488',
+    sections: {
+      definition: `
+        <p>โรคติดเชื้อ <strong>spirochete bacteria (Leptospira)</strong> — เป็น <strong>zoonotic disease ✗</strong> และเป็นสาเหตุสำคัญของ AKI ในหมา</p>
+        <ul>
+          <li>Genus Leptospira; pathogenic species: L. interrogans, L. kirschneri</li>
+          <li><strong>Major serovars affecting dogs ✨:</strong>
+            <ul>
+              <li>L. icterohaemorrhagiae (rats reservoir)</li>
+              <li>L. canicola (dogs)</li>
+              <li>L. pomona (livestock, wildlife)</li>
+              <li>L. grippotyphosa (small mammals)</li>
+              <li>L. bratislava (horses, pigs)</li>
+              <li>L. autumnalis</li>
+            </ul>
+          </li>
+          <li>Predisposed:
+            <ul>
+              <li>Outdoor dogs, hunting/sporting dogs</li>
+              <li>Rural / agricultural environments</li>
+              <li>Recent exposure to standing water, mud, wildlife</li>
+              <li>Urban dogs increasingly affected (rat exposure)</li>
+            </ul>
+          </li>
+          <li><strong>ZOONOTIC ✗</strong> — protect humans (gloves, eye protection)</li>
+          <li>Cat: rarely clinically affected (subclinical mostly)</li>
+          <li>เพิ่มขึ้นในไทยช่วงน้ำท่วม</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Spirochete bacteria; thin, motile, helical</li>
+          <li>Maintained in reservoir hosts (rodents, raccoons, opossums, livestock, wildlife) — chronic shedders in urine</li>
+          <li>Transmission:
+            <ul>
+              <li><strong>Direct contact with infected urine</strong> ✨</li>
+              <li>Contaminated water (standing water, ponds, streams, puddles)</li>
+              <li>Contaminated soil</li>
+              <li>Bite wounds, ingestion of infected tissues</li>
+              <li>Transplacental (rare)</li>
+              <li>Sexual transmission possible</li>
+            </ul>
+          </li>
+          <li>Entry: mucous membranes, abraded skin, conjunctiva</li>
+          <li>Incubation: 4-12 days</li>
+          <li>Survival in environment: weeks-months in moist alkaline conditions; killed by drying, freezing, UV</li>
+          <li>Seasonal peak: warm/wet seasons (rainy season in tropics ✨)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Bacteria penetrate mucosa → bacteremia → spread to organs (kidneys, liver, lungs, eyes, CNS)</li>
+          <li>Severe vasculitis (endothelial damage) → multi-organ damage</li>
+          <li>Renal: tubulointerstitial nephritis → AKI ✨</li>
+          <li>Hepatic: cholestasis, hepatocellular damage → icterus, hepatic dysfunction</li>
+          <li>Pulmonary: severe vasculitis → pulmonary hemorrhage syndrome (LPHS) ✗</li>
+          <li>Coagulopathy: vasculitis + DIC + thrombocytopenia</li>
+          <li>Eye: uveitis (chronic later)</li>
+          <li>CNS: meningitis (rare)</li>
+          <li>Chronic carriers: bacteria persist in renal tubules → urinary shedding (zoonotic risk!)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Highly variable presentation — from subclinical to fatal ✗:</strong></p>
+
+        <p><strong>Acute classic:</strong></p>
+        <ul>
+          <li>Sudden onset:
+            <ul>
+              <li>Fever (often 39.5-40.5°C)</li>
+              <li>Lethargy, weakness, depression</li>
+              <li>Anorexia</li>
+              <li>Vomiting</li>
+              <li>Muscle pain (myalgia) — reluctant to move ✨</li>
+              <li>Stiff gait</li>
+              <li>Polyuria/polydipsia or oliguria/anuria (AKI)</li>
+            </ul>
+          </li>
+          <li>Renal signs ✨ — most common:
+            <ul>
+              <li>AKI: oliguria/anuria → polyuria → recovery (or death)</li>
+              <li>Uremic signs: vomiting, halitosis, ulcers</li>
+              <li>Hematuria, proteinuria</li>
+              <li>Renal pain on palpation</li>
+            </ul>
+          </li>
+          <li>Hepatic signs:
+            <ul>
+              <li>Icterus ✗</li>
+              <li>Hepatomegaly, hepatic pain</li>
+              <li>± Encephalopathy</li>
+            </ul>
+          </li>
+          <li>Pulmonary (LPHS) ✗:
+            <ul>
+              <li>Dyspnea, tachypnea</li>
+              <li>Hemoptysis</li>
+              <li>High mortality without aggressive Tx</li>
+            </ul>
+          </li>
+          <li>Coagulopathy:
+            <ul>
+              <li>Petechiae, ecchymoses</li>
+              <li>Epistaxis, melena</li>
+              <li>DIC (severe)</li>
+            </ul>
+          </li>
+          <li>Ocular:
+            <ul>
+              <li>Uveitis (acute or chronic)</li>
+              <li>Conjunctivitis</li>
+              <li>Scleral injection</li>
+            </ul>
+          </li>
+          <li>± CNS: rare; meningitis, seizures</li>
+        </ul>
+
+        <p><strong>Chronic / subclinical:</strong></p>
+        <ul>
+          <li>Mild renal disease</li>
+          <li>Chronic interstitial nephritis</li>
+          <li>Chronic hepatitis (rare)</li>
+          <li>Asymptomatic carrier (urinary shedding)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Clinical recognition + signalment ✨:</strong></p>
+        <ul>
+          <li>Fever + AKI + ± icterus + recent water/wildlife exposure = lepto until proven otherwise</li>
+          <li>Increased index of suspicion in rainy season / endemic areas (Thailand)</li>
+        </ul>
+
+        <p><strong>2. CBC + biochem ✨:</strong></p>
+        <ul>
+          <li>CBC:
+            <ul>
+              <li>Leukocytosis with neutrophilia + left shift</li>
+              <li>Lymphopenia</li>
+              <li>Thrombocytopenia (very common, often severe)</li>
+              <li>Mild anemia</li>
+            </ul>
+          </li>
+          <li>Biochem:
+            <ul>
+              <li>↑ BUN, Cr (often markedly) ✨</li>
+              <li>↑ Phosphorus</li>
+              <li>↑ ALP, ALT, GGT (hepatic injury)</li>
+              <li>↑ Total bilirubin (icterus)</li>
+              <li>± Hypoglycemia (severe hepatic)</li>
+              <li>± Hyponatremia, hypochloremia</li>
+              <li>Hyperkalemia (oliguric AKI) ✗</li>
+              <li>Hypoalbuminemia</li>
+            </ul>
+          </li>
+          <li>UA:
+            <ul>
+              <li>Isosthenuria / hyposthenuria (impaired concentrating)</li>
+              <li>Glucosuria (without hyperglycemia — tubular damage)</li>
+              <li>Proteinuria</li>
+              <li>Granular / cellular casts</li>
+              <li>Hematuria</li>
+            </ul>
+          </li>
+          <li>Coagulation: prolonged PT/aPTT, ↑ D-dimers (DIC)</li>
+        </ul>
+
+        <p><strong>3. Specific testing ✨:</strong></p>
+
+        <p><strong>MAT (Microscopic Agglutination Test) ✨ — gold standard serology:</strong></p>
+        <ul>
+          <li>Detects antibodies to multiple serovars</li>
+          <li>Quantitative titer per serovar</li>
+          <li><strong>Acute infection:</strong>
+            <ul>
+              <li>Initial titer ≥ 1:800-1:1600 highly suggestive</li>
+              <li>Cross-reactivity between serovars common</li>
+              <li>4-fold rise in paired titers (acute + 2 weeks later) confirms</li>
+              <li>Send to specialty lab</li>
+            </ul>
+          </li>
+          <li>Vaccinated dogs: titers typically &lt; 1:800; usually distinguishable</li>
+          <li>Some severe acute cases: low/negative initial titer (early in disease)</li>
+        </ul>
+
+        <p><strong>PCR ✨ — most sensitive in early disease:</strong></p>
+        <ul>
+          <li>Whole blood (acute, before antibody response)</li>
+          <li>Urine (later, when shedding starts — usually after week 2)</li>
+          <li>Detects organism directly</li>
+          <li>Send before antibiotic Tx (decreases sensitivity)</li>
+          <li>Combination blood + urine PCR maximizes sensitivity</li>
+          <li>Many specialty labs offer</li>
+        </ul>
+
+        <p><strong>4. Other:</strong></p>
+        <ul>
+          <li>Thoracic radiograph (3-view) — pulmonary changes (LPHS):
+            <ul>
+              <li>Diffuse interstitial / nodular pattern</li>
+              <li>Patchy alveolar infiltrates</li>
+              <li>"Caudodorsal" pattern</li>
+            </ul>
+          </li>
+          <li>Abdominal US: enlarged echogenic kidneys, perirenal effusion, hepatic changes, mild pleural/peritoneal effusion</li>
+          <li>BP (often hypertensive in AKI)</li>
+          <li>Blood gas (acid-base in AKI)</li>
+          <li>Urine culture (rule out concurrent UTI)</li>
+        </ul>
+
+        <p><strong>5. Vaccination history:</strong></p>
+        <ul>
+          <li>Lepto vaccine (4-way) covers icterohaemorrhagiae, canicola, pomona, grippotyphosa</li>
+          <li>Vaccination doesn't cover all serovars — vaccinated dog can still get lepto</li>
+          <li>Affects MAT interpretation</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other causes of AKI:
+            <ul>
+              <li>Toxic (ethylene glycol, NSAID, aminoglycoside, raisin/grape, lily ingestion in cat)</li>
+              <li>Pyelonephritis</li>
+              <li>Urinary obstruction</li>
+              <li>Hypoperfusion / shock</li>
+            </ul>
+          </li>
+          <li>Other causes of icterus + AKI:
+            <ul>
+              <li>Babesiosis</li>
+              <li>IMHA</li>
+              <li>Acute hepatic failure</li>
+              <li>Severe sepsis</li>
+            </ul>
+          </li>
+          <li>Tick-borne disease (Ehrlichia, RMSF)</li>
+          <li>Bacterial sepsis</li>
+          <li>Viral (canine herpes, adenovirus rare)</li>
+          <li>Toxic hepatopathy</li>
+          <li>Pancreatitis (severe with multi-organ)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Antibiotics ✨ — start empirically while testing:</strong></p>
+        <ul>
+          <li><strong>Doxycycline 5 mg/kg PO/IV q12h × 14 days</strong> ✨ — first-line
+            <ul>
+              <li>Effective vs both leptospiremia and renal carrier state</li>
+              <li>Eliminates urinary shedding</li>
+              <li>Side effects: GI (give with food)</li>
+            </ul>
+          </li>
+          <li><strong>Penicillin G 25,000-40,000 U/kg IV/IM q12h</strong> — alternative initial:
+            <ul>
+              <li>Or ampicillin 22 mg/kg IV q8h</li>
+              <li>Effective vs leptospiremia</li>
+              <li>Doesn't eliminate renal carrier — switch to doxycycline once stabilized</li>
+              <li>Useful if patient too sick for PO doxy</li>
+            </ul>
+          </li>
+          <li>Sequential treatment: penicillin/amp acute → switch to doxycycline 14 days for renal clearance</li>
+          <li>Duration: 2 weeks doxycycline minimum</li>
+        </ul>
+
+        <p><strong>2. AKI management ✨:</strong></p>
+        <ul>
+          <li>IV fluid therapy:
+            <ul>
+              <li>Initial bolus if hypovolemic (10-20 mL/kg crystalloid)</li>
+              <li>Then maintenance + ongoing losses</li>
+              <li>Monitor I/O carefully</li>
+              <li>Be cautious — overhydration risk if oliguric/anuric</li>
+            </ul>
+          </li>
+          <li>If oliguric/anuric:
+            <ul>
+              <li>Furosemide 1-4 mg/kg IV bolus (test dose)</li>
+              <li>Mannitol 0.5-1 g/kg IV slow (controversial)</li>
+              <li>If no response → hemodialysis referral ✨</li>
+            </ul>
+          </li>
+          <li>Manage hyperkalemia:
+            <ul>
+              <li>Calcium gluconate 0.5-1 mL/kg slow IV (cardioprotective)</li>
+              <li>Insulin + dextrose</li>
+              <li>Sodium bicarbonate (if acidotic)</li>
+              <li>Dialysis</li>
+            </ul>
+          </li>
+          <li>Anti-emetics (maropitant, ondansetron)</li>
+          <li>Anti-acid (omeprazole, sucralfate)</li>
+          <li>Pain management</li>
+          <li>Phosphate binders (chronic phase)</li>
+        </ul>
+
+        <p><strong>3. Hemodialysis ✨ — if available, can be lifesaving:</strong></p>
+        <ul>
+          <li>Indications:
+            <ul>
+              <li>Anuric/oliguric AKI not responding to medical Tx</li>
+              <li>Severe hyperkalemia, acidosis</li>
+              <li>Volume overload</li>
+              <li>Severe uremia</li>
+            </ul>
+          </li>
+          <li>Specialty centers</li>
+          <li>Can bridge to renal recovery</li>
+          <li>Cost significant</li>
+        </ul>
+
+        <p><strong>4. Pulmonary hemorrhage syndrome (LPHS) ✗ — emergency:</strong></p>
+        <ul>
+          <li>Oxygen supplementation</li>
+          <li>Mechanical ventilation if respiratory failure</li>
+          <li>Avoid aggressive fluid loading</li>
+          <li>Consider corticosteroids (controversial; some evidence in severe LPHS)</li>
+          <li>FFP for coagulopathy</li>
+          <li>High mortality (60-80%) ✗</li>
+        </ul>
+
+        <p><strong>5. Hepatic support:</strong></p>
+        <ul>
+          <li>SAMe + silybin (Denamarin)</li>
+          <li>Vitamin K1 (if coagulopathy + cholestasis)</li>
+          <li>Lactulose (if hepatic encephalopathy)</li>
+          <li>Address concurrent pancreatitis</li>
+        </ul>
+
+        <p><strong>6. Coagulopathy / DIC management:</strong></p>
+        <ul>
+          <li>FFP for active bleeding</li>
+          <li>Platelets if severe thrombocytopenia + bleeding</li>
+          <li>Avoid heparin in active bleeding</li>
+          <li>Treat underlying disease</li>
+        </ul>
+
+        <p><strong>7. Zoonotic precautions ✨ ✗:</strong></p>
+        <ul>
+          <li><strong>Treat as zoonotic risk</strong> ✨ ✨:
+            <ul>
+              <li>Gloves + eye protection when handling patient/urine</li>
+              <li>Disinfect cages, equipment, exam rooms (1:10 bleach)</li>
+              <li>Inform owner about zoonotic risk</li>
+              <li>Owner: avoid contact with urine; wash hands; gloves for cleanup</li>
+              <li>Avoid contact with patient if owner immunocompromised, pregnant, child</li>
+              <li>Notifiable disease in many countries</li>
+            </ul>
+          </li>
+          <li>Patient infectious in urine until ~ 3-4 weeks after starting doxycycline</li>
+        </ul>
+
+        <p><strong>8. Vaccination ✨ — prevention:</strong></p>
+        <ul>
+          <li>Multivalent (4-way) lepto vaccine: covers icterohaemorrhagiae, canicola, pomona, grippotyphosa</li>
+          <li>Newer 6-way includes additional serovars</li>
+          <li>Initial series: 2 doses 3-4 wk apart</li>
+          <li>Boosters annual</li>
+          <li>NON-CORE but HIGHLY RECOMMENDED in endemic areas (Thailand!) ✨</li>
+          <li>Vaccinate at-risk dogs before rainy season</li>
+          <li>Doesn't cover all serovars — vaccinated dog can still get lepto from non-covered serovar</li>
+          <li>Vaccine reactions: more common than core vaccines (allergic reactions, esp. small breeds)</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>Renal: BUN, Cr, electrolytes daily until recovery</li>
+          <li>Liver: ALT, ALP, bilirubin q2-3 d</li>
+          <li>Coag panel q2-3 d</li>
+          <li>Urine output</li>
+          <li>Recheck CBC, biochem, UA at 1, 4, 8 weeks post-Tx</li>
+          <li>Long-term: renal function (some develop CKD post-AKI)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>AKI → CKD progression</strong> ✗ — common sequela</li>
+          <li>Persistent renal dysfunction</li>
+          <li>Pulmonary hemorrhage syndrome (LPHS) ✗ — high mortality</li>
+          <li>Severe hepatic failure</li>
+          <li>DIC ✗</li>
+          <li>Severe hyperkalemia → cardiac arrest ✗</li>
+          <li>Volume overload (oliguric Tx)</li>
+          <li>Anuria refractory to Tx</li>
+          <li>Persistent uveitis</li>
+          <li>Chronic carrier state (urinary shedding) without Tx</li>
+          <li>Zoonotic transmission ✗</li>
+          <li>Vaccine reactions (anaphylaxis rare)</li>
+          <li>Death (10-30% with aggressive Tx; up to 50% in severe LPHS)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Mild AKI + early Tx + supportive: 70-85% survival ✓</li>
+          <li>Severe AKI + dialysis access: 60-80% survival</li>
+          <li>Severe AKI without dialysis: 30-50% survival</li>
+          <li>LPHS: 20-50% survival ✗</li>
+          <li>Multi-organ failure / DIC: poor</li>
+          <li>~ 30% of survivors develop CKD long-term</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Anuria/oliguria refractory</li>
+              <li>Severe hyperkalemia</li>
+              <li>Pulmonary hemorrhage syndrome</li>
+              <li>DIC at presentation</li>
+              <li>Severe hyperbilirubinemia</li>
+              <li>Concurrent disease</li>
+              <li>Delayed Tx</li>
+              <li>Lack of access to dialysis when needed</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Fever + AKI + ± icterus + water/wildlife exposure = lepto</strong> ✨ — start doxycycline empirically + zoonotic precautions ✗<br><br>💡 **Doxycycline 5 mg/kg PO q12h × 14 days** (or PCN/amp acute → switch to doxy). **MAT + PCR** confirms<br><br>**Vaccination essential in endemic areas (Thailand rainy season)** ✨ — 4-way lepto annual. **Hemodialysis** lifesaving for refractory AKI</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 96 · Ehrlichiosis &amp; Anaplasmosis ---------- */
+  {
+    id: 'ehrlichia-anaplasma',
+    titleEn: 'Ehrlichiosis &amp; Anaplasmosis',
+    titleTh: 'เออร์ลิเชีย และ อะนาพลาสมา',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog', 'cat'],
+    tags: ['ehrlichia canis', 'anaplasma phagocytophilum', 'anaplasma platys', 'tick-borne disease', 'thrombocytopenia', 'pancytopenia', 'doxycycline', 'morulae', 'PCR', 'IFA', 'SNAP 4Dx'],
+    aliases: ['ehrlichia', 'ehrlichiosis', 'anaplasma', 'anaplasmosis', 'tick fever', 'tropical canine pancytopenia', 'TCP', 'เออร์ลิเชีย', 'อะนาพลาสมา', 'ไข้เห็บ'],
+    source: 'Ch. 96 · pp. 1540–1551',
+    sections: {
+      definition: `
+        <p>กลุ่มโรค <strong>tick-borne rickettsial diseases</strong> — สำคัญมากในไทย ✨</p>
+        <ul>
+          <li><strong>Ehrlichia canis ✨</strong> — "tropical canine pancytopenia (TCP)"
+            <ul>
+              <li>Vector: <strong>Rhipicephalus sanguineus (brown dog tick)</strong> ✨</li>
+              <li>Endemic worldwide; very common in Thailand</li>
+              <li>Targets monocytes/macrophages (monocytic ehrlichiosis)</li>
+              <li>Most common tick-borne disease in tropical regions</li>
+            </ul>
+          </li>
+          <li><strong>Ehrlichia ewingii</strong> — granulocytic ehrlichiosis (USA mainly)</li>
+          <li><strong>Ehrlichia chaffeensis</strong> — human monocytic ehrlichiosis; less common in dogs</li>
+          <li><strong>Anaplasma phagocytophilum ✨</strong>:
+            <ul>
+              <li>Vector: <strong>Ixodes ticks</strong> (deer tick — same as Lyme)</li>
+              <li>Granulocytic anaplasmosis</li>
+              <li>Northern hemisphere temperate regions</li>
+            </ul>
+          </li>
+          <li><strong>Anaplasma platys</strong>:
+            <ul>
+              <li>Vector: Rhipicephalus sanguineus</li>
+              <li>Cyclic thrombocytopenia ✨</li>
+              <li>Tropical/subtropical regions; Thailand</li>
+            </ul>
+          </li>
+          <li>Cat: Anaplasma phagocytophilum, Ehrlichia spp. — less commonly clinical</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Obligate intracellular gram-negative bacteria</li>
+          <li>Transmission: tick bite (need 24-48h attachment for E. canis transmission)</li>
+          <li>Incubation: 8-20 days</li>
+          <li>Three phases of E. canis infection:
+            <ul>
+              <li><strong>Acute (1-4 weeks)</strong>: bacteremia, fever, mild thrombocytopenia, immune response</li>
+              <li><strong>Subclinical (months-years)</strong>: persistent infection, mild thrombocytopenia, hyperglobulinemia</li>
+              <li><strong>Chronic (severe cases)</strong> ✗: pancytopenia (BM hypoplasia), severe thrombocytopenia, hyperglobulinemia, ocular disease, CNS</li>
+            </ul>
+          </li>
+          <li>Predisposed:
+            <ul>
+              <li>Tick exposure</li>
+              <li>German Shepherd ✨ — severe progression to chronic phase (genetic)</li>
+              <li>Outdoor dogs</li>
+              <li>Lack of tick prevention</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Ehrlichia replicates in cytoplasmic vacuoles → forms <strong>morulae</strong> ✨ (clusters of organisms)
+            <ul>
+              <li>E. canis: in monocytes</li>
+              <li>E. ewingii / A. phagocytophilum: in neutrophils</li>
+              <li>A. platys: in platelets</li>
+            </ul>
+          </li>
+          <li>Immune-mediated platelet destruction → thrombocytopenia ✨</li>
+          <li>Vasculitis → multi-organ effects</li>
+          <li>Chronic E. canis: BM hypoplasia → pancytopenia ✗</li>
+          <li>Polyclonal hypergammaglobulinemia → hyperviscosity, immune complexes</li>
+          <li>Glomerular damage → PLN</li>
+          <li>Co-infections common (Babesia, Bartonella, hepatozoonosis) ✨</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute phase ✨:</strong></p>
+        <ul>
+          <li>Fever (intermittent)</li>
+          <li>Lethargy, depression</li>
+          <li>Anorexia, weight loss</li>
+          <li>Lymphadenopathy</li>
+          <li>Splenomegaly</li>
+          <li>Bleeding tendency:
+            <ul>
+              <li>Petechiae, ecchymoses</li>
+              <li>Epistaxis ✨</li>
+              <li>Melena, hematuria</li>
+            </ul>
+          </li>
+          <li>Lameness, joint pain (granulocytic forms — Anaplasma especially)</li>
+          <li>Edema (limbs, scrotum)</li>
+          <li>Vomiting, diarrhea (sometimes)</li>
+          <li>Cough, dyspnea (rare)</li>
+          <li>Ocular: anterior uveitis, retinal hemorrhage</li>
+        </ul>
+
+        <p><strong>Chronic phase (severe E. canis) ✗:</strong></p>
+        <ul>
+          <li>Marked weight loss, cachexia</li>
+          <li>Severe pallor (pancytopenia)</li>
+          <li>Severe bleeding tendency:
+            <ul>
+              <li>Spontaneous bleeding</li>
+              <li>Severe epistaxis</li>
+              <li>Hemorrhage anywhere</li>
+            </ul>
+          </li>
+          <li>Recurrent / chronic infections (immunosuppression)</li>
+          <li>Ocular changes: chronic uveitis, retinal detachment, blindness</li>
+          <li>CNS signs: ataxia, seizures, behavioral changes (rare)</li>
+          <li>PLN signs (proteinuria, edema)</li>
+          <li>Lameness from joint disease</li>
+          <li>Often fatal without treatment ✗</li>
+        </ul>
+
+        <p><strong>Anaplasma platys cyclic thrombocytopenia:</strong></p>
+        <ul>
+          <li>Cyclic platelet drops every 1-2 weeks</li>
+          <li>Often asymptomatic</li>
+          <li>Petechiae during nadir</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. CBC + smear ✨:</strong></p>
+        <ul>
+          <li><strong>Thrombocytopenia</strong> ✨ — almost universal (mild to severe)</li>
+          <li>Anemia (often non-regenerative; chronic disease or BM)</li>
+          <li>Leukopenia or leukocytosis (variable)</li>
+          <li>Lymphopenia or lymphocytosis</li>
+          <li>Pancytopenia (chronic E. canis)</li>
+          <li><strong>Morulae on blood smear</strong> ✨:
+            <ul>
+              <li>Look in buffy coat / leukocyte-rich layer</li>
+              <li>Round basophilic clusters within cytoplasm</li>
+              <li>E. canis: monocytes</li>
+              <li>A. phagocytophilum / E. ewingii: neutrophils</li>
+              <li>A. platys: platelets</li>
+              <li>Insensitive but specific (transient)</li>
+              <li>Highest yield in acute disease</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Biochem:</strong></p>
+        <ul>
+          <li>Hyperglobulinemia (often polyclonal) ✨ — chronic infection</li>
+          <li>Hypoalbuminemia</li>
+          <li>Mild ↑ ALT, ALP</li>
+          <li>Azotemia (if PLN/CKD)</li>
+          <li>Hypoglycemia (severe sepsis)</li>
+        </ul>
+
+        <p><strong>3. UA:</strong></p>
+        <ul>
+          <li>Proteinuria (PLN)</li>
+          <li>± Glucosuria</li>
+          <li>UPC ratio (PLN screening)</li>
+        </ul>
+
+        <p><strong>4. Specific testing ✨:</strong></p>
+
+        <p><strong>SNAP 4Dx Plus (IDEXX) ✨ — initial in-house:</strong></p>
+        <ul>
+          <li>Detects antibodies to:
+            <ul>
+              <li>Heartworm antigen</li>
+              <li>Ehrlichia canis / E. ewingii</li>
+              <li>Anaplasma phagocytophilum / A. platys</li>
+              <li>Borrelia burgdorferi (Lyme)</li>
+            </ul>
+          </li>
+          <li>Quick screening; useful in tick-exposed dogs</li>
+          <li>Antibody-positive doesn't always = active disease (could be exposure)</li>
+          <li>Sensitivity high for Ehrlichia after 2-3 weeks</li>
+          <li>Negative early infection possible (window 2-3 weeks)</li>
+        </ul>
+
+        <p><strong>IFA (Immunofluorescent antibody) — quantitative serology:</strong></p>
+        <ul>
+          <li>Titer ≥ 1:64 (E. canis) suggestive of exposure</li>
+          <li>4-fold rise in paired titers confirms recent infection</li>
+          <li>High titers persist long after Tx (for years)</li>
+          <li>Useful for confirmation</li>
+        </ul>
+
+        <p><strong>PCR ✨ — confirms active infection:</strong></p>
+        <ul>
+          <li>Whole blood (acute disease)</li>
+          <li>Detects organism DNA</li>
+          <li>Sensitive especially in early acute disease</li>
+          <li>Send before doxycycline starts (decreases sensitivity)</li>
+          <li>Distinguishes specific Ehrlichia/Anaplasma species</li>
+          <li>Useful for co-infection diagnosis (Babesia, Bartonella)</li>
+        </ul>
+
+        <p><strong>5. Bone marrow (chronic / severe pancytopenia):</strong></p>
+        <ul>
+          <li>BM hypoplasia/aplasia in chronic E. canis</li>
+          <li>Plasma cell infiltration</li>
+          <li>Rule out other causes</li>
+        </ul>
+
+        <p><strong>6. Other workup:</strong></p>
+        <ul>
+          <li>Coag panel</li>
+          <li>UPC (PLN)</li>
+          <li>BP</li>
+          <li>Imaging: thoracic + abdominal (organ involvement)</li>
+          <li>Joint tap if polyarthritis (granulocytic forms)</li>
+          <li>Co-infection panel (Babesia PCR, etc.)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other tick-borne diseases (Babesia, Hepatozoon, Bartonella, RMSF)</li>
+          <li>Immune-mediated thrombocytopenia (ITP) — primary</li>
+          <li>Other causes of pancytopenia (BM disease, FeLV, drugs)</li>
+          <li>Multiple myeloma (hyperglobulinemia)</li>
+          <li>Leishmaniasis (similar presentation)</li>
+          <li>Ehrlichia/Anaplasma co-infection</li>
+          <li>SLE</li>
+          <li>Severe sepsis with DIC</li>
+          <li>Lymphoma</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Doxycycline ✨ — drug of choice:</strong></p>
+        <ul>
+          <li><strong>Doxycycline 5-10 mg/kg PO q12h × 28 days (4 weeks) ✨</strong>
+            <ul>
+              <li>Standard regimen for E. canis, A. phagocytophilum, A. platys</li>
+              <li>Acute response within 24-72h (fever resolution, energy improvement)</li>
+              <li>Platelet recovery within 1-2 weeks</li>
+              <li>4 full weeks needed for clearance (chronic phase)</li>
+              <li>Side effects: GI (give with food), esophagitis (give with water)</li>
+              <li>Don't combine with dairy, antacids, iron (chelation)</li>
+            </ul>
+          </li>
+          <li>Empirical Tx often started before confirmed (high index of suspicion in tick-exposed dog)</li>
+          <li>Response to doxycycline is supportive of diagnosis</li>
+        </ul>
+
+        <p><strong>2. Alternative antibiotics (if doxycycline contraindicated):</strong></p>
+        <ul>
+          <li>Minocycline 5-10 mg/kg PO q12h</li>
+          <li>Tetracycline 22 mg/kg PO q8h (older)</li>
+          <li>Imidocarb dipropionate 5 mg/kg IM × 2 doses (14 days apart) — for E. canis (less common; concurrent Babesia coverage)</li>
+          <li>Chloramphenicol (rarely used; pediatric / pregnant)</li>
+        </ul>
+
+        <p><strong>3. Supportive care for severe cases:</strong></p>
+        <ul>
+          <li>Blood transfusion (severe anemia)</li>
+          <li>Platelet-rich plasma if severe thrombocytopenia + bleeding</li>
+          <li>FFP for coagulopathy</li>
+          <li>IV fluids</li>
+          <li>Nutritional support</li>
+          <li>Anti-emetics</li>
+        </ul>
+
+        <p><strong>4. Concurrent immunosuppression (controversial):</strong></p>
+        <ul>
+          <li>Severe immune-mediated thrombocytopenia: pred 1-2 mg/kg PO q12h × 7-14 d, then taper</li>
+          <li>Combined with doxycycline</li>
+          <li>For: severe symptomatic thrombocytopenia, persistent thrombocytopenia despite doxycycline</li>
+          <li>Not first-line; use after starting doxycycline</li>
+        </ul>
+
+        <p><strong>5. Manage co-infections:</strong></p>
+        <ul>
+          <li>Babesia gibsoni / vogeli: imidocarb or atovaquone-azithromycin</li>
+          <li>Hepatozoon: TMS + clindamycin + pyrimethamine, then long-term decoquinate</li>
+          <li>Bartonella: doxycycline + enrofloxacin combination</li>
+          <li>Rickettsia (RMSF): doxycycline (covered)</li>
+          <li>Always test for co-infections in suspected cases</li>
+        </ul>
+
+        <p><strong>6. Tick prevention ✨ ✨ — critical:</strong></p>
+        <ul>
+          <li><strong>Year-round tick prevention</strong> in endemic areas (Thailand!) ✨
+            <ul>
+              <li>Isoxazolines (afoxolaner, fluralaner, sarolaner, lotilaner) — oral; rapid kill; q1-3 mo</li>
+              <li>Topical permethrin / fipronil products</li>
+              <li>Tick collars (Seresto, Preventic)</li>
+            </ul>
+          </li>
+          <li>Daily tick checks for outdoor dogs</li>
+          <li>Manual tick removal (tweezer at attachment, gentle steady pull)</li>
+          <li>Environmental control (yard treatment)</li>
+        </ul>
+
+        <p><strong>7. Long-term management:</strong></p>
+        <ul>
+          <li>Recheck CBC, biochem, UA at 2, 4 weeks during Tx</li>
+          <li>Monitor platelet count (should normalize)</li>
+          <li>Recheck CBC at 4-8 weeks post-Tx</li>
+          <li>UPC monitoring (PLN)</li>
+          <li>Antibody titers persist after Tx (don't use for treatment monitoring)</li>
+          <li>PCR can confirm clearance</li>
+          <li>Watch for relapse signs (especially chronic E. canis)</li>
+        </ul>
+
+        <p><strong>Owner education:</strong></p>
+        <ul>
+          <li>Tick prevention lifelong</li>
+          <li>Watch for relapse signs (lethargy, bleeding)</li>
+          <li>Co-infection possibility</li>
+          <li>Most acute cases recover fully</li>
+          <li>Chronic cases (especially GSD): guarded prognosis</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Severe pancytopenia → fatal hemorrhage / sepsis</strong> ✗ (chronic E. canis)</li>
+          <li>Severe thrombocytopenia → fatal bleeding</li>
+          <li>BM aplasia (chronic, may be irreversible) ✗</li>
+          <li>PLN → CKD progression</li>
+          <li>Permanent ocular damage / blindness</li>
+          <li>CNS sequelae (rare)</li>
+          <li>Polyarthritis</li>
+          <li>Co-infections (worsens prognosis)</li>
+          <li>Doxycycline side effects (GI, esophageal stricture rare)</li>
+          <li>Relapse / recurrence</li>
+          <li>Chronic disease in GSD (poor responder)</li>
+          <li>Death (chronic phase)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Acute Ehrlichia canis + early doxycycline: excellent</strong> ✓ — rapid recovery, full resolution</li>
+          <li>Subclinical: usually responds well to doxycycline</li>
+          <li>Chronic E. canis: guarded — variable response, may need prolonged Tx; some don't fully recover ✗</li>
+          <li>A. phagocytophilum / E. ewingii: usually excellent response</li>
+          <li>A. platys: often subclinical, responds well</li>
+          <li>GSD with chronic E. canis: poorer prognosis</li>
+          <li>Co-infection: poorer; needs comprehensive Tx</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Pancytopenia (chronic phase)</li>
+              <li>Severe BM hypoplasia</li>
+              <li>GSD breed</li>
+              <li>Concurrent CKD / PLN</li>
+              <li>Co-infections</li>
+              <li>Delayed Tx</li>
+              <li>Severe ocular involvement</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Tick exposure + thrombocytopenia + fever = ehrlichia/anaplasma</strong> ✨ — start doxycycline empirically<br><br>💡 **Doxycycline 5-10 mg/kg PO q12h × 4 weeks** ✨ — rapid response (24-72h); platelet recovery 1-2 wk<br><br>**Tick prevention year-round in Thailand** ✨ — isoxazolines (Bravecto, NexGard, Simparica). **Always check for co-infections** (Babesia, Bartonella, Hepatozoon)</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 96 · Babesiosis ---------- */
+  {
+    id: 'babesiosis',
+    titleEn: 'Babesiosis',
+    titleTh: 'บาบีเซีย',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog', 'cat'],
+    tags: ['babesia canis', 'babesia gibsoni', 'babesia vogeli', 'cytauxzoon', 'tick-borne', 'hemolytic anemia', 'imidocarb', 'atovaquone', 'azithromycin', 'PCR', 'piroplasm'],
+    aliases: ['babesia', 'babesiosis', 'piroplasmosis', 'cytauxzoonosis', 'บาบีเซีย', 'พยาธิเม็ดเลือด'],
+    source: 'Ch. 96 · pp. 1551–1557',
+    sections: {
+      definition: `
+        <p>โรค <strong>tick-borne hemoprotozoal disease</strong> — ทำให้เกิด hemolytic anemia ✨</p>
+        <ul>
+          <li>Apicomplexan piroplasms infecting RBCs</li>
+          <li><strong>Canine Babesia species ✨:</strong>
+            <ul>
+              <li><strong>B. canis</strong> (large form):
+                <ul>
+                  <li>B. canis canis (Europe; Dermacentor reticulatus)</li>
+                  <li>B. canis vogeli ✨ (worldwide tropics; Rhipicephalus sanguineus — Thailand!)</li>
+                  <li>B. canis rossi (Africa; Haemaphysalis — most pathogenic)</li>
+                </ul>
+              </li>
+              <li><strong>B. gibsoni</strong> ✨ (small form) — increasingly common in Asia, USA; Pit Bull predisposed</li>
+              <li><strong>B. conradae</strong> (small form, USA)</li>
+              <li><strong>B. microti-like</strong> (small form)</li>
+            </ul>
+          </li>
+          <li>Cat: <strong>Cytauxzoon felis</strong> (USA, often fatal); B. felis (rare)</li>
+          <li>Predisposed dogs:
+            <ul>
+              <li>B. vogeli: any breed; tropical/subtropical exposure</li>
+              <li>B. gibsoni: <strong>Pit Bull, American Staffordshire Terrier</strong> ✨ (genetic + dog fighting transmission)</li>
+              <li>Tick-exposed dogs</li>
+              <li>Splenectomized dogs (more severe)</li>
+            </ul>
+          </li>
+          <li>Common co-infection with Ehrlichia (Thailand!) ✨</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Apicomplexan parasites; intra-erythrocytic</li>
+          <li>Tick-borne transmission (Rhipicephalus most common in Thailand)</li>
+          <li>Direct transmission B. gibsoni ✗:
+            <ul>
+              <li>Bite wounds (dog fighting — Pit Bulls)</li>
+              <li>Transplacental</li>
+              <li>Iatrogenic (transfusion from infected donor)</li>
+            </ul>
+          </li>
+          <li>Incubation: 1-3 weeks post-tick attachment</li>
+          <li>Persistent infection — once infected, often lifelong carrier (unless treated)</li>
+          <li>Reservoirs: dogs (chronic carriers), wildlife (foxes, jackals)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Sporozoites injected by tick → invade RBCs → trophozoites → merozoites → RBC rupture → release new merozoites</li>
+          <li>Direct hemolysis (intra-erythrocytic damage)</li>
+          <li>Immune-mediated hemolysis (secondary; antibodies vs altered RBC surface)</li>
+          <li>Hemoglobin release → hemoglobinemia, hemoglobinuria, bilirubinemia → icterus</li>
+          <li>Severe cases: SIRS, DIC, organ dysfunction (hepatic, renal, pulmonary, CNS), shock ✗</li>
+          <li>B. canis rossi: most severe (cerebral form, ARDS)</li>
+          <li>B. gibsoni: often chronic with intermittent flares</li>
+          <li>Splenectomized animals: overwhelming disease (no clearance) ✗</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Acute uncomplicated:</strong></p>
+        <ul>
+          <li>Fever ✨</li>
+          <li>Lethargy, depression</li>
+          <li>Anorexia</li>
+          <li>Weakness, exercise intolerance</li>
+          <li>Pale mucous membranes ✨</li>
+          <li>Tachycardia, tachypnea</li>
+          <li>Splenomegaly, hepatomegaly, lymphadenopathy</li>
+          <li>Icterus (variable — dark urine, jaundice) ✨</li>
+          <li>Hemoglobinuria (dark urine) ✨</li>
+          <li>Vomiting</li>
+          <li>Petechiae (concurrent thrombocytopenia)</li>
+        </ul>
+
+        <p><strong>Severe / complicated ✗:</strong></p>
+        <ul>
+          <li>Severe hemolytic anemia (PCV often &lt; 15-20%)</li>
+          <li>Multi-organ dysfunction:
+            <ul>
+              <li>Acute kidney injury</li>
+              <li>Hepatic dysfunction</li>
+              <li>Pulmonary edema / ARDS</li>
+              <li>CNS: cerebral babesiosis (ataxia, paresis, seizures, coma) ✗</li>
+              <li>Cardiac (rare)</li>
+            </ul>
+          </li>
+          <li>DIC</li>
+          <li>Hypotension, shock</li>
+          <li>Hypoxia</li>
+          <li>Death possible</li>
+        </ul>
+
+        <p><strong>Chronic / subclinical:</strong></p>
+        <ul>
+          <li>Mild anemia, intermittent</li>
+          <li>Cyclic episodes of weakness</li>
+          <li>Chronic mild thrombocytopenia</li>
+          <li>Often asymptomatic</li>
+          <li>Reactivation with stress / immunosuppression / splenectomy</li>
+        </ul>
+
+        <p><strong>Cytauxzoonosis (cat) ✗:</strong></p>
+        <ul>
+          <li>Acute severe illness</li>
+          <li>High fever, severe lethargy</li>
+          <li>Marked icterus</li>
+          <li>Severe anemia, thrombocytopenia</li>
+          <li>Pulmonary edema, dyspnea</li>
+          <li>DIC, multi-organ failure</li>
+          <li>Mortality 60-90% even with aggressive Tx ✗</li>
+          <li>Endemic SE USA (mainly)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Blood smear cytology ✨:</strong></p>
+        <ul>
+          <li>Capillary blood (ear tip, nail edge) preferred → higher parasitemia</li>
+          <li>Fresh, well-stained smear (Diff-Quik, Giemsa)</li>
+          <li>Findings:
+            <ul>
+              <li><strong>Large piroplasms (B. canis):</strong> pear-shaped, paired, in RBC cytoplasm; 4-7 µm</li>
+              <li><strong>Small piroplasms (B. gibsoni):</strong> single round/oval; 1-3 µm; harder to see</li>
+              <li>Look at edges of smear (where RBCs less crowded)</li>
+            </ul>
+          </li>
+          <li>Concurrent: spherocytes (immune-mediated), polychromasia (regeneration), schistocytes (DIC)</li>
+          <li>Specific but insensitive (parasitemia low or intermittent)</li>
+          <li>Negative smear doesn't rule out babesiosis</li>
+        </ul>
+
+        <p><strong>2. PCR ✨ — most sensitive + species identification:</strong></p>
+        <ul>
+          <li>Whole blood (EDTA)</li>
+          <li>Identifies specific species (important for Tx selection)</li>
+          <li>Highly sensitive even with low parasitemia</li>
+          <li>Multiplex panels for vector-borne disease (Babesia + Ehrlichia + Anaplasma + Bartonella + Hepatozoon)</li>
+          <li>Send before treatment starts</li>
+        </ul>
+
+        <p><strong>3. Serology (IFA):</strong></p>
+        <ul>
+          <li>Antibody titer ≥ 1:64 suggestive</li>
+          <li>4-fold rise in paired confirms recent infection</li>
+          <li>Persistent antibody after recovery</li>
+          <li>Less useful in acute disease (window 2-3 weeks)</li>
+          <li>Cross-reactivity between species</li>
+        </ul>
+
+        <p><strong>4. CBC + biochem ✨:</strong></p>
+        <ul>
+          <li>CBC:
+            <ul>
+              <li>Hemolytic anemia (regenerative; reticulocytosis, polychromasia)</li>
+              <li>Spherocytes (concurrent immune-mediated)</li>
+              <li><strong>Thrombocytopenia ✨</strong> — almost always</li>
+              <li>Leukopenia or leukocytosis</li>
+              <li>Schistocytes (DIC)</li>
+            </ul>
+          </li>
+          <li>Biochem:
+            <ul>
+              <li>↑ Total bilirubin (hemolysis)</li>
+              <li>± ↑ ALT, ALP</li>
+              <li>Hyperglobulinemia (chronic)</li>
+              <li>± Azotemia (renal involvement)</li>
+              <li>Hypoglycemia (severe — especially small dogs ✗)</li>
+            </ul>
+          </li>
+          <li>UA: hemoglobinuria, bilirubinuria, ± proteinuria</li>
+          <li>Coag: prolonged PT/aPTT, ↑ D-dimers (DIC)</li>
+          <li>Saline agglutination + Coombs (concurrent immune-mediated component)</li>
+        </ul>
+
+        <p><strong>5. Co-infection screening ✨:</strong></p>
+        <ul>
+          <li>SNAP 4Dx (Ehrlichia, Anaplasma, Lyme, heartworm)</li>
+          <li>PCR panel for tick-borne diseases</li>
+          <li>Common co-infections in Thailand: Ehrlichia canis, Hepatozoon, Bartonella</li>
+        </ul>
+
+        <p><strong>6. Imaging:</strong></p>
+        <ul>
+          <li>Abdominal US: splenomegaly, hepatomegaly, kidney evaluation</li>
+          <li>Thoracic radiograph (severe cases — pulmonary edema, ARDS)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other hemolytic anemias:
+            <ul>
+              <li>IMHA primary</li>
+              <li>Mycoplasma haemofelis (cat)</li>
+              <li>Onion/garlic toxicity, zinc, acetaminophen (cat)</li>
+              <li>Heritable enzymopathies</li>
+            </ul>
+          </li>
+          <li>Other tick-borne diseases (Ehrlichia chronic, Anaplasma, Hepatozoon)</li>
+          <li>Leptospirosis (icterus + multi-organ)</li>
+          <li>Severe bacterial sepsis with DIC</li>
+          <li>Hepatic disease causing icterus</li>
+          <li>Microangiopathic hemolysis (HSA, splenic torsion)</li>
+          <li>Cytauxzoonosis (cat)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment depends on species ✨:</strong></p>
+
+        <p><strong>1. B. canis (large form, including B. vogeli) ✨:</strong></p>
+        <ul>
+          <li><strong>Imidocarb dipropionate</strong> ✨ — drug of choice:
+            <ul>
+              <li><strong>5-7 mg/kg IM/SC, repeat in 14 days</strong></li>
+              <li>2 doses total typically</li>
+              <li>Side effects: pain at injection site, vomiting, salivation, lacrimation, diarrhea, bradycardia (cholinergic effects)</li>
+              <li>Pre-medicate with atropine 0.04 mg/kg SC 30 min before to reduce side effects</li>
+              <li>Effective vs B. canis spp.</li>
+              <li>Also treats Ehrlichia (bonus for co-infection)</li>
+            </ul>
+          </li>
+          <li>Alternatives:
+            <ul>
+              <li>Diminazene aceturate 3.5 mg/kg IM single dose (older; some toxicity)</li>
+              <li>Phenamidine</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. B. gibsoni (small form) ✨ — different protocol:</strong></p>
+        <ul>
+          <li>Imidocarb LESS effective ✗</li>
+          <li><strong>Atovaquone + azithromycin combination ✨</strong> — drug of choice:
+            <ul>
+              <li>Atovaquone 13.3 mg/kg PO q8h × 10 days + azithromycin 10 mg/kg PO q24h × 10 days</li>
+              <li>Better efficacy than imidocarb for small form</li>
+              <li>Cost significant but effective</li>
+              <li>Often achieves clinical cure (parasitologic clearance variable)</li>
+            </ul>
+          </li>
+          <li>Alternative: clindamycin 25 mg/kg PO q12h × 30+ days (lower efficacy)</li>
+          <li>Combination (atovaquone-azithromycin + clindamycin) — refractory cases</li>
+        </ul>
+
+        <p><strong>3. Supportive care ✨:</strong></p>
+        <ul>
+          <li>Blood transfusion if HCT &lt; 15-20% or severe symptoms</li>
+          <li>IV fluid therapy (carefully — overhydration risk if cardiac compromise)</li>
+          <li>Oxygen supplementation if hypoxic / pulmonary edema</li>
+          <li>FFP for coagulopathy / DIC</li>
+          <li>Anti-emetics (maropitant)</li>
+          <li>Hepatic support (SAMe, silybin)</li>
+          <li>Renal support (fluid management, address AKI)</li>
+          <li>Nutritional support</li>
+          <li>Manage hypoglycemia (small dogs especially)</li>
+        </ul>
+
+        <p><strong>4. Concurrent immunosuppression (controversial):</strong></p>
+        <ul>
+          <li>Severe immune-mediated hemolytic component (spherocytes, severe drop):
+            <ul>
+              <li>Pred 1-2 mg/kg PO q12h × 7-14 d, then taper</li>
+              <li>Combined with anti-Babesia therapy</li>
+              <li>Use cautiously (Babesia can flare with immunosuppression)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>5. Cytauxzoonosis treatment (cat) ✗:</strong></p>
+        <ul>
+          <li>Atovaquone + azithromycin (10 days) — modest efficacy</li>
+          <li>Aggressive supportive care:
+            <ul>
+              <li>IV fluids (carefully)</li>
+              <li>Oxygen, ventilation if needed</li>
+              <li>Heparin (DIC)</li>
+              <li>Transfusion</li>
+              <li>Anti-thrombotic agents</li>
+            </ul>
+          </li>
+          <li>Even with aggressive Tx: high mortality ✗</li>
+        </ul>
+
+        <p><strong>6. Manage co-infections ✨:</strong></p>
+        <ul>
+          <li>Concurrent Ehrlichia: doxycycline 5-10 mg/kg PO q12h × 4 wk</li>
+          <li>Hepatozoon: TMS + clindamycin + pyrimethamine, then long-term decoquinate</li>
+          <li>Imidocarb actually treats both Babesia + Ehrlichia (useful)</li>
+        </ul>
+
+        <p><strong>7. Tick prevention ✨ — critical:</strong></p>
+        <ul>
+          <li>Year-round (Thailand — endemic ✨)</li>
+          <li>Isoxazolines (Bravecto, NexGard, Simparica, Credelio)</li>
+          <li>Topical permethrin / fipronil</li>
+          <li>Tick collars (Seresto, Preventic)</li>
+          <li>Daily tick checks</li>
+        </ul>
+
+        <p><strong>8. Pit Bull / dog fighting prevention (B. gibsoni):</strong></p>
+        <ul>
+          <li>Screen at-risk dogs (Pit Bull, fighting history) periodically</li>
+          <li>Don't transfuse blood from at-risk dogs without PCR screening</li>
+          <li>Quarantine new Pit Bulls in multi-dog households</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>CBC daily during acute treatment</li>
+          <li>HCT, parasitemia (smear) weekly</li>
+          <li>Biochem, UA at 2, 4 weeks</li>
+          <li>PCR at 4-8 weeks post-Tx (clearance confirmation)</li>
+          <li>Long-term: relapse possible (especially B. gibsoni); periodic CBC</li>
+          <li>Watch for: relapse with stress, immunosuppression, splenectomy</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Severe hemolytic anemia → hypoxia, hemoglobinuric AKI</li>
+          <li>DIC ✗</li>
+          <li>Multi-organ failure</li>
+          <li>Cerebral babesiosis ✗ (rare; B. canis rossi most)</li>
+          <li>Pulmonary edema / ARDS</li>
+          <li>AKI → CKD</li>
+          <li>Hepatic failure (severe)</li>
+          <li>Imidocarb side effects (cholinergic, painful injection)</li>
+          <li>Persistent infection (especially B. gibsoni — chronic carrier)</li>
+          <li>Relapse with stress / splenectomy</li>
+          <li>Co-infection complications</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>B. vogeli + early imidocarb: usually excellent</strong> ✓</li>
+          <li><strong>B. canis canis + imidocarb: usually good</strong></li>
+          <li>B. canis rossi: more variable; severe cases poor</li>
+          <li><strong>B. gibsoni + atovaquone-azithromycin:</strong>
+            <ul>
+              <li>Clinical cure: ~ 70-85%</li>
+              <li>Parasitologic clearance harder to achieve (often persistent low-level)</li>
+              <li>Long-term: chronic carriers possible</li>
+            </ul>
+          </li>
+          <li>Severe / complicated cases: 30-60% survival</li>
+          <li>Cytauxzoon (cat): 10-40% survival even with aggressive Tx ✗</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Severe anemia (HCT &lt; 10%)</li>
+              <li>Cerebral involvement</li>
+              <li>DIC</li>
+              <li>AKI</li>
+              <li>ARDS</li>
+              <li>Splenectomized patient</li>
+              <li>Concurrent immunosuppression</li>
+              <li>Co-infection with Ehrlichia (severe)</li>
+              <li>B. canis rossi</li>
+              <li>Cytauxzoon</li>
+              <li>Delayed Tx</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Tick exposure + hemolytic anemia + thrombocytopenia = babesia ✨</strong> — blood smear + PCR<br><br>💡 **Imidocarb 5-7 mg/kg IM × 2 doses (14 days apart)** for B. canis/vogeli (also covers Ehrlichia bonus!)<br><br>**B. gibsoni different protocol** ✨ — atovaquone + azithromycin × 10 days. Pit Bulls predisposed. **Co-infection with Ehrlichia common in Thailand** — treat both</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 96 · Leishmaniasis ---------- */
+  {
+    id: 'leishmaniasis',
+    titleEn: 'Leishmaniasis',
+    titleTh: 'ลีชมาเนีย',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog', 'cat'],
+    tags: ['leishmania', 'leishmaniasis', 'visceral leishmaniasis', 'sandfly', 'Mediterranean', 'allopurinol', 'meglumine antimoniate', 'miltefosine', 'zoonotic', 'PLN'],
+    aliases: ['leishmania', 'leishmaniasis', 'kala azar', 'ลีชมาเนีย'],
+    source: 'Ch. 96 · pp. 1557–1561',
+    sections: {
+      definition: `
+        <p>โรค <strong>protozoal sandfly-borne disease</strong> — เป็น <strong>zoonotic disease ✗</strong></p>
+        <ul>
+          <li>Genus Leishmania; pathogenic species:
+            <ul>
+              <li><strong>L. infantum</strong> ✨ — most common in dogs; visceral + cutaneous</li>
+              <li>L. donovani — visceral; humans + dogs</li>
+              <li>L. tropica, L. major — cutaneous (mostly humans)</li>
+            </ul>
+          </li>
+          <li>Vector: <strong>female sandflies (Phlebotomus / Lutzomyia)</strong> ✨</li>
+          <li>Endemic regions:
+            <ul>
+              <li>Mediterranean basin (Spain, Portugal, Italy, Greece, Turkey) ✨</li>
+              <li>Middle East</li>
+              <li>South America (Brazil)</li>
+              <li>Parts of Asia, Africa</li>
+              <li>Increasingly imported cases worldwide (returning travelers, imported dogs)</li>
+            </ul>
+          </li>
+          <li>Predisposed: any dog in endemic area; some breeds (Boxer, Cocker, Rottweiler, GSD) more susceptible</li>
+          <li>Immunocompromised dogs more severe disease</li>
+          <li>Cat: rare clinical disease</li>
+          <li>**ในไทย: rare; แต่อาจพบในสุนัขนำเข้าหรือเดินทางมาจากพื้นที่ endemic**</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Obligate intracellular protozoa (in macrophages)</li>
+          <li>Two life forms:
+            <ul>
+              <li>Promastigote (in sandfly + culture; flagellated)</li>
+              <li>Amastigote (in mammalian host; intracellular round forms)</li>
+            </ul>
+          </li>
+          <li>Transmission:
+            <ul>
+              <li><strong>Sandfly bite ✨</strong> — primary route</li>
+              <li>Vertical (transplacental)</li>
+              <li>Bite wounds (rare)</li>
+              <li>Iatrogenic (transfusion)</li>
+              <li>Sexual transmission</li>
+            </ul>
+          </li>
+          <li>Incubation: months to years (often 3 months - 7 years)</li>
+          <li>Seasonal vector activity (summer-fall in Mediterranean)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Sandfly injects promastigotes → phagocytosed by macrophages → transform to amastigotes → multiply intracellularly → spread via macrophages to all organs (visceral disease)</li>
+          <li>Disease severity depends on host immune response:
+            <ul>
+              <li>Resistant (Th1 response): asymptomatic / cutaneous only</li>
+              <li>Susceptible (Th2 response): generalized disease, severe</li>
+            </ul>
+          </li>
+          <li>Multi-system involvement:
+            <ul>
+              <li>Skin (cutaneous + dermal lesions)</li>
+              <li>Lymphoid (lymphadenopathy, splenomegaly)</li>
+              <li>Bone marrow (cytopenias)</li>
+              <li>Kidneys (PLN — most common cause of death) ✗</li>
+              <li>Liver, joints, eyes, CNS</li>
+            </ul>
+          </li>
+          <li>Polyclonal hypergammaglobulinemia (massive antibody response, but ineffective)</li>
+          <li>Immune complex deposition → glomerulonephritis (PLN) → CKD</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Visceral disease (most common in dog) — multi-system ✨:</strong></p>
+        <ul>
+          <li>General:
+            <ul>
+              <li>Lethargy, weight loss, anorexia</li>
+              <li>Generalized lymphadenopathy ✨</li>
+              <li>Splenomegaly, hepatomegaly</li>
+              <li>Fever (intermittent)</li>
+              <li>Polyuria/polydipsia (PLN/CKD)</li>
+              <li>Lameness (polyarthritis)</li>
+            </ul>
+          </li>
+          <li><strong>Skin (~ 80-90% of cases) ✨:</strong>
+            <ul>
+              <li>Exfoliative dermatitis (especially face, ears, paws)</li>
+              <li>Alopecia (especially periocular — "spectacles") ✨</li>
+              <li>Ulcerative lesions on pressure points</li>
+              <li>Onychogryphosis (excessive nail growth) ✨ — pathognomonic-suggestive</li>
+              <li>Mucocutaneous ulcers</li>
+              <li>Pustules</li>
+              <li>Hyperkeratosis nasal planum, footpads</li>
+            </ul>
+          </li>
+          <li>Ocular:
+            <ul>
+              <li>Periorbital alopecia + dermatitis</li>
+              <li>Keratoconjunctivitis sicca</li>
+              <li>Anterior uveitis</li>
+              <li>Chorioretinitis</li>
+              <li>Blindness (advanced)</li>
+            </ul>
+          </li>
+          <li>Renal (PLN) ✗:
+            <ul>
+              <li>Proteinuria</li>
+              <li>Progressive CKD</li>
+              <li>Most common cause of death</li>
+            </ul>
+          </li>
+          <li>Joint: polyarthritis</li>
+          <li>Neurologic (rare): seizures, paresis</li>
+          <li>Epistaxis, GI bleeding (severe)</li>
+        </ul>
+
+        <p><strong>Cutaneous-only disease:</strong></p>
+        <ul>
+          <li>Localized lesions without systemic signs</li>
+          <li>More common with L. tropica, L. major</li>
+        </ul>
+
+        <p><strong>Asymptomatic carriers:</strong></p>
+        <ul>
+          <li>Common in endemic areas</li>
+          <li>Subclinical infection; serology positive</li>
+          <li>Reservoir for transmission</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. History + clinical signs:</strong></p>
+        <ul>
+          <li>Travel to / origin from endemic area ✨</li>
+          <li>Multi-system signs (skin + LN + organ involvement)</li>
+          <li>Onychogryphosis very suggestive</li>
+          <li>Periocular alopecia ("spectacles")</li>
+        </ul>
+
+        <p><strong>2. CBC + biochem:</strong></p>
+        <ul>
+          <li>Non-regenerative anemia ✨</li>
+          <li>Thrombocytopenia</li>
+          <li>Leukopenia (variable)</li>
+          <li>Hyperglobulinemia (often dramatic, polyclonal — sometimes monoclonal looking) ✨</li>
+          <li>Hypoalbuminemia</li>
+          <li>↑ ALT, ALP (mild)</li>
+          <li>Azotemia (PLN/CKD)</li>
+          <li>UPC ratio ↑↑ (proteinuria)</li>
+          <li>UA: proteinuria, isosthenuria</li>
+        </ul>
+
+        <p><strong>3. Cytology / histopathology ✨ — direct visualization:</strong></p>
+        <ul>
+          <li><strong>FNA of LN, BM, spleen ✨</strong>:
+            <ul>
+              <li>Look for amastigotes (intracellular round-oval bodies in macrophages)</li>
+              <li>Kinetoplast visible at one end</li>
+              <li>Multiple sites increase yield</li>
+            </ul>
+          </li>
+          <li>Skin biopsy (lesional area)</li>
+          <li>Conjunctival cytology</li>
+          <li>Special stains: Giemsa, Diff-Quik, immunohistochemistry</li>
+          <li>Definitive when amastigotes seen</li>
+          <li>Sensitivity: BM &gt; LN &gt; spleen (specialty)</li>
+        </ul>
+
+        <p><strong>4. Serology ✨:</strong></p>
+        <ul>
+          <li>IFA, ELISA, immunochromatographic tests</li>
+          <li>High sensitivity for symptomatic dogs</li>
+          <li>Quantitative titer:
+            <ul>
+              <li>Low titer: exposure / asymptomatic</li>
+              <li>High titer: active disease</li>
+            </ul>
+          </li>
+          <li>IDEXX SNAP Leishmania available in some markets</li>
+        </ul>
+
+        <p><strong>5. PCR ✨:</strong></p>
+        <ul>
+          <li>Most sensitive test</li>
+          <li>BM, lymph node, blood, conjunctival swab</li>
+          <li>Quantitative PCR (for monitoring)</li>
+          <li>Detects subclinical infections</li>
+        </ul>
+
+        <p><strong>6. Biochem / staging:</strong></p>
+        <ul>
+          <li>Urine UPC (PLN severity)</li>
+          <li>Serum protein electrophoresis (gammopathy)</li>
+          <li>BP (hypertension common with PLN)</li>
+          <li>LeishVet staging system (I-IV based on severity)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other tick-borne diseases (Ehrlichia chronic, Babesia)</li>
+          <li>Multiple myeloma (hyperglobulinemia)</li>
+          <li>Other immune-mediated disease</li>
+          <li>Lymphoma</li>
+          <li>Demodicosis (skin)</li>
+          <li>Pemphigus</li>
+          <li>Atopic / allergic dermatitis</li>
+          <li>SLE</li>
+          <li>Other PLN causes</li>
+          <li>Chronic bacterial infection</li>
+          <li>Fungal disease (blastomycosis, histoplasmosis)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment is challenging — usually controls but doesn't cure ✗</strong></p>
+
+        <p><strong>1. Combination therapy ✨ — preferred approach:</strong></p>
+
+        <p><strong>Allopurinol + meglumine antimoniate (or miltefosine) — gold standard:</strong></p>
+        <ul>
+          <li><strong>Allopurinol 10 mg/kg PO q12h</strong> ✨:
+            <ul>
+              <li>Long-term (often lifelong)</li>
+              <li>Inhibits parasite purine synthesis</li>
+              <li>Side effects: xanthine urolithiasis (encourage water intake; monitor UA)</li>
+              <li>Mainstay of long-term management</li>
+            </ul>
+          </li>
+          <li><strong>Meglumine antimoniate (Glucantime)</strong>:
+            <ul>
+              <li>75-100 mg/kg SC q24h × 4-6 weeks</li>
+              <li>Or 50 mg/kg q12h</li>
+              <li>Anti-leishmanial, reduces parasite load dramatically</li>
+              <li>Side effects: injection pain, nephrotoxicity (monitor renal function)</li>
+              <li>Limited availability in some countries</li>
+            </ul>
+          </li>
+          <li><strong>Miltefosine</strong> (alternative to meglumine):
+            <ul>
+              <li>2 mg/kg PO q24h × 28 days</li>
+              <li>Oral; more convenient</li>
+              <li>Better tolerated</li>
+              <li>Comparable efficacy</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Single agent (less effective):</strong></p>
+        <ul>
+          <li>Allopurinol alone: slower response, partial control; useful when others unavailable</li>
+          <li>Other agents: amphotericin B (severe cases; nephrotoxic), pentamidine</li>
+        </ul>
+
+        <p><strong>3. Supportive care:</strong></p>
+        <ul>
+          <li>Address PLN ✨:
+            <ul>
+              <li>ACE inhibitor (benazepril 0.25-0.5 mg/kg PO q12-24h) or ARB (telmisartan)</li>
+              <li>Renal diet (low protein, P-restricted)</li>
+              <li>Antiplatelet (clopidogrel) if hypoalbuminemia + thrombosis risk</li>
+              <li>BP management</li>
+              <li>Phosphate binders if hyperphosphatemic</li>
+            </ul>
+          </li>
+          <li>Address skin: chlorhexidine baths, topical antimicrobials, secondary infection treatment</li>
+          <li>Address eyes: topical / systemic anti-inflammatories</li>
+          <li>Pain management</li>
+          <li>Nutritional support</li>
+        </ul>
+
+        <p><strong>4. Long-term monitoring ✨:</strong></p>
+        <ul>
+          <li>Recheck CBC, biochem, UA, UPC q3 months initially, then q6 mo</li>
+          <li>Quantitative PCR for parasite load monitoring</li>
+          <li>Antibody titers (slow decline expected)</li>
+          <li>UA monitoring (xanthine crystalluria from allopurinol)</li>
+          <li>Lifelong allopurinol typical</li>
+          <li>Recurrence common — monitor for relapse</li>
+        </ul>
+
+        <p><strong>5. Vector / sandfly prevention ✨ — critical:</strong></p>
+        <ul>
+          <li>Permethrin / deltamethrin topical (Scalibor collar, Advantix) — repels sandflies</li>
+          <li>Indoors at dusk/night (peak sandfly activity)</li>
+          <li>Insect-proof bed netting</li>
+          <li>Avoid endemic areas during peak season</li>
+          <li>For travelers: vector prevention essential before travel</li>
+        </ul>
+
+        <p><strong>6. Vaccination (regional availability):</strong></p>
+        <ul>
+          <li>CaniLeish (Europe): adjuvanted protein vaccine
+            <ul>
+              <li>Reduces clinical disease + parasite load</li>
+              <li>Partial efficacy; best with vector control</li>
+              <li>Boosters required</li>
+            </ul>
+          </li>
+          <li>Letifend (Spain)</li>
+          <li>Brazil: Leish-Tec, Leishmune (variable availability/efficacy)</li>
+          <li>Not yet available globally</li>
+        </ul>
+
+        <p><strong>7. Zoonotic considerations:</strong></p>
+        <ul>
+          <li>Dogs are reservoir for human visceral leishmaniasis</li>
+          <li>Risk in endemic areas, immunocompromised owners</li>
+          <li>Sandfly is intermediary (no direct dog-to-human transmission)</li>
+          <li>Notifiable disease in some countries</li>
+          <li>Important to inform public health if found</li>
+        </ul>
+
+        <p><strong>Owner education:</strong></p>
+        <ul>
+          <li>Lifelong management likely</li>
+          <li>Vector prevention essential</li>
+          <li>Watch for: relapse signs (skin lesions, weight loss, lethargy)</li>
+          <li>Cost of long-term Tx</li>
+          <li>Don't breed (vertical transmission)</li>
+          <li>Don't use as blood donor</li>
+          <li>Public health awareness</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Progressive PLN → CKD → uremia ✗</strong> — most common cause of death</li>
+          <li>Severe pancytopenia</li>
+          <li>Refractory skin disease</li>
+          <li>Permanent ocular damage (uveitis, blindness)</li>
+          <li>Polyarthritis (chronic lameness)</li>
+          <li>Neurologic sequelae</li>
+          <li>Severe weight loss / cachexia</li>
+          <li>Glomerular nephritis (ESRD)</li>
+          <li>Drug side effects:
+            <ul>
+              <li>Allopurinol: xanthine urolithiasis</li>
+              <li>Meglumine: nephrotoxicity, painful injections</li>
+            </ul>
+          </li>
+          <li>Treatment failure / relapse (common — partial control)</li>
+          <li>Concurrent infections (immunosuppression)</li>
+          <li>Zoonotic transmission to humans (via sandfly)</li>
+          <li>Death</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Variable; depends on stage:
+            <ul>
+              <li>LeishVet Stage I (mild): good with combination Tx</li>
+              <li>Stage II-III (moderate): variable; long-term management</li>
+              <li>Stage IV (CKD): poor; renal-mediated</li>
+            </ul>
+          </li>
+          <li>With Tx + vector control: many dogs live years</li>
+          <li>Cure rare; lifelong management typical</li>
+          <li>Recurrence common</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>PLN / CKD at presentation</li>
+              <li>Severe BM dysfunction</li>
+              <li>Hyperglobulinemia + severe hypoalbuminemia</li>
+              <li>Concurrent disease</li>
+              <li>Treatment failure / multidrug-resistant</li>
+              <li>Late presentation</li>
+              <li>Continued sandfly exposure</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Travel/origin from Mediterranean + multi-system signs (skin + LN + PLN) = leishmania</strong> ✨ — onychogryphosis + periocular alopecia suggestive<br><br>💡 **Allopurinol + meglumine antimoniate (or miltefosine)** = combination Tx. **Allopurinol lifelong** typical<br><br>**Vector prevention essential** ✨ — permethrin collar/topical (Scalibor, Advantix). Zoonotic concern (humans via sandfly). Cure rare; manage lifelong</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 96 · Rocky Mountain Spotted Fever &amp; Other Rickettsial ---------- */
+  {
+    id: 'rickettsial-disease',
+    titleEn: 'Rocky Mountain Spotted Fever &amp; Other Rickettsial Diseases',
+    titleTh: 'ริคเก็ตเซีย (RMSF และอื่นๆ)',
+    type: 'disease',
+    system: 'infectious',
+    species: ['dog'],
+    tags: ['Rocky Mountain spotted fever', 'RMSF', 'Rickettsia rickettsii', 'tick-borne', 'vasculitis', 'doxycycline', 'bartonella', 'Q fever', 'Rickettsia conorii', 'Mediterranean spotted fever', 'IFA', 'PCR'],
+    aliases: ['RMSF', 'rickettsia', 'spotted fever', 'rickettsial disease', 'ริคเก็ตเซีย'],
+    source: 'Ch. 96 · pp. 1561–1567',
+    sections: {
+      definition: `
+        <p>กลุ่มโรค <strong>tick-borne rickettsial diseases</strong> — vasculitis-mediated multi-system illness</p>
+        <ul>
+          <li><strong>Rocky Mountain Spotted Fever (RMSF) ✨</strong>:
+            <ul>
+              <li>Causative agent: <strong>Rickettsia rickettsii</strong></li>
+              <li>Vectors: Dermacentor variabilis (American dog tick), D. andersoni, Rhipicephalus sanguineus, Amblyomma</li>
+              <li>Endemic: USA (especially southeast, Atlantic states, Rocky Mountains region)</li>
+              <li>Most severe rickettsial disease</li>
+              <li>Acute onset; can be fatal ✗</li>
+            </ul>
+          </li>
+          <li><strong>Mediterranean spotted fever (R. conorii)</strong>: similar; Mediterranean basin</li>
+          <li><strong>Other spotted fever group rickettsiae</strong>: various species in different regions globally</li>
+          <li><strong>Bartonella henselae / B. vinsonii ✨</strong>:
+            <ul>
+              <li>Cat scratch disease in humans</li>
+              <li>Endocarditis, granulomatous disease in dogs</li>
+              <li>Cat: largely subclinical (reservoir)</li>
+            </ul>
+          </li>
+          <li><strong>Coxiella burnetii (Q fever)</strong>: rare clinical disease in pets; zoonotic concern</li>
+          <li>Predisposed:
+            <ul>
+              <li>Tick exposure (rural, outdoor)</li>
+              <li>Endemic regions (geographic)</li>
+              <li>German Shepherds (severe RMSF — anecdotal)</li>
+            </ul>
+          </li>
+          <li>**ในไทย: spotted fever group ricketttsiae existed; less commonly diagnosed**</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Obligate intracellular gram-negative bacteria (similar to Ehrlichia)</li>
+          <li>Tick-borne (RMSF):
+            <ul>
+              <li>Female ticks transmit to offspring (transovarial)</li>
+              <li>Need 5-20 hours attachment for transmission</li>
+            </ul>
+          </li>
+          <li>Bartonella transmission:
+            <ul>
+              <li>Cat fleas (Ctenocephalides felis)</li>
+              <li>Cat scratches/bites (humans)</li>
+              <li>Direct dog transmission (debated; possibly via fleas or ticks)</li>
+            </ul>
+          </li>
+          <li>Coxiella: aerosol, ingestion of contaminated products (livestock primarily)</li>
+          <li>Incubation:
+            <ul>
+              <li>RMSF: 2-14 days</li>
+              <li>Bartonella: weeks to months (often subclinical chronic)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Rickettsia replicate in vascular endothelial cells → <strong>severe vasculitis</strong> ✨</li>
+          <li>Multi-organ damage from vascular injury:
+            <ul>
+              <li>Increased vascular permeability → edema, hemorrhage</li>
+              <li>DIC (severe cases)</li>
+              <li>Multi-organ dysfunction (kidney, liver, lung, CNS)</li>
+            </ul>
+          </li>
+          <li>Bartonella: chronic intraerythrocytic + endothelial; granulomatous vasculitis; endocarditis</li>
+          <li>Severe cases progress rapidly (days) ✗</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>RMSF acute presentation ✨:</strong></p>
+        <ul>
+          <li>Acute fever ✨ (often high; 40-41°C)</li>
+          <li>Severe lethargy, depression</li>
+          <li>Anorexia</li>
+          <li>Vomiting, diarrhea</li>
+          <li>Myalgia, joint pain (lameness)</li>
+          <li>Lymphadenopathy</li>
+          <li>Splenomegaly</li>
+          <li><strong>Vasculitis signs ✨:</strong>
+            <ul>
+              <li>Petechiae, ecchymoses (skin, mucous membranes) ✨</li>
+              <li>Edema (face, limbs, scrotum, prepuce)</li>
+              <li>Hemorrhage (epistaxis, hemoptysis, melena, hematuria)</li>
+            </ul>
+          </li>
+          <li>Ocular:
+            <ul>
+              <li>Conjunctivitis, scleral injection</li>
+              <li>Anterior uveitis</li>
+              <li>Retinal hemorrhage</li>
+            </ul>
+          </li>
+          <li>Neurologic ✗:
+            <ul>
+              <li>Vestibular signs</li>
+              <li>Ataxia, paresis</li>
+              <li>Seizures</li>
+              <li>Cranial nerve deficits</li>
+              <li>Mental dullness</li>
+            </ul>
+          </li>
+          <li>Cardiac: arrhythmias (myocarditis)</li>
+          <li>Respiratory: dyspnea (pulmonary edema, ARDS in severe)</li>
+          <li>Necrosis: distal extremities (severe vasculitis) — ear tips, scrotum, paws ✗</li>
+        </ul>
+
+        <p><strong>Bartonella in dogs ✨:</strong></p>
+        <ul>
+          <li>Often chronic, insidious presentation</li>
+          <li>Endocarditis (especially aortic valve) ✨ ✗:
+            <ul>
+              <li>Heart murmur</li>
+              <li>Cough, dyspnea, exercise intolerance</li>
+              <li>Often fatal</li>
+            </ul>
+          </li>
+          <li>Granulomatous lymphadenitis</li>
+          <li>Granulomatous hepatitis</li>
+          <li>Polyarthritis</li>
+          <li>Uveitis, chorioretinitis</li>
+          <li>Epistaxis (rare)</li>
+          <li>Lymphadenopathy</li>
+          <li>Fever, weight loss, lethargy</li>
+          <li>Often co-infection with Ehrlichia / Babesia / RMSF (can confuse picture)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>1. Clinical recognition ✨:</strong></p>
+        <ul>
+          <li>Acute multi-system illness in tick-exposed dog → RMSF differential</li>
+          <li>Petechiae + edema + neurologic signs = suggestive</li>
+          <li>Endocarditis with negative blood cultures → think Bartonella</li>
+        </ul>
+
+        <p><strong>2. CBC + biochem ✨:</strong></p>
+        <ul>
+          <li>Thrombocytopenia ✨ (almost always; often severe)</li>
+          <li>Leukopenia or leukocytosis</li>
+          <li>Mild anemia</li>
+          <li>Schistocytes (DIC)</li>
+          <li>Hyponatremia</li>
+          <li>Hypoalbuminemia</li>
+          <li>↑ ALT, ALP (mild)</li>
+          <li>Azotemia (severe vasculitis-induced AKI)</li>
+          <li>↑ CK (myalgia, vasculitis)</li>
+          <li>Coag: prolonged PT/aPTT, ↑ D-dimers (DIC)</li>
+        </ul>
+
+        <p><strong>3. Specific testing:</strong></p>
+
+        <p><strong>RMSF:</strong></p>
+        <ul>
+          <li><strong>IFA serology ✨</strong>:
+            <ul>
+              <li>Acute titer ≥ 1:64 suggestive</li>
+              <li>4-fold rise in paired titers (acute + 2-3 weeks later) confirms</li>
+              <li>Cross-reactivity with other spotted fever rickettsiae</li>
+              <li>Usually negative early in disease (window 7-10 days)</li>
+            </ul>
+          </li>
+          <li>PCR (whole blood, tissue):
+            <ul>
+              <li>Sensitive in early acute disease</li>
+              <li>Send before doxycycline starts</li>
+              <li>Many panels detect multiple rickettsial species</li>
+            </ul>
+          </li>
+          <li>IHC of tissue (skin biopsy from petechiae) — confirms in some cases</li>
+          <li>SNAP 4Dx Plus does NOT detect RMSF directly (only Ehrlichia, Anaplasma, Lyme)</li>
+        </ul>
+
+        <p><strong>Bartonella ✨:</strong></p>
+        <ul>
+          <li>PCR (multiple samples — blood, tissue) — most sensitive</li>
+          <li>Bartonella alpha-Proteobacteria growth medium (BAPGM) culture — specialty (NCSU vector-borne lab)</li>
+          <li>Serology (IFA, Western blot) — supportive but variable</li>
+          <li>Often need multiple tests / repeat sampling</li>
+          <li>Co-infection screening important</li>
+        </ul>
+
+        <p><strong>4. Imaging:</strong></p>
+        <ul>
+          <li>Echocardiogram (Bartonella endocarditis):
+            <ul>
+              <li>Valvular vegetations (aortic mainly)</li>
+              <li>Often dramatic appearance</li>
+            </ul>
+          </li>
+          <li>Thoracic radiograph (RMSF — pulmonary edema, infiltrates)</li>
+          <li>Abdominal US (lymphadenopathy, organomegaly)</li>
+        </ul>
+
+        <p><strong>5. Other:</strong></p>
+        <ul>
+          <li>Blood cultures (multiple) — Bartonella often negative on standard cultures (need BAPGM)</li>
+          <li>UA, UPC</li>
+          <li>BP</li>
+          <li>Joint tap if polyarthritis</li>
+          <li>CSF if neurologic signs</li>
+          <li>Co-infection panel (Ehrlichia, Babesia)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>Other tick-borne diseases (Ehrlichia, Anaplasma, Babesia, Hepatozoon, Lyme)</li>
+          <li>Leptospirosis (similar acute multi-organ presentation)</li>
+          <li>Severe IMHA / ITP</li>
+          <li>Sepsis with DIC</li>
+          <li>Vasculitis (immune-mediated, drug-induced)</li>
+          <li>SLE</li>
+          <li>Endocarditis (other bacterial — Streptococcus, Staphylococcus)</li>
+          <li>Pyelonephritis</li>
+          <li>Severe pancreatitis with multi-organ</li>
+          <li>Coagulopathy (rodenticide, DIC other cause)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Doxycycline ✨ — first-line for ALL rickettsial diseases:</strong></p>
+        <ul>
+          <li><strong>Doxycycline 5-10 mg/kg PO/IV q12h ✨</strong>:
+            <ul>
+              <li><strong>RMSF: 7-14 days</strong> (rapid response expected within 24-48h)</li>
+              <li><strong>Bartonella: 4-6 weeks minimum</strong> (often 8-12 weeks; persistent infections difficult)</li>
+              <li>Start empirically when suspected (don't wait for confirmation in severe cases)</li>
+              <li>Side effects: GI (give with food), esophagitis</li>
+            </ul>
+          </li>
+          <li>Response to doxycycline within 24-48h supports diagnosis</li>
+          <li>Failure to respond → reconsider diagnosis or co-infection</li>
+        </ul>
+
+        <p><strong>2. Combination for severe Bartonella:</strong></p>
+        <ul>
+          <li>Doxycycline + enrofloxacin (5-10 mg/kg PO q24h) — preferred for endocarditis</li>
+          <li>Doxycycline + azithromycin (alternative)</li>
+          <li>Aminoglycoside + doxycycline (rare; severe cases)</li>
+          <li>Long courses (3-6 months) for endocarditis</li>
+          <li>Prognosis poor for endocarditis even with Tx</li>
+        </ul>
+
+        <p><strong>3. Supportive care (severe RMSF) ✗:</strong></p>
+        <ul>
+          <li>IV fluid therapy (carefully — vasculitis = leaky vessels):
+            <ul>
+              <li>Crystalloids</li>
+              <li>Colloids if severe hypoalbuminemia</li>
+              <li>Avoid overhydration</li>
+            </ul>
+          </li>
+          <li>Blood transfusion (if severe anemia / bleeding)</li>
+          <li>Platelet-rich plasma if severe thrombocytopenia + bleeding</li>
+          <li>FFP for coagulopathy</li>
+          <li>Anti-inflammatory (NSAIDs cautiously; consider corticosteroids for severe vasculitis — controversial)</li>
+          <li>Pain management</li>
+          <li>Anti-emetics</li>
+          <li>Address AKI (fluid management, dialysis if needed)</li>
+          <li>Anticonvulsants if seizures</li>
+          <li>Cardiac support if myocarditis (ECG monitoring, anti-arrhythmics if needed)</li>
+        </ul>
+
+        <p><strong>4. Endocarditis management (Bartonella):</strong></p>
+        <ul>
+          <li>Long-term antibiotics (3-6 months minimum)</li>
+          <li>Cardiac medications (depending on severity):
+            <ul>
+              <li>Diuretic (furosemide) for CHF</li>
+              <li>ACE inhibitor</li>
+              <li>Pimobendan</li>
+              <li>Anti-arrhythmics</li>
+            </ul>
+          </li>
+          <li>Anti-thrombotic (clopidogrel) for embolic risk</li>
+          <li>Surgical valve replacement: rarely available in vet; specialty</li>
+          <li>Prognosis poor — most dogs die from heart failure or systemic embolization ✗</li>
+        </ul>
+
+        <p><strong>5. Tick prevention ✨ — primary prevention:</strong></p>
+        <ul>
+          <li>Year-round tick prevention</li>
+          <li>Isoxazolines (most effective)</li>
+          <li>Topical permethrin / fipronil</li>
+          <li>Tick collars (Seresto, Preventic)</li>
+          <li>Daily tick checks</li>
+          <li>Manual tick removal (within 24h reduces transmission)</li>
+        </ul>
+
+        <p><strong>6. Flea control (Bartonella):</strong></p>
+        <ul>
+          <li>Year-round flea prevention</li>
+          <li>Especially important in multi-pet households with cats</li>
+          <li>Same isoxazoline products often combine flea + tick prevention</li>
+        </ul>
+
+        <p><strong>7. Public health considerations:</strong></p>
+        <ul>
+          <li>RMSF: zoonotic risk (humans get from same ticks)</li>
+          <li>Bartonella: cat scratch fever risk (especially immunocompromised humans)</li>
+          <li>Inform owners about tick prevention for whole family</li>
+          <li>Notifiable disease in some jurisdictions</li>
+        </ul>
+
+        <p><strong>Monitor:</strong></p>
+        <ul>
+          <li>RMSF: clinical response within 24-48h; rapid improvement</li>
+          <li>Recheck CBC, biochem at 1, 2, 4 weeks</li>
+          <li>Bartonella: serial PCR, echocardiogram (endocarditis), q4-8 wk</li>
+          <li>Watch for: relapse, treatment failure, complications</li>
+          <li>Co-infection management</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>RMSF:</strong>
+            <ul>
+              <li>DIC ✗</li>
+              <li>Severe AKI</li>
+              <li>Pulmonary edema / ARDS ✗</li>
+              <li>Permanent neurologic deficits</li>
+              <li>Distal extremity necrosis (ear tips, scrotum, paws) — gangrene ✗</li>
+              <li>Permanent vision loss (uveitis, retinal damage)</li>
+              <li>Cardiac arrhythmias</li>
+              <li>Multi-organ failure</li>
+              <li>Death (mortality 5-10% with Tx; up to 20% without)</li>
+            </ul>
+          </li>
+          <li><strong>Bartonella:</strong>
+            <ul>
+              <li>Endocarditis → CHF ✗</li>
+              <li>Embolic disease (kidney, brain, spleen)</li>
+              <li>Persistent infection (difficult to clear)</li>
+              <li>Granulomatous organ disease</li>
+              <li>Polyarthritis chronic</li>
+              <li>Death from endocarditis common ✗</li>
+            </ul>
+          </li>
+          <li>Treatment failure / relapse</li>
+          <li>Co-infection complications</li>
+          <li>Doxycycline side effects</li>
+          <li>Zoonotic transmission</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>RMSF + early doxycycline (within 5 days of onset): excellent</strong> ✓ — usually complete recovery</li>
+          <li>RMSF + delayed Tx: guarded; mortality 10-20% ✗</li>
+          <li>RMSF + severe complications (DIC, neuro, ARDS, AKI): poor</li>
+          <li>RMSF survivors may have residual neuro deficits, vision loss, or extremity loss</li>
+          <li>Mediterranean spotted fever (R. conorii): usually milder</li>
+          <li><strong>Bartonella endocarditis: poor</strong> ✗ — mortality &gt; 70% even with Tx</li>
+          <li>Bartonella granulomatous disease: variable; long-term Tx</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Delayed Tx (&gt; 5 days RMSF onset)</li>
+              <li>Severe vasculitis / DIC</li>
+              <li>Neurologic involvement</li>
+              <li>ARDS</li>
+              <li>Aortic valve endocarditis (Bartonella)</li>
+              <li>Multi-organ failure</li>
+              <li>Co-infection</li>
+              <li>Concurrent immunosuppression</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">⚠️ <strong>Acute multi-system illness + petechiae + edema + neuro signs = RMSF</strong> ✨ — start doxycycline EMPIRICALLY (don't wait for serology)<br><br>💡 **Doxycycline 5-10 mg/kg PO q12h × 7-14 days (RMSF) or 4-6+ weeks (Bartonella)** ✨<br><br>**Bartonella endocarditis = grave** ✗ — aortic valve vegetations; long-term Tx; high mortality. **Tick prevention year-round** = primary prevention</div>
+      `,
+    },
+  },
+
   /* ---------- More entries to come ---------- */
 
 ];
