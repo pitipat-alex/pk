@@ -58,6 +58,35 @@
   DEBUG.add('UA: ' + navigator.userAgent.substring(0, 80), 'info');
   DEBUG.add('URL: ' + window.location.href.substring(0, 80), 'info');
 
+  // ---------- Touch Diagnostic Tool ------------------------------
+  // When activated, taps anywhere will report the topmost element
+  // that received the touch. Helps identify invisible blockers.
+  window.PK_TouchDiag = {
+    enabled: false,
+    enable: function() {
+      this.enabled = true;
+      DEBUG.add('🔍 Touch diag ENABLED — tap anywhere', 'ok');
+      DEBUG.show();
+    },
+    disable: function() {
+      this.enabled = false;
+      DEBUG.add('Touch diag disabled', 'info');
+    },
+  };
+  document.addEventListener('touchstart', function(e) {
+    if (!window.PK_TouchDiag.enabled) return;
+    const t = e.touches[0];
+    const el = document.elementFromPoint(t.clientX, t.clientY);
+    if (el) {
+      const desc = el.tagName +
+        (el.id ? '#' + el.id : '') +
+        (el.className && typeof el.className === 'string' ? '.' + el.className.split(' ').slice(0,2).join('.') : '');
+      DEBUG.add('TAP @ ' + Math.round(t.clientX) + ',' + Math.round(t.clientY) + ' → ' + desc.substring(0, 60), 'info');
+    } else {
+      DEBUG.add('TAP @ ' + Math.round(t.clientX) + ',' + Math.round(t.clientY) + ' → null', 'error');
+    }
+  }, { passive: true });
+
   // ---------- Configuration --------------------------------------
   const SUPABASE_URL      = 'https://bxlyctricjayindvcfjo.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4bHljdHJpY2pheWluZHZjZmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NDE2NTAsImV4cCI6MjA5MzAxNzY1MH0.8b-UqK-SW1dOyZ0WhAC5NBns8lAe1kTgn2xJMiHvaRA';
@@ -103,8 +132,9 @@
         <p class="lock-hint">PRIVATE · WITH PRIDE</p>
       </div>
       <div id="pkDebugPanel" style="display:none;position:fixed;top:48px;right:8px;width:min(360px,calc(100vw - 16px));max-height:40vh;overflow-y:auto;background:rgba(0,0,0,0.92);color:#0f0;font-family:monospace;font-size:10px;line-height:1.3;padding:6px;z-index:99999;border:1px solid #0f0;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;border-bottom:1px solid #444;padding-bottom:3px;position:sticky;top:0;background:rgba(0,0,0,0.92);">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:4px;border-bottom:1px solid #444;padding-bottom:3px;position:sticky;top:0;background:rgba(0,0,0,0.92);">
           <strong style="color:#0ff;font-size:11px;">PK Debug</strong>
+          <button onclick="window.PK_TouchDiag.enable()" style="background:#06A77D;color:#fff;border:0;padding:6px 10px;border-radius:4px;cursor:pointer;font-size:11px;touch-action:manipulation;">🔍 Touch Diag</button>
           <button onclick="window.PK_DEBUG.hide()" style="background:#c00;color:#fff;border:0;padding:6px 14px;border-radius:4px;cursor:pointer;font-size:13px;touch-action:manipulation;">ปิด ✕</button>
         </div>
       </div>
@@ -236,27 +266,56 @@
 
   // ---------- Initial session check ------------------------------
   (async function initAuth() {
-    // Step 1: If we just returned from OAuth redirect, URL contains ?code=... or #access_token=...
-    // detectSessionInUrl in createClient will auto-handle this, but we wait briefly for it.
-    const urlHasOAuthParams =
-      window.location.search.includes('code=') ||
-      window.location.hash.includes('access_token=');
+    // Step 1: Detect OAuth callback (URL contains ?code=... for PKCE)
+    const url = new URL(window.location.href);
+    const code = url.searchParams.get('code');
+    const errorParam = url.searchParams.get('error');
+    const errorDesc = url.searchParams.get('error_description');
 
-    if (urlHasOAuthParams) {
-      // Give Supabase client time to exchange code for session
-      await new Promise(resolve => setTimeout(resolve, 100));
-      // Clean URL — remove ?code=... so refresh doesn't break
+    if (errorParam) {
+      DEBUG.add('OAuth error from Google: ' + errorParam + ' - ' + (errorDesc || ''), 'error');
+      DEBUG.show();
+      // Clean URL
+      try { window.history.replaceState({}, document.title, window.location.origin + window.location.pathname); } catch(e){}
+      showLock();
+      flashError('Google ปฏิเสธ: ' + (errorDesc || errorParam));
+      return;
+    }
+
+    if (code) {
+      DEBUG.add('OAuth code detected, exchanging for session...', 'info');
       try {
-        const cleanUrl = window.location.origin + window.location.pathname;
-        window.history.replaceState({}, document.title, cleanUrl);
+        // Explicit exchange — don't rely on detectSessionInUrl race
+        const { data, error } = await sb.auth.exchangeCodeForSession(window.location.href);
+        if (error) {
+          DEBUG.add('exchangeCodeForSession ERROR: ' + error.message, 'error');
+          DEBUG.show();
+          // Clean URL anyway to avoid loop
+          try { window.history.replaceState({}, document.title, window.location.origin + window.location.pathname); } catch(e){}
+          showLock();
+          flashError('แลกเปลี่ยน session ไม่สำเร็จ: ' + error.message);
+          return;
+        }
+        DEBUG.add('✓ Session exchange OK, user: ' + (data.session && data.session.user ? data.session.user.email : 'unknown'), 'ok');
+      } catch (err) {
+        DEBUG.add('exchangeCodeForSession exception: ' + (err.message || err), 'error');
+        DEBUG.show();
+      }
+      // Clean URL only AFTER exchange
+      try {
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
       } catch (e) { /* ignore */ }
     }
 
+    // Step 2: Now check session
     const { data: { session } } = await sb.auth.getSession();
+    DEBUG.add('Session check: ' + (session ? 'HAS session, user=' + session.user.email : 'NO session'), session ? 'ok' : 'info');
     if (session && isAllowed(session.user.email)) {
       fillAccount(session.user);
       showDashboard();
     } else if (session) {
+      DEBUG.add('Email not allowed: ' + session.user.email, 'error');
+      DEBUG.show();
       await sb.auth.signOut();
       showLock();
       flashError('อีเมลนี้ไม่ได้รับอนุญาตให้เข้าใช้งานเว็บนี้');
