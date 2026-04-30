@@ -20267,6 +20267,1017 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     PART 9 — NERVOUS SYSTEM &amp; NEUROMUSCULAR (Ch 60–67)
+  ============================================================ */
+
+  /* ---------- Ch 60-61 · Idiopathic Epilepsy ---------- */
+  {
+    id: 'idiopathic-epilepsy',
+    titleEn: 'Idiopathic Epilepsy',
+    titleTh: 'โรคลมชักไม่ทราบสาเหตุ',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['epilepsy', 'seizure', 'idiopathic', 'phenobarbital', 'KBr', 'levetiracetam', 'Keppra', 'imepitoin', 'zonisamide', 'diazepam', 'cluster seizures'],
+    aliases: ['epilepsy', 'seizures', 'fits', 'ลมชัก', 'ชัก', 'IE'],
+    source: 'Ch. 60-61 · pp. 1086–1108',
+    sections: {
+      definition: `
+        <p>โรคลมชัก <strong>ที่ไม่มีสาเหตุโครงสร้างหรือ metabolic ที่ระบุได้</strong> — diagnosis of exclusion ✨</p>
+        <ul>
+          <li>Recurrent seizures (≥ 2 unprovoked, &gt; 24h apart)</li>
+          <li>Genetic / inherited basis suspected (many breeds)</li>
+          <li>Onset typically <strong>1-5 yr</strong> (dog) — outside this window suggests structural/metabolic cause</li>
+          <li>Cat: idiopathic epilepsy เจอน้อย (~ 25% of feline seizures vs 70-80% in dog)</li>
+          <li>Predisposed breeds: Beagle, Lab, Golden, GSD, Boxer, Border Collie, Belgian Shepherd, Standard Poodle, Bernese, Vizsla, Irish Setter</li>
+        </ul>
+
+        <p><strong>IVETF (International Veterinary Epilepsy Task Force) tiers ✨:</strong></p>
+        <ul>
+          <li><strong>Tier I:</strong> recurrent seizures + age 6 mo-6 yr + normal interictal exam + normal lab</li>
+          <li><strong>Tier II:</strong> Tier I + normal MRI + normal CSF</li>
+          <li><strong>Tier III:</strong> Tier II + EEG abnormal compatible</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Idiopathic epilepsy = no identifiable cause:</strong></p>
+        <ul>
+          <li>Genetic / inherited (specific genes identified in some breeds — LGI2 in Lagotto, etc.)</li>
+          <li>Idiopathic of unknown cause</li>
+        </ul>
+
+        <p><strong>Differentiate from secondary (structural / reactive) seizures:</strong></p>
+
+        <p><strong>Structural (intracranial):</strong></p>
+        <ul>
+          <li>Brain tumor (older dogs &gt; 7 yr)</li>
+          <li>Encephalitis (MUE/GME, infectious — see entries)</li>
+          <li>Trauma</li>
+          <li>Stroke</li>
+          <li>Hydrocephalus</li>
+          <li>Lissencephaly</li>
+          <li>Storage diseases</li>
+        </ul>
+
+        <p><strong>Reactive (metabolic / toxic):</strong></p>
+        <ul>
+          <li>Hypoglycemia (insulinoma, juvenile, sepsis, xylitol)</li>
+          <li>Hepatic encephalopathy (PSS, severe liver failure)</li>
+          <li>Uremic encephalopathy</li>
+          <li>Hypocalcemia (eclampsia, hypoPTH)</li>
+          <li>Electrolyte: hypoNa, hyperNa</li>
+          <li>Hypothyroid (rare)</li>
+          <li>Toxin: chocolate, theobromine, metaldehyde, organophosphate, lead, EG, permethrin (cat ✗)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Seizure = paroxysmal, abnormal, synchronous neuronal activity</li>
+          <li>Imbalance: excitatory (glutamate) &gt; inhibitory (GABA)</li>
+          <li>Genetic: ion channel / neurotransmitter receptor mutations</li>
+          <li>Phases:
+            <ul>
+              <li><strong>Prodrome</strong> — minutes-hours before; behavioral change (restless, attention-seeking, hiding)</li>
+              <li><strong>Aura</strong> — immediate pre-ictal (rare to identify in pets)</li>
+              <li><strong>Ictus</strong> — actual seizure (typically 30 sec - 2 min)</li>
+              <li><strong>Post-ictal</strong> — minutes to hours; disorientation, blindness, ataxia, polyphagia, polydipsia, aggression</li>
+            </ul>
+          </li>
+          <li>Kindling: repeated seizures lower threshold → more frequent over time</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Generalized tonic-clonic ✨ — most common:</strong></p>
+        <ul>
+          <li>Loss of consciousness</li>
+          <li>Lateral recumbency, paddling all 4 limbs</li>
+          <li>Tonic phase (rigid extension) → clonic (rhythmic jerking)</li>
+          <li>Salivation, urination, defecation</li>
+          <li>Vocalization</li>
+          <li>30 sec - 2 min duration typical</li>
+        </ul>
+
+        <p><strong>Focal (partial) seizures:</strong></p>
+        <ul>
+          <li>Without loss of consciousness (simple focal):
+            <ul>
+              <li>Focal facial twitching, ear twitching</li>
+              <li>One-limb jerking</li>
+              <li>"Fly biting" (cat especially)</li>
+              <li>Behavioral changes (rage, fear)</li>
+            </ul>
+          </li>
+          <li>With altered consciousness (complex focal):
+            <ul>
+              <li>Stargazing, vocalizing, repetitive behaviors</li>
+              <li>"Absence" episodes</li>
+            </ul>
+          </li>
+          <li>Focal can secondarily generalize</li>
+        </ul>
+
+        <p><strong>Cluster seizures ✗:</strong></p>
+        <ul>
+          <li>≥ 2 seizures in 24h with regained consciousness between</li>
+          <li>Higher mortality, refractory to single drugs often</li>
+        </ul>
+
+        <p><strong>Status epilepticus ✗ (see separate entry):</strong></p>
+        <ul>
+          <li>Continuous seizure &gt; 5 min</li>
+          <li>Or repeated seizures without regaining consciousness</li>
+          <li>Emergency</li>
+        </ul>
+
+        <p><strong>Interictal:</strong></p>
+        <ul>
+          <li>Completely normal in idiopathic epilepsy ✨</li>
+          <li>Persistent neurologic deficits between seizures = structural disease!</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnosis = exclusion of other causes ✨:</strong></p>
+
+        <p><strong>1. History critical:</strong></p>
+        <ul>
+          <li>Age of onset (1-5 yr typical for IE)</li>
+          <li>Frequency, pattern</li>
+          <li>Description of episodes (video crucial — owner phone)</li>
+          <li>Pre-ictal, ictal, post-ictal features</li>
+          <li>Triggers (stress, sleep, environmental)</li>
+          <li>Toxin exposure</li>
+          <li>Medications</li>
+          <li>Family history (breeders)</li>
+        </ul>
+
+        <p><strong>2. Exam:</strong></p>
+        <ul>
+          <li>Complete physical + neurologic exam (interictal)</li>
+          <li>Should be <strong>NORMAL in idiopathic epilepsy</strong></li>
+          <li>Persistent deficits → structural disease</li>
+          <li>Caveat: post-ictal deficits up to 24-72h can be normal</li>
+        </ul>
+
+        <p><strong>3. Minimum database:</strong></p>
+        <ul>
+          <li>CBC, biochem (full)</li>
+          <li>UA</li>
+          <li>Bile acids (hepatic encephalopathy / PSS)</li>
+          <li>Glucose</li>
+          <li>Electrolytes (Na, Ca, K)</li>
+          <li>T4 (rule out hypothyroid)</li>
+          <li>± Lead level (history-dependent)</li>
+        </ul>
+
+        <p><strong>4. Advanced (Tier II diagnosis):</strong></p>
+        <ul>
+          <li><strong>MRI brain</strong> ✨ — gold standard for structural cause:
+            <ul>
+              <li>Recommended for: onset &lt; 6 mo or &gt; 6 yr, abnormal exam, focal signs, refractory to treatment, status epilepticus</li>
+              <li>Considered "best practice" for all but young + classic IE pattern + financial limitation</li>
+            </ul>
+          </li>
+          <li><strong>CSF analysis</strong> — encephalitis, infection</li>
+          <li>Infectious disease titers (toxoplasmosis, neospora, CDV, FIV, FeLV cat)</li>
+          <li>EEG (Tier III; limited availability)</li>
+        </ul>
+
+        <p><strong>Treatment indications (when to start anticonvulsants) ✨:</strong></p>
+        <ul>
+          <li>≥ 2 seizures in 6 months</li>
+          <li>Cluster seizures</li>
+          <li>Status epilepticus</li>
+          <li>Severe / prolonged post-ictal</li>
+          <li>Progressive in frequency or severity</li>
+          <li>Owner concern QOL</li>
+          <li>Note: single seizure → don't necessarily start treatment immediately</li>
+        </ul>
+      `,
+      differential: `<p>ดู etiology — distinguish IE from secondary causes via diagnostic workup</p>`,
+      treatment: `
+        <p><strong>Goals:</strong></p>
+        <ul>
+          <li>Reduce seizure frequency by ≥ 50% (realistic — total elimination uncommon)</li>
+          <li>Acceptable side effect profile</li>
+          <li>Maintain QOL</li>
+          <li>Owner compliance + understanding</li>
+        </ul>
+
+        <p><strong>1. Phenobarbital ✨ — first-line dog (decades of evidence):</strong></p>
+        <ul>
+          <li><strong>Dose: 2-3 mg/kg PO q12h start</strong>
+            <ul>
+              <li>Available 15, 30, 60, 100 mg tablets</li>
+              <li>Steady state in 10-14 days</li>
+            </ul>
+          </li>
+          <li><strong>Therapeutic level: 25-35 µg/mL</strong> ✨ (some labs 25-45)
+            <ul>
+              <li>Trough sample (just before next dose)</li>
+              <li>Recheck at 2 wk, 6 wk, 6 mo, then q6-12 mo</li>
+            </ul>
+          </li>
+          <li><strong>Side effects:</strong>
+            <ul>
+              <li>Sedation, ataxia (transient — first 1-2 wk; tolerance develops)</li>
+              <li>PU/PD ✨, polyphagia (most common chronic)</li>
+              <li>Hepatotoxicity ✗ (idiosyncratic — rare; or dose-related at high levels long-term)
+                <ul>
+                  <li>Recheck biochem + bile acids q6 mo</li>
+                  <li>Stop if ALT/ALP &gt;&gt; 2-3× normal or bile acids ↑</li>
+                </ul>
+              </li>
+              <li>Bone marrow suppression (rare)</li>
+              <li>Falsely ↓ T4 (sick euthyroid effect)</li>
+              <li>Pseudo-Cushing's signs</li>
+              <li>Behavioral: hyperactivity in some</li>
+            </ul>
+          </li>
+          <li>Cat: dose 1.5-3 mg/kg PO q12h; therapeutic 15-35 µg/mL; well-tolerated, less hepatotoxic</li>
+        </ul>
+
+        <p><strong>2. Potassium bromide (KBr) ✨ — second-line / adjunct:</strong></p>
+        <ul>
+          <li><strong>Dose: 30-40 mg/kg PO q24h</strong> as adjunct (with food)
+            <ul>
+              <li>40-60 mg/kg q24h if monotherapy (rare now)</li>
+              <li>Loading 600 mg/kg over 5 days (split doses) for rapid effect</li>
+            </ul>
+          </li>
+          <li><strong>Therapeutic level: 1.0-3.0 mg/mL (mono); 1.0-2.5 mg/mL (with phenobarb)</strong>
+            <ul>
+              <li>Steady state 3 months without loading; 5 days with loading</li>
+              <li>Recheck at 3 mo, 6 mo, then q6-12 mo</li>
+            </ul>
+          </li>
+          <li><strong>Cat: AVOID</strong> ✗ — pulmonary inflammation, asthma-like syndrome, fatal</li>
+          <li><strong>Side effects:</strong>
+            <ul>
+              <li>Sedation, ataxia (initial)</li>
+              <li>PU/PD, polyphagia</li>
+              <li>GI upset (give with food)</li>
+              <li>Pancreatitis (concern in predisposed)</li>
+              <li>Hindlimb weakness (high levels)</li>
+              <li>Bromism: stupor, ataxia, paresis (severe toxicity)</li>
+            </ul>
+          </li>
+          <li>Salt content: avoid changing diet sodium content (affects levels)</li>
+          <li>Renal disease: caution (excretion via kidney)</li>
+        </ul>
+
+        <p><strong>3. Levetiracetam (Keppra) ✨ — modern first-line / adjunct:</strong></p>
+        <ul>
+          <li><strong>Dose: 20-30 mg/kg PO q8h</strong> (immediate-release)
+            <ul>
+              <li>Or extended-release (Keppra XR) 20-30 mg/kg PO q12h (don't crush)</li>
+              <li>IV: 30-60 mg/kg loading, then 20-30 mg/kg IV q8h (status / emergency)</li>
+            </ul>
+          </li>
+          <li><strong>Advantages:</strong>
+            <ul>
+              <li>Rapid onset (steady state 1-2 days)</li>
+              <li>Excellent safety profile — minimal hepatotoxicity</li>
+              <li>Few drug interactions</li>
+              <li>Cat-safe</li>
+              <li>No therapeutic level monitoring needed</li>
+              <li>IV available for emergency</li>
+              <li>Pulse therapy for cluster seizures (60 mg/kg PO single dose at first sign of cluster + repeat q8h × 24h)</li>
+            </ul>
+          </li>
+          <li><strong>Disadvantages:</strong>
+            <ul>
+              <li>Cost (especially for large dogs)</li>
+              <li>q8h dosing (compliance)</li>
+              <li>"Honeymoon effect" — efficacy may decline after months</li>
+              <li>Mild sedation, GI upset (some)</li>
+            </ul>
+          </li>
+          <li>Excellent choice for cat IE, refractory cluster, hepatic disease</li>
+        </ul>
+
+        <p><strong>4. Zonisamide ✨ — alternative / adjunct:</strong></p>
+        <ul>
+          <li><strong>Dose: 5-10 mg/kg PO q12h dog; 5-10 mg/kg q24h cat</strong></li>
+          <li>Therapeutic level: 10-40 µg/mL (target ~ 20-30)</li>
+          <li>Side effects:
+            <ul>
+              <li>Sedation, ataxia (mild)</li>
+              <li>GI upset</li>
+              <li>Hepatotoxicity (rare)</li>
+              <li>KCS (rare)</li>
+              <li>Renal stones (very rare)</li>
+            </ul>
+          </li>
+          <li>Available 25, 50, 100 mg capsules</li>
+          <li>Sulfa-allergic patients caution</li>
+        </ul>
+
+        <p><strong>5. Imepitoin (Pexion) — Europe/Asia:</strong></p>
+        <ul>
+          <li>10-30 mg/kg PO q12h</li>
+          <li>Partial GABA-A agonist</li>
+          <li>EU/UK approved for IE in dog</li>
+          <li>Less hepatotoxic than phenobarb</li>
+          <li>Side effects: sedation, ataxia, hyperphagia</li>
+          <li>Less effective for severe / cluster seizures</li>
+          <li>Cat: not approved</li>
+        </ul>
+
+        <p><strong>6. Other / adjunct:</strong></p>
+        <ul>
+          <li>Gabapentin 10-20 mg/kg PO q8h — adjunct for refractory; mild efficacy</li>
+          <li>Pregabalin 2-4 mg/kg PO q8-12h — adjunct</li>
+          <li>Felbamate, primidone, valproate — historical, less commonly used</li>
+        </ul>
+
+        <p><strong>Treatment escalation algorithm ✨:</strong></p>
+        <ol>
+          <li>Start phenobarbital (or levetiracetam in cat / hepatic concern)</li>
+          <li>If still seizing after 2-4 weeks at therapeutic level → add KBr (or levetiracetam)</li>
+          <li>If still refractory → add 3rd agent (zonisamide or gabapentin)</li>
+          <li>4 drugs uncommon — consider re-imaging (MRI) for missed structural cause</li>
+          <li>Consider: ketogenic diet, vagal nerve stim (limited availability)</li>
+        </ol>
+
+        <p><strong>Cluster seizures management ✨:</strong></p>
+        <ul>
+          <li><strong>Home rectal diazepam</strong> (1-2 mg/kg PR) at first sign of seizure
+            <ul>
+              <li>Stops cluster in ~ 70-80%</li>
+              <li>Avoid hospitalization</li>
+            </ul>
+          </li>
+          <li>Levetiracetam pulse therapy: 60 mg/kg PO at first cluster, then 30 mg/kg q8h × 24-48h</li>
+          <li>Intranasal midazolam (0.2 mg/kg) — alternative</li>
+        </ul>
+
+        <p><strong>Owner education ✨:</strong></p>
+        <ul>
+          <li>Seizure log (date, time, duration, type)</li>
+          <li>Video seizures (phone)</li>
+          <li>Don't put hand near mouth during seizure ✗</li>
+          <li>Cool the animal if prolonged (hyperthermia risk)</li>
+          <li>Move from danger (stairs, water)</li>
+          <li>Time the seizure</li>
+          <li>Emergency: &gt; 5 min seizure, ≥ 3 seizures in 24h, doesn't recover normally</li>
+          <li>Compliance: don't miss doses, give same time daily</li>
+          <li>Don't change brands/generics without consulting</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>Phenobarbital: level + biochem + bile acids at 2 wk, 6 wk, 6 mo, then q6 mo</li>
+          <li>KBr: level at 3 mo, 6 mo, then q6-12 mo</li>
+          <li>Seizure log review</li>
+          <li>QOL assessment (owner, family disruption)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Status epilepticus</strong> ✗ — see separate entry</li>
+          <li>Cluster seizures</li>
+          <li>Drug-induced hepatotoxicity (phenobarbital long-term) ✗</li>
+          <li>Pancreatitis (KBr predisposed)</li>
+          <li>Bromism / phenobarbital toxicity</li>
+          <li>Behavioral changes (post-ictal aggression, prolonged disorientation)</li>
+          <li>Trauma during seizures</li>
+          <li>Hyperthermia from prolonged seizure</li>
+          <li>Aspiration pneumonia (post-ictal)</li>
+          <li>Sudden unexplained death in epilepsy (SUDEP) — rare</li>
+          <li>Refractory epilepsy (~ 20-30% don't achieve adequate control)</li>
+          <li>Owner / family stress, financial burden, emotional toll</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Good control achievable in 60-70% with monotherapy or duotherapy ✓</li>
+          <li>Refractory ~ 20-30% — even with multiple drugs</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Onset &lt; 1 yr</li>
+              <li>High initial seizure frequency</li>
+              <li>Cluster seizures at onset</li>
+              <li>Status epilepticus history</li>
+              <li>Australian Shepherd, Border Collie, Belgian Tervuren (severe phenotype)</li>
+            </ul>
+          </li>
+          <li>Lifespan: most achieve near-normal lifespan with management</li>
+          <li>Refractory + cluster + status: shorter; ~ 4-6 yr from diagnosis</li>
+          <li>Cat IE: variable; structural cause more common, prognosis depends on cause</li>
+        </ul>
+        <div class="callout">💡 <strong>Idiopathic epilepsy = diagnosis of exclusion</strong> ✨ — onset 1-5 yr + normal interictal exam + normal lab + (ideally) normal MRI<br><br>Phenobarb + KBr = traditional first-line dog. <strong>Levetiracetam (Keppra)</strong> = modern first-line for cat, hepatic disease, cluster seizures<br><br>⚠️ KBr ห้ามใช้ในแมว ✗ (asthma fatal)<br><br>Goal = reduce frequency 50%+ (not eliminate); 60-70% achieve good control</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 60-61 · Status Epilepticus ---------- */
+  {
+    id: 'status-epilepticus',
+    titleEn: 'Status Epilepticus',
+    titleTh: 'สเตตัสลมชัก — ชักไม่หยุด',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['status epilepticus', 'cluster seizures', 'diazepam', 'midazolam', 'levetiracetam', 'propofol CRI', 'phenobarbital loading', 'cerebral edema', 'hyperthermia'],
+    aliases: ['SE', 'continuous seizure', 'ชักต่อเนื่อง', 'ชักไม่หยุด'],
+    source: 'Ch. 60-61 · pp. 1098–1108',
+    sections: {
+      definition: `
+        <p><strong>Life-threatening neurologic emergency ✗ ✨</strong></p>
+        <ul>
+          <li><strong>Definition:</strong>
+            <ul>
+              <li>Continuous seizure &gt; 5 minutes, OR</li>
+              <li>≥ 2 seizures without regaining consciousness between</li>
+            </ul>
+          </li>
+          <li>Mortality 25-40% even with treatment</li>
+          <li>Brain damage cumulative: every minute of seizing = neuron death</li>
+          <li>Distinguish from <strong>cluster seizures</strong> — multiple discrete seizures with recovery between (also serious but different management)</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Causes:</strong></p>
+        <ul>
+          <li>Idiopathic epilepsy (existing or new presentation)</li>
+          <li>Structural brain disease:
+            <ul>
+              <li>Brain tumor (especially older dogs presenting in SE)</li>
+              <li>Encephalitis (MUE/GME, infectious)</li>
+              <li>Trauma</li>
+              <li>Stroke</li>
+              <li>Hydrocephalus</li>
+            </ul>
+          </li>
+          <li>Metabolic / toxic:
+            <ul>
+              <li>Hypoglycemia (insulinoma, severe — common!) ✨</li>
+              <li>Hepatic encephalopathy</li>
+              <li>Severe electrolyte (hyper/hypoNa, hyperK)</li>
+              <li>Hypocalcemia (eclampsia, post-thyroidectomy)</li>
+              <li>Toxin: metaldehyde ✗, organophosphate, EG, permethrin (cat), tremorgenic mycotoxins, theobromine, lead, strychnine, baclofen, ivermectin (high dose), 5-FU</li>
+            </ul>
+          </li>
+          <li>Drug withdrawal (phenobarbital sudden discontinuation) ✗</li>
+          <li>Sub-therapeutic anticonvulsant levels</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Failure of inhibitory GABA mechanisms → continuous excitation</li>
+          <li>Self-perpetuating: GABA receptor internalization with prolonged seizures (benzodiazepine resistance develops)</li>
+          <li>Cellular damage:
+            <ul>
+              <li>Excitotoxicity (glutamate)</li>
+              <li>Calcium influx → neuronal apoptosis/necrosis</li>
+              <li>Cerebral edema</li>
+              <li>Hippocampal sclerosis (post-status — refractory epilepsy)</li>
+            </ul>
+          </li>
+          <li>Systemic effects:
+            <ul>
+              <li>Hyperthermia (muscle activity) → DIC, organ damage</li>
+              <li>Lactic acidosis</li>
+              <li>Hypoxia, hypoglycemia</li>
+              <li>Aspiration pneumonia</li>
+              <li>Rhabdomyolysis → AKI</li>
+              <li>Catecholamine surge → arrhythmia, pulmonary edema</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      symptoms: `
+        <ul>
+          <li>Continuous tonic-clonic activity</li>
+          <li>Loss of consciousness</li>
+          <li>Lateral recumbency, paddling, opisthotonos</li>
+          <li>Hyperthermia (often &gt; 40°C / 104°F) ✗</li>
+          <li>Hypersalivation, urination, defecation</li>
+          <li>Cyanosis (severe)</li>
+          <li>Tachycardia, arrhythmias</li>
+          <li>Pulmonary edema (severe)</li>
+          <li>± Vomiting, aspiration risk</li>
+          <li>Post-resolution:
+            <ul>
+              <li>Severe disorientation</li>
+              <li>Cortical blindness</li>
+              <li>Persistent neurologic deficits possible</li>
+              <li>Hyperthermia may persist</li>
+              <li>Mental dullness for hours-days</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical recognition immediate ✨ — don't delay treatment for diagnostics</strong></p>
+
+        <p><strong>Concurrent / parallel workup (after first-line stopping the seizure):</strong></p>
+        <ul>
+          <li>Glucose stat ✨ (PO finger stick, IV blood) — hypoglycemia!</li>
+          <li>Electrolytes (Na, Ca, K)</li>
+          <li>BUN/Cr, ALT, ALP, bilirubin</li>
+          <li>Lactate, blood gas</li>
+          <li>CBC</li>
+          <li>Bile acids (PSS / hepatic encephalopathy)</li>
+          <li>Toxin screen (history-driven)</li>
+          <li>Body temperature</li>
+          <li>BP, ECG</li>
+          <li>SpO2</li>
+          <li>If known epileptic: anticonvulsant level</li>
+          <li>MRI / CSF after stabilization (especially first SE, abnormal exam, refractory)</li>
+        </ul>
+      `,
+      differential: `<p>Cluster seizures (recovery between), prolonged post-ictal mistaken for SE, paroxysmal dyskinesia (no LOC)</p>`,
+      treatment: `
+        <p><strong>Algorithm — escalating drugs every 5-10 min if not stopping ✨:</strong></p>
+
+        <p><strong>Step 0 — General supportive (parallel with drugs):</strong></p>
+        <ul>
+          <li>IV access (place quickly during clonic phase or between)</li>
+          <li>Oxygen (mask, flow-by)</li>
+          <li>Glucose check immediately ✨
+            <ul>
+              <li>If hypoglycemic: dextrose 50% 0.5-1 mL/kg IV (diluted 1:2)</li>
+            </ul>
+          </li>
+          <li>Body temperature monitoring + active cooling if &gt; 40°C
+            <ul>
+              <li>Wet towels, fans</li>
+              <li>Stop cooling at 39.5°C (avoid overshoot)</li>
+            </ul>
+          </li>
+          <li>IV fluids (LRS or Plasmalyte)</li>
+          <li>Lab samples</li>
+          <li>Position to prevent aspiration (lateral, head down slightly)</li>
+        </ul>
+
+        <p><strong>Step 1 — Benzodiazepines ✨ (first-line):</strong></p>
+        <ul>
+          <li><strong>Diazepam 0.5-1 mg/kg IV bolus</strong> ✨
+            <ul>
+              <li>Repeat in 2-5 min if no response (max 3 doses total)</li>
+              <li>If no IV: rectal 1-2 mg/kg (diluted 1:1 with saline; deeper insertion)</li>
+              <li>Or intranasal 0.5 mg/kg</li>
+              <li>Half-life short (~ 30-60 min) — bridges to other drugs</li>
+            </ul>
+          </li>
+          <li><strong>Or midazolam 0.2-0.5 mg/kg IV/IM</strong>
+            <ul>
+              <li>IV: rapid effect</li>
+              <li>IM: faster onset than diazepam IM (better water solubility)</li>
+              <li>Intranasal 0.2 mg/kg — pre-hospital option</li>
+              <li>CRI: 0.2-0.5 mg/kg/hr after bolus for refractory</li>
+            </ul>
+          </li>
+          <li>If seizure stops but recurs &gt; 2× → step 2</li>
+        </ul>
+
+        <p><strong>Step 2 — Levetiracetam (load) ✨ — increasingly first-line:</strong></p>
+        <ul>
+          <li><strong>Levetiracetam 60 mg/kg IV slow over 5 min</strong>
+            <ul>
+              <li>Or 30-60 mg/kg IM (faster than older drugs)</li>
+              <li>Effect within 30-60 min</li>
+              <li>Excellent safety — even in unstable patients</li>
+              <li>Maintain at 30 mg/kg IV q8h</li>
+              <li>Often used parallel with benzodiazepine</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Step 3 — Phenobarbital loading:</strong></p>
+        <ul>
+          <li><strong>Phenobarbital 4-8 mg/kg IV slow</strong> q20-30 min × 2-3 doses (max 16-24 mg/kg total loading)
+            <ul>
+              <li>Effect within 20-30 min</li>
+              <li>Alternative: 12-24 mg/kg IV slow loading (if not phenobarb-naïve, less aggressive)</li>
+              <li>Caution: respiratory + cardiovascular depression — have intubation ready</li>
+              <li>Reduces dose if already on chronic phenobarb (give 1/2 loading)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Step 4 — Refractory status (after 30-60 min not controlled):</strong></p>
+        <ul>
+          <li><strong>Propofol CRI</strong> ✨:
+            <ul>
+              <li>Bolus 1-4 mg/kg IV slow to effect</li>
+              <li>CRI 0.05-0.4 mg/kg/min (= 3-24 mg/kg/hr)</li>
+              <li>Titrate to lightest effective level</li>
+              <li>Requires intubation, respiratory monitoring, ventilation often</li>
+              <li>Burst suppression on EEG = adequate</li>
+              <li>Heinz body anemia in cat with prolonged use ✗ — limit cat to 24h max</li>
+            </ul>
+          </li>
+          <li>Or <strong>ketamine CRI</strong>: 1-5 mg/kg IV bolus, then 0.1-0.5 mg/kg/hr CRI
+            <ul>
+              <li>NMDA antagonist — useful when GABA receptors downregulated</li>
+              <li>Particularly effective for refractory SE</li>
+            </ul>
+          </li>
+          <li>Or dexmedetomidine CRI 0.5-3 µg/kg/hr — adjunct sedation</li>
+          <li>Inhalant anesthesia (isoflurane) — last resort, very refractory cases; mortality high</li>
+          <li>Consider mannitol 0.5-1 g/kg IV over 20-30 min if cerebral edema suspected</li>
+        </ul>
+
+        <p><strong>Underlying cause treatment (PARALLEL):</strong></p>
+        <ul>
+          <li>Hypoglycemia → dextrose</li>
+          <li>HE → lactulose, ammonia reduction</li>
+          <li>Hypocalcemia → Ca gluconate IV</li>
+          <li>Toxin → decontamination, specific antidote
+            <ul>
+              <li>Metaldehyde: methocarbamol 50-200 mg/kg IV slow</li>
+              <li>Permethrin (cat): intralipid 1.5 mL/kg bolus + 0.25 mL/kg/min CRI; methocarbamol</li>
+              <li>OP: atropine + pralidoxime</li>
+              <li>EG: fomepizole or ethanol</li>
+            </ul>
+          </li>
+          <li>Brain tumor: dexamethasone 0.1-0.2 mg/kg IV (anti-edema)</li>
+          <li>MUE/encephalitis: dexamethasone, then chronic immunosuppression</li>
+        </ul>
+
+        <p><strong>Post-stabilization care:</strong></p>
+        <ul>
+          <li>Hospitalize 24-72h ICU monitoring</li>
+          <li>Continue parenteral anticonvulsants until stable + transitioned to oral</li>
+          <li>Manage hyperthermia, dehydration, electrolyte derangement</li>
+          <li>Aspiration pneumonia surveillance (radiograph if any concern)</li>
+          <li>Supportive: turn q4h, padded bedding, urinary care, eye lubrication</li>
+          <li>Once stable: workup MRI, CSF if not done</li>
+          <li>Adjust chronic anticonvulsants:
+            <ul>
+              <li>Increase phenobarb dose by 30-50% (or ensure therapeutic level)</li>
+              <li>Add levetiracetam, KBr, zonisamide as needed</li>
+            </ul>
+          </li>
+          <li>Owner education on home rectal diazepam for cluster prevention</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Brain damage</strong> ✗ — neuronal death cumulative
+            <ul>
+              <li>Persistent neurologic deficits</li>
+              <li>Refractory epilepsy after SE (hippocampal sclerosis)</li>
+              <li>Cortical blindness (often transient)</li>
+              <li>Behavioral changes</li>
+              <li>Cognitive decline</li>
+            </ul>
+          </li>
+          <li><strong>Hyperthermia</strong> → DIC, AKI, multi-organ failure ✗</li>
+          <li>Aspiration pneumonia</li>
+          <li>Rhabdomyolysis → AKI</li>
+          <li>Pulmonary edema (neurogenic)</li>
+          <li>Cerebral edema → herniation ✗</li>
+          <li>Cardiac arrhythmias</li>
+          <li>DIC</li>
+          <li>Iatrogenic respiratory depression (drugs)</li>
+          <li>Heinz body anemia (cat with propofol CRI &gt; 24h)</li>
+          <li>Death (mortality 25-40%)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Idiopathic epilepsy presenting in SE — controlled in &lt; 30 min: good ✓</li>
+          <li>Refractory SE (&gt; 60 min): guarded — mortality 50%+ </li>
+          <li>SE secondary to structural cause (tumor, encephalitis): depends on primary disease</li>
+          <li>Hypoglycemic SE prompt treated: excellent</li>
+          <li>Toxin-induced varies by toxin + decontamination</li>
+          <li>Negative prognostic factors:
+            <ul>
+              <li>Duration &gt; 30-60 min before treatment</li>
+              <li>Hyperthermia &gt; 41°C</li>
+              <li>Refractory to step 1-3</li>
+              <li>Underlying structural cause</li>
+              <li>Severe hyperthermia complications</li>
+              <li>Required prolonged anesthesia (&gt; 24h)</li>
+            </ul>
+          </li>
+          <li>Survivors of SE: ~ 40% develop refractory epilepsy</li>
+        </ul>
+        <div class="callout">⚠️ <strong>Status epilepticus = brain damage in real-time</strong> ✗ — every minute matters. STOP THE SEIZURE while diagnosing<br><br>💡 <strong>Glucose check FIRST</strong> ✨ — easy to miss hypoglycemic SE. Diazepam IV → levetiracetam load → phenobarb load → propofol CRI escalation. Hyperthermia kills as much as the seizure itself.<br><br>Mortality 25-40% — refer to ICU if facility limited</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 63 · Vestibular Disease (Peripheral &amp; Central) ---------- */
+  {
+    id: 'vestibular-disease',
+    titleEn: 'Vestibular Disease (Peripheral &amp; Central)',
+    titleTh: 'โรคเวสติบูลาร์ — โรคทางเดินสมองส่วนการทรงตัว',
+    type: 'disease',
+    system: 'nervous',
+    species: ['dog', 'cat'],
+    tags: ['vestibular disease', 'idiopathic vestibular', 'old dog vestibular', 'otitis media interna', 'central vestibular', 'head tilt', 'nystagmus', 'ataxia', 'meclizine', 'maropitant'],
+    aliases: ['vestibular syndrome', 'old dog vestibular', 'head tilt syndrome', 'เวียนหัว', 'หัวเอียง'],
+    source: 'Ch. 63 · pp. 1109–1117',
+    sections: {
+      definition: `
+        <p>Disorder ของระบบ vestibular — ทำให้สูญเสียการทรงตัว</p>
+        <ul>
+          <li><strong>2 anatomic categories:</strong>
+            <ul>
+              <li><strong>Peripheral vestibular</strong> ✨ — inner ear (CN VIII, vestibular nerve, labyrinth); ~ 70% ของ cases</li>
+              <li><strong>Central vestibular</strong> ✗ — brainstem, cerebellum; more serious</li>
+            </ul>
+          </li>
+          <li><strong>Critical: differentiate peripheral vs central</strong> — different DDx, prognosis, treatment</li>
+          <li><strong>Idiopathic (old dog) vestibular</strong> ✨ — most common; benign; self-limiting</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>PERIPHERAL causes ✨:</strong></p>
+        <ul>
+          <li><strong>Idiopathic ("old dog vestibular syndrome")</strong> ✨ — most common in older dogs &gt; 7-8 yr
+            <ul>
+              <li>Acute onset, often dramatic</li>
+              <li>Self-limiting (days-weeks)</li>
+              <li>Cause unknown</li>
+            </ul>
+          </li>
+          <li><strong>Otitis media-interna</strong> ✨ — 2nd most common
+            <ul>
+              <li>Bacterial extension from external ear</li>
+              <li>Common: Pseudomonas, Staph, Strep</li>
+            </ul>
+          </li>
+          <li>Nasopharyngeal polyps (cat — young) ✨</li>
+          <li>Hypothyroidism (rare; controversial association)</li>
+          <li>Trauma (head injury)</li>
+          <li>Drug ototoxicity (aminoglycosides — gentamicin, neomycin in ear; chlorhex flushed in middle ear)</li>
+          <li>Tumor of middle/inner ear (older — squamous cell carcinoma in cat, ceruminous gland)</li>
+          <li>Congenital (young animals — rare)</li>
+        </ul>
+
+        <p><strong>CENTRAL causes ✗:</strong></p>
+        <ul>
+          <li>Brain tumor (especially older dog — gliomas, meningioma, metastatic)</li>
+          <li>Encephalitis (MUE/GME, infectious)
+            <ul>
+              <li>Granulomatous</li>
+              <li>Toxoplasma, neospora</li>
+              <li>FIP (cat — important!)</li>
+              <li>Bacterial</li>
+            </ul>
+          </li>
+          <li>Stroke / cerebrovascular accident (CVA) — increasingly recognized
+            <ul>
+              <li>Cerebellar/brainstem infarct</li>
+              <li>Hypothyroid, Cushing's, hypertension predispose</li>
+            </ul>
+          </li>
+          <li>Hypothyroidism with myxedema (rare)</li>
+          <li>Trauma</li>
+          <li>Toxin (metronidazole at high dose &gt; 60 mg/kg/day prolonged ✗)</li>
+          <li>Thiamine deficiency (cat with cooked tuna diet, prolonged anorexia)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Vestibular system: inner ear → vestibular nerve (CN VIII) → vestibular nuclei (brainstem) → cerebellum + cortex</li>
+          <li>Function: sense head position + movement → maintain balance, eye position, posture</li>
+          <li>Unilateral lesion → asymmetric input → spinning sensation, head tilt, nystagmus</li>
+          <li>Brain compensation occurs gradually (days-weeks) → improvement even without resolution of underlying lesion</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Common to BOTH peripheral + central:</strong></p>
+        <ul>
+          <li><strong>Head tilt</strong> ✨ — toward side of lesion (almost always)</li>
+          <li>Loss of balance, ataxia, falling/rolling toward lesion side</li>
+          <li>Wide-based stance, leaning</li>
+          <li><strong>Nystagmus</strong> (involuntary eye movement) ✨</li>
+          <li>Nausea, vomiting, hypersalivation (from "motion sickness" effect)</li>
+          <li>Anorexia</li>
+          <li>Disorientation, anxiety</li>
+          <li>Strabismus (positional — only on certain head positions)</li>
+        </ul>
+
+        <p><strong>Differentiating PERIPHERAL vs CENTRAL ✨ — critical:</strong></p>
+
+        <table style="border-collapse: collapse; width: 100%; margin-top: 10px;">
+        <tr><th style="border:1px solid #ccc;padding:8px;">Feature</th><th style="border:1px solid #ccc;padding:8px;">Peripheral</th><th style="border:1px solid #ccc;padding:8px;">Central</th></tr>
+        <tr><td style="border:1px solid #ccc;padding:8px;"><strong>Mentation</strong></td><td style="border:1px solid #ccc;padding:8px;">Normal / mild anxious</td><td style="border:1px solid #ccc;padding:8px;"><strong>Depressed, dull, stuporous</strong> ✗</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:8px;"><strong>Nystagmus direction</strong></td><td style="border:1px solid #ccc;padding:8px;">Horizontal or rotary; <strong>doesn't change with head position</strong></td><td style="border:1px solid #ccc;padding:8px;"><strong>Vertical</strong> or <strong>changes direction with head position</strong> ✗</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:8px;"><strong>Other CN deficits</strong></td><td style="border:1px solid #ccc;padding:8px;">Possibly CN VII (facial — same side; otitis media-interna) + Horner's (sympathetic tract through middle ear)</td><td style="border:1px solid #ccc;padding:8px;"><strong>Multiple CN deficits</strong> (V, VI, VII, IX, X, XII)</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:8px;"><strong>Postural reactions</strong></td><td style="border:1px solid #ccc;padding:8px;">Normal</td><td style="border:1px solid #ccc;padding:8px;"><strong>Decreased / absent</strong> (paw replacement, hopping)</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:8px;"><strong>Hemiparesis</strong></td><td style="border:1px solid #ccc;padding:8px;">No</td><td style="border:1px solid #ccc;padding:8px;">Often (ipsilateral)</td></tr>
+        <tr><td style="border:1px solid #ccc;padding:8px;"><strong>Cerebellar signs</strong></td><td style="border:1px solid #ccc;padding:8px;">No</td><td style="border:1px solid #ccc;padding:8px;">Possibly (intention tremor, hypermetria) — paradoxical vestibular if cerebellar</td></tr>
+        </table>
+
+        <p style="margin-top:10px;"><strong>"Paradoxical vestibular syndrome":</strong></p>
+        <ul>
+          <li>Cerebellar lesion (flocculonodular lobe)</li>
+          <li>Head tilt to OPPOSITE side of lesion</li>
+          <li>Other central signs present</li>
+          <li>Postural deficits on side of lesion (opposite of head tilt)</li>
+        </ul>
+
+        <p><strong>Idiopathic (old dog) vestibular ✨:</strong></p>
+        <ul>
+          <li>Acute onset (overnight typically)</li>
+          <li>Severe head tilt, ataxia, rolling</li>
+          <li>Nystagmus (horizontal/rotary)</li>
+          <li>Often look "stroked" — owners often think dying</li>
+          <li><strong>Mentation NORMAL</strong> ✨ (key feature)</li>
+          <li><strong>No other CN deficits</strong></li>
+          <li>Self-improvement within days; head tilt may persist permanently as residual</li>
+        </ul>
+
+        <p><strong>Otitis media-interna:</strong></p>
+        <ul>
+          <li>Often history of recurrent otitis externa</li>
+          <li>Pain on opening mouth (TMJ)</li>
+          <li>Pain on palpation of ear/tympanic bulla</li>
+          <li>± Concurrent <strong>facial nerve paralysis</strong> (CN VII — same side: drooped lip, ear, no blink, no menace)</li>
+          <li>± <strong>Horner's syndrome</strong> ✨ (same side: miosis, ptosis, enophthalmos, 3rd eyelid prolapse)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Most important step: PERIPHERAL vs CENTRAL ✨</strong></p>
+
+        <p><strong>1. History + neurologic exam:</strong></p>
+        <ul>
+          <li>Onset (acute / chronic / progressive)</li>
+          <li>Mentation</li>
+          <li>Nystagmus type + direction (with head in different positions)</li>
+          <li>All cranial nerves</li>
+          <li>Postural reactions</li>
+          <li>Spinal reflexes</li>
+          <li>Otoscopic exam</li>
+        </ul>
+
+        <p><strong>2. Otoscopy + bulla palpation:</strong></p>
+        <ul>
+          <li>Examine ear canal (otitis externa)</li>
+          <li>Tympanic membrane: ruptured, bulging, erythematous?</li>
+          <li>Pain on bulla palpation</li>
+          <li>Sedated otoscopy if uncooperative</li>
+        </ul>
+
+        <p><strong>3. Imaging:</strong></p>
+        <ul>
+          <li><strong>Bulla radiograph (DV / open mouth)</strong> — sclerosis, soft tissue density (otitis media)</li>
+          <li><strong>CT</strong> ✨ — superior for tympanic bulla evaluation; first-line for suspected otitis media-interna</li>
+          <li><strong>MRI</strong> ✨ — if central signs; brain parenchyma evaluation
+            <ul>
+              <li>Detects tumor, encephalitis, infarct</li>
+              <li>Best modality for central vestibular workup</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. CSF analysis (central signs):</strong></p>
+        <ul>
+          <li>Encephalitis: ↑ protein, ↑ cells (lymphocytes/macrophages or neutrophils)</li>
+          <li>Tumor: variable; often normal or mildly elevated protein</li>
+          <li>Infectious cultures (Toxo, neospora, FIP — cat especially)</li>
+        </ul>
+
+        <p><strong>5. Other workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>BP (hypertension predisposes to stroke)</li>
+          <li>T4 (hypothyroid)</li>
+          <li>Coag panel (if stroke suspected)</li>
+          <li>Infectious titers (Toxo, neospora, ehrlichia, RMSF; cat: FIP, FeLV, FIV, toxo)</li>
+          <li>Bulla myringotomy + culture (otitis media-interna confirmation; flush sample)</li>
+          <li>Cardiac evaluation if stroke suspected</li>
+        </ul>
+      `,
+      differential: `
+        <p>Distinguish vestibular from:</p>
+        <ul>
+          <li>Cerebellar disease (intention tremor, hypermetria)</li>
+          <li>Seizure / paroxysmal events</li>
+          <li>Generalized weakness / ataxia (orthopedic, neuromuscular)</li>
+          <li>Spinal cord disease (proprioceptive ataxia)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Idiopathic (old dog) vestibular ✨:</strong></p>
+        <ul>
+          <li><strong>Supportive care — self-limiting:</strong>
+            <ul>
+              <li>Anti-emetic / anti-nausea:
+                <ul>
+                  <li><strong>Maropitant 1 mg/kg SC q24h × 5 days</strong> (Cerenia)</li>
+                  <li>Or meclizine 4 mg/kg PO q24h (less effective)</li>
+                  <li>Or ondansetron 0.5 mg/kg IV/PO q8-12h</li>
+                </ul>
+              </li>
+              <li>IV fluids if not eating/drinking (24-48h common)</li>
+              <li>Confine to safe area (carpeted, padded, away from stairs)</li>
+              <li>Hand-feeding, water by syringe initially</li>
+              <li>Eye lubrication if can't blink</li>
+              <li>Turn q4-6h if non-ambulatory</li>
+            </ul>
+          </li>
+          <li><strong>Improvement timeline ✨:</strong>
+            <ul>
+              <li>Marked improvement in 24-72h</li>
+              <li>Most ambulatory by 5-7 days</li>
+              <li>Residual head tilt may persist permanently (up to 30%)</li>
+              <li>Recurrence rare</li>
+            </ul>
+          </li>
+          <li><strong>NO STEROIDS</strong> — not indicated; doesn't help</li>
+          <li>NO antibiotics if diagnosis truly idiopathic</li>
+          <li>If not improving 5-7 days → re-evaluate (workup central)</li>
+        </ul>
+
+        <p><strong>2. Otitis media-interna ✨:</strong></p>
+        <ul>
+          <li><strong>Bulla myringotomy + culture</strong> ✨ — sample under anesthesia
+            <ul>
+              <li>Tympanic membrane perforation (if not already)</li>
+              <li>Sample fluid for cytology + culture</li>
+              <li>Flush with saline</li>
+            </ul>
+          </li>
+          <li><strong>Systemic antibiotics ≥ 4-6 weeks</strong>:
+            <ul>
+              <li>Empirical until culture: <strong>fluoroquinolone (enrofloxacin 5-10 mg/kg PO q24h)</strong> or amoxicillin-clavulanate 22 mg/kg PO q12h</li>
+              <li>Adjust per culture (Pseudomonas common, often needs FQ)</li>
+              <li>Long course important for bone penetration</li>
+            </ul>
+          </li>
+          <li>Pain management (NSAID if no contraindication)</li>
+          <li>Address concurrent otitis externa</li>
+          <li>Surgical: total ear canal ablation (TECA) + bulla osteotomy if refractory or chronic disease (specialty)</li>
+          <li>Recheck imaging at 4-6 wk to confirm resolution</li>
+        </ul>
+
+        <p><strong>3. Nasopharyngeal polyp (cat) ✨:</strong></p>
+        <ul>
+          <li>Visualize via oral cavity (over soft palate) or otoscopy</li>
+          <li>Traction-avulsion under anesthesia (most cases)</li>
+          <li>Recurrence ~ 30% — ventral bulla osteotomy if recurs</li>
+          <li>Cure rate excellent with adequate technique</li>
+        </ul>
+
+        <p><strong>4. Central vestibular causes ✗:</strong></p>
+        <ul>
+          <li><strong>MUE/GME/encephalitis:</strong> immunosuppression (prednisolone + cytosine arabinoside, cyclosporine) — see entry</li>
+          <li><strong>Brain tumor:</strong>
+            <ul>
+              <li>Radiation therapy (best for meningioma)</li>
+              <li>Surgical resection (rostral cerebellar / forebrain)</li>
+              <li>Palliative steroids for edema (prednisolone 0.5-1 mg/kg/d)</li>
+              <li>Chemotherapy (limited efficacy)</li>
+            </ul>
+          </li>
+          <li><strong>Stroke/CVA:</strong>
+            <ul>
+              <li>Supportive care primarily</li>
+              <li>Address underlying cause (HT, hypothyroid, Cushing's)</li>
+              <li>Often improves over weeks</li>
+            </ul>
+          </li>
+          <li><strong>Toxoplasma/Neospora:</strong> clindamycin 12.5-25 mg/kg PO q12h × 4-6 wk</li>
+          <li><strong>FIP (cat):</strong> GS-441524 antiviral (specialty/availability dependent)</li>
+          <li><strong>Thiamine deficiency (cat):</strong> thiamine 50-100 mg IM/SC then PO; rapid response</li>
+        </ul>
+
+        <p><strong>5. Hypothyroid-associated:</strong></p>
+        <ul>
+          <li>Levothyroxine if confirmed hypothyroid</li>
+          <li>Vestibular signs may resolve with euthyroidism (variable)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Persistent head tilt (residual)</li>
+          <li>Recurrence (rare in idiopathic; common in untreated otitis)</li>
+          <li>Concurrent facial nerve paralysis (otitis media-interna) — KCS, oral food retention</li>
+          <li>Horner's syndrome residual</li>
+          <li>Aspiration pneumonia (severely affected)</li>
+          <li>Pressure sores (recumbent)</li>
+          <li>Dehydration, electrolyte derangement</li>
+          <li>Hypothermia (recumbent old dog)</li>
+          <li>Owner stress, premature euthanasia decision (looks like stroke / dying)</li>
+          <li>Central causes: progression of underlying disease</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Idiopathic (old dog) vestibular: excellent</strong> ✓ — 90%+ recover within 2 weeks
+            <ul>
+              <li>Residual head tilt up to 30% (cosmetic only)</li>
+              <li>Normal lifespan</li>
+            </ul>
+          </li>
+          <li>Otitis media-interna treated: good — 70-80% resolution; 30% have residual signs</li>
+          <li>Nasopharyngeal polyp: excellent if surgically removed</li>
+          <li>Brain tumor: depends on type, location, treatment access — meningioma with RT 1-2+ years</li>
+          <li>MUE/encephalitis: variable; depends on response to immunosuppression</li>
+          <li>Stroke: variable; depends on size + cause; many improve</li>
+          <li>FIP: poor without GS-441524; transformative with antiviral</li>
+        </ul>
+        <div class="callout">💡 <strong>Old dog wakes up rolling = idiopathic vestibular until proven otherwise</strong> ✨ — supportive care, anti-emetic, time. Don't euthanize prematurely!<br><br>Key differentiation: <strong>mentation + nystagmus type + postural reactions</strong>. Vertical nystagmus, depressed mentation, postural deficits = central → MRI<br><br>Otitis media-interna: long-course antibiotics 4-6 wk + culture-guided</div>
+      `,
+    },
+  },
+
   /* ---------- More entries to come ---------- */
 
 ];
