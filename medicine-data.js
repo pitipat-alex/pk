@@ -15867,6 +15867,787 @@ window.MEDICINE_ENTRIES = [
     },
   },
 
+  /* ---------- Ch 50 · Hyperadrenocorticism (Cushing's) ---------- */
+  {
+    id: 'hyperadrenocorticism-cushings',
+    titleEn: "Hyperadrenocorticism (Cushing's Syndrome)",
+    titleTh: 'Cushing — ต่อมหมวกไตทำงานเกิน',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['dog'],
+    tags: ["Cushing's syndrome", 'hyperadrenocorticism', 'PDH', 'pituitary-dependent', 'ADH', 'adrenal-dependent', 'trilostane', 'mitotane', 'LDDST', 'ACTH stim', 'iatrogenic', 'pituitary macroadenoma'],
+    aliases: ['Cushings', 'hyperadrenocorticism', 'HAC', 'PDH', 'คุชชิ่ง', 'ต่อมหมวกไต'],
+    source: 'Ch. 50 · pp. 852–872',
+    sections: {
+      definition: `
+        <p>กลุ่มอาการจาก <strong>cortisol เกิน</strong> เรื้อรัง — โรคต่อมไร้ท่อที่พบบ่อยในหมาสูงวัย ✨</p>
+        <ul>
+          <li><strong>3 รูปแบบ:</strong>
+            <ul>
+              <li><strong>PDH (Pituitary-Dependent HAC)</strong> ✨ ~ 80-85% — pituitary microadenoma → ↑ ACTH → bilateral adrenal hyperplasia</li>
+              <li><strong>ADH (Adrenal-Dependent HAC)</strong> ~ 15-20% — unilateral adrenal tumor (adenoma or carcinoma) → autonomous cortisol</li>
+              <li><strong>Iatrogenic</strong> — exogenous glucocorticoid excess (chronic steroid use)</li>
+            </ul>
+          </li>
+          <li>Middle-aged to older dogs (median 11 yr); rare &lt; 6 yr</li>
+          <li>Predisposed: Poodle, Dachshund, Beagle, Boxer, Boston Terrier, Yorkie</li>
+          <li>Cat: rare; usually adrenal tumor; often concurrent DM</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>PDH (~ 80-85%):</strong></p>
+        <ul>
+          <li>Functional pituitary corticotroph adenoma (microadenoma typically)</li>
+          <li>~ 10-25% become macroadenomas → neurological signs ✗</li>
+          <li>Bilateral adrenal hyperplasia secondary</li>
+        </ul>
+        <p><strong>ADH (~ 15-20%):</strong></p>
+        <ul>
+          <li>Unilateral adrenal tumor:
+            <ul>
+              <li>Adenoma ~ 50%</li>
+              <li>Adenocarcinoma ~ 50% (may invade vena cava, metastasize)</li>
+            </ul>
+          </li>
+          <li>Contralateral adrenal atrophic from negative feedback</li>
+          <li>Larger breeds (German Shepherd, Lab) over-represented</li>
+        </ul>
+        <p><strong>Iatrogenic:</strong></p>
+        <ul>
+          <li>Chronic glucocorticoid use (oral, topical, ophthalmic, otic)</li>
+          <li>Often forgotten — review medication history!</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li>Excess cortisol → systemic effects on virtually every system</li>
+          <li>Catabolic: ↑ protein breakdown, muscle wasting, weak skin</li>
+          <li>↑ Hepatic glycogen → hepatomegaly + steroid hepatopathy</li>
+          <li>Insulin antagonism → glucose intolerance / overt DM</li>
+          <li>Immunosuppression → infections (UTI, pyoderma, demodex)</li>
+          <li>↑ Renal blood flow + ADH antagonism → PU/PD</li>
+          <li>↑ Mineralocorticoid effect (mild) → hypertension, hypokalemia</li>
+          <li>Calcium mobilization → hypercalcemia (rare), calcinosis cutis</li>
+          <li>Pituitary macroadenoma → mass effect: vision, behavior, seizures, central nervous signs</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Classic signs ✨:</strong></p>
+        <ul>
+          <li><strong>PU/PD</strong> ✨ — usually first noticed; hallmark</li>
+          <li><strong>Polyphagia</strong> ✨ — voracious appetite, food stealing</li>
+          <li><strong>Pot-bellied appearance</strong> ✨ — abdominal distension; muscle wasting + hepatomegaly + visceral fat redistribution</li>
+          <li>Panting (often persistent, even at rest)</li>
+          <li>Muscle weakness, exercise intolerance</li>
+          <li>Bilateral symmetrical truncal alopecia (non-pruritic)</li>
+        </ul>
+
+        <p><strong>Dermatologic ✨:</strong></p>
+        <ul>
+          <li>Bilateral symmetrical alopecia (truncal, sparing head/limbs)</li>
+          <li>Thin skin → easily torn, bruising, ↑ visible vasculature ("see-through")</li>
+          <li>Hyperpigmentation</li>
+          <li>Comedones (blackheads — especially ventral abdomen)</li>
+          <li><strong>Calcinosis cutis</strong> ✨ — chalky white-cream plaques on dorsum/ventrum (pathognomonic when present)</li>
+          <li>Recurrent pyoderma, demodicosis</li>
+          <li>Slow wound healing, alopecia at healing sites</li>
+          <li>Comedones</li>
+          <li>Phlebectasias (small skin telangiectasia)</li>
+        </ul>
+
+        <p><strong>Reproductive:</strong></p>
+        <ul>
+          <li>Anestrus (intact female), prolonged interestrous</li>
+          <li>Testicular atrophy (intact male)</li>
+        </ul>
+
+        <p><strong>Neurological (pituitary macroadenoma):</strong></p>
+        <ul>
+          <li>Behavioral changes (depression, aggression, disorientation)</li>
+          <li>Vision deficits</li>
+          <li>Seizures</li>
+          <li>Circling, head pressing</li>
+          <li>Often progressive — months</li>
+        </ul>
+
+        <p><strong>Concurrent / complications:</strong></p>
+        <ul>
+          <li><strong>UTI ✨</strong> — &gt; 50% (often subclinical — culture every Cushing's dog)</li>
+          <li>Hypertension (~ 50-60%)</li>
+          <li>Diabetes mellitus (~ 10%; common in cat)</li>
+          <li>Pulmonary thromboembolism ✗ (hypercoagulable)</li>
+          <li>Proteinuria → glomerular dz progression</li>
+          <li>Pancreatitis</li>
+          <li>Mucocutaneous candidiasis</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Approach: confirm Cushing's first → THEN determine type (PDH vs ADH) ✨</strong></p>
+        <p>Don't test if dog is acutely ill (NTI causes false positives — high false positive rate)</p>
+
+        <p><strong>Supportive findings (initial workup):</strong></p>
+        <ul>
+          <li><strong>Stress leukogram</strong> ✨ — neutrophilia, lymphopenia, eosinopenia, monocytosis</li>
+          <li><strong>↑ ALP markedly</strong> ✨ — steroid-induced isoenzyme; often 5-10× normal; supportive but not specific</li>
+          <li>↑ ALT (mild-moderate)</li>
+          <li><strong>Hypercholesterolemia, hypertriglyceridemia</strong> ✨</li>
+          <li>Mild ↑ glucose; overt DM 10%</li>
+          <li>USG &lt; 1.018 (often hyposthenuric/isosthenuric)</li>
+          <li>UA: dilute, ± proteinuria, ± UTI signs</li>
+          <li>Mild ↑ BUN possible; ↓ may occur (low protein, PD)</li>
+          <li>↑ Platelet count (mild thrombocytosis)</li>
+        </ul>
+
+        <p><strong>Screening tests (CONFIRMATION ของ Cushing's):</strong></p>
+
+        <p><strong>1. Urine cortisol:creatinine ratio (UCCR)</strong> ✨ — best screening:</p>
+        <ul>
+          <li>Sample collected at home morning urine (avoid stress hospital visit)</li>
+          <li><strong>High sensitivity, low specificity</strong>:
+            <ul>
+              <li>Negative UCCR → very unlikely Cushing's (good rule-out)</li>
+              <li>Positive UCCR → still need confirmatory test (~ 80% specificity)</li>
+            </ul>
+          </li>
+          <li>Best for "rule-out" purposes</li>
+          <li>Affected by stress / concurrent illness — high false positive</li>
+        </ul>
+
+        <p><strong>2. Low-dose dexamethasone suppression test (LDDST)</strong> ✨ — preferred confirmation:</p>
+        <ul>
+          <li>Procedure:
+            <ul>
+              <li>Baseline cortisol</li>
+              <li>Dexamethasone 0.01-0.015 mg/kg IV</li>
+              <li>4h cortisol</li>
+              <li>8h cortisol</li>
+            </ul>
+          </li>
+          <li>Interpretation:
+            <ul>
+              <li>Normal: 8h cortisol &lt; 1.4 µg/dL (suppressed)</li>
+              <li>Cushing's: 8h cortisol &gt; 1.4 µg/dL (escape from suppression)</li>
+            </ul>
+          </li>
+          <li><strong>Bonus:</strong> can differentiate PDH vs ADH:
+            <ul>
+              <li>4h suppression with 8h escape, OR escape at all timepoints with 4h &lt; 50% baseline → suggests <strong>PDH</strong></li>
+              <li>No suppression at any timepoint → could be ADH or PDH</li>
+            </ul>
+          </li>
+          <li>Sensitivity ~ 95%, specificity ~ 70-80%</li>
+          <li>Affected by recent illness</li>
+        </ul>
+
+        <p><strong>3. ACTH stimulation test (ACTHst):</strong></p>
+        <ul>
+          <li>Procedure:
+            <ul>
+              <li>Baseline cortisol</li>
+              <li>Synthetic ACTH (cosyntropin 5 µg/kg IV; or compounded equivalent)</li>
+              <li>1h post cortisol</li>
+            </ul>
+          </li>
+          <li>Cushing's: post-ACTH &gt; 18-22 µg/dL (exaggerated response)</li>
+          <li>Sensitivity lower than LDDST (~ 60-85% PDH; lower for ADH)</li>
+          <li><strong>Best for:</strong>
+            <ul>
+              <li>Iatrogenic Cushing's (post-cortisol low — opposite!)</li>
+              <li>Monitoring trilostane therapy</li>
+            </ul>
+          </li>
+          <li>Cosyntropin expense + occasional shortage</li>
+        </ul>
+
+        <p><strong>Differentiating PDH vs ADH (critical for treatment):</strong></p>
+
+        <p><strong>1. Endogenous ACTH (eACTH)</strong> ✨ — cleanest discriminator:</p>
+        <ul>
+          <li>PDH: ↑ or normal-high ACTH (&gt; 40 pg/mL)</li>
+          <li>ADH: suppressed/undetectable ACTH (&lt; 5 pg/mL)</li>
+          <li>Sample handling critical (chilled, plasma, prompt centrifugation)</li>
+          <li>Limited availability locally</li>
+        </ul>
+
+        <p><strong>2. Abdominal ultrasound</strong> ✨ — ALWAYS:</p>
+        <ul>
+          <li>PDH: bilateral symmetrical adrenal enlargement (both &gt; 7-8 mm width)</li>
+          <li>ADH: unilateral adrenal mass + contralateral atrophic (&lt; 5 mm)</li>
+          <li>Mass: characterize size, vascular invasion (vena cava), local invasion, metastasis</li>
+          <li>Concurrent: hepatomegaly, gallbladder mucocele, pancreatitis, urolithiasis</li>
+        </ul>
+
+        <p><strong>3. High-dose dexamethasone suppression (HDDS):</strong></p>
+        <ul>
+          <li>Used historically; mostly replaced by US + ACTH</li>
+          <li>PDH may suppress with high dose; ADH does not</li>
+        </ul>
+
+        <p><strong>4. Pituitary CT/MRI</strong> — for confirmed PDH with neuro signs (look for macroadenoma)</p>
+
+        <p><strong>Iatrogenic Cushing's:</strong></p>
+        <ul>
+          <li>History of glucocorticoid use ✨</li>
+          <li>ACTHst: <strong>baseline + post-ACTH BOTH LOW</strong> (suppressed adrenals)</li>
+          <li>UCCR/LDDST: variable</li>
+          <li>Dx by history + suppressed ACTH stim</li>
+        </ul>
+
+        <p><strong>Other workup (always):</strong></p>
+        <ul>
+          <li>BP measurement (HT very common)</li>
+          <li>UA + culture (UTI very common, often subclinical)</li>
+          <li>UPC (proteinuria common)</li>
+          <li>Thyroid panel (rule out hypothyroid; often falsely low T4 from Cushing's)</li>
+          <li>Coag panel if thrombosis concern</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li>DM (PU/PD + polyphagia but glucosuria, ketones)</li>
+          <li>Hypothyroidism (alopecia + weight gain but cold-seeking, not panting)</li>
+          <li>Atypical Cushing's / sex hormone-secreting adrenal tumor (similar signs but normal cortisol; abnormal sex hormones)</li>
+          <li>Diabetes insipidus (PU/PD only; no polyphagia, alopecia)</li>
+          <li>Psychogenic polydipsia (PU/PD; modified water deprivation)</li>
+          <li>Chronic kidney disease (PU/PD + weight loss; not polyphagia + alopecia)</li>
+          <li>Hepatic insufficiency</li>
+          <li>Hypercalcemia of malignancy</li>
+          <li>Pyometra (PU/PD; intact female with discharge)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Trilostane (Vetoryl) ✨ — first-line for PDH AND inoperable ADH:</strong></p>
+        <ul>
+          <li><strong>Mechanism:</strong> reversible 3β-HSD inhibitor → ↓ cortisol synthesis</li>
+          <li><strong>Starting dose: 1-3 mg/kg PO q24h with food</strong> (or split q12h for better control)
+            <ul>
+              <li>Modern trend: <strong>2-3 mg/kg q12h</strong> ✨ — better cortisol control over 24h</li>
+              <li>Available 5, 10, 30, 60, 120 mg capsules</li>
+              <li>Compounding for precise dosing in small dogs</li>
+            </ul>
+          </li>
+          <li><strong>Monitoring (CRITICAL):</strong>
+            <ul>
+              <li>Recheck at 10-14 d, 30 d, 90 d, then q3 mo</li>
+              <li><strong>ACTH stimulation 4-6h post pill</strong> ✨ — cortisol pre + post-ACTH</li>
+              <li><strong>Pre-trilostane cortisol (modern approach)</strong>:
+                <ul>
+                  <li>Sample just before next dose</li>
+                  <li>Goal: 1.5-5.5 µg/dL (controlled)</li>
+                  <li>&lt; 1.5 = over-suppressed (reduce dose or stop)</li>
+                  <li>&gt; 5.5 = under-controlled (increase)</li>
+                </ul>
+              </li>
+              <li>Clinical signs review essential</li>
+            </ul>
+          </li>
+          <li><strong>Side effects:</strong>
+            <ul>
+              <li>GI: vomiting, diarrhea, anorexia (usually transient)</li>
+              <li><strong>Iatrogenic Addison's-like crisis</strong> ✗ (~ 5-10%) — over-suppression
+                <ul>
+                  <li>Stop trilostane immediately</li>
+                  <li>Treat as Addison's crisis if severe</li>
+                  <li>Resume at lower dose once stable</li>
+                </ul>
+              </li>
+              <li>Adrenal necrosis (rare, can be permanent Addison's)</li>
+              <li>Lethargy (usually means too low cortisol)</li>
+            </ul>
+          </li>
+          <li>Lifelong therapy for PDH</li>
+        </ul>
+
+        <p><strong>2. Mitotane (Lysodren / o,p'-DDD) — alternative:</strong></p>
+        <ul>
+          <li>Selective adrenal cortex cytotoxin</li>
+          <li>Two phases:
+            <ul>
+              <li>Loading: 25-50 mg/kg PO q24h × 5-10 days (until polyphagia ↓ + cortisol controlled)</li>
+              <li>Maintenance: 25-50 mg/kg PO q week</li>
+            </ul>
+          </li>
+          <li>ACTH stim at end of loading + during maintenance</li>
+          <li><strong>Side effects:</strong>
+            <ul>
+              <li>GI upset, lethargy</li>
+              <li>Iatrogenic Addison's (more common than trilostane)</li>
+              <li>Permanent adrenal destruction possible (lifelong replacement)</li>
+            </ul>
+          </li>
+          <li>Less commonly used now (trilostane easier + safer)</li>
+        </ul>
+
+        <p><strong>3. Adrenalectomy (ADH):</strong></p>
+        <ul>
+          <li>Treatment of choice for ADH if no metastasis + caval invasion absent</li>
+          <li>Pre-op: trilostane to stabilize 4-6 weeks → reduce risk</li>
+          <li>Surgical referral; mortality 10-20% perioperative</li>
+          <li>Post-op: requires temporary glucocorticoid + mineralocorticoid (atrophic contralateral)</li>
+          <li>Cure if benign + complete resection</li>
+          <li>Carcinoma: variable; many recur</li>
+          <li>Caval invasion: thrombectomy possible at specialty centers; high risk</li>
+        </ul>
+
+        <p><strong>4. Pituitary surgery (transsphenoidal hypophysectomy):</strong></p>
+        <ul>
+          <li>Curative option for PDH (especially macroadenoma)</li>
+          <li>Specialty centers only (Utrecht, UC Davis, others)</li>
+          <li>Lifelong replacement: glucocorticoid, mineralocorticoid, thyroid, DDAVP</li>
+          <li>Limited availability in Thailand</li>
+        </ul>
+
+        <p><strong>5. Radiation therapy (pituitary macroadenoma):</strong></p>
+        <ul>
+          <li>For symptomatic macroadenomas (neuro signs)</li>
+          <li>Combined with trilostane for cortisol control</li>
+          <li>Improves neuro signs + survival</li>
+          <li>Specialty centers</li>
+        </ul>
+
+        <p><strong>6. Iatrogenic Cushing's:</strong></p>
+        <ul>
+          <li><strong>Slow taper of glucocorticoid</strong> ✨ — never stop abruptly (Addison's crisis)</li>
+          <li>Reduce by 25-50% q1-2 wk</li>
+          <li>Monitor for adrenal recovery (ACTH stim)</li>
+          <li>May need supplementation during stress (steroid coverage)</li>
+          <li>May take months to recover normal axis</li>
+        </ul>
+
+        <p><strong>Concurrent management:</strong></p>
+        <ul>
+          <li><strong>UTI:</strong> culture-based; long course (2-4 wk) for chronic cystitis</li>
+          <li><strong>Hypertension:</strong> amlodipine, ACEi (after Cushing's controlled)</li>
+          <li><strong>DM:</strong> insulin; control concurrent Cushing's improves DM</li>
+          <li><strong>Calcinosis cutis:</strong> usually regresses with treatment; topical DMSO controversial</li>
+          <li><strong>Hypothyroid (false):</strong> usually corrects with Cushing's treatment; don't supplement based on euthyroid sick syndrome levels</li>
+          <li><strong>Antithrombotic:</strong> consider clopidogrel in high-risk (severe disease, prior TE)</li>
+        </ul>
+
+        <p><strong>Owner expectations:</strong></p>
+        <ul>
+          <li>Clinical improvement: PU/PD often within weeks; pot-belly months; hair regrowth 3-6 mo</li>
+          <li>Lifelong treatment + monitoring</li>
+          <li>Total cost commitment significant</li>
+          <li>Watch for over-suppression signs at home (lethargy, anorexia, vomiting)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Iatrogenic Addisonian crisis</strong> ✗ — trilostane/mitotane over-suppression</li>
+          <li>Pulmonary thromboembolism ✗ — hypercoagulable state</li>
+          <li>Recurrent infections (UTI, pyoderma, demodex)</li>
+          <li>Diabetes mellitus development</li>
+          <li>Hypertensive complications (retinal, cardiac, renal)</li>
+          <li>Pituitary macroadenoma growth → neuro signs</li>
+          <li>Calcinosis cutis (cosmetic + ulceration)</li>
+          <li>Glomerular disease progression</li>
+          <li>Steroid hepatopathy</li>
+          <li>GERD, gastric ulceration</li>
+          <li>Pancreatitis</li>
+          <li>Mucocele (gallbladder)</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>PDH with trilostane: MST 24-30 months</strong> — good QOL ✓</li>
+          <li>ADH adenoma + adrenalectomy: MST &gt; 36 months (potentially curative)</li>
+          <li>ADH carcinoma: MST 12-24 months</li>
+          <li>Pituitary macroadenoma + neuro signs: MST 6-12 months without RT; 1-2+ years with RT</li>
+          <li>Iatrogenic with successful taper: full recovery possible</li>
+          <li>Untreated: gradual decline over months-years; complications hasten death</li>
+          <li>Negative prognostic: macroadenoma, severe HT, DM, CHF, PTE history</li>
+        </ul>
+        <div class="callout">💡 <strong>Cushing's = pluri-systemic disease</strong> — ไม่ใช่แค่ alopecia. Always: BP, UA + culture, UPC, abdominal US. Treatment = trilostane first-line; monitoring with pre-pill cortisol (modern) or ACTH stim<br><br>⚠️ ระวัง iatrogenic Addisonian crisis — สอน owner สังเกตุ vomiting, lethargy, anorexia → หยุดยา + emergency ทันที</div>
+      `,
+    },
+  },
+
+  /* ---------- Ch 50 · Hypoadrenocorticism (Addison's) ---------- */
+  {
+    id: 'hypoadrenocorticism-addisons',
+    titleEn: "Hypoadrenocorticism (Addison's Disease)",
+    titleTh: 'Addison — ต่อมหมวกไตทำงานต่ำ',
+    type: 'disease',
+    system: 'endocrine',
+    species: ['dog', 'cat'],
+    tags: ["Addison's disease", 'hypoadrenocorticism', 'adrenal insufficiency', 'cortisol', 'aldosterone', 'DOCP', 'Zycortal', 'fludrocortisone', 'Florinef', 'prednisolone', 'Addisonian crisis', 'Na/K ratio'],
+    aliases: ["Addisons", 'hypoadrenocorticism', 'Addison crisis', 'แอดดิสัน', 'ต่อมหมวกไตต่ำ'],
+    source: 'Ch. 50 · pp. 882–894',
+    sections: {
+      definition: `
+        <p>การลดลงของฮอร์โมนต่อมหมวกไต (cortisol ± aldosterone) — "<strong>The great pretender</strong>" ✨ เพราะ signs หลากหลาย เลียนแบบโรคอื่น</p>
+        <ul>
+          <li><strong>Primary (typical) ~ 90%</strong> ✨ — destruction of adrenal cortex; both cortisol + aldosterone deficient</li>
+          <li><strong>Atypical Addison's ~ 10%</strong> — selective glucocorticoid deficient (cortisol low, aldosterone normal — normal Na/K)
+            <ul>
+              <li>Some progress to typical over time</li>
+            </ul>
+          </li>
+          <li><strong>Secondary</strong> (rare) — pituitary ACTH deficiency; only cortisol low</li>
+          <li><strong>Iatrogenic</strong> — abrupt steroid withdrawal; trilostane/mitotane overdose</li>
+          <li>Young-middle aged dogs (median 4-5 yr); female &gt; male</li>
+          <li>Predisposed: Standard Poodle ✨, Bearded Collie, Portuguese Water Dog, Nova Scotia Duck Tolling Retriever, Great Dane, Westie, Wheaten Terrier</li>
+          <li>Cat: extremely rare</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Primary:</strong></p>
+        <ul>
+          <li><strong>Idiopathic immune-mediated adrenalitis</strong> ✨ — most common
+            <ul>
+              <li>Bilateral adrenal cortex destruction</li>
+              <li>Often part of polyglandular autoimmune syndrome (concurrent thyroiditis, DM)</li>
+            </ul>
+          </li>
+          <li>Granulomatous (rare — fungal, mycobacterial)</li>
+          <li>Neoplastic infiltration (rare — bilateral metastases)</li>
+          <li>Hemorrhage / infarction</li>
+          <li>Amyloidosis</li>
+        </ul>
+
+        <p><strong>Iatrogenic:</strong></p>
+        <ul>
+          <li>Trilostane / mitotane overdose</li>
+          <li>Abrupt withdrawal of long-term glucocorticoid</li>
+          <li>Adrenalectomy without supplementation</li>
+        </ul>
+
+        <p><strong>Secondary (rare):</strong></p>
+        <ul>
+          <li>Pituitary mass</li>
+          <li>Trauma</li>
+          <li>Iatrogenic steroid suppression</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ul>
+          <li><strong>Cortisol deficiency:</strong>
+            <ul>
+              <li>↓ Stress response (vulnerability to crisis)</li>
+              <li>↓ Gluconeogenesis → hypoglycemia</li>
+              <li>GI tract effects → vomiting, diarrhea, ileus</li>
+              <li>↓ Vasopressor effect → hypotension</li>
+              <li>Mental depression</li>
+            </ul>
+          </li>
+          <li><strong>Aldosterone deficiency (typical):</strong>
+            <ul>
+              <li>↓ Na retention, ↓ K excretion → hyponatremia, hyperkalemia ✨</li>
+              <li>Hypovolemia, hypotension</li>
+              <li>Cardiac arrhythmias from hyperkalemia ✗</li>
+              <li>Metabolic acidosis</li>
+              <li>Pre-renal azotemia</li>
+            </ul>
+          </li>
+          <li>Normal physiologic stress can precipitate crisis (boarding, surgery, acute illness, trauma)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Chronic / waxing-waning ✨ — "great pretender":</strong></p>
+        <ul>
+          <li>Episodic lethargy, anorexia</li>
+          <li>Vomiting, diarrhea (often intermittent)</li>
+          <li>Weight loss</li>
+          <li>Weakness, exercise intolerance</li>
+          <li>PU/PD (sometimes)</li>
+          <li>Bradycardia (relative to dehydration)</li>
+          <li>Mild dehydration</li>
+          <li><strong>Improves with empirical fluids/steroids</strong> — only to relapse weeks later</li>
+          <li>Often misdiagnosed: gastroenteritis, pancreatitis, IBD, parvo, Whipple's syndrome ✗</li>
+        </ul>
+
+        <p><strong>Addisonian crisis (acute) ✗ ✨ — emergency:</strong></p>
+        <ul>
+          <li>Severe lethargy → collapse</li>
+          <li>Vomiting, diarrhea (often bloody)</li>
+          <li>Severe weakness, recumbency</li>
+          <li>Profound dehydration / hypovolemic shock</li>
+          <li>Hypothermia</li>
+          <li>Bradycardia (paradoxical given shock — hyperkalemia) ✗</li>
+          <li>Weak peripheral pulses</li>
+          <li>Mental dullness → coma</li>
+          <li>Hypoglycemia → seizures</li>
+          <li>Death within hours if untreated</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Initial findings (highly suspicious):</strong></p>
+        <ul>
+          <li><strong>Na:K ratio &lt; 27</strong> ✨ — classic
+            <ul>
+              <li>Normal &gt; 27</li>
+              <li>&lt; 23 = highly suspicious</li>
+              <li>Caused by ↓ Na + ↑ K (mineralocorticoid deficiency)</li>
+              <li><strong>Caution: not pathognomonic</strong> — also seen in:
+                <ul>
+                  <li>Whipple's disease (severe GI dz with massive K loss replacement)</li>
+                  <li>Severe acute renal failure</li>
+                  <li>Severe pancreatitis</li>
+                  <li>Trichuriasis (whipworm)</li>
+                  <li>Severe diarrhea (3rd spacing)</li>
+                  <li>Effusions</li>
+                  <li>Atypical Addison's has NORMAL Na/K!</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>"Lack of stress leukogram"</strong> ✨ — eosinophils + lymphocytes NOT suppressed despite illness
+            <ul>
+              <li>Stressed dogs should have neutrophilia, lymphopenia, eosinopenia</li>
+              <li>Addison's: normal-high lymphocytes/eosinophils despite being sick</li>
+              <li>Highly suggestive in compatible signs</li>
+            </ul>
+          </li>
+          <li>Mild non-regenerative anemia</li>
+          <li><strong>Hypoglycemia</strong> ~ 20%</li>
+          <li><strong>Hyperkalemia + Hyponatremia + Hypochloremia</strong> (typical)</li>
+          <li>Metabolic acidosis</li>
+          <li>Pre-renal azotemia (hypovolemia) — can be misdiagnosed as renal failure ✗</li>
+          <li>USG variable (often &gt; 1.030 if hypovolemic — distinguishes from primary renal)</li>
+          <li>↓ Albumin (not always)</li>
+          <li>↑ Liver enzymes (mild)</li>
+          <li>↓ Total Ca but ↑ ionized Ca occasional</li>
+          <li>± Megaesophagus (rare presentation)</li>
+        </ul>
+
+        <p><strong>ECG (hyperkalemia):</strong></p>
+        <ul>
+          <li>Bradycardia</li>
+          <li>Peaked T waves</li>
+          <li>Prolonged PR</li>
+          <li>↓ P wave amplitude</li>
+          <li>Atrial standstill (severe ✗)</li>
+          <li>Wide QRS</li>
+          <li>Can progress to V-fib / arrest</li>
+        </ul>
+
+        <p><strong>Definitive: ACTH stimulation test ✨ — gold standard:</strong></p>
+        <ul>
+          <li>Procedure:
+            <ul>
+              <li>Baseline cortisol</li>
+              <li>Synthetic ACTH (cosyntropin) 5 µg/kg IV (some use 1 µg/kg, low-dose)</li>
+              <li>1h post cortisol</li>
+            </ul>
+          </li>
+          <li><strong>Diagnostic of Addison's:</strong>
+            <ul>
+              <li><strong>Both pre + post cortisol &lt; 2 µg/dL</strong> — flat-line, no response</li>
+              <li>Normal: post cortisol &gt; 6 µg/dL</li>
+            </ul>
+          </li>
+          <li>Caution: recent steroid (including dexamethasone) confounds — wait if possible
+            <ul>
+              <li>Hydrocortisone, prednisolone cross-react with cortisol assay → false elevation</li>
+              <li>Dexamethasone does NOT cross-react → can give for emergency stabilization without affecting test</li>
+            </ul>
+          </li>
+          <li>Sensitivity ~ 100%; can be done during initial stabilization with dex bridge</li>
+        </ul>
+
+        <p><strong>Cortisol baseline (alternative screen):</strong></p>
+        <ul>
+          <li>Single basal cortisol &lt; 2 µg/dL = consistent → confirm with ACTH stim</li>
+          <li>&gt; 2 µg/dL → unlikely Addison's</li>
+          <li>Useful as initial screen if ACTH stim not immediately available</li>
+        </ul>
+
+        <p><strong>Endogenous ACTH (eACTH):</strong></p>
+        <ul>
+          <li>Primary Addison's: ↑↑ ACTH (often &gt; 500 pg/mL)</li>
+          <li>Secondary: ↓ ACTH</li>
+          <li>Useful for distinguishing primary vs secondary</li>
+        </ul>
+
+        <p><strong>Aldosterone (atypical work-up):</strong></p>
+        <ul>
+          <li>Pre/post ACTH aldosterone — distinguishes typical vs atypical</li>
+          <li>Atypical: cortisol response abnormal, aldosterone normal</li>
+        </ul>
+
+        <p><strong>Imaging:</strong></p>
+        <ul>
+          <li>Abdominal US: small adrenals (&lt; 3.5 mm width) — supportive (~ 70% sensitivity)</li>
+          <li>Thoracic radiograph (microcardia from hypovolemia; megaesophagus rarely)</li>
+        </ul>
+      `,
+      differential: `
+        <p><strong>Crisis presentation — differentiate from:</strong></p>
+        <ul>
+          <li>Acute kidney injury / failure (AKI) — but Addison's has appropriate USG, lack of stress leukogram</li>
+          <li>Severe gastroenteritis (parvo, HGE, dietary) — usually has stress leukogram</li>
+          <li>Whipple's syndrome (acute hemorrhagic gastroenteritis)</li>
+          <li>DKA (but glucose ↑, not ↓)</li>
+          <li>Sepsis</li>
+          <li>Hypoglycemia (other causes — insulinoma, juvenile, sepsis)</li>
+          <li>Pancreatitis</li>
+          <li>Toxin (cardiac glycosides causing hyperK)</li>
+          <li>Urethral obstruction (post-renal hyperK)</li>
+        </ul>
+        <p><strong>Chronic presentation — differentiate from:</strong></p>
+        <ul>
+          <li>IBD</li>
+          <li>Chronic pancreatitis</li>
+          <li>GI lymphoma</li>
+          <li>EPI</li>
+          <li>Chronic renal failure</li>
+          <li>Hepatic disease</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>1. Addisonian crisis — emergency ✗:</strong></p>
+
+        <p><strong>Step 1 - Aggressive IV fluid resuscitation ✨:</strong></p>
+        <ul>
+          <li><strong>0.9% NaCl</strong> ✨ — first choice (provides Na, dilutes K)
+            <ul>
+              <li>Bolus 20-30 mL/kg over 30-60 min, reassess</li>
+              <li>Continue at 2-3× maintenance until stable</li>
+              <li>LRS contains K (4 mEq/L) — usually OK after initial NaCl bolus, but avoid if K extremely high</li>
+            </ul>
+          </li>
+          <li>Goals: restore perfusion, dilute hyperkalemia, correct hypovolemia</li>
+        </ul>
+
+        <p><strong>Step 2 - Glucocorticoid (after blood drawn for ACTH stim):</strong></p>
+        <ul>
+          <li><strong>Dexamethasone sodium phosphate 0.5-2 mg/kg IV</strong> ✨
+            <ul>
+              <li>Doesn't cross-react with cortisol assay — can give before ACTH stim if emergency!</li>
+              <li>Once-daily dosing; effect within hours</li>
+            </ul>
+          </li>
+          <li>Or hydrocortisone (prefer for crisis if cosyntropin already given) — cross-reacts with assay</li>
+          <li>Convert to oral prednisolone once eating</li>
+        </ul>
+
+        <p><strong>Step 3 - Hyperkalemia management:</strong></p>
+        <ul>
+          <li>Often resolves with fluid + glucocorticoid + mineralocorticoid</li>
+          <li>If severe (K &gt; 7.0 with ECG changes):
+            <ul>
+              <li>Calcium gluconate 10% 0.5-1 mL/kg slow IV (cardioprotection)</li>
+              <li>Dextrose 0.5-1 g/kg IV ± insulin 0.25 U/kg IV</li>
+              <li>Sodium bicarbonate (severe acidosis pH &lt; 7.2)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Step 4 - Hypoglycemia management:</strong></p>
+        <ul>
+          <li>If BG &lt; 60:
+            <ul>
+              <li>Dextrose 0.5 mL/kg of 50% IV (diluted 1:2 with saline)</li>
+              <li>Add 2.5-5% dextrose to fluids</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Step 5 - Mineralocorticoid (after stable):</strong></p>
+        <ul>
+          <li>Once stable + diagnosis confirmed, transition to long-term replacement</li>
+          <li>(See chronic management below)</li>
+        </ul>
+
+        <p><strong>2. Long-term management — typical Addison's ✨:</strong></p>
+
+        <p><strong>Mineralocorticoid replacement:</strong></p>
+        <ul>
+          <li><strong>DOCP (Desoxycorticosterone pivalate / Zycortal / Percorten-V)</strong> ✨ — first-line:
+            <ul>
+              <li>Dose: 1.5-2.2 mg/kg IM/SC q25-30 days</li>
+              <li>Modern trend: lower starting (1.5 mg/kg) and titrate up if needed</li>
+              <li>Most dogs need q25-30 d; some need q21-28 d</li>
+              <li>Monitor Na, K at 2-week (peak effect) + just before next dose (trough)</li>
+              <li>Goal: Na/K normal at trough</li>
+              <li>Cost moderate; long-acting; injection</li>
+            </ul>
+          </li>
+          <li><strong>Fludrocortisone (Florinef) — oral alternative:</strong>
+            <ul>
+              <li>Dose: 0.01-0.02 mg/kg PO q12-24h</li>
+              <li>Combined glucocorticoid + mineralocorticoid (some pred activity at higher dose)</li>
+              <li>Daily compliance</li>
+              <li>Some dogs don't respond to fludro alone (less mineralocorticoid potency than DOCP)</li>
+              <li>Monitor electrolytes monthly initially</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Glucocorticoid replacement (always needed except sometimes with fludrocortisone):</strong></p>
+        <ul>
+          <li><strong>Prednisolone 0.1-0.25 mg/kg PO q24h</strong> ✨ — physiologic replacement (low dose)
+            <ul>
+              <li>Adjust to avoid signs of Cushing's (PU/PD, polyphagia, alopecia) or under-dosing (lethargy, anorexia, vomiting)</li>
+            </ul>
+          </li>
+          <li><strong>Stress doubling/tripling:</strong>
+            <ul>
+              <li>Owner doubles or triples dose during illness, surgery, boarding, travel, hospitalization</li>
+              <li>Critical to prevent crisis</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Atypical Addison's:</strong></p>
+        <ul>
+          <li>Glucocorticoid only (prednisolone 0.1-0.25 mg/kg PO q24h)</li>
+          <li>NO mineralocorticoid needed (electrolytes normal)</li>
+          <li>Monitor periodically — some progress to typical → need DOCP/fludro</li>
+        </ul>
+
+        <p><strong>4. Iatrogenic:</strong></p>
+        <ul>
+          <li>If steroid withdrawal: slow taper, support with low-dose physiologic replacement, gradual recovery (months)</li>
+          <li>If trilostane overdose: stop trilostane, supportive care + steroid; may recover or be permanent</li>
+        </ul>
+
+        <p><strong>Owner education:</strong></p>
+        <ul>
+          <li>Recognize early signs of crisis: vomiting, lethargy, anorexia, weakness</li>
+          <li>"Stress dose" prednisolone for any illness/event</li>
+          <li>Bring extra meds when traveling</li>
+          <li>Wear ID tag indicating Addison's</li>
+          <li>Inform vets of dx before any procedure</li>
+          <li>Don't miss DOCP injection (set reminders)</li>
+          <li>Hydration importance</li>
+        </ul>
+
+        <p><strong>Monitoring:</strong></p>
+        <ul>
+          <li>First DOCP: electrolytes at 14 d (peak) + 25 d (trough)</li>
+          <li>Adjust dose/interval based on Na/K</li>
+          <li>Stable: Na/K every DOCP cycle initially, then every 2-3 cycles</li>
+          <li>Body weight, BCS, hydration</li>
+          <li>Watch for over/under-replacement signs</li>
+          <li>UA q6-12 mo</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Recurrent Addisonian crisis</strong> ✗ — missed dose, stress, owner non-compliance</li>
+          <li>Sudden death from arrhythmia (severe hyperkalemia)</li>
+          <li>Iatrogenic Cushing's (over-replacement glucocorticoid)</li>
+          <li>Megaesophagus (rare; resolves with treatment usually)</li>
+          <li>Concurrent autoimmune diseases (thyroiditis, DM, IMHA)</li>
+          <li>UTI (steroid effect)</li>
+          <li>Cost burden of lifelong therapy</li>
+          <li>Compliance issues</li>
+        </ul>
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Excellent with appropriate management — normal lifespan</strong> ✓</li>
+          <li>Survivors of crisis with prompt treatment do as well as those without crisis</li>
+          <li>MST &gt; 10 years post-diagnosis</li>
+          <li>Critical: owner education, compliance, stress dosing, regular monitoring</li>
+          <li>Concurrent autoimmune disease may complicate</li>
+          <li>Atypical with conversion to typical: still good prognosis once mineralocorticoid added</li>
+        </ul>
+        <div class="callout">⚠️ <strong>"Great pretender"</strong> ✨ — young-middle aged dog with episodic vomiting/lethargy + Na/K &lt; 27 + lack of stress leukogram = Addison's until proven. Standard Poodle especially!<br><br>💡 Crisis: NaCl IV bolus + dexamethasone (doesn't affect ACTH stim) → diagnosis → DOCP + prednisolone for life. Owner education ป้องกัน crisis ในอนาคต — stress dose ระหว่างเจ็บป่วย</div>
+      `,
+    },
+  },
+
   /* ---------- More entries to come ---------- */
 
 ];
