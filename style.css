@@ -2667,3 +2667,583 @@ html.locked .lock-screen { display: flex; }
     grid-template-columns: repeat(4, 1fr) !important;
   }
 }
+
+/* ============================================================================
+   TEACHING SCHEDULE PAGE — ตารางสอน
+   ============================================================================ */
+
+/* Today highlight card */
+.today-card {
+  background: linear-gradient(135deg, var(--red) 0%, #c62633 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin: 20px 0 16px;
+  box-shadow: 0 6px 18px rgba(230, 57, 70, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.today-card::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.today-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.today-label svg { width: 18px; height: 18px; }
+.today-list { display: flex; flex-direction: column; gap: 8px; }
+.today-empty {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  padding: 12px 0;
+  font-family: 'Noto Serif Thai', serif;
+}
+.today-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+  backdrop-filter: blur(4px);
+}
+.today-item:active {
+  background: rgba(255,255,255,0.25);
+  transform: scale(0.99);
+}
+.ti-time {
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ti-dash { opacity: 0.6; margin: 0 2px; }
+.ti-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+.ti-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.ti-subject {
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ti-loc {
+  font-size: 12px;
+  opacity: 0.85;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Schedule controls (view toggle + add) */
+.schedule-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.vt-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font-family: 'Noto Serif Thai', serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-mute);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+}
+.vt-btn svg { width: 14px; height: 14px; }
+.vt-btn.active {
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+}
+.add-class-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--red) 0%, #c62633 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Noto Serif Thai', serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.18s ease;
+  box-shadow: 0 3px 10px rgba(230, 57, 70, 0.25);
+  min-height: 44px;
+  min-width: 160px;
+}
+.add-class-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.add-class-btn:active { transform: scale(0.98); box-shadow: 0 1px 4px rgba(230, 57, 70, 0.2); }
+
+/* ============================================================================
+   GRID VIEW — Visual timetable (5 days × 12 hours)
+   ============================================================================ */
+.schedule-section { margin-bottom: 16px; }
+
+.schedule-grid-wrap {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 12px 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.schedule-grid-wrap::-webkit-scrollbar { height: 6px; }
+.schedule-grid-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+.schedule-grid {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  min-width: 580px; /* horizontal scroll on mobile */
+}
+.grid-time-header {
+  width: 56px;
+  background: transparent;
+}
+.grid-day-header {
+  text-align: center;
+  padding: 8px 4px;
+  font-family: 'Noto Serif Thai', serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: transparent;
+  border-bottom: 2px solid var(--border);
+}
+.grid-day-header.today {
+  color: var(--red);
+  background: var(--red-soft);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid var(--red);
+}
+.gh-short { display: none; }
+.gh-full { font-size: 13px; }
+
+.grid-time-cell {
+  width: 56px;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+  border-right: 1px solid var(--border);
+}
+.gtc-hour {
+  display: block;
+  font-size: 11px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--ink-mute);
+  padding: 4px 6px 0 0;
+  text-align: right;
+  position: relative;
+  top: -8px;
+}
+
+.grid-cell {
+  height: 70px;
+  padding: 2px;
+  vertical-align: top;
+  border-bottom: 1px dashed var(--border);
+  position: relative;
+}
+.grid-cell.empty { background: transparent; }
+.grid-cell.today { background: rgba(230, 57, 70, 0.04); }
+
+.grid-class {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--class-color, var(--ink));
+  color: white;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  transition: transform 0.15s;
+  z-index: 1;
+}
+.grid-class:active { transform: scale(0.97); }
+.gc-time {
+  font-size: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gc-subject {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Noto Serif Thai', serif;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.gc-loc {
+  font-size: 10px;
+  opacity: 0.85;
+  font-family: 'IBM Plex Sans', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gc-type-tag {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* ============================================================================
+   LIST VIEW — Day-grouped cards
+   ============================================================================ */
+.schedule-list { display: flex; flex-direction: column; gap: 18px; }
+
+.day-group {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.day-group.today {
+  border: 2px solid var(--red);
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.15);
+}
+
+.day-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border);
+}
+.dgh-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.day-group.today .dgh-name { color: var(--red); }
+.dgh-count {
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.list-class {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+  border-radius: 8px;
+}
+.list-class + .list-class { border-top: 1px dashed var(--border); }
+.list-class:active { background: var(--bg); transform: scale(0.99); }
+
+.lc-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 60px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.lc-time-start {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.lc-time-end {
+  font-size: 12px;
+  color: var(--ink-mute);
+}
+
+.lc-bar {
+  width: 4px;
+  background: var(--class-color, var(--ink));
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.lc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  padding: 4px 0;
+}
+.lc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lc-subject {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  word-break: break-word;
+}
+.lc-type-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--class-color, var(--ink));
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.lc-loc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.lc-notes {
+  font-size: 12px;
+  color: var(--ink-mute);
+  background: var(--bg);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ============================================================================
+   MODAL — Day picker + Type picker
+   ============================================================================ */
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+.day-btn {
+  padding: 12px 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'Noto Serif Thai', serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+  min-height: 48px;
+}
+.day-btn.selected {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+  font-weight: 600;
+}
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+  min-height: 70px;
+}
+.type-btn .type-emoji { font-size: 22px; }
+.type-btn .type-label {
+  font-size: 11px;
+  color: var(--ink);
+  font-weight: 500;
+  font-family: 'Noto Serif Thai', serif;
+}
+.type-btn.selected {
+  background: var(--red);
+  border-color: var(--red);
+}
+.type-btn.selected .type-label { color: white; }
+
+/* Textarea */
+.form-textarea {
+  resize: vertical;
+  min-height: 70px;
+  font-family: 'Noto Serif Thai', serif !important;
+  line-height: 1.5;
+}
+
+/* Bottom actions */
+.schedule-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+.btn-export-schedule, .btn-import-schedule, .btn-clear-schedule {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Noto Serif Thai', serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+}
+.btn-export-schedule svg, .btn-import-schedule svg, .btn-clear-schedule svg { width: 14px; height: 14px; }
+.btn-export-schedule:active, .btn-import-schedule:active {
+  background: var(--bg);
+  border-color: var(--ink);
+}
+.btn-clear-schedule {
+  border-style: dashed;
+  color: var(--ink-mute);
+}
+.btn-clear-schedule:active {
+  color: var(--red);
+  border-color: var(--red);
+  background: var(--red-soft);
+}
+
+/* iPad / desktop tweaks */
+@media (min-width: 768px) {
+  .schedule-grid { min-width: 700px; }
+  .grid-cell { height: 80px; }
+  .gc-subject { font-size: 13px; -webkit-line-clamp: 3; line-clamp: 3; }
+  .gh-full { font-size: 14px; }
+  .schedule-actions {
+    flex-direction: row;
+  }
+  .schedule-actions button { flex: 1; }
+}
+
+/* Add modal-backdrop ID for schedule */
+#schedModalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9000;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: none;
+}
+#schedModalBackdrop.show {
+  display: flex;
+  animation: fadeIn 0.2s ease;
+  pointer-events: auto;
+}
+#schedModalBackdrop .modal {
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition: none;
+  background: var(--surface);
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  animation: slideUp 0.28s cubic-bezier(.2,.7,.2,1) both;
+  box-shadow: 0 -20px 50px -20px rgba(0,0,0,0.25);
+}
+@media (min-width: 768px) {
+  #schedModalBackdrop {
+    align-items: center;
+    padding: 20px;
+  }
+  #schedModalBackdrop .modal {
+    border-radius: 24px;
+    max-width: 600px;
+    transform: none;
+    opacity: 1;
+  }
+}

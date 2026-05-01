@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#FAFAF7" />
+  <meta name="color-scheme" content="light">
+  <title>ตารางสอน · PK</title>
+
+  <script>
+    let lastTap = 0;
+    document.addEventListener('touchend', function(e) {
+      const now = Date.now();
+      if (now - lastTap < 350) e.preventDefault();
+      lastTap = now;
+    }, { passive: false });
+    document.addEventListener('gesturestart', function(e) { e.preventDefault(); });
+    document.addEventListener('gesturechange', function(e) { e.preventDefault(); });
+    document.addEventListener('gestureend', function(e) { e.preventDefault(); });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260501j">
+</head>
+<body>
+
+  <div class="pride-bar"></div>
+
+  <div class="blobs">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- TOP BAR --------------------------------------------------- -->
+    <header class="topbar">
+      <a class="back-btn" href="teaching.html" aria-label="กลับ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        <span>งานสอน</span>
+      </a>
+      <div class="meta">
+        <span class="online" aria-hidden="true"></span>
+        <span id="clock">--:--</span>
+      </div>
+    </header>
+
+    <!-- PAGE HERO ------------------------------------------------- -->
+    <section class="page-hero" style="--page-accent: var(--red);">
+      <p class="page-eyebrow">ห้องที่ 01 · TEACHING SCHEDULE</p>
+      <h1 class="page-title" style="color: var(--red);">ตารางสอน</h1>
+      <p class="page-subtitle">ตารางประจำสัปดาห์ · จันทร์ถึงศุกร์ · เก็บใน device นี้</p>
+    </section>
+
+    <!-- TODAY HIGHLIGHT --------------------------------------- -->
+    <section class="today-card" id="todayCard">
+      <div class="today-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>วันนี้ · <span id="todayName">—</span></span>
+      </div>
+      <div class="today-list" id="todayList">
+        <div class="today-empty">ยังไม่มีข้อมูล</div>
+      </div>
+    </section>
+
+    <!-- VIEW TOGGLE + ACTIONS -------------------------------- -->
+    <div class="schedule-controls">
+      <div class="view-toggle">
+        <button class="vt-btn active" data-view="grid" type="button" aria-label="ตาราง">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span>ตาราง</span>
+        </button>
+        <button class="vt-btn" data-view="list" type="button" aria-label="รายการ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          <span>รายการ</span>
+        </button>
+      </div>
+      <button class="add-class-btn" type="button" id="btnAddClass">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span>เพิ่มคาบเรียน</span>
+      </button>
+    </div>
+
+    <!-- GRID VIEW (default) ------------------------------------- -->
+    <section class="schedule-section schedule-grid-view" id="gridView">
+      <div class="schedule-grid-wrap">
+        <table class="schedule-grid" id="scheduleGrid">
+          <!-- Auto-rendered by JS -->
+        </table>
+      </div>
+    </section>
+
+    <!-- LIST VIEW ----------------------------------------------- -->
+    <section class="schedule-section schedule-list-view" id="listView" style="display:none;">
+      <div class="schedule-list" id="scheduleList">
+        <!-- Auto-rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ACTIONS BOTTOM ----------------------------------------- -->
+    <section class="schedule-actions">
+      <button class="btn-export-schedule" type="button" id="btnExportSchedule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        <span>Export ตารางสอน (.json)</span>
+      </button>
+      <button class="btn-import-schedule" type="button" id="btnImportSchedule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        <span>Import จากไฟล์</span>
+      </button>
+      <input type="file" id="importFile" accept=".json" style="display:none;">
+      <button class="btn-clear-schedule" type="button" id="btnClearSchedule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>
+        <span>ล้างทั้งหมด</span>
+      </button>
+    </section>
+
+    <footer class="foot">
+      <div class="row">
+        <span>© alex · 2026</span>
+        <span class="with-pride">
+          <span>made with pride</span>
+          <span class="pride-mini" aria-hidden="true"></span>
+        </span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ============================================================
+       MODAL — Add/Edit Class
+       ============================================================ -->
+  <div class="modal-backdrop" id="schedModalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2 class="modal-title" id="schedModalTitle">เพิ่มคาบเรียน</h2>
+        <button class="modal-close" type="button" id="schedModalClose" aria-label="ปิด">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form class="modal-form" id="classForm">
+        <input type="hidden" id="formClassId" value="">
+
+        <!-- Subject -->
+        <div class="form-row">
+          <label class="form-label" for="formSubject">ชื่อวิชา / หัวข้อ *</label>
+          <input class="form-input" type="text" id="formSubject" placeholder="เช่น: Anatomy I, Pathology" required>
+        </div>
+
+        <!-- Day -->
+        <div class="form-row">
+          <label class="form-label">วัน *</label>
+          <div class="day-grid" id="dayGrid">
+            <button class="day-btn" type="button" data-day="1">จันทร์</button>
+            <button class="day-btn" type="button" data-day="2">อังคาร</button>
+            <button class="day-btn" type="button" data-day="3">พุธ</button>
+            <button class="day-btn" type="button" data-day="4">พฤหัส</button>
+            <button class="day-btn" type="button" data-day="5">ศุกร์</button>
+          </div>
+          <input type="hidden" id="formDay" value="">
+        </div>
+
+        <!-- Time -->
+        <div class="form-row form-row-split">
+          <div class="form-half">
+            <label class="form-label" for="formStart">เริ่ม *</label>
+            <input class="form-input" type="time" id="formStart" required>
+          </div>
+          <div class="form-half">
+            <label class="form-label" for="formEnd">จบ *</label>
+            <input class="form-input" type="time" id="formEnd" required>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="form-row">
+          <label class="form-label" for="formLocation">สถานที่ (ห้อง / ตึก)</label>
+          <input class="form-input" type="text" id="formLocation" placeholder="เช่น: ห้อง 301 ตึกอายุรกรรม">
+        </div>
+
+        <!-- Type -->
+        <div class="form-row">
+          <label class="form-label">ประเภท</label>
+          <div class="type-grid" id="typeGrid">
+            <button class="type-btn" type="button" data-type="lecture">
+              <span class="type-emoji">🎤</span><span class="type-label">บรรยาย</span>
+            </button>
+            <button class="type-btn" type="button" data-type="lab">
+              <span class="type-emoji">🔬</span><span class="type-label">ปฏิบัติ</span>
+            </button>
+            <button class="type-btn" type="button" data-type="seminar">
+              <span class="type-emoji">💬</span><span class="type-label">สัมมนา</span>
+            </button>
+            <button class="type-btn" type="button" data-type="other">
+              <span class="type-emoji">📌</span><span class="type-label">อื่นๆ</span>
+            </button>
+          </div>
+          <input type="hidden" id="formType" value="lecture">
+        </div>
+
+        <!-- Notes -->
+        <div class="form-row">
+          <label class="form-label" for="formClassNotes">หมายเหตุ <span class="form-optional">(เนื้อหา, อุปกรณ์ที่ต้องเตรียม)</span></label>
+          <textarea class="form-input form-textarea" id="formClassNotes" rows="3" placeholder="เช่น: เตรียม slides, อุปกรณ์ผ่าตัด, ไอแพดสำรอง"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+          <button class="btn btn-delete" type="button" id="btnDeleteClass" style="display:none;">ลบคาบนี้</button>
+          <button class="btn btn-secondary" type="button" id="btnCancelClass">ยกเลิก</button>
+          <button class="btn btn-primary" type="submit" id="btnSaveClass">บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="schedule.js?v=20260501j"></script>
+</body>
+</html>
