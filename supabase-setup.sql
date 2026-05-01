@@ -222,12 +222,24 @@ CREATE POLICY "Public answers access"
 -- ║     - quiz_sessions                                               ║
 -- ║     - quiz_players                                                ║
 -- ║     - quiz_answers                                                ║
--- ║  หรือรัน:                                                          ║
+-- ║  หรือรัน (idempotent — ignores "already member" error):          ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
-ALTER PUBLICATION supabase_realtime ADD TABLE quiz_sessions;
-ALTER PUBLICATION supabase_realtime ADD TABLE quiz_players;
-ALTER PUBLICATION supabase_realtime ADD TABLE quiz_answers;
+DO $$
+BEGIN
+  BEGIN
+    ALTER PUBLICATION supabase_realtime ADD TABLE quiz_sessions;
+  EXCEPTION WHEN duplicate_object THEN NULL;
+  END;
+  BEGIN
+    ALTER PUBLICATION supabase_realtime ADD TABLE quiz_players;
+  EXCEPTION WHEN duplicate_object THEN NULL;
+  END;
+  BEGIN
+    ALTER PUBLICATION supabase_realtime ADD TABLE quiz_answers;
+  EXCEPTION WHEN duplicate_object THEN NULL;
+  END;
+END $$;
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
