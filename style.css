@@ -61,8 +61,27 @@ input, select, textarea, label, summary {
   --radius-sm: 14px;
 }
 
+/* Dark mode applies when:
+   1. data-theme="dark" — manual override (works on any system), OR
+   2. data-theme is NOT "light" AND system prefers dark — auto mode follows system */
+:root[data-theme="dark"] {
+  --bg:       #0E0E10;
+  --surface:  #18181B;
+  --ink:      #F5F5F5;
+  --ink-soft: #C7C7C7;
+  --ink-mute: #8A8A8A;
+  --muted:    #8A8A8A;
+  --border:   #2A2A2E;
+  --line:     #2A2A2E;
+  --red-soft:    #2A1417;
+  --orange-soft: #2A1A0A;
+  --yellow-soft: #2A210F;
+  --green-soft:  #0F2620;
+  --blue-soft:   #112430;
+  --purple-soft: #1F1228;
+}
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg:       #0E0E10;
     --surface:  #18181B;
     --ink:      #F5F5F5;
@@ -364,8 +383,14 @@ body {
   transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
   pointer-events: none;
 }
+:root[data-theme="dark"] .card::before {
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(255,255,255,0.07) 50%,
+    transparent 100%);
+}
 @media (prefers-color-scheme: dark) {
-  .card::before {
+  :root:not([data-theme="light"]) .card::before {
     background: linear-gradient(120deg,
       transparent 0%,
       rgba(255,255,255,0.07) 50%,
@@ -2047,16 +2072,28 @@ html.locked .lock-screen { display: flex; }
   box-shadow: 0 -20px 50px -20px rgba(0,0,0,0.25);
 }
 
-/* Settings modal (auth.js) is positioned via fixed positioning + flexbox centering
-   because it sits as a sibling to #modalBackdrop (not nested). */
+/* Settings modal (auth.js) — mobile-first bottom sheet pattern.
+   It sits as a SIBLING to #modalBackdrop (not nested), so it's positioned
+   independently as a fixed bottom sheet on mobile, centered on desktop. */
 #settingsModal {
   position: fixed;
-  left: 50%;
-  top: auto;
+  left: 0;
+  right: 0;
   bottom: 0;
-  transform: translateX(-50%);
+  top: auto;
+  transform: none;
+  width: 100%;
+  max-width: 100%;
   z-index: 9001;
   display: none;
+  box-sizing: border-box;
+  border-radius: 24px 24px 0 0;
+  padding: 20px 16px;
+  padding-bottom: max(20px, env(safe-area-inset-bottom));
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 #settingsModal.show {
   display: block;
@@ -2064,11 +2101,17 @@ html.locked .lock-screen { display: flex; }
 }
 @media (min-width: 768px) {
   #settingsModal {
+    left: 50%;
+    right: auto;
     bottom: auto;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 24px;
-    max-width: 600px;
+    width: calc(100% - 40px);
+    max-width: 560px;
+    max-height: 88vh;
+    padding: 24px 28px;
+    padding-bottom: 24px;
   }
   #settingsModal.show {
     animation: fadeIn 0.2s ease;
@@ -3277,4 +3320,330 @@ html.locked .lock-screen { display: flex; }
     transform: none;
     opacity: 1;
   }
+}
+
+/* ============================================================================
+   SETTINGS MODAL — New design with theme picker, info, mobile-friendly logout
+   ============================================================================ */
+.settings-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.settings-section {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.settings-section:first-child {
+  border-top: none;
+  padding-top: 4px;
+}
+
+.settings-h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.sh4-icon { font-size: 16px; }
+
+.settings-desc {
+  font-size: 13px;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-family: 'Noto Serif Thai', serif;
+}
+
+/* Theme picker — 3 cards in a row */
+.theme-picker {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+.theme-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.18s ease;
+  min-height: 78px;
+  font-family: 'Noto Serif Thai', serif;
+  min-width: 0;
+  overflow: hidden;
+}
+.theme-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+.theme-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.theme-btn:active { transform: scale(0.97); }
+.theme-btn.active {
+  background: var(--purple-soft);
+  border-color: var(--purple);
+  border-width: 2px;
+  box-shadow: 0 2px 8px rgba(123, 44, 191, 0.15);
+}
+.theme-btn.active .theme-label {
+  font-weight: 700;
+  color: var(--purple);
+}
+
+/* Info list (about section) */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+}
+.info-row, .info-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  text-decoration: none;
+  gap: 12px;
+  min-width: 0;
+}
+.info-row + .info-row, .info-row + .info-link, .info-link + .info-row, .info-link + .info-link {
+  border-top: 1px solid var(--border);
+}
+.info-link {
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s;
+}
+.info-link:active { background: var(--bg); }
+.info-label {
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.info-value {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: right;
+  word-break: break-word;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Text action button (e.g., clear local data) */
+.btn-text-action {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.15s;
+  font-family: 'Noto Serif Thai', serif;
+  min-height: 48px;
+}
+.btn-text-action:active {
+  background: var(--bg);
+  transform: scale(0.99);
+}
+.btn-text-arrow {
+  color: var(--ink-mute);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Privacy section */
+.settings-privacy {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: none;
+  margin: 8px 0;
+}
+.settings-privacy + .settings-section {
+  border-top: 1px solid var(--border);
+}
+
+/* Logout — big, mobile-friendly */
+.settings-logout-section {
+  padding-top: 20px;
+  padding-bottom: 8px;
+  border-top: 1px solid var(--border);
+}
+.btn-logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #E63946 0%, #b8202d 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Noto Serif Thai', serif;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.3);
+  min-height: 56px;
+}
+.btn-logout svg { width: 20px; height: 20px; flex-shrink: 0; }
+.btn-logout:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.25);
+}
+.btn-logout:disabled, .btn-logout.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.logout-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-mute);
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: 'Noto Serif Thai', serif;
+}
+
+/* Override modal-section old styles inside settings */
+#settingsModal .modal-section {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+#settingsModal .modal-section:first-of-type {
+  border-top: none;
+}
+
+/* Global content protection inside settings modal — prevent any overflow */
+#settingsModal,
+#settingsModal * {
+  box-sizing: border-box;
+}
+#settingsModal .modal-head h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  word-break: break-word;
+}
+#settingsModal .modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+#settingsModal .modal-close {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+  padding: 0;
+  color: var(--ink);
+}
+#settingsModal .modal-close svg {
+  width: 16px;
+  height: 16px;
+}
+#settingsModal .account-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+#settingsModal .account-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+#settingsModal .account-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+#settingsModal .account-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  word-break: break-word;
+}
+#settingsModal .account-email {
+  font-size: 12px;
+  color: var(--ink-mute);
+  font-family: 'IBM Plex Mono', monospace;
+  word-break: break-all;
+}
+#settingsModal .status-pill {
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* iPad / desktop tweaks */
+@media (min-width: 768px) {
+  .theme-picker {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .theme-btn {
+    min-height: 100px;
+  }
+  .theme-icon { font-size: 32px; }
+  .btn-logout { font-size: 16px; }
 }
