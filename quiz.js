@@ -166,6 +166,7 @@
         title: '',
         description: '',
         timer: 20,
+        revealMode: 'after_question',
         questions: [],
         created_at: new Date().toISOString(),
       };
@@ -175,6 +176,11 @@
     $('quizTitleInput').value = state.currentQuiz.title || '';
     $('quizDescInput').value = state.currentQuiz.description || '';
     $('quizTimerInput').value = state.currentQuiz.timer || 20;
+    const mode = state.currentQuiz.revealMode || 'after_question';
+    $('quizRevealMode').value = mode;
+    document.querySelectorAll('#revealModeGrid .reveal-mode-btn').forEach(b => {
+      b.classList.toggle('selected', b.dataset.mode === mode);
+    });
     renderQuestionsList();
     showMode('editor');
   }
@@ -412,6 +418,7 @@
     state.currentQuiz.title = title;
     state.currentQuiz.description = desc;
     state.currentQuiz.timer = Math.max(5, Math.min(120, timer));
+    state.currentQuiz.revealMode = $('quizRevealMode').value || 'after_question';
     state.currentQuiz.updated_at = new Date().toISOString();
 
     const existingIdx = state.quizzes.findIndex(q => q.id === state.currentQuiz.id);
@@ -509,7 +516,15 @@
 
     // Reset state
     $('playExplain').style.display = 'none';
-    $('btnReveal').style.display = '';
+    const mode = state.currentQuiz.revealMode || 'after_question';
+    if (mode === 'after_question') {
+      $('btnReveal').style.display = '';
+      $('btnReveal').textContent = 'เฉลย';
+    } else {
+      // Modes 'after_all' / 'never' — no per-question reveal, just "next" after timer
+      $('btnReveal').style.display = '';
+      $('btnReveal').textContent = 'ข้ามไปเลย';
+    }
     $('btnNext').style.display = 'none';
 
     // Start timer
@@ -538,15 +553,23 @@
     if (state.timer) { clearInterval(state.timer); state.timer = null; }
     $('timerBar').style.transition = 'none';
     const q = state.currentQuiz.questions[state.currentQuestionIdx];
-    const optsEl = $('playOptions');
-    optsEl.querySelectorAll('.play-opt').forEach(el => {
-      const idx = parseInt(el.dataset.idx);
-      if (idx === q.correct) el.classList.add('correct');
-      else el.classList.add('dim');
-    });
-    if (q.explain) {
-      $('playExplain').textContent = '💡 ' + q.explain;
-      $('playExplain').style.display = '';
+    const mode = state.currentQuiz.revealMode || 'after_question';
+
+    if (mode === 'after_question') {
+      // Show correct answer
+      const optsEl = $('playOptions');
+      optsEl.querySelectorAll('.play-opt').forEach(el => {
+        const idx = parseInt(el.dataset.idx);
+        if (idx === q.correct) el.classList.add('correct');
+        else el.classList.add('dim');
+      });
+      if (q.explain) {
+        $('playExplain').textContent = '💡 ' + q.explain;
+        $('playExplain').style.display = '';
+      }
+    } else {
+      // Modes 'after_all' / 'never' — skip reveal, just enable next button
+      // (still show "next" button so user can move forward)
     }
     $('btnReveal').style.display = 'none';
     $('btnNext').style.display = '';
@@ -567,7 +590,38 @@
     $('playLobby').style.display = 'none';
     $('playQuestion').style.display = 'none';
     $('playEnd').style.display = '';
-    $('endDesc').textContent = `จบ ${state.currentQuiz.questions.length} ข้อ — Good job ทุกคน!`;
+
+    const mode = state.currentQuiz.revealMode || 'after_question';
+    const endDescEl = $('endDesc');
+
+    if (mode === 'after_all') {
+      // Show review of all questions with correct answers
+      let html = `<p style="margin-bottom:16px;">เฉลย ${state.currentQuiz.questions.length} ข้อ:</p>`;
+      html += '<div class="end-review">';
+      state.currentQuiz.questions.forEach((q, idx) => {
+        const correctOpt = q.options[q.correct] || '';
+        html += `
+          <div class="end-review-item">
+            <div class="er-num">${idx + 1}</div>
+            <div class="er-body">
+              <div class="er-q">${escapeHtmlPlay(q.text)}</div>
+              <div class="er-correct">✓ ${escapeHtmlPlay(correctOpt)}</div>
+              ${q.explain ? `<div class="er-explain">💡 ${escapeHtmlPlay(q.explain)}</div>` : ''}
+            </div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      endDescEl.innerHTML = html;
+    } else {
+      endDescEl.textContent = `จบ ${state.currentQuiz.questions.length} ข้อ — Good job ทุกคน!`;
+    }
+  }
+
+  // Helper for end screen (escapeHtml exists earlier in file)
+  function escapeHtmlPlay(s) {
+    if (s == null) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
   function exitPlay() {
@@ -658,6 +712,15 @@
       opts.push('');
       const correct = parseInt($('optionsList').dataset.correct) || 0;
       renderOptionsList(opts, correct);
+    });
+
+    // Reveal mode picker
+    document.querySelectorAll('#revealModeGrid .reveal-mode-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('#revealModeGrid .reveal-mode-btn').forEach(x => x.classList.remove('selected'));
+        b.classList.add('selected');
+        $('quizRevealMode').value = b.dataset.mode;
+      });
     });
 
     $('qFormImage').addEventListener('change', handleImageSelect);

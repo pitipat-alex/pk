@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501o">
+  <link rel="stylesheet" href="style.css?v=20260501p">
 </head>
 <body>
 
@@ -155,6 +155,28 @@
           <label class="form-label">รวมข้อ</label>
           <div class="form-static" id="questionCountDisplay">0 ข้อ</div>
         </div>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">เฉลยตอนไหน?</label>
+        <div class="reveal-mode-grid" id="revealModeGrid">
+          <button class="reveal-mode-btn" type="button" data-mode="after_question">
+            <span class="rmb-icon">⚡</span>
+            <span class="rmb-title">หลังจบแต่ละข้อ</span>
+            <span class="rmb-desc">เฉลยทันที (Kahoot สไตล์)</span>
+          </button>
+          <button class="reveal-mode-btn" type="button" data-mode="after_all">
+            <span class="rmb-icon">📋</span>
+            <span class="rmb-title">หลังจบเกม</span>
+            <span class="rmb-desc">รวมทุกข้อตอนจบ + ดูคำตอบเดิม</span>
+          </button>
+          <button class="reveal-mode-btn" type="button" data-mode="never">
+            <span class="rmb-icon">🤐</span>
+            <span class="rmb-title">ไม่เฉลย</span>
+            <span class="rmb-desc">อาจารย์เฉลยเอง / เล่นซ้ำ</span>
+          </button>
+        </div>
+        <input type="hidden" id="quizRevealMode" value="after_question">
       </div>
     </section>
 
@@ -323,6 +345,6 @@
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="quiz.js?v=20260501o"></script>
+  <script src="quiz.js?v=20260501p"></script>
 </body>
 </html>

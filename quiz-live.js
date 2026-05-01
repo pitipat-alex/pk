@@ -234,21 +234,22 @@
     $('hostLobbyPlayers').innerHTML = '<div class="lobby-waiting">รอผู้เล่น...</div>';
     $('hostLobbyStart').disabled = true;
 
-    // Generate QR with join URL
+    // Generate QR with join URL (use qrserver.com API — no library needed, bulletproof)
     const joinUrl = `${location.origin}${location.pathname}?join=${state.session.pin}`;
     const qrEl = $('hostLobbyQR');
-    qrEl.innerHTML = '';
-    if (window.QRCode) {
-      try {
-        new QRCode(qrEl, {
-          text: joinUrl,
-          width: 220,
-          height: 220,
-          colorDark: '#ffffff',
-          colorLight: 'transparent',
-          correctLevel: QRCode.CorrectLevel.H,
-        });
-      } catch (e) { console.error('QR error:', e); }
+    const encodedUrl = encodeURIComponent(joinUrl);
+    qrEl.innerHTML = `
+      <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodedUrl}&bgcolor=ffffff&color=1a1a2e&qzone=2&margin=10"
+           alt="QR Code" width="240" height="240"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <div class="qr-fallback" style="display:none;">QR ไม่โหลด — ใช้ PIN</div>
+    `;
+
+    // Show short URL hint for manual entry
+    const urlHintEl = document.getElementById('hostLobbyUrlHint');
+    if (urlHintEl) {
+      const shortUrl = `${location.host}${location.pathname.replace(/\/[^/]*$/, '')}/quiz-live.html`;
+      urlHintEl.textContent = shortUrl;
     }
 
     showScreen('screenHostLobby');
@@ -367,6 +368,8 @@
     $('gameExplain').style.display = 'none';
     $('gameLeaderboard').style.display = 'none';
     $('btnHostReveal').style.display = '';
+    const mode = (state.quiz && state.quiz.revealMode) || 'after_question';
+    $('btnHostReveal').textContent = mode === 'after_question' ? 'เฉลย' : 'ข้ามไปเลย';
     $('btnHostNext').style.display = 'none';
 
     // Start timer
@@ -423,24 +426,30 @@
       .update({ state: 'reveal' })
       .eq('id', state.session.id);
 
+    const mode = (state.quiz && state.quiz.revealMode) || 'after_question';
     const q = state.quiz.questions[state.session.current_q];
-    const opts = $('gameOptions').querySelectorAll('.game-opt');
-    opts.forEach(el => {
-      const idx = parseInt(el.dataset.idx);
-      if (idx === q.correct) el.classList.add('correct');
-      else el.classList.add('dim');
-    });
 
-    if (q.explain) {
-      $('gameExplain').textContent = '💡 ' + q.explain;
-      $('gameExplain').style.display = '';
+    if (mode === 'after_question') {
+      // Show correct answer + explanation
+      const opts = $('gameOptions').querySelectorAll('.game-opt');
+      opts.forEach(el => {
+        const idx = parseInt(el.dataset.idx);
+        if (idx === q.correct) el.classList.add('correct');
+        else el.classList.add('dim');
+      });
+      if (q.explain) {
+        $('gameExplain').textContent = '💡 ' + q.explain;
+        $('gameExplain').style.display = '';
+      }
+      // Show mini leaderboard
+      await refreshPlayerScores();
+      renderMiniLeaderboard();
     }
+    // For modes 'after_all' / 'never' — no answer reveal, just transition
+    // (state is still 'reveal' in DB so players know to wait for next)
+
     $('btnHostReveal').style.display = 'none';
     $('btnHostNext').style.display = '';
-
-    // Show mini leaderboard
-    await refreshPlayerScores();
-    renderMiniLeaderboard();
   }
 
   async function refreshPlayerScores() {
@@ -521,7 +530,40 @@
       </div>
     `).join('');
 
+    // Render review section for after_all mode
+    renderEndReview();
+
     showScreen('screenEnd');
+  }
+
+  function renderEndReview() {
+    const reviewEl = document.getElementById('endReview');
+    if (!reviewEl) return;
+    const mode = (state.quiz && state.quiz.revealMode) || 'after_question';
+    if (mode !== 'after_all' || !state.quiz || !state.quiz.questions) {
+      reviewEl.style.display = 'none';
+      reviewEl.innerHTML = '';
+      return;
+    }
+
+    let html = '<div class="er-title">📋 เฉลยทุกข้อ</div>';
+    html += '<div class="end-review">';
+    state.quiz.questions.forEach((q, idx) => {
+      const correctOpt = q.options[q.correct] || '';
+      html += `
+        <div class="end-review-item">
+          <div class="er-num">${idx + 1}</div>
+          <div class="er-body">
+            <div class="er-q">${escapeHtml(q.text)}</div>
+            <div class="er-correct">✓ ${escapeHtml(correctOpt)}</div>
+            ${q.explain ? `<div class="er-explain">💡 ${escapeHtml(q.explain)}</div>` : ''}
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+    reviewEl.innerHTML = html;
+    reviewEl.style.display = '';
   }
 
   function exitGame() {
@@ -811,6 +853,8 @@
   }
 
   async function showPlayerResult() {
+    const mode = (state.quiz && state.quiz.revealMode) || 'after_question';
+
     // Refresh own answer
     const { data } = await state.sb
       .from('quiz_answers')
@@ -823,23 +867,40 @@
     const myAnswer = data && data[0];
 
     $('playerResult').style.display = '';
-    if (!myAnswer) {
-      $('prEmoji').textContent = '😅';
-      $('prText').textContent = 'ตอบไม่ทัน!';
-      $('prPoints').textContent = '+0';
-    } else if (myAnswer.is_correct) {
-      $('prEmoji').textContent = '🎉';
-      $('prText').textContent = 'ถูกต้อง!';
-      $('prPoints').textContent = '+' + myAnswer.points + ' คะแนน';
-      $('prPoints').className = 'pr-points pos';
+
+    if (mode === 'after_question') {
+      // Show correct/wrong + points (Kahoot style)
+      if (!myAnswer) {
+        $('prEmoji').textContent = '😅';
+        $('prText').textContent = 'ตอบไม่ทัน!';
+        $('prPoints').textContent = '+0';
+        $('prPoints').className = 'pr-points';
+      } else if (myAnswer.is_correct) {
+        $('prEmoji').textContent = '🎉';
+        $('prText').textContent = 'ถูกต้อง!';
+        $('prPoints').textContent = '+' + myAnswer.points + ' คะแนน';
+        $('prPoints').className = 'pr-points pos';
+      } else {
+        $('prEmoji').textContent = '❌';
+        $('prText').textContent = 'ผิด';
+        $('prPoints').textContent = '+0';
+        $('prPoints').className = 'pr-points';
+      }
     } else {
-      $('prEmoji').textContent = '❌';
-      $('prText').textContent = 'ผิด';
-      $('prPoints').textContent = '+0';
+      // Modes 'after_all' / 'never' — don't show result, just confirm submission
+      if (!myAnswer) {
+        $('prEmoji').textContent = '⏰';
+        $('prText').textContent = 'ตอบไม่ทัน';
+        $('prPoints').textContent = '';
+      } else {
+        $('prEmoji').textContent = '✓';
+        $('prText').textContent = 'ส่งคำตอบแล้ว';
+        $('prPoints').textContent = mode === 'after_all' ? 'รอเฉลยตอนจบเกม...' : '';
+      }
       $('prPoints').className = 'pr-points';
     }
 
-    // Refresh score
+    // Refresh score (always — but score updates may be hidden in mode 'never')
     const { data: pData } = await state.sb
       .from('quiz_players')
       .select('score')
@@ -847,6 +908,7 @@
       .limit(1);
     if (pData && pData[0]) {
       state.player.score = pData[0].score;
+      // Hide score in 'never' mode? No — Kahoot shows score buildup. Keep visible.
       $('gphScoreNum').textContent = state.player.score;
     }
 
@@ -897,6 +959,9 @@
         </div>
       `;
     }).join('');
+
+    // Render review for after_all mode
+    renderEndReview();
 
     showScreen('screenEnd');
   }
