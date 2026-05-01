@@ -2020,8 +2020,11 @@ html.locked .lock-screen { display: flex; }
 }
 
 /* Reset OLD .modal hidden state (visibility:hidden, transform:translateY(100%), position:fixed bottom:0)
-   when modal is inside our shared-page backdrops */
-#modalBackdrop .modal, #pinBackdrop .modal, #shopModalBackdrop .modal {
+   when modal is inside our shared-page backdrops.
+   Also include #settingsModal directly because auth.js places it as a SIBLING of #modalBackdrop
+   (NOT inside it), so the descendant selector wouldn't match it. */
+#modalBackdrop .modal, #pinBackdrop .modal, #shopModalBackdrop .modal,
+#settingsModal {
   position: relative;
   left: auto;
   right: auto;
@@ -2042,6 +2045,34 @@ html.locked .lock-screen { display: flex; }
   -webkit-overflow-scrolling: touch;
   animation: slideUp 0.28s cubic-bezier(.2,.7,.2,1) both;
   box-shadow: 0 -20px 50px -20px rgba(0,0,0,0.25);
+}
+
+/* Settings modal (auth.js) is positioned via fixed positioning + flexbox centering
+   because it sits as a sibling to #modalBackdrop (not nested). */
+#settingsModal {
+  position: fixed;
+  left: 50%;
+  top: auto;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 9001;
+  display: none;
+}
+#settingsModal.show {
+  display: block;
+  animation: slideUp 0.28s cubic-bezier(.2,.7,.2,1) both;
+}
+@media (min-width: 768px) {
+  #settingsModal {
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 24px;
+    max-width: 600px;
+  }
+  #settingsModal.show {
+    animation: fadeIn 0.2s ease;
+  }
 }
 @keyframes slideUp {
   from { transform: translateY(60px); opacity: 0; }
