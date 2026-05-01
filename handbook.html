@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501s">
+  <link rel="stylesheet" href="style.css?v=20260501t">
 
   <!-- Supabase JS v2 — pinned + dual CDN with fallback -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
@@ -89,7 +89,7 @@
 
     <div class="section-label">
       <span class="lbl">เลือกเล่ม</span>
-      <span class="count">3 / 6 เล่ม</span>
+      <span class="count">4 / 6 เล่ม</span>
     </div>
 
     <!-- BOOK GRID ------------------------------------------------- -->
@@ -168,17 +168,19 @@
         </span>
       </a>
 
-      <!-- Emergency - coming soon -->
-      <a class="card c5 coming-soon" href="#" aria-label="Emergency">
+      <!-- Anesthesia - active (NEW!) -->
+      <a class="card c5" href="anesthesia.html" aria-label="Anesthesia">
         <span class="card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 12l10 10 10-10L12 2z"/>
-            <path d="M12 8v4M12 16h.01"/>
+            <path d="M12 2v6"/>
+            <path d="M9 5h6"/>
+            <rect x="6" y="8" width="12" height="13" rx="2"/>
+            <circle cx="12" cy="14" r="2"/>
           </svg>
         </span>
         <span class="card-body">
-          <span class="card-title">Emergency</span>
-          <span class="card-desc">เวชศาสตร์ฉุกเฉิน &amp; ICU</span>
+          <span class="card-title">Anesthesia</span>
+          <span class="card-desc">วิสัญญี &amp; ปวด — Jeff C. Ko, 3rd Ed.</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -216,6 +218,6 @@
 
   </div>
 
-  <script src="auth.js?v=20260501s"></script>
+  <script src="auth.js?v=20260501t"></script>
 </body>
 </html>
