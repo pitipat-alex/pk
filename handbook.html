@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501r">
+  <link rel="stylesheet" href="style.css?v=20260501s">
 
   <!-- Supabase JS v2 — pinned + dual CDN with fallback -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
@@ -89,7 +89,7 @@
 
     <div class="section-label">
       <span class="lbl">เลือกเล่ม</span>
-      <span class="count">2 / 5 เล่ม</span>
+      <span class="count">3 / 6 เล่ม</span>
     </div>
 
     <!-- BOOK GRID ------------------------------------------------- -->
@@ -123,6 +123,24 @@
         <span class="card-body">
           <span class="card-title">Surgery</span>
           <span class="card-desc">ศัลยกรรม — Tobias &amp; Johnston, 2nd Ed.</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
+      <!-- Procedures - active (NEW!) -->
+      <a class="card c3" href="procedures.html" aria-label="Procedures">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4"/>
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M3 10h18"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">Procedures</span>
+          <span class="card-desc">เวชปฏิบัติในคลินิก — BSAVA, 3rd Ed.</span>
         </span>
         <span class="card-arrow" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -198,6 +216,6 @@
 
   </div>
 
-  <script src="auth.js?v=20260501r"></script>
+  <script src="auth.js?v=20260501s"></script>
 </body>
 </html>

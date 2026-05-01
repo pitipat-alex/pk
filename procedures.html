@@ -19,7 +19,7 @@
       } catch (e) {}
     })();
   </script>
-  <title>Surgery · Handbook</title>
+  <title>Procedures · Handbook</title>
 
   <script>
     let lastTap = 0;
@@ -82,45 +82,38 @@
     </header>
 
     <!-- PAGE HERO ------------------------------------------------- -->
-    <section class="page-hero" style="--page-accent: var(--orange);">
-      <p class="page-eyebrow">HANDBOOK · SURGERY</p>
-      <h1 class="page-title"><span class="rainbow">ศัลยกรรมสัตว์เล็ก</span></h1>
-      <p class="page-subtitle">Veterinary Surgery: Small Animal · Tobias &amp; Johnston, 2<sup>nd</sup> Edition</p>
+    <section class="page-hero" style="--page-accent: var(--yellow);">
+      <p class="page-eyebrow">HANDBOOK · PROCEDURES</p>
+      <h1 class="page-title" style="color: var(--yellow);">เวชปฏิบัติในคลินิก</h1>
+      <p class="page-subtitle">BSAVA Guide to Procedures in Small Animal Practice · Bexfield &amp; Riggs, 3<sup>rd</sup> Edition (2024)</p>
       <p class="page-meta" id="entryStats">— หัตถการ</p>
     </section>
-
-    <!-- DOWNLOAD ALL --------------------------------------------- -->
-    <div class="download-all-wrap">
-      <button id="downloadAllBtn" class="download-all-btn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="7 10 12 15 17 10"/>
-          <line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        <span>ดาวน์โหลดทั้งหมด (ZIP)</span>
-      </button>
-      <span class="download-all-hint" id="downloadHint"></span>
-    </div>
 
     <!-- SEARCH ---------------------------------------------------- -->
     <div class="search-bar">
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
       </svg>
-      <input type="search" id="searchInput" placeholder="ค้นหาหัตถการ (เช่น OHE, splenectomy, FHO)" autocomplete="off" />
+      <input type="search" id="searchInput" placeholder="ค้นหาหัตถการ (เช่น CRT, IV, intubation, POCUS)" autocomplete="off" />
     </div>
 
     <!-- FILTER CHIPS ---------------------------------------------- -->
     <div class="filter-chips" id="filterChips">
       <button class="chip active" data-system="all">ทั้งหมด</button>
-      <button class="chip" data-system="principles">หลักการ</button>
-      <button class="chip" data-system="soft-tissue">เนื้อเยื่ออ่อน</button>
-      <button class="chip" data-system="urogenital">ทางเดินปัสสาวะ-สืบพันธุ์</button>
-      <button class="chip" data-system="orthopedic">กระดูก-ข้อ</button>
-      <button class="chip" data-system="neurosurgery">ประสาท</button>
-      <button class="chip" data-system="oncologic">มะเร็ง (ผ่าตัด)</button>
-      <button class="chip" data-system="head-neck">ศีรษะ-คอ</button>
-      <button class="chip" data-system="reconstructive">ตกแต่ง</button>
+      <button class="chip" data-system="cardiovascular">หัวใจ</button>
+      <button class="chip" data-system="respiratory">ทางเดินหายใจ</button>
+      <button class="chip" data-system="digestive">ทางเดินอาหาร</button>
+      <button class="chip" data-system="hepatobiliary">ตับ-ตับอ่อน</button>
+      <button class="chip" data-system="urinary">ทางเดินปัสสาวะ</button>
+      <button class="chip" data-system="endocrine">ต่อมไร้ท่อ</button>
+      <button class="chip" data-system="metabolic">เมตาบอลิก</button>
+      <button class="chip" data-system="reproductive">สืบพันธุ์</button>
+      <button class="chip" data-system="nervous">ประสาท</button>
+      <button class="chip" data-system="joint">ข้อ</button>
+      <button class="chip" data-system="immune">ภูมิคุ้มกัน</button>
+      <button class="chip" data-system="oncology">มะเร็ง</button>
+      <button class="chip" data-system="hematology">โลหิต</button>
+      <button class="chip" data-system="infectious">โรคติดเชื้อ</button>
     </div>
 
     <!-- ENTRY LIST ------------------------------------------------ -->
@@ -130,7 +123,7 @@
 
     <!-- EMPTY STATE ----------------------------------------------- -->
     <div id="emptyState" class="empty-state" hidden>
-      <span class="emoji">🔧</span>
+      <span class="emoji">📚</span>
       <h4>ยังไม่มีข้อมูลในหมวดนี้</h4>
       <p>กำลังทยอยเพิ่มเนื้อหาเรื่อยๆ ลองเลือกหมวดอื่น หรือพิมพ์คำค้นหาใหม่</p>
     </div>
@@ -157,7 +150,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
         <span>กลับ</span>
       </button>
-      <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;" id="detailBreadcrumb">SURGERY</span>
+      <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;" id="detailBreadcrumb">MEDICINE</span>
       <span style="width:80px"></span>
     </header>
     <div class="detail-content" id="detailContent">
@@ -166,23 +159,28 @@
   </div>
 
   <script src="auth.js?v=20260501s"></script>
-  <script src="surgery-data.js"></script>
+  <script src="procedures-data.js"></script>
   <script>
     // ============================================================
-    // Surgery handbook UI logic
-    // Data lives in surgery-data.js (window.SURGERY_ENTRIES)
+    // Procedures handbook UI logic
+    // Data lives in procedures-data.js (window.PROCEDURES_DATA)
     // ============================================================
-    const ENTRIES = window.SURGERY_ENTRIES || [];
+    const ENTRIES = window.PROCEDURES_DATA || [];
 
     const SYSTEM_LABEL_TH = {
-      'principles':       'หลักการ',
-      'soft-tissue':      'เนื้อเยื่ออ่อน',
-      'urogenital':       'ทางเดินปัสสาวะ-สืบพันธุ์',
-      'orthopedic':       'กระดูก-ข้อ',
-      'neurosurgery':     'ประสาท',
-      'oncologic':        'มะเร็ง (ผ่าตัด)',
-      'head-neck':        'ศีรษะ-คอ',
-      'reconstructive':   'ตกแต่ง',
+      examination:    '🩺 ตรวจร่างกาย',
+      vascular:       '💉 การเข้าหลอดเลือด',
+      respiratory:    '🫁 ทางเดินหายใจ',
+      urinary:        '🚽 ทางเดินปัสสาวะ',
+      gi:             '🍽️ ทางเดินอาหาร',
+      skin:           '🩹 ผิวหนัง / แผล',
+      cardiovascular: '❤️ หัวใจ',
+      emergency:      '🚨 ฉุกเฉิน',
+      lab:            '🔬 ห้องปฏิบัติการ',
+      imaging:        '📷 ภาพถ่าย',
+      anesthesia:     '💊 วิสัญญี',
+      neurology:      '🧠 ประสาท',
+      dental:         '🦷 ทันตกรรม',
     };
 
     const $list  = document.getElementById('entryList');
@@ -199,8 +197,7 @@
     let searchQuery  = '';
 
     function updateStats() {
-      const n = ENTRIES.length;
-      $stats.textContent = `${n} หัตถการ`;
+      $stats.textContent = `${ENTRIES.length} หัตถการ`;
     }
 
     function matchesEntry(entry) {
@@ -226,7 +223,7 @@
       matches.forEach(entry => {
         const item = document.createElement('a');
         item.href = '#' + entry.id;
-        item.className = 'entry-item color-' + entry.system;
+        item.className = 'entry-item color-' + (entry.type === 'procedure' ? 'procedure' : entry.system);
         item.dataset.entryId = entry.id;
         item.innerHTML = `
           <span class="entry-dot"></span>
@@ -236,6 +233,7 @@
             <div class="entry-tags">
               <span class="entry-tag">${SYSTEM_LABEL_TH[entry.system] || entry.system}</span>
               ${(entry.species || []).map(s => `<span class="entry-tag">${s}</span>`).join('')}
+              ${entry.type === 'procedure' ? '<span class="entry-tag" style="background: var(--ink); color: var(--surface);">หัตถการ</span>' : ''}
             </div>
           </span>
           <span class="entry-arrow">
@@ -250,25 +248,38 @@
       });
     }
 
-    function surgerySections(s) {
-      // 8-section template for surgery procedures
+    function diseaseSections(s) {
+      // 8-section template for diseases
       return [
-        { title: 'Indications',                          body: s.indications },
-        { title: 'Contraindications',                    body: s.contraindications },
-        { title: 'Pre-operative Considerations',         body: s.preOp },
-        { title: 'Surgical Technique',                   body: s.technique },
-        { title: 'Peri-operative Drugs',                 body: s.drugs },
-        { title: 'Post-operative Care',                  body: s.postOp },
-        { title: 'Complications',                        body: s.complications },
-        { title: 'Outcome / Prognosis',                  body: s.outcome },
+        { title: 'Definition / Epidemiology',           body: s.definition },
+        { title: 'Etiology / Risk Factors',             body: s.etiology },
+        { title: 'Pathophysiology',                      body: s.pathophysiology },
+        { title: 'Symptoms / Signs',                     body: s.symptoms },
+        { title: 'Diagnosis / Investigation',            body: s.diagnosis },
+        { title: 'Differential Diagnosis',               body: s.differential },
+        { title: 'Treatment / Management',               body: s.treatment },
+        { title: 'Complications / Prognosis',            body: s.complications },
+      ];
+    }
+    function procedureSections(s) {
+      // 6-section template for procedures
+      return [
+        { title: 'ข้อบ่งชี้ · Indications',              body: s.indications },
+        { title: 'ข้อห้าม · Contraindications',          body: s.contraindications },
+        { title: 'การเตรียม · Preparation',              body: s.preparation },
+        { title: 'ขั้นตอน · Steps',                       body: s.steps },
+        { title: 'ภาวะแทรกซ้อน · Complications',         body: s.complications },
+        { title: 'การดูแลหลังหัตถการ · Post-procedural Care', body: s.postCare },
       ];
     }
 
     function openDetail(entry) {
-      const sections = surgerySections(entry.sections || {});
+      const sections = entry.type === 'procedure'
+        ? procedureSections(entry.sections || {})
+        : diseaseSections(entry.sections || {});
       const sysLabel = SYSTEM_LABEL_TH[entry.system] || entry.system;
       $detailBC.textContent = sysLabel.toUpperCase();
-      $detailContent.className = 'detail-content color-' + entry.system;
+      $detailContent.className = 'detail-content color-' + (entry.type === 'procedure' ? 'procedure' : entry.system);
 
       const sectionHTML = sections.map(s => {
         if (!s.body) return '';
@@ -340,8 +351,10 @@
     const $dlBtn  = document.getElementById('downloadAllBtn');
     const $dlHint = document.getElementById('downloadHint');
 
+    // Convert simple HTML (used in entries) to clean Markdown
     function htmlToMarkdown(html) {
       if (!html) return '';
+      // Use a temp DOM node to walk the tree
       const tmp = document.createElement('div');
       tmp.innerHTML = html;
 
@@ -350,6 +363,7 @@
         let out = '';
         node.childNodes.forEach(child => {
           if (child.nodeType === 3) {
+            // Text node — collapse whitespace
             out += child.textContent.replace(/\s+/g, ' ');
             return;
           }
@@ -370,6 +384,7 @@
           } else if (tag === 'ol') {
             out += '\n' + listToMd(child, '1.', depth) + '\n';
           } else if (tag === 'div') {
+            // Callout boxes
             if (child.classList && child.classList.contains('callout')) {
               const txt = inner.trim().replace(/\n+/g, '\n> ');
               out += '\n> ' + txt + '\n\n';
@@ -392,6 +407,7 @@
         let out = '';
         Array.from(listNode.children).forEach(li => {
           if (li.tagName.toLowerCase() !== 'li') return;
+          // Find any nested lists, and walk the rest as inline content
           let inline = '';
           let nested = '';
           li.childNodes.forEach(n => {
@@ -408,12 +424,16 @@
       }
 
       let md = walk(tmp);
+      // Cleanup: collapse 3+ newlines to 2, trim
       md = md.replace(/\n{3,}/g, '\n\n').trim();
       return md;
     }
 
+    // Convert one entry to a full Markdown document
     function entryToMarkdown(entry) {
-      const sections = surgerySections(entry.sections || {});
+      const sections = entry.type === 'procedure'
+        ? procedureSections(entry.sections || {})
+        : diseaseSections(entry.sections || {});
       const sysLabel = SYSTEM_LABEL_TH[entry.system] || entry.system;
 
       let md = '';
@@ -421,8 +441,9 @@
       if (entry.titleTh) md += `**${entry.titleTh}**\n\n`;
       md += `---\n\n`;
 
+      // Metadata block
       md += `- **System:** ${sysLabel} (${entry.system})\n`;
-      md += `- **Type:** Surgery / หัตถการ\n`;
+      md += `- **Type:** ${entry.type === 'procedure' ? 'Procedure / หัตถการ' : 'Disease / โรค'}\n`;
       md += `- **Species:** ${(entry.species || []).join(', ')}\n`;
       if (entry.tags && entry.tags.length) {
         md += `- **Tags:** ${entry.tags.join(', ')}\n`;
@@ -439,7 +460,7 @@
         md += htmlToMarkdown(s.body) + '\n\n';
       });
 
-      md += `---\n\n*Personal clinical reference — Tobias &amp; Johnston Veterinary Surgery: Small Animal, 2nd Edition*\n`;
+      md += `---\n\n*Personal clinical reference — Nelson &amp; Couto Small Animal Internal Medicine, 6th Edition*\n`;
       return md;
     }
 
@@ -454,13 +475,17 @@
       });
 
       let md = '';
-      md += `# Surgery Handbook\n\n`;
-      md += `**Veterinary Surgery: Small Animal** — Tobias &amp; Johnston, 2nd Edition\n\n`;
+      md += `# Medicine Handbook\n\n`;
+      md += `**Small Animal Internal Medicine** — Nelson &amp; Couto, 6th Edition\n\n`;
       md += `Personal clinical reference compiled by Alex.\n\n`;
       md += `Exported: ${dateStr}\n\n`;
       md += `---\n\n`;
       md += `## Summary\n\n`;
-      md += `- Total procedures: **${entries.length}**\n\n`;
+      const dz = entries.filter(e => e.type !== 'procedure').length;
+      const px = entries.filter(e => e.type === 'procedure').length;
+      md += `- Total entries: **${entries.length}**\n`;
+      md += `- Diseases: ${dz}\n`;
+      md += `- Procedures: ${px}\n\n`;
       md += `---\n\n`;
       md += `## Contents\n\n`;
 
@@ -470,7 +495,8 @@
         bySystem[sys].forEach((e, i) => {
           const num = String(i + 1).padStart(2, '0');
           const fname = `${num}-${e.id}.md`;
-          md += `${i + 1}. 🔧 [${e.titleEn}](./${sys}/${fname})${e.titleTh ? ` — ${e.titleTh}` : ''}\n`;
+          const tag = e.type === 'procedure' ? '🔧' : '📋';
+          md += `${i + 1}. ${tag} [${e.titleEn}](./${sys}/${fname})${e.titleTh ? ` — ${e.titleTh}` : ''}\n`;
         });
         md += `\n`;
       });
@@ -494,10 +520,12 @@
 
       try {
         const zip = new JSZip();
-        const root = zip.folder('surgery-handbook');
+        const root = zip.folder('medicine-handbook');
 
+        // README at root
         root.file('README.md', buildReadme(ENTRIES));
 
+        // Group by system
         const bySystem = {};
         ENTRIES.forEach(e => {
           if (!bySystem[e.system]) bySystem[e.system] = [];
@@ -521,17 +549,18 @@
           compressionOptions: { level: 6 },
         });
 
+        // Trigger download
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         const dateTag = new Date().toISOString().slice(0, 10);
         a.href = url;
-        a.download = `surgery-handbook-${dateTag}.zip`;
+        a.download = `medicine-handbook-${dateTag}.zip`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         setTimeout(() => URL.revokeObjectURL(url), 1500);
 
-        $dlHint.textContent = `✓ ดาวน์โหลด ${ENTRIES.length} หัตถการเรียบร้อย`;
+        $dlHint.textContent = `✓ ดาวน์โหลด ${ENTRIES.length} entries เรียบร้อย`;
         if (navigator.vibrate) navigator.vibrate(20);
       } catch (err) {
         console.error('Download failed', err);
