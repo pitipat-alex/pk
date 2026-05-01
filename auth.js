@@ -138,37 +138,113 @@
     <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
     <div class="modal" id="settingsModal" role="dialog" aria-modal="true" aria-label="ตั้งค่า">
       <div class="modal-head">
-        <h3>ตั้งค่า</h3>
+        <h3>⚙️ ตั้งค่า</h3>
         <button class="modal-close" id="modalClose" aria-label="ปิด">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 6l12 12M18 6L6 18"/>
           </svg>
         </button>
       </div>
-      <section class="modal-section">
-        <h4>บัญชี Google</h4>
-        <p class="desc">Alex ล็อกอินด้วยบัญชีนี้</p>
-        <div class="account-card" id="accountCard">
-          <img class="account-avatar" id="accountAvatar" alt="" />
-          <div class="account-info">
-            <div class="account-name" id="accountName">—</div>
-            <div class="account-email" id="accountEmail">—</div>
+
+      <div class="settings-body">
+
+        <!-- Account -->
+        <section class="settings-section">
+          <h4 class="settings-h4">
+            <span class="sh4-icon">👤</span>
+            <span>บัญชี Google</span>
+          </h4>
+          <div class="account-card" id="accountCard">
+            <img class="account-avatar" id="accountAvatar" alt="" />
+            <div class="account-info">
+              <div class="account-name" id="accountName">—</div>
+              <div class="account-email" id="accountEmail">—</div>
+            </div>
+            <span class="status-pill on" style="margin-bottom:0">
+              <span class="dotpill"></span> ยืนยันแล้ว
+            </span>
           </div>
-          <span class="status-pill on" style="margin-bottom:0">
-            <span class="dotpill"></span> ผ่านการยืนยัน
-          </span>
-        </div>
-      </section>
-      <section class="modal-section" id="logoutSection">
-        <h4>ออกจากระบบ</h4>
-        <p class="desc">ครั้งหน้าที่เปิดเว็บนี้ Alex จะต้องล็อกอินใหม่</p>
-        <button class="btn btn-secondary" id="logoutBtn" type="button">ออกจากระบบ</button>
-      </section>
-      <section class="modal-section">
-        <p class="desc" style="margin-bottom:0; font-size:13px;">
-          🔐 ระบบยืนยันตัวตนผ่าน Google + Supabase — ปลอดภัย เข้ารหัสตามมาตรฐาน เฉพาะอีเมลที่ Alex อนุญาตเท่านั้นที่เข้าได้
-        </p>
-      </section>
+        </section>
+
+        <!-- Theme picker -->
+        <section class="settings-section">
+          <h4 class="settings-h4">
+            <span class="sh4-icon">🎨</span>
+            <span>ธีม</span>
+          </h4>
+          <p class="settings-desc">เลือกธีมที่ต้องการ — เก็บใน device นี้</p>
+          <div class="theme-picker" id="themePicker">
+            <button class="theme-btn" type="button" data-theme="light">
+              <span class="theme-icon">☀️</span>
+              <span class="theme-label">สว่าง</span>
+            </button>
+            <button class="theme-btn" type="button" data-theme="dark">
+              <span class="theme-icon">🌙</span>
+              <span class="theme-label">มืด</span>
+            </button>
+            <button class="theme-btn" type="button" data-theme="auto">
+              <span class="theme-icon">🖥️</span>
+              <span class="theme-label">ตามระบบ</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- App info -->
+        <section class="settings-section">
+          <h4 class="settings-h4">
+            <span class="sh4-icon">ℹ️</span>
+            <span>เกี่ยวกับ</span>
+          </h4>
+          <div class="info-list">
+            <div class="info-row">
+              <span class="info-label">เวอร์ชัน</span>
+              <span class="info-value" id="appVersion">pk · v1.0.0</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">อัปเดตล่าสุด</span>
+              <span class="info-value">1 พ.ค. 2569</span>
+            </div>
+            <div class="info-row">
+              <a class="info-link" href="https://github.com/pitipat-alex/pk" target="_blank" rel="noopener noreferrer">
+                <span class="info-label">GitHub Repo</span>
+                <span class="info-value">pitipat-alex/pk ↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Data management -->
+        <section class="settings-section">
+          <h4 class="settings-h4">
+            <span class="sh4-icon">🗄️</span>
+            <span>การจัดการข้อมูล</span>
+          </h4>
+          <p class="settings-desc">ข้อมูลที่เก็บใน device นี้ (ตารางสอน, PIN, ธีม)</p>
+          <button class="btn-text-action" id="clearLocalDataBtn" type="button">
+            <span>🧹 ล้างข้อมูลใน device</span>
+            <span class="btn-text-arrow">›</span>
+          </button>
+        </section>
+
+        <!-- Privacy note -->
+        <section class="settings-section settings-privacy">
+          <p class="desc" style="margin-bottom:0; font-size:12px;">
+            🔐 ระบบยืนยันตัวตนผ่าน Google + Supabase — ปลอดภัย เข้ารหัสตามมาตรฐาน เฉพาะอีเมลที่อนุญาตเท่านั้นที่เข้าได้
+          </p>
+        </section>
+
+        <!-- Logout (big mobile-friendly) -->
+        <section class="settings-logout-section" id="logoutSection">
+          <button class="btn-logout" id="logoutBtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+            </svg>
+            <span>ออกจากระบบ</span>
+          </button>
+          <p class="logout-hint">ครั้งหน้าจะต้อง login ใหม่ด้วย Google</p>
+        </section>
+
+      </div>
     </div>
   `;
 
@@ -437,12 +513,71 @@
     });
   });
 
-  // ---------- Logout ---------------------------------------------
+  // ---------- Logout (mobile-friendly with confirmation) -------
   logoutBtn && logoutBtn.addEventListener('click', async () => {
+    if (!confirm('ออกจากระบบ?\n\nครั้งหน้าจะต้อง login ใหม่ด้วย Google')) return;
     logoutBtn.disabled = true;
-    await sb.auth.signOut();
-    closeSettings();
-    logoutBtn.disabled = false;
+    logoutBtn.classList.add('loading');
+    const span = logoutBtn.querySelector('span');
+    if (span) span.textContent = 'กำลังออกจากระบบ...';
+    try {
+      await sb.auth.signOut();
+      closeSettings();
+    } catch (e) {
+      DEBUG.add('Logout failed: ' + e.message, 'error');
+      logoutBtn.disabled = false;
+      logoutBtn.classList.remove('loading');
+      if (span) span.textContent = 'ออกจากระบบ';
+    }
+  });
+
+  // ---------- Theme switcher --------------------------------------
+  const THEME_KEY = 'pk_theme';
+  function getTheme() {
+    try { return localStorage.getItem(THEME_KEY) || 'auto'; }
+    catch (e) { return 'auto'; }
+  }
+  function applyTheme(theme) {
+    const root = document.documentElement;
+    if (theme === 'auto') {
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme', theme);
+    }
+    try { localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+    // Update active state
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === theme);
+    });
+  }
+  // Initialize theme buttons
+  function initThemeButtons() {
+    const current = getTheme();
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === current);
+      b.addEventListener('click', () => applyTheme(b.dataset.theme));
+    });
+  }
+  initThemeButtons();
+
+  // ---------- Clear local data ------------------------------------
+  const clearLocalBtn = document.getElementById('clearLocalDataBtn');
+  clearLocalBtn && clearLocalBtn.addEventListener('click', () => {
+    if (!confirm('ล้างข้อมูลใน device นี้?\n\nจะลบ: ตารางสอน, PIN ที่จำไว้, ธีมที่เลือก\n\n⚠️ ข้อมูลในระบบ Supabase (รายการรอจัดซื้อ, แชร์ๆ) จะไม่ถูกลบ')) return;
+    if (!confirm('ยืนยันอีกครั้ง — ลบข้อมูล local ทั้งหมด?\nไม่สามารถกู้คืนได้!')) return;
+    try {
+      // Clear pk-related keys (preserve Supabase auth so user stays logged in)
+      const keysToRemove = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith('pk_')) keysToRemove.push(k);
+      }
+      keysToRemove.forEach(k => localStorage.removeItem(k));
+      alert('✓ ล้างข้อมูลแล้ว\n\nหน้าจะรีโหลดเพื่อใช้ค่าเริ่มต้น');
+      location.reload();
+    } catch (e) {
+      alert('ล้างข้อมูลไม่สำเร็จ: ' + e.message);
+    }
   });
 
   // ---------- Universal clock (any page with id="clock") ---------
