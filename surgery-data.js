@@ -11778,5 +11778,2265 @@ window.SURGERY_ENTRIES = [
     },
   },
 
+  /* ============================================================
+     RECONSTRUCTIVE — Skin flaps
+  ============================================================ */
+  {
+    id: 'skin-flaps',
+    titleEn: 'Skin Flaps (Reconstructive Principles)',
+    titleTh: 'การทำ skin flap — หลักการ reconstructive',
+    type: 'surgery',
+    species: ['dog', 'cat'],
+    system: 'reconstructive',
+    tags: ['skin flap', 'subdermal plexus flap', 'advancement flap', 'rotation flap', 'transposition flap', 'axial pattern flap', 'caudal superficial epigastric', 'thoracodorsal', 'omocervical', 'deep circumflex iliac'],
+    aliases: ['skin flap', 'reconstructive surgery', 'tissue flap', 'flap surgery', 'ตกแต่งแผล', 'ปิดแผลด้วย flap'],
+    source: 'Tobias & Johnston Vol 1 · Ch. on Skin Reconstruction',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Large skin defects unable to close primarily ✗</strong>:
+            <ul>
+              <li>Mass excision with wide margins (MCT, STS, SCC)</li>
+              <li>Trauma (degloving, severe lacerations, bite wounds)</li>
+              <li>Burns (chemical, thermal, electrical)</li>
+              <li>Necrotic tissue debridement</li>
+              <li>Congenital defects</li>
+            </ul>
+          </li>
+          <li><strong>Defect locations commonly requiring flaps ✨:</strong>
+            <ul>
+              <li>Distal limb (limited skin elasticity)</li>
+              <li>Caudal abdomen (after large mass excision, mastectomy revision)</li>
+              <li>Lateral thorax</li>
+              <li>Caudal trunk / inguinal area</li>
+              <li>Head + face (cosmetic concerns)</li>
+            </ul>
+          </li>
+          <li><strong>Flap classification (drives surgical decision) ✨:</strong>
+            <ul>
+              <li><strong>Local subdermal plexus flaps</strong> — random pattern, blood supply from random subdermal plexus
+                <ul>
+                  <li>Advancement flap: tissue moved straight</li>
+                  <li>Rotation flap: tissue rotated around a pivot point</li>
+                  <li>Transposition flap: tissue rotated + advanced</li>
+                  <li>Length-to-width ratio limited (~ 2-3:1 for safety)</li>
+                </ul>
+              </li>
+              <li><strong>Axial pattern flaps</strong> — based on named direct cutaneous artery + vein (much more reliable, longer)
+                <ul>
+                  <li>Caudal superficial epigastric (CSE) — covers caudal abdomen, inguinal, prepuce, distal hindlimb medial ✨</li>
+                  <li>Thoracodorsal — covers shoulder, axilla, lateral thorax</li>
+                  <li>Omocervical — covers shoulder, neck, head</li>
+                  <li>Deep circumflex iliac (dorsal + ventral branches) — covers lateral thorax, flank, dorsum</li>
+                  <li>Caudal auricular — covers ear, side of head</li>
+                  <li>Genicular — covers stifle, distal limb</li>
+                  <li>Reverse saphenous conduit — covers distal hindlimb</li>
+                </ul>
+              </li>
+              <li><strong>Distant flaps</strong> — rarely used (microvascular free flaps in advanced practice)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Active infection at flap site (treat first)</li>
+          <li>Compromised blood supply (limb ischemia, severe edema)</li>
+          <li>Inability to obliterate dead space at recipient site</li>
+          <li>Patient unable to tolerate prolonged anesthesia</li>
+          <li>Severely contaminated wound (consider 2nd intention healing or staged approach)</li>
+          <li>Severe systemic illness (poor wound healing — diabetes, hypothyroid, hyperadrenocorticism)</li>
+          <li>Owner unable to provide intensive bandage care + e-collar compliance</li>
+        </ul>
+      `,
+      preOp: `
+        <p><strong>1. Defect assessment ✨:</strong></p>
+        <ul>
+          <li>Measure defect dimensions (length, width, depth)</li>
+          <li>Assess skin tension lines around defect</li>
+          <li>Tissue viability around margins</li>
+          <li>Contamination level — clean, clean-contaminated, contaminated, dirty</li>
+          <li>Identify any exposed bone, tendons, vessels needing coverage</li>
+          <li>Photograph for planning + documentation</li>
+        </ul>
+        <p><strong>2. Flap selection ✨:</strong></p>
+        <ul>
+          <li>Defect location dictates which flap reaches:
+            <ul>
+              <li>Distal limb: reverse saphenous conduit, genicular flap, free skin graft</li>
+              <li>Lateral thorax: thoracodorsal, deep circumflex iliac</li>
+              <li>Caudal abdomen / inguinal / prepuce: caudal superficial epigastric (CSE) — workhorse flap ✨</li>
+              <li>Shoulder / neck: omocervical, thoracodorsal</li>
+              <li>Head / ear: caudal auricular</li>
+            </ul>
+          </li>
+          <li>Defect size:
+            <ul>
+              <li>Small &lt; 5 cm: subdermal plexus flap</li>
+              <li>Medium-large: axial pattern flap (more reliable)</li>
+              <li>Massive: combined flap + graft, staged reconstruction</li>
+            </ul>
+          </li>
+          <li>Donor site availability:
+            <ul>
+              <li>Loose skin areas (cervical, lateral thoracic, flank) = preferred donor</li>
+              <li>Tense areas (distal limb) = avoid as donor</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>3. Pre-op preparation:</strong></p>
+        <ul>
+          <li>Wide clip + scrub — donor + recipient sites</li>
+          <li>Mark planned flap on patient pre-op (skin marker — design out flap dimensions)</li>
+          <li>Practice the "swing" — confirm flap reaches defect without tension before incising ✨</li>
+          <li>Pre-op antibiotics: Cefazolin 22 mg/kg IV at induction</li>
+          <li>Methadone + maropitant pre-medication</li>
+          <li>Position based on flap location</li>
+        </ul>
+        <p><strong>4. Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>Coag panel</li>
+          <li>Wound bed preparation (granulation, infection-free) before definitive reconstruction</li>
+        </ul>
+      `,
+      technique: `
+        <p><strong>A. Subdermal Plexus Flap — Advancement (single pedicle):</strong></p>
+        <ol>
+          <li>Mark flap rectangular shape, base wider than length (1:2 to 1:3 ratio max)</li>
+          <li>Incise 3 sides of rectangle</li>
+          <li>Undermine SQ tissue (preserve subdermal plexus on flap)</li>
+          <li>Advance flap into defect</li>
+          <li>"Burow's triangles" excised at base if needed (relieve tension)</li>
+          <li>Closure: 3-0 PDS deep, 3-0 nylon skin</li>
+        </ol>
+        <p><strong>B. Subdermal Plexus Flap — Rotation:</strong></p>
+        <ol>
+          <li>Curved incision adjacent to defect (semicircular)</li>
+          <li>Pivot point at one end of curve</li>
+          <li>Undermine SQ</li>
+          <li>Rotate flap into defect</li>
+          <li>Donor site closes primarily after rotation</li>
+        </ol>
+        <p><strong>C. Subdermal Plexus Flap — Transposition:</strong></p>
+        <ol>
+          <li>Rectangular flap adjacent to defect at angle (typically 45-90°)</li>
+          <li>Incise + undermine</li>
+          <li>Rotate + advance into defect</li>
+          <li>Donor site closes primarily</li>
+        </ol>
+        <p><strong>D. Caudal Superficial Epigastric (CSE) Axial Pattern Flap ✨ (most useful — covers caudal trunk, inguinal, prepuce, distal hindlimb medial):</strong></p>
+        <ol>
+          <li>Identify caudal superficial epigastric artery + vein (palpable as branch of external pudendal vessels at caudal abdomen)</li>
+          <li>Mark flap dimensions:
+            <ul>
+              <li>Base: 2-3 cm lateral to vessel origin</li>
+              <li>Width: 4-5 cm wide</li>
+              <li>Length: extends along last 4-5 mammary glands (M2-M5 area)</li>
+              <li>Can extend to umbilicus or even cranially in larger dogs</li>
+            </ul>
+          </li>
+          <li>Incise lateral border, dissect down to abdominal fascia</li>
+          <li>Stay deep to avoid disrupting vessel</li>
+          <li>Continue to medial border</li>
+          <li>Undermine entire flap, INCLUDING the named artery + vein in the pedicle</li>
+          <li>Rotate flap to recipient site — can reach perineum, scrotum, distal hindlimb medial side, sometimes contralateral side</li>
+          <li>Suture to recipient defect:
+            <ul>
+              <li>SQ: 3-0 PDS continuous obliterating dead space</li>
+              <li>Skin: 3-0 nylon simple interrupted</li>
+            </ul>
+          </li>
+          <li>Donor site closes primarily (loose abdominal skin)</li>
+          <li>Drain placement (Penrose or closed-suction) for first 3-5 d</li>
+        </ol>
+        <p><strong>E. Thoracodorsal Axial Pattern Flap (covers shoulder, axilla, lateral thorax):</strong></p>
+        <ol>
+          <li>Identify thoracodorsal vessels (deep to latissimus dorsi muscle border)</li>
+          <li>Mark flap with base centered on caudal scapular spine</li>
+          <li>Length: extends caudally + dorsally over latissimus dorsi area</li>
+          <li>Dissect deep to cutaneous trunci muscle (preserve named vessels)</li>
+          <li>Rotate flap toward recipient site</li>
+          <li>Suture as described</li>
+        </ol>
+        <p><strong>F. Mesh expansion of flap (if defect larger than flap):</strong></p>
+        <ul>
+          <li>Make multiple staggered relief incisions on flap (like meshed graft)</li>
+          <li>Allows flap to expand 30-50%</li>
+          <li>Useful when "almost reaches" but tension noted</li>
+        </ul>
+        <p><strong>Critical principles ✨:</strong></p>
+        <ul>
+          <li>"Don't burn bridges" — design flap so failure leaves option for revision</li>
+          <li>Tension-free closure essential — tension = vascular compromise = necrosis</li>
+          <li>Atraumatic tissue handling — gentle retraction, no crushing</li>
+          <li>Hemostasis without compromising flap blood supply (ligate skin edge vessels but preserve subdermal plexus)</li>
+          <li>Drain dead space (closed-suction preferred over Penrose)</li>
+          <li>Bandage protection — but not so tight it compresses flap</li>
+        </ul>
+      `,
+      drugs: `
+        <p><strong>Pre-medication:</strong></p>
+        <ul>
+          <li>Methadone 0.2-0.4 mg/kg IM/IV</li>
+          <li>± Acepromazine low dose</li>
+          <li>Maropitant 1 mg/kg SC</li>
+        </ul>
+        <p><strong>Induction:</strong></p>
+        <ul>
+          <li>Propofol 2-4 mg/kg IV</li>
+          <li>Or Alfaxalone 1-2 mg/kg IV</li>
+        </ul>
+        <p><strong>Maintenance:</strong></p>
+        <ul>
+          <li>Isoflurane / sevoflurane to effect</li>
+          <li>Fentanyl CRI 5-10 mcg/kg/h</li>
+          <li>± Lidocaine CRI 25-50 mcg/kg/min</li>
+        </ul>
+        <p><strong>Local infiltration (helpful):</strong></p>
+        <ul>
+          <li>Lidocaine + bupivacaine line block at incision lines (max 4 mg/kg lidocaine, 2 mg/kg bupivacaine)</li>
+          <li>NOT into flap base / pedicle (avoid vessel compromise)</li>
+        </ul>
+        <p><strong>Antibiotics:</strong></p>
+        <ul>
+          <li>Pre-op: Cefazolin 22 mg/kg IV at induction, repeat q90 min</li>
+          <li>Post-op:
+            <ul>
+              <li>Clean wound: Cephalexin 22 mg/kg PO q12h × 5-7 d</li>
+              <li>Contaminated: Amoxicillin-clavulanate 12.5 mg/kg PO q12h × 7-10 d</li>
+              <li>Or based on culture if pre-existing infection</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Vasoactive considerations ✨:</strong></p>
+        <ul>
+          <li>Avoid:
+            <ul>
+              <li>Vasoconstrictive drugs (epinephrine in local — DON'T use near flap pedicle)</li>
+              <li>α-2 agonists in high doses (vasoconstriction)</li>
+              <li>Smoking environments (owner education — nicotine ↓ flap perfusion in human studies)</li>
+            </ul>
+          </li>
+          <li>Maintain BP intra-op (flap perfusion depends on systemic perfusion)</li>
+          <li>Adequate fluid therapy</li>
+        </ul>
+        <p><strong>Analgesia post-op:</strong></p>
+        <ul>
+          <li>Methadone 0.1-0.2 mg/kg IV/IM q4-6h × 24 h</li>
+          <li>Then Buprenorphine 0.02 mg/kg q8h × 2-3 d</li>
+          <li>NSAID — start day 1:
+            <ul>
+              <li>Carprofen 4 mg/kg SC then 2 mg/kg PO q12h × 7-10 d</li>
+              <li>Meloxicam 0.1 mg/kg SC then 0.05 mg/kg PO q24h × 5-7 d</li>
+            </ul>
+          </li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h × 7-14 d</li>
+        </ul>
+        <p><strong>Wound healing support:</strong></p>
+        <ul>
+          <li>Adequate nutrition (high-protein diet)</li>
+          <li>Address underlying systemic disease (treat hypothyroid, control diabetes)</li>
+          <li>Vitamin C / zinc supplementation (some surgeons — limited evidence)</li>
+        </ul>
+      `,
+      postOp: `
+        <p><strong>Immediate (0-72h) — CRITICAL surveillance ✨:</strong></p>
+        <ul>
+          <li><strong>Flap viability monitoring (q4-6h):</strong>
+            <ul>
+              <li>Color: pink = viable, blue/purple = venous congestion (concern), white = arterial compromise (urgent), black = necrosis</li>
+              <li>Temperature: warm = viable, cool = poor perfusion</li>
+              <li>Capillary refill: prick with needle — bleeding = perfused</li>
+              <li>Document with photos at each check</li>
+            </ul>
+          </li>
+          <li>Drain management:
+            <ul>
+              <li>Closed-suction (Jackson-Pratt) — measure output q4-6h</li>
+              <li>Penrose — change pad, monitor</li>
+              <li>Remove when output &lt; 20 mL/d × 24 h (typically day 3-5)</li>
+            </ul>
+          </li>
+          <li>Bandaging (non-constrictive):
+            <ul>
+              <li>Light protective bandage</li>
+              <li>NOT compression (compromises flap)</li>
+              <li>Window for inspection</li>
+            </ul>
+          </li>
+          <li>E-collar 100%</li>
+          <li>Strict cage rest</li>
+          <li>Pain control multimodal</li>
+          <li>Cool compress to surrounding area (NOT directly on flap initially — vasoconstriction)</li>
+        </ul>
+        <p><strong>Day 3-7:</strong></p>
+        <ul>
+          <li>Continued flap monitoring</li>
+          <li>Drain removal day 3-5</li>
+          <li>Discharge typically day 3-7 once flap stable</li>
+          <li>Daily wound check at home (bandage changes per protocol)</li>
+          <li>Continue antibiotics, NSAID, opioid (transition to PO)</li>
+          <li>Restricted activity</li>
+        </ul>
+        <p><strong>Day 7-14:</strong></p>
+        <ul>
+          <li>Recheck day 7-10 — wound check, flap assessment</li>
+          <li>By day 7-10: flap typically well-vascularized from recipient bed</li>
+          <li>Suture removal day 10-14</li>
+        </ul>
+        <p><strong>Day 14-21:</strong></p>
+        <ul>
+          <li>Bandage typically discontinued by day 14 (varies)</li>
+          <li>Gradual return to activity</li>
+          <li>Final cosmetic outcome assessable by 4-6 weeks</li>
+        </ul>
+        <p><strong>Long-term:</strong></p>
+        <ul>
+          <li>Hair regrowth typically returns over weeks-months</li>
+          <li>Flap may have different texture / hair direction (cosmetic)</li>
+          <li>Most patients have excellent long-term function ✓</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Flap necrosis ✗</strong> — most feared:
+            <ul>
+              <li>Partial necrosis (distal tip): 10-20% in subdermal plexus flaps, 5-10% in axial pattern</li>
+              <li>Total necrosis: 1-5% with proper technique</li>
+              <li>Causes: tension, kinking, twisting of pedicle, infection, length:width ratio exceeded</li>
+              <li>Tx:
+                <ul>
+                  <li>Partial: debride necrotic edge, allow 2nd intention healing or revision</li>
+                  <li>Total: complete flap loss — defect requires alternative reconstruction</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Seroma:</strong>
+            <ul>
+              <li>Common in flaps with significant dead space</li>
+              <li>Prevention: drain placement</li>
+              <li>Tx: aspirate, ± compression, occasionally drain replacement</li>
+            </ul>
+          </li>
+          <li><strong>Surgical site infection</strong>:
+            <ul>
+              <li>3-7%, higher with contaminated original wound</li>
+              <li>Tx: culture, antibiotics, drainage</li>
+            </ul>
+          </li>
+          <li>Wound dehiscence (excessive tension, infection, licking)</li>
+          <li>Hematoma</li>
+          <li>Cosmetic concerns (hair direction differences, color difference)</li>
+          <li>Self-trauma (e-collar failure)</li>
+          <li>Persistent serous drainage</li>
+        </ul>
+      `,
+      outcome: `
+        <ul>
+          <li><strong>Properly planned + executed flap ✓:</strong>
+            <ul>
+              <li>Subdermal plexus flap: 80-95% complete success</li>
+              <li>Axial pattern flap: 90-95% complete success</li>
+              <li>Mesh expansion: similar success when properly used</li>
+            </ul>
+          </li>
+          <li><strong>Caudal superficial epigastric (CSE) ✨ — most reliable:</strong>
+            <ul>
+              <li>One of most reliable flaps in vet medicine</li>
+              <li>95%+ success with proper technique</li>
+              <li>Can cover large defects in caudal trunk, distal hindlimb</li>
+            </ul>
+          </li>
+          <li><strong>Long-term considerations:</strong>
+            <ul>
+              <li>Most flaps have excellent functional outcome</li>
+              <li>Cosmetic — usually acceptable, some hair direction differences</li>
+              <li>Lifelong (unless underlying disease — recurrent neoplasia)</li>
+            </ul>
+          </li>
+          <li><strong>Mortality:</strong>
+            <ul>
+              <li>Healthy patient: &lt; 1%</li>
+              <li>Failed flap requiring revision: low mortality</li>
+            </ul>
+          </li>
+          <li><strong>Comparison with skin grafts:</strong>
+            <ul>
+              <li>Flaps: better cosmetic, more reliable in many locations</li>
+              <li>Grafts: useful when flap not reachable (distal limb)</li>
+              <li>Both have role in reconstructive surgery</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Plan flap pre-op</strong> ✨ — measure defect, design flap, "swing" practice before incising. "Don't burn bridges" — preserve revision options<br><br>**CSE flap = workhorse for caudal trunk + distal hindlimb medial** ✓ — most reliable axial pattern flap in vet medicine<br><br>⚠️ **Flap viability check q4-6h × 72h post-op** — color + temperature + capillary refill. Early intervention saves flaps<br><br>✗ **Tension = death** — vascular compromise = necrosis. Length:width ratio limits, undermining adjacent tissue, mesh expansion all help</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     RECONSTRUCTIVE — Skin grafts
+  ============================================================ */
+  {
+    id: 'skin-grafts',
+    titleEn: 'Skin Grafts (Free Mesh Graft)',
+    titleTh: 'การปลูกถ่ายผิวหนัง — Mesh free graft',
+    type: 'surgery',
+    species: ['dog', 'cat'],
+    system: 'reconstructive',
+    tags: ['skin graft', 'free graft', 'mesh graft', 'full-thickness graft', 'split-thickness graft', 'autograft', 'graft take', 'plasmatic imbibition', 'inosculation', 'distal limb wound'],
+    aliases: ['skin graft', 'mesh graft', 'free graft', 'ปลูกผิวหนัง', 'ลอกผิวหนังปะ'],
+    source: 'Tobias & Johnston Vol 1 · Ch. on Skin Grafts',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Large skin defects unable to close with flaps ✗</strong>:
+            <ul>
+              <li>Distal limb defects (most common indication ✨)
+                <ul>
+                  <li>Limited skin elasticity below the elbow / stifle</li>
+                  <li>Few flap options for distal extremities</li>
+                </ul>
+              </li>
+              <li>Large body wall defects after extensive resection</li>
+              <li>Burns covering large area</li>
+              <li>Failed flap reconstruction</li>
+              <li>Wounds on areas without adequate flap donor</li>
+            </ul>
+          </li>
+          <li><strong>Granulating wound bed ready for grafting ✨:</strong>
+            <ul>
+              <li>Healthy red granulation tissue</li>
+              <li>No infection (cytology + culture confirmed clean)</li>
+              <li>No necrotic tissue, foreign material, exposed bone/tendon (these need coverage with vascular tissue first)</li>
+              <li>Typically takes 7-14 d of wound preparation before grafting</li>
+            </ul>
+          </li>
+          <li><strong>Types of grafts ✨:</strong>
+            <ul>
+              <li><strong>Full-thickness mesh graft (preferred in vet medicine ✓):</strong>
+                <ul>
+                  <li>Includes epidermis + entire dermis</li>
+                  <li>Better cosmetic outcome, more durable</li>
+                  <li>Mesh allows fluid drainage + expansion (cover larger defect)</li>
+                  <li>30-50% expansion possible</li>
+                </ul>
+              </li>
+              <li><strong>Split-thickness graft</strong>: epidermis + partial dermis
+                <ul>
+                  <li>Less durable, more contracture</li>
+                  <li>Requires special equipment (dermatome)</li>
+                  <li>Less common in vet medicine</li>
+                </ul>
+              </li>
+              <li><strong>Punch graft / pinch graft</strong>:
+                <ul>
+                  <li>Multiple small grafts placed at intervals on bed</li>
+                  <li>Used for large irregular defects (older technique)</li>
+                </ul>
+              </li>
+              <li><strong>Strip graft</strong>: long strips placed parallel</li>
+              <li>Allograft / xenograft: temporary biological dressing (rarely used for definitive)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li><strong>Wound bed not ready ✗:</strong>
+            <ul>
+              <li>Active infection — culture + clear before grafting</li>
+              <li>Necrotic tissue / foreign material — debride first</li>
+              <li>Exposed avascular structures (bone, tendon) — need vascular coverage first (omentum, muscle flap, granulation)</li>
+              <li>Edematous bed — control edema first</li>
+            </ul>
+          </li>
+          <li>Patient inability to tolerate prolonged immobilization (cats can be challenging)</li>
+          <li>Poor systemic health (uncontrolled diabetes, hypothyroid, malnutrition)</li>
+          <li>Owner unable to provide intensive bandage care for 2-4 weeks</li>
+          <li>Areas of constant motion (joint flexion creases) — flap better than graft</li>
+          <li>Coagulopathy</li>
+        </ul>
+      `,
+      preOp: `
+        <p><strong>1. Wound bed preparation ✨ — KEY to graft success:</strong></p>
+        <ul>
+          <li>Initial wound management (often weeks before grafting):
+            <ul>
+              <li>Debridement (sharp, mechanical, enzymatic, autolytic)</li>
+              <li>Negative-pressure wound therapy (vacuum-assisted closure / VAC) — accelerates granulation</li>
+              <li>Topical agents (hydrogel, hydrocolloid, honey, silver)</li>
+              <li>Antibiotic Tx for infection</li>
+              <li>Systemic disease management</li>
+            </ul>
+          </li>
+          <li>Granulating bed criteria ✨:
+            <ul>
+              <li>Red, healthy "beefy" granulation tissue</li>
+              <li>No purulent discharge</li>
+              <li>Negative culture or skin flora only</li>
+              <li>No necrotic tissue</li>
+              <li>Surrounding tissue healthy</li>
+            </ul>
+          </li>
+          <li>Cytology + culture before grafting</li>
+        </ul>
+        <p><strong>2. Donor site selection ✨:</strong></p>
+        <ul>
+          <li>Common donor sites:
+            <ul>
+              <li>Lateral thoracic wall — most common, lots of loose skin</li>
+              <li>Lateral abdomen / flank</li>
+              <li>Cervical area</li>
+            </ul>
+          </li>
+          <li>Avoid:
+            <ul>
+              <li>Distal limbs (limited skin)</li>
+              <li>Heavily haired areas (cosmetic concern)</li>
+              <li>Areas with similar tension lines as recipient</li>
+            </ul>
+          </li>
+          <li>Ensure donor site can close primarily after graft harvested</li>
+          <li>Match hair direction + thickness to recipient when possible</li>
+        </ul>
+        <p><strong>3. Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>Coag panel</li>
+          <li>Wound culture pre-op</li>
+          <li>Address systemic disease</li>
+        </ul>
+        <p><strong>4. Pre-op preparation:</strong></p>
+        <ul>
+          <li>Wide clip donor + recipient sites</li>
+          <li>Pre-op antibiotics: Cefazolin 22 mg/kg IV at induction</li>
+          <li>Methadone + maropitant pre-medication</li>
+          <li>Position based on recipient site location</li>
+          <li>Prepare for prolonged surgery (1-3 hours)</li>
+        </ul>
+      `,
+      technique: `
+        <p><strong>Surgical sequence (full-thickness mesh graft) ✨:</strong></p>
+        <ol>
+          <li><strong>Step 1: Recipient bed preparation</strong>
+            <ul>
+              <li>Refresh granulation bed if needed (gentle scrape with scalpel)</li>
+              <li>Lavage with saline</li>
+              <li>Hemostasis (any bleeding interferes with graft adherence)</li>
+              <li>Measure defect dimensions precisely</li>
+            </ul>
+          </li>
+          <li><strong>Step 2: Harvest graft</strong>
+            <ul>
+              <li>Mark donor area dimensions = ~ 30-50% larger than recipient (allows for shrinkage + meshing expansion)</li>
+              <li>Incise full-thickness skin (epidermis + entire dermis, NOT including SQ)</li>
+              <li>Excise as a single piece</li>
+              <li>Close donor site primarily with routine layered closure</li>
+            </ul>
+          </li>
+          <li><strong>Step 3: Prepare graft</strong>
+            <ul>
+              <li>Remove ALL subcutaneous fat from undersurface ✨ — meticulously
+                <ul>
+                  <li>Fat = poor adherence, prevents inosculation</li>
+                  <li>Use scissors to scrape off SQ, leaving only dermis</li>
+                  <li>"Glistening dermis" appearance</li>
+                </ul>
+              </li>
+              <li>Mesh the graft:
+                <ul>
+                  <li>Place graft on sterile board, dermal side up</li>
+                  <li>Make multiple small (~ 5 mm) parallel incisions, staggered rows</li>
+                  <li>Like a "fishnet" pattern</li>
+                  <li>Allows expansion + fluid drainage</li>
+                  <li>Graft can expand 30-50%</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Step 4: Place graft on recipient bed</strong>
+            <ul>
+              <li>Place graft over defect, dermal side down</li>
+              <li>Stretch to fit defect (use mesh expansion)</li>
+              <li>Suture margins to defect edges:
+                <ul>
+                  <li>4-0 absorbable simple interrupted at multiple points</li>
+                  <li>Tension distributed evenly</li>
+                </ul>
+              </li>
+              <li>Place "tie-over" sutures across graft surface (optional but helpful):
+                <ul>
+                  <li>Long sutures placed pre-graft, leave ends long</li>
+                  <li>After graft positioned, tie ends across petroleum gauze on graft</li>
+                  <li>Provides compression + immobilization</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Step 5: Bolster bandage application ✨ (CRITICAL for graft take):</strong>
+            <ul>
+              <li>Layer 1: petroleum-impregnated gauze (Adaptic, Xeroform) directly on graft</li>
+              <li>Layer 2: thick padding</li>
+              <li>Layer 3: outer protective layer</li>
+              <li>Splint if over joint (immobilization essential)</li>
+              <li>Bandage for at least 4-7 d undisturbed</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Graft physiology stages ✨ (timing matters):</strong></p>
+        <ul>
+          <li><strong>Day 0-2: Plasmatic imbibition</strong> — graft survives by absorbing nutrients from bed (no blood supply yet)</li>
+          <li><strong>Day 2-4: Inosculation</strong> — graft vessels begin connecting to recipient vessels</li>
+          <li><strong>Day 4-7: Revascularization</strong> — new blood supply established</li>
+          <li><strong>Day 7+: Mature integration</strong> — graft fully integrated</li>
+          <li><strong>Movement during day 0-7 = graft death ✗</strong> — bolster bandage + immobilization essential</li>
+        </ul>
+        <p><strong>Critical principles:</strong></p>
+        <ul>
+          <li>Wound bed perfect before grafting (granulating, infection-free)</li>
+          <li>Remove ALL fat from graft underside</li>
+          <li>Mesh for drainage + expansion</li>
+          <li>Immobilization × 4-7 d minimum</li>
+          <li>Tie-over bolster + bandage essential</li>
+          <li>Don't disturb early — first bandage change typically day 4-7</li>
+        </ul>
+      `,
+      drugs: `
+        <p><strong>Pre-medication:</strong></p>
+        <ul>
+          <li>Methadone 0.2-0.4 mg/kg IM/IV</li>
+          <li>± Acepromazine</li>
+          <li>Maropitant 1 mg/kg SC</li>
+        </ul>
+        <p><strong>Induction:</strong></p>
+        <ul>
+          <li>Propofol or alfaxalone</li>
+        </ul>
+        <p><strong>Maintenance:</strong></p>
+        <ul>
+          <li>Isoflurane / sevoflurane to effect</li>
+          <li>Fentanyl CRI 5-10 mcg/kg/h</li>
+        </ul>
+        <p><strong>Antibiotics:</strong></p>
+        <ul>
+          <li>Pre-op: Cefazolin 22 mg/kg IV at induction</li>
+          <li>Post-op: Cephalexin 22 mg/kg PO q12h × 7-10 d (or based on culture)</li>
+          <li>If MRSA / Pseudomonas: based on sensitivity</li>
+        </ul>
+        <p><strong>Analgesia:</strong></p>
+        <ul>
+          <li>Methadone q4-6h × 24 h → buprenorphine</li>
+          <li>NSAID × 7-10 d (carprofen, meloxicam)</li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h × 14-21 d (helpful for prolonged immobilization)</li>
+        </ul>
+        <p><strong>Sedation for bandage changes ✨:</strong></p>
+        <ul>
+          <li>Trazodone 5-10 mg/kg PO 1-2 h before bandage change</li>
+          <li>± Gabapentin pre-bandage change</li>
+          <li>Some require brief anesthesia early on (especially first bandage change at day 4-7)</li>
+        </ul>
+      `,
+      postOp: `
+        <p><strong>Immediate (Day 0-3) — DO NOT DISTURB:</strong></p>
+        <ul>
+          <li>Bandage protected at all costs</li>
+          <li>E-collar 100%</li>
+          <li>Strict cage rest</li>
+          <li>Minimize movement of grafted area</li>
+          <li>Pain control multimodal</li>
+          <li>Antibiotics</li>
+          <li>If splint over joint: ensure no slippage, no swelling distally</li>
+        </ul>
+        <p><strong>Day 4-7 — First bandage change ✨:</strong></p>
+        <ul>
+          <li>Sedate / anesthetize patient</li>
+          <li>Carefully remove bolster + petroleum gauze (may need saline soaking to release)</li>
+          <li>Assess graft:
+            <ul>
+              <li>Pink + adhered = good ✓</li>
+              <li>Pale / detaching = concerning</li>
+              <li>Black / necrotic = failed (partial or total)</li>
+            </ul>
+          </li>
+          <li>If graft taking well: replace bolster + bandage</li>
+          <li>If portions failed: debride necrotic, may revise (rarely possible at this stage)</li>
+        </ul>
+        <p><strong>Day 7-14:</strong></p>
+        <ul>
+          <li>Graft revascularization complete</li>
+          <li>Bandage changes q3-5 d</li>
+          <li>Continue immobilization for joints</li>
+          <li>Graft adheres firmly</li>
+        </ul>
+        <p><strong>Day 14-28:</strong></p>
+        <ul>
+          <li>Graft fully integrated</li>
+          <li>Bandage may be discontinued depending on site</li>
+          <li>Continue protective coverage if needed</li>
+          <li>Suture removal day 14-21</li>
+          <li>Gradual return to activity</li>
+        </ul>
+        <p><strong>Long-term ✨:</strong></p>
+        <ul>
+          <li>Hair regrowth: 2-4 weeks (may be different texture)</li>
+          <li>Graft maturation continues 6-12 months</li>
+          <li>Final cosmetic result by 3-6 months</li>
+          <li>Functional outcome usually excellent</li>
+          <li>Some color difference (may darken or lighten)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Graft failure ✗</strong> — primary complication:
+            <ul>
+              <li>Total failure: 10-25% (highly variable)</li>
+              <li>Partial failure: 30-50% (some areas take, others don't)</li>
+              <li>Causes:
+                <ul>
+                  <li>Movement during early days (#1 cause)</li>
+                  <li>Hematoma / seroma under graft (no contact with bed)</li>
+                  <li>Infection</li>
+                  <li>Inadequate wound bed prep</li>
+                  <li>Excessive tension</li>
+                  <li>Patient self-trauma</li>
+                </ul>
+              </li>
+              <li>Tx:
+                <ul>
+                  <li>Partial: debride necrotic, allow 2nd intention healing of failed areas</li>
+                  <li>Total: re-prepare bed + repeat grafting (delay 1-2 weeks)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Infection</strong>:
+            <ul>
+              <li>Disrupts inosculation</li>
+              <li>Tx: culture, antibiotic, may need re-grafting</li>
+            </ul>
+          </li>
+          <li><strong>Hematoma / seroma under graft</strong>:
+            <ul>
+              <li>Prevented by mesh expansion + bolster compression</li>
+              <li>If develops: needle aspiration, milking through mesh</li>
+            </ul>
+          </li>
+          <li><strong>Cosmetic concerns</strong>:
+            <ul>
+              <li>Different hair direction / color</li>
+              <li>Mesh pattern may be visible</li>
+              <li>Scarring at margins</li>
+            </ul>
+          </li>
+          <li>Donor site complications: dehiscence, infection (uncommon)</li>
+          <li>Bandage-related complications: pressure sores, vascular compromise from tight bandage</li>
+          <li>Joint stiffness from prolonged immobilization (rehab essential)</li>
+          <li>Self-trauma (e-collar failure)</li>
+          <li>Wound contracture (usually less than secondary intention healing)</li>
+        </ul>
+      `,
+      outcome: `
+        <ul>
+          <li><strong>Properly prepared bed + skilled execution ✓:</strong>
+            <ul>
+              <li>Graft take: 75-90% (full-thickness mesh)</li>
+              <li>Functional outcome: 85-95%</li>
+              <li>Cosmetic outcome: usually acceptable, some differences</li>
+            </ul>
+          </li>
+          <li><strong>Distal limb wounds (most common indication):</strong>
+            <ul>
+              <li>Functional outcome: excellent in 80-90%</li>
+              <li>Joint mobility usually preserved</li>
+              <li>Long-term durable</li>
+            </ul>
+          </li>
+          <li><strong>Compared to second intention healing:</strong>
+            <ul>
+              <li>Faster total healing time</li>
+              <li>Less wound contracture</li>
+              <li>Better cosmetic + functional outcome for large defects</li>
+            </ul>
+          </li>
+          <li><strong>Compared to skin flaps:</strong>
+            <ul>
+              <li>Flaps preferred when feasible (better cosmetic, more reliable)</li>
+              <li>Grafts indicated when flap not reachable (distal limb, large defect)</li>
+              <li>Both have role in reconstruction</li>
+            </ul>
+          </li>
+          <li><strong>Long-term considerations:</strong>
+            <ul>
+              <li>Graft remains thinner than normal skin</li>
+              <li>More susceptible to trauma in some cases</li>
+              <li>Hair regrowth varies</li>
+              <li>Overall function excellent in successful grafts</li>
+            </ul>
+          </li>
+          <li><strong>Mortality:</strong>
+            <ul>
+              <li>Healthy patient: &lt; 1%</li>
+              <li>Higher in burn / extensive trauma cases (underlying disease)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Wound bed preparation = whole game ✨</strong> — granulating, infection-free, no necrotic tissue. ผ่าตัด graft ก่อนพร้อม = ล้มเหลวแน่นอน<br><br>**Mesh full-thickness graft = vet medicine workhorse** ✓ — 30-50% expansion, drainage through holes, durable<br><br>⚠️ **Movement = death** — immobilization 4-7 d non-negotiable. Bolster bandage + splint, no exceptions<br><br>✗ **Don't disturb until day 4-7** — first bandage change earliest. Patience = success</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     SOFT TISSUE — Umbilical hernia
+  ============================================================ */
+  {
+    id: 'umbilical-hernia',
+    titleEn: 'Umbilical Hernia Repair',
+    titleTh: 'ผ่าตัดแก้ไส้เลื่อนสะดือ',
+    type: 'surgery',
+    species: ['dog', 'cat'],
+    system: 'soft-tissue',
+    tags: ['umbilical hernia', 'congenital hernia', 'herniorrhaphy', 'concurrent OHE', 'spay umbilical hernia', 'falciform ligament'],
+    aliases: ['umbilical hernia', 'belly button hernia', 'ไส้เลื่อนสะดือ', 'แก้ไส้เลื่อน'],
+    source: 'Tobias & Johnston Vol 2 · Ch. on Hernias',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Umbilical hernia ✗</strong> — congenital failure of umbilical ring closure
+            <ul>
+              <li>Most common congenital hernia in dogs (3-4% incidence)</li>
+              <li>Hereditary in many breeds (Airedale, Basenji, Pekingese, Pointer, Weimaraner, Cocker, Bull Terrier)</li>
+              <li>Often noticed at first puppy exam</li>
+              <li>Contents: typically falciform ligament, omentum; sometimes intestine, bladder ✗</li>
+            </ul>
+          </li>
+          <li><strong>Surgical indications ✨:</strong>
+            <ul>
+              <li>Hernias &gt; 2-3 cm rarely close spontaneously — surgery indicated</li>
+              <li>Symptomatic (pain, distension, discoloration)</li>
+              <li>Incarcerated / strangulated — emergency ✗</li>
+              <li>Recurrent</li>
+              <li><strong>Concurrent with OHE / neuter ✨</strong> — best timing (combined procedure, single anesthesia)</li>
+              <li>Adult-onset (acquired, often from trauma)</li>
+            </ul>
+          </li>
+          <li><strong>Small hernias &lt; 2 cm:</strong>
+            <ul>
+              <li>May close spontaneously by 6 months of age</li>
+              <li>Monitor; surgery if not closed by spay/neuter age</li>
+              <li>Almost always combined with elective procedure</li>
+            </ul>
+          </li>
+          <li><strong>Important — DON'T MISS at first puppy exam ✨:</strong>
+            <ul>
+              <li>Palpate every puppy at first vaccine visit</li>
+              <li>Early diagnosis allows planning for combined procedure</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Severely young (&lt; 8 weeks) puppy unless emergency — wait for safer anesthesia</li>
+          <li>Hemodynamically unstable / strangulated → emergency surgery (stabilize first)</li>
+          <li>Severe systemic illness</li>
+          <li>Coagulopathy</li>
+          <li>Owner unable to provide post-op care</li>
+        </ul>
+      `,
+      preOp: `
+        <p><strong>1. Examination:</strong></p>
+        <ul>
+          <li>Palpate hernia:
+            <ul>
+              <li>Reducible vs incarcerated?</li>
+              <li>Size of defect (rim of fascial defect)</li>
+              <li>Contents — feel for bowel sounds, masses</li>
+              <li>Skin overlying healthy?</li>
+            </ul>
+          </li>
+          <li>Standard PE — examine all systems</li>
+          <li>Female: assess for concurrent OHE indication</li>
+          <li>Other congenital defects (cryptorchid, cardiac, palate)</li>
+        </ul>
+        <p><strong>2. Imaging (if indicated):</strong></p>
+        <ul>
+          <li>Usually not needed for routine umbilical hernia</li>
+          <li>Ultrasound if:
+            <ul>
+              <li>Large hernia with uncertain contents</li>
+              <li>Suspect bowel involvement</li>
+              <li>Concurrent abdominal mass / disease</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>3. Workup:</strong></p>
+        <ul>
+          <li>Standard pre-anesthesia (CBC if older, basic in young healthy)</li>
+          <li>Coag if breed-related concern</li>
+        </ul>
+        <p><strong>4. Pre-op preparation:</strong></p>
+        <ul>
+          <li>Pre-medication: methadone + maropitant</li>
+          <li>Antibiotics: Cefazolin 22 mg/kg IV at induction (or skip for clean small defect)</li>
+          <li>Wide clip + scrub of ventral abdomen</li>
+          <li>Position: dorsal recumbency</li>
+          <li>If concurrent OHE/neuter: planned in same surgical field</li>
+        </ul>
+      `,
+      technique: `
+        <p><strong>Surgical sequence (standard umbilical herniorrhaphy):</strong></p>
+        <ol>
+          <li><strong>Skin incision:</strong>
+            <ul>
+              <li>Elliptical incision around hernia + skin scar</li>
+              <li>Length depends on hernia size + concurrent procedure</li>
+              <li>If concurrent OHE: extend incision cranially OR caudally to access uterus</li>
+            </ul>
+          </li>
+          <li><strong>Identify hernial sac:</strong>
+            <ul>
+              <li>Dissect SQ tissue to expose hernial sac (peritoneum)</li>
+              <li>Free sac from surrounding tissue</li>
+            </ul>
+          </li>
+          <li><strong>Address sac contents ✨:</strong>
+            <ul>
+              <li>Open sac carefully (avoid injuring contents)</li>
+              <li>Identify contents:
+                <ul>
+                  <li>Falciform ligament: most common, can leave (or excise)</li>
+                  <li>Omentum: reduce back into abdomen, viable if pink</li>
+                  <li>Intestine: assess viability (color, peristalsis, pulse)</li>
+                  <li>Bladder: rare, return to position</li>
+                </ul>
+              </li>
+              <li>If contents non-viable: resect (rare in routine case)</li>
+              <li>Reduce viable contents into abdominal cavity</li>
+            </ul>
+          </li>
+          <li><strong>Excise hernial sac:</strong>
+            <ul>
+              <li>Trim peritoneal sac at level of fascial defect</li>
+              <li>Identify edges of defect — fibrous ring</li>
+            </ul>
+          </li>
+          <li><strong>Close fascial defect ✨ — KEY step:</strong>
+            <ul>
+              <li>Use 3-0 or 2-0 absorbable monofilament suture (PDS, Monocryl)</li>
+              <li>Pattern: simple interrupted or simple continuous</li>
+              <li>Apposition (NOT inverting)</li>
+              <li>Include healthy fascia 5 mm beyond defect edge</li>
+              <li>For larger hernias: vest-over-pants (overlapping) closure for added strength</li>
+              <li>Confirm closure is tension-free + secure</li>
+            </ul>
+          </li>
+          <li><strong>If concurrent OHE:</strong>
+            <ul>
+              <li>Use the herniorrhaphy site as access — extend cranially / caudally to find uterus</li>
+              <li>Standard OHE technique through extended incision</li>
+              <li>Close abdomen as for routine OHE</li>
+            </ul>
+          </li>
+          <li><strong>Close SQ + skin:</strong>
+            <ul>
+              <li>SQ: 3-0 or 4-0 PDS continuous</li>
+              <li>Skin: simple interrupted nylon or intradermal cosmetic with absorbable</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Critical principles ✨:</strong></p>
+        <ul>
+          <li>Adequate fascial closure with healthy tissue purchase</li>
+          <li>Tension-free</li>
+          <li>Don't include contents (omentum, bowel) in fascial sutures</li>
+          <li>Concurrent OHE/neuter is ideal — combine procedures</li>
+        </ul>
+      `,
+      drugs: `
+        <p><strong>Same protocol as routine OHE/neuter:</strong></p>
+        <ul>
+          <li>Pre-medication: methadone + maropitant ± ace</li>
+          <li>Induction: propofol or alfaxalone</li>
+          <li>Maintenance: isoflurane</li>
+          <li>Antibiotics: Cefazolin (or skip in clean small case)</li>
+          <li>Post-op:
+            <ul>
+              <li>NSAID × 5-7 d (carprofen, meloxicam)</li>
+              <li>± Buprenorphine 0.02 mg/kg q8h × 1-2 d</li>
+              <li>Gabapentin if needed (rare for routine)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      postOp: `
+        <p><strong>Routine post-op (similar to OHE):</strong></p>
+        <ul>
+          <li>Recovery monitoring</li>
+          <li>Discharge same day</li>
+          <li>E-collar 14 d</li>
+          <li>Restricted activity 14 d</li>
+          <li>Suture removal day 10-14</li>
+          <li>Watch for:
+            <ul>
+              <li>Recurrence (rare with proper technique — &lt; 5%)</li>
+              <li>Wound dehiscence</li>
+              <li>Infection</li>
+              <li>Seroma</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Long-term:</strong></p>
+        <ul>
+          <li>Excellent outcome typically</li>
+          <li>Hereditary in many breeds — should not breed</li>
+          <li>Examine offspring of affected breeders</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Recurrence — rare (&lt; 5% with proper technique)</li>
+          <li>Wound dehiscence (excessive activity, licking)</li>
+          <li>Surgical site infection</li>
+          <li>Seroma at incision</li>
+          <li>Pain (managed with NSAID)</li>
+          <li>Strangulation pre-surgery → bowel necrosis → enterectomy needed (emergency)</li>
+        </ul>
+      `,
+      outcome: `
+        <ul>
+          <li><strong>Routine umbilical herniorrhaphy ✓:</strong>
+            <ul>
+              <li>Excellent — &gt; 95% successful closure</li>
+              <li>Recurrence &lt; 5%</li>
+              <li>Mortality &lt; 0.05% (essentially same as routine OHE/neuter)</li>
+              <li>Recovery 10-14 d</li>
+            </ul>
+          </li>
+          <li><strong>Combined with OHE/neuter ✨:</strong>
+            <ul>
+              <li>Most efficient approach — single anesthesia, slight extension of incision</li>
+              <li>No increased complication rate vs separate procedures</li>
+            </ul>
+          </li>
+          <li><strong>Strangulated / emergency:</strong>
+            <ul>
+              <li>Higher morbidity if bowel resection needed</li>
+              <li>Still excellent outcome with prompt surgery</li>
+            </ul>
+          </li>
+          <li><strong>Long-term:</strong>
+            <ul>
+              <li>QOL normal</li>
+              <li>Hereditary breeding consideration</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Combined with OHE/neuter = best timing</strong> ✨ — single anesthesia, addresses both<br><br>**ตรวจ puppy ทุกตัวที่ first vaccine** — small hernia พบได้บ่อย, plan surgery ตอน spay/neuter<br><br>⚠️ **Hereditary** — counsel breeder, affected dogs should not breed<br><br>✗ **Incarcerated/strangulated = emergency** — bowel viability assessment, may need enterectomy</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     SOFT TISSUE — Inguinal hernia
+  ============================================================ */
+  {
+    id: 'inguinal-hernia',
+    titleEn: 'Inguinal Hernia Repair',
+    titleTh: 'ผ่าตัดแก้ไส้เลื่อนขาหนีบ',
+    type: 'surgery',
+    species: ['dog', 'cat'],
+    system: 'soft-tissue',
+    tags: ['inguinal hernia', 'inguinal ring', 'congenital hernia', 'acquired hernia', 'pregnant inguinal hernia', 'incarcerated', 'strangulated', 'bilateral inguinal hernia'],
+    aliases: ['inguinal hernia', 'groin hernia', 'ไส้เลื่อนขาหนีบ', 'แก้ไส้เลื่อนข้างต้นขา'],
+    source: 'Tobias & Johnston Vol 2 · Ch. on Inguinal Hernia',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Inguinal hernia ✗</strong>:
+            <ul>
+              <li>Protrusion of abdominal contents through inguinal canal</li>
+              <li>Predisposed: middle-aged intact female dogs (60% in females), Cavalier KCS, Cocker, Pekingese, Basset, Basenji, Weimaraner</li>
+              <li>Cat: rare, usually congenital</li>
+              <li>Often bilateral (40-60%) ✨</li>
+            </ul>
+          </li>
+          <li><strong>Types:</strong>
+            <ul>
+              <li><strong>Indirect (congenital):</strong>
+                <ul>
+                  <li>Through normal inguinal canal alongside spermatic cord (males) or round ligament (females)</li>
+                  <li>Often associated with patent processus vaginalis</li>
+                </ul>
+              </li>
+              <li><strong>Direct (acquired):</strong>
+                <ul>
+                  <li>Through weakness in body wall medial to inguinal ring</li>
+                  <li>Usually older intact females</li>
+                  <li>Trauma, obesity, intra-abdominal pressure factors</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Contents:</strong>
+            <ul>
+              <li>Omentum (most common)</li>
+              <li>Intestine (small intestine especially) ✗</li>
+              <li>Bladder</li>
+              <li>Uterus (especially in pregnant bitch — emergency!) ✗</li>
+              <li>Pups in pregnant uterus — emergency C-section + repair</li>
+            </ul>
+          </li>
+          <li><strong>Surgical indications:</strong>
+            <ul>
+              <li>All inguinal hernias should be repaired (don't usually close spontaneously)</li>
+              <li>Symptomatic (pain, swelling)</li>
+              <li>Incarcerated / strangulated — emergency ✗</li>
+              <li>Pregnant + uterus / pups in hernia — emergency C-section + repair</li>
+              <li>Concurrent OHE in intact female (always recommended) ✨</li>
+              <li>Bilateral disease — repair both sides</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Hemodynamically unstable patient — stabilize first</li>
+          <li>Strangulated bowel without prompt surgery (must be emergent)</li>
+          <li>Severe systemic illness</li>
+          <li>Coagulopathy</li>
+          <li>Pregnant non-emergent: balance fetal viability vs surgical urgency (depends on contents)</li>
+        </ul>
+      `,
+      preOp: `
+        <p><strong>1. Examination ✨:</strong></p>
+        <ul>
+          <li>Palpate inguinal area:
+            <ul>
+              <li>Soft swelling, often pendulous</li>
+              <li>Reducible vs incarcerated</li>
+              <li>Bilateral?</li>
+              <li>Pulsation? (vascular structures)</li>
+            </ul>
+          </li>
+          <li>If incarcerated: pain on palpation, fixed mass, sometimes discoloration</li>
+          <li>If strangulated: severe pain, vomiting, depression, abdominal tenderness ✗</li>
+          <li>Pregnant bitch with inguinal hernia: assess pup viability via US</li>
+        </ul>
+        <p><strong>2. Imaging:</strong></p>
+        <ul>
+          <li><strong>Abdominal ultrasound ✨:</strong>
+            <ul>
+              <li>Confirm contents (intestine, bladder, uterus, omentum)</li>
+              <li>Assess viability (peristalsis, color flow)</li>
+              <li>Identify hernia sac, fluid in canal</li>
+              <li>If pregnant: fetal heart rate, viability</li>
+            </ul>
+          </li>
+          <li>Abdominal radiographs (if no US):
+            <ul>
+              <li>Soft tissue mass in inguinal area</li>
+              <li>Gas-filled bowel in hernia</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>3. Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem (electrolytes if vomiting), UA</li>
+          <li>Coag panel</li>
+          <li>If strangulation: lactate (perfusion marker)</li>
+        </ul>
+        <p><strong>4. Pre-op preparation:</strong></p>
+        <ul>
+          <li>Stabilize first if strangulated:
+            <ul>
+              <li>IV fluids</li>
+              <li>Pain control</li>
+              <li>Anti-emetic</li>
+              <li>Then go to surgery</li>
+            </ul>
+          </li>
+          <li>Pre-medication: methadone + maropitant</li>
+          <li>Antibiotics: Cefazolin 22 mg/kg IV at induction; Cefoxitin if intestine compromised</li>
+          <li>Wide clip + scrub of ventral abdomen + inguinal area + medial thigh</li>
+          <li>Position: dorsal recumbency</li>
+          <li>Prep for possible enterectomy if strangulated</li>
+        </ul>
+      `,
+      technique: `
+        <p><strong>Approaches:</strong></p>
+        <ul>
+          <li><strong>Inguinal approach:</strong> direct access to hernia ring</li>
+          <li><strong>Ventral midline approach ✨:</strong> better for bilateral, female with concurrent OHE, large hernia, or strangulated bowel needing resection</li>
+          <li><strong>Combined:</strong> sometimes need both</li>
+        </ul>
+        <p><strong>Surgical sequence (ventral midline approach with concurrent OHE — typical case):</strong></p>
+        <ol>
+          <li>Standard ventral midline laparotomy</li>
+          <li>Identify hernia from inside abdomen:
+            <ul>
+              <li>Look at inguinal ring (lateral abdominal wall)</li>
+              <li>Visualize sac, contents</li>
+            </ul>
+          </li>
+          <li><strong>Reduce contents ✨:</strong>
+            <ul>
+              <li>Gently pull contents back into abdomen</li>
+              <li>If incarcerated: may need to enlarge ring (incise medial border) to allow reduction</li>
+              <li>Assess viability of contents (intestine especially):
+                <ul>
+                  <li>Pink, peristalsis = viable</li>
+                  <li>Black, no peristalsis = devitalized → enterectomy</li>
+                </ul>
+              </li>
+              <li>If non-viable: enterectomy + anastomosis (see separate entry)</li>
+            </ul>
+          </li>
+          <li><strong>If pregnant bitch with uterus + pups in hernia ✗</strong>:
+            <ul>
+              <li>Assess fetal viability (US, fetal HR)</li>
+              <li>If viable + appropriate gestational age: C-section + concurrent OHE</li>
+              <li>If non-viable: hysterotomy / OHE</li>
+              <li>Address hernia after delivery</li>
+            </ul>
+          </li>
+          <li><strong>Concurrent OHE (intact female ✨):</strong>
+            <ul>
+              <li>Standard OHE technique</li>
+              <li>Removes hormonal driver of acquired hernia</li>
+              <li>Reduces recurrence</li>
+            </ul>
+          </li>
+          <li><strong>Close hernial defect ✨:</strong>
+            <ul>
+              <li>From inside (transabdominal): close inguinal ring with 0 or 2-0 PDS simple interrupted</li>
+              <li>Or external approach: separate incision over hernia, expose ring, close</li>
+              <li>Identify external pudendal vessels — protect</li>
+              <li>Close ring snugly without compressing vessels / spermatic cord</li>
+              <li>For large defects: may need mesh reinforcement (rare in vet medicine)</li>
+            </ul>
+          </li>
+          <li><strong>Bilateral disease:</strong>
+            <ul>
+              <li>Address both rings same surgery</li>
+              <li>Symmetric closure</li>
+            </ul>
+          </li>
+          <li><strong>Closure:</strong>
+            <ul>
+              <li>Close abdomen routine 3-layer</li>
+              <li>If external approach also done: close inguinal incision in layers</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>External approach (alternative — for chronic, reducible cases):</strong></p>
+        <ol>
+          <li>Skin incision over hernia (~ 5-8 cm)</li>
+          <li>Dissect SQ to expose hernial sac</li>
+          <li>Open sac, reduce contents</li>
+          <li>Close ring with 2-0 or 0 PDS</li>
+          <li>Close SQ + skin</li>
+        </ol>
+        <p><strong>Critical principles:</strong></p>
+        <ul>
+          <li>Identify external pudendal vessels — protect from suture</li>
+          <li>Concurrent OHE in intact female (essential ✨)</li>
+          <li>Adequate ring closure with healthy fascial purchase</li>
+          <li>Address bilateral disease same surgery if possible</li>
+          <li>Strangulated bowel — assess viability + resect if needed</li>
+        </ul>
+      `,
+      drugs: `
+        <p><strong>Pre-medication:</strong></p>
+        <ul>
+          <li>Methadone 0.2-0.4 mg/kg IM/IV</li>
+          <li>Maropitant 1 mg/kg SC</li>
+        </ul>
+        <p><strong>Induction:</strong></p>
+        <ul>
+          <li>Propofol or alfaxalone</li>
+        </ul>
+        <p><strong>Maintenance:</strong></p>
+        <ul>
+          <li>Isoflurane / sevoflurane to effect</li>
+          <li>Fentanyl CRI 5-10 mcg/kg/h</li>
+          <li>± Lidocaine CRI 25-50 mcg/kg/min</li>
+        </ul>
+        <p><strong>Antibiotics:</strong></p>
+        <ul>
+          <li>Pre-op:
+            <ul>
+              <li>Routine: Cefazolin 22 mg/kg IV at induction</li>
+              <li>Strangulated bowel / contamination: Cefoxitin 30 mg/kg IV (covers anaerobes)</li>
+            </ul>
+          </li>
+          <li>Post-op:
+            <ul>
+              <li>Routine: Cephalexin 22 mg/kg PO q12h × 5-7 d</li>
+              <li>If enterectomy / contamination: Amoxicillin-clavulanate 12.5 mg/kg PO q12h × 7-10 d</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Analgesia:</strong></p>
+        <ul>
+          <li>Methadone q4-6h × 24 h → buprenorphine</li>
+          <li>NSAID × 7 d (carprofen, meloxicam)</li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h × 7 d</li>
+        </ul>
+      `,
+      postOp: `
+        <p><strong>Routine post-op:</strong></p>
+        <ul>
+          <li>Recovery monitoring</li>
+          <li>Discharge typically day 1-2</li>
+          <li>E-collar 14 d</li>
+          <li>Restricted activity 14-21 d (longer than umbilical due to abdominal pressure on closure)</li>
+          <li>NSAID × 7 d</li>
+          <li>Suture removal day 10-14</li>
+        </ul>
+        <p><strong>If enterectomy done:</strong></p>
+        <ul>
+          <li>ICU monitoring × 24-72 h</li>
+          <li>NPO × 12-24 h, then small frequent meals</li>
+          <li>Watch for septic peritonitis (day 3-5)</li>
+          <li>Continue antibiotics 7-14 d</li>
+        </ul>
+        <p><strong>Long-term:</strong></p>
+        <ul>
+          <li>Recurrence rate 5-10% (higher in obese, intact females not OHE'd)</li>
+          <li>Monitor for new hernia on opposite side (40-60% bilateral incidence)</li>
+          <li>Weight management important</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Recurrence ✗</strong>:
+            <ul>
+              <li>5-15% — higher in obese, intact females</li>
+              <li>Tx: revision surgery, mesh reinforcement</li>
+            </ul>
+          </li>
+          <li><strong>Strangulation pre-surgery → bowel necrosis</strong>:
+            <ul>
+              <li>Requires enterectomy</li>
+              <li>Higher morbidity</li>
+            </ul>
+          </li>
+          <li><strong>Wound infection</strong>:
+            <ul>
+              <li>Higher rate if bowel involved</li>
+            </ul>
+          </li>
+          <li>Seroma at inguinal incision</li>
+          <li>External pudendal vessel damage (rare)</li>
+          <li>Bilateral disease — second hernia may develop</li>
+          <li>Pregnant emergency: pup mortality, maternal complications</li>
+        </ul>
+      `,
+      outcome: `
+        <ul>
+          <li><strong>Routine inguinal hernia repair ✓:</strong>
+            <ul>
+              <li>Excellent — &gt; 90% successful</li>
+              <li>Recurrence 5-15%</li>
+              <li>Recovery 14-21 d</li>
+            </ul>
+          </li>
+          <li><strong>Combined with OHE in intact female ✓:</strong>
+            <ul>
+              <li>Best outcome (removes hormonal driver)</li>
+              <li>Lower recurrence</li>
+            </ul>
+          </li>
+          <li><strong>Strangulated bowel:</strong>
+            <ul>
+              <li>Survival 70-90% with prompt surgery</li>
+              <li>Higher if enterectomy needed</li>
+            </ul>
+          </li>
+          <li><strong>Pregnant bitch emergency:</strong>
+            <ul>
+              <li>Maternal survival good</li>
+              <li>Pup survival depends on duration</li>
+            </ul>
+          </li>
+          <li><strong>Long-term:</strong>
+            <ul>
+              <li>QOL normal post-recovery</li>
+              <li>Bilateral disease consideration</li>
+              <li>Weight management important</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Concurrent OHE in intact female = essential</strong> ✨ — removes hormonal driver, reduces recurrence<br><br>**40-60% bilateral disease** — examine + counsel about other side<br><br>⚠️ **Pregnant bitch with uterus in hernia = emergency C-section + OHE + repair** — fetal viability time-sensitive<br><br>✗ **Strangulated bowel = emergency** — assess viability, may need enterectomy</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     SOFT TISSUE — Perineal hernia
+  ============================================================ */
+  {
+    id: 'perineal-hernia',
+    titleEn: 'Perineal Hernia Repair',
+    titleTh: 'ผ่าตัดแก้ไส้เลื่อนรอบทวาร',
+    type: 'surgery',
+    species: ['dog'],
+    system: 'soft-tissue',
+    tags: ['perineal hernia', 'pelvic diaphragm', 'internal obturator transposition', 'castration', 'rectal prolapse', 'bladder retroflexion', 'levator ani', 'coccygeus', 'sciatic nerve'],
+    aliases: ['perineal hernia', 'ไส้เลื่อนทวาร', 'ก้นโป่ง', 'หัวนูนรอบทวาร'],
+    source: 'Tobias & Johnston Vol 2 · Ch. on Perineal Hernia',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Perineal hernia ✗</strong> — weakness/atrophy of pelvic diaphragm muscles
+            <ul>
+              <li>Most common: intact older male dogs (5-8 yr)</li>
+              <li>Predisposed: Boston Terrier, Boxer, Welsh Corgi, Pekingese, Cocker, Old English Sheepdog</li>
+              <li>Etiology: testosterone-related muscle atrophy + chronic straining (BPH, prostatic disease, constipation)</li>
+              <li>Often bilateral but typically asymmetric (one side worse)</li>
+              <li>RARE in females, neutered males (when occurs in female: usually older, severe straining, neoplasia)</li>
+              <li>Cat: rare</li>
+            </ul>
+          </li>
+          <li><strong>Clinical signs ✨:</strong>
+            <ul>
+              <li>Perineal swelling (one or both sides of anus)</li>
+              <li>Tenesmus, dyschezia (chronic straining)</li>
+              <li>Constipation (rectum bends into hernia → "S" curve)</li>
+              <li>Hematochezia, mucoid discharge</li>
+              <li>Dysuria / stranguria if bladder retroflexed ✗ (emergency)</li>
+              <li>Abdominal mass on rectal palpation</li>
+            </ul>
+          </li>
+          <li><strong>Hernia contents:</strong>
+            <ul>
+              <li>Pelvic + retroperitoneal fat</li>
+              <li>Rectum (deviation forms "S" curve)</li>
+              <li>Prostate (intact male)</li>
+              <li>Bladder ✗ (retroflexion = urinary obstruction emergency)</li>
+              <li>Small intestine (rare but possible)</li>
+            </ul>
+          </li>
+          <li><strong>Surgical indications ✨:</strong>
+            <ul>
+              <li>All clinical perineal hernias should be repaired surgically (medical Tx temporary)</li>
+              <li>Bladder retroflexion = emergency ✗</li>
+              <li>Concurrent castration MANDATORY ✨ (removes testosterone driver, reduces recurrence)</li>
+              <li>Treat constipation pre-op (stool softeners, manual evacuation)</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Hemodynamically unstable patient — stabilize first</li>
+          <li>Severe systemic illness</li>
+          <li>Bladder retroflexion + dehydrated / hyperkalemic — relieve obstruction first (catheter, cystocentesis), stabilize, then surgery</li>
+          <li>Coagulopathy</li>
+          <li>Owner unable to provide post-op care (stool softeners, e-collar, restricted activity weeks)</li>
+        </ul>
+      `,
+      preOp: `
+        <p><strong>1. Examination ✨:</strong></p>
+        <ul>
+          <li>External perineal exam:
+            <ul>
+              <li>Swelling on one or both sides of anus</li>
+              <li>Reducible vs incarcerated</li>
+              <li>Skin condition</li>
+            </ul>
+          </li>
+          <li><strong>Digital rectal exam ✨ — CRITICAL:</strong>
+            <ul>
+              <li>Palpate hernia sac defect (loss of pelvic diaphragm muscles laterally)</li>
+              <li>Palpate rectum — "S" curve / sacculation</li>
+              <li>Prostate size + symmetry (BPH, neoplasia)</li>
+              <li>Anal sacs (often impacted from chronic straining)</li>
+              <li>Mass / bladder retroflexion</li>
+            </ul>
+          </li>
+          <li>Assess if bladder retroflexed:
+            <ul>
+              <li>Difficulty urinating, stranguria</li>
+              <li>Caudoventral abdominal mass on palpation (bladder displaced)</li>
+              <li>Bladder visible/palpable in perineum</li>
+              <li>= EMERGENCY ✗</li>
+            </ul>
+          </li>
+          <li>Assess bilateral disease (often both sides involved)</li>
+          <li>Concurrent castration assessment (testicles + prostate)</li>
+        </ul>
+        <p><strong>2. Imaging:</strong></p>
+        <ul>
+          <li>Abdominal radiographs:
+            <ul>
+              <li>Bladder position (retroflexion)</li>
+              <li>Prostate size</li>
+              <li>Constipation, fecal load</li>
+            </ul>
+          </li>
+          <li>Abdominal US:
+            <ul>
+              <li>Confirm contents</li>
+              <li>Bladder position</li>
+              <li>Prostate evaluation (BPH, cysts, neoplasia)</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>3. Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, UA</li>
+          <li>Coag panel</li>
+          <li>If bladder retroflexion: urgent labs (K+, BUN, creat)</li>
+        </ul>
+        <p><strong>4. Pre-op preparation ✨:</strong></p>
+        <ul>
+          <li>If bladder retroflexed: relieve first (catheter, ± cystocentesis)</li>
+          <li>Pre-op bowel evacuation:
+            <ul>
+              <li>Lactulose 1 mL/kg PO × 1-3 days pre-op</li>
+              <li>Warm water enema 12-24 h pre-op (gentle)</li>
+              <li>Manual fecal evacuation under anesthesia</li>
+            </ul>
+          </li>
+          <li>Pre-medication: methadone + maropitant</li>
+          <li>Antibiotics: Cefoxitin 30 mg/kg IV at induction (anaerobic + aerobic — perineal area contaminated)</li>
+          <li>Or Cefazolin + Metronidazole 15 mg/kg IV</li>
+          <li>Position: ventral recumbency (sternal) with pelvis elevated, tail tied over back ✨</li>
+          <li>Place purse-string suture around anus</li>
+          <li>Wide clip + scrub of perineum + dorsal tail base</li>
+        </ul>
+      `,
+      technique: `
+        <p><strong>Surgical sequence — Internal Obturator Transposition (preferred technique) ✨:</strong></p>
+        <ol>
+          <li><strong>Skin incision:</strong>
+            <ul>
+              <li>Curvilinear incision over hernia (lateral to anus, 1-2 cm cranial to anus, extending 4-5 cm dorsally)</li>
+              <li>Subcutaneous dissection</li>
+            </ul>
+          </li>
+          <li><strong>Identify hernia sac + contents:</strong>
+            <ul>
+              <li>Open sac carefully</li>
+              <li>Identify contents (rectum, fat, prostate, bladder if retroflexed)</li>
+              <li>Reduce contents back into pelvis/abdomen</li>
+              <li>If bladder retroflexed: drain via cystocentesis, then reduce</li>
+            </ul>
+          </li>
+          <li><strong>Identify pelvic diaphragm structures ✨:</strong>
+            <ul>
+              <li>Levator ani (medial) — often atrophied</li>
+              <li>Coccygeus (dorsal)</li>
+              <li>Sacrotuberous ligament (dorsolateral) — important landmark</li>
+              <li>External anal sphincter (medial)</li>
+              <li>Internal obturator muscle (ventral, on ischial table) ← key for transposition</li>
+              <li>Sciatic nerve (lateral) — PROTECT ✗</li>
+              <li>Caudal rectal nerve, vessels — PROTECT</li>
+            </ul>
+          </li>
+          <li><strong>Internal obturator muscle elevation ✨:</strong>
+            <ul>
+              <li>Identify internal obturator on dorsal aspect of ischial table (lateral to ischial spine)</li>
+              <li>Elevate origin of muscle from ischium with periosteal elevator</li>
+              <li>Preserve muscle attachment caudally + nerve/vascular supply</li>
+              <li>Mobilize muscle as a flap</li>
+            </ul>
+          </li>
+          <li><strong>Suture placement to close pelvic diaphragm ✨:</strong>
+            <ul>
+              <li>Use 2-0 or 0 PDS (or non-absorbable like polypropylene for additional strength) simple interrupted</li>
+              <li>Suture pattern:
+                <ul>
+                  <li>External anal sphincter to internal obturator (medial-to-lateral)</li>
+                  <li>Internal obturator to sacrotuberous ligament (lateral)</li>
+                  <li>Coccygeus to internal obturator (dorsal)</li>
+                  <li>Pre-place all sutures, then tie sequentially</li>
+                </ul>
+              </li>
+              <li>3-5 sutures typically</li>
+              <li>Tie snugly but not over-constricting (could compress sciatic nerve)</li>
+              <li>Test by digital rectal exam — should restore pelvic diaphragm</li>
+            </ul>
+          </li>
+          <li><strong>Concurrent CASTRATION ✨ — MANDATORY:</strong>
+            <ul>
+              <li>Remove testosterone driver of muscle atrophy</li>
+              <li>Reduces recurrence rate from ~50% → 5-10%</li>
+              <li>Standard scrotal or pre-scrotal castration</li>
+            </ul>
+          </li>
+          <li><strong>Concurrent procedures (if indicated):</strong>
+            <ul>
+              <li>Cystopexy (if bladder retroflexion was present — fix bladder to abdominal wall)</li>
+              <li>Ductus deferens-pexy (alternative to cystopexy)</li>
+              <li>Colopexy (if rectal prolapse / severe sacculation)</li>
+              <li>Anal sac drainage / sacculectomy if needed</li>
+            </ul>
+          </li>
+          <li><strong>Closure:</strong>
+            <ul>
+              <li>SQ: 3-0 PDS continuous</li>
+              <li>Skin: 3-0 nylon simple interrupted</li>
+              <li>Remove anal purse-string</li>
+            </ul>
+          </li>
+          <li><strong>Bilateral disease ✨:</strong>
+            <ul>
+              <li>Address one side first, opposite side typically 4-6 weeks later</li>
+              <li>Some surgeons do both same surgery (more challenging, longer anesthesia)</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>Traditional technique (alternative — used historically):</strong></p>
+        <ol>
+          <li>Direct apposition of pelvic diaphragm muscles without obturator transposition</li>
+          <li>Higher recurrence rate (40-50%) — internal obturator transposition preferred ✨</li>
+        </ol>
+        <p><strong>Critical principles ✨:</strong></p>
+        <ul>
+          <li><strong>Identify + protect sciatic nerve</strong> ✗ — runs lateral to surgical field</li>
+          <li>Identify + protect caudal rectal nerve (provides anal sphincter function — incontinence if damaged)</li>
+          <li>Concurrent castration mandatory</li>
+          <li>Internal obturator transposition is gold standard</li>
+          <li>Atraumatic muscle handling</li>
+          <li>Pre-op bowel evacuation essential</li>
+        </ul>
+      `,
+      drugs: `
+        <p><strong>Pre-medication:</strong></p>
+        <ul>
+          <li>Methadone 0.3-0.5 mg/kg IV/IM (perineal surgery painful)</li>
+          <li>± Acepromazine low dose</li>
+          <li>Maropitant 1 mg/kg SC</li>
+        </ul>
+        <p><strong>Epidural ✨ (HIGHLY recommended):</strong></p>
+        <ul>
+          <li>Lumbosacral approach</li>
+          <li>Bupivacaine 0.5% — 1 mL/4.5 kg + Preservative-free morphine 0.1 mg/kg</li>
+          <li>18-24 h post-op analgesia</li>
+        </ul>
+        <p><strong>Induction:</strong></p>
+        <ul>
+          <li>Propofol or alfaxalone</li>
+        </ul>
+        <p><strong>Maintenance:</strong></p>
+        <ul>
+          <li>Isoflurane / sevoflurane to effect</li>
+          <li>Fentanyl CRI 5-10 mcg/kg/h</li>
+        </ul>
+        <p><strong>Antibiotics ✨ (perineal area = contaminated):</strong></p>
+        <ul>
+          <li>Pre-op:
+            <ul>
+              <li>Cefoxitin 30 mg/kg IV at induction (best — covers anaerobes)</li>
+              <li>Or Cefazolin + Metronidazole 15 mg/kg IV</li>
+            </ul>
+          </li>
+          <li>Post-op:
+            <ul>
+              <li>Amoxicillin-clavulanate 12.5-25 mg/kg PO q12h × 7-10 d</li>
+              <li>Or Cephalexin + Metronidazole PO</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>Stool softeners ✨ — CRITICAL post-op:</strong></p>
+        <ul>
+          <li>Lactulose 0.5-1 mL/kg PO q8-12h × 14-21 d
+            <ul>
+              <li>Prevents straining tearing fresh sutures</li>
+              <li>Adjust to soft (not liquid) stool</li>
+            </ul>
+          </li>
+          <li>± Docusate sodium 50-200 mg PO q12-24h</li>
+          <li>± Psyllium fiber added to food</li>
+        </ul>
+        <p><strong>Analgesia:</strong></p>
+        <ul>
+          <li>Methadone 0.1-0.2 mg/kg IV/IM q4-6h × 24-48 h</li>
+          <li>Then Buprenorphine 0.02 mg/kg q8h × 3-5 d</li>
+          <li>NSAID — start day 1:
+            <ul>
+              <li>Carprofen 4 mg/kg SC then 2 mg/kg PO q12h × 7-10 d</li>
+            </ul>
+          </li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h × 14-21 d ✨</li>
+        </ul>
+      `,
+      postOp: `
+        <p><strong>Immediate (Day 0-2):</strong></p>
+        <ul>
+          <li>Recovery monitoring</li>
+          <li>Pain control multimodal</li>
+          <li>E-collar 100% × 21 d</li>
+          <li>Cold compress to perineum × 24-48 h</li>
+          <li>Watch for: urinary retention (epidural side effect), defecation difficulty</li>
+          <li>Express bladder if not urinating after epidural wears off</li>
+        </ul>
+        <p><strong>Day 2-7:</strong></p>
+        <ul>
+          <li>Discharge typically day 2-3 once stable + comfortable</li>
+          <li>Continue antibiotics, NSAID, opioid (transition to PO)</li>
+          <li>Continue stool softeners ✨ — KEY!</li>
+          <li>Soft food diet (canned, slurry)</li>
+          <li>Daily wound check — perineal area difficult to keep clean</li>
+          <li>Gentle wipe with damp cloth after defecation</li>
+          <li>Restricted activity — leash walks only</li>
+        </ul>
+        <p><strong>Day 7-21:</strong></p>
+        <ul>
+          <li>Recheck day 10-14 — wound check, suture removal, rectal exam</li>
+          <li>Continue stool softener as needed</li>
+          <li>Continue restricted activity</li>
+          <li>Watch for: dehiscence, recurrence signs (re-swelling)</li>
+        </ul>
+        <p><strong>Day 21+:</strong></p>
+        <ul>
+          <li>Gradual return to activity</li>
+          <li>Plan contralateral side surgery if bilateral disease (4-6 weeks after first side)</li>
+          <li>Continue stool softener × 6-8 weeks total (preventive)</li>
+        </ul>
+        <p><strong>Long-term ✨:</strong></p>
+        <ul>
+          <li>Castration removes hormonal driver</li>
+          <li>Continue stool softener if any straining tendency</li>
+          <li>Prostate disease management if BPH was present</li>
+          <li>Recheck rectal exam at follow-up visits</li>
+          <li>QOL excellent if successful</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Recurrence ✗</strong>:
+            <ul>
+              <li>Internal obturator transposition + castration: 5-15%</li>
+              <li>Traditional repair without castration: 40-50%</li>
+              <li>Tx: revision surgery (more complex on revision)</li>
+            </ul>
+          </li>
+          <li><strong>Sciatic nerve damage ✗</strong>:
+            <ul>
+              <li>From sutures placed too lateral / deep</li>
+              <li>Hindlimb dysfunction (ipsilateral)</li>
+              <li>Tx: removal of offending suture (early), supportive care</li>
+            </ul>
+          </li>
+          <li><strong>Fecal incontinence ✗</strong>:
+            <ul>
+              <li>From caudal rectal nerve damage</li>
+              <li>Anal sphincter dysfunction</li>
+              <li>Rate: 5-10%</li>
+              <li>Some transient (resolves weeks-months)</li>
+              <li>Some permanent</li>
+            </ul>
+          </li>
+          <li><strong>Wound infection / dehiscence</strong>:
+            <ul>
+              <li>Rate higher in this contaminated area</li>
+              <li>Tx: open + lavage, antibiotics</li>
+            </ul>
+          </li>
+          <li>Persistent dyschezia / tenesmus</li>
+          <li>Rectal prolapse (severe straining post-op)</li>
+          <li>Bladder retroflexion recurrence</li>
+          <li>Contralateral hernia development (bilateral disease)</li>
+          <li>Urinary retention (epidural-related, transient)</li>
+          <li>Wound seroma / hematoma</li>
+        </ul>
+      `,
+      outcome: `
+        <ul>
+          <li><strong>Internal obturator transposition + castration ✓:</strong>
+            <ul>
+              <li>Excellent — &gt; 85-90% successful</li>
+              <li>Recurrence 5-15%</li>
+              <li>QOL excellent post-recovery</li>
+              <li>Recovery 4-6 weeks for full activity</li>
+            </ul>
+          </li>
+          <li><strong>Without castration:</strong>
+            <ul>
+              <li>Recurrence rate 40-50% — strong argument for concurrent castration ✨</li>
+            </ul>
+          </li>
+          <li><strong>Bilateral disease:</strong>
+            <ul>
+              <li>Both sides should be repaired</li>
+              <li>Staged surgery preferred (4-6 weeks apart)</li>
+            </ul>
+          </li>
+          <li><strong>Bladder retroflexion ✗:</strong>
+            <ul>
+              <li>Higher mortality if delayed (5-15%)</li>
+              <li>Excellent outcome with prompt repair</li>
+              <li>Cystopexy reduces recurrence</li>
+            </ul>
+          </li>
+          <li><strong>Long-term:</strong>
+            <ul>
+              <li>Most patients have excellent outcome</li>
+              <li>Continued stool management often needed</li>
+              <li>Lifelong</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>Internal obturator transposition + concurrent castration = standard of care</strong> ✨ — recurrence drops from 50% → 5-15%<br><br>**Stool softener × 6-8 weeks = mandatory** — straining = suture failure = recurrence<br><br>⚠️ **Sciatic nerve + caudal rectal nerve = identify + protect** — incontinence + paralysis are devastating complications<br><br>✗ **Bladder retroflexion = emergency** — relieve obstruction first, stabilize, then repair</div>
+      `,
+    },
+  },
+
+  /* ============================================================
+     SOFT TISSUE — Diaphragmatic hernia
+  ============================================================ */
+  {
+    id: 'diaphragmatic-hernia',
+    titleEn: 'Diaphragmatic Hernia Repair (Traumatic)',
+    titleTh: 'ผ่าตัดแก้ไส้เลื่อน diaphragm (จากอุบัติเหตุ)',
+    type: 'surgery',
+    species: ['dog', 'cat'],
+    system: 'soft-tissue',
+    tags: ['diaphragmatic hernia', 'traumatic diaphragmatic hernia', 'PPDH', 'peritoneopericardial', 'reexpansion pulmonary edema', 'positive pressure ventilation', 'thoracic trauma', 'HBC'],
+    aliases: ['diaphragmatic hernia', 'diaphragm rupture', 'ไส้เลื่อนกระบังลม', 'กระบังลมฉีก'],
+    source: 'Tobias & Johnston Vol 2 · Ch. on Diaphragmatic Hernia',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Traumatic diaphragmatic hernia ✗</strong> — primary indication
+            <ul>
+              <li>Most common: HBC (hit-by-car), fall from height</li>
+              <li>Mechanism: blunt thoracoabdominal trauma → ↑ abdominal pressure → diaphragm rupture</li>
+              <li>~ 1-3% of HBC dogs/cats</li>
+              <li>Often missed initially (other injuries take priority)</li>
+            </ul>
+          </li>
+          <li><strong>Congenital — Peritoneopericardial Diaphragmatic Hernia (PPDH) ✨:</strong>
+            <ul>
+              <li>Persistent communication between peritoneum + pericardium</li>
+              <li>Most common congenital diaphragmatic hernia in dog/cat</li>
+              <li>Often incidental finding (rad/US)</li>
+              <li>May be asymptomatic for years</li>
+              <li>Predisposed: Weimaraner, Persian cat</li>
+            </ul>
+          </li>
+          <li><strong>Clinical signs ✨:</strong>
+            <ul>
+              <li>Acute trauma: dyspnea, orthopnea, abdominal injuries, cyanosis</li>
+              <li>Chronic: variable — may be incidental or have intermittent GI signs</li>
+              <li>Chronic compensated: surprisingly few signs</li>
+              <li>Acute decompensation: respiratory distress, vomiting</li>
+            </ul>
+          </li>
+          <li><strong>Hernia contents:</strong>
+            <ul>
+              <li>Liver (most common) ✨</li>
+              <li>Stomach (gastric volvulus risk — emergency!)</li>
+              <li>Small intestine</li>
+              <li>Spleen</li>
+              <li>Omentum</li>
+              <li>Pancreas</li>
+            </ul>
+          </li>
+          <li><strong>Surgical indications:</strong>
+            <ul>
+              <li>Acute traumatic: surgery once stabilized (24-48 h delay if compensated)</li>
+              <li>Chronic / PPDH symptomatic: surgical repair</li>
+              <li>Asymptomatic PPDH: case-by-case (some monitor, some repair if young)</li>
+              <li>Strangulated organs in hernia (gastric volvulus, intestinal torsion) — emergency ✗</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li><strong>Acute trauma — DON'T rush to surgery ✨:</strong>
+            <ul>
+              <li>Stabilize first (24-48 h)</li>
+              <li>Address pulmonary contusions (rest, oxygen)</li>
+              <li>Correct shock, hypothermia, electrolytes</li>
+              <li>Treat other injuries</li>
+              <li>Operating on unstable patient = high mortality</li>
+              <li>Exception: progressive deterioration, suspected strangulation, gastric volvulus → emergency</li>
+            </ul>
+          </li>
+          <li>Severe systemic illness</li>
+          <li>Severe coagulopathy</li>
+          <li>Severe pulmonary contusions (poor anesthetic candidate)</li>
+        </ul>
+      `,
+      preOp: `
+        <p><strong>1. Initial assessment ✨ — STABILIZE FIRST:</strong></p>
+        <ul>
+          <li>ABCs:
+            <ul>
+              <li>Airway, breathing — oxygen support</li>
+              <li>Circulation — IV fluids, blood pressure</li>
+              <li>Mentation</li>
+            </ul>
+          </li>
+          <li>Auscultation:
+            <ul>
+              <li>Decreased / displaced heart sounds</li>
+              <li>Borborygmi in thorax (intestines in chest)</li>
+              <li>Diminished lung sounds (ventral)</li>
+            </ul>
+          </li>
+          <li>Acute trauma — full trauma assessment:
+            <ul>
+              <li>Other injuries (long bone fractures, head trauma, abdominal trauma)</li>
+              <li>FAST scan</li>
+              <li>Cardiac auscultation (myocardial contusion, arrhythmia)</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>2. Imaging:</strong></p>
+        <ul>
+          <li><strong>Thoracic radiographs ✨:</strong>
+            <ul>
+              <li>Loss of diaphragmatic line</li>
+              <li>Abdominal organs (liver, stomach with gas) in thorax</li>
+              <li>Pleural effusion</li>
+              <li>Cardiomegaly silhouette enlarged (PPDH — heart silhouette includes liver/abdominal contents)</li>
+              <li>Mediastinal shift</li>
+            </ul>
+          </li>
+          <li>Abdominal ultrasound:
+            <ul>
+              <li>Confirm hernia contents</li>
+              <li>Assess organ viability</li>
+              <li>Pleural effusion</li>
+            </ul>
+          </li>
+          <li>CT (gold standard if available):
+            <ul>
+              <li>Detailed anatomy</li>
+              <li>Identify all herniated structures</li>
+              <li>Plan surgical approach</li>
+            </ul>
+          </li>
+          <li>Contrast study (rare):
+            <ul>
+              <li>Barium GI study can confirm if stomach / intestines in chest</li>
+            </ul>
+          </li>
+        </ul>
+        <p><strong>3. Workup:</strong></p>
+        <ul>
+          <li>CBC, biochem, electrolytes, BG</li>
+          <li>Coag panel</li>
+          <li>Lactate (perfusion marker)</li>
+          <li>Type / crossmatch (transfusion risk)</li>
+          <li>UA</li>
+        </ul>
+        <p><strong>4. Pre-op stabilization ✨:</strong></p>
+        <ul>
+          <li>Oxygen supplementation</li>
+          <li>IV fluids — careful (avoid worsening pulmonary edema)</li>
+          <li>Pain control:
+            <ul>
+              <li>Methadone 0.2-0.4 mg/kg IV (cardio-stable)</li>
+              <li>Avoid mu agonists if respiratory compromise — careful titration</li>
+            </ul>
+          </li>
+          <li>Position with elevated head + sternal recumbency to maximize lung expansion</li>
+          <li>Treat pulmonary contusions:
+            <ul>
+              <li>Rest, oxygen</li>
+              <li>NOT diuretics (worsen hypovolemia in trauma)</li>
+              <li>NOT corticosteroids routinely (controversial)</li>
+            </ul>
+          </li>
+          <li>Anti-emetic if vomiting (maropitant 1 mg/kg SC)</li>
+          <li>If gastric distension in chest (volvulus risk): NG tube decompression</li>
+          <li>Wait 24-48 h ideally before surgery (stabilization)</li>
+        </ul>
+        <p><strong>5. Anesthesia plan ✨ (CRITICAL):</strong></p>
+        <ul>
+          <li>Pre-oxygenate × 5 min</li>
+          <li><strong>Positive pressure ventilation MANDATORY</strong> — once peritoneum opened, lungs collapse without PPV</li>
+          <li>Plan for ventilator or manual bagging throughout surgery</li>
+          <li>Avoid heavy sedation pre-op</li>
+          <li>Cardio-stable induction (etomidate or low-dose propofol)</li>
+        </ul>
+      `,
+      technique: `
+        <p><strong>Surgical sequence ✨:</strong></p>
+        <ol>
+          <li><strong>Approach: Ventral midline laparotomy</strong>
+            <ul>
+              <li>Standard approach — best access to most diaphragmatic ruptures</li>
+              <li>Extend to xiphoid for cranial visualization</li>
+              <li>Some surgeons add caudal sternotomy if very dorsal/cranial defect</li>
+            </ul>
+          </li>
+          <li><strong>Identify defect</strong>:
+            <ul>
+              <li>Locate tear in diaphragm</li>
+              <li>Common locations: muscular portion (radial tears), peripheral attachments</li>
+              <li>Tendinous center less commonly torn</li>
+              <li>Bilateral or unilateral</li>
+            </ul>
+          </li>
+          <li><strong>Reduce abdominal contents from thorax ✨</strong>:
+            <ul>
+              <li>Gentle traction</li>
+              <li>If chronic + adhesions: careful dissection (don't tear lung, vessels)</li>
+              <li>Identify each organ + assess viability</li>
+              <li>Liver lobe torsion possible — assess</li>
+              <li>Gastric volvulus possible — derotate</li>
+            </ul>
+          </li>
+          <li><strong>Address compromised organs (if any):</strong>
+            <ul>
+              <li>Liver lobectomy if necrotic lobe</li>
+              <li>Splenectomy if compromised</li>
+              <li>Enterectomy if non-viable bowel</li>
+            </ul>
+          </li>
+          <li><strong>Remove pleural fluid</strong> (suction if significant)</li>
+          <li><strong>Repair diaphragm ✨:</strong>
+            <ul>
+              <li>Suture: 0 or 2-0 PDS or polypropylene (long-lasting absorbable or non-absorbable)</li>
+              <li>Pattern: simple continuous or simple interrupted</li>
+              <li>Apposition technique</li>
+              <li>Close from caudal to cranial typically</li>
+              <li>Watch for liver lobes, vena cava — don't catch in suture</li>
+              <li>For chronic / large defects: may need mesh reinforcement</li>
+              <li>Test integrity by gently filling thorax with saline (look for leaks)</li>
+            </ul>
+          </li>
+          <li><strong>Re-establish thoracic negative pressure ✨ — CRITICAL:</strong>
+            <ul>
+              <li>Place chest tube before final diaphragm closure
+                <ul>
+                  <li>Through abdominal incision into thorax</li>
+                  <li>Secure with purse-string + Chinese finger trap suture</li>
+                </ul>
+              </li>
+              <li>OR aspirate via large-gauge needle through diaphragm before final suture</li>
+              <li>Continue to evacuate air during closure of last sutures</li>
+            </ul>
+          </li>
+          <li><strong>Close abdomen routine 3-layer</strong></li>
+          <li><strong>Post-closure thoracocentesis</strong>:
+            <ul>
+              <li>Confirm full lung re-expansion via chest tube</li>
+              <li>Aspirate residual air / fluid</li>
+              <li>Continuous evacuation if needed × 12-24 h</li>
+            </ul>
+          </li>
+        </ol>
+        <p><strong>PPDH (congenital) — modifications:</strong></p>
+        <ul>
+          <li>Same general approach</li>
+          <li>Defect at peritoneal-pericardial junction (cranial diaphragm)</li>
+          <li>May have chronic adhesions in pericardium</li>
+          <li>Close defect at junction</li>
+          <li>Some PPDH require concurrent pericardectomy if pericardium thickened</li>
+        </ul>
+        <p><strong>Critical principles ✨:</strong></p>
+        <ul>
+          <li>Stabilize patient FIRST (don't rush to surgery for chronic compensated case)</li>
+          <li>Positive pressure ventilation throughout surgery</li>
+          <li>Atraumatic reduction of contents</li>
+          <li>Assess organ viability — resect non-viable</li>
+          <li>Re-establish thoracic negative pressure with chest tube</li>
+          <li>Watch for re-expansion pulmonary edema post-op</li>
+        </ul>
+      `,
+      drugs: `
+        <p><strong>Pre-medication (careful — respiratory compromise):</strong></p>
+        <ul>
+          <li>Methadone 0.2-0.3 mg/kg IV (titrated)</li>
+          <li>± Maropitant 1 mg/kg SC</li>
+          <li>AVOID heavy sedation</li>
+        </ul>
+        <p><strong>Induction (cardio-stable):</strong></p>
+        <ul>
+          <li>Etomidate 1-2 mg/kg IV (preferred in unstable patient)</li>
+          <li>Or low-dose Propofol 2-4 mg/kg IV titrated</li>
+          <li>Pre-oxygenate × 5 min</li>
+          <li>Rapid intubation</li>
+          <li><strong>Positive pressure ventilation MANDATORY</strong> ✨</li>
+        </ul>
+        <p><strong>Maintenance:</strong></p>
+        <ul>
+          <li>Isoflurane / sevoflurane LOW</li>
+          <li>Fentanyl CRI 5-15 mcg/kg/h ✓</li>
+          <li>± Lidocaine CRI 30-50 mcg/kg/min</li>
+          <li>Ventilator settings: PIP 10-15 cmH2O, RR 10-15/min, normocapnia</li>
+        </ul>
+        <p><strong>Antibiotics:</strong></p>
+        <ul>
+          <li>Pre-op: Cefazolin 22 mg/kg IV at induction, repeat q90 min</li>
+          <li>If bowel involvement / contamination: Cefoxitin or add Metronidazole</li>
+          <li>Post-op: 5-7 d if clean; longer if contamination</li>
+        </ul>
+        <p><strong>Post-op analgesia:</strong></p>
+        <ul>
+          <li>Continue fentanyl CRI 12-24 h post-op</li>
+          <li>Methadone 0.1-0.2 mg/kg IV/IM q4-6h × 24-48 h</li>
+          <li>Then Buprenorphine 0.02 mg/kg q8h × 3-5 d</li>
+          <li>NSAID — careful (renal hypoperfusion in trauma):
+            <ul>
+              <li>Start day 2-3 once stable + hydrated</li>
+              <li>Carprofen 2 mg/kg PO q12h × 7 d</li>
+            </ul>
+          </li>
+          <li>Gabapentin 5-10 mg/kg PO q8-12h × 7-14 d</li>
+        </ul>
+      `,
+      postOp: `
+        <p><strong>Immediate (Day 0-1) — ICU CRITICAL ✨:</strong></p>
+        <ul>
+          <li><strong>Watch for re-expansion pulmonary edema ✗</strong> (RPE) — most feared:
+            <ul>
+              <li>Develops 0-24 h post-op</li>
+              <li>From rapid lung re-expansion after chronic compression</li>
+              <li>More common in CHRONIC hernia (chronic atelectasis)</li>
+              <li>Less common in acute</li>
+              <li>Signs: dyspnea, tachypnea, crackles, pink frothy sputum, hypoxemia</li>
+              <li>Tx:
+                <ul>
+                  <li>Oxygen, sometimes positive pressure ventilation</li>
+                  <li>Furosemide 2-4 mg/kg IV (cautious — hypovolemia)</li>
+                  <li>Supportive care</li>
+                  <li>Mortality high if severe</li>
+                </ul>
+              </li>
+              <li>Prevention: gradual lung re-expansion intra-op (slow ventilation, avoid aggressive bagging)</li>
+            </ul>
+          </li>
+          <li>Continuous monitoring:
+            <ul>
+              <li>Vital signs q1-2h</li>
+              <li>Pulse oximetry</li>
+              <li>Pleural fluid via chest tube</li>
+              <li>Pain assessment</li>
+              <li>Serial chest radiographs (q12-24h initial)</li>
+            </ul>
+          </li>
+          <li>Pain control multimodal</li>
+          <li>NPO × 12 h, then small water</li>
+          <li>Watch for pneumothorax (chest tube closed, air re-accumulates)</li>
+        </ul>
+        <p><strong>Day 1-3:</strong></p>
+        <ul>
+          <li>Chest tube management:
+            <ul>
+              <li>Aspirate q4-6h initially → q8h → q12h based on output</li>
+              <li>Remove when minimal air / fluid for 12-24 h</li>
+              <li>Remove typically day 2-3</li>
+            </ul>
+          </li>
+          <li>Begin oral nutrition if no vomiting</li>
+          <li>Continue antibiotics, NSAID, opioid</li>
+          <li>Discharge typically day 3-5 once stable</li>
+        </ul>
+        <p><strong>Day 3-14:</strong></p>
+        <ul>
+          <li>E-collar 14 d</li>
+          <li>Restricted activity 14-21 d</li>
+          <li>Monitor breathing, appetite, energy</li>
+          <li>Suture removal day 10-14</li>
+          <li>Recheck radiographs at 2 weeks</li>
+        </ul>
+        <p><strong>Long-term:</strong></p>
+        <ul>
+          <li>Most patients return to normal activity within 4-6 weeks</li>
+          <li>Recurrence rare with proper closure</li>
+          <li>QOL excellent post-recovery</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Re-expansion pulmonary edema ✗</strong> — most feared:
+            <ul>
+              <li>Rate: 5-15% (higher in chronic cases)</li>
+              <li>Mortality if severe: 30-50%</li>
+              <li>Prevention: gradual ventilation, lower PIP</li>
+              <li>Tx: oxygen, ventilation, furosemide cautiously</li>
+            </ul>
+          </li>
+          <li><strong>Pneumothorax post-op</strong>:
+            <ul>
+              <li>Recurrence of air in pleural space</li>
+              <li>Tx: chest tube replacement, identify source</li>
+            </ul>
+          </li>
+          <li><strong>Recurrence of diaphragmatic hernia</strong>:
+            <ul>
+              <li>Rare with proper closure (&lt; 5%)</li>
+              <li>Higher with: large defect, chronic, mesh failure, infection</li>
+            </ul>
+          </li>
+          <li><strong>Liver lobe torsion / necrosis</strong>:
+            <ul>
+              <li>From compression in hernia</li>
+              <li>May require lobectomy intra-op</li>
+            </ul>
+          </li>
+          <li><strong>Gastric volvulus</strong> (in stomach-containing hernia):
+            <ul>
+              <li>Emergency derotation + gastropexy</li>
+            </ul>
+          </li>
+          <li><strong>Bowel necrosis / strangulation</strong> in chronic hernia → enterectomy</li>
+          <li>Mortality during anesthesia / immediate post-op: 10-20% in acute trauma cases</li>
+          <li>Wound infection / dehiscence</li>
+          <li>Pneumonia (pulmonary contusion → infection)</li>
+          <li>Atelectasis (chronic compression → slow re-expansion)</li>
+          <li>Adhesions long-term</li>
+        </ul>
+      `,
+      outcome: `
+        <ul>
+          <li><strong>Acute traumatic — properly stabilized ✓:</strong>
+            <ul>
+              <li>Survival 80-90% with proper stabilization + delayed surgery</li>
+              <li>Survival 50-70% if operated on unstable patient</li>
+              <li>Recovery 4-6 weeks</li>
+            </ul>
+          </li>
+          <li><strong>Chronic traumatic / PPDH:</strong>
+            <ul>
+              <li>Survival 90-95% (more time for stabilization)</li>
+              <li>Lower risk of pulmonary complications</li>
+              <li>Excellent long-term outcome</li>
+            </ul>
+          </li>
+          <li><strong>Strangulated organs:</strong>
+            <ul>
+              <li>Gastric volvulus + diaphragmatic hernia: complex emergency, mortality 30-50%</li>
+              <li>Bowel necrosis: depends on extent</li>
+            </ul>
+          </li>
+          <li><strong>PPDH asymptomatic:</strong>
+            <ul>
+              <li>Some monitor without surgery (especially older animals)</li>
+              <li>Surgical correction has &gt; 95% success rate when performed</li>
+            </ul>
+          </li>
+          <li><strong>Long-term:</strong>
+            <ul>
+              <li>Most return to normal activity</li>
+              <li>QOL excellent</li>
+              <li>Recurrence rare</li>
+            </ul>
+          </li>
+          <li><strong>Mortality:</strong>
+            <ul>
+              <li>Healthy chronic case: 5-10%</li>
+              <li>Acute traumatic: 15-25%</li>
+              <li>Strangulated emergency: 30-50%</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="callout">💡 <strong>STABILIZE first, surgery 24-48 h later</strong> ✨ — operating on unstable trauma patient = high mortality<br><br>**Positive pressure ventilation = MANDATORY** — lungs collapse once peritoneum opened<br><br>⚠️ **Re-expansion pulmonary edema** = most feared complication, 5-15% rate. Gradual lung re-expansion intra-op<br><br>✗ **Chest tube before final diaphragm closure** — re-establish thoracic negative pressure</div>
+      `,
+    },
+  },
+
 ];
 
