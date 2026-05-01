@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#FAFAF7" />
+  <meta name="color-scheme" content="light dark">
+  <script>
+    /* Apply saved theme early to prevent flash */
+    (function () {
+      try {
+        var saved = localStorage.getItem('pk_theme');
+        if (saved && saved !== 'auto') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>Quiz · PK</title>
+
+  <script>
+    let lastTap = 0;
+    document.addEventListener('touchend', function(e) {
+      const now = Date.now();
+      if (now - lastTap < 350) e.preventDefault();
+      lastTap = now;
+    }, { passive: false });
+    document.addEventListener('gesturestart', function(e) { e.preventDefault(); });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260501n">
+</head>
+<body>
+
+  <div class="pride-bar"></div>
+
+  <div class="blobs">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+  </div>
+
+  <!-- ============================================================
+       MODE 1: HOME — list all quizzes
+       ============================================================ -->
+  <div class="wrap" id="modeHome">
+
+    <header class="topbar">
+      <a class="back-btn" href="teaching.html" aria-label="กลับ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        <span>งานสอน</span>
+      </a>
+      <div class="meta">
+        <span class="online" aria-hidden="true"></span>
+        <span id="clock">--:--</span>
+      </div>
+    </header>
+
+    <section class="page-hero" style="--page-accent: var(--yellow);">
+      <p class="page-eyebrow">TEACHING · QUIZ</p>
+      <h1 class="page-title" style="color: var(--yellow);">Quiz</h1>
+      <p class="page-subtitle">เกมตอบคำถามในห้องเรียน · สร้างเอง · เล่นกับนักศึกษา 🎮</p>
+    </section>
+
+    <button class="quiz-add-btn" type="button" id="btnNewQuiz">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      <span>สร้าง Quiz ใหม่</span>
+    </button>
+
+    <section class="quiz-list-section">
+      <div class="quiz-list-header">
+        <span class="qlh-title">Quiz ทั้งหมด</span>
+        <span class="qlh-count" id="quizCount">0</span>
+      </div>
+      <div class="quiz-list" id="quizList">
+        <!-- Auto-rendered -->
+      </div>
+    </section>
+
+    <section class="quiz-actions">
+      <button class="btn-export-quiz" type="button" id="btnExportQuiz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        <span>Backup ทั้งหมด</span>
+      </button>
+      <button class="btn-import-quiz" type="button" id="btnImportQuiz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        <span>Import</span>
+      </button>
+      <input type="file" id="importFile" accept=".json" style="display:none;">
+    </section>
+
+    <footer class="foot">
+      <div class="row">
+        <span>© alex · 2026</span>
+        <span class="with-pride">
+          <span>made with pride</span>
+          <span class="pride-mini" aria-hidden="true"></span>
+        </span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ============================================================
+       MODE 2: EDITOR — create/edit quiz
+       ============================================================ -->
+  <div class="wrap" id="modeEditor" style="display:none;">
+
+    <header class="topbar">
+      <button class="back-btn" type="button" id="editorBack" aria-label="กลับ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        <span>กลับ</span>
+      </button>
+      <div class="meta">
+        <button class="btn-save-quiz" type="button" id="btnSaveQuiz">บันทึก</button>
+      </div>
+    </header>
+
+    <section class="page-hero" style="--page-accent: var(--yellow); margin-bottom: 16px;">
+      <p class="page-eyebrow">EDITOR</p>
+      <h1 class="page-title" style="color: var(--yellow); font-size: 28px;" id="editorTitle">สร้าง Quiz ใหม่</h1>
+    </section>
+
+    <!-- Quiz info -->
+    <section class="quiz-meta-form">
+      <div class="form-row">
+        <label class="form-label" for="quizTitleInput">ชื่อ Quiz *</label>
+        <input class="form-input" type="text" id="quizTitleInput" placeholder="เช่น: Pre-test วิสัญญี">
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="quizDescInput">คำอธิบาย <span class="form-optional">(optional)</span></label>
+        <input class="form-input" type="text" id="quizDescInput" placeholder="เช่น: ก่อนเรียนสัปดาห์ที่ 3">
+      </div>
+      <div class="form-row form-row-split">
+        <div class="form-half">
+          <label class="form-label" for="quizTimerInput">เวลาต่อข้อ (วินาที)</label>
+          <input class="form-input" type="number" id="quizTimerInput" value="20" min="5" max="120">
+        </div>
+        <div class="form-half">
+          <label class="form-label">รวมข้อ</label>
+          <div class="form-static" id="questionCountDisplay">0 ข้อ</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questions list -->
+    <div class="questions-header">
+      <span class="qh-title">คำถาม</span>
+      <button class="btn-add-q" type="button" id="btnAddQ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span>เพิ่มข้อ</span>
+      </button>
+    </div>
+
+    <section class="questions-list" id="questionsList">
+      <!-- Auto-rendered -->
+    </section>
+
+    <div class="editor-actions-bottom">
+      <button class="btn btn-delete" type="button" id="btnDeleteQuiz" style="display:none;">ลบ Quiz นี้</button>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       MODE 3: PLAY — projector mode
+       ============================================================ -->
+  <div class="quiz-play" id="modePlay" style="display:none;">
+
+    <!-- Lobby (before start) -->
+    <div class="play-lobby" id="playLobby">
+      <button class="play-exit" type="button" id="lobbyExit" aria-label="ออก">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="lobby-content">
+        <p class="lobby-eyebrow">QUIZ TIME 🎮</p>
+        <h2 class="lobby-title" id="lobbyTitle">—</h2>
+        <p class="lobby-desc" id="lobbyDesc"></p>
+        <div class="lobby-stats">
+          <div class="ls-item">
+            <span class="ls-num" id="lobbyQCount">0</span>
+            <span class="ls-label">ข้อ</span>
+          </div>
+          <div class="ls-item">
+            <span class="ls-num" id="lobbyTime">20</span>
+            <span class="ls-label">วินาที/ข้อ</span>
+          </div>
+        </div>
+        <button class="lobby-start-btn" type="button" id="lobbyStart">
+          <span>▶ เริ่ม</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Question (during play) -->
+    <div class="play-question" id="playQuestion" style="display:none;">
+      <div class="play-header">
+        <span class="play-progress" id="playProgress">1 / 10</span>
+        <button class="play-exit" type="button" id="playExit" aria-label="ออก">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="play-timer" id="playTimer">
+        <div class="timer-bar" id="timerBar"></div>
+        <span class="timer-num" id="timerNum">20</span>
+      </div>
+
+      <div class="play-question-text" id="playQText">—</div>
+
+      <div class="play-image-wrap" id="playImageWrap" style="display:none;">
+        <img class="play-image" id="playImage" alt="" />
+      </div>
+
+      <div class="play-options" id="playOptions">
+        <!-- Auto-rendered -->
+      </div>
+
+      <div class="play-controls">
+        <button class="play-btn play-reveal" type="button" id="btnReveal">เฉลย</button>
+        <button class="play-btn play-next" type="button" id="btnNext" style="display:none;">ถัดไป →</button>
+      </div>
+
+      <div class="play-explain" id="playExplain" style="display:none;"></div>
+    </div>
+
+    <!-- End screen -->
+    <div class="play-end" id="playEnd" style="display:none;">
+      <p class="end-emoji">🎉</p>
+      <h2 class="end-title">จบ Quiz!</h2>
+      <p class="end-desc" id="endDesc">—</p>
+      <div class="end-actions">
+        <button class="btn btn-secondary" type="button" id="btnPlayAgain">เล่นอีกครั้ง</button>
+        <button class="btn btn-primary" type="button" id="btnBackHome">กลับหน้าหลัก</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================
+       Question Editor Modal
+       ============================================================ -->
+  <div class="modal-backdrop" id="qModalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h2 class="modal-title" id="qModalTitle">เพิ่มคำถาม</h2>
+        <button class="modal-close" type="button" id="qModalClose" aria-label="ปิด">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <form class="modal-form" id="qForm">
+        <input type="hidden" id="qFormIdx" value="">
+
+        <div class="form-row">
+          <label class="form-label" for="qFormText">คำถาม *</label>
+          <textarea class="form-input form-textarea" id="qFormText" rows="3" placeholder="เช่น: ยา premed ใดเหมาะกับหมา MMVD ที่สุด?" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="qFormImage">รูปภาพ (optional) — แนบไฟล์เพื่อใช้ในคำถาม</label>
+          <input class="form-input-file" type="file" id="qFormImage" accept="image/*">
+          <div class="image-preview-wrap" id="imagePreviewWrap" style="display:none;">
+            <img class="image-preview" id="imagePreview" alt="" />
+            <button class="btn-remove-image" type="button" id="btnRemoveImage">ลบรูป</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label">ตัวเลือก (กดที่ ✓ เพื่อเลือกคำตอบที่ถูก)</label>
+          <div class="options-list" id="optionsList">
+            <div class="option-input-row" data-idx="0">
+              <button class="opt-correct-btn" type="button" data-idx="0" aria-label="ตั้งเป็นคำตอบที่ถูก">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+              <span class="opt-letter">A</span>
+              <input class="form-input opt-text" type="text" placeholder="ตัวเลือก A">
+              <button class="opt-remove-btn" type="button" aria-label="ลบ">×</button>
+            </div>
+            <div class="option-input-row" data-idx="1">
+              <button class="opt-correct-btn" type="button" data-idx="1" aria-label="ตั้งเป็นคำตอบที่ถูก">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </button>
+              <span class="opt-letter">B</span>
+              <input class="form-input opt-text" type="text" placeholder="ตัวเลือก B">
+              <button class="opt-remove-btn" type="button" aria-label="ลบ">×</button>
+            </div>
+          </div>
+          <button class="btn-add-option" type="button" id="btnAddOption">
+            + เพิ่มตัวเลือก (สูงสุด 6)
+          </button>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="qFormExplain">คำอธิบาย / เหตุผล <span class="form-optional">(optional)</span></label>
+          <textarea class="form-input form-textarea" id="qFormExplain" rows="2" placeholder="เช่น: Midazolam เป็น benzodiazepine ที่ไม่กระทบ cardiac contractility"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-delete" type="button" id="btnDeleteQ" style="display:none;">ลบข้อนี้</button>
+          <button class="btn btn-secondary" type="button" id="btnCancelQ">ยกเลิก</button>
+          <button class="btn btn-primary" type="submit" id="btnSaveQ">บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="quiz.js?v=20260501n"></script>
+</body>
+</html>
