@@ -33,6 +33,8 @@ input, select, textarea, label, summary {
   --ink:       #161616;
   --ink-soft:  #4A4A4A;
   --ink-mute:  #8A8A8A;
+  --muted:     #8A8A8A;  /* alias for --ink-mute (used by shared page) */
+  --border:    #E5E5E5;  /* light border (used by shared page) */
   --line:      #E8E5DD;
 
   /* Pride flag (slightly tuned for harmony & readability) */
@@ -66,6 +68,8 @@ input, select, textarea, label, summary {
     --ink:      #F5F5F5;
     --ink-soft: #C7C7C7;
     --ink-mute: #8A8A8A;
+    --muted:    #8A8A8A;
+    --border:   #2A2A2E;
     --line:     #2A2A2E;
     --red-soft:    #2A1417;
     --orange-soft: #2A1A0A;
@@ -1649,7 +1653,7 @@ html.locked .lock-screen { display: flex; }
   padding: 16px 20px;
   border-radius: 16px;
   border: none;
-  background: white;
+  background: var(--surface);
   color: var(--ink);
   font-size: 16px;
   font-weight: 600;
@@ -1680,7 +1684,7 @@ html.locked .lock-screen { display: flex; }
 
 /* Month summary */
 .month-summary {
-  background: white;
+  background: var(--surface);
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 24px;
@@ -1786,7 +1790,7 @@ html.locked .lock-screen { display: flex; }
 
 /* Chart section */
 .chart-section {
-  background: white;
+  background: var(--surface);
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 24px;
@@ -1815,7 +1819,7 @@ html.locked .lock-screen { display: flex; }
   transition: all 0.15s;
 }
 .chart-tab.active {
-  background: white;
+  background: var(--surface);
   color: var(--ink);
   font-weight: 600;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -1851,7 +1855,7 @@ html.locked .lock-screen { display: flex; }
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 100px;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -1876,7 +1880,7 @@ html.locked .lock-screen { display: flex; }
 .tf-btn {
   flex-shrink: 0;
   padding: 8px 16px;
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 100px;
   font-family: 'Noto Serif Thai', serif;
@@ -1917,7 +1921,7 @@ html.locked .lock-screen { display: flex; }
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: white;
+  background: var(--surface);
   border-radius: 14px;
   margin-bottom: 8px;
   cursor: pointer;
@@ -1972,7 +1976,7 @@ html.locked .lock-screen { display: flex; }
   text-align: center;
   color: var(--muted);
   padding: 32px 20px;
-  background: white;
+  background: var(--surface);
   border-radius: 16px;
   font-size: 14px;
   line-height: 1.6;
@@ -2039,7 +2043,7 @@ html.locked .lock-screen { display: flex; }
   height: 36px;
   border-radius: 100px;
   border: none;
-  background: white;
+  background: var(--surface);
   color: var(--ink);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -2075,7 +2079,7 @@ html.locked .lock-screen { display: flex; }
 }
 .form-input {
   width: 100%;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 12px;
   padding: 14px 16px;
@@ -2112,7 +2116,7 @@ html.locked .lock-screen { display: flex; }
   align-items: center;
   gap: 4px;
   padding: 12px 6px;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 12px;
   cursor: pointer;
@@ -2141,7 +2145,7 @@ html.locked .lock-screen { display: flex; }
 }
 .payer-btn, .depositor-btn {
   padding: 14px;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 12px;
   font-size: 15px;
@@ -2190,12 +2194,12 @@ html.locked .lock-screen { display: flex; }
 .btn-primary:active { background: #1a7568; }
 .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
 .btn-secondary {
-  background: white;
+  background: var(--surface);
   color: var(--ink);
   border: 1.5px solid var(--border) !important;
 }
 .btn-delete {
-  background: white;
+  background: var(--surface);
   color: #E63946;
   border: 1.5px solid #E63946 !important;
   flex-basis: 100%;
@@ -2265,7 +2269,7 @@ html.locked .lock-screen { display: flex; }
 }
 .pin-input {
   width: 100%;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid var(--border);
   border-radius: 14px;
   padding: 18px;
