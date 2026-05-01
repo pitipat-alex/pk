@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501n">
+  <link rel="stylesheet" href="style.css?v=20260501o">
 </head>
 <body>
 
@@ -69,12 +69,18 @@
       <p class="page-subtitle">เกมตอบคำถามในห้องเรียน · สร้างเอง · เล่นกับนักศึกษา 🎮</p>
     </section>
 
-    <button class="quiz-add-btn" type="button" id="btnNewQuiz">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 5v14M5 12h14"/>
-      </svg>
-      <span>สร้าง Quiz ใหม่</span>
-    </button>
+    <div class="quiz-action-row">
+      <button class="quiz-add-btn" type="button" id="btnNewQuiz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        <span>สร้าง Quiz ใหม่</span>
+      </button>
+      <a class="quiz-live-btn" href="quiz-live.html">
+        <span class="qlb-icon">⚡</span>
+        <span class="qlb-label">Quiz Live</span>
+      </a>
+    </div>
 
     <section class="quiz-list-section">
       <div class="quiz-list-header">
@@ -317,6 +323,6 @@
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="quiz.js?v=20260501n"></script>
+  <script src="quiz.js?v=20260501o"></script>
 </body>
 </html>

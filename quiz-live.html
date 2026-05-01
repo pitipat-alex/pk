@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="theme-color" content="#FAFAF7" />
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('pk_theme');
+        if (saved && saved !== 'auto') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>Quiz Live · PK</title>
+
+  <script>
+    let lastTap = 0;
+    document.addEventListener('touchend', function(e) {
+      const now = Date.now();
+      if (now - lastTap < 350) e.preventDefault();
+      lastTap = now;
+    }, { passive: false });
+    document.addEventListener('gesturestart', function(e) { e.preventDefault(); });
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260501o">
+
+  <!-- Supabase JS v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
+          onerror="this.dataset.fallbackTried=1;
+                   var s=document.createElement('script');
+                   s.src='https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js';
+                   document.head.appendChild(s);"></script>
+
+  <!-- QR code library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       MODE 1: HOME — Pick Host or Join
+       ============================================================ -->
+  <div class="qlive-screen" id="screenHome">
+    <div class="pride-bar"></div>
+    <div class="blobs">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+    </div>
+    <div class="wrap">
+      <header class="topbar">
+        <a class="back-btn" href="quiz.html" aria-label="กลับ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          <span>Quiz</span>
+        </a>
+        <div class="meta">
+          <span class="online" aria-hidden="true"></span>
+          <span id="clock">--:--</span>
+        </div>
+      </header>
+
+      <section class="page-hero" style="--page-accent: var(--yellow);">
+        <p class="page-eyebrow">QUIZ · LIVE MODE ⚡</p>
+        <h1 class="page-title" style="color: var(--yellow);">Quiz Live</h1>
+        <p class="page-subtitle">เล่นพร้อมกันหลายคน · มือถือเข้า scan QR · real-time</p>
+      </section>
+
+      <div class="qlive-mode-cards">
+        <button class="qlive-mode-btn qlive-host" type="button" id="btnHostMode">
+          <div class="qmb-icon">🎮</div>
+          <div class="qmb-body">
+            <div class="qmb-title">สร้างห้อง (Host)</div>
+            <div class="qmb-desc">อาจารย์เปิดห้อง — นศ. scan QR เข้ามา</div>
+          </div>
+        </button>
+
+        <button class="qlive-mode-btn qlive-join" type="button" id="btnJoinMode">
+          <div class="qmb-icon">🚀</div>
+          <div class="qmb-body">
+            <div class="qmb-title">เข้าร่วมห้อง</div>
+            <div class="qmb-desc">ใส่ PIN ที่ host บอก → เข้าเล่น</div>
+          </div>
+        </button>
+      </div>
+
+      <footer class="foot">
+        <div class="row">
+          <span>© alex · 2026</span>
+          <span class="with-pride">
+            <span>made with pride</span>
+            <span class="pride-mini" aria-hidden="true"></span>
+          </span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODE 2: HOST — Pick a quiz
+       ============================================================ -->
+  <div class="qlive-screen" id="screenHostPick" style="display:none;">
+    <div class="pride-bar"></div>
+    <div class="blobs"><div class="blob b1"></div><div class="blob b3"></div></div>
+    <div class="wrap">
+      <header class="topbar">
+        <button class="back-btn" type="button" id="hostPickBack">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          <span>กลับ</span>
+        </button>
+      </header>
+
+      <section class="page-hero" style="--page-accent: var(--yellow);">
+        <p class="page-eyebrow">HOST · CHOOSE QUIZ</p>
+        <h1 class="page-title" style="color: var(--yellow);">เลือก Quiz</h1>
+        <p class="page-subtitle">เลือก Quiz ที่จะเล่นกับนักศึกษา</p>
+      </section>
+
+      <div class="quiz-list" id="hostQuizList">
+        <div class="loading-msg">กำลังโหลด...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODE 3: HOST LOBBY — Show QR + waiting players
+       ============================================================ -->
+  <div class="qlive-screen qlive-fullscreen" id="screenHostLobby" style="display:none;">
+    <button class="play-exit" type="button" id="hostLobbyExit" aria-label="ออก">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="lobby-grid">
+      <div class="lobby-left">
+        <p class="lobby-eyebrow">QUIZ LIVE 🎮</p>
+        <h2 class="lobby-quiz-title" id="hostLobbyQuizTitle">—</h2>
+
+        <div class="lobby-pin-wrap">
+          <div class="lobby-pin-label">PIN</div>
+          <div class="lobby-pin" id="hostLobbyPin">000000</div>
+          <div class="lobby-pin-hint">ใส่ PIN นี้ที่ pk → Quiz Live → เข้าร่วม</div>
+        </div>
+
+        <div class="lobby-qr-wrap">
+          <div class="lobby-qr" id="hostLobbyQR"></div>
+          <div class="lobby-qr-hint">📱 หรือ scan QR ด้วยมือถือ</div>
+        </div>
+      </div>
+
+      <div class="lobby-right">
+        <div class="lobby-players-header">
+          <span class="lph-icon">👥</span>
+          <span class="lph-text">ผู้เล่น</span>
+          <span class="lph-count" id="hostLobbyCount">0</span>
+        </div>
+        <div class="lobby-players-list" id="hostLobbyPlayers">
+          <div class="lobby-waiting">รอผู้เล่น...</div>
+        </div>
+        <button class="lobby-start-btn" type="button" id="hostLobbyStart" disabled>
+          <span>▶ เริ่มเกม</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODE 4: JOIN — Enter PIN + Name
+       ============================================================ -->
+  <div class="qlive-screen" id="screenJoin" style="display:none;">
+    <div class="pride-bar"></div>
+    <div class="blobs"><div class="blob b1"></div><div class="blob b3"></div></div>
+    <div class="wrap">
+      <header class="topbar">
+        <button class="back-btn" type="button" id="joinBack">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+          <span>กลับ</span>
+        </button>
+      </header>
+
+      <section class="page-hero" style="--page-accent: var(--yellow);">
+        <p class="page-eyebrow">JOIN A QUIZ</p>
+        <h1 class="page-title" style="color: var(--yellow);">เข้าร่วม</h1>
+      </section>
+
+      <div class="join-form">
+        <div class="form-row">
+          <label class="form-label" for="joinPinInput">PIN (6 หลัก) *</label>
+          <input class="form-input join-pin-input" type="text" inputmode="numeric" id="joinPinInput" placeholder="000000" maxlength="6" autocomplete="off">
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="joinNameInput">ชื่อเล่น *</label>
+          <input class="form-input" type="text" id="joinNameInput" placeholder="เช่น: ก้อง" maxlength="20" autocomplete="off">
+        </div>
+        <button class="btn btn-primary join-btn" type="button" id="btnDoJoin">เข้าร่วม</button>
+        <div class="join-error" id="joinError"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODE 5: PLAYER LOBBY — Waiting for host to start
+       ============================================================ -->
+  <div class="qlive-screen qlive-fullscreen-small" id="screenPlayerLobby" style="display:none;">
+    <div class="player-lobby">
+      <p class="pl-emoji">⏳</p>
+      <p class="pl-eyebrow">เข้าห้องแล้ว</p>
+      <h2 class="pl-name" id="playerLobbyName">—</h2>
+      <div class="pl-stat">
+        <span class="pl-stat-num" id="playerLobbyCount">1</span>
+        <span class="pl-stat-label">คนในห้อง</span>
+      </div>
+      <p class="pl-wait">รอ Host เริ่มเกม...</p>
+      <button class="btn btn-secondary pl-leave" type="button" id="playerLeave">ออก</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODE 6: GAME (HOST + PLAYER) — Question screen
+       ============================================================ -->
+  <div class="qlive-screen qlive-fullscreen" id="screenGame" style="display:none;">
+
+    <!-- Host game view (full content) -->
+    <div class="game-host-view" id="gameHostView">
+      <div class="game-header">
+        <span class="game-progress" id="gameProgress">1 / 10</span>
+        <button class="play-exit" type="button" id="gameExitHost" aria-label="ออก">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="game-timer-wrap">
+        <div class="timer-bar" id="gameTimerBar"></div>
+        <span class="timer-num" id="gameTimerNum">20</span>
+      </div>
+
+      <div class="game-q-text" id="gameQText">—</div>
+
+      <div class="game-image-wrap" id="gameImageWrap" style="display:none;">
+        <img class="game-image" id="gameImage" alt="" />
+      </div>
+
+      <div class="game-options" id="gameOptions"></div>
+
+      <div class="game-stats" id="gameStats">
+        <div class="gs-answered">
+          <span class="gs-num" id="gsAnsweredNum">0</span>
+          <span class="gs-label">/ <span id="gsTotalNum">0</span> ตอบแล้ว</span>
+        </div>
+      </div>
+
+      <div class="game-controls">
+        <button class="play-btn play-reveal" type="button" id="btnHostReveal">เฉลย</button>
+        <button class="play-btn play-next" type="button" id="btnHostNext" style="display:none;">ถัดไป →</button>
+      </div>
+
+      <div class="game-explain" id="gameExplain" style="display:none;"></div>
+
+      <div class="game-leaderboard-mini" id="gameLeaderboard" style="display:none;">
+        <div class="glm-header">🏆 Top 5</div>
+        <div class="glm-list" id="glmList"></div>
+      </div>
+    </div>
+
+    <!-- Player game view (just buttons) -->
+    <div class="game-player-view" id="gamePlayerView" style="display:none;">
+      <div class="game-player-header">
+        <span class="gph-name" id="gphName">—</span>
+        <span class="gph-score">
+          <span class="gph-score-num" id="gphScoreNum">0</span>
+          <span class="gph-score-label">คะแนน</span>
+        </span>
+      </div>
+
+      <div class="player-q-info">
+        <div class="pqi-progress" id="pqiProgress">1 / 10</div>
+        <div class="pqi-status" id="pqiStatus">ดูคำถามที่จอใหญ่</div>
+      </div>
+
+      <div class="player-options" id="playerOptions"></div>
+
+      <div class="player-result" id="playerResult" style="display:none;">
+        <p class="pr-emoji" id="prEmoji">—</p>
+        <p class="pr-text" id="prText">—</p>
+        <p class="pr-points" id="prPoints"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODE 7: END — Final leaderboard
+       ============================================================ -->
+  <div class="qlive-screen qlive-fullscreen" id="screenEnd" style="display:none;">
+    <div class="end-wrap">
+      <p class="end-emoji">🏆</p>
+      <h2 class="end-title">ผลการแข่งขัน</h2>
+      <p class="end-subtitle" id="endSubtitle">—</p>
+      <div class="podium" id="podium"></div>
+      <div class="full-leaderboard" id="fullLeaderboard"></div>
+      <div class="end-actions">
+        <button class="btn btn-secondary" type="button" id="btnEndExit">กลับหน้าหลัก</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="quiz-live.js?v=20260501o"></script>
+</body>
+</html>

@@ -7,11 +7,12 @@
 -- Tables:
 --   1. shared_transactions  (แชร์ๆ — public + PIN gate)
 --   2. clinic_shopping      (รายการรอจัดซื้อ — Alex login only)
+--   3. quiz_sessions, quiz_players, quiz_answers  (Quiz Live — public)
 -- =====================================================================
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  1. SHARED TRANSACTIONS — Alex+Jojo expense tracker              ║
+-- ║  1. SHARED TRANSACTIONS                                           ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
 CREATE TABLE IF NOT EXISTS shared_transactions (
@@ -40,17 +41,17 @@ CREATE INDEX IF NOT EXISTS idx_shared_trans_category ON shared_transactions(cate
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  2. CLINIC SHOPPING LIST — รายการรอจัดซื้อในคลินิก               ║
+-- ║  2. CLINIC SHOPPING LIST                                          ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
 CREATE TABLE IF NOT EXISTS clinic_shopping (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   quantity NUMERIC(10, 2),
-  unit TEXT,                                  -- ขวด, กล่อง, ห่อ, ชิ้น
+  unit TEXT,
   category TEXT NOT NULL DEFAULT 'other'
     CHECK (category IN ('medicine', 'consumable', 'equipment', 'other')),
-  price NUMERIC(12, 2),                       -- ราคาต่อหน่วย (optional)
+  price NUMERIC(12, 2),
   is_completed BOOLEAN NOT NULL DEFAULT FALSE,
   notes TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -64,7 +65,59 @@ CREATE INDEX IF NOT EXISTS idx_clinic_shop_created ON clinic_shopping(created_at
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  3. SHARED TRIGGER — auto-update updated_at column                ║
+-- ║  3. QUIZ LIVE — Sessions / Players / Answers                      ║
+-- ╚═══════════════════════════════════════════════════════════════════╝
+
+-- Session: 1 row per live game
+CREATE TABLE IF NOT EXISTS quiz_sessions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  pin TEXT NOT NULL UNIQUE,                  -- 6 digit pin
+  host_id TEXT NOT NULL,                     -- random uuid for host (browser)
+  quiz_data JSONB NOT NULL,                  -- snapshot of quiz at session start
+  state TEXT NOT NULL DEFAULT 'lobby'        -- lobby | playing | reveal | ended
+    CHECK (state IN ('lobby', 'playing', 'reveal', 'ended')),
+  current_q INT NOT NULL DEFAULT 0,          -- index of current question
+  question_started_at TIMESTAMPTZ,           -- when current question revealed to players
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  ended_at TIMESTAMPTZ
+);
+
+CREATE INDEX IF NOT EXISTS idx_quiz_sessions_pin ON quiz_sessions(pin);
+CREATE INDEX IF NOT EXISTS idx_quiz_sessions_state ON quiz_sessions(state);
+
+-- Player: 1 row per joined player
+CREATE TABLE IF NOT EXISTS quiz_players (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  session_id UUID NOT NULL REFERENCES quiz_sessions(id) ON DELETE CASCADE,
+  name TEXT NOT NULL,
+  client_id TEXT NOT NULL,                   -- browser-generated, for reconnect
+  score INT NOT NULL DEFAULT 0,
+  joined_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (session_id, client_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_quiz_players_session ON quiz_players(session_id);
+
+-- Answer: 1 row per answered question per player
+CREATE TABLE IF NOT EXISTS quiz_answers (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  session_id UUID NOT NULL REFERENCES quiz_sessions(id) ON DELETE CASCADE,
+  player_id UUID NOT NULL REFERENCES quiz_players(id) ON DELETE CASCADE,
+  question_idx INT NOT NULL,
+  answer_idx INT,
+  is_correct BOOLEAN,
+  points INT NOT NULL DEFAULT 0,
+  time_taken_ms INT,
+  answered_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (session_id, player_id, question_idx)
+);
+
+CREATE INDEX IF NOT EXISTS idx_quiz_answers_session ON quiz_answers(session_id);
+CREATE INDEX IF NOT EXISTS idx_quiz_answers_player ON quiz_answers(player_id);
+
+
+-- ╔═══════════════════════════════════════════════════════════════════╗
+-- ║  4. SHARED TRIGGER                                                ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
 CREATE OR REPLACE FUNCTION update_updated_at_column()
@@ -84,10 +137,10 @@ CREATE TRIGGER update_clinic_shopping_updated_at
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  4. RLS POLICIES                                                  ║
+-- ║  5. RLS POLICIES                                                  ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
--- shared_transactions: PUBLIC access (PIN gate is at app layer)
+-- shared_transactions: PUBLIC (PIN gate is at app layer)
 ALTER TABLE shared_transactions ENABLE ROW LEVEL SECURITY;
 DROP POLICY IF EXISTS "Couple access only" ON shared_transactions;
 DROP POLICY IF EXISTS "Public access" ON shared_transactions;
@@ -105,19 +158,65 @@ CREATE POLICY "Authenticated users only"
   USING (auth.email() = 'carnitab@gmail.com')
   WITH CHECK (auth.email() = 'carnitab@gmail.com');
 
+-- quiz_sessions / players / answers: PUBLIC (need PIN to find session anyway)
+ALTER TABLE quiz_sessions ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Public quiz access" ON quiz_sessions;
+CREATE POLICY "Public quiz access"
+  ON quiz_sessions
+  FOR ALL TO anon, authenticated
+  USING (true) WITH CHECK (true);
+
+ALTER TABLE quiz_players ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Public players access" ON quiz_players;
+CREATE POLICY "Public players access"
+  ON quiz_players
+  FOR ALL TO anon, authenticated
+  USING (true) WITH CHECK (true);
+
+ALTER TABLE quiz_answers ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Public answers access" ON quiz_answers;
+CREATE POLICY "Public answers access"
+  ON quiz_answers
+  FOR ALL TO anon, authenticated
+  USING (true) WITH CHECK (true);
+
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  5. PERMISSIONS                                                   ║
+-- ║  6. ENABLE REALTIME (สำคัญมาก!)                                   ║
+-- ║  ต้องไป Database → Replication → เปิด realtime สำหรับ 3 tables: ║
+-- ║     - quiz_sessions                                               ║
+-- ║     - quiz_players                                                ║
+-- ║     - quiz_answers                                                ║
+-- ║  หรือรัน:                                                          ║
+-- ╚═══════════════════════════════════════════════════════════════════╝
+
+ALTER PUBLICATION supabase_realtime ADD TABLE quiz_sessions;
+ALTER PUBLICATION supabase_realtime ADD TABLE quiz_players;
+ALTER PUBLICATION supabase_realtime ADD TABLE quiz_answers;
+
+
+-- ╔═══════════════════════════════════════════════════════════════════╗
+-- ║  7. PERMISSIONS                                                   ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
 GRANT ALL ON shared_transactions TO anon, authenticated;
 GRANT ALL ON clinic_shopping TO authenticated;
+GRANT ALL ON quiz_sessions TO anon, authenticated;
+GRANT ALL ON quiz_players TO anon, authenticated;
+GRANT ALL ON quiz_answers TO anon, authenticated;
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  6. VERIFY — รัน query นี้เพื่อเช็คว่า setup สำเร็จไหม           ║
+-- ║  8. CLEANUP FUNCTION (optional)                                   ║
+-- ║     ลบ session เก่า > 24 ชม. — รันเอง หรือ schedule ผ่าน cron     ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
--- SELECT 'shared_transactions' AS table_name, count(*) AS rows FROM shared_transactions
--- UNION ALL
--- SELECT 'clinic_shopping' AS table_name, count(*) AS rows FROM clinic_shopping;
+CREATE OR REPLACE FUNCTION cleanup_old_quiz_sessions()
+RETURNS void AS $$
+BEGIN
+  DELETE FROM quiz_sessions
+  WHERE created_at < NOW() - INTERVAL '24 hours';
+END;
+$$ LANGUAGE plpgsql;
+
+-- รันด้วยมือ: SELECT cleanup_old_quiz_sessions();
