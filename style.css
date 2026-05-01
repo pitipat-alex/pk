@@ -1990,7 +1990,9 @@ html.locked .lock-screen { display: flex; }
 /* ============================================================================
    MODAL — Add/Edit transaction form
    ============================================================================ */
-.modal-backdrop {
+/* IMPORTANT: Use ID selectors to override OLD .modal CSS from auth/login modal
+   (which has visibility:hidden + transform:translateY(100%) — would make our modal invisible) */
+#modalBackdrop, #pinBackdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -2001,17 +2003,34 @@ html.locked .lock-screen { display: flex; }
   padding: 0;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
+  /* Override OLD .modal-backdrop hidden state */
+  visibility: visible;
+  opacity: 1;
+  pointer-events: none;
 }
-.modal-backdrop.show {
+#modalBackdrop.show, #pinBackdrop.show {
   display: flex;
   animation: fadeIn 0.2s ease;
+  pointer-events: auto;
 }
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.modal {
-  background: var(--bg);
+
+/* Reset OLD .modal hidden state (visibility:hidden, transform:translateY(100%), position:fixed bottom:0)
+   when modal is inside our shared-page backdrops */
+#modalBackdrop .modal, #pinBackdrop .modal {
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition: none;
+  /* Our shared-page modal styles */
+  background: var(--surface);
   border-radius: 24px 24px 0 0;
   padding: 24px 20px;
   padding-bottom: max(24px, env(safe-area-inset-bottom));
@@ -2020,10 +2039,11 @@ html.locked .lock-screen { display: flex; }
   max-height: 90vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  animation: slideUp 0.25s ease;
+  animation: slideUp 0.28s cubic-bezier(.2,.7,.2,1) both;
+  box-shadow: 0 -20px 50px -20px rgba(0,0,0,0.25);
 }
 @keyframes slideUp {
-  from { transform: translateY(40px); opacity: 0; }
+  from { transform: translateY(60px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 .modal-header {
@@ -2234,15 +2254,27 @@ html.locked .lock-screen { display: flex; }
 .toast.success { background: #2A9D8F; }
 .toast.error { background: #E63946; }
 
-/* iPad / desktop tweaks */
+/* iPad / desktop tweaks — Use ID selectors to override OLD modal desktop CSS at 640px+
+   (which uses position:fixed + transform:translate(-50%,-50%) + opacity:0 — would hide our modals) */
 @media (min-width: 768px) {
-  .modal-backdrop {
+  #modalBackdrop, #pinBackdrop {
     align-items: center;
     padding: 20px;
   }
-  .modal {
+  #modalBackdrop .modal, #pinBackdrop .modal {
     border-radius: 24px;
     max-width: 600px;
+    /* Re-affirm overrides at desktop breakpoint */
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    opacity: 1;
+  }
+  #pinBackdrop .pin-modal {
+    max-width: 420px;
   }
   .balance-amount { font-size: 52px; }
   .cat-grid { grid-template-columns: repeat(8, 1fr); }
@@ -2251,7 +2283,8 @@ html.locked .lock-screen { display: flex; }
 /* ============================================================================
    PIN MODAL — Gate for write actions
    ============================================================================ */
-.pin-modal {
+/* Need ID-based specificity to override #pinBackdrop .modal { max-width: 560px } above */
+#pinBackdrop .pin-modal {
   max-width: 380px;
 }
 .pin-body {
