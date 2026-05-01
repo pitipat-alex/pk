@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501p">
+  <link rel="stylesheet" href="style.css?v=20260501q">
 
   <!-- Supabase JS v2 -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
@@ -52,88 +52,11 @@
 <body>
 
   <!-- ============================================================
-       MODE 1: HOME — Pick Host or Join
+       MODE 1: HOME — (deprecated, kept for fallback) — auto-redirects to JOIN
+       Hosts now come via quiz.html with ?host=SESSION_ID
+       Players come via QR with ?join=PIN
        ============================================================ -->
-  <div class="qlive-screen" id="screenHome">
-    <div class="pride-bar"></div>
-    <div class="blobs">
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
-    </div>
-    <div class="wrap">
-      <header class="topbar">
-        <a class="back-btn" href="quiz.html" aria-label="กลับ">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-          <span>Quiz</span>
-        </a>
-        <div class="meta">
-          <span class="online" aria-hidden="true"></span>
-          <span id="clock">--:--</span>
-        </div>
-      </header>
-
-      <section class="page-hero" style="--page-accent: var(--yellow);">
-        <p class="page-eyebrow">QUIZ · LIVE MODE ⚡</p>
-        <h1 class="page-title" style="color: var(--yellow);">Quiz Live</h1>
-        <p class="page-subtitle">เล่นพร้อมกันหลายคน · มือถือเข้า scan QR · real-time</p>
-      </section>
-
-      <div class="qlive-mode-cards">
-        <button class="qlive-mode-btn qlive-host" type="button" id="btnHostMode">
-          <div class="qmb-icon">🎮</div>
-          <div class="qmb-body">
-            <div class="qmb-title">สร้างห้อง (Host)</div>
-            <div class="qmb-desc">อาจารย์เปิดห้อง — นศ. scan QR เข้ามา</div>
-          </div>
-        </button>
-
-        <button class="qlive-mode-btn qlive-join" type="button" id="btnJoinMode">
-          <div class="qmb-icon">🚀</div>
-          <div class="qmb-body">
-            <div class="qmb-title">เข้าร่วมห้อง</div>
-            <div class="qmb-desc">ใส่ PIN ที่ host บอก → เข้าเล่น</div>
-          </div>
-        </button>
-      </div>
-
-      <footer class="foot">
-        <div class="row">
-          <span>© alex · 2026</span>
-          <span class="with-pride">
-            <span>made with pride</span>
-            <span class="pride-mini" aria-hidden="true"></span>
-          </span>
-        </div>
-      </footer>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       MODE 2: HOST — Pick a quiz
-       ============================================================ -->
-  <div class="qlive-screen" id="screenHostPick" style="display:none;">
-    <div class="pride-bar"></div>
-    <div class="blobs"><div class="blob b1"></div><div class="blob b3"></div></div>
-    <div class="wrap">
-      <header class="topbar">
-        <button class="back-btn" type="button" id="hostPickBack">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
-          <span>กลับ</span>
-        </button>
-      </header>
-
-      <section class="page-hero" style="--page-accent: var(--yellow);">
-        <p class="page-eyebrow">HOST · CHOOSE QUIZ</p>
-        <h1 class="page-title" style="color: var(--yellow);">เลือก Quiz</h1>
-        <p class="page-subtitle">เลือก Quiz ที่จะเล่นกับนักศึกษา</p>
-      </section>
-
-      <div class="quiz-list" id="hostQuizList">
-        <div class="loading-msg">กำลังโหลด...</div>
-      </div>
-    </div>
-  </div>
+  <div class="qlive-screen" id="screenHome" style="display:none;"></div>
 
   <!-- ============================================================
        MODE 3: HOST LOBBY — Show QR + waiting players
@@ -187,15 +110,20 @@
     <div class="blobs"><div class="blob b1"></div><div class="blob b3"></div></div>
     <div class="wrap">
       <header class="topbar">
-        <button class="back-btn" type="button" id="joinBack">
+        <a class="back-btn" href="index.html">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
           <span>กลับ</span>
-        </button>
+        </a>
+        <div class="meta">
+          <span class="online" aria-hidden="true"></span>
+          <span id="clock">--:--</span>
+        </div>
       </header>
 
       <section class="page-hero" style="--page-accent: var(--yellow);">
-        <p class="page-eyebrow">JOIN A QUIZ</p>
-        <h1 class="page-title" style="color: var(--yellow);">เข้าร่วม</h1>
+        <p class="page-eyebrow">QUIZ LIVE 🎮</p>
+        <h1 class="page-title" style="color: var(--yellow);">เข้าร่วม Quiz</h1>
+        <p class="page-subtitle">ใส่ PIN 6 หลัก ที่อาจารย์ให้ + ชื่อเล่น</p>
       </section>
 
       <div class="join-form">
@@ -322,6 +250,6 @@
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="quiz-live.js?v=20260501p"></script>
+  <script src="quiz-live.js?v=20260501q"></script>
 </body>
 </html>

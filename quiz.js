@@ -1,49 +1,57 @@
 /* ===========================================================================
    pk · Quiz Tool — quiz.js
    ----------------------------------------------------------------------------
-   Mode: localStorage (per-device)
-   - Create/edit quizzes with questions
-   - Play mode: full-screen projector view
-   - Timer per question + reveal answer + explanation
-   - Image support (base64 stored in localStorage)
+   Storage: Supabase (Alex login required via auth.js)
+   - CRUD quizzes via Supabase RLS (owner_email = auth.email)
+   - Migration from localStorage on first load
+   - Play single-screen mode (projector view)
+   - "เล่น Live" → creates session in quiz_sessions + redirects to quiz-live.html
    =========================================================================== */
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'pk_quizzes_v1';
+  // Supabase config (mirror of auth.js)
+  const SUPABASE_URL      = 'https://bxlyctricjayindvcfjo.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4bHljdHJpY2pheWluZHZjZmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc0NDE2NTAsImV4cCI6MjA5MzAxNzY1MH0.8b-UqK-SW1dOyZ0WhAC5NBns8lAe1kTgn2xJMiHvaRA';
+
+  const LEGACY_KEY = 'pk_quizzes_v1';                  // old localStorage
+  const MIGRATION_FLAG = 'pk_quizzes_migrated_v1';
   const MAX_OPTIONS = 6;
 
-  // Quiz colors (Kahoot-inspired, mapped to pk pride palette)
   const OPTION_COLORS = [
-    { bg: '#E63946', label: 'A' },  // red
-    { bg: '#1976D2', label: 'B' },  // blue
-    { bg: '#F4A300', label: 'C' },  // yellow/orange
-    { bg: '#2A9D8F', label: 'D' },  // green
-    { bg: '#7B2CBF', label: 'E' },  // purple
-    { bg: '#E07856', label: 'F' },  // soft red
+    { bg: '#E63946', label: 'A' },
+    { bg: '#1976D2', label: 'B' },
+    { bg: '#F4A300', label: 'C' },
+    { bg: '#2A9D8F', label: 'D' },
+    { bg: '#7B2CBF', label: 'E' },
+    { bg: '#E07856', label: 'F' },
   ];
 
-  // ---------- State --------------------------------------------------------
   const state = {
+    sb: null,
+    user: null,
     quizzes: [],
-    currentQuiz: null,        // editing/playing
-    currentQuestionIdx: 0,    // play mode
+    currentQuiz: null,
+    currentQuestionIdx: 0,
     timer: null,
     timerSec: 20,
     score: { correct: 0, total: 0 },
-    pendingImage: null,       // base64 string for question being edited
-    editingQIdx: -1,          // -1 = new
+    pendingImage: null,
+    editingQIdx: -1,
+    isLoading: false,
+    isCreatingSession: false,
   };
 
   const $ = (id) => document.getElementById(id);
-
-  // ---------- Helpers ------------------------------------------------------
-  function uuid() {
-    return 'q_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
-  }
   function escapeHtml(s) {
     if (s == null) return '';
     return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+  function uuid() {
+    return 'q_' + Date.now() + '_' + Math.random().toString(36).substring(2, 9);
+  }
+  function generatePin() {
+    return String(Math.floor(100000 + Math.random() * 900000));
   }
   let toastTimer = null;
   function showToast(msg, type = 'info') {
@@ -66,24 +74,170 @@
     setInterval(tick, 30000);
   }
 
-  // ---------- Storage ------------------------------------------------------
-  function loadFromStorage() {
+  // ===========================================================================
+  // SUPABASE INIT (waits for auth.js to be ready)
+  // ===========================================================================
+  async function initSupabase() {
+    // Reuse Supabase client if auth.js exposed it; otherwise create our own
+    if (window.supabase && window.supabase.createClient) {
+      state.sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        auth: {
+          flowType: 'implicit',
+          storageKey: 'sb-bxlyctricjayindvcfjo-auth-token',
+        },
+      });
+    } else {
+      throw new Error('Supabase library not loaded');
+    }
+
+    // Check current session
+    const { data } = await state.sb.auth.getSession();
+    if (data && data.session && data.session.user) {
+      state.user = data.session.user;
+    }
+
+    // Listen for auth changes
+    state.sb.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN' && session && session.user) {
+        state.user = session.user;
+        afterLogin();
+      } else if (event === 'SIGNED_OUT') {
+        state.user = null;
+        state.quizzes = [];
+        renderHome();
+      }
+    });
+  }
+
+  async function afterLogin() {
+    // Run migration check
+    await runMigrationIfNeeded();
+    // Load quizzes from Supabase
+    await loadFromSupabase();
+    renderHome();
+  }
+
+  // ===========================================================================
+  // STORAGE — Supabase CRUD
+  // ===========================================================================
+  function dbToLocal(row) {
+    // Convert DB row → local quiz object format
+    return {
+      id: row.id,
+      title: row.title,
+      description: row.description || '',
+      timer: row.timer || 20,
+      revealMode: row.reveal_mode || 'after_question',
+      questions: row.questions || [],
+      created_at: row.created_at,
+      updated_at: row.updated_at,
+    };
+  }
+  function localToDb(quiz, ownerEmail) {
+    return {
+      owner_email: ownerEmail,
+      title: quiz.title,
+      description: quiz.description || null,
+      timer: quiz.timer || 20,
+      reveal_mode: quiz.revealMode || 'after_question',
+      questions: quiz.questions || [],
+    };
+  }
+
+  async function loadFromSupabase() {
+    if (!state.user) { state.quizzes = []; return; }
+    state.isLoading = true;
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) { state.quizzes = []; return; }
-      const parsed = JSON.parse(raw);
-      state.quizzes = Array.isArray(parsed) ? parsed : [];
+      const { data, error } = await state.sb
+        .from('quizzes')
+        .select('*')
+        .order('updated_at', { ascending: false });
+      if (error) throw error;
+      state.quizzes = (data || []).map(dbToLocal);
     } catch (e) {
-      console.error('Load failed:', e);
+      console.error('Load quizzes failed:', e);
+      showToast('โหลด Quiz ไม่สำเร็จ: ' + (e.message || ''), 'error');
       state.quizzes = [];
+    } finally {
+      state.isLoading = false;
     }
   }
-  function saveToStorage() {
+
+  async function dbCreateQuiz(quiz) {
+    const payload = localToDb(quiz, state.user.email);
+    const { data, error } = await state.sb
+      .from('quizzes')
+      .insert([payload])
+      .select();
+    if (error) throw error;
+    return data && data[0] ? dbToLocal(data[0]) : null;
+  }
+  async function dbUpdateQuiz(quiz) {
+    const payload = localToDb(quiz, state.user.email);
+    const { data, error } = await state.sb
+      .from('quizzes')
+      .update(payload)
+      .eq('id', quiz.id)
+      .select();
+    if (error) throw error;
+    return data && data[0] ? dbToLocal(data[0]) : null;
+  }
+  async function dbDeleteQuiz(id) {
+    const { error } = await state.sb
+      .from('quizzes')
+      .delete()
+      .eq('id', id);
+    if (error) throw error;
+  }
+
+  // ===========================================================================
+  // MIGRATION — localStorage → Supabase
+  // ===========================================================================
+  async function runMigrationIfNeeded() {
+    let alreadyMigrated = false;
+    try { alreadyMigrated = localStorage.getItem(MIGRATION_FLAG) === '1'; } catch (e) {}
+    if (alreadyMigrated) return;
+
+    let legacyQuizzes = [];
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.quizzes));
-    } catch (e) {
-      console.error('Save failed:', e);
-      showToast('บันทึกไม่ได้ — storage เต็ม (ลองลบรูปออกจากบาง quiz)', 'error');
+      const raw = localStorage.getItem(LEGACY_KEY);
+      if (raw) legacyQuizzes = JSON.parse(raw) || [];
+    } catch (e) { return; }
+
+    if (!Array.isArray(legacyQuizzes) || legacyQuizzes.length === 0) {
+      try { localStorage.setItem(MIGRATION_FLAG, '1'); } catch (e) {}
+      return;
+    }
+
+    const ok = confirm(
+      `📦 พบ Quiz เก่า ${legacyQuizzes.length} ชุดในเครื่องนี้\n\n` +
+      `กด OK เพื่อ Upload ขึ้น Cloud (ใช้ได้ทุก device + ไม่หายเมื่อล้าง browser)\n` +
+      `กด Cancel เพื่อข้าม (เปลี่ยนใจภายหลังได้)`
+    );
+    if (!ok) {
+      try { localStorage.setItem(MIGRATION_FLAG, '1'); } catch (e) {}
+      return;
+    }
+
+    showToast('กำลัง upload...', 'info');
+    let success = 0, failed = 0;
+    for (const q of legacyQuizzes) {
+      try {
+        await dbCreateQuiz(q);
+        success++;
+      } catch (e) {
+        console.error('Migration fail for quiz:', q.title, e);
+        failed++;
+      }
+    }
+    try { localStorage.setItem(MIGRATION_FLAG, '1'); } catch (e) {}
+
+    if (failed === 0) {
+      showToast(`✓ Upload สำเร็จ ${success} ชุด`, 'success');
+      // Optional: delete legacy
+      try { localStorage.removeItem(LEGACY_KEY); } catch (e) {}
+    } else {
+      showToast(`Upload ${success}/${legacyQuizzes.length} ชุด (${failed} fail — ของเดิมยังอยู่)`, 'error');
     }
   }
 
@@ -106,8 +260,13 @@
     const count = $('quizCount');
     count.textContent = state.quizzes.length;
 
+    if (state.isLoading) {
+      list.innerHTML = '<div class="loading-msg">⏳ กำลังโหลด...</div>';
+      return;
+    }
+
     if (state.quizzes.length === 0) {
-      list.innerHTML = '<div class="empty-msg">ยังไม่มี Quiz — กดปุ่มด้านบนเพื่อสร้างใหม่ 📝</div>';
+      list.innerHTML = '<div class="empty-msg">ยังไม่มี Quiz — กดปุ่ม "สร้าง Quiz ใหม่" 📝</div>';
       return;
     }
 
@@ -125,20 +284,22 @@
             </div>
           </div>
           <div class="quiz-card-actions">
-            <button class="qc-btn qc-btn-play" data-action="play" data-id="${q.id}" type="button">
+            <button class="qc-btn qc-btn-live" data-action="live" data-id="${q.id}" type="button" title="เปิดห้อง multiplayer">
+              <span>⚡ Live</span>
+            </button>
+            <button class="qc-btn qc-btn-play" data-action="play" data-id="${q.id}" type="button" title="เล่นเดี่ยว/projector">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              <span>เล่น</span>
+              <span>เดี่ยว</span>
             </button>
             <button class="qc-btn qc-btn-edit" data-action="edit" data-id="${q.id}" type="button">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-              <span>แก้ไข</span>
+              <span>แก้</span>
             </button>
           </div>
         </div>
       `;
     }).join('');
 
-    // Wire actions
     list.querySelectorAll('[data-action]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -148,8 +309,64 @@
         if (!quiz) return;
         if (action === 'play') startPlay(quiz);
         else if (action === 'edit') startEdit(quiz);
+        else if (action === 'live') startLive(quiz);
       });
     });
+  }
+
+  // ===========================================================================
+  // LIVE — Create session + redirect to quiz-live.html
+  // ===========================================================================
+  async function startLive(quiz) {
+    if (state.isCreatingSession) return;
+    if (!quiz.questions || quiz.questions.length === 0) {
+      showToast('Quiz นี้ไม่มีคำถาม', 'error'); return;
+    }
+    state.isCreatingSession = true;
+    showToast('กำลังเปิดห้อง...', 'info');
+
+    const hostId = uuid();
+    let pin = generatePin();
+    let attempt = 0;
+
+    while (attempt < 5) {
+      try {
+        const { data, error } = await state.sb
+          .from('quiz_sessions')
+          .insert([{
+            pin,
+            host_id: hostId,
+            quiz_data: quiz,
+            state: 'lobby',
+            current_q: 0,
+          }])
+          .select();
+        if (error) {
+          // Pin collision — retry with new pin
+          if (error.code === '23505') {
+            pin = generatePin();
+            attempt++;
+            continue;
+          }
+          throw error;
+        }
+        if (data && data[0]) {
+          // Save host_id in sessionStorage so quiz-live.html can verify
+          try { sessionStorage.setItem('pk_host_id_v1', hostId); } catch (e) {}
+          // Redirect to host lobby
+          window.location.href = `quiz-live.html?host=${data[0].id}`;
+          return;
+        }
+      } catch (e) {
+        console.error('Create session error:', e);
+        showToast('เปิดห้องไม่สำเร็จ: ' + (e.message || ''), 'error');
+        state.isCreatingSession = false;
+        return;
+      }
+      attempt++;
+    }
+    state.isCreatingSession = false;
+    showToast('สร้าง PIN ไม่สำเร็จ ลองใหม่', 'error');
   }
 
   // ===========================================================================
@@ -157,18 +374,17 @@
   // ===========================================================================
   function startEdit(quiz) {
     if (quiz) {
-      state.currentQuiz = JSON.parse(JSON.stringify(quiz)); // deep copy
+      state.currentQuiz = JSON.parse(JSON.stringify(quiz));
       $('editorTitle').textContent = 'แก้ไข Quiz';
       $('btnDeleteQuiz').style.display = '';
     } else {
       state.currentQuiz = {
-        id: uuid(),
+        id: null, // null = new (DB will assign UUID)
         title: '',
         description: '',
         timer: 20,
         revealMode: 'after_question',
         questions: [],
-        created_at: new Date().toISOString(),
       };
       $('editorTitle').textContent = 'สร้าง Quiz ใหม่';
       $('btnDeleteQuiz').style.display = 'none';
@@ -217,7 +433,6 @@
       `;
     }).join('');
 
-    // Wire click on each question item (open editor)
     list.querySelectorAll('.q-item').forEach(el => {
       el.addEventListener('click', (e) => {
         if (e.target.closest('.qi-actions')) return;
@@ -225,7 +440,6 @@
         openQuestionModal(idx);
       });
     });
-    // Up/down buttons
     list.querySelectorAll('[data-action]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -254,7 +468,6 @@
     $('qFormExplain').value = q.explain || '';
     state.pendingImage = q.image || null;
 
-    // Render image preview
     if (state.pendingImage) {
       $('imagePreview').src = state.pendingImage;
       $('imagePreviewWrap').style.display = '';
@@ -263,7 +476,6 @@
     }
     $('qFormImage').value = '';
 
-    // Render options
     renderOptionsList(q.options || ['', ''], q.correct || 0);
     $('btnDeleteQ').style.display = isEdit ? '' : 'none';
     $('qModalBackdrop').classList.add('show');
@@ -285,7 +497,6 @@
 
     list.dataset.correct = correctIdx;
 
-    // Wire correct buttons
     list.querySelectorAll('.opt-correct-btn').forEach(b => {
       b.addEventListener('click', () => {
         list.dataset.correct = b.dataset.idx;
@@ -294,7 +505,6 @@
         });
       });
     });
-    // Wire remove buttons
     list.querySelectorAll('.opt-remove-btn').forEach(b => {
       b.addEventListener('click', () => {
         const opts = collectOptions();
@@ -327,20 +537,14 @@
     const correctIdx = parseInt($('optionsList').dataset.correct);
 
     if (!text) { showToast('ใส่คำถามก่อน', 'error'); $('qFormText').focus(); return; }
-    if (options.some(o => !o)) { showToast('กรอกตัวเลือกให้ครบทุกช่อง', 'error'); return; }
+    if (options.some(o => !o)) { showToast('กรอกตัวเลือกให้ครบ', 'error'); return; }
     if (options.length < 2) { showToast('ต้องมีอย่างน้อย 2 ตัวเลือก', 'error'); return; }
     if (isNaN(correctIdx) || correctIdx < 0 || correctIdx >= options.length) {
       showToast('เลือกคำตอบที่ถูกต้อง (กดที่ ✓)', 'error');
       return;
     }
 
-    const newQ = {
-      text,
-      options,
-      correct: correctIdx,
-      explain,
-      image: state.pendingImage || null,
-    };
+    const newQ = { text, options, correct: correctIdx, explain, image: state.pendingImage || null };
 
     if (state.editingQIdx >= 0) {
       state.currentQuiz.questions[state.editingQIdx] = newQ;
@@ -362,24 +566,16 @@
     showToast('ลบแล้ว ✓', 'success');
   }
 
-  // ---------- Image upload --------------------------------------------------
+  // ---------- Image upload -------------------------------------------------
   function handleImageSelect(e) {
     const file = e.target.files[0];
     if (!file) return;
-    if (!file.type.startsWith('image/')) {
-      showToast('ไฟล์ต้องเป็นรูปภาพ', 'error');
-      return;
-    }
-    if (file.size > 2 * 1024 * 1024) {
-      showToast('รูปภาพใหญ่เกิน 2MB — ลองย่อก่อน', 'error');
-      return;
-    }
-    // Compress if too big - convert to data URL with quality reduction
+    if (!file.type.startsWith('image/')) { showToast('ไฟล์ต้องเป็นรูปภาพ', 'error'); return; }
+    if (file.size > 2 * 1024 * 1024) { showToast('รูปภาพใหญ่เกิน 2MB', 'error'); return; }
     const reader = new FileReader();
     reader.onload = (ev) => {
       const img = new Image();
       img.onload = () => {
-        // Resize if larger than 1200px wide
         const maxW = 1200;
         let w = img.width, h = img.height;
         if (w > maxW) { h = h * (maxW / w); w = maxW; }
@@ -403,8 +599,8 @@
     $('imagePreviewWrap').style.display = 'none';
   }
 
-  // ---------- Save quiz -------------------------------------------------------
-  function handleSaveQuiz() {
+  // ---------- Save / delete quiz -------------------------------------------
+  async function handleSaveQuiz() {
     const title = $('quizTitleInput').value.trim();
     const desc = $('quizDescInput').value.trim();
     const timer = parseInt($('quizTimerInput').value) || 20;
@@ -414,35 +610,57 @@
       showToast('เพิ่มคำถามอย่างน้อย 1 ข้อ', 'error');
       return;
     }
+    if (!state.user) { showToast('กรุณา login ก่อน', 'error'); return; }
 
     state.currentQuiz.title = title;
     state.currentQuiz.description = desc;
     state.currentQuiz.timer = Math.max(5, Math.min(120, timer));
     state.currentQuiz.revealMode = $('quizRevealMode').value || 'after_question';
-    state.currentQuiz.updated_at = new Date().toISOString();
 
-    const existingIdx = state.quizzes.findIndex(q => q.id === state.currentQuiz.id);
-    if (existingIdx >= 0) {
-      state.quizzes[existingIdx] = state.currentQuiz;
-    } else {
-      state.quizzes.push(state.currentQuiz);
+    const btn = $('btnSaveQuiz');
+    btn.disabled = true;
+    btn.textContent = 'กำลังบันทึก...';
+
+    try {
+      let saved;
+      if (state.currentQuiz.id) {
+        saved = await dbUpdateQuiz(state.currentQuiz);
+      } else {
+        saved = await dbCreateQuiz(state.currentQuiz);
+      }
+      if (saved) {
+        // Update local cache
+        const idx = state.quizzes.findIndex(q => q.id === saved.id);
+        if (idx >= 0) state.quizzes[idx] = saved;
+        else state.quizzes.unshift(saved);
+        showToast('บันทึกแล้ว ✓', 'success');
+        showMode('home');
+      }
+    } catch (e) {
+      console.error(e);
+      showToast('บันทึกไม่สำเร็จ: ' + (e.message || ''), 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'บันทึก';
     }
-    saveToStorage();
-    showToast('บันทึก Quiz แล้ว ✓', 'success');
-    showMode('home');
   }
 
-  function handleDeleteQuiz() {
+  async function handleDeleteQuiz() {
     if (!state.currentQuiz || !state.currentQuiz.id) return;
     if (!confirm(`ลบ Quiz "${state.currentQuiz.title}"?\n\nไม่สามารถกู้คืนได้!`)) return;
-    state.quizzes = state.quizzes.filter(q => q.id !== state.currentQuiz.id);
-    saveToStorage();
-    showToast('ลบแล้ว ✓', 'success');
-    showMode('home');
+
+    try {
+      await dbDeleteQuiz(state.currentQuiz.id);
+      state.quizzes = state.quizzes.filter(q => q.id !== state.currentQuiz.id);
+      showToast('ลบแล้ว ✓', 'success');
+      showMode('home');
+    } catch (e) {
+      showToast('ลบไม่สำเร็จ: ' + (e.message || ''), 'error');
+    }
   }
 
   // ===========================================================================
-  // PLAY MODE
+  // PLAY MODE (single-screen / projector)
   // ===========================================================================
   function startPlay(quiz) {
     if (!quiz.questions || quiz.questions.length === 0) {
@@ -454,7 +672,6 @@
     state.score = { correct: 0, total: 0 };
     state.timerSec = quiz.timer || 20;
 
-    // Lobby
     $('lobbyTitle').textContent = quiz.title;
     $('lobbyDesc').textContent = quiz.description || '';
     $('lobbyQCount').textContent = quiz.questions.length;
@@ -502,7 +719,6 @@
       $('playImageWrap').style.display = 'none';
     }
 
-    // Render options
     const optsEl = $('playOptions');
     optsEl.innerHTML = q.options.map((opt, idx) => {
       const color = OPTION_COLORS[idx] || OPTION_COLORS[0];
@@ -514,20 +730,12 @@
       `;
     }).join('');
 
-    // Reset state
     $('playExplain').style.display = 'none';
     const mode = state.currentQuiz.revealMode || 'after_question';
-    if (mode === 'after_question') {
-      $('btnReveal').style.display = '';
-      $('btnReveal').textContent = 'เฉลย';
-    } else {
-      // Modes 'after_all' / 'never' — no per-question reveal, just "next" after timer
-      $('btnReveal').style.display = '';
-      $('btnReveal').textContent = 'ข้ามไปเลย';
-    }
+    $('btnReveal').style.display = '';
+    $('btnReveal').textContent = mode === 'after_question' ? 'เฉลย' : 'ข้ามไปเลย';
     $('btnNext').style.display = 'none';
 
-    // Start timer
     state.timerSec = state.currentQuiz.timer || 20;
     $('timerNum').textContent = state.timerSec;
     $('timerBar').style.width = '100%';
@@ -556,7 +764,6 @@
     const mode = state.currentQuiz.revealMode || 'after_question';
 
     if (mode === 'after_question') {
-      // Show correct answer
       const optsEl = $('playOptions');
       optsEl.querySelectorAll('.play-opt').forEach(el => {
         const idx = parseInt(el.dataset.idx);
@@ -567,9 +774,6 @@
         $('playExplain').textContent = '💡 ' + q.explain;
         $('playExplain').style.display = '';
       }
-    } else {
-      // Modes 'after_all' / 'never' — skip reveal, just enable next button
-      // (still show "next" button so user can move forward)
     }
     $('btnReveal').style.display = 'none';
     $('btnNext').style.display = '';
@@ -595,7 +799,6 @@
     const endDescEl = $('endDesc');
 
     if (mode === 'after_all') {
-      // Show review of all questions with correct answers
       let html = `<p style="margin-bottom:16px;">เฉลย ${state.currentQuiz.questions.length} ข้อ:</p>`;
       html += '<div class="end-review">';
       state.currentQuiz.questions.forEach((q, idx) => {
@@ -604,9 +807,9 @@
           <div class="end-review-item">
             <div class="er-num">${idx + 1}</div>
             <div class="er-body">
-              <div class="er-q">${escapeHtmlPlay(q.text)}</div>
-              <div class="er-correct">✓ ${escapeHtmlPlay(correctOpt)}</div>
-              ${q.explain ? `<div class="er-explain">💡 ${escapeHtmlPlay(q.explain)}</div>` : ''}
+              <div class="er-q">${escapeHtml(q.text)}</div>
+              <div class="er-correct">✓ ${escapeHtml(correctOpt)}</div>
+              ${q.explain ? `<div class="er-explain">💡 ${escapeHtml(q.explain)}</div>` : ''}
             </div>
           </div>
         `;
@@ -616,12 +819,6 @@
     } else {
       endDescEl.textContent = `จบ ${state.currentQuiz.questions.length} ข้อ — Good job ทุกคน!`;
     }
-  }
-
-  // Helper for end screen (escapeHtml exists earlier in file)
-  function escapeHtmlPlay(s) {
-    if (s == null) return '';
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
 
   function exitPlay() {
@@ -636,7 +833,7 @@
   function exportAll() {
     if (state.quizzes.length === 0) { showToast('ยังไม่มี Quiz ให้ backup', 'info'); return; }
     const data = {
-      version: 1,
+      version: 2,
       exported_at: new Date().toISOString(),
       quizzes: state.quizzes,
     };
@@ -652,7 +849,7 @@
 
   function importFile(file) {
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
       try {
         const data = JSON.parse(e.target.result);
         const imported = Array.isArray(data) ? data : data.quizzes;
@@ -660,16 +857,20 @@
         const valid = imported.filter(q => q.title && Array.isArray(q.questions));
         if (valid.length === 0) throw new Error('ไม่มี quiz ที่ใช้ได้');
 
-        if (state.quizzes.length > 0) {
-          if (!confirm(`มี Quiz อยู่แล้ว ${state.quizzes.length} ชุด\n\nกด OK = เพิ่ม ${valid.length} ชุดใหม่ (ของเดิมยังอยู่)\nกด Cancel = ยกเลิก`)) return;
+        if (!confirm(`Import ${valid.length} Quiz ขึ้น cloud?`)) return;
+        showToast('กำลัง import...', 'info');
+
+        let success = 0, failed = 0;
+        for (const q of valid) {
+          try {
+            const newQuiz = { ...q, id: null }; // ignore old ID, let DB assign
+            const saved = await dbCreateQuiz(newQuiz);
+            if (saved) state.quizzes.unshift(saved);
+            success++;
+          } catch (err) { failed++; }
         }
-        valid.forEach(q => {
-          q.id = q.id || uuid();
-          state.quizzes.push(q);
-        });
-        saveToStorage();
         renderHome();
-        showToast(`Import แล้ว ${valid.length} ชุด ✓`, 'success');
+        showToast(`Import สำเร็จ ${success}/${valid.length} ชุด`, success === valid.length ? 'success' : 'error');
       } catch (err) {
         showToast('Import ไม่สำเร็จ: ' + (err.message || ''), 'error');
       }
@@ -681,7 +882,6 @@
   // EVENTS
   // ===========================================================================
   function wireEvents() {
-    // Home
     $('btnNewQuiz').addEventListener('click', () => startEdit(null));
     $('btnExportQuiz').addEventListener('click', exportAll);
     $('btnImportQuiz').addEventListener('click', () => $('importFile').click());
@@ -689,15 +889,13 @@
       if (e.target.files && e.target.files[0]) { importFile(e.target.files[0]); e.target.value = ''; }
     });
 
-    // Editor
     $('editorBack').addEventListener('click', () => {
-      if (confirm('ออกโดยไม่บันทึก?\nการแก้ไขล่าสุดจะหาย')) showMode('home');
+      if (confirm('ออกโดยไม่บันทึก?')) showMode('home');
     });
     $('btnSaveQuiz').addEventListener('click', handleSaveQuiz);
     $('btnAddQ').addEventListener('click', () => openQuestionModal(-1));
     $('btnDeleteQuiz').addEventListener('click', handleDeleteQuiz);
 
-    // Question modal
     $('qModalClose').addEventListener('click', closeQuestionModal);
     $('btnCancelQ').addEventListener('click', closeQuestionModal);
     $('qModalBackdrop').addEventListener('click', (e) => {
@@ -714,7 +912,6 @@
       renderOptionsList(opts, correct);
     });
 
-    // Reveal mode picker
     document.querySelectorAll('#revealModeGrid .reveal-mode-btn').forEach(b => {
       b.addEventListener('click', () => {
         document.querySelectorAll('#revealModeGrid .reveal-mode-btn').forEach(x => x.classList.remove('selected'));
@@ -726,7 +923,6 @@
     $('qFormImage').addEventListener('change', handleImageSelect);
     $('btnRemoveImage').addEventListener('click', handleRemoveImage);
 
-    // Play
     $('lobbyExit').addEventListener('click', exitPlay);
     $('playExit').addEventListener('click', () => {
       if (confirm('ออกจาก Quiz?')) exitPlay();
@@ -742,7 +938,6 @@
     });
     $('btnBackHome').addEventListener('click', exitPlay);
 
-    // Keyboard shortcuts in play mode
     document.addEventListener('keydown', (e) => {
       if ($('modePlay').style.display === 'none') return;
       if ($('playQuestion').style.display === 'none') return;
@@ -759,10 +954,32 @@
   // ===========================================================================
   // INIT
   // ===========================================================================
-  function init() {
+  async function init() {
     startClock();
-    loadFromStorage();
     wireEvents();
+
+    // Wait until Supabase library loads
+    let waitCount = 0;
+    while (!window.supabase && waitCount < 30) {
+      await new Promise(r => setTimeout(r, 100));
+      waitCount++;
+    }
+    if (!window.supabase) {
+      showToast('Supabase ไม่โหลด', 'error');
+      return;
+    }
+
+    try {
+      await initSupabase();
+      if (state.user) {
+        await afterLogin();
+      }
+      // If not logged in yet, the auth state listener will handle it
+    } catch (e) {
+      console.error('Init failed:', e);
+      showToast('Init failed: ' + (e.message || ''), 'error');
+    }
+
     showMode('home');
   }
 

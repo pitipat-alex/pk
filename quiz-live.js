@@ -569,12 +569,15 @@
   function exitGame() {
     cleanupChannels();
     if (state.timer) { clearInterval(state.timer); state.timer = null; }
+    const wasHost = state.role === 'host';
     state.session = null;
     state.player = null;
     state.quiz = null;
     state.role = null;
     exitFullscreen();
-    showScreen('screenHome');
+    // Host → back to quiz.html (their library)
+    // Player → back to home (index)
+    window.location.href = wasHost ? 'quiz.html' : 'index.html';
   }
 
   // ===========================================================================
@@ -970,13 +973,6 @@
   // EVENTS
   // ===========================================================================
   function wireEvents() {
-    // Home
-    $('btnHostMode').addEventListener('click', showHostPick);
-    $('btnJoinMode').addEventListener('click', () => showJoinScreen());
-
-    // Host pick
-    $('hostPickBack').addEventListener('click', () => showScreen('screenHome'));
-
     // Host lobby
     $('hostLobbyExit').addEventListener('click', () => {
       if (confirm('ออกจากห้อง?')) exitGame();
@@ -993,8 +989,7 @@
     $('btnHostReveal').addEventListener('click', hostRevealAnswer);
     $('btnHostNext').addEventListener('click', hostNextQuestion);
 
-    // Join
-    $('joinBack').addEventListener('click', () => showScreen('screenHome'));
+    // Join (player)
     $('btnDoJoin').addEventListener('click', doJoin);
     $('joinPinInput').addEventListener('input', (e) => {
       e.target.value = e.target.value.replace(/\D/g, '').substring(0, 6);
@@ -1026,23 +1021,73 @@
   // ===========================================================================
   // INIT
   // ===========================================================================
-  function init() {
+  async function init() {
     try {
       startClock();
       initSupabase();
       wireEvents();
 
-      // Auto-detect URL param ?join=PIN → go to join screen
+      // Auto-detect URL params
       const params = new URLSearchParams(location.search);
+      const hostSessionId = params.get('host');
       const joinPin = params.get('join');
-      if (joinPin && /^\d{6}$/.test(joinPin)) {
+
+      if (hostSessionId) {
+        // Host mode — fetch session, validate, show lobby
+        await initHostFromUrl(hostSessionId);
+      } else if (joinPin && /^\d{6}$/.test(joinPin)) {
         showJoinScreen(joinPin);
       } else {
-        showScreen('screenHome');
+        showJoinScreen();  // empty join form (default)
       }
     } catch (e) {
       console.error('Init failed:', e);
       showToast('Error: ' + e.message, 'error');
+    }
+  }
+
+  // Initialize host mode from URL (?host=SESSION_ID)
+  // Quiz creation now happens in quiz.html — this just resumes an existing session
+  async function initHostFromUrl(sessionId) {
+    showToast('กำลังโหลดห้อง...', 'info');
+    try {
+      const { data, error } = await state.sb
+        .from('quiz_sessions')
+        .select('*')
+        .eq('id', sessionId)
+        .limit(1);
+      if (error) throw error;
+      if (!data || !data[0]) {
+        showToast('ไม่พบห้อง — อาจถูกลบหรือหมดอายุ', 'error');
+        setTimeout(() => { window.location.href = 'quiz.html'; }, 2000);
+        return;
+      }
+
+      const session = data[0];
+      // Verify host_id matches sessionStorage (if stored)
+      const expectedHostId = sessionStorage.getItem('pk_host_id_v1');
+      if (expectedHostId && expectedHostId !== session.host_id) {
+        showToast('ไม่ใช่ host ของห้องนี้', 'error');
+        setTimeout(() => { window.location.href = 'quiz.html'; }, 2000);
+        return;
+      }
+
+      state.session = session;
+      state.quiz = session.quiz_data;
+      state.role = 'host';
+
+      // Show lobby (or jump to game if already started)
+      if (session.state === 'lobby') {
+        await hostShowLobby();
+      } else if (session.state === 'ended') {
+        showToast('ห้องนี้จบไปแล้ว', 'info');
+        setTimeout(() => { window.location.href = 'quiz.html'; }, 2000);
+      } else {
+        // playing/reveal — resume from current question
+        await hostShowLobby();
+      }
+    } catch (e) {
+      showToast('โหลดห้องไม่สำเร็จ: ' + e.message, 'error');
     }
   }
 

@@ -19,6 +19,17 @@
       } catch (e) {}
     })();
   </script>
+  <script>
+    /* Lock state — show login screen if no Supabase session cached */
+    (function () {
+      var d = document.documentElement;
+      try {
+        var hasCachedSession = !!localStorage.getItem('sb-bxlyctricjayindvcfjo-auth-token');
+        if (hasCachedSession) d.classList.add('checking');
+        else d.classList.add('locked');
+      } catch (e) { d.classList.add('locked'); }
+    })();
+  </script>
   <title>Quiz · PK</title>
 
   <script>
@@ -34,7 +45,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501p">
+  <link rel="stylesheet" href="style.css?v=20260501q">
+
+  <!-- Supabase JS v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
+          onerror="this.dataset.fallbackTried=1;
+                   var s=document.createElement('script');
+                   s.src='https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js';
+                   document.head.appendChild(s);"></script>
+  <script src="auth.js?v=20260501q"></script>
 </head>
 <body>
 
@@ -69,18 +88,12 @@
       <p class="page-subtitle">เกมตอบคำถามในห้องเรียน · สร้างเอง · เล่นกับนักศึกษา 🎮</p>
     </section>
 
-    <div class="quiz-action-row">
-      <button class="quiz-add-btn" type="button" id="btnNewQuiz">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 5v14M5 12h14"/>
-        </svg>
-        <span>สร้าง Quiz ใหม่</span>
-      </button>
-      <a class="quiz-live-btn" href="quiz-live.html">
-        <span class="qlb-icon">⚡</span>
-        <span class="qlb-label">Quiz Live</span>
-      </a>
-    </div>
+    <button class="quiz-add-btn" type="button" id="btnNewQuiz">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12h14"/>
+      </svg>
+      <span>สร้าง Quiz ใหม่</span>
+    </button>
 
     <section class="quiz-list-section">
       <div class="quiz-list-header">
@@ -345,6 +358,6 @@
   <!-- Toast -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="quiz.js?v=20260501p"></script>
+  <script src="quiz.js?v=20260501q"></script>
 </body>
 </html>

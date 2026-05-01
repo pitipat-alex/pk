@@ -65,7 +65,28 @@ CREATE INDEX IF NOT EXISTS idx_clinic_shop_created ON clinic_shopping(created_at
 
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
--- ║  3. QUIZ LIVE — Sessions / Players / Answers                      ║
+-- ║  3. QUIZZES (Alex's quiz library — owner only)                    ║
+-- ╚═══════════════════════════════════════════════════════════════════╝
+
+CREATE TABLE IF NOT EXISTS quizzes (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  owner_email TEXT NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT,
+  timer INT NOT NULL DEFAULT 20,
+  reveal_mode TEXT NOT NULL DEFAULT 'after_question'
+    CHECK (reveal_mode IN ('after_question', 'after_all', 'never')),
+  questions JSONB NOT NULL DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_quizzes_owner ON quizzes(owner_email);
+CREATE INDEX IF NOT EXISTS idx_quizzes_updated ON quizzes(updated_at DESC);
+
+
+-- ╔═══════════════════════════════════════════════════════════════════╗
+-- ║  4. QUIZ LIVE — Sessions / Players / Answers                      ║
 -- ╚═══════════════════════════════════════════════════════════════════╝
 
 -- Session: 1 row per live game
@@ -135,6 +156,11 @@ CREATE TRIGGER update_clinic_shopping_updated_at
   BEFORE UPDATE ON clinic_shopping
   FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_quizzes_updated_at ON quizzes;
+CREATE TRIGGER update_quizzes_updated_at
+  BEFORE UPDATE ON quizzes
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
 
 -- ╔═══════════════════════════════════════════════════════════════════╗
 -- ║  5. RLS POLICIES                                                  ║
@@ -157,6 +183,15 @@ CREATE POLICY "Authenticated users only"
   FOR ALL TO authenticated
   USING (auth.email() = 'carnitab@gmail.com')
   WITH CHECK (auth.email() = 'carnitab@gmail.com');
+
+-- quizzes: Owner only (Alex via Google login)
+ALTER TABLE quizzes ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Owner only" ON quizzes;
+CREATE POLICY "Owner only"
+  ON quizzes
+  FOR ALL TO authenticated
+  USING (owner_email = auth.email())
+  WITH CHECK (owner_email = auth.email());
 
 -- quiz_sessions / players / answers: PUBLIC (need PIN to find session anyway)
 ALTER TABLE quiz_sessions ENABLE ROW LEVEL SECURITY;
@@ -201,6 +236,7 @@ ALTER PUBLICATION supabase_realtime ADD TABLE quiz_answers;
 
 GRANT ALL ON shared_transactions TO anon, authenticated;
 GRANT ALL ON clinic_shopping TO authenticated;
+GRANT ALL ON quizzes TO authenticated;
 GRANT ALL ON quiz_sessions TO anon, authenticated;
 GRANT ALL ON quiz_players TO anon, authenticated;
 GRANT ALL ON quiz_answers TO anon, authenticated;

@@ -5466,3 +5466,42 @@ html.locked .lock-screen { display: flex; }
 }
 #playEnd .er-q { color: var(--ink); }
 #playEnd .er-explain { color: var(--ink-mute); }
+
+/* ============================================================================
+   "Live" button on quiz card (in quiz.html)
+   ============================================================================ */
+.qc-btn-live {
+  background: linear-gradient(135deg, #7B2CBF 0%, #4A148C 100%);
+  color: white;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(123, 44, 191, 0.25);
+}
+.qc-btn-live:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 4px rgba(123, 44, 191, 0.2);
+}
+
+/* Quiz list - tighter actions for 3 buttons */
+.quiz-card-actions {
+  flex-direction: column;
+  gap: 6px;
+  min-width: 88px;
+}
+.quiz-card-actions .qc-btn {
+  padding: 8px 10px;
+  font-size: 12px;
+  min-height: 36px;
+}
+.quiz-card-actions .qc-btn span:not(:only-child) {
+  font-size: 12px;
+}
+
+/* Loading message */
+.loading-msg {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--ink-mute);
+  font-size: 14px;
+  font-family: 'Noto Serif Thai', serif;
+}
