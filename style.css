@@ -1993,7 +1993,7 @@ html.locked .lock-screen { display: flex; }
    ============================================================================ */
 /* IMPORTANT: Use ID selectors to override OLD .modal CSS from auth/login modal
    (which has visibility:hidden + transform:translateY(100%) — would make our modal invisible) */
-#modalBackdrop, #pinBackdrop {
+#modalBackdrop, #pinBackdrop, #shopModalBackdrop {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -2009,7 +2009,7 @@ html.locked .lock-screen { display: flex; }
   opacity: 1;
   pointer-events: none;
 }
-#modalBackdrop.show, #pinBackdrop.show {
+#modalBackdrop.show, #pinBackdrop.show, #shopModalBackdrop.show {
   display: flex;
   animation: fadeIn 0.2s ease;
   pointer-events: auto;
@@ -2021,7 +2021,7 @@ html.locked .lock-screen { display: flex; }
 
 /* Reset OLD .modal hidden state (visibility:hidden, transform:translateY(100%), position:fixed bottom:0)
    when modal is inside our shared-page backdrops */
-#modalBackdrop .modal, #pinBackdrop .modal {
+#modalBackdrop .modal, #pinBackdrop .modal, #shopModalBackdrop .modal {
   position: relative;
   left: auto;
   right: auto;
@@ -2258,11 +2258,11 @@ html.locked .lock-screen { display: flex; }
 /* iPad / desktop tweaks — Use ID selectors to override OLD modal desktop CSS at 640px+
    (which uses position:fixed + transform:translate(-50%,-50%) + opacity:0 — would hide our modals) */
 @media (min-width: 768px) {
-  #modalBackdrop, #pinBackdrop {
+  #modalBackdrop, #pinBackdrop, #shopModalBackdrop {
     align-items: center;
     padding: 20px;
   }
-  #modalBackdrop .modal, #pinBackdrop .modal {
+  #modalBackdrop .modal, #pinBackdrop .modal, #shopModalBackdrop .modal {
     border-radius: 24px;
     max-width: 600px;
     /* Re-affirm overrides at desktop breakpoint */

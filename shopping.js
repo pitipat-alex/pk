@@ -319,7 +319,7 @@
   // ===========================================================================
   function openModal(item) {
     const isEdit = !!item;
-    $('modalTitle').textContent = isEdit ? 'แก้ไขรายการ' : 'เพิ่มรายการใหม่';
+    $('shopModalTitle').textContent = isEdit ? 'แก้ไขรายการ' : 'เพิ่มรายการใหม่';
     $('formId').value = isEdit ? item.id : '';
     $('formName').value = isEdit ? item.name : '';
     $('formQty').value = isEdit && item.quantity != null ? item.quantity : '';
@@ -332,12 +332,12 @@
       b.classList.toggle('selected', b.dataset.cat === cat);
     });
     $('btnDelete').style.display = isEdit ? '' : 'none';
-    $('modalBackdrop').classList.add('show');
+    $('shopModalBackdrop').classList.add('show');
     setTimeout(() => $('formName').focus(), 200);
   }
 
   function closeModal() {
-    $('modalBackdrop').classList.remove('show');
+    $('shopModalBackdrop').classList.remove('show');
     $('itemForm').reset();
   }
 
@@ -448,10 +448,10 @@
   // ===========================================================================
   function wireEvents() {
     $('btnAdd').addEventListener('click', () => openModal(null));
-    $('modalClose').addEventListener('click', closeModal);
+    $('shopModalClose').addEventListener('click', closeModal);
     $('btnCancel').addEventListener('click', closeModal);
-    $('modalBackdrop').addEventListener('click', (e) => {
-      if (e.target === $('modalBackdrop')) closeModal();
+    $('shopModalBackdrop').addEventListener('click', (e) => {
+      if (e.target === $('shopModalBackdrop')) closeModal();
     });
     $('itemForm').addEventListener('submit', handleFormSubmit);
     $('btnDelete').addEventListener('click', handleDelete);
