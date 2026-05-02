@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css?v=20260501ag">
+<link rel="stylesheet" href="style.css?v=20260501ah">
 
 <style>
   /* Pharmacology-specific styles */
@@ -307,26 +307,37 @@
 </style>
 
 </head>
-<body class="page-pharmacology">
-<div class="auth-gate" id="authGate" style="display:none">
-  <div class="auth-modal">
-    <h1>Pharmacology Tool</h1>
-    <p>กรุณาลงชื่อเข้าใช้งาน</p>
-    <button id="loginBtn" class="auth-btn">Sign in with Google</button>
+<body>
+
+  <div class="pride-bar"></div>
+
+  <div class="blobs">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
   </div>
-</div>
 
-<div class="container" id="appContainer" style="display:none">
+  <div class="wrap">
 
-  <header class="page-head">
-    <a class="back-btn" href="clinic.html" aria-label="กลับ">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
-      </svg>
-    </a>
-    <h1 class="page-h1">Pharmacology</h1>
-    <span class="page-sub">เภสัชวิทยา + คำนวณยา + Interaction</span>
-  </header>
+    <!-- TOP BAR --------------------------------------------------- -->
+    <header class="topbar">
+      <a class="back-btn" href="clinic.html" aria-label="กลับ คลินิก">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        <span>งานคลินิก</span>
+      </a>
+      <div class="meta">
+        <span class="online" aria-hidden="true"></span>
+        <span id="clock">--:--</span>
+      </div>
+    </header>
+
+    <!-- PAGE HERO ------------------------------------------------- -->
+    <section class="page-hero" style="--page-accent: var(--purple);">
+      <p class="page-eyebrow">CLINIC TOOL · PHARMACOLOGY</p>
+      <h1 class="page-title" style="color: var(--purple);">เภสัชวิทยา</h1>
+      <p class="page-subtitle">Plumb's Veterinary Drug Handbook · 10<sup>th</sup> Edition (2023)</p>
+    </section>
 
   <!-- DISCLAIMER ----------------------------------------------- -->
   <div class="disclaimer">
@@ -394,8 +405,8 @@
 
 </div>
 
-<script src="auth.js?v=20260501ag"></script>
-<script src="pharmacology-data.js?v=20260501ag"></script>
+<script src="auth.js?v=20260501ah"></script>
+<script src="pharmacology-data.js?v=20260501ah"></script>
 <script>
 // ============================================================
 // Pharmacology Tool Logic
