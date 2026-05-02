@@ -14,6 +14,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'amoxicillin',
+    category: 'antibiotic',
     name: 'Amoxicillin',
     nameTh: 'อะม็อกซีซิลลิน',
     classDrug: 'Antibiotic — Beta-lactam (Penicillin)',
@@ -42,6 +43,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'amoxicillin-clavulanate',
+    category: 'antibiotic',
     name: 'Amoxicillin-Clavulanate',
     nameTh: 'อะม็อกซี-คลาวูลาเนต (Synulox/Clavamox)',
     classDrug: 'Antibiotic — Beta-lactam + Beta-lactamase inhibitor',
@@ -69,6 +71,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'enrofloxacin',
+    category: 'antibiotic',
     name: 'Enrofloxacin',
     nameTh: 'เอนโรฟลอกซาซิน (Baytril)',
     classDrug: 'Antibiotic — Fluoroquinolone',
@@ -95,6 +98,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'doxycycline',
+    category: 'antibiotic',
     name: 'Doxycycline',
     nameTh: 'ด็อกซีไซคลีน',
     classDrug: 'Antibiotic — Tetracycline',
@@ -128,6 +132,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'meloxicam',
+    category: 'pain',
     name: 'Meloxicam',
     nameTh: 'เมล็อกซิแคม (Metacam)',
     classDrug: 'NSAID — COX-2 preferential',
@@ -155,6 +160,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'carprofen',
+    category: 'pain',
     name: 'Carprofen',
     nameTh: 'คาร์โพรเฟน (Rimadyl)',
     classDrug: 'NSAID — COX-2 preferential',
@@ -187,6 +193,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'maropitant',
+    category: 'gi',
     name: 'Maropitant',
     nameTh: 'มาโรพิแทนต์ (Cerenia)',
     classDrug: 'Antiemetic — NK-1 receptor antagonist',
@@ -219,6 +226,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'furosemide',
+    category: 'diuretic',
     name: 'Furosemide',
     nameTh: 'ฟูโรซีไมด์ (Lasix)',
     classDrug: 'Diuretic — Loop',
@@ -251,6 +259,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'prednisolone',
+    category: 'endocrine',
     name: 'Prednisolone',
     nameTh: 'เพรดนิโซโลน',
     classDrug: 'Glucocorticoid — Intermediate-acting',
@@ -285,6 +294,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'tramadol',
+    category: 'pain',
     name: 'Tramadol',
     nameTh: 'ทรามาดอล',
     classDrug: 'Analgesic — Atypical opioid (μ + SNRI)',
@@ -315,6 +325,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cefovecin',
+    category: 'antibiotic',
     name: 'Cefovecin',
     nameTh: 'เซโฟเวซิน (Convenia)',
     classDrug: 'Antibiotic — 3rd-gen Cephalosporin (Long-acting)',
@@ -339,6 +350,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'metronidazole',
+    category: 'antibiotic',
     name: 'Metronidazole',
     nameTh: 'เมโทรนิดาโซล (Flagyl)',
     classDrug: 'Antibiotic — Nitroimidazole · Antiprotozoal',
@@ -367,6 +379,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'clindamycin',
+    category: 'antibiotic',
     name: 'Clindamycin',
     nameTh: 'คลินดามัยซิน (Antirobe)',
     classDrug: 'Antibiotic — Lincosamide',
@@ -398,6 +411,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'propofol',
+    category: 'anesthetic',
     name: 'Propofol',
     nameTh: 'พรอพอฟอล',
     classDrug: 'Anesthetic — IV Induction',
@@ -427,6 +441,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'ketamine',
+    category: 'anesthetic',
     name: 'Ketamine',
     nameTh: 'คีตามีน',
     classDrug: 'Anesthetic — Dissociative · NMDA antagonist',
@@ -456,6 +471,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'dexmedetomidine',
+    category: 'anesthetic',
     name: 'Dexmedetomidine',
     nameTh: 'เด็กซ์เมดีโทมิดีน (Dexdomitor)',
     classDrug: 'Sedative — Alpha-2 agonist',
@@ -485,6 +501,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'butorphanol',
+    category: 'opioid',
     name: 'Butorphanol',
     nameTh: 'บูทอร์ฟานอล',
     classDrug: 'Opioid — Kappa agonist · Mu antagonist',
@@ -512,6 +529,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'midazolam',
+    category: 'anesthetic',
     name: 'Midazolam',
     nameTh: 'มิดาโซแลม',
     classDrug: 'Sedative — Benzodiazepine',
@@ -543,6 +561,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'methadone',
+    category: 'opioid',
     name: 'Methadone',
     nameTh: 'เมทาโดน',
     classDrug: 'Opioid — Mu agonist + NMDA antagonist',
@@ -570,6 +589,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'fentanyl',
+    category: 'opioid',
     name: 'Fentanyl',
     nameTh: 'เฟนทานิล',
     classDrug: 'Opioid — Mu agonist (potent)',
@@ -603,6 +623,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'pimobendan',
+    category: 'cardiac',
     name: 'Pimobendan',
     nameTh: 'พิโมเบนแดน (Vetmedin)',
     classDrug: 'Cardiac — Inodilator (Ca-sensitizer + PDE-3 inhibitor)',
@@ -628,6 +649,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'enalapril',
+    category: 'cardiac',
     name: 'Enalapril',
     nameTh: 'อีนาลาพริล (Enacard)',
     classDrug: 'Cardiac — ACE inhibitor',
@@ -656,6 +678,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'spironolactone',
+    category: 'cardiac',
     name: 'Spironolactone',
     nameTh: 'สไปโรโนแลคโตน',
     classDrug: 'Cardiac — K-sparing diuretic · Aldosterone antagonist',
@@ -685,6 +708,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'omeprazole',
+    category: 'gi',
     name: 'Omeprazole',
     nameTh: 'โอเมพราโซล',
     classDrug: 'GI — Proton pump inhibitor (PPI)',
@@ -710,6 +734,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'sucralfate',
+    category: 'gi',
     name: 'Sucralfate',
     nameTh: 'ซูคราลเฟต',
     classDrug: 'GI — Mucosal protectant',
@@ -740,6 +765,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'fluralaner',
+    category: 'antiparasitic',
     name: 'Fluralaner',
     nameTh: 'ฟลูราลาเนอร์ (Bravecto)',
     classDrug: 'Antiparasitic — Isoxazoline (oral/topical)',
@@ -765,6 +791,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'praziquantel',
+    category: 'antiparasitic',
     name: 'Praziquantel',
     nameTh: 'พราซิควอนเทล',
     classDrug: 'Antiparasitic — Cestodes (tapeworm)',
@@ -793,6 +820,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'levothyroxine',
+    category: 'endocrine',
     name: 'Levothyroxine',
     nameTh: 'ลีโวไทร็อกซีน (T4)',
     classDrug: 'Endocrine — Thyroid hormone',
@@ -818,6 +846,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'insulin-glargine',
+    category: 'endocrine',
     name: 'Insulin glargine',
     nameTh: 'อินซูลิน กลาร์จีน (Lantus)',
     classDrug: 'Endocrine — Long-acting insulin',
@@ -848,6 +877,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'itraconazole',
+    category: 'antifungal',
     name: 'Itraconazole',
     nameTh: 'อิทราโคนาโซล',
     classDrug: 'Antifungal — Azole',
@@ -880,6 +910,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cephalexin',
+    category: 'antibiotic',
     name: 'Cephalexin (Cefalexin)',
     nameTh: 'เซฟาเล็กซิน',
     classDrug: 'Antibiotic — 1st-gen Cephalosporin',
@@ -901,6 +932,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cefpodoxime',
+    category: 'antibiotic',
     name: 'Cefpodoxime',
     nameTh: 'เซฟโพดอกซีม (Simplicef)',
     classDrug: 'Antibiotic — 3rd-gen Cephalosporin',
@@ -922,6 +954,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'marbofloxacin',
+    category: 'antibiotic',
     name: 'Marbofloxacin',
     nameTh: 'มาร์โบฟลอกซาซิน (Zeniquin)',
     classDrug: 'Antibiotic — Fluoroquinolone',
@@ -947,6 +980,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'pradofloxacin',
+    category: 'antibiotic',
     name: 'Pradofloxacin',
     nameTh: 'พราโดฟลอกซาซิน (Veraflox)',
     classDrug: 'Antibiotic — 3rd-gen Fluoroquinolone',
@@ -970,6 +1004,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'azithromycin',
+    category: 'antibiotic',
     name: 'Azithromycin',
     nameTh: 'อะซิโทรมัยซิน',
     classDrug: 'Antibiotic — Macrolide',
@@ -996,6 +1031,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'erythromycin',
+    category: 'antibiotic',
     name: 'Erythromycin',
     nameTh: 'อิริโทรมัยซิน',
     classDrug: 'Antibiotic — Macrolide / Prokinetic',
@@ -1021,6 +1057,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'gentamicin',
+    category: 'antibiotic',
     name: 'Gentamicin',
     nameTh: 'เจนทามัยซิน',
     classDrug: 'Antibiotic — Aminoglycoside',
@@ -1047,6 +1084,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'amikacin',
+    category: 'antibiotic',
     name: 'Amikacin',
     nameTh: 'อะมิคาซิน',
     classDrug: 'Antibiotic — Aminoglycoside',
@@ -1072,6 +1110,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'tmps',
+    category: 'antibiotic',
     name: 'Trimethoprim-Sulfamethoxazole (TMS)',
     nameTh: 'TMS · ไตรเมโทพริม-ซัลฟา',
     classDrug: 'Antibiotic — Sulfonamide combination',
@@ -1100,6 +1139,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'chloramphenicol',
+    category: 'antibiotic',
     name: 'Chloramphenicol',
     nameTh: 'คลอแรมเฟนิคอล',
     classDrug: 'Antibiotic — Phenicol',
@@ -1126,6 +1166,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'tetracycline',
+    category: 'antibiotic',
     name: 'Tetracycline',
     nameTh: 'เตตราไซคลีน',
     classDrug: 'Antibiotic — Tetracycline (1st-gen)',
@@ -1152,6 +1193,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'minocycline',
+    category: 'antibiotic',
     name: 'Minocycline',
     nameTh: 'มิโนไซคลีน',
     classDrug: 'Antibiotic — Tetracycline',
@@ -1178,6 +1220,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'penicillin-g',
+    category: 'antibiotic',
     name: 'Penicillin G (Procaine/Benzathine)',
     nameTh: 'เพนิซิลลิน G',
     classDrug: 'Antibiotic — Beta-lactam (natural penicillin)',
@@ -1204,6 +1247,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'ampicillin',
+    category: 'antibiotic',
     name: 'Ampicillin',
     nameTh: 'แอมพิซิลลิน',
     classDrug: 'Antibiotic — Aminopenicillin',
@@ -1229,6 +1273,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cefazolin',
+    category: 'antibiotic',
     name: 'Cefazolin',
     nameTh: 'เซฟาโซลิน',
     classDrug: 'Antibiotic — 1st-gen Cephalosporin (IV)',
@@ -1254,6 +1299,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'ceftriaxone',
+    category: 'antibiotic',
     name: 'Ceftriaxone',
     nameTh: 'เซฟไทรอะโซน',
     classDrug: 'Antibiotic — 3rd-gen Cephalosporin',
@@ -1280,6 +1326,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'fluconazole',
+    category: 'antifungal',
     name: 'Fluconazole',
     nameTh: 'ฟลูโคนาโซล',
     classDrug: 'Antifungal — Azole',
@@ -1306,6 +1353,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'ketoconazole',
+    category: 'antifungal',
     name: 'Ketoconazole',
     nameTh: 'คีโตโคนาโซล',
     classDrug: 'Antifungal — Azole (1st-gen)',
@@ -1333,6 +1381,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'terbinafine',
+    category: 'antifungal',
     name: 'Terbinafine',
     nameTh: 'เทอร์บินาฟีน (Lamisil)',
     classDrug: 'Antifungal — Allylamine',
@@ -1357,6 +1406,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'amphotericin-b',
+    category: 'antifungal',
     name: 'Amphotericin B',
     nameTh: 'แอมโฟเทอริซิน บี',
     classDrug: 'Antifungal — Polyene (systemic)',
@@ -1389,6 +1439,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'acepromazine',
+    category: 'anesthetic',
     name: 'Acepromazine (ACP)',
     nameTh: 'อะเซพรอมาซีน',
     classDrug: 'Sedative — Phenothiazine',
@@ -1417,6 +1468,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'diazepam',
+    category: 'anesthetic',
     name: 'Diazepam',
     nameTh: 'ไดอะซีแพม (Valium)',
     classDrug: 'Sedative — Benzodiazepine',
@@ -1446,6 +1498,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'alfaxalone',
+    category: 'anesthetic',
     name: 'Alfaxalone',
     nameTh: 'อัลฟาซาโลน (Alfaxan)',
     classDrug: 'Anesthetic — Neurosteroid IV induction',
@@ -1475,6 +1528,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'etomidate',
+    category: 'anesthetic',
     name: 'Etomidate',
     nameTh: 'อีโทมิเดต',
     classDrug: 'Anesthetic — Imidazole IV induction',
@@ -1504,6 +1558,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'lidocaine',
+    category: 'anesthetic',
     name: 'Lidocaine',
     nameTh: 'ลิโดเคน (Xylocaine)',
     classDrug: 'Local anesthetic / Antiarrhythmic Class IB',
@@ -1534,6 +1589,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'bupivacaine',
+    category: 'anesthetic',
     name: 'Bupivacaine',
     nameTh: 'บูพิวาเคน (Marcaine)',
     classDrug: 'Local anesthetic — Long-acting',
@@ -1562,6 +1618,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'mepivacaine',
+    category: 'anesthetic',
     name: 'Mepivacaine',
     nameTh: 'เมพิวาเคน',
     classDrug: 'Local anesthetic — Intermediate',
@@ -1588,6 +1645,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'morphine',
+    category: 'opioid',
     name: 'Morphine',
     nameTh: 'มอร์ฟีน',
     classDrug: 'Opioid — Pure mu agonist',
@@ -1619,6 +1677,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'hydromorphone',
+    category: 'opioid',
     name: 'Hydromorphone',
     nameTh: 'ไฮโดรมอร์โฟน',
     classDrug: 'Opioid — Pure mu agonist',
@@ -1646,6 +1705,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'buprenorphine',
+    category: 'opioid',
     name: 'Buprenorphine',
     nameTh: 'บูพรีนอร์ฟีน (Simbadol/Vetergesic)',
     classDrug: 'Opioid — Partial mu agonist',
@@ -1673,6 +1733,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'naloxone',
+    category: 'opioid',
     name: 'Naloxone',
     nameTh: 'นาล็อกโซน (Narcan)',
     classDrug: 'Opioid antagonist (reversal)',
@@ -1701,6 +1762,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'gabapentin',
+    category: 'pain',
     name: 'Gabapentin',
     nameTh: 'กาบาเพนติน (Neurontin)',
     classDrug: 'Adjunct analgesic / Anticonvulsant',
@@ -1730,6 +1792,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'amantadine',
+    category: 'pain',
     name: 'Amantadine',
     nameTh: 'อะแมนทาดีน',
     classDrug: 'Adjunct analgesic — NMDA antagonist',
@@ -1755,6 +1818,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'bedinvetmab',
+    category: 'pain',
     name: 'Bedinvetmab',
     nameTh: 'เบดินเวตแมบ (Librela)',
     classDrug: 'Anti-NGF monoclonal antibody — Dog OA pain',
@@ -1781,6 +1845,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'frunevetmab',
+    category: 'pain',
     name: 'Frunevetmab',
     nameTh: 'ฟรูเนเวตแมบ (Solensia)',
     classDrug: 'Anti-NGF monoclonal antibody — Cat OA pain',
@@ -1806,6 +1871,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'robenacoxib',
+    category: 'pain',
     name: 'Robenacoxib',
     nameTh: 'โรเบนาคอกซิบ (Onsior)',
     classDrug: 'NSAID — COX-2 selective',
@@ -1831,6 +1897,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'grapiprant',
+    category: 'pain',
     name: 'Grapiprant',
     nameTh: 'กราพิแพรนต์ (Galliprant)',
     classDrug: 'NSAID — EP4 receptor antagonist',
@@ -1856,6 +1923,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'firocoxib',
+    category: 'pain',
     name: 'Firocoxib',
     nameTh: 'ไฟโรคอกซิบ (Previcox)',
     classDrug: 'NSAID — COX-2 selective',
@@ -1882,6 +1950,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'deracoxib',
+    category: 'pain',
     name: 'Deracoxib',
     nameTh: 'เดราคอกซิบ (Deramaxx)',
     classDrug: 'NSAID — COX-2 selective',
@@ -1908,6 +1977,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'paracetamol',
+    category: 'pain',
     name: 'Acetaminophen (Paracetamol)',
     nameTh: 'พาราเซตามอล',
     classDrug: 'Analgesic / Antipyretic — Non-NSAID',
@@ -1938,6 +2008,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'diltiazem',
+    category: 'cardiac',
     name: 'Diltiazem',
     nameTh: 'ดิลไทอะเซม',
     classDrug: 'Cardiac — Calcium channel blocker (Class IV)',
@@ -1965,6 +2036,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'atenolol',
+    category: 'cardiac',
     name: 'Atenolol',
     nameTh: 'อะทีโนลอล',
     classDrug: 'Cardiac — Beta-1 selective blocker',
@@ -1994,6 +2066,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'sotalol',
+    category: 'cardiac',
     name: 'Sotalol',
     nameTh: 'โซทาลอล',
     classDrug: 'Cardiac — Beta-blocker + Class III antiarrhythmic',
@@ -2021,6 +2094,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'amlodipine',
+    category: 'cardiac',
     name: 'Amlodipine',
     nameTh: 'แอมโลดิพีน',
     classDrug: 'Cardiac — Calcium channel blocker (dihydropyridine)',
@@ -2048,6 +2122,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'benazepril',
+    category: 'cardiac',
     name: 'Benazepril',
     nameTh: 'เบนาเซพริล (Fortekor)',
     classDrug: 'Cardiac — ACE inhibitor',
@@ -2074,6 +2149,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'telmisartan',
+    category: 'cardiac',
     name: 'Telmisartan',
     nameTh: 'เทลมิซาร์แทน (Semintra)',
     classDrug: 'Cardiac — Angiotensin receptor blocker (ARB)',
@@ -2101,6 +2177,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'hydralazine',
+    category: 'cardiac',
     name: 'Hydralazine',
     nameTh: 'ไฮดราลาซีน',
     classDrug: 'Cardiac — Direct arteriolar vasodilator',
@@ -2128,6 +2205,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'digoxin',
+    category: 'cardiac',
     name: 'Digoxin',
     nameTh: 'ดิจอกซิน',
     classDrug: 'Cardiac — Cardiac glycoside (positive inotrope, AV blocker)',
@@ -2157,6 +2235,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'torsemide',
+    category: 'diuretic',
     name: 'Torsemide',
     nameTh: 'ทอร์ซีไมด์',
     classDrug: 'Diuretic — Loop (potent, long-acting)',
@@ -2183,6 +2262,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'mannitol',
+    category: 'diuretic',
     name: 'Mannitol',
     nameTh: 'แมนนิทอล',
     classDrug: 'Diuretic — Osmotic',
@@ -2213,6 +2293,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'metoclopramide',
+    category: 'gi',
     name: 'Metoclopramide',
     nameTh: 'เมโทโคลพราไมด์',
     classDrug: 'GI — Prokinetic / Central antiemetic (D2 antagonist)',
@@ -2241,6 +2322,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'ondansetron',
+    category: 'gi',
     name: 'Ondansetron',
     nameTh: 'ออนแดนเซตรอน (Zofran)',
     classDrug: 'GI — Antiemetic (5-HT3 antagonist)',
@@ -2266,6 +2348,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cisapride',
+    category: 'gi',
     name: 'Cisapride',
     nameTh: 'ซิสาไพรด์',
     classDrug: 'GI — Prokinetic (5-HT4 agonist)',
@@ -2293,6 +2376,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'famotidine',
+    category: 'gi',
     name: 'Famotidine',
     nameTh: 'ฟาโมทิดีน (Pepcid)',
     classDrug: 'GI — H2 receptor antagonist',
@@ -2318,6 +2402,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'pantoprazole',
+    category: 'gi',
     name: 'Pantoprazole',
     nameTh: 'แพนโทพราโซล',
     classDrug: 'GI — Proton pump inhibitor (IV/PO)',
@@ -2342,6 +2427,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'lactulose',
+    category: 'gi',
     name: 'Lactulose',
     nameTh: 'แลคทูโลส',
     classDrug: 'GI — Osmotic laxative / Hepatic encephalopathy',
@@ -2370,6 +2456,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cholestyramine',
+    category: 'gi',
     name: 'Cholestyramine',
     nameTh: 'โคเลสไทรามีน',
     classDrug: 'GI — Bile acid sequestrant',
@@ -2395,6 +2482,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'sam-e',
+    category: 'gi',
     name: 'S-Adenosylmethionine (SAMe)',
     nameTh: 'SAMe (Denamarin)',
     classDrug: 'Hepatoprotectant / Antioxidant',
@@ -2420,6 +2508,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'ursodiol',
+    category: 'gi',
     name: 'Ursodiol (Ursodeoxycholic acid)',
     nameTh: 'เออร์โซดิออล',
     classDrug: 'GI — Bile acid (hydrophilic)',
@@ -2446,6 +2535,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'metronidazole-benzoate',
+    category: 'antibiotic',
     name: 'Metronidazole Benzoate',
     nameTh: 'เมโทรนิดาโซล เบนโซเอต (Cat formulation)',
     classDrug: 'Antibiotic / Antiprotozoal — Cat compounded',
@@ -2477,6 +2567,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'trilostane',
+    category: 'endocrine',
     name: 'Trilostane',
     nameTh: 'ไตรโลสเทน (Vetoryl)',
     classDrug: 'Endocrine — Adrenal cortisol synthesis inhibitor',
@@ -2504,6 +2595,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'mitotane',
+    category: 'endocrine',
     name: 'Mitotane (o,p\'-DDD)',
     nameTh: 'ไมโทเทน (Lysodren)',
     classDrug: 'Endocrine — Adrenocorticolytic',
@@ -2534,6 +2626,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'methimazole',
+    category: 'endocrine',
     name: 'Methimazole',
     nameTh: 'เมไทมาโซล (Felimazole)',
     classDrug: 'Endocrine — Anti-thyroid',
@@ -2562,6 +2655,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'carbimazole',
+    category: 'endocrine',
     name: 'Carbimazole',
     nameTh: 'คาร์บิมาโซล (Vidalta)',
     classDrug: 'Endocrine — Anti-thyroid (prodrug of methimazole)',
@@ -2589,6 +2683,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'nph-insulin',
+    category: 'endocrine',
     name: 'NPH Insulin (Humulin N)',
     nameTh: 'อินซูลิน NPH',
     classDrug: 'Endocrine — Intermediate-acting insulin',
@@ -2615,6 +2710,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'pzi-insulin',
+    category: 'endocrine',
     name: 'PZI Insulin (Prozinc)',
     nameTh: 'อินซูลิน PZI',
     classDrug: 'Endocrine — Long-acting insulin (cat-approved)',
@@ -2640,6 +2736,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'vetsulin',
+    category: 'endocrine',
     name: 'Vetsulin (Porcine lente)',
     nameTh: 'เวตซูลิน',
     classDrug: 'Endocrine — Intermediate-acting insulin (porcine)',
@@ -2667,6 +2764,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'desmopressin',
+    category: 'endocrine',
     name: 'Desmopressin (DDAVP)',
     nameTh: 'เดสโมเพรสซิน',
     classDrug: 'Endocrine — Synthetic ADH (vasopressin analog)',
@@ -2695,6 +2793,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'oxytocin',
+    category: 'reproductive',
     name: 'Oxytocin',
     nameTh: 'อ็อกซิโทซิน',
     classDrug: 'Reproductive — Posterior pituitary hormone',
@@ -2722,6 +2821,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'aglepristone',
+    category: 'reproductive',
     name: 'Aglepristone',
     nameTh: 'อะเกลพริสโตน (Alizin)',
     classDrug: 'Reproductive — Progesterone receptor antagonist',
@@ -2748,6 +2848,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cabergoline',
+    category: 'reproductive',
     name: 'Cabergoline',
     nameTh: 'คาเบอร์โกลีน',
     classDrug: 'Reproductive — Dopamine agonist (anti-prolactin)',
@@ -2775,6 +2876,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'finasteride',
+    category: 'reproductive',
     name: 'Finasteride',
     nameTh: 'ไฟนาสเทอไรด์',
     classDrug: 'Reproductive — 5-alpha reductase inhibitor',
@@ -2797,6 +2899,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'estriol',
+    category: 'reproductive',
     name: 'Estriol',
     nameTh: 'เอสไตรออล (Incurin)',
     classDrug: 'Reproductive — Estrogen (urinary incontinence)',
@@ -2820,6 +2923,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'phenylpropanolamine',
+    category: 'reproductive',
     name: 'Phenylpropanolamine (PPA)',
     nameTh: 'ฟีนิลโปรปาโนลามีน (Proin)',
     classDrug: 'Reproductive/Urinary — Alpha agonist',
@@ -2847,6 +2951,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'heparin',
+    category: 'hematology',
     name: 'Heparin (Unfractionated)',
     nameTh: 'เฮพาริน',
     classDrug: 'Anticoagulant — Indirect thrombin inhibitor',
@@ -2874,6 +2979,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'enoxaparin',
+    category: 'hematology',
     name: 'Enoxaparin (LMWH)',
     nameTh: 'อีน็อกซาพาริน (Lovenox)',
     classDrug: 'Anticoagulant — Low molecular weight heparin',
@@ -2900,6 +3006,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'clopidogrel',
+    category: 'hematology',
     name: 'Clopidogrel',
     nameTh: 'โคลพิโดเกรล (Plavix)',
     classDrug: 'Antiplatelet — P2Y12 inhibitor',
@@ -2926,6 +3033,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'aspirin',
+    category: 'hematology',
     name: 'Aspirin (low-dose)',
     nameTh: 'แอสไพริน (low-dose)',
     classDrug: 'Antiplatelet — COX inhibitor',
@@ -2952,6 +3060,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'rivaroxaban',
+    category: 'hematology',
     name: 'Rivaroxaban',
     nameTh: 'ริวาร็อกซาแบน (Xarelto)',
     classDrug: 'Anticoagulant — Direct factor Xa inhibitor',
@@ -2977,6 +3086,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'vitamin-k1',
+    category: 'hematology',
     name: 'Vitamin K1 (Phytonadione)',
     nameTh: 'วิตามินเค1 (ไฟโตนาดิโอน)',
     classDrug: 'Antidote / Coagulation factor (rodenticide reversal)',
@@ -3004,6 +3114,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'erythropoietin',
+    category: 'hematology',
     name: 'Erythropoietin / Darbepoetin',
     nameTh: 'อีริโทรพอยอีติน (Darbepoetin)',
     classDrug: 'Hematology — Erythropoiesis stimulator',
@@ -3037,6 +3148,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cyclosporine',
+    category: 'derm',
     name: 'Cyclosporine',
     nameTh: 'ไซโคลสปอริน (Atopica · Optimmune)',
     classDrug: 'Immunosuppressant — Calcineurin inhibitor',
@@ -3068,6 +3180,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'oclacitinib',
+    category: 'derm',
     name: 'Oclacitinib',
     nameTh: 'ออคลาซิทินิบ (Apoquel)',
     classDrug: 'Immunomodulator — JAK1 inhibitor',
@@ -3095,6 +3208,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'lokivetmab',
+    category: 'derm',
     name: 'Lokivetmab',
     nameTh: 'โลคิเวตแมบ (Cytopoint)',
     classDrug: 'Anti-IL-31 monoclonal antibody (caninized)',
@@ -3123,6 +3237,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'cetirizine',
+    category: 'derm',
     name: 'Cetirizine',
     nameTh: 'เซทิริซีน',
     classDrug: 'Antihistamine — H1 receptor blocker (2nd-gen)',
@@ -3148,6 +3263,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'hydroxyzine',
+    category: 'derm',
     name: 'Hydroxyzine',
     nameTh: 'ไฮดร็อกซีซีน (Atarax)',
     classDrug: 'Antihistamine — H1 blocker (1st-gen) + anxiolytic',
@@ -3175,6 +3291,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'diphenhydramine',
+    category: 'derm',
     name: 'Diphenhydramine',
     nameTh: 'ไดเฟนไฮดรามีน (Benadryl)',
     classDrug: 'Antihistamine — H1 blocker (1st-gen)',
@@ -3203,6 +3320,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'chlorpheniramine',
+    category: 'derm',
     name: 'Chlorpheniramine',
     nameTh: 'คลอร์เฟนิรามีน',
     classDrug: 'Antihistamine — H1 blocker (1st-gen)',
@@ -3229,6 +3347,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'mupirocin',
+    category: 'derm',
     name: 'Mupirocin',
     nameTh: 'มูพิโรซิน (Bactoderm)',
     classDrug: 'Topical antibiotic — Pseudomonic acid',
@@ -3255,6 +3374,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'silver-sulfadiazine',
+    category: 'derm',
     name: 'Silver Sulfadiazine',
     nameTh: 'ซิลเวอร์ซัลฟาไดอะซีน (SSD/Silvadene)',
     classDrug: 'Topical antibacterial — Sulfonamide + Silver',
@@ -3283,6 +3403,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'chlorhexidine',
+    category: 'derm',
     name: 'Chlorhexidine',
     nameTh: 'คลอร์เฮ็กซิดีน',
     classDrug: 'Topical antiseptic / Shampoo',
@@ -3311,6 +3432,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'miconazole-shampoo',
+    category: 'derm',
     name: 'Miconazole + Chlorhexidine Shampoo',
     nameTh: 'ไมโคนาโซล + คลอร์เฮ็กซิดีน (Malaseb)',
     classDrug: 'Topical antifungal + antiseptic',
@@ -3338,6 +3460,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'tropicamide',
+    category: 'ophthalmic',
     name: 'Tropicamide',
     nameTh: 'โทรพิคาไมด์',
     classDrug: 'Ophthalmic — Mydriatic / cycloplegic (short-acting)',
@@ -3362,6 +3485,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'atropine-ophthalmic',
+    category: 'ophthalmic',
     name: 'Atropine (Ophthalmic)',
     nameTh: 'อะโทรปีน (eye drops)',
     classDrug: 'Ophthalmic — Long-acting mydriatic / cycloplegic',
@@ -3389,6 +3513,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'latanoprost',
+    category: 'ophthalmic',
     name: 'Latanoprost',
     nameTh: 'ลาตาโนพรอสต์ (Xalatan)',
     classDrug: 'Ophthalmic — Prostaglandin analog (anti-glaucoma)',
@@ -3415,6 +3540,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'dorzolamide',
+    category: 'ophthalmic',
     name: 'Dorzolamide',
     nameTh: 'ดอร์โซลาไมด์ (Trusopt)',
     classDrug: 'Ophthalmic — Carbonic anhydrase inhibitor',
@@ -3440,6 +3566,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'timolol',
+    category: 'ophthalmic',
     name: 'Timolol (Ophthalmic)',
     nameTh: 'ทิโมลอล',
     classDrug: 'Ophthalmic — Beta-blocker',
@@ -3468,6 +3595,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'otic-mometamax',
+    category: 'otic',
     name: 'Otic Combo (Gentamicin/Mometasone/Clotrimazole)',
     nameTh: 'หูยาผสม (Mometamax / Otomax)',
     classDrug: 'Otic — Antibiotic + Antifungal + Steroid',
@@ -3494,6 +3622,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'florfenicol-otic',
+    category: 'otic',
     name: 'Florfenicol/Terbinafine/Mometasone (Osurnia/Claro)',
     nameTh: 'ออทิคยาผสม long-acting (Osurnia / Claro)',
     classDrug: 'Otic — Long-acting (single-dose)',
@@ -3516,6 +3645,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'tacrolimus',
+    category: 'derm',
     name: 'Tacrolimus (Topical)',
     nameTh: 'แทคโครลิมัส (Protopic)',
     classDrug: 'Immunomodulator — Topical calcineurin inhibitor',
@@ -3543,6 +3673,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'epinephrine',
+    category: 'emergency',
     name: 'Epinephrine (Adrenaline)',
     nameTh: 'อีพิเนฟริน (Adrenalin)',
     classDrug: 'Sympathomimetic — Alpha + Beta agonist',
@@ -3578,6 +3709,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'selamectin',
+    category: 'antiparasitic',
     name: 'Selamectin',
     nameTh: 'เซลาเม็คติน (Revolution / Stronghold)',
     classDrug: 'Antiparasitic — Macrocyclic lactone (topical)',
@@ -3604,6 +3736,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'imidacloprid-moxidectin',
+    category: 'antiparasitic',
     name: 'Imidacloprid/Moxidectin',
     nameTh: 'อิมิดาโคลพริด+โมซิเด็คติน (Advocate / Advantage Multi)',
     classDrug: 'Antiparasitic — Topical combo (heartworm + GI worm + ectoparasite)',
@@ -3629,6 +3762,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'sarolaner',
+    category: 'antiparasitic',
     name: 'Sarolaner',
     nameTh: 'ซาโรลาเนอร์ (Simparica / Simparica Trio)',
     classDrug: 'Antiparasitic — Isoxazoline (oral monthly)',
@@ -3655,6 +3789,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'milbemycin',
+    category: 'antiparasitic',
     name: 'Milbemycin oxime',
     nameTh: 'มิลบีไมซิน (Interceptor / Sentinel / Trifexis)',
     classDrug: 'Antiparasitic — Macrocyclic lactone (oral)',
@@ -3680,6 +3815,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'pyrantel',
+    category: 'antiparasitic',
     name: 'Pyrantel pamoate',
     nameTh: 'ไพแรนเทล',
     classDrug: 'Antiparasitic — Anthelmintic (GI nematodes)',
@@ -3705,6 +3841,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'fenbendazole',
+    category: 'antiparasitic',
     name: 'Fenbendazole',
     nameTh: 'เฟนเบนดาโซล (Panacur)',
     classDrug: 'Antiparasitic — Benzimidazole (broad-spectrum)',
@@ -3735,6 +3872,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'atropine',
+    category: 'emergency',
     name: 'Atropine (Systemic)',
     nameTh: 'อะโทรปีน (ฉีด)',
     classDrug: 'Anticholinergic — Muscarinic antagonist',
@@ -3765,6 +3903,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'glycopyrrolate',
+    category: 'emergency',
     name: 'Glycopyrrolate',
     nameTh: 'ไกลโคไพร์โรเลต (Robinul)',
     classDrug: 'Anticholinergic — Quaternary (no CNS penetration)',
@@ -3792,6 +3931,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'dopamine',
+    category: 'emergency',
     name: 'Dopamine',
     nameTh: 'โดพามีน',
     classDrug: 'Vasopressor / Inotrope',
@@ -3820,6 +3960,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'dobutamine',
+    category: 'emergency',
     name: 'Dobutamine',
     nameTh: 'โดบูทามีน',
     classDrug: 'Inotrope — Beta-1 selective agonist',
@@ -3846,6 +3987,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'vasopressin',
+    category: 'emergency',
     name: 'Vasopressin',
     nameTh: 'วาโสเพรสซิน',
     classDrug: 'Vasopressor — V1 receptor agonist',
@@ -3874,6 +4016,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'n-acetylcysteine',
+    category: 'antidote',
     name: 'N-Acetylcysteine (NAC)',
     nameTh: 'เอ็น-อะเซทิลซิสเตอีน',
     classDrug: 'Antidote — Acetaminophen toxicity / mucolytic',
@@ -3899,6 +4042,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'atipamezole',
+    category: 'antidote',
     name: 'Atipamezole',
     nameTh: 'อะทิพาเมโซล (Antisedan)',
     classDrug: 'Antidote — Alpha-2 antagonist (reversal)',
@@ -3925,6 +4069,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'flumazenil',
+    category: 'antidote',
     name: 'Flumazenil',
     nameTh: 'ฟลูมาซีนิล',
     classDrug: 'Antidote — Benzodiazepine antagonist',
@@ -3949,6 +4094,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'methocarbamol',
+    category: 'emergency',
     name: 'Methocarbamol',
     nameTh: 'เมโทคาร์บามอล (Robaxin)',
     classDrug: 'Muscle relaxant — Centrally-acting',
@@ -3975,6 +4121,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'pralidoxime',
+    category: 'antidote',
     name: 'Pralidoxime (2-PAM)',
     nameTh: 'พราลิด็อกไซม์ (2-PAM)',
     classDrug: 'Antidote — OP cholinesterase reactivator',
@@ -4000,6 +4147,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'fomepizole',
+    category: 'antidote',
     name: 'Fomepizole (4-MP)',
     nameTh: 'ฟอเมพิโซล (4-Methylpyrazole)',
     classDrug: 'Antidote — Ethylene glycol toxicity (alcohol dehydrogenase inhibitor)',
@@ -4028,6 +4176,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'theophylline',
+    category: 'emergency',
     name: 'Theophylline',
     nameTh: 'ทีโอฟิลลีน',
     classDrug: 'Bronchodilator — Methylxanthine',
@@ -4054,6 +4203,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'terbutaline',
+    category: 'emergency',
     name: 'Terbutaline',
     nameTh: 'เทอร์บูทาลีน',
     classDrug: 'Bronchodilator — Beta-2 selective agonist',
@@ -4081,6 +4231,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'calcium-gluconate',
+    category: 'emergency',
     name: 'Calcium Gluconate',
     nameTh: 'แคลเซียมกลูโคเนต',
     classDrug: 'Electrolyte / Cardioprotective',
@@ -4109,6 +4260,7 @@ window.PHARMACOLOGY_DATA = [
 
   {
     id: 'apomorphine',
+    category: 'gi',
     name: 'Apomorphine',
     nameTh: 'อะพอมอร์ฟีน',
     classDrug: 'Emetic — Dopamine agonist',
