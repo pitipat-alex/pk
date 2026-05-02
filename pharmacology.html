@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAFAF7">
+<title>Pharmacology · Drug Tool</title>
+
+<!-- Apple PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="pk · Drug">
+<link rel="apple-touch-icon" href="https://pitipat-alex.github.io/pk/icon-180.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css?v=20260501ag">
+
+<style>
+  /* Pharmacology-specific styles */
+  .pharma-toolbar {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 16px;
+    display: grid;
+    gap: 14px;
+  }
+  .toolbar-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .species-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px;
+    gap: 4px;
+  }
+  .species-btn {
+    background: none;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font: 600 14px var(--font-sans);
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: all 180ms;
+  }
+  .species-btn.active {
+    background: var(--purple);
+    color: white;
+  }
+  .bw-input-wrap {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px 4px 4px 16px;
+    gap: 6px;
+  }
+  .bw-input-wrap label {
+    font: 600 13px var(--font-sans);
+    color: var(--ink-mute);
+  }
+  .bw-input-wrap input {
+    border: none;
+    background: none;
+    font: 600 16px var(--font-mono);
+    color: var(--ink);
+    width: 70px;
+    padding: 6px;
+    text-align: right;
+    outline: none;
+  }
+  .bw-unit {
+    font: 600 14px var(--font-sans);
+    color: var(--ink-mute);
+    padding-right: 12px;
+  }
+  .pharma-tabs {
+    display: flex;
+    gap: 6px;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: 16px;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    font: 600 14px var(--font-sans);
+    color: var(--ink-mute);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 180ms;
+  }
+  .tab-btn.active {
+    color: var(--purple);
+    border-bottom-color: var(--purple);
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Drug list */
+  .drug-list {
+    display: grid;
+    gap: 8px;
+  }
+  .drug-item {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 180ms;
+  }
+  .drug-item:hover {
+    border-color: var(--purple);
+    transform: translateX(2px);
+  }
+  .drug-item-name {
+    font: 600 15px var(--font-sans);
+    color: var(--ink);
+  }
+  .drug-item-class {
+    font: 400 12px var(--font-sans);
+    color: var(--ink-mute);
+    margin-top: 2px;
+  }
+
+  /* Drug detail */
+  .drug-detail {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .drug-detail h2 {
+    margin: 0 0 4px;
+    color: var(--purple);
+    font: 700 22px var(--font-sans);
+  }
+  .drug-detail .drug-class {
+    font: 500 13px var(--font-sans);
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+  }
+  .indication-list {
+    display: grid;
+    gap: 10px;
+  }
+  .indication-card {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all 180ms;
+  }
+  .indication-card:hover {
+    border-color: var(--purple);
+  }
+  .indication-card.selected {
+    border-color: var(--purple);
+    background: rgba(156, 90, 184, 0.08);
+  }
+  .indication-name {
+    font: 600 14px var(--font-sans);
+    color: var(--ink);
+  }
+  .indication-meta {
+    font: 400 12px var(--font-mono);
+    color: var(--ink-mute);
+    margin-top: 4px;
+  }
+  .calculated-dose {
+    background: linear-gradient(135deg, var(--purple) 0%, #6b3a85 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 12px;
+    text-align: center;
+  }
+  .calculated-dose .label {
+    font: 500 13px var(--font-sans);
+    opacity: 0.9;
+  }
+  .calculated-dose .value {
+    font: 700 24px var(--font-mono);
+    margin: 4px 0;
+  }
+  .calculated-dose .freq {
+    font: 500 13px var(--font-sans);
+    opacity: 0.95;
+  }
+  .warning-box {
+    background: rgba(220, 60, 60, 0.08);
+    border: 1px solid rgba(220, 60, 60, 0.3);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 12px;
+    color: #B23030;
+    font: 500 13px var(--font-sans);
+  }
+  .warning-box ul { margin: 4px 0 0 16px; padding: 0; }
+  .warning-box li { margin: 2px 0; }
+
+  .interaction-box {
+    background: rgba(255, 165, 0, 0.08);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 12px;
+    color: #B26A00;
+    font: 500 13px var(--font-sans);
+  }
+
+  /* Interaction checker */
+  .interaction-builder {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 18px;
+  }
+  .selected-drugs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 40px;
+    padding: 10px;
+    background: var(--bg);
+    border-radius: 10px;
+    border: 1px dashed var(--rule);
+    margin-bottom: 12px;
+  }
+  .drug-pill {
+    background: var(--purple);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font: 600 13px var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .drug-pill button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 0 0 4px;
+    line-height: 1;
+  }
+  .interaction-result {
+    margin-top: 16px;
+  }
+  .interaction-card {
+    border-left: 4px solid;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: var(--surface);
+  }
+  .interaction-card.major {
+    border-left-color: #DC3232;
+    background: rgba(220, 50, 50, 0.05);
+  }
+  .interaction-card.moderate {
+    border-left-color: #FF9500;
+    background: rgba(255, 149, 0, 0.05);
+  }
+  .interaction-card.minor {
+    border-left-color: #FFC107;
+    background: rgba(255, 193, 7, 0.05);
+  }
+  .interaction-card .severity {
+    font: 700 12px var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .interaction-card.major .severity { color: #DC3232; }
+  .interaction-card.moderate .severity { color: #B26A00; }
+  .interaction-card.minor .severity { color: #B28F00; }
+
+  .disclaimer {
+    background: rgba(255, 165, 0, 0.06);
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font: 400 12px var(--font-sans);
+    color: var(--ink-mute);
+    line-height: 1.6;
+  }
+  .disclaimer strong { color: #B26A00; }
+</style>
+
+</head>
+<body class="page-pharmacology">
+<div class="auth-gate" id="authGate" style="display:none">
+  <div class="auth-modal">
+    <h1>Pharmacology Tool</h1>
+    <p>กรุณาลงชื่อเข้าใช้งาน</p>
+    <button id="loginBtn" class="auth-btn">Sign in with Google</button>
+  </div>
+</div>
+
+<div class="container" id="appContainer" style="display:none">
+
+  <header class="page-head">
+    <a class="back-btn" href="clinic.html" aria-label="กลับ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+    </a>
+    <h1 class="page-h1">Pharmacology</h1>
+    <span class="page-sub">เภสัชวิทยา + คำนวณยา + Interaction</span>
+  </header>
+
+  <!-- DISCLAIMER ----------------------------------------------- -->
+  <div class="disclaimer">
+    <strong>⚠️ Disclaimer:</strong> Tool นี้เป็น reference เท่านั้น · ไม่ทดแทน clinical judgment · 
+    Always verify with current edition of <strong>Plumb's Veterinary Drug Handbook (10th Ed.)</strong> และ FDA-approved labeling 
+    ก่อนใช้กับผู้ป่วยจริง
+  </div>
+
+  <!-- TOOLBAR -------------------------------------------------- -->
+  <div class="pharma-toolbar">
+    <div class="toolbar-row">
+      <div class="species-toggle">
+        <button class="species-btn active" data-species="dog">🐕 Dog</button>
+        <button class="species-btn" data-species="cat">🐈 Cat</button>
+      </div>
+      <div class="bw-input-wrap">
+        <label for="bwInput">BW</label>
+        <input type="number" id="bwInput" value="10" min="0.1" max="100" step="0.1">
+        <span class="bw-unit">kg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS ----------------------------------------------------- -->
+  <div class="pharma-tabs">
+    <button class="tab-btn active" data-tab="drugs">📋 Drug List</button>
+    <button class="tab-btn" data-tab="interactions">⚠️ Interactions</button>
+  </div>
+
+  <!-- DRUG LIST TAB ------------------------------------------- -->
+  <div class="tab-content active" id="tab-drugs">
+    <div class="search-bar" style="margin-bottom: 12px;">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/>
+        </svg>
+      </span>
+      <input type="search" id="drugSearch" placeholder="ค้นหายา (เช่น amoxicillin, NSAID)" autocomplete="off">
+    </div>
+
+    <div id="drugListView" class="drug-list"></div>
+    <div id="drugDetailView" style="display:none"></div>
+  </div>
+
+  <!-- INTERACTIONS TAB ---------------------------------------- -->
+  <div class="tab-content" id="tab-interactions">
+    <div class="interaction-builder">
+      <p style="font: 600 14px var(--font-sans); margin: 0 0 10px;">เลือกยาที่ผู้ป่วยกำลังได้รับ:</p>
+      <div class="selected-drugs" id="selectedDrugs"></div>
+      
+      <div class="search-bar" style="margin-bottom: 12px;">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/>
+          </svg>
+        </span>
+        <input type="search" id="interactionSearch" placeholder="ค้นหา + เพิ่มยา" autocomplete="off">
+      </div>
+
+      <div id="interactionDrugList" class="drug-list" style="max-height: 250px; overflow-y: auto;"></div>
+
+      <div class="interaction-result" id="interactionResult"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="auth.js?v=20260501ag"></script>
+<script src="pharmacology-data.js?v=20260501ag"></script>
+<script>
+// ============================================================
+// Pharmacology Tool Logic
+// ============================================================
+const DRUGS = window.PHARMACOLOGY_DATA || [];
+const INTERACTIONS = window.DRUG_INTERACTIONS || [];
+
+// State
+let currentSpecies = 'dog';
+let currentBW = 10;
+let selectedDrugIds = []; // for interaction checker
+
+// DOM refs
+const $bwInput = document.getElementById('bwInput');
+const $drugSearch = document.getElementById('drugSearch');
+const $drugListView = document.getElementById('drugListView');
+const $drugDetailView = document.getElementById('drugDetailView');
+const $selectedDrugs = document.getElementById('selectedDrugs');
+const $interactionSearch = document.getElementById('interactionSearch');
+const $interactionDrugList = document.getElementById('interactionDrugList');
+const $interactionResult = document.getElementById('interactionResult');
+
+// ============================================================
+// Species toggle + BW input
+// ============================================================
+document.querySelectorAll('.species-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.species-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentSpecies = btn.dataset.species;
+    // re-render current view
+    if ($drugDetailView.style.display !== 'none' && $drugDetailView.dataset.drugId) {
+      renderDrugDetail($drugDetailView.dataset.drugId);
+    }
+  });
+});
+
+$bwInput.addEventListener('input', () => {
+  const val = parseFloat($bwInput.value);
+  if (!isNaN(val) && val > 0) {
+    currentBW = val;
+    if ($drugDetailView.style.display !== 'none' && $drugDetailView.dataset.drugId) {
+      renderDrugDetail($drugDetailView.dataset.drugId);
+    }
+  }
+});
+
+// ============================================================
+// Tabs
+// ============================================================
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+  });
+});
+
+// ============================================================
+// Drug List
+// ============================================================
+function renderDrugList(filter = '') {
+  const q = filter.toLowerCase().trim();
+  const filtered = DRUGS.filter(d => {
+    if (!q) return true;
+    return (d.name + ' ' + d.nameTh + ' ' + d.classDrug).toLowerCase().includes(q);
+  });
+
+  $drugListView.innerHTML = filtered.map(d => `
+    <div class="drug-item" data-drug-id="${d.id}">
+      <div class="drug-item-name">${d.name} <span style="color: var(--ink-mute); font-weight: 400;">· ${d.nameTh || ''}</span></div>
+      <div class="drug-item-class">${d.classDrug}</div>
+    </div>
+  `).join('');
+
+  $drugListView.querySelectorAll('.drug-item').forEach(item => {
+    item.addEventListener('click', () => {
+      renderDrugDetail(item.dataset.drugId);
+    });
+  });
+}
+
+$drugSearch.addEventListener('input', () => renderDrugList($drugSearch.value));
+
+// ============================================================
+// Drug Detail (with dose calculator)
+// ============================================================
+function renderDrugDetail(drugId) {
+  const drug = DRUGS.find(d => d.id === drugId);
+  if (!drug) return;
+
+  $drugListView.style.display = 'none';
+  $drugDetailView.style.display = 'block';
+  $drugDetailView.dataset.drugId = drugId;
+
+  const doses = (drug.doses && drug.doses[currentSpecies]) || [];
+
+  $drugDetailView.innerHTML = `
+    <button onclick="backToList()" style="background: none; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font: 500 13px var(--font-sans); color: var(--ink-mute); cursor: pointer; margin-bottom: 14px;">← กลับ</button>
+    
+    <div class="drug-detail">
+      <h2>${drug.name}</h2>
+      <p style="margin: 0 0 6px; color: var(--ink-mute); font: 500 14px var(--font-sans);">${drug.nameTh || ''}</p>
+      <div class="drug-class">${drug.classDrug}</div>
+
+      <div style="background: var(--bg); border-radius: 10px; padding: 12px; margin-bottom: 16px;">
+        <div style="font: 600 12px var(--font-sans); color: var(--ink-mute); margin-bottom: 4px;">รูปแบบยา · Forms:</div>
+        <div style="font: 500 13px var(--font-sans);">${(drug.forms || []).join(' · ')}</div>
+      </div>
+
+      <h3 style="font: 700 15px var(--font-sans); margin: 0 0 10px;">📋 เลือก Indication เพื่อคำนวณ Dose</h3>
+      
+      ${doses.length === 0 ? `
+        <div style="padding: 14px; background: var(--bg); border-radius: 10px; color: var(--ink-mute);">
+          ❌ ไม่แนะนำใช้ใน ${currentSpecies === 'dog' ? 'หมา' : 'แมว'}
+        </div>
+      ` : `
+        <div class="indication-list">
+          ${doses.map((d, i) => renderIndicationCard(drug, d, i)).join('')}
+        </div>
+      `}
+
+      ${drug.warnings && drug.warnings.length ? `
+        <div class="warning-box">
+          <strong>⚠️ Warnings:</strong>
+          <ul>${drug.warnings.map(w => `<li>${w}</li>`).join('')}</ul>
+        </div>
+      ` : ''}
+
+      ${drug.interactions && drug.interactions.length ? `
+        <div class="interaction-box">
+          <strong>↔️ Drug Interactions:</strong>
+          <p style="margin: 4px 0 0;">${drug.interactions.join(' · ')}</p>
+        </div>
+      ` : ''}
+
+      ${drug.notes ? `
+        <div style="background: var(--bg); border-radius: 10px; padding: 12px; margin-top: 12px; font: 500 13px var(--font-sans); line-height: 1.6;">
+          📝 ${drug.notes}
+        </div>
+      ` : ''}
+
+      <div style="font: 400 11px var(--font-sans); color: var(--ink-mute); margin-top: 16px; text-align: right;">
+        Source: ${drug.source}
+      </div>
+    </div>
+  `;
+}
+
+function renderIndicationCard(drug, doseInfo, idx) {
+  // Try to compute calculated dose
+  let calculatedDose = '';
+  let calcRange = null;
+  
+  if (doseInfo.dose && doseInfo.dose !== '—') {
+    // Parse dose: could be "11-22" or "0.2 then 0.1" or "8" or "5-10"
+    const doseStr = doseInfo.dose.toString();
+    const m = doseStr.match(/^([\d.]+)(?:\s*-\s*([\d.]+))?/);
+    if (m) {
+      const lo = parseFloat(m[1]);
+      const hi = m[2] ? parseFloat(m[2]) : lo;
+      const totalLo = (lo * currentBW).toFixed(1);
+      const totalHi = (hi * currentBW).toFixed(1);
+      calcRange = lo === hi 
+        ? `${totalLo} mg`
+        : `${totalLo} – ${totalHi} mg`;
+    }
+  }
+
+  return `
+    <div class="indication-card">
+      <div class="indication-name">${doseInfo.indication}</div>
+      <div class="indication-meta">
+        💊 ${doseInfo.dose} ${doseInfo.unit} · ${doseInfo.route} · ${doseInfo.frequency}
+        ${doseInfo.duration ? '<br>⏱️ ' + doseInfo.duration : ''}
+      </div>
+      ${calcRange ? `
+        <div class="calculated-dose">
+          <div class="label">สำหรับ ${currentBW} kg :</div>
+          <div class="value">${calcRange}</div>
+          <div class="freq">${doseInfo.route} · ${doseInfo.frequency}</div>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+function backToList() {
+  $drugListView.style.display = 'grid';
+  $drugDetailView.style.display = 'none';
+  $drugDetailView.dataset.drugId = '';
+}
+window.backToList = backToList;
+
+// ============================================================
+// Interaction Checker
+// ============================================================
+function renderInteractionList(filter = '') {
+  const q = filter.toLowerCase().trim();
+  const filtered = DRUGS.filter(d => {
+    if (selectedDrugIds.includes(d.id)) return false; // already selected
+    if (!q) return true;
+    return (d.name + ' ' + d.nameTh).toLowerCase().includes(q);
+  });
+
+  $interactionDrugList.innerHTML = filtered.slice(0, 8).map(d => `
+    <div class="drug-item" data-drug-id="${d.id}">
+      <div class="drug-item-name">${d.name}</div>
+      <div class="drug-item-class">${d.classDrug}</div>
+    </div>
+  `).join('');
+
+  $interactionDrugList.querySelectorAll('.drug-item').forEach(item => {
+    item.addEventListener('click', () => {
+      addDrugToInteraction(item.dataset.drugId);
+    });
+  });
+}
+
+function addDrugToInteraction(drugId) {
+  if (!selectedDrugIds.includes(drugId)) {
+    selectedDrugIds.push(drugId);
+  }
+  $interactionSearch.value = '';
+  renderSelectedDrugs();
+  renderInteractionList();
+  checkInteractions();
+}
+
+function removeDrug(drugId) {
+  selectedDrugIds = selectedDrugIds.filter(id => id !== drugId);
+  renderSelectedDrugs();
+  renderInteractionList();
+  checkInteractions();
+}
+window.removeDrug = removeDrug;
+
+function renderSelectedDrugs() {
+  if (selectedDrugIds.length === 0) {
+    $selectedDrugs.innerHTML = '<span style="color: var(--ink-mute); font: 400 13px var(--font-sans);">ยังไม่ได้เลือกยา</span>';
+    return;
+  }
+  $selectedDrugs.innerHTML = selectedDrugIds.map(id => {
+    const drug = DRUGS.find(d => d.id === id);
+    return `
+      <span class="drug-pill">
+        ${drug.name}
+        <button onclick="removeDrug('${id}')" aria-label="ลบ">×</button>
+      </span>
+    `;
+  }).join('');
+}
+
+function checkInteractions() {
+  if (selectedDrugIds.length < 2) {
+    $interactionResult.innerHTML = `
+      <div style="padding: 14px; background: var(--bg); border-radius: 10px; color: var(--ink-mute); text-align: center; font: 500 13px var(--font-sans);">
+        เลือกยาตั้งแต่ 2 ตัวขึ้นไปเพื่อตรวจ interaction
+      </div>
+    `;
+    return;
+  }
+
+  const found = [];
+  for (let i = 0; i < selectedDrugIds.length; i++) {
+    for (let j = i + 1; j < selectedDrugIds.length; j++) {
+      const id1 = selectedDrugIds[i];
+      const id2 = selectedDrugIds[j];
+      const match = INTERACTIONS.find(x =>
+        (x.drugs.includes(id1) && x.drugs.includes(id2))
+      );
+      if (match) {
+        const drug1 = DRUGS.find(d => d.id === id1);
+        const drug2 = DRUGS.find(d => d.id === id2);
+        found.push({ ...match, drug1, drug2 });
+      }
+    }
+  }
+
+  if (found.length === 0) {
+    $interactionResult.innerHTML = `
+      <div style="padding: 14px; background: rgba(80, 180, 80, 0.08); border: 1px solid rgba(80, 180, 80, 0.3); border-radius: 10px; color: #2A8B2A; text-align: center; font: 600 14px var(--font-sans);">
+        ✅ ไม่พบ interaction ที่บันทึกไว้
+        <p style="font: 400 11px var(--font-sans); margin: 6px 0 0; color: var(--ink-mute);">
+          (Database จำกัด · always verify with Plumb's)
+        </p>
+      </div>
+    `;
+    return;
+  }
+
+  $interactionResult.innerHTML = `
+    <h3 style="font: 700 15px var(--font-sans); margin: 14px 0 10px;">⚠️ พบ ${found.length} interaction:</h3>
+    ${found.map(x => `
+      <div class="interaction-card ${x.severity}">
+        <div class="severity">${x.severity}</div>
+        <div style="font: 700 14px var(--font-sans); margin-bottom: 4px;">
+          ${x.drug1.name} ↔ ${x.drug2.name}
+        </div>
+        <div style="font: 500 13px var(--font-sans); margin-bottom: 6px;">
+          <strong>Effect:</strong> ${x.effect}
+        </div>
+        <div style="font: 500 13px var(--font-sans);">
+          <strong>Management:</strong> ${x.management}
+        </div>
+      </div>
+    `).join('')}
+  `;
+}
+
+$interactionSearch.addEventListener('input', () => {
+  renderInteractionList($interactionSearch.value);
+});
+
+// ============================================================
+// Init
+// ============================================================
+renderDrugList();
+renderInteractionList();
+renderSelectedDrugs();
+checkInteractions();
+</script>
+</body>
+</html>
