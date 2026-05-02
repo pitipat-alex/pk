@@ -308,6 +308,19 @@ window.MEDICINE_ENTRIES = [
         </ul>
       `,
       treatment: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">CHF Quadruple Therapy — "FPAS" หรือ "ฟ้า ปิ๊ก เอ๊า สไป"</span>
+          <ul>
+            <li><strong>F</strong> Furosemide — ลด preload (ขับน้ำ)</li>
+            <li><strong>P</strong> Pimobendan — ↑ contractility + vasodilator</li>
+            <li><strong>A</strong> ACE inhibitor (Enalapril/Benazepril) — block RAAS</li>
+            <li><strong>S</strong> Spironolactone — anti-aldosterone + ลด cardiac death</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"ฟ้า ปิ๊ก เอ๊า สไป"</strong> หรือ <strong>"4 เสาหลัก"</strong> ของ CHF management<br>
+          📌 <strong>4 จุดโจมตี:</strong> น้ำเกิน · หัวใจอ่อน · neurohormonal activation · aldosterone<br>
+          ⚠️ HCM cat: <strong>ห้าม pimobendan</strong> ถ้ามี LVOTO · Spironolactone อาจทำให้แมวแพ้ผิวหน้า (Maine Coon)</p>
+        </div>
+
         <p><strong>The Quadruple Therapy</strong> — cornerstone for chronic CHF in dogs</p>
 
         <p><strong>1. Loop Diuretic (preload reduction)</strong></p>
@@ -3319,6 +3332,34 @@ window.MEDICINE_ENTRIES = [
         </ul>
       `,
       etiology: `
+        <div class="mnemonic diagram">
+          <span class="mnem-title">BOAS Anatomy — "จมูกตัน · เพดานยาว · หลอดลมเล็ก"</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">1. Stenotic Nares</span>
+              จมูกตัน 👃<br>
+              <em>slit-like opening</em>
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">2. Elongated Soft Palate</span>
+              เพดานยาว 👅<br>
+              <em>เลย epiglottis</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">3. Hypoplastic Trachea</span>
+              หลอดลมเล็ก 🫁<br>
+              <em>เด่นใน Bulldog</em>
+            </div>
+            <div class="diagram-box purple">
+              <span class="box-title">4. Aberrant Turbinates</span>
+              เนื้อจมูกอุดตัน<br>
+              <em>ต้องใช้ CT</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>Primary 4 ตัว</strong> เป็นมาแต่กำเนิด · <strong>Secondary changes</strong>: everted saccules → laryngeal collapse (3 stages) → tonsil eversion · เกิดจากแรงดูดลมเข้า ผ่านช่องที่แคบ<br>
+          ⚠️ <strong>"BOAS = ทุกชั้นของท่อลมส่วนบนมีปัญหา"</strong> · ผ่าตัดยิ่งเร็ว ผลยิ่งดี (ก่อนเป็น stage 3 collapse)</p>
+        </div>
+
         <p><strong>Primary anatomic abnormalities:</strong></p>
         <ul>
           <li><strong>Stenotic nares</strong> — slit-like, narrow openings</li>
@@ -16673,19 +16714,22 @@ window.MEDICINE_ENTRIES = [
         </ul>
       `,
       etiology: `
-        <p><strong>"GOSH DARN IT" mnemonic:</strong></p>
-        <ul>
-          <li><strong>G</strong>ranulomatous dz (fungal, FIP)</li>
-          <li><strong>O</strong>steolytic (bone tumors, multiple myeloma, infection)</li>
-          <li><strong>S</strong>pherocytes? (no — sometimes "Spurious" — lab artifact, lipemia)</li>
-          <li><strong>H</strong>yperparathyroidism (primary)</li>
-          <li><strong>D</strong>'s: Vitamin D toxicity, Addison's, Drugs</li>
-          <li><strong>A</strong>ddison's disease ✨</li>
-          <li><strong>R</strong>enal disease (CKD — variable Ca; can be ↑ or ↓)</li>
-          <li><strong>N</strong>eoplasia ✨ (most common pathologic cause)</li>
-          <li><strong>I</strong>diopathic (cat ✨)</li>
-          <li><strong>T</strong>emperature (lab artifact)</li>
-        </ul>
+        <div class="mnemonic">
+          <span class="mnem-title">GOSH DARN IT — Causes of Hypercalcemia</span>
+          <ul>
+            <li><strong>G</strong>ranulomatous dz (fungal, FIP)</li>
+            <li><strong>O</strong>steolytic (bone tumor, myeloma, infection)</li>
+            <li><strong>S</strong>purious — lab artifact (lipemia)</li>
+            <li><strong>H</strong>yperparathyroidism (primary)</li>
+            <li><strong>D</strong>'s — Vit D toxicity, Drugs</li>
+            <li><strong>A</strong>ddison's disease ✨</li>
+            <li><strong>R</strong>enal disease (CKD)</li>
+            <li><strong>N</strong>eoplasia ✨ — most common pathologic</li>
+            <li><strong>I</strong>diopathic (cat ✨)</li>
+            <li><strong>T</strong>emperature (lab artifact)</li>
+          </ul>
+          <p class="mnem-tip">DDx ของ ↑Ca — ตัว N (neoplasia) สำคัญสุดในหมา · ตัว I (idiopathic) ในแมว</p>
+        </div>
 
         <p><strong>Top causes by species:</strong></p>
         <ul>
@@ -18110,18 +18154,18 @@ window.MEDICINE_ENTRIES = [
         <p><strong>METABOLIC ACIDOSIS (↓ HCO3):</strong></p>
 
         <p><strong>1. ↑ Anion gap (acid added):</strong></p>
-        <ul>
-          <li>"MUDPILES" mnemonic (adapted):
-            <ul>
-              <li><strong>L</strong>actic acidosis ✨ — shock, sepsis, hypoxia, severe exercise, neoplasia</li>
-              <li><strong>U</strong>remia (severe AKI/CKD) ✨ — phosphates, sulfates accumulate</li>
-              <li><strong>D</strong>KA ✨ (β-hydroxybutyrate, acetoacetate)</li>
-              <li>Toxin: <strong>E</strong>thylene glycol ✗ (glycolate, glycoxalate); ASA (salicylate); methanol</li>
-              <li><strong>S</strong>tarvation ketosis</li>
-            </ul>
-          </li>
-          <li>Anion gap = (Na + K) - (Cl + HCO3); normal 12-25 dog, 13-27 cat</li>
-        </ul>
+
+        <div class="mnemonic">
+          <span class="mnem-title">"LUDES" — High Anion Gap Acidosis (vet-adapted)</span>
+          <ul>
+            <li><strong>L</strong>actic acidosis ✨ — shock, sepsis, hypoxia</li>
+            <li><strong>U</strong>remia (severe AKI/CKD) ✨ — phosphates, sulfates</li>
+            <li><strong>D</strong>KA ✨ (ketoacidosis)</li>
+            <li><strong>E</strong>thylene glycol ✗ + other toxins (ASA, methanol)</li>
+            <li><strong>S</strong>tarvation ketosis</li>
+          </ul>
+          <p class="mnem-tip">Anion Gap = (Na+K) - (Cl+HCO3) · ปกติ 12-25 หมา · 13-27 แมว · ในคนใช้ "MUDPILES" ใน vet ตัว Methanol/Iron/Paraldehyde rare → "LUDES" ก็พอ</p>
+        </div>
 
         <p><strong>2. Normal anion gap (HCO3 lost):</strong></p>
         <ul>

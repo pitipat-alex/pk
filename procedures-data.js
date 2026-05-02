@@ -51,12 +51,17 @@ window.PROCEDURES_DATA = [
           <li>ปล่อยและจับเวลาทันที</li>
           <li>นับจนสีกลับเป็นชมพูเหมือนเดิม</li>
         </ol>
-        <p><strong>ค่าปกติ:</strong> 1–2 วินาที</p>
-        <ul>
-          <li>&lt; 1 วินาที (rapid) → vasodilation, hyperdynamic shock (sepsis ระยะแรก)</li>
-          <li>&gt; 2 วินาที (prolonged) → poor perfusion, shock, dehydration, low CO</li>
-          <li>&gt; 4 วินาที → severe — ต้อง resuscitate ด่วน</li>
-        </ul>
+        <div class="mnemonic">
+          <span class="mnem-title">CRT — "1, 2, 4 วินาที"</span>
+          <ul>
+            <li><strong>&lt;1</strong>เร็วผิดปกติ → vasodilation / sepsis ระยะแรก (hyperdynamic)</li>
+            <li><strong>1-2</strong>ปกติ ✓</li>
+            <li><strong>&gt;2</strong>ช้าผิดปกติ → poor perfusion, shock, dehydration</li>
+            <li><strong>&gt;4</strong>severe → resuscitate ด่วน!</li>
+          </ul>
+          <p class="mnem-tip">"1-2 OK, 4 = ฉุกเฉิน" · จำว่า CRT ดูคู่กับ MM, HR, pulse · single sign ไม่พอ</p>
+        </div>
+
       `,
       complications: `
         <ul>
@@ -113,15 +118,18 @@ window.PROCEDURES_DATA = [
           <li><strong>คลำ</strong> spinous process + iliac wing</li>
           <li>ให้คะแนน 1-9</li>
         </ol>
-        <p><strong>คะแนน BCS:</strong></p>
-        <ul>
-          <li>1-3 = Underweight (ผอม)</li>
-          <li>4-5 = Ideal ✓</li>
-          <li>6 = Slightly overweight</li>
-          <li>7 = Overweight</li>
-          <li>8-9 = Obese</li>
-        </ul>
-        <p>ทุก 1 คะแนนเหนือ ideal = น้ำหนักเกิน ~10-15%</p>
+        <div class="mnemonic">
+          <span class="mnem-title">BCS 9-Point Scale — Quick Memory</span>
+          <ul>
+            <li><strong>1-3</strong>Underweight (ผอม)</li>
+            <li><strong>4-5</strong>Ideal ✓</li>
+            <li><strong>6</strong>Slightly overweight</li>
+            <li><strong>7</strong>Overweight</li>
+            <li><strong>8-9</strong>Obese (อ้วน)</li>
+          </ul>
+          <p class="mnem-tip">ทุก 1 คะแนนเหนือ ideal ≈ น้ำหนักเกิน 10-15% · MCS (muscle) สำคัญในแมวแก่</p>
+        </div>
+
       `,
       complications: `
         <ul>
@@ -537,14 +545,21 @@ window.PROCEDURES_DATA = [
           <li>ใช้ laryngoscope กด epiglottis ลง — เห็น vocal cords</li>
           <li><strong>แมว:</strong> spray lidocaine 0.1 mL ที่ arytenoids → รอ 30-60 วินาที (ป้องกัน laryngospasm)</li>
           <li>Lube ETT tip + insert ผ่าน vocal cords ระหว่าง inspiration</li>
-          <li><strong>เช็ค placement:</strong>
-            <ul>
-              <li>Capnography (gold standard) — เห็น waveform ETCO2</li>
-              <li>ฟัง breath sounds ทั้ง 2 ปอด</li>
-              <li>เห็น chest expansion symmetric</li>
-              <li>ไม่มีลมออกจากปาก ตอน bag</li>
-            </ul>
-          </li>
+          <li><strong>เช็ค placement — ใช้ "เห็น ฟัง สังเกต":</strong></li>
+        </ol>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">ETT Placement — "เห็น · ฟัง · สังเกต"</span>
+          <ul>
+            <li><strong>เห็น</strong> 👀 Capnography waveform (gold standard) · เห็น chest rise สมมาตร</li>
+            <li><strong>ฟัง</strong> 👂 Breath sounds ทั้ง 2 ปอด · ไม่ได้ยินลมที่ stomach</li>
+            <li><strong>สังเกต</strong> 🔍 ไม่มีลมรั่วออกปากตอน bag · ETT ไม่ติด arytenoid</li>
+          </ul>
+          <p class="mnem-tip">⚠️ <strong>Esophageal intubation = ฆาตกรเงียบ</strong> · ต้องเช็คทุกเคส · capnography เป็น gold standard<br>
+          📌 <strong>"แคปโน่ + ฟัง 2 ข้าง"</strong> = ขั้นต่ำของการ confirm</p>
+        </div>
+
+        <ol start="8">
           <li>Inflate cuff — bag จน peak ~20 cmH2O ไม่มีลม leak (manometer ดีสุด)</li>
           <li>Secure ETT ด้วย gauze tie รอบ maxilla (หมา) หรือ behind ears (แมว)</li>
           <li>Connect anesthesia circuit</li>
@@ -1354,6 +1369,36 @@ window.PROCEDURES_DATA = [
         </ul>
       `,
       preparation: `
+        <div class="mnemonic diagram">
+          <span class="mnem-title">3-Layer Bandage — "ติด · ซับ · ห่อ"</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">Layer 1 — Primary</span>
+              <strong>ติด</strong> (contact)<br>
+              💉 Wet-to-dry<br>
+              🩹 Telfa / hydrogel<br>
+              <em>สัมผัสแผลโดยตรง</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">Layer 2 — Secondary</span>
+              <strong>ซับ</strong> (absorb)<br>
+              🌫️ Cast padding<br>
+              🌫️ Cotton roll<br>
+              <em>ดูดซับ + padding</em>
+            </div>
+            <div class="diagram-box blue">
+              <span class="box-title">Layer 3 — Tertiary</span>
+              <strong>ห่อ</strong> (hold)<br>
+              🎀 Vetwrap<br>
+              🎀 Tape<br>
+              <em>protect + secure</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"ติด-ซับ-ห่อ"</strong> 3 ชั้น 3 หน้าที่ ห้ามสลับ<br>
+          ⚠️ <strong>"นิ้วเย็น = ปัญหา"</strong> เปิดทันที! ตรวจ 2 นิ้วกลางที่เปิดไว้ ถ้าเย็น/บวม/ดำ = bandage แน่น<br>
+          📌 Vetwrap ห้ามดึงตึง! ดึง 50% ของ stretch จะแน่นเกินไป</p>
+        </div>
+
         <p><strong>3-layer principle:</strong></p>
         <ul>
           <li><strong>Primary layer (contact):</strong>
@@ -1470,15 +1515,22 @@ window.PROCEDURES_DATA = [
           <li><strong>Right lateral recumbency</strong> (standard) — for limb leads</li>
           <li>Restrain gently — minimize muscle tremor (causes artifact)</li>
           <li>Apply gel/alcohol at electrode sites</li>
-          <li><strong>Lead placement (alligator clip color):</strong>
-            <ul>
-              <li><strong>Red:</strong> Right forelimb (above elbow)</li>
-              <li><strong>Yellow:</strong> Left forelimb</li>
-              <li><strong>Green:</strong> Left hindlimb (above stifle)</li>
-              <li><strong>Black (ground):</strong> Right hindlimb</li>
-            </ul>
-          </li>
-          <li>"<strong>Christmas in the front, traffic in the back</strong>" — Red+Green hot · Yellow+Black ground</li>
+          <li><strong>Lead placement</strong> — ดู mnemonic ด้านล่าง</li>
+        </ol>
+
+        <div class="mnemonic">
+          <span class="mnem-title">Christmas Front · Traffic Back — ECG Lead Placement</span>
+          <ul>
+            <li><strong>RA</strong>Right forelimb = <span style="color: red;">●</span> <strong>Red</strong></li>
+            <li><strong>LA</strong>Left forelimb = <span style="color: #d4a017;">●</span> <strong>Yellow</strong></li>
+            <li><strong>LL</strong>Left hindlimb = <span style="color: green;">●</span> <strong>Green</strong></li>
+            <li><strong>RL</strong>Right hindlimb = <span style="color: #333;">●</span> <strong>Black</strong> (ground)</li>
+          </ul>
+          <p class="mnem-tip">🎄 <strong>Christmas (red+green) อยู่หน้า</strong> = forelimb red, hindlimb green ฝั่งซ้าย<br>
+          🚦 <strong>Traffic (yellow+black) อยู่หลัง</strong> = ฝั่งขวา + อีกข้างหลัง · ใช้ขวา-นอน-ขวา-ตะแคง</p>
+        </div>
+
+        <ol start="5">
           <li>Set paper speed 50 mm/s · sensitivity 10 mm/mV</li>
           <li>Record at least 30 sec lead II + brief recording of all 6 leads</li>
           <li>If arrhythmia → record &gt; 1-2 นาที on lead II</li>
@@ -1734,17 +1786,41 @@ window.PROCEDURES_DATA = [
         </ul>
       `,
       steps: `
-        <p><strong>AFAST — 4-quadrant abdominal scan:</strong></p>
+        <div class="mnemonic diagram">
+          <span class="mnem-title">AFAST 4-Quadrant — "DH · SR · CC · HR"</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">DH</span>
+              Diaphragmatic-Hepatic<br>
+              📍 Sub-xiphoid<br>
+              <em>liver + gallbladder</em>
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">SR</span>
+              Spleno-Renal<br>
+              📍 Left flank<br>
+              <em>spleen + left kidney</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">CC</span>
+              Cysto-Colic<br>
+              📍 Caudal midline<br>
+              <em>bladder</em>
+            </div>
+            <div class="diagram-box green">
+              <span class="box-title">HR</span>
+              Hepato-Renal<br>
+              📍 Right flank<br>
+              <em>right kidney + liver</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"DH-SR-CC-HR"</strong> วน 4 จุด หา free fluid · Score 0-4 (จำนวน positive windows)<br>
+          📌 <strong>Score &gt; 0</strong> → พิจารณา abdominocentesis · Score &gt; 2 → suspect significant hemorrhage<br>
+          📌 <strong>"จำง่าย: ตับ-ม้าม-กระเพาะปัสสาวะ-ตับอีกข้าง"</strong> วนตามเข็มนาฬิกา</p>
+        </div>
+
         <ol>
           <li>Right lateral or sternal recumbency</li>
-          <li><strong>4 windows</strong> (look for free fluid):
-            <ul>
-              <li><strong>DH (Diaphragmatic-Hepatic):</strong> sub-xiphoid · sagittal · find diaphragm + liver + gallbladder</li>
-              <li><strong>SR (Spleno-Renal):</strong> left flank · find spleen + left kidney</li>
-              <li><strong>CC (Cysto-Colic):</strong> caudal abdomen · midline · find bladder</li>
-              <li><strong>HR (Hepato-Renal):</strong> right flank · find right kidney + liver</li>
-            </ul>
-          </li>
           <li>Score: 0-4 (number of positive windows for free fluid)</li>
           <li>If &gt; 0 → consider abdominocentesis</li>
         </ol>
@@ -1756,12 +1832,22 @@ window.PROCEDURES_DATA = [
           <li><strong>DH</strong>: same as AFAST · sub-xiphoid view of pericardium</li>
         </ol>
 
-        <p><strong>Vet BLUE — lung scan (8 sites bilateral):</strong></p>
-        <ol>
-          <li>Look for <strong>B-lines</strong> (vertical comet-tail artifacts) → pulmonary edema, pneumonia</li>
-          <li>0-1 B-lines per field = normal</li>
-          <li>≥3 B-lines = wet lung (CHF, pneumonia, ARDS)</li>
-        </ol>
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Vet BLUE — B-lines บอก wet lung</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">0-1</span>
+              <span class="num-label">ปกติ ✓</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">≥ 3</span>
+              <span class="num-label">Wet lung 💧</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>B-lines = vertical "comet tails"</strong> ลากจากผิวปอดลงล่าง<br>
+          📌 ≥3/field → CHF · pneumonia · ARDS · interstitial dz<br>
+          📌 ในแมว CHF: <strong>B-lines + LA enlargement</strong> = diagnostic accuracy &gt; 90% เทียบกับ echo</p>
+        </div>
       `,
       complications: `
         <ul>

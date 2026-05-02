@@ -2952,17 +2952,22 @@ window.SURGERY_ENTRIES = [
         </ul>
       `,
       technique: `
-        <p><strong>Surgical margins concept ✨:</strong></p>
-        <table style="width:100%; border-collapse:collapse; margin-top:0.5em;">
-          <tr><th style="text-align:left; padding:4px 8px; border-bottom:1px solid var(--border);">Tumor type</th><th style="text-align:left; padding:4px 8px; border-bottom:1px solid var(--border);">Lateral margin</th><th style="text-align:left; padding:4px 8px; border-bottom:1px solid var(--border);">Deep margin</th></tr>
-          <tr><td style="padding:4px 8px;">MCT (low/intermed grade)</td><td style="padding:4px 8px;">2 cm</td><td style="padding:4px 8px;">1 fascial plane</td></tr>
-          <tr><td style="padding:4px 8px;">MCT (high grade)</td><td style="padding:4px 8px;">3 cm</td><td style="padding:4px 8px;">1-2 fascial planes</td></tr>
-          <tr><td style="padding:4px 8px;">STS (low-intermed grade)</td><td style="padding:4px 8px;">3 cm</td><td style="padding:4px 8px;">1 fascial plane</td></tr>
-          <tr><td style="padding:4px 8px;">STS (high grade)</td><td style="padding:4px 8px;">3-5 cm</td><td style="padding:4px 8px;">1-2 fascial planes</td></tr>
-          <tr><td style="padding:4px 8px;">Cutaneous SCC, carcinoma</td><td style="padding:4px 8px;">1-2 cm</td><td style="padding:4px 8px;">1 fascial plane</td></tr>
-          <tr><td style="padding:4px 8px;">Benign (lipoma, cyst)</td><td style="padding:4px 8px;">Marginal (just outside capsule)</td><td style="padding:4px 8px;">Marginal</td></tr>
-          <tr><td style="padding:4px 8px;">Histiocytoma</td><td style="padding:4px 8px;">Marginal (after observation)</td><td style="padding:4px 8px;">Marginal</td></tr>
-        </table>
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Surgical Margins — "2-3-3-5" จำง่าย</span>
+          <table>
+            <tr><th>Tumor</th><th>Lateral</th><th>Deep</th></tr>
+            <tr><td><strong>MCT low/intermed</strong></td><td>🟢 <strong>2 cm</strong></td><td>1 fascial plane</td></tr>
+            <tr><td><strong>MCT high grade</strong></td><td>🟡 <strong>3 cm</strong></td><td>1-2 fascial planes</td></tr>
+            <tr><td><strong>STS low/intermed</strong></td><td>🟡 <strong>3 cm</strong></td><td>1 fascial plane</td></tr>
+            <tr><td><strong>STS high grade</strong></td><td>🔴 <strong>3-5 cm</strong></td><td>1-2 fascial planes</td></tr>
+            <tr><td>SCC, carcinoma</td><td>1-2 cm</td><td>1 fascial plane</td></tr>
+            <tr><td>Benign (lipoma, cyst)</td><td>Marginal</td><td>Marginal</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>"2-3-3-5"</strong> = MCT low 2 · MCT high 3 · STS low 3 · STS high 5<br>
+          📌 <strong>"Don't milk the tumor"</strong> 🥛✗ — ห้ามบีบก้อน → histamine release (MCT) + tumor seeding<br>
+          📌 <strong>Deep margin = 1 fascial plane เสมอ</strong> · ลอกเลาะลึกถึง muscle fascia ที่ยังสมบูรณ์</p>
+        </div>
+
         <p><strong>General excision technique:</strong></p>
         <ol>
           <li>Mark margins with sterile marker (centered on mass)</li>
@@ -3533,6 +3538,22 @@ window.SURGERY_ENTRIES = [
               <li>Eating once daily, eating quickly, raised bowls (controversial), stress</li>
             </ul>
           </li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">GDV Risk Factors — "ใหญ่ ลึก แก่ มื้อใหญ่"</span>
+          <ul>
+            <li><strong>ใหญ่</strong> Large/giant breed (Great Dane, GSD, Weimaraner)</li>
+            <li><strong>ลึก</strong> Deep-chested conformation</li>
+            <li><strong>แก่</strong> Middle-aged + (mean 7 ปี)</li>
+            <li><strong>มื้อใหญ่</strong> Eating once daily, eating quickly, stress</li>
+            <li><strong>กรรมพันธุ์</strong> 1st-degree relative มี GDV</li>
+          </ul>
+          <p class="mnem-tip">📌 4 ตัวจำง่าย — เคสที่มาด้วย retching + abdominal distension + breed นี้ = GDV จนกว่าจะพิสูจน์ได้ว่าไม่ใช่<br>
+          📌 <strong>Mortality:</strong> 100% ถ้าไม่ผ่าตัด · 15-30% ถ้าผ่าทันเวลา · ผ่าด่วน!</p>
+        </div>
+
+        <ul>
           <li><strong>Prophylactic gastropexy ✨:</strong>
             <ul>
               <li>At-risk breeds at time of OHE/neuter</li>

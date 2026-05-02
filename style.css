@@ -1572,6 +1572,311 @@ html.locked .lock-screen { display: flex; }
   line-height: 1.6;
 }
 
+/* ============================================================================
+   TEACHING AIDS — exam memory aids (mnemonics, tables, flowcharts, diagrams)
+   ============================================================================ */
+
+/* === Base mnemonic box (acronym/letters style) === */
+.detail-section .mnemonic {
+  background: linear-gradient(135deg,
+    rgba(39, 125, 161, 0.10) 0%,
+    rgba(123, 44, 191, 0.08) 100%);
+  border: 2px solid var(--blue);
+  border-left: 6px solid var(--purple);
+  padding: 14px 16px 14px 18px;
+  border-radius: 14px;
+  margin: 16px 0;
+  font-size: 15px;
+  line-height: 1.65;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(123, 44, 191, 0.08);
+}
+
+.detail-section .mnemonic::before {
+  content: "🧠 วิธีจำ";
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--purple);
+  background: var(--bg);
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1.5px solid var(--purple);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Variant labels by class */
+.detail-section .mnemonic.thai::before { content: "🇹🇭 จำง่ายแบบไทย"; }
+.detail-section .mnemonic.table-aid::before { content: "📊 ตารางเทียบ"; }
+.detail-section .mnemonic.flowchart::before { content: "🔀 Flow Chart"; }
+.detail-section .mnemonic.diagram::before { content: "🗺️ Diagram"; }
+.detail-section .mnemonic.story::before { content: "📖 เรื่องเล่าจำ"; }
+.detail-section .mnemonic.visual::before { content: "👁️ ภาพจำ"; }
+.detail-section .mnemonic.numbers::before { content: "🔢 ตัวเลขจำ"; }
+
+.detail-section .mnemonic .mnem-title {
+  display: block;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--purple);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.detail-section .mnemonic .mnem-letters {
+  font-family: var(--font-mono);
+  background: var(--bg);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue);
+  margin: 4px 0 10px 0;
+  letter-spacing: 0.05em;
+  border: 1px dashed var(--blue);
+}
+
+.detail-section .mnemonic ul {
+  margin: 8px 0 4px 0;
+  padding-left: 4px;
+  list-style: none;
+}
+
+.detail-section .mnemonic ul li {
+  padding: 5px 0 5px 8px;
+  border-left: 2px solid rgba(123, 44, 191, 0.25);
+  margin-bottom: 4px;
+}
+
+.detail-section .mnemonic ul li strong:first-child {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  font-family: var(--font-mono);
+  padding: 1px 8px;
+  border-radius: 5px;
+  margin-right: 8px;
+  font-size: 14px;
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.detail-section .mnemonic .mnem-tip {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(123, 44, 191, 0.30);
+  font-style: italic;
+  color: var(--ink-mute);
+  font-size: 14px;
+}
+
+/* === Teaching table inside mnemonic === */
+.detail-section .mnemonic table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 14px;
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.detail-section .mnemonic table th {
+  background: var(--purple);
+  color: white;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+.detail-section .mnemonic table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(123, 44, 191, 0.15);
+  vertical-align: top;
+}
+
+.detail-section .mnemonic table tr:last-child td { border-bottom: none; }
+
+.detail-section .mnemonic table tr:nth-child(even) td {
+  background: rgba(123, 44, 191, 0.04);
+}
+
+/* === Flow chart steps (vertical with arrows) === */
+.detail-section .mnemonic .flow-step {
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 6px 0;
+  position: relative;
+  font-size: 14px;
+}
+
+.detail-section .mnemonic .flow-step.start {
+  border-color: var(--green);
+  background: linear-gradient(135deg, var(--green-soft) 0%, var(--bg) 100%);
+}
+
+.detail-section .mnemonic .flow-step.decision {
+  border-color: var(--orange);
+  background: linear-gradient(135deg, var(--orange-soft) 0%, var(--bg) 100%);
+  font-weight: 600;
+}
+
+.detail-section .mnemonic .flow-step.action {
+  border-color: var(--blue);
+}
+
+.detail-section .mnemonic .flow-step.danger {
+  border-color: var(--red);
+  background: linear-gradient(135deg, var(--red-soft) 0%, var(--bg) 100%);
+}
+
+.detail-section .mnemonic .flow-step.success {
+  border-color: var(--green);
+  background: linear-gradient(135deg, var(--green-soft) 0%, var(--bg) 100%);
+}
+
+.detail-section .mnemonic .flow-arrow {
+  text-align: center;
+  font-size: 18px;
+  color: var(--purple);
+  margin: 2px 0;
+  font-weight: 700;
+}
+
+.detail-section .mnemonic .flow-branch {
+  display: flex;
+  gap: 10px;
+  margin: 6px 0;
+  flex-wrap: wrap;
+}
+
+.detail-section .mnemonic .flow-branch .flow-step { flex: 1; min-width: 120px; }
+
+.detail-section .mnemonic .flow-label {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* === Diagram boxes (relationship maps) === */
+.detail-section .mnemonic .diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.detail-section .mnemonic .diagram-box {
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.detail-section .mnemonic .diagram-box .box-title {
+  font-weight: 700;
+  color: var(--purple);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.detail-section .mnemonic .diagram-box.red    { border-color: var(--red);    background: linear-gradient(135deg, var(--red-soft), var(--bg)); }
+.detail-section .mnemonic .diagram-box.orange { border-color: var(--orange); background: linear-gradient(135deg, var(--orange-soft), var(--bg)); }
+.detail-section .mnemonic .diagram-box.yellow { border-color: var(--yellow); background: linear-gradient(135deg, var(--yellow-soft), var(--bg)); }
+.detail-section .mnemonic .diagram-box.green  { border-color: var(--green);  background: linear-gradient(135deg, var(--green-soft), var(--bg)); }
+.detail-section .mnemonic .diagram-box.blue   { border-color: var(--blue);   background: linear-gradient(135deg, var(--blue-soft), var(--bg)); }
+.detail-section .mnemonic .diagram-box.purple { border-color: var(--purple); background: linear-gradient(135deg, var(--purple-soft), var(--bg)); }
+
+/* === Number / dose grid (drug doses, vital signs) === */
+.detail-section .mnemonic .num-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.detail-section .mnemonic .num-card {
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.detail-section .mnemonic .num-card .num-big {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--blue);
+  font-family: var(--font-mono);
+  line-height: 1.1;
+}
+
+.detail-section .mnemonic .num-card .num-label {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-mute);
+  margin-top: 4px;
+  letter-spacing: 0.03em;
+}
+
+/* === Story callout === */
+.detail-section .mnemonic .story-text {
+  background: var(--bg);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  border-left: 3px solid var(--orange);
+  margin: 8px 0;
+  font-style: italic;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .detail-section .mnemonic {
+  background: linear-gradient(135deg,
+    rgba(39, 125, 161, 0.18) 0%,
+    rgba(123, 44, 191, 0.15) 100%);
+}
+
+[data-theme="dark"] .detail-section .mnemonic::before,
+[data-theme="dark"] .detail-section .mnemonic .mnem-letters,
+[data-theme="dark"] .detail-section .mnemonic .flow-step,
+[data-theme="dark"] .detail-section .mnemonic .diagram-box,
+[data-theme="dark"] .detail-section .mnemonic .num-card,
+[data-theme="dark"] .detail-section .mnemonic table,
+[data-theme="dark"] .detail-section .mnemonic .story-text {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .detail-section .mnemonic ul li {
+  border-left-color: rgba(166, 124, 245, 0.40);
+}
+
+[data-theme="dark"] .detail-section .mnemonic table tr:nth-child(even) td {
+  background: rgba(166, 124, 245, 0.10);
+}
+
 /* System-color modifiers (cycle through pride 6) */
 .color-cardiovascular  { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
 .color-respiratory     { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
