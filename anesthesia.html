@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501ad">
+  <link rel="stylesheet" href="style.css?v=20260501af">
 
   <!-- Supabase JS v2 — pinned + dual CDN with fallback -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
@@ -99,20 +99,17 @@
     <!-- FILTER CHIPS ---------------------------------------------- -->
     <div class="filter-chips" id="filterChips">
       <button class="chip active" data-system="all">ทั้งหมด</button>
-      <button class="chip" data-system="cardiovascular">หัวใจ</button>
-      <button class="chip" data-system="respiratory">ทางเดินหายใจ</button>
-      <button class="chip" data-system="digestive">ทางเดินอาหาร</button>
-      <button class="chip" data-system="hepatobiliary">ตับ-ตับอ่อน</button>
-      <button class="chip" data-system="urinary">ทางเดินปัสสาวะ</button>
-      <button class="chip" data-system="endocrine">ต่อมไร้ท่อ</button>
-      <button class="chip" data-system="metabolic">เมตาบอลิก</button>
-      <button class="chip" data-system="reproductive">สืบพันธุ์</button>
-      <button class="chip" data-system="nervous">ประสาท</button>
-      <button class="chip" data-system="joint">ข้อ</button>
-      <button class="chip" data-system="immune">ภูมิคุ้มกัน</button>
-      <button class="chip" data-system="oncology">มะเร็ง</button>
-      <button class="chip" data-system="hematology">โลหิต</button>
-      <button class="chip" data-system="infectious">โรคติดเชื้อ</button>
+      <button class="chip" data-system="preanes">🩺 ก่อน Anesthesia</button>
+      <button class="chip" data-system="premed">💊 Premedication</button>
+      <button class="chip" data-system="induction">💉 IV Induction</button>
+      <button class="chip" data-system="inhalant">💨 Inhalant</button>
+      <button class="chip" data-system="equipment">🔧 อุปกรณ์/Fluid</button>
+      <button class="chip" data-system="monitoring">📊 Monitoring</button>
+      <button class="chip" data-system="emergency">🚨 ฉุกเฉิน</button>
+      <button class="chip" data-system="locoregional">🌿 Locoregional</button>
+      <button class="chip" data-system="specific">🐕 เคสพิเศษ</button>
+      <button class="chip" data-system="pain">🤕 จัดการปวด</button>
+      <button class="chip" data-system="euthanasia">🌈 Euthanasia</button>
     </div>
 
     <!-- ENTRY LIST ------------------------------------------------ -->
@@ -157,7 +154,7 @@
     </div>
   </div>
 
-  <script src="auth.js?v=20260501ad"></script>
+  <script src="auth.js?v=20260501af"></script>
   <script src="anesthesia-data.js"></script>
   <script>
     // ============================================================

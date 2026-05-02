@@ -1896,6 +1896,46 @@ html.locked .lock-screen { display: flex; }
 .color-infectious      { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
 .color-procedure       { --entry-color: var(--ink);    --detail-color: var(--ink);    --detail-color-soft: var(--bg); }
 
+/* Surgery handbook systems */
+.color-principles      { --entry-color: var(--ink);    --detail-color: var(--ink);    --detail-color-soft: var(--bg); }
+.color-soft-tissue     { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+.color-orthopedic      { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }
+.color-urogenital      { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
+.color-head-neck       { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-oncologic       { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-reconstructive  { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+.color-neurosurgery    { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+
+/* Procedures handbook systems */
+.color-examination     { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }
+.color-vascular        { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-gi              { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
+.color-emergency       { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-lab             { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+.color-imaging         { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-skin            { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+
+/* Anesthesia handbook systems */
+.color-preanes         { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }
+.color-premed          { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-induction       { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+.color-inhalant        { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
+.color-equipment       { --entry-color: var(--ink);    --detail-color: var(--ink);    --detail-color-soft: var(--bg); }
+.color-monitoring      { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+.color-locoregional    { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+.color-specific        { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-pain            { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-euthanasia      { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+
+/* Radiology handbook systems */
+.color-thoracic        { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+.color-abdominal       { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
+.color-msk             { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }
+.color-head            { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-spine           { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-ultrasound      { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+.color-advanced        { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+
 /* ============================================================================
    SHARED PAGE — Expense Tracker (แชร์ๆ)
    ============================================================================ */
