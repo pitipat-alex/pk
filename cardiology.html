@@ -19,7 +19,7 @@
       } catch (e) {}
     })();
   </script>
-  <title>Anesthesia · Handbook</title>
+  <title>Cardiology · Handbook</title>
 
   <script>
     let lastTap = 0;
@@ -81,10 +81,10 @@
     </header>
 
     <!-- PAGE HERO ------------------------------------------------- -->
-    <section class="page-hero" style="--page-accent: var(--blue);">
-      <p class="page-eyebrow">HANDBOOK · ANESTHESIA</p>
-      <h1 class="page-title" style="color: var(--blue);">วิสัญญีและการจัดการปวด</h1>
-      <p class="page-subtitle">Small Animal Anesthesia and Pain Management · Jeff C. Ko, 3<sup>rd</sup> Edition (2025)</p>
+    <section class="page-hero" style="--page-accent: var(--red);">
+      <p class="page-eyebrow">HANDBOOK · CARDIOLOGY</p>
+      <h1 class="page-title" style="color: var(--red);">หัวใจ &amp; หลอดเลือด</h1>
+      <p class="page-subtitle">Bussadori · Textbook of Cardiovascular Medicine + Duque-Carrasco · Cardiovascular-Renal Axis</p>
       <p class="page-meta" id="entryStats">— เรื่อง</p>
     </section>
 
@@ -93,23 +93,19 @@
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
       </svg>
-      <input type="search" id="searchInput" placeholder="ค้นหา (เช่น propofol, ASA, hypotension, epidural)" autocomplete="off" />
+      <input type="search" id="searchInput" placeholder="ค้นหา (เช่น MMVD, HCM, ECG, murmur)" autocomplete="off" />
     </div>
 
     <!-- FILTER CHIPS ---------------------------------------------- -->
     <div class="filter-chips" id="filterChips">
       <button class="chip active" data-system="all">ทั้งหมด</button>
-      <button class="chip" data-system="preanes">🩺 ก่อน Anesthesia</button>
-      <button class="chip" data-system="premed">💊 Premedication</button>
-      <button class="chip" data-system="induction">💉 IV Induction</button>
-      <button class="chip" data-system="inhalant">💨 Inhalant</button>
-      <button class="chip" data-system="equipment">🔧 อุปกรณ์/Fluid</button>
-      <button class="chip" data-system="monitoring">📊 Monitoring</button>
-      <button class="chip" data-system="emergency">🚨 ฉุกเฉิน</button>
-      <button class="chip" data-system="locoregional">🌿 Locoregional</button>
-      <button class="chip" data-system="specific">🐕 เคสพิเศษ</button>
-      <button class="chip" data-system="pain">🤕 จัดการปวด</button>
-      <button class="chip" data-system="euthanasia">🌈 Euthanasia</button>
+      <button class="chip" data-system="principles">🔬 หลักการ/Diagnostics</button>
+      <button class="chip" data-system="acquired-dog">💜 Acquired Dog</button>
+      <button class="chip" data-system="acquired-cat">💛 Acquired Cat</button>
+      <button class="chip" data-system="congenital">🔵 Congenital</button>
+      <button class="chip" data-system="arrhythmia">⚡ Arrhythmia</button>
+      <button class="chip" data-system="chf">💊 CHF Management</button>
+      <button class="chip" data-system="cardiorenal">🫘 Cardiorenal</button>
     </div>
 
     <!-- ENTRY LIST ------------------------------------------------ -->
@@ -146,7 +142,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
         <span>กลับ</span>
       </button>
-      <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;" id="detailBreadcrumb">ANESTHESIA</span>
+      <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;" id="detailBreadcrumb">CARDIOLOGY</span>
       <span style="width:80px"></span>
     </header>
     <div class="detail-content" id="detailContent">
@@ -155,26 +151,22 @@
   </div>
 
   <script src="auth.js?v=20260501ar"></script>
-  <script src="anesthesia-data.js"></script>
+  <script src="cardiology-data.js"></script>
   <script>
     // ============================================================
-    // Anesthesia handbook UI logic
-    // Data lives in anesthesia-data.js (window.ANESTHESIA_DATA)
+    // Cardiology handbook UI logic
+    // Data lives in cardiology-data.js (window.CARDIOLOGY_DATA)
     // ============================================================
-    const ENTRIES = window.ANESTHESIA_DATA || [];
+    const ENTRIES = window.CARDIOLOGY_DATA || [];
 
     const SYSTEM_LABEL_TH = {
-      preanes:        '🩺 ก่อน Anesthesia',
-      premed:         '💊 Premedication',
-      induction:      '💉 IV Induction',
-      inhalant:       '💨 Inhalant',
-      equipment:      '🔧 อุปกรณ์ + ของเหลว',
-      monitoring:     '📊 Monitoring',
-      emergency:      '🚨 ฉุกเฉิน',
-      locoregional:   '🌿 Locoregional',
-      specific:       '🐕 เคสพิเศษ',
-      pain:           '🤕 จัดการปวด',
-      euthanasia:     '🌈 Euthanasia',
+      principles:    '🔬 หลักการ/Diagnostics',
+      'acquired-dog':'💜 Acquired Dog',
+      'acquired-cat':'💛 Acquired Cat',
+      congenital:    '🔵 Congenital',
+      arrhythmia:    '⚡ Arrhythmia',
+      chf:           '💊 CHF Management',
+      cardiorenal:   '🫘 Cardiorenal',
     };
 
     const $list  = document.getElementById('entryList');
@@ -266,11 +258,42 @@
         { title: 'การดูแลหลังหัตถการ · Post-procedural Care', body: s.postCare },
       ];
     }
+    function cardiologyTopicSections(s) {
+      // For type='topic' (diagnostics like ECG, echo, auscultation)
+      return [
+        { title: 'ข้อบ่งชี้ · Indications',                body: s.indications },
+        { title: 'ข้อจำกัด/ข้อควรระวัง · Limitations',    body: s.contraindications },
+        { title: 'การเตรียม · Preparation',                body: s.preparation },
+        { title: '🔍 วิธีการ + การตีความ',                  body: s.steps },
+        { title: '⚠️ ข้อผิดพลาดที่พบบ่อย · Pitfalls',     body: s.complications },
+        { title: '📌 Tips + Next Steps',                   body: s.postCare },
+      ];
+    }
+    function cardiologyDiseaseSections(s) {
+      // For type='disease' (MMVD, HCM, DCM, etc.) — 8-section template
+      return [
+        { title: 'นิยาม + Staging · Definition',           body: s.definition },
+        { title: 'สาเหตุ + Risk Factors · Etiology',      body: s.etiology },
+        { title: 'พยาธิกำเนิด · Pathophysiology',          body: s.pathophysiology },
+        { title: 'อาการ + Physical Exam · Symptoms',      body: s.symptoms },
+        { title: '🔍 การวินิจฉัย · Diagnosis',              body: s.diagnosis },
+        { title: 'แยกโรค · Differential Diagnosis',        body: s.differential },
+        { title: '💊 การรักษา · Treatment',                body: s.treatment },
+        { title: '⚠️ Complications + Prognosis',          body: s.complications },
+      ];
+    }
 
     function openDetail(entry) {
-      const sections = entry.type === 'procedure'
-        ? procedureSections(entry.sections || {})
-        : diseaseSections(entry.sections || {});
+      let sections;
+      if (entry.type === 'procedure') {
+        sections = procedureSections(entry.sections || {});
+      } else if (entry.type === 'topic') {
+        sections = cardiologyTopicSections(entry.sections || {});
+      } else if (entry.type === 'disease') {
+        sections = cardiologyDiseaseSections(entry.sections || {});
+      } else {
+        sections = diseaseSections(entry.sections || {});
+      }
       const sysLabel = SYSTEM_LABEL_TH[entry.system] || entry.system;
       $detailBC.textContent = sysLabel.toUpperCase();
       $detailContent.className = 'detail-content color-' + (entry.type === 'procedure' ? 'procedure' : entry.system);

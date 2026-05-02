@@ -1936,6 +1936,15 @@ html.locked .lock-screen { display: flex; }
 .color-ultrasound      { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
 .color-advanced        { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
 
+/* Cardiology handbook systems */
+.color-acquired-dog    { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-acquired-cat    { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
+.color-congenital      { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }
+.color-arrhythmia      { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-chf             { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+.color-cardiorenal     { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+/* (color-principles already defined for Surgery) */
+
 /* ============================================================================
    SHARED PAGE — Expense Tracker (แชร์ๆ)
    ============================================================================ */
