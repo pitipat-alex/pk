@@ -19,7 +19,7 @@
       } catch (e) {}
     })();
   </script>
-  <title>Anesthesia · Handbook</title>
+  <title>Radiology · Handbook</title>
 
   <script>
     let lastTap = 0;
@@ -81,10 +81,10 @@
     </header>
 
     <!-- PAGE HERO ------------------------------------------------- -->
-    <section class="page-hero" style="--page-accent: var(--blue);">
-      <p class="page-eyebrow">HANDBOOK · ANESTHESIA</p>
-      <h1 class="page-title" style="color: var(--blue);">วิสัญญีและการจัดการปวด</h1>
-      <p class="page-subtitle">Small Animal Anesthesia and Pain Management · Jeff C. Ko, 3<sup>rd</sup> Edition (2025)</p>
+    <section class="page-hero" style="--page-accent: var(--red);">
+      <p class="page-eyebrow">HANDBOOK · RADIOLOGY</p>
+      <h1 class="page-title" style="color: var(--red);">รังสีวินิจฉัย</h1>
+      <p class="page-subtitle">Textbook of Veterinary Diagnostic Radiology · Thrall &amp; Seiler, 8<sup>th</sup> Edition (2022)</p>
       <p class="page-meta" id="entryStats">— เรื่อง</p>
     </section>
 
@@ -93,7 +93,7 @@
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>
       </svg>
-      <input type="search" id="searchInput" placeholder="ค้นหา (เช่น propofol, ASA, hypotension, epidural)" autocomplete="off" />
+      <input type="search" id="searchInput" placeholder="ค้นหา (เช่น VHS, lung pattern, GDV, hip dysplasia)" autocomplete="off" />
     </div>
 
     <!-- FILTER CHIPS ---------------------------------------------- -->
@@ -149,7 +149,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
         <span>กลับ</span>
       </button>
-      <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;" id="detailBreadcrumb">ANESTHESIA</span>
+      <span style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-mute); letter-spacing: 0.06em;" id="detailBreadcrumb">RADIOLOGY</span>
       <span style="width:80px"></span>
     </header>
     <div class="detail-content" id="detailContent">
@@ -158,26 +158,23 @@
   </div>
 
   <script src="auth.js?v=20260501aa"></script>
-  <script src="anesthesia-data.js"></script>
+  <script src="radiology-data.js"></script>
   <script>
     // ============================================================
-    // Anesthesia handbook UI logic
-    // Data lives in anesthesia-data.js (window.ANESTHESIA_DATA)
+    // Radiology handbook UI logic
+    // Data lives in radiology-data.js (window.RADIOLOGY_DATA)
     // ============================================================
-    const ENTRIES = window.ANESTHESIA_DATA || [];
+    const ENTRIES = window.RADIOLOGY_DATA || [];
 
     const SYSTEM_LABEL_TH = {
-      preanes:        '🩺 ก่อน Anesthesia',
-      premed:         '💊 Premedication',
-      induction:      '💉 IV Induction',
-      inhalant:       '💨 Inhalant',
-      equipment:      '🔧 อุปกรณ์ + ของเหลว',
-      monitoring:     '📊 Monitoring',
-      emergency:      '🚨 ฉุกเฉิน',
-      locoregional:   '🌿 Locoregional',
-      specific:       '🐕 เคสพิเศษ',
-      pain:           '🤕 จัดการปวด',
-      euthanasia:     '🌈 Euthanasia',
+      principles:     '📷 หลักการพื้นฐาน',
+      thoracic:       '🫁 ทรวงอก',
+      abdominal:      '🥩 ช่องท้อง',
+      msk:            '🦴 กระดูก/ข้อ',
+      head:           '👃 หัว/ฟัน',
+      spine:          '🦴 กระดูกสันหลัง',
+      ultrasound:     '🔊 Ultrasound',
+      advanced:       '⚕️ CT / MRI / Contrast',
     };
 
     const $list  = document.getElementById('entryList');

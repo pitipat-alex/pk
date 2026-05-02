@@ -478,6 +478,7 @@ body {
 .card.c4 { --c-main: var(--green);  --c-soft: var(--green-soft);  --c-shadow: rgba(6,167,125,0.32); }
 .card.c5 { --c-main: var(--blue);   --c-soft: var(--blue-soft);   --c-shadow: rgba(39,125,161,0.32); }
 .card.c6 { --c-main: var(--purple); --c-soft: var(--purple-soft); --c-shadow: rgba(123,44,191,0.32); }
+.card.c7 { --c-main: #2d3a4a;      --c-soft: rgba(45,58,74,0.10); --c-shadow: rgba(45,58,74,0.32); }
 
 /* Staggered entrance */
 .card {
@@ -491,6 +492,7 @@ body {
 .card.c4 { animation-delay: 0.34s; }
 .card.c5 { animation-delay: 0.42s; }
 .card.c6 { animation-delay: 0.50s; }
+.card.c7 { animation-delay: 0.58s; }
 @keyframes cardIn {
   to { opacity: 1; transform: translateY(0); }
 }
