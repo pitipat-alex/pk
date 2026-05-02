@@ -60,16 +60,46 @@ window.RADIOLOGY_DATA = [
         </div>
 
         <p><strong>Workflow มาตรฐาน:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Image Quality Check — "PEAR"</span>
+          <ul>
+            <li><strong>P</strong>osition — สมมาตร · ไม่บิด · symmetric ribs/spine</li>
+            <li><strong>E</strong>xposure — ไม่ over/underexposed · เห็น vessels ผ่าน heart</li>
+            <li><strong>A</strong>natomy — ขอบครบ · ทุกอย่างใน field</li>
+            <li><strong>R</strong>espiration — inspiratory phase ถ้าเป็น thorax</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"PEAR ก่อน Read"</strong> — ตรวจ quality ก่อน interpret<br>
+          ⚠️ Image แย่ → ตีความผิด → re-take ดีกว่าเสี่ยง miss</p>
+        </div>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Common "Rule of 2s" Examples</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">3</span>
+              <span class="num-label">Thoracic met (RL+LL+VD)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2</span>
+              <span class="num-label">Limb fracture (Lat+CrCd)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2-3</span>
+              <span class="num-label">Abdominal (RL+VD ± LL)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2</span>
+              <span class="num-label">Hip dysplasia (VD+frog-leg)</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 จำนวน views ขั้นต่ำสำหรับแต่ละกรณี<br>
+          📌 <strong>Thorax met = 3 views &gt; 2 views</strong> · sensitivity เพิ่มขึ้นมาก</p>
+        </div>
+
         <ol>
           <li>ถ่าย minimum 2 views ตั้งฉากกัน</li>
-          <li>ตรวจ image quality ก่อน:
-            <ul>
-              <li>Position ถูกต้อง? (สมมาตร · ไม่บิด)</li>
-              <li>Exposure ดี? (ไม่ over/underexposed)</li>
-              <li>Phase หายใจถูก? (inspiratory สำหรับ thorax)</li>
-              <li>Anatomy ครบ? (ขอบ field of view)</li>
-            </ul>
-          </li>
+          <li>ตรวจ image quality ก่อน (PEAR)</li>
           <li>Interpret ด้วย systematic approach (ดู entry แต่ละระบบ)</li>
           <li>เปรียบเทียบกับ contralateral side ถ้ามีปัญหาเดียว</li>
           <li>Recheck/follow-up ตาม clinical course</li>
@@ -319,12 +349,37 @@ window.RADIOLOGY_DATA = [
         </ul>
 
         <p><strong>Tips สำหรับ challenging patient:</strong></p>
-        <ul>
-          <li><strong>Dyspneic:</strong> stand or sternal · standing lateral OK</li>
-          <li><strong>Spinal injury:</strong> ห้ามขยับ — สไลด์ board · cross-table lateral</li>
-          <li><strong>Brachycephalic:</strong> stress + breathing — sedate gently · DV preferred</li>
-          <li><strong>Cat fractious:</strong> sedation almost always needed for diagnostic film</li>
-        </ul>
+
+        <div class="mnemonic diagram">
+          <span class="mnem-title">เคสยาก — เลือก Position ที่เหมาะ</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">Dyspneic 🫁</span>
+              <strong>DV &gt; VD</strong><br>
+              Standing/sternal OK<br>
+              <em>O2 first · ลด stress</em>
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">Spinal Injury 🦴</span>
+              <strong>ห้ามขยับ!</strong><br>
+              Cross-table lateral<br>
+              <em>Slide board only</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">Brachycephalic 🐶</span>
+              <strong>DV preferred</strong><br>
+              Sedate gently<br>
+              <em>Bulldog · Pug · French</em>
+            </div>
+            <div class="diagram-box purple">
+              <span class="box-title">Cat Fractious 🐱</span>
+              <strong>Sedation always</strong><br>
+              <em>For diagnostic quality</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"Sedate first, position second"</strong> · ลด re-takes<br>
+          📌 <strong>DV vs VD:</strong> DV tolerate ดีกว่าใน dyspneic · VD ดูปอด detail ดีกว่า</p>
+        </div>
       `,
       complications: `
         <ul>
@@ -600,18 +655,21 @@ window.RADIOLOGY_DATA = [
           <li>Sensitive กว่า VHS สำหรับ early MMVD</li>
         </ul>
 
-        <p><strong>Breed-specific normal VHS (สำคัญ!):</strong></p>
-        <table style="width:100%; border-collapse:collapse; font-size:13px; margin:10px 0;">
-          <tr style="background: var(--c-soft);">
-            <th style="text-align:left; padding:6px;">Breed</th><th style="padding:6px;">Normal VHS</th>
-          </tr>
-          <tr><td style="padding:6px;">Cavalier KCS</td><td>9.9-10.5</td></tr>
-          <tr><td style="padding:6px;">Boxer</td><td>11.0-12.0</td></tr>
-          <tr><td style="padding:6px;">Bulldog</td><td>11.0-12.5</td></tr>
-          <tr><td style="padding:6px;">Yorkie</td><td>9.0-10.5</td></tr>
-          <tr><td style="padding:6px;">Greyhound</td><td>9.0-10.0</td></tr>
-          <tr><td style="padding:6px;">Pomeranian</td><td>9.5-10.5</td></tr>
-        </table>
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Breed-Specific Normal VHS — สำคัญ!</span>
+          <table>
+            <tr><th>Breed</th><th>Normal VHS</th></tr>
+            <tr><td><strong>Cavalier KCS</strong></td><td>9.9-10.5 ⭐ (MMVD prone)</td></tr>
+            <tr><td><strong>Boxer</strong></td><td>11.0-12.0 (high normal!)</td></tr>
+            <tr><td><strong>Bulldog</strong></td><td>11.0-12.5 (highest!)</td></tr>
+            <tr><td><strong>Yorkie</strong></td><td>9.0-10.5</td></tr>
+            <tr><td><strong>Greyhound</strong></td><td>9.0-10.0 (low normal)</td></tr>
+            <tr><td><strong>Pomeranian</strong></td><td>9.5-10.5</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>"Brachycephalic = high VHS normal"</strong> · ห้ามตื่นตกใจ<br>
+          📌 <strong>Cavalier KCS: VHS &gt; 10.5 + clinical = early MMVD</strong><br>
+          📌 <strong>Compare with Greyhound 9-10</strong> · breed กระทบมาก</p>
+        </div>
       `,
       complications: `
         <ul>
@@ -703,16 +761,24 @@ window.RADIOLOGY_DATA = [
         <ul>
           <li><strong>ลักษณะ:</strong> ขาวฟุ้ง (soft tissue opacity) ในเนื้อปอด · บดบัง pulmonary vessels</li>
           <li><strong>Air bronchogram</strong> = bronchi เห็นเป็นเส้นดำในพื้นขาว (alveoli เต็ม fluid/cells, bronchi ยังมี air) — diagnostic!</li>
-          <li>Distribution บอก etiology:
-            <ul>
-              <li><strong>Cardiogenic edema:</strong> perihilar + caudodorsal (หมา) · diffuse (แมว)</li>
-              <li><strong>Aspiration pneumonia:</strong> right middle + cranial lobe (ทาง gravity)</li>
-              <li><strong>Bacterial pneumonia:</strong> cranio-ventral, asymmetric</li>
-              <li><strong>Neoplasia:</strong> mass-like, focal</li>
-              <li><strong>Hemorrhage:</strong> diffuse or focal post-trauma</li>
-            </ul>
-          </li>
         </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Alveolar Distribution → Diagnosis</span>
+          <table>
+            <tr><th>Distribution</th><th>DDx</th></tr>
+            <tr><td><strong>Perihilar + caudodorsal (หมา)</strong></td><td>Cardiogenic edema (CHF) ⭐</td></tr>
+            <tr><td><strong>Diffuse (แมว)</strong></td><td>HCM CHF</td></tr>
+            <tr><td><strong>Right middle + cranial lobe</strong></td><td>Aspiration pneumonia (gravity)</td></tr>
+            <tr><td><strong>Cranio-ventral asymmetric</strong></td><td>Bacterial pneumonia</td></tr>
+            <tr><td><strong>Mass-like focal</strong></td><td>Neoplasia</td></tr>
+            <tr><td><strong>Caudodorsal symmetric</strong></td><td>Non-cardiogenic edema (ARDS, neurogenic)</td></tr>
+            <tr><td><strong>Diffuse post-trauma</strong></td><td>Pulmonary contusion</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>"Distribution = Diagnosis"</strong><br>
+          📌 <strong>Aspiration = right cranial/middle</strong> (gravity ตอนนอน)<br>
+          📌 <strong>Cat CHF = diffuse</strong> · ไม่เหมือนหมา (perihilar)</p>
+        </div>
 
         <p><strong>2. Bronchial Pattern:</strong></p>
         <ul>
@@ -1065,13 +1131,17 @@ window.RADIOLOGY_DATA = [
           <li><strong>Closed vs open:</strong> radiograph ไม่บอก — clinical history important</li>
         </ul>
 
-        <p><strong>Pneumothorax DDx:</strong></p>
-        <ul>
-          <li><strong>Spontaneous</strong> — bullae rupture (deep-chested dog), feline asthma</li>
-          <li><strong>Traumatic</strong> — HBC, bite wound, penetrating injury</li>
-          <li><strong>Iatrogenic</strong> — post-thoracocentesis, post-FNA, post-surgery</li>
-          <li><strong>Tension pneumothorax</strong> — life-threatening · emergency thoracocentesis</li>
-        </ul>
+        <div class="mnemonic thai">
+          <span class="mnem-title">Pneumothorax Causes — "STIT"</span>
+          <ul>
+            <li><strong>S</strong>pontaneous — Bullae rupture (deep-chested dog) · feline asthma</li>
+            <li><strong>T</strong>raumatic — HBC · bite wound · penetrating</li>
+            <li><strong>I</strong>atrogenic — post-thoracocentesis · post-FNA · post-surgery</li>
+            <li><strong>T</strong>ension — Life-threatening · emergency!</li>
+          </ul>
+          <p class="mnem-tip">⚠️ <strong>Tension pneumothorax</strong> = mediastinal shift · diaphragm flat/inverted · ต้อง decompress ทันที!<br>
+          📌 <strong>Spontaneous in deep-chested dog</strong> = bullae rupture · CT for confirm + surgical planning</p>
+        </div>
 
         <p><strong>Other pleural disease:</strong></p>
         <ul>
@@ -3068,6 +3138,1654 @@ window.RADIOLOGY_DATA = [
           <li>Tip: <strong>OFA = ≥ 24 mo</strong> · PennHIP = ≥ 16 wk</li>
           <li>Tip: <strong>PennHIP DI &gt; 0.7 = high risk OA</strong></li>
           <li>Tip: <strong>Morgan line = earliest sign</strong></li>
+        </ul>
+      `
+    }
+  },
+
+  /* ============================================================
+     Head / Spine · หัว/ฟัน/กระดูกสันหลัง (3)
+     ============================================================ */
+
+  {
+    id: 'rad-nasal-disease',
+    titleEn: 'Nasal &amp; Sinus Disease',
+    titleTh: 'โรคจมูกและไซนัส',
+    type: 'topic',
+    system: 'head',
+    species: ['dog', 'cat'],
+    tags: ['nasal', 'sinus', 'rhinitis', 'tumor', 'aspergillus'],
+    aliases: ['nasal disease', 'จมูก', 'sinusitis'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li>Chronic nasal discharge (uni/bilateral)</li>
+          <li>Epistaxis</li>
+          <li>Sneezing · stertor · facial deformity</li>
+          <li>Suspected nasal tumor / fungal / FB</li>
+        </ul>
+      `,
+      contraindications: `<ul><li>ต้อง heavy sedation/GA · proper position สำคัญ</li></ul>`,
+      preparation: `
+        <ul>
+          <li><strong>Open mouth VD</strong> (intra-oral view) — best!</li>
+          <li>Lateral skull view</li>
+          <li>Rostro-caudal view (frontal sinus)</li>
+          <li><strong>CT = gold standard</strong> สำหรับ nasal cavity</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">Nasal Disease — "DDx by Pattern"</span>
+          <ul>
+            <li><strong>Lytic (กระดูกหาย)</strong> ⚠️ — Tumor (most likely!) · aspergillosis · cryptococcosis</li>
+            <li><strong>Mineralized mass</strong> — Chronic tumor · ossifying granuloma</li>
+            <li><strong>Increased opacity</strong> (อ้อย) — Mucus · pus · blood · soft tissue mass</li>
+            <li><strong>Bilateral lytic + frontal sinus</strong> — Aspergillosis classic</li>
+            <li><strong>Unilateral lytic</strong> — Tumor (especially carcinoma)</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Unilateral lytic = tumor"</strong> until proven<br>
+          📌 <strong>Bilateral lytic + frontal sinus = aspergillosis</strong><br>
+          ⚠️ Radiograph มีจำกัด · CT ดีกว่ามาก</p>
+        </div>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Nasal DDx Quick Reference</span>
+          <table>
+            <tr><th>DDx</th><th>Signalment</th><th>Pattern</th></tr>
+            <tr><td><strong>Tumor</strong></td><td>Older dog &gt; cat · dolichocephalic</td><td>Unilateral lytic + soft tissue mass</td></tr>
+            <tr><td><strong>Aspergillosis</strong></td><td>Young-mid adult dog · dolichocephalic</td><td>Bilateral turbinate destruction · frontal sinus</td></tr>
+            <tr><td><strong>Cryptococcosis</strong></td><td>Cat (Australia, Pacific)</td><td>Mass lesion · facial deformity</td></tr>
+            <tr><td><strong>Lymphoplasmacytic rhinitis</strong></td><td>Any dog</td><td>Increased opacity · subtle turbinate loss</td></tr>
+            <tr><td><strong>Foreign body</strong></td><td>Hunting dog · grass awn</td><td>Localized opacity · sneezing</td></tr>
+            <tr><td><strong>Tooth root abscess</strong></td><td>Older dog</td><td>Localized lysis at maxillary tooth root</td></tr>
+            <tr><td><strong>Nasopharyngeal polyp</strong></td><td>Young cat</td><td>Mass at nasopharynx + bulla</td></tr>
+          </table>
+        </div>
+
+        <p><strong>Tumor Types:</strong></p>
+        <ul>
+          <li><strong>Adenocarcinoma</strong> — most common (dog)</li>
+          <li><strong>Chondrosarcoma</strong></li>
+          <li><strong>Squamous cell carcinoma</strong></li>
+          <li><strong>Lymphoma</strong> (cat especially)</li>
+          <li><strong>Osteosarcoma</strong> rare</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Tooth Root Abscess — Carnassial Tooth</span>
+          <ul>
+            <li><strong>Maxillary 4th premolar (carnassial)</strong> — most common!</li>
+            <li>Causes <strong>"oronasal fistula"</strong></li>
+            <li>Discharge below eye / from nose</li>
+            <li>Lysis at root tip on dental view</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>Carnassial = หมาที่ฟันใหญ่ที่สุด upper</strong> · ติดเชื้อบ่อย · เคยถูกตีว่า "tumor"<br>
+          📌 ตรวจฟันก่อนคิด tumor!</p>
+        </div>
+
+        <p><strong>Frontal Sinus:</strong></p>
+        <ul>
+          <li>Normal: gas-filled, symmetric</li>
+          <li>Fluid: cellulitis, abscess, hemorrhage, mucus</li>
+          <li>Mineralization: chronic disease, cryptococcosis, tumor</li>
+          <li>Bony lysis: aspergillosis, tumor</li>
+          <li>Best view: rostro-caudal (frontal sinus highlight)</li>
+        </ul>
+
+        <p><strong>Nasopharyngeal Polyp (Cat):</strong></p>
+        <ul>
+          <li>Young cat (often &lt; 2 yr)</li>
+          <li>Stertor, dyspnea, +/- ear discharge</li>
+          <li>Lateral skull/pharynx: soft tissue mass at nasopharynx</li>
+          <li>Often + bulla osteitis (middle ear)</li>
+          <li>Treat: traction-avulsion or bulla osteotomy</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Radiograph alone often insufficient · CT needed</li>
+          <li>Sedation issues in dyspneic patient</li>
+          <li>Position errors → asymmetry mimics disease</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>CT for definitive evaluation</li>
+          <li>Rhinoscopy + biopsy (mass) or culture (fungal)</li>
+          <li>Tip: <strong>"Unilateral lytic = tumor"</strong></li>
+          <li>Tip: <strong>"Bilateral lytic + sinus = aspergillosis"</strong></li>
+          <li>Tip: <strong>Check carnassial tooth</strong> for abscess before tumor!</li>
+          <li>Tip: <strong>CT &gt; radiograph</strong> for nasal cavity</li>
+        </ul>
+      `
+    }
+  },
+
+  {
+    id: 'rad-dental',
+    titleEn: 'Dental Radiography',
+    titleTh: 'รังสีฟัน (Dental)',
+    type: 'topic',
+    system: 'head',
+    species: ['dog', 'cat'],
+    tags: ['dental', 'tooth', 'periodontal', 'FORL', 'parallel', 'bisecting'],
+    aliases: ['dental rad', 'รังสีฟัน', 'tooth X-ray'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li>Pre-extraction evaluation (every COHAT!)</li>
+          <li>Periodontal disease assessment</li>
+          <li>Suspected tooth resorption (cat especially!)</li>
+          <li>Tooth root abscess workup</li>
+          <li>Fractured tooth · pulp exposure</li>
+          <li>Oral mass evaluation</li>
+        </ul>
+      `,
+      contraindications: `<ul><li>ไม่มี — ต้อง GA</li></ul>`,
+      preparation: `
+        <ul>
+          <li>Dental X-ray unit + sensors (digital) or films</li>
+          <li>Patient under GA · ETT cuffed</li>
+          <li>Mouth gag (use carefully — not too wide!)</li>
+          <li>Position aids · tape</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">Dental Imaging Techniques — 2 หลักการ</span>
+          <ul>
+            <li><strong>Parallel technique</strong> — film // tooth · used for mandibular premolars/molars</li>
+            <li><strong>Bisecting angle technique</strong> — most teeth · sensor cannot be parallel · angle = bisector of (tooth angle + sensor angle)</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>Bisecting = "ครึ่งทาง"</strong> · มุม X-ray = ครึ่งของมุมรวม<br>
+          📌 ผิด → ภาพ <strong>elongated</strong> (มุมต่ำเกิน) หรือ <strong>foreshortened</strong> (มุมสูงเกิน)</p>
+        </div>
+
+        <p><strong>Standard Views — "Full Mouth Series":</strong></p>
+        <ul>
+          <li><strong>Maxillary incisors + canines</strong> — bisecting</li>
+          <li><strong>Maxillary premolars + molars</strong> — bisecting (separate L+R)</li>
+          <li><strong>Mandibular incisors + canines</strong> — bisecting</li>
+          <li><strong>Mandibular premolars + molars</strong> — parallel (best technique here)</li>
+          <li>Total: ~6-10 films for full mouth (cat) · 14-16 (dog)</li>
+        </ul>
+
+        <p><strong>Tooth Anatomy on Radiograph:</strong></p>
+        <ul>
+          <li><strong>Crown</strong> — เหนือ gingiva</li>
+          <li><strong>Cementoenamel junction (CEJ)</strong> — ที่ gum line</li>
+          <li><strong>Root</strong> — embedded in alveolar bone</li>
+          <li><strong>Pulp cavity</strong> — central radiolucent</li>
+          <li><strong>Periodontal ligament space</strong> — thin radiolucent line around root</li>
+          <li><strong>Lamina dura</strong> — radiopaque line of bone next to PDL</li>
+          <li><strong>Alveolar crest</strong> — bone level at gingival line</li>
+        </ul>
+
+        <div class="mnemonic diagram">
+          <span class="mnem-title">Periodontal Disease Stages (PD)</span>
+          <div class="diagram-grid">
+            <div class="diagram-box green">
+              <span class="box-title">PD0-1</span>
+              Normal / mild gingivitis<br>
+              <em>No bone loss</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">PD2</span>
+              &lt; 25% bone loss<br>
+              Slight crest blunting<br>
+              <em>Early periodontitis</em>
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">PD3</span>
+              25-50% bone loss<br>
+              Moderate<br>
+              <em>+/- mobility</em>
+            </div>
+            <div class="diagram-box red">
+              <span class="box-title">PD4</span>
+              &gt; 50% bone loss<br>
+              Severe<br>
+              <em>Extraction usually</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>PD0-1 prophy OK</strong> · <strong>PD3-4 → consider extraction</strong><br>
+          📌 Radiograph essential for grading · clinical exam alone underestimates</p>
+        </div>
+
+        <p><strong>FORL (Feline Odontoclastic Resorptive Lesions):</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">FORL — แมวเป็นบ่อย!</span>
+          <ul>
+            <li><strong>Cat &gt; 30%</strong> มี at least 1 lesion</li>
+            <li>Tooth resorption — root → crown</li>
+            <li>Radiograph essential (ส่วนใหญ่ subgingival)</li>
+            <li><strong>Type 1:</strong> root structure intact, gingival defect (treat: extraction)</li>
+            <li><strong>Type 2:</strong> root replaced by bone (treat: <strong>crown amputation</strong> if subgingival, no painful root remnant)</li>
+            <li><strong>Type 3:</strong> mixed</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"FORL ไม่เห็นจาก visual exam"</strong> · ต้อง <strong>dental radiograph</strong> เสมอ<br>
+          ⚠️ Type 2 → crown amputation OK · ไม่ต้องดึงรากที่หายไป</p>
+        </div>
+
+        <p><strong>Tooth Root Abscess Signs:</strong></p>
+        <ul>
+          <li>Periapical lucency (radiolucent area at root tip)</li>
+          <li>Loss of lamina dura</li>
+          <li>Widened PDL space</li>
+          <li>+/- bone destruction extending</li>
+          <li>+/- oronasal fistula (maxillary 4th PM classic)</li>
+        </ul>
+
+        <p><strong>Other Common Findings:</strong></p>
+        <ul>
+          <li><strong>Retained deciduous teeth</strong> — common in small breed</li>
+          <li><strong>Missing teeth</strong> — agenesis vs unerupted (tipping/cyst possible)</li>
+          <li><strong>Dentigerous cyst</strong> — fluid around unerupted tooth</li>
+          <li><strong>Fractured tooth</strong> — pulp exposure → endo or extraction</li>
+          <li><strong>Persistent deciduous canines</strong> — yorkie, small breed</li>
+        </ul>
+
+        <p><strong>Cat-Specific Considerations:</strong></p>
+        <ul>
+          <li>FORL in &gt; 30% cats</li>
+          <li><strong>Stomatitis (gingivostomatitis)</strong> — diffuse mucosal inflammation · Calicivirus association · radiograph normal usually</li>
+          <li>Different tooth count: 30 deciduous, 30 permanent</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Bisecting angle errors → distortion</li>
+          <li>Missed FORL without radiograph</li>
+          <li>Mouth gag too wide → cat blindness (maxillary artery occlusion)</li>
+          <li>Radiation dose to staff</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>Document findings + tooth-by-tooth in chart (Triadan numbering)</li>
+          <li>Plan extractions based on radiograph</li>
+          <li>Recheck post-extraction radiograph (confirm complete root removal)</li>
+          <li>Tip: <strong>"FORL = always radiograph"</strong> · cat ≥ 30% have it</li>
+          <li>Tip: <strong>Bisecting angle for upper · Parallel for lower mandibular PM/M</strong></li>
+          <li>Tip: <strong>PD3-4 → extraction</strong> often</li>
+          <li>Tip: <strong>Cat mouth gag — narrow only!</strong></li>
+        </ul>
+      `
+    }
+  },
+
+  {
+    id: 'rad-ivdd-spine',
+    titleEn: 'IVDD &amp; Spinal Disease',
+    titleTh: 'IVDD และโรคของกระดูกสันหลัง',
+    type: 'topic',
+    system: 'spine',
+    species: ['dog', 'cat'],
+    tags: ['IVDD', 'disc', 'spine', 'spondylosis', 'discospondylitis'],
+    aliases: ['IVDD', 'หมอนรองกระดูก', 'spine disease'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li>Acute paresis / paraplegia</li>
+          <li>Spinal pain · neck pain</li>
+          <li>Wobbler suspicion (Doberman, Great Dane)</li>
+          <li>Trauma (HBC) · spinal screening</li>
+          <li>Suspected discospondylitis (fever, spinal pain, vertebral)</li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Acute spinal injury — handle minimally · cross-table lateral</li>
+          <li>Survey radiograph มีจำกัดสำหรับ IVDD · MRI/CT gold standard</li>
+        </ul>
+      `,
+      preparation: `
+        <ul>
+          <li>Lateral + VD spinal series</li>
+          <li>Sedation for proper position</li>
+          <li>Cervical · thoracolumbar · lumbosacral views</li>
+          <li>+/- myelogram (rare now · MRI replaced)</li>
+          <li><strong>MRI = gold standard</strong> · CT good for bone</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">IVDD Hansen Types — "Type 1 vs Type 2"</span>
+          <ul>
+            <li><strong>Type I (chondrodystrophic):</strong>
+              <ul>
+                <li>Acute extrusion (nucleus pulposus → spinal canal)</li>
+                <li><strong>Dachshund · Beagle · Cocker · Pekingese</strong></li>
+                <li>2-7 yr · acute onset</li>
+                <li>Most common in T11-L3 + cervical</li>
+              </ul>
+            </li>
+            <li><strong>Type II (non-chondrodystrophic):</strong>
+              <ul>
+                <li>Chronic protrusion (annulus bulge)</li>
+                <li><strong>Large breed</strong> · Lab, GSD</li>
+                <li>Older · gradual onset</li>
+                <li>Lumbosacral common</li>
+              </ul>
+            </li>
+            <li><strong>Type III (high-velocity, low-volume):</strong>
+              <ul>
+                <li>Acute non-compressive disc · contusion</li>
+                <li>Athletic dog · sudden movement</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>Dachshund = Type I T-L</strong> · classic<br>
+          📌 <strong>Lab/GSD = Type II</strong> · lumbosacral common</p>
+        </div>
+
+        <p><strong>Survey Radiographic Signs of IVDD (LIMITED!):</strong></p>
+        <ul>
+          <li><strong>Narrowed disc space</strong> at affected level (compare adjacent)</li>
+          <li><strong>Wedge-shaped disc space</strong> (anteriorly narrow)</li>
+          <li><strong>Mineralized/calcified disc material</strong> within IVD</li>
+          <li><strong>Mineralized disc material in canal</strong> (rarely visible)</li>
+          <li><strong>Small intervertebral foramen</strong></li>
+          <li>"Cloudy" appearance of disc space</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">⚠️ Survey Radiograph มีจำกัด!</span>
+          <p class="mnem-tip">📌 <strong>Survey radiograph = ~50% sensitive</strong> สำหรับ IVDD<br>
+          📌 Normal radiograph ≠ no IVDD<br>
+          📌 <strong>MRI &gt; myelogram &gt; CT</strong> สำหรับ definitive Dx<br>
+          📌 ใช้ survey เพื่อ rule out: discospondylitis · neoplasia · fracture · congenital · spondylosis</p>
+        </div>
+
+        <p><strong>Modified Frankel Grading (Clinical, not radiograph):</strong></p>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">IVDD Clinical Grading — 5 Grades</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">1</span>
+              <span class="num-label">Pain only</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2</span>
+              <span class="num-label">Ambulatory paresis</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">3</span>
+              <span class="num-label">Non-ambulatory paresis</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">4</span>
+              <span class="num-label">Plegia + pain ✓</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">5</span>
+              <span class="num-label">Plegia + NO deep pain ⚠️</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>Grade 5 (no deep pain) = surgical emergency</strong><br>
+          📌 &lt; 24 hr surgery → 50-60% recovery · &gt; 24 hr → much worse<br>
+          📌 Deep pain present (grade 1-4) = better prognosis</p>
+        </div>
+
+        <p><strong>Discospondylitis:</strong></p>
+        <ul>
+          <li>Bacterial / fungal infection of disc + adjacent endplates</li>
+          <li>Causes: Staph, Strep, Brucella, Aspergillus</li>
+          <li>Signs:
+            <ul>
+              <li><strong>Endplate lysis</strong> (both sides of disc)</li>
+              <li>Disc space widening initially → narrowing</li>
+              <li>Adjacent vertebral sclerosis</li>
+              <li>+/- spondylosis</li>
+              <li>Most common: L7-S1 · mid-thoracic</li>
+            </ul>
+          </li>
+          <li>Workup: blood culture · urine culture · brucella titer · biopsy</li>
+        </ul>
+
+        <p><strong>Spondylosis Deformans:</strong></p>
+        <ul>
+          <li>Bony bridges between adjacent vertebrae · ventral aspect</li>
+          <li>Common in older dogs · usually incidental</li>
+          <li>Boxer especially predisposed</li>
+          <li>Distinguish from discospondylitis (no endplate lysis)</li>
+        </ul>
+
+        <p><strong>Cervical Spondylomyelopathy (Wobbler):</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Wobbler — "Doberman vs Great Dane"</span>
+          <ul>
+            <li><strong>Disc-associated (Doberman type):</strong>
+              <ul>
+                <li>Middle-aged Doberman</li>
+                <li>Disc protrusion C5-C7</li>
+                <li>Type II IVDD pattern</li>
+              </ul>
+            </li>
+            <li><strong>Vertebral malformation (Great Dane type):</strong>
+              <ul>
+                <li>Young Great Dane, Mastiff</li>
+                <li>Vertebral canal stenosis · facet hypertrophy</li>
+                <li>C2-C5 typically</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Doberman = old + disc · Great Dane = young + bone"</strong><br>
+          📌 Clinical: ataxia, "two-engine gait" · cervical pain</p>
+        </div>
+
+        <p><strong>Lumbosacral Disease:</strong></p>
+        <ul>
+          <li>L7-S1 most common location for older large dogs</li>
+          <li>"Cauda equina syndrome" — pain, lameness, urinary/fecal incontinence</li>
+          <li>Type II IVDD most common cause</li>
+          <li>Stenosis from spondylosis, facet hypertrophy</li>
+          <li>Survey: narrowed L7-S1 disc space, +/- spondylosis</li>
+          <li>MRI for definitive Dx</li>
+        </ul>
+
+        <p><strong>Vertebral Fracture / Luxation:</strong></p>
+        <ul>
+          <li>Trauma history</li>
+          <li>"Three-compartment" model — assess stability</li>
+          <li>Cross-table lateral if suspected (don't reposition!)</li>
+          <li>CT best for bony detail</li>
+          <li>Stabilize spine immediately if suspect</li>
+        </ul>
+
+        <p><strong>Vertebral Neoplasia:</strong></p>
+        <ul>
+          <li>Lytic + proliferative bone changes</li>
+          <li>Soft tissue mass +/- pathologic fracture</li>
+          <li>DDx: OSA, lymphoma, plasma cell tumor, met (prostate)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Survey radiograph misses ~50% of IVDD</li>
+          <li>Spinal injury made worse by improper handling</li>
+          <li>Position errors mimic disc narrowing</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>MRI for definitive Dx (gold standard)</li>
+          <li>Conservative: cage rest · NSAID · gabapentin · steroids (controversial)</li>
+          <li>Surgical: hemilaminectomy / ventral slot · grade 4-5 typically</li>
+          <li>Tip: <strong>"Type 1 = Dachshund · Type 2 = Lab"</strong></li>
+          <li>Tip: <strong>Grade 5 + no deep pain = emergency</strong></li>
+          <li>Tip: <strong>Survey radiograph limited</strong> · MRI gold standard</li>
+          <li>Tip: <strong>Discospondylitis = endplate lysis · spondylosis = no lysis</strong></li>
+        </ul>
+      `
+    }
+  },
+
+
+  /* ============================================================
+     Ultrasound · พื้นฐาน Ultrasound (3)
+     ============================================================ */
+
+  {
+    id: 'rad-us-principles',
+    titleEn: 'Ultrasound Image Principles',
+    titleTh: 'หลักการสร้างภาพ Ultrasound',
+    type: 'topic',
+    system: 'ultrasound',
+    species: ['dog', 'cat'],
+    tags: ['ultrasound', 'echogenicity', 'transducer', 'frequency', 'artifact'],
+    aliases: ['ultrasound principles', 'หลัก US'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li>เข้าใจหลักการก่อน scan</li>
+          <li>เลือก transducer + setting ให้เหมาะ</li>
+          <li>Recognize artifacts</li>
+        </ul>
+      `,
+      contraindications: `<ul><li>ไม่มี — เป็นความรู้พื้นฐาน</li></ul>`,
+      preparation: `
+        <ul>
+          <li>US machine + transducers</li>
+          <li>Coupling gel</li>
+          <li>Clipper · alcohol</li>
+          <li>Patient sedation อาจต้องใช้</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">Echogenicity Scale — "ดำ → ขาว"</span>
+          <ul>
+            <li><strong>Anechoic</strong> ⚫ — ดำสนิท · <em>fluid (urine, bile, cyst content)</em></li>
+            <li><strong>Hypoechoic</strong> 🌑 — มืด · <em>liver, spleen normal</em></li>
+            <li><strong>Isoechoic</strong> 🟫 — เท่ากัน · <em>compare to reference organ</em></li>
+            <li><strong>Hyperechoic</strong> 🌕 — สว่าง · <em>fat, fibrosis, mineral</em></li>
+            <li><strong>Echogenic shadowing</strong> ⚪ — ขาวมี shadow · <em>bone, gas, calculi</em></li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Fluid = anechoic"</strong> (ดำสนิท · easy)<br>
+          📌 <strong>Bone/Gas/Stone = ขาวมี shadow</strong> · ทะลุไม่ได้<br>
+          📌 ใช้ <strong>"compare to organ adjacent"</strong> ในการบรรยาย</p>
+        </div>
+
+        <p><strong>Transducer Types &amp; Frequencies:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Transducer Selection</span>
+          <table>
+            <tr><th>Type</th><th>Frequency</th><th>Use</th></tr>
+            <tr><td><strong>Linear</strong></td><td>7.5-15 MHz</td><td>Superficial · neck, vascular, bladder · cat abdomen</td></tr>
+            <tr><td><strong>Curvilinear</strong></td><td>3.5-7 MHz</td><td>Abdominal · liver, kidney · medium-large</td></tr>
+            <tr><td><strong>Phased array</strong></td><td>2-5 MHz</td><td>Cardiac (intercostal) · deep liver</td></tr>
+            <tr><td><strong>Microconvex</strong></td><td>5-8 MHz</td><td>Small dog · cat · neonate</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>"High freq = high resolution, shallow"</strong> · <strong>"Low freq = deep but lower res"</strong><br>
+          📌 ค่าทั่วไป: cat/small dog 7-10 MHz · medium dog 5-7 MHz · large dog 3-5 MHz</p>
+        </div>
+
+        <p><strong>Image Optimization Settings:</strong></p>
+        <ul>
+          <li><strong>Depth</strong> — ปรับให้ organ ที่สนใจอยู่กลางหรือ ⅔ ของ screen</li>
+          <li><strong>Gain</strong> — overall brightness · ปรับให้ภาพไม่ดำเกินไม่สว่างเกิน</li>
+          <li><strong>TGC (Time Gain Compensation)</strong> — ปรับ brightness ตาม depth</li>
+          <li><strong>Focus</strong> — วาง focal zone ที่ region of interest</li>
+          <li><strong>Frequency</strong> — สูง = resolution ดี (shallow) · ต่ำ = ลึกได้</li>
+          <li><strong>Frame rate</strong> — สูง = motion smooth (cardiac)</li>
+        </ul>
+
+        <p><strong>Common Artifacts:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">5 Artifacts ที่ต้องรู้</span>
+          <ul>
+            <li><strong>1</strong>Acoustic shadowing — ดำหลังของแข็ง (bone, stone, gas)</li>
+            <li><strong>2</strong>Acoustic enhancement — สว่างหลังของเหลว · "through-transmission"</li>
+            <li><strong>3</strong>Reverberation — เส้นซ้ำ ๆ จาก gas/metal</li>
+            <li><strong>4</strong>Comet tail — ลายเส้นยาวจาก gas microbubbles</li>
+            <li><strong>5</strong>Mirror image — duplicate image ข้าม diaphragm</li>
+          </ul>
+          <p class="mnem-tip">📌 Artifacts ใช้เป็น <strong>diagnostic clues</strong>!<br>
+          📌 <strong>Comet tail = gas</strong> · เห็นใน intestinal gas, post-FNA<br>
+          📌 <strong>Acoustic enhancement = fluid</strong> · ใต้ bladder, cyst</p>
+        </div>
+
+        <p><strong>Doppler Modes:</strong></p>
+        <ul>
+          <li><strong>Color Doppler</strong> — flow direction · red toward / blue away</li>
+          <li><strong>Pulsed-wave Doppler</strong> — velocity in specific area</li>
+          <li><strong>Power Doppler</strong> — sensitivity to flow (no direction)</li>
+          <li>Used: vessel patency, blood flow, organ vascularity</li>
+        </ul>
+
+        <p><strong>Probe Movements (Standard 4):</strong></p>
+        <ol>
+          <li><strong>Slide</strong> — translation along skin</li>
+          <li><strong>Rotate</strong> — turn 90° (long axis ↔ short axis)</li>
+          <li><strong>Rock</strong> — tilt within plane</li>
+          <li><strong>Fan</strong> — sweep through structure</li>
+        </ol>
+
+        <p><strong>Standard Imaging Planes:</strong></p>
+        <ul>
+          <li><strong>Sagittal/Long axis</strong> — longitudinal view</li>
+          <li><strong>Transverse/Short axis</strong> — cross-section</li>
+          <li>Always image in 2 orthogonal planes for confirmation</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Wrong transducer → poor image quality</li>
+          <li>Insufficient gel → air gaps</li>
+          <li>Misinterpret artifacts as pathology</li>
+          <li>Operator-dependent — practice essential</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>Document images in 2 planes</li>
+          <li>Save representative cine clips</li>
+          <li>Label echogenicity as comparison</li>
+          <li>Tip: <strong>"High freq = shallow + sharp"</strong></li>
+          <li>Tip: <strong>Comet tail = gas</strong> · acoustic enhancement = fluid</li>
+          <li>Tip: <strong>Always 2 planes</strong> for any structure</li>
+          <li>Tip: <strong>Practice = the only way</strong> · operator-dependent</li>
+        </ul>
+      `
+    }
+  },
+
+  {
+    id: 'rad-pocus',
+    titleEn: 'POCUS — AFAST &amp; TFAST',
+    titleTh: 'POCUS — AFAST + TFAST',
+    type: 'topic',
+    system: 'ultrasound',
+    species: ['dog', 'cat'],
+    tags: ['POCUS', 'AFAST', 'TFAST', 'Vet BLUE', 'emergency'],
+    aliases: ['POCUS', 'AFAST', 'TFAST', 'FAST scan'],
+    source: 'Thrall, 8th Ed. + Boysen 2019',
+    sections: {
+      indications: `
+        <ul>
+          <li>Emergency assessment ใน trauma · shock · dyspneic</li>
+          <li>Triage tool — bedside · fast · non-invasive</li>
+          <li>Suspected hemoabdomen · hemothorax · pneumothorax</li>
+          <li>Pre-anesthetic in critical patient</li>
+          <li>Serial monitoring</li>
+        </ul>
+      `,
+      contraindications: `<ul><li>ไม่มี — รวดเร็ว · safe</li></ul>`,
+      preparation: `
+        <ul>
+          <li>US machine · curvilinear or microconvex transducer</li>
+          <li>Alcohol (gel ไม่จำเป็นถ้า fast)</li>
+          <li>No clipping needed สำหรับ FAST</li>
+          <li>Right lateral or sternal recumbency</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic diagram">
+          <span class="mnem-title">AFAST 4 Windows — "DH · SR · CC · HR"</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">DH</span>
+              Diaphragmatic-Hepatic<br>
+              📍 Sub-xiphoid<br>
+              <em>Liver + GB · pericardial fluid</em>
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">SR</span>
+              Spleno-Renal<br>
+              📍 Left flank<br>
+              <em>Spleen + left kidney</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">CC</span>
+              Cysto-Colic<br>
+              📍 Caudal midline<br>
+              <em>Bladder · pelvic fluid</em>
+            </div>
+            <div class="diagram-box green">
+              <span class="box-title">HR</span>
+              Hepato-Renal<br>
+              📍 Right flank<br>
+              <em>Right kidney + liver</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"DH-SR-CC-HR"</strong> วน 4 จุด หา free fluid<br>
+          📌 <strong>Sensitivity 2-5 mL</strong> (radiograph ต้อง 5-10 mL/kg!)<br>
+          📌 <strong>Score 0-4</strong> (จำนวน positive windows)</p>
+        </div>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">AFAST Scoring &amp; Action</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">0</span>
+              <span class="num-label">No fluid · monitor</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">1-2</span>
+              <span class="num-label">Mild fluid · monitor q4-6h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">3-4</span>
+              <span class="num-label">Significant · abdo-centesis · workup</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>Score &gt; 0</strong> → consider abdominocentesis<br>
+          📌 <strong>Serial scoring</strong> = monitor progression (e.g., HSA bleed)</p>
+        </div>
+
+        <p><strong>TFAST — 5 sites:</strong></p>
+
+        <div class="mnemonic diagram">
+          <span class="mnem-title">TFAST 5 Sites</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">CTS bilateral</span>
+              Chest Tube Site (dorsal)<br>
+              📍 ICS 7-9 dorsal<br>
+              <em>Pneumothorax check</em><br>
+              Look for "lung sliding"
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">PCS bilateral</span>
+              Pericardial Site<br>
+              📍 ICS 5-7 caudal to elbow<br>
+              <em>Pleural / pericardial effusion</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">DH</span>
+              Sub-xiphoid view<br>
+              📍 Same as AFAST<br>
+              <em>Pericardial effusion better view</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"Lung sliding present = no pneumothorax at that point"</strong><br>
+          📌 Absent sliding + lung point = pneumothorax confirmed<br>
+          📌 <strong>Pericardial effusion</strong>: anechoic ring around heart</p>
+        </div>
+
+        <p><strong>Vet BLUE — Lung Scan (8 sites bilateral):</strong></p>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">B-Lines = Wet Lung</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">0-1</span>
+              <span class="num-label">ปกติ ✓</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">≥ 3</span>
+              <span class="num-label">Wet lung 💧</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Diffuse</span>
+              <span class="num-label">CHF / ARDS</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Focal</span>
+              <span class="num-label">Pneumonia · contusion</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>B-lines = vertical "comet tails"</strong> ลากจากผิวปอดลงล่าง<br>
+          📌 ≥3 / field → CHF · pneumonia · ARDS · contusion<br>
+          📌 <strong>Cat CHF: B-lines + LA enlargement = &gt; 90% sensitivity</strong></p>
+        </div>
+
+        <p><strong>Lung Sliding (Pneumothorax assessment):</strong></p>
+        <ul>
+          <li>Normal: visceral pleura slides over parietal pleura with respiration</li>
+          <li>"Ants on a log" appearance (sliding) = NO pneumothorax</li>
+          <li>Absent sliding = possible pneumothorax (or pleural adhesion)</li>
+          <li><strong>"Lung point"</strong> = transition between sliding + no sliding · pathognomonic for pneumothorax</li>
+        </ul>
+
+        <p><strong>POCUS Cardiac (Limited Echo):</strong></p>
+        <ul>
+          <li>Right parasternal long axis — chamber sizes</li>
+          <li><strong>"Mushroom view"</strong> (right parasternal short axis) — LV function</li>
+          <li>Left atrium-aorta ratio (LA:Ao) — &gt; 1.5 = LA enlargement</li>
+          <li>Pericardial effusion — anechoic around heart</li>
+          <li>RA collapse = tamponade</li>
+        </ul>
+
+        <p><strong>POCUS Workflow Integration:</strong></p>
+
+        <div class="mnemonic flowchart">
+          <span class="mnem-title">Trauma POCUS Algorithm</span>
+          <div class="flow-step start"><span class="flow-label">1</span><strong>Trauma arrival</strong> · ABCDE assessment</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step action"><span class="flow-label">2</span><strong>AFAST</strong> · 4 windows abdominal</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step action"><span class="flow-label">3</span><strong>TFAST</strong> · 5 thoracic sites</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step action"><span class="flow-label">4</span><strong>Vet BLUE</strong> · 8 lung points</div>
+          <div class="flow-arrow">▼</div>
+          <div class="flow-step success"><span class="flow-label">5</span><strong>Decision:</strong> stable monitor · centesis · surgery · refer</div>
+          <p class="mnem-tip">⏱️ Total time: ~5-10 min · faster than waiting for radiograph<br>
+          📊 Repeat q1-4 hr to monitor progression</p>
+        </div>
+      `,
+      complications: `
+        <ul>
+          <li>Operator-dependent — needs training</li>
+          <li>False negative if scan rushed</li>
+          <li>Body wall edema can mimic free fluid</li>
+          <li>Gas-filled bowel obscures signal</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>Document score + interpretation</li>
+          <li>Repeat for monitoring</li>
+          <li>Combine with clinical signs · don't rely solely on POCUS</li>
+          <li>Tip: <strong>"DH-SR-CC-HR"</strong> for AFAST · "lung sliding" for TFAST</li>
+          <li>Tip: <strong>POCUS ≥ Radiograph</strong> for fluid + dyspneic patient</li>
+          <li>Tip: <strong>Cat CHF: B-lines + LA enlargement</strong> = quick Dx</li>
+          <li>Tip: <strong>Course recommended</strong> — VetBLUE (Boysen), AFAST (Lisciandro)</li>
+        </ul>
+      `
+    }
+  },
+
+  {
+    id: 'rad-organ-us',
+    titleEn: 'Organ-by-Organ US Examination',
+    titleTh: 'การตรวจ US แบบแยกอวัยวะ',
+    type: 'topic',
+    system: 'ultrasound',
+    species: ['dog', 'cat'],
+    tags: ['liver', 'kidney', 'spleen', 'bladder', 'GI', 'organ', 'ultrasound'],
+    aliases: ['abdominal ultrasound', 'organ US', 'US ตรวจอวัยวะ'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li>Detailed evaluation specific organ</li>
+          <li>Mass characterization</li>
+          <li>Structural disease workup</li>
+          <li>FNA / biopsy guidance</li>
+        </ul>
+      `,
+      contraindications: `<ul><li>ไม่มี — แต่ต้องการ patient cooperation</li></ul>`,
+      preparation: `
+        <ul>
+          <li>Clip + clean abdomen</li>
+          <li>Sedation if uncooperative</li>
+          <li>Empty bowel (เคย fast 12 hr ดี)</li>
+          <li>Filled bladder for caudal scan</li>
+        </ul>
+      `,
+      steps: `
+        <p><strong>Systematic Approach Order:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">US Scan Order — "ตับ-ม้าม-ไต-ทางเดิน-อื่น ๆ"</span>
+          <ul>
+            <li><strong>1</strong>Liver + gallbladder</li>
+            <li><strong>2</strong>Spleen</li>
+            <li><strong>3</strong>Stomach (left → right)</li>
+            <li><strong>4</strong>Kidneys (left → right)</li>
+            <li><strong>5</strong>Adrenals</li>
+            <li><strong>6</strong>Small intestine + large intestine</li>
+            <li><strong>7</strong>Bladder + prostate/uterus</li>
+            <li><strong>8</strong>Lymph nodes (mesenteric, sublumbar)</li>
+            <li><strong>9</strong>Vessels (aorta, caudal vena cava)</li>
+          </ul>
+          <p class="mnem-tip">📌 ลำดับใด ๆ OK · แต่ <strong>consistent</strong> เพื่อไม่ลืม<br>
+          📌 บันทึก image ของแต่ละ organ ใน 2 planes</p>
+        </div>
+
+        <p><strong>1. Liver:</strong></p>
+        <ul>
+          <li><strong>Echotexture:</strong> coarse · medium echogenicity</li>
+          <li><strong>Compare echogenicity</strong>: liver &lt; spleen &lt; renal cortex (normal pattern)</li>
+          <li>"Liver-fat-spleen" — falciform fat brighter than liver, spleen brightest</li>
+          <li><strong>Vessels:</strong>
+            <ul>
+              <li>Hepatic veins — anechoic, no wall</li>
+              <li>Portal veins — anechoic, hyperechoic wall</li>
+            </ul>
+          </li>
+          <li><strong>GB:</strong> anechoic, thin wall &lt; 3 mm</li>
+          <li><strong>Common findings:</strong>
+            <ul>
+              <li>Diffuse hyperechoic — lipidosis (cat), Cushings, fibrosis</li>
+              <li>Diffuse hypoechoic — lymphoma, congestion</li>
+              <li>Mixed — chronic hepatitis, neoplasia</li>
+              <li>Focal mass — HCC, met, abscess, cyst</li>
+              <li>Mucocele — "kiwi fruit" / "stellate" GB pattern</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">GB Mucocele — "ผลกีวี"</span>
+          <p class="mnem-tip">📌 <strong>"Kiwi fruit appearance"</strong> = stellate striations within GB<br>
+          📌 Older small breed dog (Sheltie, Cocker)<br>
+          📌 Surgical emergency if rupture / wall edema<br>
+          📌 Hyperadrenocorticism, hypothyroidism predispose</p>
+        </div>
+
+        <p><strong>2. Spleen:</strong></p>
+        <ul>
+          <li><strong>Echotexture:</strong> homogeneous · finer than liver</li>
+          <li><strong>Echogenicity:</strong> brightest of abdomen (normal)</li>
+          <li><strong>Vessels:</strong> splenic vein at hilus</li>
+          <li><strong>Common findings:</strong>
+            <ul>
+              <li>Diffuse mild enlargement — drug effect (ACP, dexmed), reactive</li>
+              <li>Diffuse hypoechoic + nodular — lymphoma, MCT, EMH</li>
+              <li>Focal hypoechoic — hematoma, infarct, hemangioma</li>
+              <li>Cavitary mass — HSA classic</li>
+              <li>Splenic torsion — stripe-like vessels, no flow</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>3. Kidneys:</strong></p>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Kidney Size Normal</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">2.5-3.5×</span>
+              <span class="num-label">L2 length (dog)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2.4-3.0×</span>
+              <span class="num-label">L2 length (cat)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">3-4 cm</span>
+              <span class="num-label">Cat kidney length</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">4-9 cm</span>
+              <span class="num-label">Dog kidney length (varies)</span>
+            </div>
+          </div>
+        </div>
+
+        <ul>
+          <li><strong>Architecture:</strong> cortex (echogenic) · medulla (hypoechoic) · pelvis (anechoic)</li>
+          <li><strong>"Cortico-medullary distinction"</strong> — clear differentiation in normal</li>
+          <li><strong>Common findings:</strong>
+            <ul>
+              <li>Hyperechoic cortex — chronic CKD · ethylene glycol toxicity</li>
+              <li>"Medullary rim sign" — hyperechoic line at corticomedullary junction (cat normal variant or pathology)</li>
+              <li>Pyelectasia — dilated renal pelvis</li>
+              <li>Mass — RCC (uncommon), lymphoma (cat bilateral)</li>
+              <li>Cyst — anechoic, well-defined (PKD in Persian cat)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. Adrenals:</strong></p>
+        <ul>
+          <li>Cranial to kidneys, between cranial pole + caudal vena cava</li>
+          <li><strong>Normal size:</strong> &lt; 7.4 mm (caudal pole, dog) · &lt; 4.4 mm (cat)</li>
+          <li><strong>Asymmetric:</strong> tumor possible</li>
+          <li><strong>"Peanut" or "Bilobed" shape</strong> normal</li>
+          <li><strong>Findings:</strong>
+            <ul>
+              <li>Bilateral enlargement → Cushings (PDH)</li>
+              <li>Unilateral mass + contralateral atrophy → adrenal Cushings</li>
+              <li>Pheochromocytoma — variable</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>5. GI Tract:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">GI Wall Thickness Normal</span>
+          <table>
+            <tr><th>Segment</th><th>Dog (mm)</th><th>Cat (mm)</th></tr>
+            <tr><td>Stomach</td><td>3-5</td><td>2-4</td></tr>
+            <tr><td>Duodenum</td><td>3-5</td><td>2-3</td></tr>
+            <tr><td>Jejunum</td><td>2-3</td><td>2</td></tr>
+            <tr><td>Ileum</td><td>2-3</td><td>2-3</td></tr>
+            <tr><td>Colon</td><td>1-2</td><td>1-2</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>5 wall layers</strong> visible: mucosa · submucosa · muscularis · serosa<br>
+          📌 Loss of layering = aggressive (neoplasia, severe IBD)<br>
+          📌 Diffuse thickening = IBD · lymphoma</p>
+        </div>
+
+        <p><strong>6. Bladder:</strong></p>
+        <ul>
+          <li>Anechoic content normally</li>
+          <li>Wall thickness &lt; 3 mm distended (variable with filling)</li>
+          <li>Findings:
+            <ul>
+              <li>Sediment — crystals, cells</li>
+              <li>Mass at trigone — TCC classic</li>
+              <li>Stones — hyperechoic with shadowing, gravity-dependent</li>
+              <li>Wall thickening — cystitis (diffuse) or mass (focal)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>7. Prostate / Uterus:</strong></p>
+        <ul>
+          <li><strong>Prostate</strong> (intact male):
+            <ul>
+              <li>Bilobed, homogeneous, hypoechoic</li>
+              <li>BPH — symmetric enlargement</li>
+              <li>Cyst — anechoic</li>
+              <li>Tumor — irregular, mineralized</li>
+            </ul>
+          </li>
+          <li><strong>Uterus:</strong>
+            <ul>
+              <li>Normal: thin tube, hard to find when not in heat</li>
+              <li>Pyometra — fluid-filled tubular structure</li>
+              <li>Mucometra — anechoic fluid</li>
+              <li>Pregnancy — fetal heart beats &gt; 25 days</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>8. Lymph Nodes:</strong></p>
+        <ul>
+          <li><strong>Mesenteric</strong> — dorsal to SI loops</li>
+          <li><strong>Sublumbar</strong> — caudal abdomen, ventral to spine (L5-L7)</li>
+          <li><strong>Normal:</strong> oblong, hypoechoic, &lt; 5 mm thickness</li>
+          <li><strong>Reactive:</strong> mildly enlarged, preserved shape</li>
+          <li><strong>Neoplastic:</strong> markedly enlarged, round (loss of fusiform shape), heterogeneous</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Operator-dependent — practice mandatory</li>
+          <li>Bowel gas obscures signal</li>
+          <li>Recent meal → gas, food artifact</li>
+          <li>Patient movement</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>Save representative images of each organ in 2 planes</li>
+          <li>Document measurements + findings</li>
+          <li>FNA / biopsy for definitive Dx of mass</li>
+          <li>Tip: <strong>"Liver-fat-spleen"</strong> echogenicity reference</li>
+          <li>Tip: <strong>"Kiwi fruit GB" = mucocele</strong></li>
+          <li>Tip: <strong>Bilateral adrenal big = PDH · Unilateral big + atrophy = adrenal</strong></li>
+          <li>Tip: <strong>5 GI layers preserved = OK · loss = serious</strong></li>
+        </ul>
+      `
+    }
+  },
+
+  /* ============================================================
+     Advanced · CT / MRI / Contrast (3)
+     ============================================================ */
+
+  {
+    id: 'rad-ct-overview',
+    titleEn: 'CT (Computed Tomography) Overview',
+    titleTh: 'CT — การถ่ายเอกซเรย์คอมพิวเตอร์',
+    type: 'topic',
+    system: 'advanced',
+    species: ['dog', 'cat'],
+    tags: ['CT', 'computed tomography', 'cross-sectional', 'window', 'contrast'],
+    aliases: ['CT scan', 'computed tomography'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Thoracic met staging</strong> (10× sensitive than radiograph)</li>
+          <li>Nasal cavity disease (gold standard!)</li>
+          <li>Bone disease — elbow OCD, complex fracture, neoplasia</li>
+          <li>Pre-surgical planning (orthopedic, neurosurgery)</li>
+          <li>Trauma evaluation (rapid)</li>
+          <li>Vascular anomalies (PSS, vascular ring)</li>
+          <li>Pulmonary thromboembolism</li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Need GA (motion artifact)</li>
+          <li>Severe contrast allergy (rare)</li>
+          <li>Severe AKI — caution with contrast</li>
+          <li>Cost prohibitive in some cases</li>
+        </ul>
+      `,
+      preparation: `
+        <ul>
+          <li>GA + intubation</li>
+          <li>IV catheter for contrast</li>
+          <li>Patient position: sternal or dorsal · symmetric</li>
+          <li>+/- contrast (iohexol IV)</li>
+          <li>Breath-hold technique for thoracic</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">CT Image — "Hounsfield Units (HU)"</span>
+          <ul>
+            <li><strong>-1000 HU</strong> ⚫ Air (lung, gas)</li>
+            <li><strong>-100 to -50</strong> 🟫 Fat</li>
+            <li><strong>0 HU</strong> ⬜ Water (CSF, urine)</li>
+            <li><strong>40-60</strong> 🟧 Soft tissue</li>
+            <li><strong>40-90</strong> 🩸 Blood (acute hemorrhage)</li>
+            <li><strong>+1000</strong> ⚪ Bone (cortex)</li>
+            <li><strong>+3000</strong> ⚪⚪ Metal</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Air negative · Bone positive"</strong> · scale relative to water (0 HU)<br>
+          📌 ใช้ <strong>HU values</strong> ในการบรรยาย attenuation</p>
+        </div>
+
+        <p><strong>Window Settings — สำคัญมาก:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">CT Windows — "ดูอะไรใช้ Window อะไร"</span>
+          <table>
+            <tr><th>Window</th><th>WW / WL</th><th>ดู</th></tr>
+            <tr><td><strong>Lung</strong></td><td>1500 / -600</td><td>Lung parenchyma · airways</td></tr>
+            <tr><td><strong>Bone</strong></td><td>2000 / 400</td><td>Bone detail · cortex</td></tr>
+            <tr><td><strong>Soft tissue</strong></td><td>400 / 40</td><td>Organs · muscle · fat</td></tr>
+            <tr><td><strong>Brain</strong></td><td>80 / 40</td><td>Brain parenchyma</td></tr>
+            <tr><td><strong>Mediastinum</strong></td><td>400 / 40</td><td>Heart · vessels · LN</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>WW = Window Width · WL = Window Level</strong><br>
+          📌 <strong>"Always check 3 windows"</strong> = lung + bone + soft tissue สำหรับทุกเคส<br>
+          📌 ผิด window → miss disease!</p>
+        </div>
+
+        <p><strong>CT vs Radiograph — เมื่อไหร่ใช้อะไร:</strong></p>
+
+        <div class="mnemonic diagram">
+          <span class="mnem-title">CT &gt; Radiograph สำหรับ...</span>
+          <div class="diagram-grid">
+            <div class="diagram-box red">
+              <span class="box-title">Thoracic Met</span>
+              <strong>10× sensitive</strong><br>
+              พบ nodule 1-3 mm<br>
+              <em>OSA staging mandatory</em>
+            </div>
+            <div class="diagram-box orange">
+              <span class="box-title">Nasal Cavity</span>
+              ผ่าน turbinates<br>
+              ไม่ overlap<br>
+              <em>Tumor · aspergillosis</em>
+            </div>
+            <div class="diagram-box yellow">
+              <span class="box-title">Elbow OCD/FCP</span>
+              เห็น coronoid<br>
+              radiograph ไม่เห็น<br>
+              <em>Standard of care</em>
+            </div>
+            <div class="diagram-box green">
+              <span class="box-title">Skull/PSS</span>
+              Vascular anatomy<br>
+              Surgical planning<br>
+              <em>3D reconstruction</em>
+            </div>
+          </div>
+        </div>
+
+        <p><strong>Contrast Use:</strong></p>
+        <ul>
+          <li><strong>Non-contrast (pre-contrast):</strong> baseline · detect mineralization, hemorrhage</li>
+          <li><strong>Contrast-enhanced (post-contrast):</strong>
+            <ul>
+              <li>IV iohexol (300-350 mg/mL) · 600-880 mg I/kg</li>
+              <li>Arterial phase (15-30 sec) — vascular anomaly</li>
+              <li>Venous phase (60-90 sec) — soft tissue/mass enhancement</li>
+              <li>Delayed phase (5-10 min) — masses, scar tissue</li>
+            </ul>
+          </li>
+          <li><strong>Enhancement patterns:</strong>
+            <ul>
+              <li>Hyper-enhancing — vascular tumor (HCC)</li>
+              <li>Hypo-enhancing — necrotic core, abscess</li>
+              <li>Ring enhancement — abscess, necrotic tumor</li>
+              <li>Heterogeneous — neoplasia</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Common CT Indications + Findings:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">CT — Top Indications + Key Findings</span>
+          <table>
+            <tr><th>Indication</th><th>Key Findings</th></tr>
+            <tr><td><strong>OSA staging</strong></td><td>Pulmonary nodules &lt; 5 mm</td></tr>
+            <tr><td><strong>Nasal disease</strong></td><td>Turbinate destruction · mass · cribriform plate</td></tr>
+            <tr><td><strong>Elbow dysplasia</strong></td><td>FCP · OCD · UAP · incongruence</td></tr>
+            <tr><td><strong>PSS</strong></td><td>Aberrant vessel · CTA gold standard</td></tr>
+            <tr><td><strong>Vascular ring</strong></td><td>PRAA · double aortic arch</td></tr>
+            <tr><td><strong>Trauma</strong></td><td>Fracture · pneumothorax · hemorrhage</td></tr>
+            <tr><td><strong>Adrenal mass</strong></td><td>Tumor characterization · vascular invasion</td></tr>
+            <tr><td><strong>Pulmonary thromboembolism</strong></td><td>Filling defect in PA</td></tr>
+          </table>
+        </div>
+
+        <p><strong>3D Reconstruction:</strong></p>
+        <ul>
+          <li>Volume rendering — anatomical 3D view</li>
+          <li>MIP (Maximum Intensity Projection) — vessels (CTA)</li>
+          <li>MPR (Multiplanar Reformatting) — sagittal, coronal from axial</li>
+          <li>Useful for surgical planning</li>
+        </ul>
+
+        <p><strong>CT Limitations:</strong></p>
+        <ul>
+          <li>Soft tissue contrast lower than MRI</li>
+          <li>Radiation dose higher than radiograph</li>
+          <li>Cost / availability</li>
+          <li>GA required (most cases)</li>
+          <li>Brain/spinal cord — MRI better</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Contrast reaction (rare in pets)</li>
+          <li>Contrast-induced AKI (caution renal patient)</li>
+          <li>GA risks</li>
+          <li>Misinterpretation if wrong window</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>Continue GA recovery monitoring</li>
+          <li>Hydration after contrast (renal protection)</li>
+          <li>Save images in 3 windows</li>
+          <li>Tip: <strong>"3 windows always"</strong> · lung + bone + soft tissue</li>
+          <li>Tip: <strong>CT 10× sensitive</strong> for thoracic met than radiograph</li>
+          <li>Tip: <strong>HU values</strong> for objective tissue characterization</li>
+          <li>Tip: <strong>Pre + post contrast</strong> needed for mass evaluation</li>
+        </ul>
+      `
+    }
+  },
+
+  {
+    id: 'rad-mri-overview',
+    titleEn: 'MRI Overview',
+    titleTh: 'MRI — การถ่ายภาพคลื่นแม่เหล็ก',
+    type: 'topic',
+    system: 'advanced',
+    species: ['dog', 'cat'],
+    tags: ['MRI', 'T1', 'T2', 'FLAIR', 'magnetic resonance'],
+    aliases: ['MRI', 'magnetic resonance'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li><strong>Brain disease</strong> — gold standard!</li>
+          <li><strong>Spinal cord</strong> — IVDD, FCE, neoplasia, syringomyelia</li>
+          <li>Soft tissue mass evaluation</li>
+          <li>Cartilage / ligament injury (orthopedic)</li>
+          <li>Pituitary tumor</li>
+          <li>Inner/middle ear disease</li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li><strong>Metallic implants</strong> (pacemaker, microchip in scan area, metal foreign body)</li>
+          <li>GA required (long scan time 30-90 min)</li>
+          <li>Cost / availability ในไทย</li>
+          <li>Severe instability — CT faster + accessible</li>
+        </ul>
+      `,
+      preparation: `
+        <ul>
+          <li>GA + intubation (long scan time)</li>
+          <li>Remove all metal (collar, ID tag)</li>
+          <li>Microchip area scan with caution</li>
+          <li>+/- gadolinium contrast IV</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">MRI Sequences — "T1 vs T2 vs FLAIR"</span>
+          <ul>
+            <li><strong>T1-weighted</strong> 🌑:
+              <ul>
+                <li>Anatomical detail · "anatomy view"</li>
+                <li><strong>Fat = bright</strong> · <strong>Water = dark</strong> · CSF dark</li>
+                <li>Best with contrast (gadolinium)</li>
+              </ul>
+            </li>
+            <li><strong>T2-weighted</strong> 🌕:
+              <ul>
+                <li>"Pathology view" · sensitive to water/edema</li>
+                <li><strong>Water = bright</strong> · CSF bright · edema bright</li>
+                <li>Most disease shows hyperintense</li>
+              </ul>
+            </li>
+            <li><strong>FLAIR</strong> 🌗:
+              <ul>
+                <li>"Fluid Attenuated Inversion Recovery"</li>
+                <li>T2 with CSF suppressed (CSF dark)</li>
+                <li>Detect periventricular lesions, edema near CSF</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"T1 = anatomy · T2 = water/disease · FLAIR = T2 minus CSF"</strong><br>
+          📌 ใช้รวมกันเสมอ — interpret across sequences</p>
+        </div>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">MRI Signal Intensities — Quick Reference</span>
+          <table>
+            <tr><th>Tissue</th><th>T1</th><th>T2</th></tr>
+            <tr><td>Fat</td><td>Bright</td><td>Bright</td></tr>
+            <tr><td>Water / CSF</td><td>Dark</td><td>Bright</td></tr>
+            <tr><td>Cortical bone</td><td>Dark</td><td>Dark</td></tr>
+            <tr><td>Air</td><td>Dark</td><td>Dark</td></tr>
+            <tr><td>Brain (gray matter)</td><td>Gray</td><td>Gray-bright</td></tr>
+            <tr><td>Brain (white matter)</td><td>Bright</td><td>Gray</td></tr>
+            <tr><td>Edema / inflammation</td><td>Dark</td><td><strong>Bright</strong> ⭐</td></tr>
+            <tr><td>Acute hemorrhage (24h)</td><td>Dark</td><td>Dark</td></tr>
+            <tr><td>Subacute hemorrhage</td><td><strong>Bright</strong></td><td>Bright</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>"Hemorrhage T1 bright"</strong> = subacute (3-7 days) — diagnostic clue<br>
+          📌 <strong>"T2 bright = pathology"</strong> ส่วนใหญ่</p>
+        </div>
+
+        <p><strong>Contrast (Gadolinium):</strong></p>
+        <ul>
+          <li>IV gadolinium · enhances on T1</li>
+          <li>Active lesions enhance (BBB disruption)</li>
+          <li>Patterns:
+            <ul>
+              <li>Solid enhancement — meningioma</li>
+              <li>Ring enhancement — abscess, necrotic tumor</li>
+              <li>Heterogeneous — neoplasia</li>
+              <li>Linear — meningitis</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Common MRI Indications + Findings:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">MRI — Top Indications</span>
+          <table>
+            <tr><th>Disease</th><th>Key MRI Findings</th></tr>
+            <tr><td><strong>IVDD</strong></td><td>T2 hyperintense disc + cord compression · gold standard</td></tr>
+            <tr><td><strong>Brain tumor</strong></td><td>T1 contrast enhancement · T2 edema around</td></tr>
+            <tr><td><strong>Meningioma</strong></td><td>Extra-axial · "dural tail" · uniform enhancement</td></tr>
+            <tr><td><strong>FCE (Fibrocartilaginous embolism)</strong></td><td>T2 hyperintense focal cord lesion · no compression</td></tr>
+            <tr><td><strong>Syringomyelia (CKCS)</strong></td><td>Dilated central canal · cerebellar herniation</td></tr>
+            <tr><td><strong>Stroke</strong></td><td>DWI hyperintense (acute)</td></tr>
+            <tr><td><strong>Encephalitis</strong></td><td>T2/FLAIR hyperintense gray matter</td></tr>
+            <tr><td><strong>Pituitary tumor</strong></td><td>Mass at sella turcica · enhancement</td></tr>
+          </table>
+        </div>
+
+        <p><strong>Specific Disease Patterns:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Cavalier KCS — "Syringomyelia + Chiari-like"</span>
+          <ul>
+            <li>Cerebellar herniation through foramen magnum</li>
+            <li>Syringomyelia (fluid in spinal cord)</li>
+            <li>"Phantom scratching" + neck pain</li>
+            <li>MRI = definitive Dx</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>CKCS specific!</strong> · Other small breeds also at risk<br>
+          📌 ตรวจถ้าจะ breed</p>
+        </div>
+
+        <p><strong>MRI vs CT — เปรียบเทียบ:</strong></p>
+
+        <div class="mnemonic diagram">
+          <span class="mnem-title">MRI vs CT — เลือกอันไหน?</span>
+          <div class="diagram-grid">
+            <div class="diagram-box purple">
+              <span class="box-title">MRI &gt; CT for...</span>
+              <strong>Brain · Spinal cord</strong><br>
+              Soft tissue contrast<br>
+              Cartilage · ligament<br>
+              <em>Best resolution</em>
+            </div>
+            <div class="diagram-box blue">
+              <span class="box-title">CT &gt; MRI for...</span>
+              <strong>Bone · Lung</strong><br>
+              Trauma (fast)<br>
+              Vascular (CTA)<br>
+              <em>Faster · cheaper</em>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"MRI for soft + central · CT for bone + lung"</strong></p>
+        </div>
+
+        <p><strong>MRI Limitations:</strong></p>
+        <ul>
+          <li>Long scan time (30-90 min · GA)</li>
+          <li>Cost (~5000-15000 baht ในไทย)</li>
+          <li>Not for metal implants</li>
+          <li>Spatial resolution lower than CT for bone</li>
+          <li>Lung disease — air gives no signal</li>
+          <li>Limited availability ในไทย</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Long GA — hypothermia, hypoglycemia</li>
+          <li>Gadolinium NSF (nephrogenic systemic fibrosis) — rare in pets, risk in renal patient</li>
+          <li>Metal projectile injury (pacemaker, FB)</li>
+          <li>Microchip artifact in scan area</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>GA recovery monitoring</li>
+          <li>Hydration · renal monitoring (gadolinium)</li>
+          <li>Tip: <strong>"T1 = anatomy · T2 = pathology"</strong></li>
+          <li>Tip: <strong>"FLAIR = T2 minus CSF"</strong></li>
+          <li>Tip: <strong>MRI for brain/cord · CT for bone/lung</strong></li>
+          <li>Tip: <strong>CKCS Chiari-like + syringomyelia</strong> = MRI standard</li>
+          <li>Tip: <strong>Gadolinium safer than iodine</strong> · but expensive</li>
+        </ul>
+      `
+    }
+  },
+
+  {
+    id: 'rad-contrast-studies',
+    titleEn: 'Contrast Studies (Barium, Iodine, Cystography)',
+    titleTh: 'การถ่าย Contrast Studies',
+    type: 'topic',
+    system: 'advanced',
+    species: ['dog', 'cat'],
+    tags: ['contrast', 'barium', 'iodine', 'cystography', 'urethrography', 'esophagram'],
+    aliases: ['contrast study', 'barium', 'cystography'],
+    source: 'Thrall, 8th Ed.',
+    sections: {
+      indications: `
+        <ul>
+          <li>GI obstruction / motility evaluation (barium series)</li>
+          <li>Esophageal disease (esophagram)</li>
+          <li>Bladder mass / rupture (cystography)</li>
+          <li>Urethral disease (urethrography)</li>
+          <li>Renal/ureteral function (IVP)</li>
+          <li>Vascular anomaly (angiography — rare now, CT replaced)</li>
+          <li>Fistula / sinus tract</li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li><strong>Suspected GI perforation</strong> — barium = peritonitis · use iodine instead!</li>
+          <li>Severe contrast allergy</li>
+          <li>Severe AKI — IV contrast caution</li>
+          <li>Aspiration risk in dyspneic patient</li>
+        </ul>
+      `,
+      preparation: `
+        <ul>
+          <li>Survey radiograph FIRST (always before contrast)</li>
+          <li>NPO for GI studies (12 hr)</li>
+          <li>IV catheter for IV contrast</li>
+          <li>Sedation depending on study</li>
+          <li>Empty bladder for cystography</li>
+        </ul>
+      `,
+      steps: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">Contrast Agents — "Barium vs Iodine"</span>
+          <ul>
+            <li><strong>Barium sulfate (BaSO4):</strong>
+              <ul>
+                <li>White suspension · GI tract only · ห้าม IV!</li>
+                <li>NOT absorbed · no allergic reaction</li>
+                <li><strong>⚠️ ห้ามใช้ถ้าสงสัย GI perforation</strong> → barium peritonitis = chronic granuloma</li>
+                <li>ใช้: GI motility · obstruction · esophagram</li>
+              </ul>
+            </li>
+            <li><strong>Iodinated contrast (iohexol, iopamidol):</strong>
+              <ul>
+                <li>Water-soluble · safer · absorbed</li>
+                <li>OK if perforation suspected</li>
+                <li>IV use OK (CT, IVP, angio)</li>
+                <li>Some allergic risk · renal toxic at high dose</li>
+                <li>ใช้: cystography · urethrography · IVP · CT contrast · esophagram (when perforation suspected)</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="mnem-tip">⚠️ <strong>"Suspected perforation → IODINE, NOT barium"</strong><br>
+          📌 Barium peritonitis = lifelong granulomatous reaction</p>
+        </div>
+
+        <p><strong>1. Esophagram (Esophageal Study):</strong></p>
+        <ul>
+          <li><strong>Indications:</strong> dysphagia · regurgitation · suspected megaesophagus / FB / stricture</li>
+          <li><strong>Liquid barium</strong> 5-10 mL/kg PO (or syringe in mouth)</li>
+          <li>+/- mix with food (food bolus shows motility better)</li>
+          <li>Take immediately + 1-2 min after</li>
+          <li><strong>Findings:</strong>
+            <ul>
+              <li>Megaesophagus — diffusely dilated, retained barium</li>
+              <li>Stricture — focal narrowing + proximal dilation</li>
+              <li>FB — filling defect</li>
+              <li>PRAA — diverticulum cranial to heart base</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>2. Upper GI Series (Barium Series):</strong></p>
+        <ul>
+          <li><strong>Indications:</strong> obstruction · ileus · mass · linear FB</li>
+          <li>Liquid barium <strong>5-10 mL/kg</strong> PO via stomach tube (sedated)</li>
+          <li>Films at <strong>0, 15, 30, 60, 120, 240 min</strong> (or until barium reaches colon)</li>
+          <li><strong>Normal transit:</strong>
+            <ul>
+              <li>Stomach empty by 4-6 hr</li>
+              <li>SI by 3-4 hr</li>
+              <li>Colon by 4-6 hr</li>
+            </ul>
+          </li>
+          <li><strong>Findings:</strong>
+            <ul>
+              <li>Stop in barium = obstruction</li>
+              <li>Delayed transit = ileus</li>
+              <li>Filling defect = FB or mass</li>
+              <li>Plication of SI = linear FB classic</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Barium Series Timing</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">0</span>
+              <span class="num-label">นาที · Stomach</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">30-60</span>
+              <span class="num-label">นาที · Duodenum</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2-3</span>
+              <span class="num-label">ชม. · Mid SI</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">4-6</span>
+              <span class="num-label">ชม. · Colon</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 <strong>"0-30-2-4 hours"</strong> · ถ้าค้างที่ใด = obstruction!</p>
+        </div>
+
+        <p><strong>3. Pneumocystogram / Cystography:</strong></p>
+        <ul>
+          <li><strong>Indications:</strong> bladder mass · rupture · stones (radiolucent) · vesicoureteral reflux</li>
+          <li><strong>Pneumocystogram</strong> (negative contrast):
+            <ul>
+              <li>Air into empty bladder via catheter (5-10 mL/kg)</li>
+              <li>Detect mass · stones</li>
+            </ul>
+          </li>
+          <li><strong>Positive contrast cystogram:</strong>
+            <ul>
+              <li>Iodinated contrast (iohexol diluted) into bladder</li>
+              <li>Detect rupture (extravasation)</li>
+            </ul>
+          </li>
+          <li><strong>Double contrast cystogram</strong> (preferred for mucosal detail):
+            <ul>
+              <li>Small amount iodine (1-3 mL) + air to fill</li>
+              <li>Best for stones · mucosal mass</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>4. Urethrography (Retrograde):</strong></p>
+        <ul>
+          <li><strong>Indications:</strong> urethral mass · stricture · trauma · radiolucent stone</li>
+          <li>Catheter at distal urethra · inject iodine retrograde</li>
+          <li>Take film during injection</li>
+          <li>Findings:
+            <ul>
+              <li>Filling defect — stone or mass</li>
+              <li>Extravasation — rupture</li>
+              <li>Narrowing — stricture</li>
+              <li>Mucosal irregularity — TCC</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>5. IVP (Intravenous Pyelogram / Excretory Urogram):</strong></p>
+        <ul>
+          <li><strong>Indications:</strong> ectopic ureter · ureteral obstruction · renal function</li>
+          <li>IV iohexol bolus</li>
+          <li>Films at 0, 5, 10, 20, 40 min</li>
+          <li>Phases:
+            <ul>
+              <li>Vascular phase (immediate) — kidneys enhance</li>
+              <li>Nephrogram phase (1-3 min) — parenchyma bright</li>
+              <li>Pyelogram phase (5-15 min) — pelvis + ureters fill</li>
+              <li>Cystogram phase (10-40 min) — bladder fills</li>
+            </ul>
+          </li>
+          <li>Replaced by CT-IVP / US in many cases</li>
+        </ul>
+
+        <p><strong>6. Fistulography:</strong></p>
+        <ul>
+          <li>Inject iodine into draining tract</li>
+          <li>Trace to source (FB, abscess, neoplasia)</li>
+          <li>Useful for chronic non-healing wound</li>
+        </ul>
+
+        <p><strong>Common Pitfalls:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Contrast Pitfalls — "อย่าทำผิด!"</span>
+          <ul>
+            <li>⚠️ <strong>Barium + suspected perforation</strong> = peritonitis lifelong</li>
+            <li>⚠️ <strong>Aspirated barium</strong> = chronic pneumonia (less reactive than iodine but still bad)</li>
+            <li>⚠️ <strong>Hypertonic iodine</strong> in bladder rupture → severe peritonitis</li>
+            <li>⚠️ <strong>IV contrast in dehydrated/AKI patient</strong> → contrast nephropathy</li>
+            <li>⚠️ <strong>Contrast extravasation IV</strong> → soft tissue irritation</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"When in doubt, use iodine"</strong> · safer than barium<br>
+          📌 <strong>Hydrate well</strong> before + after IV contrast</p>
+        </div>
+
+        <p><strong>Modern Replacement:</strong></p>
+        <ul>
+          <li><strong>POCUS / US</strong> — replaces many contrast studies (faster, safer)</li>
+          <li><strong>CT</strong> — replaces angiography, IVP, sinography</li>
+          <li><strong>Endoscopy</strong> — replaces some GI contrast studies</li>
+          <li><strong>MRI</strong> — replaces myelography</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>Barium peritonitis (perforation)</li>
+          <li>Aspiration pneumonia</li>
+          <li>Contrast allergic reaction (rare)</li>
+          <li>Contrast-induced AKI</li>
+          <li>Extravasation injury</li>
+          <li>Misinterpretation of artifacts as pathology</li>
+        </ul>
+      `,
+      postCare: `
+        <ul>
+          <li>Hydration after IV contrast</li>
+          <li>Monitor renal function in at-risk</li>
+          <li>Re-image as needed</li>
+          <li>Tip: <strong>"Suspected perforation → IODINE"</strong> always</li>
+          <li>Tip: <strong>"Barium 0-30-2-4 hr"</strong> timing</li>
+          <li>Tip: <strong>"Double contrast cystogram"</strong> = best for stones</li>
+          <li>Tip: <strong>POCUS/CT replaces many contrast studies</strong> nowadays</li>
         </ul>
       `
     }
