@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501ai">
+  <link rel="stylesheet" href="style.css?v=20260501ap">
 
   <!-- Supabase JS v2 — pinned + dual CDN with fallback -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
@@ -340,6 +340,209 @@
     line-height: 1.6;
   }
   .disclaimer strong { color: #B26A00; }
+
+  /* ========== Search icon size fix (was huge!) ========== */
+  .pharma-search { position: relative; }
+  .pharma-search .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--ink-mute);
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pharma-search .search-icon svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .pharma-search input[type="search"] {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--surface);
+    font: 400 14px var(--font-sans);
+    color: var(--ink);
+    outline: none;
+  }
+  .pharma-search input[type="search"]:focus {
+    border-color: var(--purple);
+  }
+
+  /* ========== Drug item with checkbox ========== */
+  .drug-item {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: all 180ms;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .drug-item:hover {
+    border-color: var(--purple);
+  }
+  .drug-item.selected {
+    border-color: var(--purple);
+    background: rgba(156, 90, 184, 0.05);
+  }
+  .drug-checkbox {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--rule);
+    border-radius: 6px;
+    background: var(--bg);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 180ms;
+  }
+  .drug-checkbox:hover {
+    border-color: var(--purple);
+  }
+  .drug-checkbox.checked {
+    background: var(--purple);
+    border-color: var(--purple);
+  }
+  .drug-checkbox.checked svg {
+    color: white;
+  }
+  .drug-checkbox svg {
+    width: 14px;
+    height: 14px;
+    color: transparent;
+    transition: color 180ms;
+  }
+  .drug-item-content {
+    flex: 1;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  /* ========== Selection Bar (sticky banner when ≥1 selected) ========== */
+  .selection-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--purple);
+    color: white;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(156, 90, 184, 0.3);
+  }
+  .selection-bar-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .selection-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+  .selection-count {
+    background: white;
+    color: var(--purple);
+    border-radius: 999px;
+    padding: 2px 12px;
+    font: 700 14px var(--font-mono);
+    flex-shrink: 0;
+  }
+  .selection-pills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font: 500 12px var(--font-sans);
+    opacity: 0.95;
+  }
+  .selection-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn-check-interaction {
+    background: white;
+    color: var(--purple);
+    border: none;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font: 700 13px var(--font-sans);
+    cursor: pointer;
+    transition: transform 150ms;
+  }
+  .btn-check-interaction:hover {
+    transform: scale(1.05);
+  }
+  .btn-check-interaction:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .btn-clear-selection {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font: 600 13px var(--font-sans);
+    cursor: pointer;
+  }
+  .btn-clear-selection:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Interaction result box */
+  .interaction-result-box {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* ========== Sticky Back Button (in detail view) ========== */
+  .sticky-back-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    padding: 8px 0;
+    margin-bottom: 4px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .sticky-back-btn {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font: 600 14px var(--font-sans);
+    color: var(--purple);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 180ms;
+  }
+  .sticky-back-btn:hover {
+    background: var(--purple);
+    color: white;
+    border-color: var(--purple);
+  }
 </style>
 
 </head>
@@ -397,17 +600,29 @@
     </div>
   </div>
 
-  <!-- TABS ----------------------------------------------------- -->
-  <div class="pharma-tabs">
-    <button class="tab-btn active" data-tab="drugs">📋 Drug List</button>
-    <button class="tab-btn" data-tab="interactions">⚠️ Interactions</button>
+  <!-- SELECTED DRUGS BANNER (visible when checkboxes selected) -->
+  <div id="selectionBar" class="selection-bar" style="display:none;">
+    <div class="selection-bar-inner">
+      <div class="selection-info">
+        <span class="selection-count" id="selectionCount">0</span>
+        <span style="font-weight:500;">ยาที่เลือก</span>
+        <span id="selectionPills" class="selection-pills"></span>
+      </div>
+      <div class="selection-actions">
+        <button class="btn-check-interaction" id="checkInteractionBtn">⚠️ ตรวจ Interaction</button>
+        <button class="btn-clear-selection" id="clearSelectionBtn">ล้าง</button>
+      </div>
+    </div>
   </div>
 
-  <!-- DRUG LIST TAB ------------------------------------------- -->
-  <div class="tab-content active" id="tab-drugs">
-    <div class="search-bar" style="margin-bottom: 12px;">
-      <span class="search-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- INTERACTION RESULT (modal-like inline) -->
+  <div id="interactionResultBox" class="interaction-result-box" style="display:none;"></div>
+
+  <!-- DRUG LIST -->
+  <div id="drugListContainer">
+    <div class="search-bar pharma-search">
+      <span class="search-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/>
         </svg>
       </span>
@@ -415,34 +630,25 @@
     </div>
 
     <div id="drugListView" class="drug-list"></div>
-    <div id="drugDetailView" style="display:none"></div>
   </div>
 
-  <!-- INTERACTIONS TAB ---------------------------------------- -->
-  <div class="tab-content" id="tab-interactions">
-    <div class="interaction-builder">
-      <p style="font: 600 14px var(--font-sans); margin: 0 0 10px;">เลือกยาที่ผู้ป่วยกำลังได้รับ:</p>
-      <div class="selected-drugs" id="selectedDrugs"></div>
-      
-      <div class="search-bar" style="margin-bottom: 12px;">
-        <span class="search-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/>
-          </svg>
-        </span>
-        <input type="search" id="interactionSearch" placeholder="ค้นหา + เพิ่มยา" autocomplete="off">
-      </div>
-
-      <div id="interactionDrugList" class="drug-list" style="max-height: 250px; overflow-y: auto;"></div>
-
-      <div class="interaction-result" id="interactionResult"></div>
+  <!-- DRUG DETAIL VIEW (with sticky back button) -->
+  <div id="drugDetailView" style="display:none">
+    <div class="sticky-back-bar">
+      <button class="sticky-back-btn" onclick="backToList()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M11 18l-6-6 6-6"/>
+        </svg>
+        <span>กลับรายการยา</span>
+      </button>
     </div>
+    <div id="drugDetailContent"></div>
   </div>
 
 </div>
 
-<script src="auth.js?v=20260501ai"></script>
-<script src="pharmacology-data.js?v=20260501ai"></script>
+<script src="auth.js?v=20260501ap"></script>
+<script src="pharmacology-data.js?v=20260501ap"></script>
 <script>
 // ============================================================
 // Pharmacology Tool Logic
@@ -453,17 +659,21 @@ const INTERACTIONS = window.DRUG_INTERACTIONS || [];
 // State
 let currentSpecies = 'dog';
 let currentBW = 10;
-let selectedDrugIds = []; // for interaction checker
+let selectedDrugIds = []; // for interaction checker (via checkboxes)
 
 // DOM refs
 const $bwInput = document.getElementById('bwInput');
 const $drugSearch = document.getElementById('drugSearch');
 const $drugListView = document.getElementById('drugListView');
+const $drugListContainer = document.getElementById('drugListContainer');
 const $drugDetailView = document.getElementById('drugDetailView');
-const $selectedDrugs = document.getElementById('selectedDrugs');
-const $interactionSearch = document.getElementById('interactionSearch');
-const $interactionDrugList = document.getElementById('interactionDrugList');
-const $interactionResult = document.getElementById('interactionResult');
+const $drugDetailContent = document.getElementById('drugDetailContent');
+const $selectionBar = document.getElementById('selectionBar');
+const $selectionCount = document.getElementById('selectionCount');
+const $selectionPills = document.getElementById('selectionPills');
+const $checkBtn = document.getElementById('checkInteractionBtn');
+const $clearBtn = document.getElementById('clearSelectionBtn');
+const $interactionResultBox = document.getElementById('interactionResultBox');
 
 // ============================================================
 // Species toggle + BW input
@@ -473,7 +683,6 @@ document.querySelectorAll('.species-btn').forEach(btn => {
     document.querySelectorAll('.species-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentSpecies = btn.dataset.species;
-    // re-render current view
     if ($drugDetailView.style.display !== 'none' && $drugDetailView.dataset.drugId) {
       renderDrugDetail($drugDetailView.dataset.drugId);
     }
@@ -491,20 +700,7 @@ $bwInput.addEventListener('input', () => {
 });
 
 // ============================================================
-// Tabs
-// ============================================================
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab = btn.dataset.tab;
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById('tab-' + tab).classList.add('active');
-  });
-});
-
-// ============================================================
-// Drug List
+// Drug List with Checkboxes
 // ============================================================
 function renderDrugList(filter = '') {
   const q = filter.toLowerCase().trim();
@@ -513,14 +709,33 @@ function renderDrugList(filter = '') {
     return (d.name + ' ' + d.nameTh + ' ' + d.classDrug).toLowerCase().includes(q);
   });
 
-  $drugListView.innerHTML = filtered.map(d => `
-    <div class="drug-item" data-drug-id="${d.id}">
-      <div class="drug-item-name">${d.name} <span style="color: var(--ink-mute); font-weight: 400;">· ${d.nameTh || ''}</span></div>
-      <div class="drug-item-class">${d.classDrug}</div>
-    </div>
-  `).join('');
+  $drugListView.innerHTML = filtered.map(d => {
+    const isSelected = selectedDrugIds.includes(d.id);
+    return `
+      <div class="drug-item ${isSelected ? 'selected' : ''}" data-drug-id="${d.id}">
+        <div class="drug-checkbox ${isSelected ? 'checked' : ''}" data-drug-id="${d.id}" role="checkbox" aria-checked="${isSelected}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div class="drug-item-content" data-drug-id="${d.id}">
+          <div class="drug-item-name">${d.name} <span style="color: var(--ink-mute); font-weight: 400;">· ${d.nameTh || ''}</span></div>
+          <div class="drug-item-class">${d.classDrug}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
 
-  $drugListView.querySelectorAll('.drug-item').forEach(item => {
+  // Checkbox click → toggle selection
+  $drugListView.querySelectorAll('.drug-checkbox').forEach(cb => {
+    cb.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleSelection(cb.dataset.drugId);
+    });
+  });
+
+  // Drug name click → open detail
+  $drugListView.querySelectorAll('.drug-item-content').forEach(item => {
     item.addEventListener('click', () => {
       renderDrugDetail(item.dataset.drugId);
     });
@@ -530,21 +745,69 @@ function renderDrugList(filter = '') {
 $drugSearch.addEventListener('input', () => renderDrugList($drugSearch.value));
 
 // ============================================================
-// Drug Detail (with dose calculator)
+// Selection Logic (checkbox)
+// ============================================================
+function toggleSelection(drugId) {
+  if (selectedDrugIds.includes(drugId)) {
+    selectedDrugIds = selectedDrugIds.filter(id => id !== drugId);
+  } else {
+    selectedDrugIds.push(drugId);
+  }
+  // Hide interaction result if user changed selection
+  $interactionResultBox.style.display = 'none';
+  updateSelectionBar();
+  renderDrugList($drugSearch.value);
+}
+
+function updateSelectionBar() {
+  const n = selectedDrugIds.length;
+  if (n === 0) {
+    $selectionBar.style.display = 'none';
+    return;
+  }
+  $selectionBar.style.display = 'block';
+  $selectionCount.textContent = n;
+  
+  $selectionPills.innerHTML = selectedDrugIds.map(id => {
+    const drug = DRUGS.find(d => d.id === id);
+    return drug ? drug.name : '';
+  }).join(' · ');
+
+  $checkBtn.disabled = (n < 2);
+  $checkBtn.textContent = n < 2 
+    ? '⚠️ เลือกอย่างน้อย 2 ตัว' 
+    : `⚠️ ตรวจ Interaction (${n} ตัว)`;
+}
+
+$clearBtn.addEventListener('click', () => {
+  selectedDrugIds = [];
+  $interactionResultBox.style.display = 'none';
+  updateSelectionBar();
+  renderDrugList($drugSearch.value);
+});
+
+$checkBtn.addEventListener('click', () => {
+  checkInteractions();
+});
+
+// ============================================================
+// Drug Detail (with sticky back button)
 // ============================================================
 function renderDrugDetail(drugId) {
   const drug = DRUGS.find(d => d.id === drugId);
   if (!drug) return;
 
-  $drugListView.style.display = 'none';
+  $drugListContainer.style.display = 'none';
   $drugDetailView.style.display = 'block';
   $drugDetailView.dataset.drugId = drugId;
+  $interactionResultBox.style.display = 'none';
+
+  // Scroll to top of detail view
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const doses = (drug.doses && drug.doses[currentSpecies]) || [];
 
-  $drugDetailView.innerHTML = `
-    <button onclick="backToList()" style="background: none; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font: 500 13px var(--font-sans); color: var(--ink-mute); cursor: pointer; margin-bottom: 14px;">← กลับ</button>
-    
+  $drugDetailContent.innerHTML = `
     <div class="drug-detail">
       <h2>${drug.name}</h2>
       <p style="margin: 0 0 6px; color: var(--ink-mute); font: 500 14px var(--font-sans);">${drug.nameTh || ''}</p>
@@ -555,7 +818,7 @@ function renderDrugDetail(drugId) {
         <div style="font: 500 13px var(--font-sans);">${(drug.forms || []).join(' · ')}</div>
       </div>
 
-      <h3 style="font: 700 15px var(--font-sans); margin: 0 0 10px;">📋 เลือก Indication เพื่อคำนวณ Dose</h3>
+      <h3 style="font: 700 15px var(--font-sans); margin: 0 0 10px;">📋 Indication + Calculated Dose</h3>
       
       ${doses.length === 0 ? `
         <div style="padding: 14px; background: var(--bg); border-radius: 10px; color: var(--ink-mute);">
@@ -595,12 +858,9 @@ function renderDrugDetail(drugId) {
 }
 
 function renderIndicationCard(drug, doseInfo, idx) {
-  // Try to compute calculated dose
-  let calculatedDose = '';
   let calcRange = null;
   
   if (doseInfo.dose && doseInfo.dose !== '—') {
-    // Parse dose: could be "11-22" or "0.2 then 0.1" or "8" or "5-10"
     const doseStr = doseInfo.dose.toString();
     const m = doseStr.match(/^([\d.]+)(?:\s*-\s*([\d.]+))?/);
     if (m) {
@@ -633,80 +893,18 @@ function renderIndicationCard(drug, doseInfo, idx) {
 }
 
 function backToList() {
-  $drugListView.style.display = 'grid';
+  $drugListContainer.style.display = 'block';
   $drugDetailView.style.display = 'none';
   $drugDetailView.dataset.drugId = '';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 window.backToList = backToList;
 
 // ============================================================
-// Interaction Checker
+// Interaction Checker (now triggered by button)
 // ============================================================
-function renderInteractionList(filter = '') {
-  const q = filter.toLowerCase().trim();
-  const filtered = DRUGS.filter(d => {
-    if (selectedDrugIds.includes(d.id)) return false; // already selected
-    if (!q) return true;
-    return (d.name + ' ' + d.nameTh).toLowerCase().includes(q);
-  });
-
-  $interactionDrugList.innerHTML = filtered.slice(0, 8).map(d => `
-    <div class="drug-item" data-drug-id="${d.id}">
-      <div class="drug-item-name">${d.name}</div>
-      <div class="drug-item-class">${d.classDrug}</div>
-    </div>
-  `).join('');
-
-  $interactionDrugList.querySelectorAll('.drug-item').forEach(item => {
-    item.addEventListener('click', () => {
-      addDrugToInteraction(item.dataset.drugId);
-    });
-  });
-}
-
-function addDrugToInteraction(drugId) {
-  if (!selectedDrugIds.includes(drugId)) {
-    selectedDrugIds.push(drugId);
-  }
-  $interactionSearch.value = '';
-  renderSelectedDrugs();
-  renderInteractionList();
-  checkInteractions();
-}
-
-function removeDrug(drugId) {
-  selectedDrugIds = selectedDrugIds.filter(id => id !== drugId);
-  renderSelectedDrugs();
-  renderInteractionList();
-  checkInteractions();
-}
-window.removeDrug = removeDrug;
-
-function renderSelectedDrugs() {
-  if (selectedDrugIds.length === 0) {
-    $selectedDrugs.innerHTML = '<span style="color: var(--ink-mute); font: 400 13px var(--font-sans);">ยังไม่ได้เลือกยา</span>';
-    return;
-  }
-  $selectedDrugs.innerHTML = selectedDrugIds.map(id => {
-    const drug = DRUGS.find(d => d.id === id);
-    return `
-      <span class="drug-pill">
-        ${drug.name}
-        <button onclick="removeDrug('${id}')" aria-label="ลบ">×</button>
-      </span>
-    `;
-  }).join('');
-}
-
 function checkInteractions() {
-  if (selectedDrugIds.length < 2) {
-    $interactionResult.innerHTML = `
-      <div style="padding: 14px; background: var(--bg); border-radius: 10px; color: var(--ink-mute); text-align: center; font: 500 13px var(--font-sans);">
-        เลือกยาตั้งแต่ 2 ตัวขึ้นไปเพื่อตรวจ interaction
-      </div>
-    `;
-    return;
-  }
+  if (selectedDrugIds.length < 2) return;
 
   const found = [];
   for (let i = 0; i < selectedDrugIds.length; i++) {
@@ -724,48 +922,81 @@ function checkInteractions() {
     }
   }
 
+  $interactionResultBox.style.display = 'block';
+
   if (found.length === 0) {
-    $interactionResult.innerHTML = `
-      <div style="padding: 14px; background: rgba(80, 180, 80, 0.08); border: 1px solid rgba(80, 180, 80, 0.3); border-radius: 10px; color: #2A8B2A; text-align: center; font: 600 14px var(--font-sans);">
-        ✅ ไม่พบ interaction ที่บันทึกไว้
-        <p style="font: 400 11px var(--font-sans); margin: 6px 0 0; color: var(--ink-mute);">
-          (Database จำกัด · always verify with Plumb's)
-        </p>
+    $interactionResultBox.innerHTML = `
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+        <div style="font: 600 14px var(--font-sans); color: #2A8B2A;">
+          ✅ ไม่พบ interaction ที่บันทึกไว้ระหว่างยา ${selectedDrugIds.length} ตัวที่เลือก
+        </div>
+        <button onclick="closeInteractionResult()" style="background: none; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font: 500 12px var(--font-sans); color: var(--ink-mute); cursor: pointer;">ปิด</button>
       </div>
+      <p style="font: 400 11px var(--font-sans); margin: 6px 0 0; color: var(--ink-mute);">
+        (Database จำกัด · always verify with Plumb's 10th Ed.)
+      </p>
     `;
+    // Scroll to result
+    $interactionResultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
     return;
   }
 
-  $interactionResult.innerHTML = `
-    <h3 style="font: 700 15px var(--font-sans); margin: 14px 0 10px;">⚠️ พบ ${found.length} interaction:</h3>
-    ${found.map(x => `
-      <div class="interaction-card ${x.severity}">
-        <div class="severity">${x.severity}</div>
-        <div style="font: 700 14px var(--font-sans); margin-bottom: 4px;">
-          ${x.drug1.name} ↔ ${x.drug2.name}
-        </div>
-        <div style="font: 500 13px var(--font-sans); margin-bottom: 6px;">
-          <strong>Effect:</strong> ${x.effect}
-        </div>
-        <div style="font: 500 13px var(--font-sans);">
-          <strong>Management:</strong> ${x.management}
-        </div>
+  // Group by severity
+  const major = found.filter(f => f.severity === 'major');
+  const moderate = found.filter(f => f.severity === 'moderate');
+  const minor = found.filter(f => f.severity === 'minor');
+
+  $interactionResultBox.innerHTML = `
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+      <h3 style="font: 700 16px var(--font-sans); margin: 0;">⚠️ พบ ${found.length} interaction</h3>
+      <button onclick="closeInteractionResult()" style="background: none; border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font: 500 12px var(--font-sans); color: var(--ink-mute); cursor: pointer;">ปิด</button>
+    </div>
+    
+    ${major.length > 0 ? `
+      <div style="font: 700 12px var(--font-sans); color: #DC3232; margin: 8px 0 6px; text-transform: uppercase; letter-spacing: 0.05em;">🔴 Major (${major.length})</div>
+      ${major.map(x => renderInteractionCard(x)).join('')}
+    ` : ''}
+    
+    ${moderate.length > 0 ? `
+      <div style="font: 700 12px var(--font-sans); color: #B26A00; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.05em;">🟠 Moderate (${moderate.length})</div>
+      ${moderate.map(x => renderInteractionCard(x)).join('')}
+    ` : ''}
+    
+    ${minor.length > 0 ? `
+      <div style="font: 700 12px var(--font-sans); color: #B28F00; margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.05em;">🟡 Minor (${minor.length})</div>
+      ${minor.map(x => renderInteractionCard(x)).join('')}
+    ` : ''}
+  `;
+
+  $interactionResultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderInteractionCard(x) {
+  return `
+    <div class="interaction-card ${x.severity}">
+      <div style="font: 700 14px var(--font-sans); margin-bottom: 4px;">
+        ${x.drug1.name} ↔ ${x.drug2.name}
       </div>
-    `).join('')}
+      <div style="font: 500 13px var(--font-sans); margin-bottom: 6px;">
+        <strong>Effect:</strong> ${x.effect}
+      </div>
+      <div style="font: 500 13px var(--font-sans);">
+        <strong>Management:</strong> ${x.management}
+      </div>
+    </div>
   `;
 }
 
-$interactionSearch.addEventListener('input', () => {
-  renderInteractionList($interactionSearch.value);
-});
+function closeInteractionResult() {
+  $interactionResultBox.style.display = 'none';
+}
+window.closeInteractionResult = closeInteractionResult;
 
 // ============================================================
 // Init
 // ============================================================
 renderDrugList();
-renderInteractionList();
-renderSelectedDrugs();
-checkInteractions();
+updateSelectionBar();
 </script>
 </body>
 </html>
