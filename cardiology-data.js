@@ -855,6 +855,2895 @@ window.CARDIOLOGY_DATA = [
     },
   },
 
+  /* ============================================================
+     Phase 2 — Acquired Disease (Dog + Cat) — 7 entries
+     ============================================================ */
+
+  {
+    id: 'card-dcm',
+    titleEn: 'Dilated Cardiomyopathy (DCM)',
+    titleTh: 'โรคกล้ามเนื้อหัวใจขยาย (DCM)',
+    type: 'disease',
+    system: 'acquired-dog',
+    species: ['dog'],
+    tags: ['DCM', 'dilated', 'Doberman', 'Boxer', 'systolic dysfunction', 'taurine'],
+    aliases: ['idiopathic DCM', 'cardiomyopathy', 'หัวใจโต DCM'],
+    source: 'Bussadori + Duque-Carrasco',
+    sections: {
+      definition: `
+        <p><strong>Dilated Cardiomyopathy (DCM)</strong> — โรคหัวใจของหมาพันธุ์ใหญ่ที่พบบ่อยที่สุด · กล้ามเนื้อหัวใจอ่อนแรง + ขยาย → systolic dysfunction</p>
+        <ul>
+          <li>Primary myocardial disease (idiopathic / genetic)</li>
+          <li>4-chamber dilation (LV เด่น) + reduced contractility (low FS, low EF)</li>
+          <li>⭐ Predisposed breeds: <strong>Doberman Pinscher</strong> (40-60% lifetime), Boxer (ARVC variant), Great Dane, Irish Wolfhound, Newfoundland, Cocker Spaniel</li>
+          <li>Age: middle-aged (3-7 yo Doberman · variable others)</li>
+          <li>Male &gt; female (Doberman)</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">DCM Stages — Doberman 3-Phase Model</span>
+          <table>
+            <tr><th>Stage</th><th>Echo</th><th>Holter</th><th>Treatment</th></tr>
+            <tr><td><strong>Stage 1 (Occult electrical)</strong></td><td>Normal</td><td>VPCs &gt; 50/24h</td><td>None or sotalol if dangerous</td></tr>
+            <tr><td><strong>Stage 2 (Occult morphologic)</strong></td><td>↑ LVIDd · ↓ FS</td><td>± VPCs</td><td>⭐ <strong>Pimobendan</strong> (PROTECT trial) · ± ACEi</td></tr>
+            <tr><td><strong>Stage 3 (Overt CHF)</strong></td><td>Severe dilation · low FS</td><td>VPCs common</td><td>⭐ <strong>FSAP</strong> · ± antiarrhythmic</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>PROTECT trial</strong> (Summerfield 2012): pimobendan in occult Doberman DCM = +9 months until CHF<br>
+          📌 Stage 1 (electrical only) → Holter screening valuable</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Genetic (primary)</strong> — autosomal dominant in Doberman, Boxer ARVC (Striatin gene), Great Dane</li>
+          <li><strong>Nutritional (secondary)</strong>:
+            <ul>
+              <li>⭐ <strong>Taurine deficiency</strong> — Cocker, Golden, ⚠️ <strong>Grain-free / BEG diet</strong> (FDA alert 2018)</li>
+              <li>⭐ <strong>L-carnitine deficiency</strong> — Boxer, American Cocker</li>
+            </ul>
+          </li>
+          <li><strong>Toxic</strong> — doxorubicin (chemo), Adriamycin</li>
+          <li><strong>Infectious</strong> — Trypanosoma cruzi (Chagas, US southern), parvovirus (puppy), Bartonella</li>
+          <li><strong>Endocrine</strong> — hypothyroidism (mild contribution)</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">FDA-DCM Alert — "BEG diet" mnemonic</span>
+          <ul>
+            <li><strong>B</strong>outique brand (small companies)</li>
+            <li><strong>E</strong>xotic protein (kangaroo, alligator, etc.)</li>
+            <li><strong>G</strong>rain-free (legumes/peas/lentils)</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"BEG = Beg for trouble"</strong> · FDA 2018+ alert: ↑ DCM in non-traditional breeds<br>
+          📌 Switch to grain-inclusive AAFCO diet · check taurine + Holter + echo<br>
+          📌 Reversible if caught early + diet change</p>
+        </div>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Myocyte dysfunction (genetic, nutritional, toxic)</li>
+          <li>Reduced contractility (↓ FS, ↓ EF)</li>
+          <li>↓ Stroke volume → compensatory ↑ HR, ↑ preload (RAAS)</li>
+          <li>Eccentric hypertrophy → 4-chamber dilation</li>
+          <li>Functional MR (annular dilation) → volume overload worsens</li>
+          <li>Atrial enlargement → AFib risk · Pulmonary edema</li>
+          <li>Ventricular arrhythmias from stretched/scarred myocardium → sudden death</li>
+        </ol>
+
+        <p><strong>Boxer ARVC variant:</strong></p>
+        <ul>
+          <li>Right ventricular fibro-fatty replacement (vs LV in classical DCM)</li>
+          <li>VPCs predominant · syncope</li>
+          <li>Striatin gene mutation</li>
+          <li>Sudden death common</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Clinical presentation by stage:</strong></p>
+        <ul>
+          <li><strong>Stage 1-2 (occult):</strong> Asymptomatic · screening detection only</li>
+          <li><strong>Stage 3 (overt CHF):</strong>
+            <ul>
+              <li>Exercise intolerance · weakness</li>
+              <li>⭐ <strong>Syncope</strong> — VPC-related or AFib-related</li>
+              <li>Cough (less than MMVD)</li>
+              <li>Tachypnea · respiratory distress (pulmonary edema)</li>
+              <li>Ascites if right-sided component</li>
+              <li>Cardiac cachexia (weight loss)</li>
+              <li>⚠️ <strong>Sudden death</strong> — particularly Doberman, Boxer</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Soft systolic murmur (functional MR · grade 2-3) at L apex — quieter than MMVD</li>
+          <li>⭐ <strong>S3 gallop</strong> — diastolic ventricular filling sound (DCM hallmark)</li>
+          <li>Pulse: weak · pulse deficit common (AFib)</li>
+          <li>Tachycardia · loss of sinus arrhythmia</li>
+          <li>Pulmonary crackles (CHF)</li>
+          <li>Jugular distension if right-sided</li>
+        </ul>
+      `,
+      diagnosis: `
+        <ul>
+          <li><strong>Echocardiogram</strong> (gold standard):
+            <ul>
+              <li>↑ LVIDd · LVIDs (severe dilation)</li>
+              <li>↓ FS &lt; 25% (often 10-20%)</li>
+              <li>↑ EPSS (E-point septal separation)</li>
+              <li>Normal/thin LV wall</li>
+              <li>LA enlargement</li>
+              <li>± functional MR</li>
+            </ul>
+          </li>
+          <li><strong>Holter (24-hr)</strong> — essential for occult DCM detection
+            <ul>
+              <li>Doberman: VPCs &gt; 100/24h = highly suspicious DCM</li>
+              <li>Boxer ARVC: VPCs &gt; 100-300/24h</li>
+              <li>Couplets, triplets, runs of VT = high risk sudden death</li>
+            </ul>
+          </li>
+          <li><strong>NT-proBNP</strong> — elevated · trends with progression</li>
+          <li><strong>Cardiac troponin I (cTnI)</strong> — myocardial damage marker</li>
+          <li><strong>Thoracic radiograph</strong>: generalized cardiomegaly · pulmonary edema (Stage 3)</li>
+          <li><strong>Taurine + L-carnitine levels</strong> — if BEG diet, Cocker, Golden, Boxer</li>
+          <li><strong>Genetic testing</strong> — Doberman PDK4/Titin · Boxer striatin (commercial labs)</li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Doberman Screening — "Annual After Age 3"</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">3+</span>
+              <span class="num-label">Annual screening start age (yr)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">&gt;100</span>
+              <span class="num-label">VPCs/24h = suspicious</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">&lt;25%</span>
+              <span class="num-label">FS = systolic dysfunction</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">9 mo</span>
+              <span class="num-label">Pimobendan delays CHF (PROTECT)</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 Echo + Holter + NT-proBNP annually · pre-clinical detection saves time<br>
+          📌 Pimobendan benefits even in occult stage</p>
+        </div>
+      `,
+      differential: `
+        <ul>
+          <li><strong>MMVD (advanced)</strong> — small breed · prolapsing valve · loud MR</li>
+          <li><strong>Pericardial effusion</strong> — muffled sounds · POCUS</li>
+          <li><strong>Endocarditis</strong> — fever · vegetative lesion</li>
+          <li><strong>Heartworm disease</strong> — antigen positive · pulmonary signs</li>
+          <li><strong>Hypothyroid cardiomyopathy</strong> — T4 low · resolves with Rx</li>
+          <li><strong>Tachycardia-induced cardiomyopathy</strong> — chronic AFib · partially reversible</li>
+          <li><strong>Doxorubicin cardiotoxicity</strong> — chemo history</li>
+          <li><strong>Pulmonary hypertension</strong> — right-sided</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment by stage:</strong></p>
+
+        <ul>
+          <li><strong>Stage 1 (electrical only):</strong>
+            <ul>
+              <li>Generally no medication unless dangerous arrhythmia</li>
+              <li>Sotalol if VPCs &gt; 1000/24h, R-on-T, syncope</li>
+              <li>Diet review (taurine, L-carnitine if breed-relevant)</li>
+              <li>Annual rescreening</li>
+            </ul>
+          </li>
+          <li><strong>Stage 2 (morphologic, occult):</strong>
+            <ul>
+              <li>⭐ <strong>Pimobendan 0.25-0.3 mg/kg PO q12h</strong> (PROTECT trial)</li>
+              <li>± ACEi (benazepril 0.5 mg/kg q24h)</li>
+              <li>Holter every 6 months</li>
+              <li>Echo every 6-12 months</li>
+            </ul>
+          </li>
+          <li><strong>Stage 3 (CHF):</strong>
+            <ul>
+              <li>⭐ Quadruple "FSAP": Furosemide + Spironolactone + ACEi + Pimobendan</li>
+              <li>Antiarrhythmic if VT/frequent VPCs (sotalol 1-3 mg/kg q12h, mexiletine, amiodarone)</li>
+              <li>AFib rate control: diltiazem 1-2 mg/kg q8h or digoxin (rare now)</li>
+              <li>Severe: torsemide instead of furosemide · sildenafil for pulmonary HT</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Nutritional intervention:</strong></p>
+        <ul>
+          <li><strong>Taurine supplementation</strong> 500-1000 mg PO q12h (if low) — reversible if caught early</li>
+          <li><strong>L-carnitine</strong> 50-100 mg/kg PO q8h (Boxer)</li>
+          <li><strong>Diet change</strong> if BEG: switch to traditional grain-inclusive · re-echo 3-6 months</li>
+          <li><strong>Omega-3 fatty acids</strong> (EPA/DHA) — anti-arrhythmic, anti-cachexia</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Sudden death</strong> — especially Doberman (40% sudden) and Boxer ARVC · VT</li>
+          <li><strong>Atrial fibrillation</strong> — often precipitates CHF</li>
+          <li><strong>Cardiogenic shock</strong> — refractory low output</li>
+          <li><strong>Pulmonary hypertension</strong> — secondary to LA pressure</li>
+          <li><strong>Cardiac cachexia</strong> — late stage</li>
+          <li><strong>Thromboembolism</strong> — uncommon in dogs (vs cats) but possible with severe LA dilation</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Doberman occult</strong> — 1-3 years to CHF without Rx · longer with pimobendan</li>
+          <li><strong>Doberman overt CHF</strong> — median 6-12 months</li>
+          <li><strong>Cocker DCM</strong> — better with taurine supplementation (often reversible)</li>
+          <li><strong>Boxer ARVC</strong> — sudden death predominant · sotalol reduces VT</li>
+          <li><strong>Diet-associated DCM</strong> — partial/full reversal with diet change (if early)</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-pericardial',
+    titleEn: 'Pericardial Disease + Cardiac Tamponade',
+    titleTh: 'โรคเยื่อหุ้มหัวใจ + Tamponade',
+    type: 'disease',
+    system: 'acquired-dog',
+    species: ['dog', 'cat'],
+    tags: ['pericardial effusion', 'tamponade', 'hemangiosarcoma', 'pericardiocentesis', 'POCUS'],
+    aliases: ['pericardial effusion', 'tamponade', 'เยื่อหุ้มหัวใจ'],
+    source: 'Bussadori + Duque-Carrasco',
+    sections: {
+      definition: `
+        <p><strong>Pericardial disease</strong> — fluid (effusion) หรือ mass สะสมใน pericardial sac → impaired cardiac filling → tamponade</p>
+        <ul>
+          <li><strong>Pericardial effusion</strong> = fluid in pericardial sac</li>
+          <li><strong>Cardiac tamponade</strong> = effusion → ↑ pericardial pressure → impaired RV filling → low CO → shock</li>
+          <li><strong>Constrictive pericarditis</strong> = thickened/fibrosed pericardium → restricted filling (rare)</li>
+          <li>⭐ Most common in <strong>large breed older dogs</strong> (Golden Retriever, GSD, Saint Bernard)</li>
+          <li>Cat: rare · usually associated with FIP, lymphoma, CHF</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Pericardial Effusion — Major Causes</span>
+          <table>
+            <tr><th>Cause</th><th>Frequency Dog</th><th>Notes</th></tr>
+            <tr><td><strong>Hemangiosarcoma (HSA)</strong></td><td>~50% — #1 cause</td><td>⭐ Right atrial mass · Golden, GSD · poor prognosis</td></tr>
+            <tr><td><strong>Heart base tumor (chemodectoma)</strong></td><td>~25%</td><td>Brachycephalic (Boxer, English Bulldog) · slower growth</td></tr>
+            <tr><td><strong>Idiopathic (benign)</strong></td><td>~15%</td><td>Diagnosis of exclusion · pericardiectomy if recurrent</td></tr>
+            <tr><td><strong>Mesothelioma</strong></td><td>~5%</td><td>Diffuse · cytology often negative · fluid recurs after pericardectomy</td></tr>
+            <tr><td><strong>CHF-related (transudate)</strong></td><td>Uncommon</td><td>Right CHF · DCM · resolves with CHF Rx</td></tr>
+            <tr><td><strong>Infectious (FIP, bacterial)</strong></td><td>Cat predominant</td><td>Cat: FIP common · Dog: rare bacterial</td></tr>
+            <tr><td><strong>Trauma / coagulopathy</strong></td><td>Variable</td><td>Rodenticide · Hx</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>Golden Retriever + pericardial effusion = HSA until proven otherwise</strong><br>
+          📌 ⭐ <strong>"3 main causes in dogs":</strong> HSA &gt; chemodectoma &gt; idiopathic</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Neoplastic (most common)</strong>:
+            <ul>
+              <li>Hemangiosarcoma (right atrium/auricle)</li>
+              <li>Chemodectoma (heart base, aortic body)</li>
+              <li>Mesothelioma (diffuse pericardium)</li>
+              <li>Lymphoma (cat especially)</li>
+              <li>Ectopic thyroid carcinoma</li>
+            </ul>
+          </li>
+          <li><strong>Idiopathic benign pericardial effusion</strong> — middle-aged large breed</li>
+          <li><strong>Infectious</strong> — FIP (cat), bacterial (rare), fungal</li>
+          <li><strong>Cardiogenic transudate</strong> — right CHF, DCM</li>
+          <li><strong>Coagulopathy</strong> — rodenticide, DIC</li>
+          <li><strong>Trauma</strong> — chest trauma, foreign body migration</li>
+          <li><strong>Uremia</strong> (rare)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Fluid/mass accumulates in pericardial sac</li>
+          <li>↑ pericardial pressure</li>
+          <li>When pressure exceeds RA pressure → RA collapse during diastole</li>
+          <li>Reduced venous return → reduced RV filling → reduced LV filling</li>
+          <li>↓ Stroke volume → ↓ Cardiac output</li>
+          <li>Compensation: tachycardia, vasoconstriction</li>
+          <li>If unrelieved → cardiogenic shock → death</li>
+        </ol>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Tamponade Hemodynamics</span>
+          <ul>
+            <li>RA pressure ↑ (back pressure to vena cava)</li>
+            <li>JVP elevated (jugular distension)</li>
+            <li>RV filling ↓ → LV filling ↓</li>
+            <li>Stroke volume ↓ → CO ↓</li>
+            <li>HR ↑ (compensatory tachycardia)</li>
+            <li>BP initially maintained → eventually drops</li>
+            <li>Pulsus paradoxus (variation with breathing) — late sign</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Pre-shock":</strong> patient looks distressed but BP normal — high HR + JVP elevated = tamponade until proven otherwise<br>
+          📌 ใน cat: tamponade rare แต่ถ้าเกิด → เร็ว, severe</p>
+        </div>
+      `,
+      symptoms: `
+        <p><strong>Acute tamponade presentation:</strong></p>
+        <ul>
+          <li><strong>Sudden collapse / weakness</strong></li>
+          <li><strong>Exercise intolerance</strong></li>
+          <li><strong>Tachypnea / dyspnea</strong></li>
+          <li><strong>Distended abdomen</strong> (ascites from chronic right CHF)</li>
+          <li>Pale mucous membranes</li>
+          <li>Cold extremities (low perfusion)</li>
+        </ul>
+
+        <p><strong>Physical exam — CLASSIC findings:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Tamponade Classic Triad — "Beck's Triad" (modified)</span>
+          <ul>
+            <li><strong>Muffled heart sounds</strong> (fluid surrounds heart)</li>
+            <li><strong>Distended jugular veins</strong> (↑ central venous pressure)</li>
+            <li><strong>Hypotension</strong> + weak pulse + tachycardia</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Muffled · JVD · Hypotension"</strong><br>
+          📌 + <strong>Pulsus paradoxus</strong> (BP drops &gt; 10 mmHg on inspiration)<br>
+          📌 ฟังเสียงหัวใจเงียบ + JVD = pericardiocentesis emergency!</p>
+        </div>
+
+        <p><strong>Other findings:</strong></p>
+        <ul>
+          <li>Ascites (right-sided CHF picture)</li>
+          <li>Hepatomegaly</li>
+          <li>Sinus tachycardia (compensatory)</li>
+          <li>Electrical alternans on ECG (heart swinging in fluid)</li>
+          <li>Small-amplitude QRS (low voltage)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Diagnostic workup — speed essential:</strong></p>
+        <ul>
+          <li>⭐ <strong>POCUS (point-of-care echo)</strong> — fastest · diagnostic in seconds
+            <ul>
+              <li>Anechoic space surrounding heart</li>
+              <li>RA collapse during diastole = tamponade physiology</li>
+              <li>Mass identification (right atrial HSA, heart base)</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiograph</strong>:
+            <ul>
+              <li>Globoid "basketball" cardiac silhouette</li>
+              <li>Sharp cardiac borders (no pulmonary venous distension)</li>
+              <li>"Tin can" appearance lateral view</li>
+              <li>Pleural effusion possible</li>
+              <li>Caudal vena cava distension</li>
+            </ul>
+          </li>
+          <li><strong>ECG</strong>:
+            <ul>
+              <li>Sinus tachycardia</li>
+              <li>Low-amplitude QRS (&lt; 1 mV in lead II for medium dog)</li>
+              <li>Electrical alternans (alternating R wave amplitude) — pathognomonic but not always present</li>
+            </ul>
+          </li>
+          <li><strong>Full echocardiogram (post-stabilization)</strong> — characterize mass, function</li>
+          <li><strong>Pericardial fluid analysis</strong>:
+            <ul>
+              <li>Color: serosanguineous (HSA, idiopathic) · clear (transudate) · cloudy (infection)</li>
+              <li>Cytology: rarely diagnostic for HSA · helpful for lymphoma, infection</li>
+              <li>PCV vs systemic PCV: similar = neoplastic/hemorrhagic · lower = transudate</li>
+              <li>Culture if cloudy</li>
+            </ul>
+          </li>
+          <li><strong>Coagulation panel</strong> if rodenticide possible</li>
+          <li><strong>Abdominal ultrasound</strong> — splenic mass (HSA staging — concurrent splenic mass common)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>DCM with right CHF</strong> — usually echo distinguishes</li>
+          <li><strong>Pleural effusion</strong> — different distribution</li>
+          <li><strong>Hypovolemic shock</strong> — collapsed jugulars, no fluid</li>
+          <li><strong>Anaphylaxis</strong> — different exam findings</li>
+          <li><strong>GDV</strong> — abdominal · radiographic appearance distinct</li>
+          <li><strong>Pulmonary thromboembolism</strong> — dyspnea + collapse but no effusion</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute tamponade — pericardiocentesis is LIFE-SAVING:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Pericardiocentesis Procedure</span>
+          <ul>
+            <li><strong>Position:</strong> Right lateral or sternal recumbency</li>
+            <li><strong>Site:</strong> Right 5th ICS, costochondral junction (avoid coronary on left)</li>
+            <li><strong>Equipment:</strong> 16-18G IV catheter or specialized pericardiocentesis needle, ultrasound guidance ideal, ECG attached</li>
+            <li><strong>Local block</strong> with lidocaine (skin + intercostal)</li>
+            <li><strong>Light sedation</strong> (avoid hypotensive agents — opioid only) — many cases tolerate awake with restraint</li>
+            <li><strong>Insert</strong> with continuous aspiration · aim cranio-medial</li>
+            <li><strong>Drain</strong> as much as possible · 2-3-way stopcock</li>
+            <li><strong>Save fluid</strong> for cytology, culture, PCV/biochem</li>
+          </ul>
+          <p class="mnem-tip">📌 ⚠️ Watch ECG — VPCs = tip touching myocardium → withdraw slightly<br>
+          📌 If blood doesn't clot → pericardial origin (defibrinated)<br>
+          📌 If blood clots → ventricular puncture — STOP, withdraw, reposition</p>
+        </div>
+
+        <p><strong>Post-pericardiocentesis:</strong></p>
+        <ul>
+          <li>IV fluids — volume support (avoid before drainage — worsens tamponade)</li>
+          <li>Oxygen if dyspneic</li>
+          <li>Recheck cardiac function after drainage</li>
+          <li>Treat underlying cause</li>
+          <li>Monitor for recurrence</li>
+        </ul>
+
+        <p><strong>Definitive treatment by cause:</strong></p>
+        <ul>
+          <li><strong>HSA (right atrium):</strong> 
+            <ul>
+              <li>Surgery + chemotherapy (doxorubicin) — median 4-6 months</li>
+              <li>Pericardiectomy palliative — relieves recurring tamponade</li>
+              <li>Toceranib (Palladia) emerging</li>
+            </ul>
+          </li>
+          <li><strong>Heart base tumor (chemodectoma):</strong>
+            <ul>
+              <li>Pericardiectomy → median &gt; 1 year survival</li>
+              <li>Toceranib option</li>
+              <li>Slower growth than HSA</li>
+            </ul>
+          </li>
+          <li><strong>Idiopathic effusion:</strong>
+            <ul>
+              <li>1-2 pericardiocenteses · 50% resolve</li>
+              <li>If recurrent → pericardiectomy (subtotal or total) → curative</li>
+            </ul>
+          </li>
+          <li><strong>Mesothelioma:</strong> 
+            <ul>
+              <li>Pericardiectomy → fluid recurs in pleural space</li>
+              <li>Intracavitary chemotherapy (carboplatin)</li>
+              <li>Poor prognosis</li>
+            </ul>
+          </li>
+          <li><strong>CHF transudate:</strong> Treat underlying CHF (FSAP)</li>
+          <li><strong>Bacterial:</strong> Drainage + culture-guided antibiotics</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Pericardiocentesis complications</strong>: ventricular puncture, coronary laceration, pneumothorax, arrhythmias</li>
+          <li><strong>Recurrent tamponade</strong> — common (HSA · idiopathic)</li>
+          <li><strong>Constrictive pericarditis</strong> — late complication of chronic effusion</li>
+          <li><strong>Right CHF</strong> from chronic high RA pressure</li>
+          <li><strong>Sudden death</strong> from RA HSA rupture</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>HSA:</strong> 4-6 months with surgery + chemo · 2 weeks no Rx</li>
+          <li><strong>Chemodectoma:</strong> &gt; 1 year with pericardiectomy</li>
+          <li><strong>Idiopathic:</strong> Good with pericardiectomy · 50% resolve with 1-2 taps</li>
+          <li><strong>Mesothelioma:</strong> Months · poor</li>
+          <li><strong>Tamponade unrelieved:</strong> Death within hours</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-endocarditis',
+    titleEn: 'Infective Endocarditis',
+    titleTh: 'การติดเชื้อลิ้นหัวใจ (Endocarditis)',
+    type: 'disease',
+    system: 'acquired-dog',
+    species: ['dog', 'cat'],
+    tags: ['endocarditis', 'vegetative lesion', 'aortic valve', 'mitral valve', 'bacteremia', 'infection'],
+    aliases: ['IE', 'bacterial endocarditis', 'ลิ้นหัวใจอักเสบ'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Infective Endocarditis (IE)</strong> — bacterial infection of cardiac valves with vegetative lesion formation</p>
+        <ul>
+          <li>Uncommon (&lt; 1% of cardiac dz) but life-threatening</li>
+          <li>Usually involves <strong>aortic valve (most common)</strong> or mitral valve</li>
+          <li>⭐ Vegetations = bacteria + fibrin + platelets + WBC accumulation on valve</li>
+          <li>Predisposed: large breed dogs · medium-aged · male &gt; female</li>
+          <li>Cat: very rare</li>
+        </ul>
+      `,
+      etiology: `
+        <p><strong>Pathogens (dog):</strong></p>
+        <ul>
+          <li><strong>Bartonella spp.</strong> (B. vinsonii subsp. berkhoffii) — emerging cause · subacute</li>
+          <li><strong>Streptococcus spp.</strong> (S. canis, viridans group)</li>
+          <li><strong>Staphylococcus spp.</strong> (S. pseudintermedius, S. aureus)</li>
+          <li><strong>Escherichia coli</strong></li>
+          <li><strong>Pseudomonas aeruginosa</strong></li>
+          <li><strong>Erysipelothrix rhusiopathiae</strong> (uncommon)</li>
+        </ul>
+
+        <p><strong>Risk factors / sources of bacteremia:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Sources of Endocarditis — "DUST"</span>
+          <ul>
+            <li><strong>D</strong>ental disease + procedures (dental cleaning without abx)</li>
+            <li><strong>U</strong>rinary infection (UTI, prostatitis, pyelonephritis)</li>
+            <li><strong>S</strong>kin/soft tissue infection (abscess, deep pyoderma)</li>
+            <li><strong>T</strong>ick-borne (Bartonella from cat scratch / tick exposure)</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>Pre-existing valvular dz</strong> (SAS, MMVD) ↑ risk<br>
+          📌 IV catheters, immunosuppression, surgery — also risk<br>
+          📌 ⭐ Most common: Subaortic stenosis (SAS) → high-velocity jet damages aortic valve → bacteria attach</p>
+        </div>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Bacteremia from primary source (DUST)</li>
+          <li>Bacteria attach to damaged/abnormal valve endothelium</li>
+          <li>Platelets + fibrin accumulate → vegetation forms</li>
+          <li>Vegetation grows → valve dysfunction (regurgitation primarily)</li>
+          <li>Septic emboli shed → systemic embolization (kidney, spleen, brain, joints, etc.)</li>
+          <li>Continuous bacteremia → fever, immune complex deposition</li>
+          <li>Volume overload → CHF</li>
+          <li>Severe valve damage → rupture, abscess, conduction disturbance</li>
+        </ol>
+      `,
+      symptoms: `
+        <p><strong>Variable presentation — "great mimicker":</strong></p>
+        <ul>
+          <li><strong>Fever</strong> (often intermittent · "fever of unknown origin")</li>
+          <li><strong>Lethargy · weakness · anorexia</strong></li>
+          <li><strong>Lameness</strong> (immune-mediated polyarthritis or septic emboli)</li>
+          <li><strong>Cardiac signs:</strong>
+            <ul>
+              <li>NEW murmur (especially diastolic at L base = aortic regurgitation = high suspicion!)</li>
+              <li>Loud systolic murmur (mitral)</li>
+              <li>CHF signs if severe</li>
+            </ul>
+          </li>
+          <li><strong>Embolic signs</strong> — sudden lameness, neurologic signs, kidney pain, splenic infarct</li>
+          <li><strong>Heart failure</strong> — late</li>
+          <li><strong>Sudden death</strong> from valve rupture or massive embolus</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Endocarditis Clinical Triad — Suspicious If:</span>
+          <ul>
+            <li><strong>Fever</strong> (especially intermittent, recurrent)</li>
+            <li><strong>NEW heart murmur</strong> (or change from baseline)</li>
+            <li><strong>Lameness or systemic signs</strong> (anorexia, weight loss)</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>"Fever + new murmur = endocarditis until proven otherwise"</strong><br>
+          📌 Diastolic murmur (rare in dogs) = aortic regurgitation → endocarditis very likely<br>
+          📌 Schedule emergent echo + blood cultures</p>
+        </div>
+      `,
+      diagnosis: `
+        <p><strong>Modified Duke criteria (adapted for dogs):</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Diagnosis — Major + Minor Criteria</span>
+          <table>
+            <tr><th>Major Criteria</th><th>Minor Criteria</th></tr>
+            <tr>
+              <td>
+                ⭐ Echo evidence:<br>
+                • Vegetation<br>
+                • Valve abscess<br>
+                • New valve dehiscence<br>
+                • New regurgitation
+              </td>
+              <td>
+                • Fever &gt; 39.5°C<br>
+                • Predisposing condition (SAS, etc.)<br>
+                • Vascular phenomena (emboli)<br>
+                • Immunologic (polyarthritis, GN)
+              </td>
+            </tr>
+            <tr>
+              <td>
+                ⭐ Positive blood culture<br>
+                (typical organism, ≥ 2 separate cultures)
+              </td>
+              <td>
+                • Single positive culture<br>
+                • Suggestive but not diagnostic echo
+              </td>
+            </tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>Definite IE:</strong> 2 major OR 1 major + 3 minor OR 5 minor<br>
+          📌 <strong>Possible IE:</strong> 1 major + 1 minor OR 3 minor<br>
+          📌 ⭐ Echo + blood cultures = cornerstone diagnosis</p>
+        </div>
+
+        <p><strong>Diagnostic workup:</strong></p>
+        <ul>
+          <li><strong>Echocardiogram</strong> (essential):
+            <ul>
+              <li>Vegetative lesions (irregular hyperechoic mass on valve)</li>
+              <li>Valve regurgitation (color Doppler)</li>
+              <li>Most often AORTIC valve (vs MMVD = mitral)</li>
+              <li>TEE more sensitive (rarely available in vet)</li>
+            </ul>
+          </li>
+          <li><strong>Blood cultures</strong> — 3 sets from different sites, 1 hour apart, BEFORE antibiotics
+            <ul>
+              <li>Aerobic + anaerobic bottles</li>
+              <li>Bartonella PCR (specific serology)</li>
+              <li>~50-60% positive (false negatives common)</li>
+            </ul>
+          </li>
+          <li><strong>CBC</strong> — neutrophilic leukocytosis with left shift, mild anemia</li>
+          <li><strong>Chemistry</strong> — azotemia (renal embolus), elevated globulins, ALP/ALT</li>
+          <li><strong>Urinalysis</strong> — proteinuria, pyuria, hematuria (renal emboli, GN)</li>
+          <li><strong>Coag panel</strong> — DIC possible</li>
+          <li><strong>Joint tap</strong> if polyarthritis</li>
+          <li><strong>Bartonella IFA + PCR</strong> — specifically request</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>MMVD with new arrhythmia</strong> — usually no fever, slowly progressive</li>
+          <li><strong>DCM</strong> — dilated chambers · echo distinguishes</li>
+          <li><strong>Pericardial dz</strong> — different exam</li>
+          <li><strong>Discospondylitis</strong> (back pain + fever)</li>
+          <li><strong>Immune-mediated polyarthritis</strong> alone</li>
+          <li><strong>Tick-borne disease</strong> (Ehrlichia, Anaplasma)</li>
+          <li><strong>Pyometra</strong> (intact female)</li>
+          <li><strong>Neoplasia</strong> with fever + systemic signs</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Antibiotic therapy — long-term IV/PO:</strong></p>
+        <ul>
+          <li><strong>Empirical pre-culture</strong>: ampicillin + gentamicin OR ampicillin + enrofloxacin</li>
+          <li><strong>Culture-guided</strong>: based on sensitivities</li>
+          <li><strong>Duration:</strong> 6-8 weeks IV, then PO 6-12+ weeks total (up to lifelong if Bartonella)</li>
+          <li><strong>Bartonella:</strong> doxycycline + enrofloxacin OR doxycycline + azithromycin · 6+ months</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Empirical Antibiotic Choices</span>
+          <ul>
+            <li><strong>Bactericidal essential</strong> (vegetation hard to penetrate)</li>
+            <li><strong>Combination therapy</strong> often used</li>
+            <li><strong>Aminoglycoside + beta-lactam</strong> classic synergy (with renal monitoring)</li>
+            <li><strong>Bartonella suspected</strong> → add doxycycline</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>Pulse high-dose IV first 1-2 weeks</strong> · then long-term oral<br>
+          📌 Repeat blood cultures after 1 week to confirm sterilization<br>
+          📌 Repeat echo monthly to monitor vegetation regression</p>
+        </div>
+
+        <p><strong>Adjunctive treatment:</strong></p>
+        <ul>
+          <li>CHF management if heart failure (FSAP)</li>
+          <li>Antiarrhythmic if ventricular arrhythmia</li>
+          <li>Anticoagulation? — controversial · clopidogrel sometimes used to prevent embolism</li>
+          <li>Pain management (NSAIDs cautious if renal compromise)</li>
+          <li>Supportive care · IV fluids · nutrition</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>CHF</strong> — common, often fatal</li>
+          <li><strong>Septic emboli</strong> — kidney (renal infarction), spleen, brain (stroke), digits (necrosis)</li>
+          <li><strong>Valve rupture</strong> — sudden severe regurgitation, acute decompensation</li>
+          <li><strong>AV block / arrhythmias</strong> from septal abscess extension</li>
+          <li><strong>Glomerulonephritis</strong> (immune complex) → chronic kidney disease</li>
+          <li><strong>Polyarthritis</strong></li>
+          <li><strong>Treatment failure</strong> · relapse</li>
+          <li><strong>Sudden death</strong></li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Aortic valve IE:</strong> Poor · median 3-12 months · CHF main cause death</li>
+          <li><strong>Mitral valve IE:</strong> Better with treatment · median 1+ year possible</li>
+          <li><strong>Bartonella:</strong> Variable · long-term Rx may be curative</li>
+          <li><strong>Without treatment:</strong> Almost universally fatal</li>
+          <li><strong>Pre-existing SAS:</strong> Worse outcome</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-pulmonary-ht',
+    titleEn: 'Pulmonary Hypertension',
+    titleTh: 'ภาวะความดันปอดสูง (PHT)',
+    type: 'disease',
+    system: 'acquired-dog',
+    species: ['dog', 'cat'],
+    tags: ['pulmonary hypertension', 'PHT', 'sildenafil', 'right CHF', 'cor pulmonale'],
+    aliases: ['PHT', 'pulmonary HTN', 'cor pulmonale'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Pulmonary Hypertension (PHT)</strong> — elevated pressure in pulmonary arterial circulation</p>
+        <ul>
+          <li>Definition: estimated systolic pulmonary artery pressure (sPAP) &gt; 30-35 mmHg by echo</li>
+          <li>Severe: sPAP &gt; 60-70 mmHg</li>
+          <li>Estimated by tricuspid regurgitation (TR) jet velocity using Bernoulli (4V²)</li>
+          <li>Common in older small breeds with chronic respiratory or cardiac disease</li>
+          <li>Cat: less common, often associated with HCM or chronic respiratory dz</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">PHT Severity by sPAP (Echo TR estimate)</span>
+          <table>
+            <tr><th>Severity</th><th>sPAP (mmHg)</th><th>TR jet velocity (m/s)</th></tr>
+            <tr><td><strong>Normal</strong></td><td>&lt; 30</td><td>&lt; 2.8</td></tr>
+            <tr><td><strong>Mild</strong></td><td>30-50</td><td>2.8-3.5</td></tr>
+            <tr><td><strong>Moderate</strong></td><td>50-75</td><td>3.5-4.3</td></tr>
+            <tr><td><strong>Severe</strong></td><td>&gt; 75</td><td>&gt; 4.3</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>Bernoulli:</strong> sPAP = 4×(TR velocity)² + RAP estimate (~5 mmHg)<br>
+          📌 Severe PHT (&gt; 60-75 mmHg) → sildenafil indicated</p>
+        </div>
+      `,
+      etiology: `
+        <p><strong>WHO Classification (adapted for veterinary):</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">PHT Causes — 5 Groups</span>
+          <ul>
+            <li><strong>Group 1 — Pulmonary arterial hypertension (PAH)</strong>: idiopathic, drug-induced, congenital shunts</li>
+            <li><strong>Group 2 — Left heart disease</strong>: ⭐ Most common in dogs · MMVD, DCM, mitral stenosis</li>
+            <li><strong>Group 3 — Lung disease/hypoxia</strong>: chronic bronchitis, fibrosis, brachycephalic syndrome, pulmonary thromboembolism, high altitude</li>
+            <li><strong>Group 4 — Pulmonary thromboembolism / heartworm disease</strong></li>
+            <li><strong>Group 5 — Multifactorial / unclear</strong></li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>Most common in dogs:</strong> Group 2 (left CHF) → Group 3 (chronic respiratory)<br>
+          📌 ⭐ <strong>Heartworm disease</strong> = Group 4 — important in endemic regions</p>
+        </div>
+
+        <p><strong>Common causes by group:</strong></p>
+        <ul>
+          <li>Group 2: MMVD (especially Cavalier KCS), DCM</li>
+          <li>Group 3: Chronic bronchitis, idiopathic pulmonary fibrosis (West Highland White Terrier!), brachycephalic obstructive syndrome (BOAS)</li>
+          <li>Group 4: Heartworm, pulmonary thromboembolism (PTE)</li>
+          <li>Group 5: PDA, sepsis, hyperadrenocorticism (PTE risk)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Increased pulmonary vascular resistance OR pulmonary venous hypertension</li>
+          <li>↑ RV afterload</li>
+          <li>RV pressure overload → concentric RV hypertrophy → eventual dilation</li>
+          <li>Right atrial enlargement</li>
+          <li>Tricuspid regurgitation develops</li>
+          <li>Right CHF → ascites, hepatic congestion</li>
+          <li>Reduced LV preload → low CO → exercise intolerance, syncope</li>
+          <li>Severe: arterial hypoxemia, cyanosis</li>
+        </ol>
+      `,
+      symptoms: `
+        <p><strong>Clinical signs:</strong></p>
+        <ul>
+          <li>⭐ <strong>Exercise intolerance</strong> · weakness</li>
+          <li>⭐ <strong>Syncope</strong> (especially with exertion)</li>
+          <li>Cough (often from underlying disease, not PHT directly)</li>
+          <li>Tachypnea / dyspnea</li>
+          <li>Cyanosis with exertion</li>
+          <li><strong>Ascites</strong> (right CHF · late)</li>
+          <li>Lethargy · failure to thrive</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Tachypnea</li>
+          <li>Right-sided systolic murmur (TR · grade 1-3) at right hemithorax</li>
+          <li>Loud P2 (pulmonic component of S2)</li>
+          <li>Right ventricular heave (palpable on right hemithorax)</li>
+          <li>Jugular distension/pulsation</li>
+          <li>Hepatomegaly · ascites</li>
+          <li>Cyanosis post-exercise</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Echocardiogram — gold standard non-invasive:</strong></p>
+        <ul>
+          <li>⭐ <strong>TR jet velocity</strong> → estimate sPAP (Bernoulli: 4V²)</li>
+          <li>RV hypertrophy + dilation</li>
+          <li>RA enlargement</li>
+          <li>Septal flattening (D-shaped LV) — RV pressure overload</li>
+          <li>Pulmonary regurgitation jet → estimate diastolic PAP</li>
+          <li>Underlying disease (MMVD, DCM, etc.) identified</li>
+        </ul>
+
+        <p><strong>Other investigations:</strong></p>
+        <ul>
+          <li><strong>Thoracic radiograph:</strong>
+            <ul>
+              <li>Enlarged main pulmonary artery (bulge at 1-2 o'clock VD)</li>
+              <li>Truncated, blunted pulmonary arteries</li>
+              <li>RV enlargement (reverse-D shape)</li>
+              <li>Underlying lung disease patterns</li>
+            </ul>
+          </li>
+          <li><strong>Heartworm test</strong> — antigen + microfilaria (essential in endemic areas)</li>
+          <li><strong>D-dimer / coag</strong> if PTE suspected</li>
+          <li><strong>Arterial blood gas</strong> (referral)</li>
+          <li><strong>Chest CT</strong> for PTE, fibrosis (referral)</li>
+          <li><strong>Right heart cath</strong> — definitive (rare in vet)</li>
+          <li><strong>NT-proBNP</strong> elevated</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Left CHF</strong> alone — workup distinguishes</li>
+          <li><strong>Pericardial effusion</strong></li>
+          <li><strong>Tricuspid dysplasia</strong> (congenital)</li>
+          <li><strong>Pulmonic stenosis</strong> (congenital)</li>
+          <li><strong>Heartworm disease</strong> primary</li>
+          <li><strong>Atrial septal defect</strong></li>
+          <li><strong>Reverse PDA / Eisenmenger</strong></li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treat underlying cause first:</strong></p>
+        <ul>
+          <li>Group 2 (left CHF): optimize CHF Rx (FSAP)</li>
+          <li>Group 3 (lung dz): bronchodilator, anti-inflammatory, BOAS surgery</li>
+          <li>Group 4 (heartworm): adulticide protocol, doxycycline</li>
+          <li>Group 4 (PTE): anticoagulation</li>
+        </ul>
+
+        <p><strong>Specific PHT therapy:</strong></p>
+        <ul>
+          <li>⭐ <strong>Sildenafil (Viagra)</strong> 1-3 mg/kg PO q8-12h
+            <ul>
+              <li>PDE-5 inhibitor → pulmonary vasodilation</li>
+              <li>Indications: severe PHT (sPAP &gt; 60), syncope, refractory right CHF</li>
+              <li>Improves quality of life · doesn't change long-term survival</li>
+              <li>Side effects: hypotension, flushing</li>
+            </ul>
+          </li>
+          <li><strong>Tadalafil</strong> alternative (longer half-life · less data in vet)</li>
+          <li><strong>Pimobendan</strong> — useful adjunct (vasodilation + inotropy)</li>
+          <li><strong>Diuretics</strong> (furosemide) for right CHF / ascites</li>
+          <li><strong>ACE inhibitors</strong> — controversial in pure PHT · OK if left dz coexists</li>
+          <li><strong>Oxygen</strong> for acute crisis</li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Sildenafil Dosing</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">1-3</span>
+              <span class="num-label">mg/kg PO q8-12h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2.5</span>
+              <span class="num-label">Common starting dose mg/kg q8h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">25 mg</span>
+              <span class="num-label">Smallest tablet · split for small dogs</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 Start lower dose · titrate up<br>
+          📌 ⭐ Owner: clinical improvement (less syncope, better exercise) within 1-2 weeks<br>
+          📌 No specific monitoring labs · echo recheck 4-8 weeks</p>
+        </div>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Right-sided CHF</strong> with ascites</li>
+          <li><strong>Syncope episodes</strong> (exertional)</li>
+          <li><strong>Sudden death</strong> from severe PHT</li>
+          <li><strong>Refractory ascites</strong></li>
+          <li><strong>Cardiac cachexia</strong></li>
+          <li><strong>Underlying disease progression</strong></li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Mild PHT (Group 2):</strong> Generally good with CHF Rx</li>
+          <li><strong>Severe PHT:</strong> Median 6-12 months · improved with sildenafil</li>
+          <li><strong>Group 3 (chronic lung dz):</strong> Variable · pulmonary fibrosis poor</li>
+          <li><strong>Group 4 (heartworm):</strong> Improves with adulticide</li>
+          <li><strong>WHWT idiopathic pulmonary fibrosis:</strong> Poor · 6-12 months</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-heartworm',
+    titleEn: 'Heartworm Disease (Cardiac)',
+    titleTh: 'พยาธิหัวใจ — ผลต่อหัวใจ',
+    type: 'disease',
+    system: 'acquired-dog',
+    species: ['dog', 'cat'],
+    tags: ['heartworm', 'Dirofilaria immitis', 'caval syndrome', 'melarsomine', 'doxycycline', 'pulmonary HT'],
+    aliases: ['heartworm', 'Dirofilaria', 'พยาธิหัวใจ'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Heartworm Disease</strong> — infection with <em>Dirofilaria immitis</em> · adult worms reside in pulmonary arteries and right heart</p>
+        <ul>
+          <li>Mosquito-transmitted nematode (microfilariae → L3 in mosquito → infective)</li>
+          <li>⭐ Endemic in tropical/subtropical regions including Thailand</li>
+          <li>Cardiac effects: pulmonary hypertension, right CHF, caval syndrome</li>
+          <li>Adult worm length: 15-30 cm · lifespan 5-7 years (dogs)</li>
+          <li>Cat: aberrant host · low worm burden but severe inflammation (HARD syndrome)</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">AHS Heartworm Classification — Dog</span>
+          <table>
+            <tr><th>Class</th><th>Clinical Signs</th><th>Imaging</th></tr>
+            <tr><td><strong>Class 1</strong> (mild)</td><td>Asymptomatic or mild cough</td><td>± mild pulmonary changes</td></tr>
+            <tr><td><strong>Class 2</strong> (moderate)</td><td>Cough, exercise intolerance</td><td>Pulmonary artery enlargement, RV enlargement</td></tr>
+            <tr><td><strong>Class 3</strong> (severe)</td><td>Cachexia, syncope, ascites, dyspnea</td><td>Severe RV enlargement, right CHF</td></tr>
+            <tr><td><strong>Class 4 (Caval syndrome)</strong></td><td>⚠️ Acute collapse, hemoglobinuria</td><td>Massive worm burden in RA/RV/vena cava — emergency surgery</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>Class 4 = Caval syndrome</strong> = surgical emergency · transvenous worm extraction<br>
+          📌 Hemoglobinuria from RBC destruction in tricuspid valve area</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Vector:</strong> Many mosquito species (Aedes, Culex, Anopheles)</li>
+          <li><strong>Geographic:</strong> Tropical/subtropical · ⭐ <strong>Thailand high endemicity</strong></li>
+          <li><strong>Risk factors:</strong>
+            <ul>
+              <li>Outdoor exposure</li>
+              <li>No prevention</li>
+              <li>Tropical climate</li>
+              <li>Wildlife reservoirs (foxes, coyotes)</li>
+            </ul>
+          </li>
+          <li><strong>Wolbachia</strong> = endosymbiotic bacteria in heartworm — immunopathology, target of doxycycline</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Mosquito injects L3 larvae</li>
+          <li>L3 migrates SC → muscle → vascular system (3-4 months)</li>
+          <li>Mature in pulmonary arteries (5-6 months total prepatent period)</li>
+          <li>Adult worms: pulmonary endarteritis, villous proliferation</li>
+          <li>Pulmonary hypertension develops</li>
+          <li>RV pressure overload → RV hypertrophy → dilation</li>
+          <li>Right CHF: ascites, hepatomegaly</li>
+          <li>If high worm burden: vena caval/RV obstruction → caval syndrome</li>
+          <li>Pulmonary thromboembolism after adulticide (dead worms)</li>
+        </ol>
+
+        <p><strong>HARD syndrome (Cat):</strong></p>
+        <ul>
+          <li>Heartworm Associated Respiratory Disease</li>
+          <li>Even L4-L5 (pre-adult) cause severe inflammation</li>
+          <li>Asthma-like signs · acute death possible</li>
+          <li>Cat: 1-3 worm burden typical · profound effect</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Dog signs (severity-dependent):</strong></p>
+        <ul>
+          <li>⭐ <strong>Cough</strong> — chronic, exercise-induced</li>
+          <li>Exercise intolerance · weakness</li>
+          <li>Weight loss, poor body condition</li>
+          <li>Tachypnea, dyspnea</li>
+          <li>Syncope (advanced)</li>
+          <li>Ascites (right CHF)</li>
+          <li>Cardiac cachexia (Class 3)</li>
+          <li>⚠️ <strong>Caval syndrome:</strong> sudden collapse, anemia, hemoglobinuria, jaundice</li>
+        </ul>
+
+        <p><strong>Cat signs (HARD):</strong></p>
+        <ul>
+          <li>Cough, dyspnea (asthma-like)</li>
+          <li>Vomiting (~30% — confuses diagnosis)</li>
+          <li>Sudden death possible (1-3 worms can be fatal)</li>
+          <li>Often misdiagnosed as feline asthma</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Dog testing:</strong></p>
+        <ul>
+          <li>⭐ <strong>Antigen test (ELISA)</strong> — detects adult female worm protein
+            <ul>
+              <li>Sensitivity 90-95% in dogs · positive 5-7 months post-infection</li>
+              <li>SNAP, IDEXX, etc.</li>
+              <li>Heat treatment of sample improves sensitivity (especially low burden, immune complex masking)</li>
+            </ul>
+          </li>
+          <li><strong>Microfilaria test</strong>:
+            <ul>
+              <li>Modified Knott test (concentration)</li>
+              <li>Direct smear (less sensitive)</li>
+              <li>Differentiate from Acanthocheilonema reconditum</li>
+            </ul>
+          </li>
+          <li><strong>Echocardiogram</strong>: visible worms in RA/RV/PA · valve damage · PHT</li>
+          <li><strong>Thoracic radiograph</strong>: pulmonary artery enlargement, blunted/tortuous arteries · RV enlargement · pulmonary patterns (interstitial, alveolar)</li>
+          <li><strong>CBC</strong>: eosinophilia, basophilia possible</li>
+          <li><strong>Chemistry/UA</strong>: protein-losing GN, ALT elevation</li>
+        </ul>
+
+        <p><strong>Cat testing (challenging):</strong></p>
+        <ul>
+          <li><strong>Antibody test</strong> + <strong>Antigen test</strong> — both needed (low antigen sensitivity in cats)</li>
+          <li>Echocardiogram: visualize worms (single or few)</li>
+          <li>Microfilariae rare in cats</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Chronic bronchitis</strong> (cough)</li>
+          <li><strong>MMVD</strong> (older small breed)</li>
+          <li><strong>DCM</strong></li>
+          <li><strong>Pulmonary thromboembolism</strong> (other causes)</li>
+          <li><strong>Pneumonia</strong> (eosinophilic)</li>
+          <li><strong>Cat asthma</strong> (cat HARD vs asthma)</li>
+          <li><strong>FIP</strong> (cat ascites)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Adulticide protocol — AHS recommended (Dog):</strong></p>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">3-Injection Melarsomine Protocol — "AHS Slow-Kill"</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">Day 0</span>
+              <span class="num-label">Doxy 10 mg/kg BID × 4 wk · macrocyclic preventive</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Day 60</span>
+              <span class="num-label">Melarsomine 2.5 mg/kg IM × 1</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Day 90-91</span>
+              <span class="num-label">Melarsomine 2.5 mg/kg IM × 2 (24 hr apart)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Day 270</span>
+              <span class="num-label">Antigen retest · should be negative</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 ⭐ <strong>Strict cage rest 6-8 weeks post-adulticide</strong> — prevents PTE<br>
+          📌 Doxycycline first kills Wolbachia → reduces post-adulticide reaction<br>
+          📌 NEVER skip pre-treatment doxycycline + macrocyclic preventive</p>
+        </div>
+
+        <p><strong>Adjunctive therapy:</strong></p>
+        <ul>
+          <li><strong>Doxycycline 10 mg/kg PO BID × 4 weeks</strong> — kills Wolbachia, sterilizes adult worms</li>
+          <li><strong>Macrocyclic lactone preventive</strong> (ivermectin, milbemycin, moxidectin) — kills L3-L4 stages, prevents reinfection</li>
+          <li><strong>Prednisolone</strong> 0.5 mg/kg q12h tapered × 4 wk — anti-inflammatory peri-adulticide</li>
+          <li><strong>Strict exercise restriction</strong> 6-8 weeks post-melarsomine</li>
+          <li><strong>NSAID avoid</strong> during peri-adulticide period (renal risk)</li>
+        </ul>
+
+        <p><strong>Caval syndrome — surgical emergency:</strong></p>
+        <ul>
+          <li>Transvenous worm extraction (jugular approach with alligator forceps or basket)</li>
+          <li>Stabilize first (IV fluids, oxygen)</li>
+          <li>After surgery: complete adulticide protocol</li>
+          <li>Mortality high · referral specialty</li>
+        </ul>
+
+        <p><strong>"Slow kill" alternative (not AHS-recommended but used):</strong></p>
+        <ul>
+          <li>Monthly macrocyclic preventive + doxycycline</li>
+          <li>Takes 18-24+ months to clear</li>
+          <li>Risk: ongoing pulmonary damage</li>
+          <li>Use only if melarsomine contraindicated/unavailable</li>
+        </ul>
+
+        <p><strong>Cat heartworm:</strong></p>
+        <ul>
+          <li>Adulticide NOT recommended (high risk death)</li>
+          <li>Supportive: bronchodilator, prednisolone</li>
+          <li>Wait for natural worm death (2-3 years)</li>
+          <li>Strict heartworm prevention essential to avoid reinfection</li>
+        </ul>
+
+        <p><strong>Prevention (gold standard):</strong></p>
+        <ul>
+          <li>Monthly macrocyclic lactone (ivermectin, milbemycin oxime, selamectin, moxidectin)</li>
+          <li>Year-round in endemic areas</li>
+          <li>Annual antigen test even on prevention (resistance emerging)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Pulmonary thromboembolism (PTE)</strong> post-adulticide — major risk · cage rest!</li>
+          <li><strong>Pulmonary hypertension</strong> · right CHF</li>
+          <li><strong>Caval syndrome</strong> — emergency</li>
+          <li><strong>Glomerulonephritis</strong> from immune complexes</li>
+          <li><strong>Sudden death</strong> in cats</li>
+          <li><strong>Anaphylaxis</strong> from microfilarial death (rare with modern protocols)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Class 1-2 dog with proper Rx:</strong> Good · most clear infection</li>
+          <li><strong>Class 3 dog:</strong> Guarded · 50-70% survive treatment</li>
+          <li><strong>Caval syndrome:</strong> 50% mortality even with surgery</li>
+          <li><strong>Cat HARD:</strong> Variable · sudden death risk</li>
+          <li><strong>With prevention:</strong> Heartworm essentially preventable</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ============================================================
+     ACQUIRED — CAT
+     ============================================================ */
+
+  {
+    id: 'card-hcm-cat',
+    titleEn: 'Hypertrophic Cardiomyopathy (HCM) — Cat',
+    titleTh: 'โรคกล้ามเนื้อหัวใจหนา (HCM) ในแมว',
+    type: 'disease',
+    system: 'acquired-cat',
+    species: ['cat'],
+    tags: ['HCM', 'hypertrophic cardiomyopathy', 'feline', 'Maine Coon', 'Ragdoll', 'SAM', 'ATE'],
+    aliases: ['feline HCM', 'หัวใจหนาแมว'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Hypertrophic Cardiomyopathy (HCM)</strong> — โรคกล้ามเนื้อหัวใจของแมวที่พบบ่อยที่สุด · concentric LV hypertrophy without dilation</p>
+        <ul>
+          <li>Most common feline cardiomyopathy (~14-15% of cat population!)</li>
+          <li>LV wall thickness ≥ 6 mm at diastole (echo)</li>
+          <li>Diastolic dysfunction · preserved/hyperkinetic systolic function</li>
+          <li>⭐ <strong>SAM (systolic anterior motion of mitral valve)</strong> common</li>
+          <li>⭐ Predisposed: <strong>Maine Coon, Ragdoll</strong> (genetic mutations identified) · Sphynx, Persian</li>
+          <li>Age: middle-aged cats (often 4-7 yo, but any age)</li>
+          <li>Male cats more commonly affected</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">ACVIM HCM Cat Staging</span>
+          <table>
+            <tr><th>Stage</th><th>Description</th><th>Treatment</th></tr>
+            <tr><td><strong>A</strong></td><td>Predisposed breed · normal echo</td><td>Genetic test if applicable · echo q1-2 yr</td></tr>
+            <tr><td><strong>B1</strong></td><td>Echo abnormal · LA normal · low ATE risk</td><td>None or atenolol (if SAM) · echo annually</td></tr>
+            <tr><td><strong>B2</strong></td><td>Echo abnormal · ⚠️ <strong>LA enlarged (LA/Ao &gt; 1.6)</strong> · ↑ ATE risk</td><td>⭐ Clopidogrel · ± atenolol · ACEi</td></tr>
+            <tr><td><strong>C</strong></td><td>CHF or ATE</td><td>⭐ Furosemide · clopidogrel · ACEi · O2</td></tr>
+            <tr><td><strong>D</strong></td><td>Refractory CHF</td><td>↑ furosemide · pimobendan controversial · sildenafil</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>B2 = LA enlarged = ATE risk!</strong> · Start clopidogrel<br>
+          📌 ⭐ <strong>30-50% of cats with HCM have NO murmur</strong> — gallop or arrhythmia clue</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Genetic mutations</strong>:
+            <ul>
+              <li>⭐ <strong>Maine Coon: MYBPC3 (myosin-binding protein C3)</strong> · A31P mutation</li>
+              <li>⭐ <strong>Ragdoll: MYBPC3 R820W mutation</strong></li>
+              <li>Sphynx, Persian: under investigation</li>
+              <li>Genetic testing available commercially</li>
+            </ul>
+          </li>
+          <li><strong>Idiopathic primary</strong> — most common in non-pure-breed cats</li>
+          <li><strong>Secondary causes (must rule out!):</strong>
+            <ul>
+              <li>⭐ <strong>Hyperthyroidism</strong> (cat &gt; 8 yo)</li>
+              <li>⭐ <strong>Systemic hypertension</strong> (CKD-related)</li>
+              <li>Acromegaly</li>
+              <li>Aortic stenosis (rare in cats)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Always Rule Out — "TBD" in HCM</span>
+          <ul>
+            <li><strong>T</strong>hyroid (T4) — measure!</li>
+            <li><strong>B</strong>lood pressure (BP) — measure!</li>
+            <li><strong>D</strong>iagnostic workup — IGF-1 if acromegaly suspected (rare)</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>Don't call HCM "primary" until TBD ruled out</strong> — secondary causes treatable<br>
+          📌 Hyperthyroid + HT both very common in older cats with cardiac changes</p>
+        </div>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Sarcomeric protein dysfunction (genetic)</li>
+          <li>Concentric LV hypertrophy (wall thickens · chamber size normal/small)</li>
+          <li>Stiff ventricle → diastolic dysfunction (poor relaxation, poor filling)</li>
+          <li>↑ LA pressure → LA dilation</li>
+          <li>LV outflow tract obstruction (HOCM): SAM of mitral valve → aortic flow turbulence</li>
+          <li>Impaired filling → low stroke volume → potential hypotension/syncope</li>
+          <li>LA dilation → AFib · ⚠️ <strong>thrombus formation → ATE</strong></li>
+          <li>Pulmonary venous congestion → pulmonary edema (CHF) · pleural effusion</li>
+          <li>RV hypertrophy + biatrial enlargement in advanced cases</li>
+        </ol>
+
+        <p><strong>SAM (Systolic Anterior Motion):</strong></p>
+        <ul>
+          <li>Anterior mitral leaflet pulled toward septum during systole</li>
+          <li>Causes dynamic LVOT obstruction</li>
+          <li>Creates systolic murmur (often grade 2-4)</li>
+          <li>Worse with tachycardia, dehydration, hypovolemia</li>
+          <li>Beta-blocker (atenolol) helps reduce</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Cat HCM presentation — CHALLENGING because cats hide signs:</strong></p>
+
+        <ul>
+          <li><strong>Stage B (asymptomatic):</strong> No clinical signs · only murmur/gallop or screen</li>
+          <li><strong>Stage C (CHF):</strong>
+            <ul>
+              <li>⚠️ <strong>Acute respiratory distress</strong> (open-mouth breathing — emergency!)</li>
+              <li>Tachypnea (resting RR &gt; 30/min)</li>
+              <li>Lethargy · hiding</li>
+              <li>Anorexia</li>
+              <li>Weight loss</li>
+              <li>Cough rare in cats (vs dogs)</li>
+            </ul>
+          </li>
+          <li><strong>ATE (Stage C ATE subset):</strong>
+            <ul>
+              <li>⚠️ Acute hindlimb paralysis/paresis (saddle thrombus)</li>
+              <li>Severe pain · vocalizing</li>
+              <li>Cold limbs · cyanotic pads</li>
+              <li>No femoral pulse</li>
+              <li>Pre-existing cardiac dz (often previously undiagnosed!)</li>
+            </ul>
+          </li>
+          <li><strong>Sudden death</strong> — possible at any stage</li>
+        </ul>
+
+        <p><strong>Physical exam clues:</strong></p>
+        <ul>
+          <li><strong>Murmur</strong> — systolic, L parasternal · grade 1-4 (often dynamic with HR)</li>
+          <li>⭐ <strong>Gallop sound (S4)</strong> — major HCM clue · often without murmur</li>
+          <li>Arrhythmia · gallop rhythm</li>
+          <li>Tachypnea (CHF)</li>
+          <li>Reduced lung sounds (pleural effusion)</li>
+          <li>Crackles (pulmonary edema)</li>
+          <li>Hypothermia possible (CHF)</li>
+          <li>⚠️ Cold paralyzed hindlimbs = ATE</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Echocardiogram — gold standard:</strong></p>
+        <ul>
+          <li>⭐ <strong>LV wall thickness ≥ 6 mm</strong> at diastole (M-mode at chordae)
+            <ul>
+              <li>IVSd, LVPWd thickening</li>
+              <li>Mild: 6 mm · Moderate: 6.5-7.5 mm · Severe: &gt; 7.5-8 mm</li>
+            </ul>
+          </li>
+          <li>LA enlargement (LA/Ao ratio):
+            <ul>
+              <li>Normal: &lt; 1.5</li>
+              <li>Mild: 1.5-1.8</li>
+              <li>Moderate: 1.8-2.2</li>
+              <li>Severe: &gt; 2.2 ← high ATE risk</li>
+            </ul>
+          </li>
+          <li>SAM on M-mode/2D (LVOT)</li>
+          <li>Hyperdynamic systolic function (FS often 60-80%)</li>
+          <li>Diastolic dysfunction on PW Doppler (E/A reversal, restrictive pattern)</li>
+          <li>"Smoke" or thrombus in LA (severe — pre-ATE warning!)</li>
+          <li>Pleural effusion · pericardial effusion possible</li>
+        </ul>
+
+        <p><strong>Adjunctive testing:</strong></p>
+        <ul>
+          <li><strong>NT-proBNP</strong>:
+            <ul>
+              <li>&lt; 100 pmol/L: cardiac dz unlikely</li>
+              <li>100-270: gray zone · echo</li>
+              <li>&gt; 270: echo essential</li>
+              <li>&gt; 1500-2000: severe / CHF</li>
+            </ul>
+          </li>
+          <li><strong>cTnI</strong> elevated</li>
+          <li><strong>T4 (free T4)</strong> — rule out hyperthyroid</li>
+          <li><strong>BP</strong> — rule out hypertension</li>
+          <li><strong>Renal panel</strong> — CKD common comorbidity</li>
+          <li><strong>Thoracic radiograph</strong> (CHF):
+            <ul>
+              <li>"Valentine heart" appearance VD</li>
+              <li>LA enlargement</li>
+              <li>Pulmonary edema (diffuse pattern, NOT perihilar like dogs)</li>
+              <li>Pleural effusion</li>
+            </ul>
+          </li>
+          <li><strong>Genetic test</strong> if Maine Coon/Ragdoll</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Hyperthyroid cardiomyopathy</strong> — T4 elevated</li>
+          <li><strong>Hypertensive cardiomyopathy</strong> — BP &gt; 160 mmHg</li>
+          <li><strong>RCM (Restrictive)</strong> — atrial enlargement, normal wall thickness</li>
+          <li><strong>UCM (Unclassified)</strong> — doesn't fit categories</li>
+          <li><strong>DCM</strong> in cats (rare since taurine fortification of food)</li>
+          <li><strong>Acromegaly</strong> — growth hormone excess (rare)</li>
+          <li><strong>Cat asthma</strong> (respiratory but no echo abnormalities)</li>
+          <li><strong>Pleural effusion other causes</strong> — pyothorax, FIP, neoplasia</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Stage-based treatment:</strong></p>
+
+        <ul>
+          <li><strong>Stage A (predisposed breed):</strong>
+            <ul>
+              <li>Genetic testing if Maine Coon/Ragdoll</li>
+              <li>Echo every 1-2 years</li>
+            </ul>
+          </li>
+          <li><strong>Stage B1 (mild echo abnormal · normal LA):</strong>
+            <ul>
+              <li>Generally no medication</li>
+              <li>Atenolol 6.25-12.5 mg/cat q12-24h IF significant SAM with high gradient</li>
+              <li>Annual echo</li>
+            </ul>
+          </li>
+          <li><strong>Stage B2 (LA enlarged · pre-CHF):</strong>
+            <ul>
+              <li>⭐ <strong>Clopidogrel 18.75 mg/cat (1/4 of 75 mg) PO q24h</strong> — FATCAT trial</li>
+              <li>± Atenolol if SAM</li>
+              <li>± ACEi (benazepril 0.25-0.5 mg/kg q24h) — limited evidence</li>
+              <li>Echo every 6 months</li>
+            </ul>
+          </li>
+          <li><strong>Stage C (CHF) — emergency!</strong>
+            <ul>
+              <li>⭐ <strong>Oxygen</strong> first (40-60%, low-stress)</li>
+              <li>⭐ <strong>Furosemide 1-2 mg/kg IM/IV q1-2h</strong> until RR &lt; 40</li>
+              <li><strong>Butorphanol</strong> 0.2-0.4 mg/kg IM for sedation/anxiolysis (reduces sympathetic drive)</li>
+              <li><strong>Thoracocentesis</strong> if significant pleural effusion (CHF cat often!)</li>
+              <li><strong>Clopidogrel</strong> for ATE prevention</li>
+              <li>Avoid stress · minimal handling · NO restraint for radiograph if dyspneic</li>
+              <li>POCUS in cage to confirm cardiac CHF</li>
+              <li>Long-term: furosemide 1-2 mg/kg q12-24h · clopidogrel · ± ACEi</li>
+            </ul>
+          </li>
+          <li><strong>Stage D (refractory CHF):</strong>
+            <ul>
+              <li>↑ furosemide or torsemide</li>
+              <li>Pimobendan controversial (theoretically harmful in HOCM but increasingly used)</li>
+              <li>Sildenafil for pulmonary HT</li>
+              <li>Specialist referral</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Cat CHF Emergency — "OFF TBA"</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">O</span>
+              <span class="num-label">Oxygen 40-60%</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">F</span>
+              <span class="num-label">Furosemide 1-2 mg/kg</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">F</span>
+              <span class="num-label">Furosemide repeat q1-2h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">T</span>
+              <span class="num-label">Thoracocentesis if effusion</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">B</span>
+              <span class="num-label">Butorphanol sedation</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">A</span>
+              <span class="num-label">ACEi/Antiplatelet later</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 ⭐ <strong>Goal: RR &lt; 40 within 4-6 hours</strong><br>
+          📌 ⚠️ NO IV fluids (worsens edema) · NO stress · NO sedation that depresses CV (acepromazine BAD)</p>
+        </div>
+      `,
+      complications: `
+        <ul>
+          <li>⚠️ <strong>Aortic thromboembolism (ATE)</strong> — saddle thrombus · 1/3 to 1/2 of cats die from ATE</li>
+          <li><strong>CHF</strong> with pulmonary edema or pleural effusion</li>
+          <li><strong>Sudden death</strong> from arrhythmia (especially Maine Coon, Ragdoll)</li>
+          <li><strong>Atrial fibrillation</strong> from severe LA enlargement</li>
+          <li><strong>Refractory CHF</strong></li>
+          <li><strong>Pulmonary hypertension</strong> secondary</li>
+          <li><strong>Adverse drug effects</strong> (azotemia from furosemide + ACEi)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Stage B1:</strong> Good · many years (some never progress)</li>
+          <li><strong>Stage B2:</strong> Variable · risk of CHF/ATE within 1-3 years</li>
+          <li><strong>Stage C (first CHF):</strong> Median 6-18 months · variable</li>
+          <li><strong>ATE:</strong> Acute mortality 30-50% · survivors median 6-12 months · risk of recurrence high</li>
+          <li><strong>Maine Coon homozygous mutation:</strong> Earlier onset, worse prognosis</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-rcm-cat',
+    titleEn: 'Restrictive Cardiomyopathy (RCM) — Cat',
+    titleTh: 'โรคกล้ามเนื้อหัวใจแข็ง (RCM) ในแมว',
+    type: 'disease',
+    system: 'acquired-cat',
+    species: ['cat'],
+    tags: ['RCM', 'restrictive cardiomyopathy', 'feline', 'endomyocardial fibrosis', 'biatrial enlargement'],
+    aliases: ['restrictive', 'endomyocardial dz'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Restrictive Cardiomyopathy (RCM)</strong> — feline cardiomyopathy characterized by impaired ventricular filling without significant hypertrophy or dilation</p>
+        <ul>
+          <li>2nd most common feline cardiomyopathy after HCM</li>
+          <li>Endomyocardial form: fibrosis of endocardium</li>
+          <li>Myocardial form: diffuse myocardial fibrosis</li>
+          <li>Severe diastolic dysfunction → atrial enlargement</li>
+          <li>Normal/near-normal systolic function</li>
+          <li>Often middle-aged to older cats</li>
+          <li>No specific breed predisposition</li>
+          <li>Diagnosis often by exclusion of HCM/DCM</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>⭐ Idiopathic (most common)</li>
+          <li>End-stage HCM ("burnt out" — wall thickness regresses, fibrosis increases)</li>
+          <li>Post-myocarditis fibrosis</li>
+          <li>Infiltrative disease (rare — amyloid, neoplasia)</li>
+          <li>Genetic component suspected (not characterized)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Endomyocardial or diffuse myocardial fibrosis</li>
+          <li>Severe restriction of ventricular filling (stiff chamber)</li>
+          <li>Profound elevation of atrial pressure</li>
+          <li>Massive biatrial enlargement</li>
+          <li>Pulmonary venous congestion → pulmonary edema/pleural effusion</li>
+          <li>Right-sided congestion → ascites possible</li>
+          <li>↑ ATE risk from large LA/RA + stagnant blood</li>
+          <li>Atrial arrhythmias common (AFib)</li>
+        </ol>
+      `,
+      symptoms: `
+        <p><strong>Often presents with CHF or ATE:</strong></p>
+        <ul>
+          <li>⚠️ Acute respiratory distress (CHF)</li>
+          <li>Lethargy · weight loss · anorexia (often first sign noticed)</li>
+          <li>⚠️ ATE (saddle thrombus) — common presentation</li>
+          <li>Sudden death possible</li>
+          <li>Pleural effusion → muffled heart sounds + dyspnea</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Soft murmur or no murmur</li>
+          <li>Gallop sound</li>
+          <li>Arrhythmia common</li>
+          <li>Tachypnea</li>
+          <li>Reduced lung sounds (effusion)</li>
+          <li>Jugular distention possible</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Echocardiogram features:</strong></p>
+        <ul>
+          <li>⭐ <strong>Massive biatrial enlargement</strong> (LA + RA both)</li>
+          <li>Normal LV wall thickness (no concentric hypertrophy unlike HCM)</li>
+          <li>Normal/small LV chamber</li>
+          <li>Preserved/mildly reduced systolic function (FS 30-50%)</li>
+          <li>Endomyocardial form: focal echogenic lesion (fibrosis) in apex/papillary</li>
+          <li>Restrictive filling pattern on PW Doppler (high E, low A, short DT)</li>
+          <li>"Smoke" or thrombus in atrium</li>
+          <li>Pleural effusion common</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Differential — HCM vs RCM vs DCM (Cat)</span>
+          <table>
+            <tr><th>Feature</th><th>HCM</th><th>RCM</th><th>DCM</th></tr>
+            <tr><td><strong>LV wall</strong></td><td>↑↑ (≥ 6 mm)</td><td>Normal</td><td>Normal/thin</td></tr>
+            <tr><td><strong>LV chamber</strong></td><td>Normal/small</td><td>Normal/small</td><td>↑↑ Dilated</td></tr>
+            <tr><td><strong>FS</strong></td><td>↑ (hyperdynamic)</td><td>Normal/mildly ↓</td><td>↓↓ (&lt; 25%)</td></tr>
+            <tr><td><strong>Atria</strong></td><td>LA enlarged</td><td>⭐ <strong>Both LA + RA</strong></td><td>LA enlarged</td></tr>
+            <tr><td><strong>Cause</strong></td><td>Genetic / sarcomere</td><td>Fibrosis</td><td>Taurine def. (rare now)</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>"Massive biatrial = RCM"</strong> · normal walls + small/normal chambers<br>
+          📌 RCM and HCM end-stage can look similar — context matters</p>
+        </div>
+
+        <p><strong>Other tests:</strong></p>
+        <ul>
+          <li>NT-proBNP elevated</li>
+          <li>cTnI elevated</li>
+          <li>Thoracic radiograph: massive cardiac silhouette · pleural effusion · pulmonary edema</li>
+          <li>T4, BP — rule out secondary</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>HCM</strong> — wall thickness ≥ 6 mm distinguishes</li>
+          <li><strong>End-stage HCM</strong> — looks similar to RCM (overlap exists)</li>
+          <li><strong>DCM</strong> — dilated LV with poor systolic function</li>
+          <li><strong>Pericardial effusion / constrictive pericarditis</strong></li>
+          <li><strong>Cardiac neoplasia</strong></li>
+          <li><strong>Hyperthyroid cardiomyopathy</strong></li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment similar to HCM Stage B2/C:</strong></p>
+        <ul>
+          <li><strong>Stage B/B2 (asymptomatic, atrial enlargement):</strong>
+            <ul>
+              <li>⭐ Clopidogrel 18.75 mg/cat PO q24h (ATE prevention)</li>
+              <li>± ACEi (benazepril 0.25-0.5 mg/kg q24h)</li>
+              <li>Echo every 6 months</li>
+            </ul>
+          </li>
+          <li><strong>Stage C (CHF):</strong>
+            <ul>
+              <li>⭐ Oxygen + furosemide (same as HCM CHF)</li>
+              <li>Thoracocentesis if effusion</li>
+              <li>Long-term: furosemide + clopidogrel + ACEi</li>
+              <li>Avoid pimobendan (no benefit, theoretical harm)</li>
+              <li>Atenolol generally NOT helpful in RCM</li>
+            </ul>
+          </li>
+          <li><strong>Stage D (refractory):</strong>
+            <ul>
+              <li>↑ furosemide / torsemide</li>
+              <li>Sildenafil for PHT</li>
+              <li>Specialist referral</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>ATE prevention essential:</strong></p>
+        <ul>
+          <li>RCM cats with severe atrial enlargement: very high ATE risk</li>
+          <li>Clopidogrel mainstay (FATCAT trial, but extended to RCM)</li>
+          <li>Some add LMWH (enoxaparin) for higher-risk cases</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>ATE</strong> — major complication (high risk with severe biatrial enlargement)</li>
+          <li><strong>Refractory CHF</strong></li>
+          <li><strong>AFib</strong> from massive atrial dilation</li>
+          <li><strong>Sudden death</strong></li>
+          <li><strong>Recurrent pleural effusion</strong></li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li>Generally <strong>worse than HCM</strong></li>
+          <li>Stage C: median 3-12 months</li>
+          <li>Post-ATE: poor</li>
+          <li>Stage B: variable, often progress within 1-2 years</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ============================================================
+     Phase 3a — Cat ATE + Hyperthyroid CM + PDA (3)
+     ============================================================ */
+
+  {
+    id: 'card-ate-cat',
+    titleEn: 'Aortic Thromboembolism (ATE) — Cat',
+    titleTh: 'ลิ่มเลือดอุดตันหลอดเลือดแดงใหญ่ (ATE) ในแมว',
+    type: 'disease',
+    system: 'acquired-cat',
+    species: ['cat'],
+    tags: ['ATE', 'aortic thromboembolism', 'saddle thrombus', 'feline', 'HCM', 'paralysis', 'emergency'],
+    aliases: ['saddle thrombus', 'arterial thromboembolism', 'ลิ่มเลือดอุดตัน'],
+    source: 'Bussadori + Duque-Carrasco',
+    sections: {
+      definition: `
+        <p><strong>Aortic Thromboembolism (ATE)</strong> — acute embolization of thrombus จาก left atrium ไปยังหลอดเลือดแดง (most commonly aortic trifurcation = "saddle thrombus")</p>
+        <ul>
+          <li>⭐ <strong>Devastating complication of feline cardiomyopathy</strong> (HCM, RCM, UCM)</li>
+          <li>เกิดใน ~10-20% ของแมวที่เป็น cardiomyopathy</li>
+          <li>ตำแหน่งที่พบบ่อยที่สุด: <strong>aortic trifurcation</strong> → bilateral hindlimb paralysis</li>
+          <li>ตำแหน่งอื่น: front limb (น้อย), kidney, brain, mesentery</li>
+          <li>Mortality at presentation 30-50% · long-term &gt; 70%</li>
+          <li>⚠️ ในประมาณ 30% เป็น first sign ของ cardiac dz</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">ATE Distribution by Site</span>
+          <table>
+            <tr><th>Site</th><th>Frequency</th><th>Clinical Sign</th></tr>
+            <tr><td><strong>Aortic trifurcation (saddle)</strong></td><td>~70%</td><td>⭐ Bilateral hindlimb paralysis</td></tr>
+            <tr><td><strong>Single hindlimb</strong></td><td>~15%</td><td>Unilateral paralysis</td></tr>
+            <tr><td><strong>Front limb</strong></td><td>~10%</td><td>Forelimb paralysis</td></tr>
+            <tr><td><strong>Renal</strong></td><td>Variable</td><td>Acute kidney injury</td></tr>
+            <tr><td><strong>Mesenteric</strong></td><td>Rare</td><td>Acute abdomen, GI signs</td></tr>
+            <tr><td><strong>Cerebral</strong></td><td>Rare</td><td>Stroke signs</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>"Saddle thrombus"</strong> = aortic trifurcation = both hindlimbs<br>
+          📌 แมวที่ paralyzed acute = ATE จนกว่าจะ rule out ได้ (vs IVDD, neuro)</p>
+        </div>
+      `,
+      etiology: `
+        <p><strong>โรคพื้นฐาน (จำเป็นต้องมี):</strong></p>
+        <ul>
+          <li>⭐ <strong>HCM (พบบ่อยที่สุด)</strong></li>
+          <li>RCM</li>
+          <li>UCM (Unclassified)</li>
+          <li>End-stage cardiomyopathy with severe LA dilation</li>
+          <li>Hyperthyroid cardiomyopathy with LA enlargement</li>
+          <li>Rare: dirofilariasis, neoplasia, sepsis</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Virchow's Triad — กลไกการเกิด ATE</span>
+          <ul>
+            <li><strong>Stasis</strong> — เลือดไหลช้าใน LA + auricle ที่โต</li>
+            <li><strong>Endothelial dysfunction</strong> — atrial enlargement + fibrosis</li>
+            <li><strong>Hypercoagulability</strong> — แมวมี platelet hyperactivity · ↑ fibrinogen</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>LA/Ao &gt; 2.0</strong> = high ATE risk<br>
+          📌 LA spontaneous echo contrast ("smoke") = pre-thrombotic<br>
+          📌 มอง thrombus ใน LA echo ได้ = ATE imminent</p>
+        </div>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Severe LA enlargement → blood stasis</li>
+          <li>Platelet activation + thrombus formation ใน LA/auricle</li>
+          <li>Thrombus หลุด → embolizes ผ่าน LV → aorta</li>
+          <li>ติดที่ aortic trifurcation (หรือ artery อื่น)</li>
+          <li>⭐ <strong>Vasoactive substances</strong> (serotonin, thromboxane) จาก platelets → vasoconstriction ของ collateral circulation → severity แย่กว่าที่เกิดจาก mechanical obstruction อย่างเดียว</li>
+          <li>Tissue ischemia → muscle necrosis (rhabdomyolysis)</li>
+          <li>Reperfusion injury เมื่อเลือดกลับมา</li>
+          <li>Hyperkalemia จาก dying muscle → cardiac arrhythmia/arrest</li>
+        </ol>
+      `,
+      symptoms: `
+        <div class="mnemonic thai">
+          <span class="mnem-title">ATE Classic Pentad — "5 Ps" + 1</span>
+          <ul>
+            <li><strong>P</strong>aralysis (acute, dramatic)</li>
+            <li><strong>P</strong>ain (severe, vocalizing)</li>
+            <li><strong>P</strong>ulselessness (no femoral pulse)</li>
+            <li><strong>P</strong>oikilothermy (cold limbs)</li>
+            <li><strong>P</strong>allor / cyanotic (purple-blue paw pads + nails)</li>
+            <li>+ Tachypnea / dyspnea (CHF often concurrent)</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>"5 Ps + Tachypnea"</strong> · classic emergency presentation<br>
+          📌 กล้ามเนื้อขาที่ affected แข็ง, tense (rigor จาก ischemia)<br>
+          📌 ~50% ของแมวมี CHF ร่วม (dual emergency)</p>
+        </div>
+
+        <p><strong>Physical exam findings:</strong></p>
+        <ul>
+          <li>Acute hindlimb paralysis/paresis (bilateral if saddle)</li>
+          <li>เจ็บมาก · ร้อง · พยายามคลานลากตัว</li>
+          <li>NO femoral pulse on affected limb (compare with normal)</li>
+          <li>Cold extremities (poikilothermy)</li>
+          <li>Cyanotic/dark purple paw pads + nails</li>
+          <li>กล้ามเนื้อแข็ง tense (โดยเฉพาะ hindlimb biceps)</li>
+          <li>แมว anxious, distressed, dyspneic ถ้ามี CHF ร่วม</li>
+          <li>Anal tone normal (vs IVDD ที่อาจหายไป)</li>
+          <li>Tail base motor normal (vs IVDD)</li>
+        </ul>
+
+        <p><strong>การแยก ATE จาก spinal cord injury:</strong></p>
+        <ul>
+          <li>ATE: cold limbs, no pulse, cyanotic pads · pain in muscles</li>
+          <li>IVDD/spinal: warm limbs, normal pulse · pain in spine · loss of perineal reflex</li>
+          <li>ATE: muscle rigid · IVDD: flaccid (LMN) or spastic (UMN)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Clinical diagnosis (มัก dx ก่อน imaging):</strong></p>
+        <ul>
+          <li>Acute paralysis + pain + cold + no pulse + dark pads = ATE</li>
+          <li>History: known cardiomyopathy หรือ presentation = sudden onset</li>
+        </ul>
+
+        <p><strong>Confirmatory testing:</strong></p>
+        <ul>
+          <li><strong>Echocardiogram</strong> (essential after stabilization):
+            <ul>
+              <li>Underlying cardiomyopathy (HCM, RCM)</li>
+              <li>Severe LA enlargement (LA/Ao &gt; 2.0)</li>
+              <li>± visible thrombus ใน LA/auricle</li>
+              <li>"Smoke" (spontaneous echo contrast)</li>
+              <li>บางครั้งเห็น thrombus ที่ distal aorta</li>
+            </ul>
+          </li>
+          <li><strong>Doppler / pulse oximetry</strong> ที่ขา affected — absent flow</li>
+          <li><strong>Glucose</strong> — finger stick affected limb vs normal · &gt; 30 mg/dL difference (ขาที่ affected ต่ำกว่า) ยืนยัน reduced perfusion</li>
+          <li><strong>Lactate</strong> — สูงมากในขา affected</li>
+          <li><strong>Chemistry</strong>:
+            <ul>
+              <li>Hyperkalemia (rhabdomyolysis · โดยเฉพาะหลัง reperfusion)</li>
+              <li>↑ AST · ↑ CK (สูงมาก)</li>
+              <li>Azotemia (renal embolus หรือ hypoperfusion)</li>
+              <li>↑ Glucose (stress + epinephrine)</li>
+            </ul>
+          </li>
+          <li><strong>CBC</strong>: stress leukogram</li>
+          <li><strong>Coag panel</strong>: D-dimer often elevated</li>
+          <li><strong>NT-proBNP</strong>: elevated (underlying CHF)</li>
+          <li><strong>Thoracic radiograph</strong>: assess for concurrent CHF</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>IVDD (intervertebral disc disease)</strong> — exam ต่าง · spine pain</li>
+          <li><strong>Spinal cord trauma</strong> — Hx, warm limbs</li>
+          <li><strong>Fibrocartilaginous embolism (FCE)</strong> — rare ในแมว</li>
+          <li><strong>Lumbosacral disease</strong></li>
+          <li><strong>Diabetic neuropathy</strong> — chronic, gradual</li>
+          <li><strong>Hyperkalemia from urethral obstruction</strong> — male blocked cat</li>
+          <li><strong>Lymphoma (spinal)</strong> — chronic course</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Acute management — emergency triage:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">ATE Acute Care — "PAOC"</span>
+          <ul>
+            <li><strong>P</strong>ain control — opioids (METHADONE 0.2 mg/kg IM, fentanyl CRI, buprenorphine OTM)</li>
+            <li><strong>A</strong>nticoagulation — heparin หรือ LMWH (enoxaparin)</li>
+            <li><strong>O</strong>xygen + monitoring (CHF concurrent ใน 50%)</li>
+            <li><strong>C</strong>HF management ถ้ามี (furosemide ถ้ามี pulmonary edema)</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>เจ็บมาก</strong> · adequate opioid analgesia critical<br>
+          📌 หลีก acepromazine (CV depressant) · methadone หรือ fentanyl preferred<br>
+          📌 ⚠️ NO thrombolytics (tPA, streptokinase) routinely — high mortality from reperfusion injury</p>
+        </div>
+
+        <p><strong>Specific anticoagulation:</strong></p>
+        <ul>
+          <li><strong>Unfractionated heparin</strong> 200-300 IU/kg SC q6-8h initial · acute phase</li>
+          <li><strong>Enoxaparin (LMWH)</strong> 1 mg/kg SC q12h — easier dosing, more predictable</li>
+          <li><strong>Clopidogrel</strong> 18.75 mg/cat (1/4 ของ 75 mg) PO q24h — long-term</li>
+          <li><strong>Rivaroxaban</strong> 1.25 mg/cat PO q24h — alternative ถ้า clopidogrel resistance</li>
+          <li>NO aspirin alone (FATCAT showed clopidogrel superior)</li>
+        </ul>
+
+        <p><strong>Reperfusion concerns:</strong></p>
+        <ul>
+          <li>⚠️ <strong>Hyperkalemia</strong> จาก rhabdomyolysis (24-72 hr) — monitor K, treat ถ้า &gt; 6.5</li>
+          <li>⚠️ <strong>Acute kidney injury</strong> จาก myoglobinuria + hypoperfusion — IV fluids cautious</li>
+          <li>⚠️ <strong>Reperfusion arrhythmias</strong> — ECG monitor</li>
+          <li>Pain อาจแย่ลงเมื่อ sensation กลับ</li>
+        </ul>
+
+        <p><strong>Long-term (survivors):</strong></p>
+        <ul>
+          <li>⭐ <strong>Clopidogrel 18.75 mg/cat PO q24h</strong> — lifetime (FATCAT trial)</li>
+          <li>± Enoxaparin if recurrent</li>
+          <li>Treat underlying cardiomyopathy (HCM/RCM)</li>
+          <li>CHF management ถ้าเหมาะสม</li>
+          <li>Physical therapy สำหรับ paralyzed limbs (ถ้า motor return)</li>
+          <li>Recheck echo + clinical ที่ 1, 3, 6, 12 months</li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">FATCAT Trial Findings — Clopidogrel vs Aspirin</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">18.75</span>
+              <span class="num-label">mg/cat (1/4 of 75 mg)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">q24h</span>
+              <span class="num-label">Daily dosing</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">↓50%</span>
+              <span class="num-label">Recurrent ATE risk vs aspirin</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">↑MST</span>
+              <span class="num-label">Median survival improvement</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 ⭐ <strong>FATCAT trial (Hogan 2015):</strong> clopidogrel SUPERIOR ต่อ aspirin สำหรับ cat ATE prevention<br>
+          📌 ขม — ใส่ pill ใน capsule เพื่อให้แมวกินง่าย</p>
+        </div>
+      `,
+      complications: `
+        <ul>
+          <li>⚠️ <strong>Death</strong> at presentation: 30-50%</li>
+          <li><strong>Recurrence</strong> ภายใน 1 ปี: 20-50% (clopidogrel ลด)</li>
+          <li><strong>Hyperkalemia</strong> จาก reperfusion → cardiac arrest</li>
+          <li><strong>Acute kidney injury</strong> จาก myoglobin · hypoperfusion</li>
+          <li><strong>Concurrent CHF</strong> precipitating euthanasia decision</li>
+          <li><strong>Limb necrosis</strong> ต้อง amputate (ไม่บ่อย · ส่วนใหญ่ function กลับหรือ contracture)</li>
+          <li><strong>Permanent paresis</strong> ใน survivors บางตัว</li>
+          <li><strong>Owner financial/emotional cost</strong> — หลายคนเลือก euthanize ตั้งแต่ presentation</li>
+        </ul>
+
+        <p><strong>Prognosis — important factors:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">ATE Prognostic Factors</span>
+          <table>
+            <tr><th>Better prognosis</th><th>Worse prognosis</th></tr>
+            <tr><td>Single limb (vs saddle)</td><td>Saddle (bilateral)</td></tr>
+            <tr><td>Motor function present</td><td>Complete paralysis</td></tr>
+            <tr><td>Rectal temp ≥ 37°C</td><td>Hypothermia &lt; 37°C ⚠️</td></tr>
+            <tr><td>No CHF</td><td>Concurrent CHF</td></tr>
+            <tr><td>K ≤ 6.0 mmol/L</td><td>K &gt; 6.5 (ominous)</td></tr>
+            <tr><td>Owner committed</td><td>Pre-existing CKD/comorbidity</td></tr>
+          </table>
+          <p class="mnem-tip">📌 <strong>Hypothermia + complete paralysis + CHF = euthanasia consideration</strong><br>
+          📌 แมว single limb + warm + motor present = น่าลอง<br>
+          📌 คุย prognosis ตรงไปตรงมากับเจ้าของก่อน expensive workup</p>
+        </div>
+
+        <p><strong>Survival outcomes:</strong></p>
+        <ul>
+          <li><strong>Acute mortality:</strong> 30-50%</li>
+          <li><strong>Survivors median survival:</strong> 6-12 months (variable)</li>
+          <li><strong>1-year survival ของแมวที่กลับบ้านได้:</strong> ~25-30%</li>
+          <li><strong>Recurrence common</strong> · ลดด้วย clopidogrel</li>
+          <li><strong>Quality of life</strong>: หลายตัวกลับมาเดินได้ใน 1-6 weeks</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-hyperthyroid-cm',
+    titleEn: 'Hyperthyroid Cardiomyopathy — Cat',
+    titleTh: 'หัวใจจากไทรอยด์เป็นพิษในแมว',
+    type: 'disease',
+    system: 'acquired-cat',
+    species: ['cat'],
+    tags: ['hyperthyroid', 'thyrotoxic cardiomyopathy', 'feline', 'methimazole', 'I-131', 'reversible'],
+    aliases: ['thyrotoxic cardiomyopathy', 'thyroid heart'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Hyperthyroid Cardiomyopathy</strong> — secondary cardiac changes จาก chronic thyroid hormone excess ในแมวสูงอายุ</p>
+        <ul>
+          <li>⭐ <strong>แมวที่เป็น hyperthyroid ส่วนใหญ่จะมี cardiac changes</strong></li>
+          <li>Reversible ถ้ารักษา hyperthyroidism เร็ว</li>
+          <li>มักเลียนแบบ primary HCM (ต้อง rule out)</li>
+          <li>Age: typically แมวสูงอายุ (&gt; 8-10 years)</li>
+          <li>กระทบ ~10% ของแมว senior (hyperthyroidism prevalence)</li>
+          <li>อาจมี primary cardiomyopathy ร่วมด้วย</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Cardiac Changes — Hyperthyroid Cat</span>
+          <table>
+            <tr><th>Pattern</th><th>Frequency</th><th>Notes</th></tr>
+            <tr><td><strong>LV hypertrophy (HCM-like)</strong></td><td>40-70%</td><td>⭐ เลียนแบบ primary HCM · reversible</td></tr>
+            <tr><td><strong>LA enlargement</strong></td><td>30-50%</td><td>จาก volume overload</td></tr>
+            <tr><td><strong>Dilated phenotype</strong></td><td>10-15%</td><td>End-stage · less reversible</td></tr>
+            <tr><td><strong>Tachyarrhythmia</strong></td><td>50-70%</td><td>Sinus tach, supraventricular tach, AFib</td></tr>
+            <tr><td><strong>CHF</strong></td><td>10-20%</td><td>โดยเฉพาะ advanced</td></tr>
+            <tr><td><strong>Hypertension</strong></td><td>20-30%</td><td>เพิ่ม cardiac workload</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Always rule out hyperthyroid ใน cat with HCM phenotype!</strong> · check T4<br>
+          📌 Cardiac changes มัก reversible เมื่อ euthyroid restored</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li><strong>Functional thyroid adenoma/adenomatous hyperplasia</strong> (97%)</li>
+          <li>Thyroid carcinoma (rare, 1-3%)</li>
+          <li>Bilateral thyroid involvement common (70%)</li>
+          <li>Suspected environmental factors: BPA, flame retardants, canned food, etc.</li>
+        </ul>
+
+        <p><strong>Cardiac effects ของ T4 excess:</strong></p>
+        <ul>
+          <li>↑ Beta-adrenergic receptor density</li>
+          <li>↑ Myocardial protein synthesis → hypertrophy</li>
+          <li>↑ Heart rate (chronotropy)</li>
+          <li>↑ Contractility (inotropy)</li>
+          <li>↑ Metabolic demand · ↑ cardiac output</li>
+          <li>↑ Renin-angiotensin activation</li>
+          <li>Long-term: maladaptive remodeling, arrhythmia substrate, CHF</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Excess T4/T3 → ↑ sympathetic activity + direct cardiac effects</li>
+          <li>Chronic ↑ HR + contractility → high-output state</li>
+          <li>Ventricular hypertrophy (concentric)</li>
+          <li>ถ้าไม่รักษา → progress ไป dilated phenotype</li>
+          <li>Atrial enlargement → AFib risk</li>
+          <li>Concurrent hypertension แย่ขึ้น cardiac strain</li>
+          <li>สุดท้าย CHF ถ้าไม่ control</li>
+          <li>Reversal: เมื่อ euthyroid · hypertrophy regress ได้ใน weeks-months</li>
+        </ol>
+      `,
+      symptoms: `
+        <p><strong>Hyperthyroid systemic signs:</strong></p>
+        <ul>
+          <li>น้ำหนักลดทั้งที่กินเก่ง (classic)</li>
+          <li>Hyperactivity, restlessness</li>
+          <li>PU/PD</li>
+          <li>อาเจียน, ท้องเสีย</li>
+          <li>ขนสาก, ไม่เรียบ</li>
+          <li>Behavioral changes (ร้องเสียงดัง, aggressive)</li>
+          <li>ทนร้อนไม่ได้, panting</li>
+        </ul>
+
+        <p><strong>Cardiac signs:</strong></p>
+        <ul>
+          <li>Tachycardia (HR &gt; 220 BPM common)</li>
+          <li>Systolic murmur (variable, dynamic)</li>
+          <li>Gallop sound possible</li>
+          <li>Arrhythmia (palpable pulse irregularity)</li>
+          <li>ถ้ามี CHF: tachypnea, dyspnea, anorexia</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li><strong>คลำ thyroid nodule ได้</strong> — ที่บริเวณคอ (เลื่อนนิ้วโป้ง-ชี้จากหู ลงมาทางทรวงอก)</li>
+          <li>Tachycardia · pulse strong/bounding ตอนแรก</li>
+          <li>Murmur (มัก dynamic with HR)</li>
+          <li>Hypertension on Doppler measurement</li>
+          <li>น้ำหนักลด muscle atrophy</li>
+          <li>ขนยุ่ง</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>Endocrine workup:</strong></p>
+        <ul>
+          <li>⭐ <strong>Total T4 (TT4)</strong> — elevated &gt; 4 µg/dL (NRR varies by lab)
+            <ul>
+              <li>แมวส่วนใหญ่ชัดเจน</li>
+              <li>10-15% เป็น "occult" — TT4 borderline</li>
+            </ul>
+          </li>
+          <li><strong>Free T4 by equilibrium dialysis</strong> — ถ้า TT4 borderline · sensitive กว่า</li>
+          <li><strong>TSH (canine TSH cross-reacts)</strong> — suppressed ใน hyperthyroid · ช่วย confirm</li>
+          <li><strong>Thyroid scintigraphy (Tc-99m pertechnetate)</strong> — gold standard สำหรับ ectopic tissue/carcinoma</li>
+        </ul>
+
+        <p><strong>Cardiac evaluation:</strong></p>
+        <ul>
+          <li><strong>Echocardiogram</strong>:
+            <ul>
+              <li>LV concentric hypertrophy (HCM-like)</li>
+              <li>LA enlargement variable</li>
+              <li>Hyperdynamic systolic function</li>
+              <li>Tachycardia</li>
+              <li>± SAM</li>
+              <li>Recheck post-treatment เพื่อดู regression</li>
+            </ul>
+          </li>
+          <li><strong>ECG</strong>:
+            <ul>
+              <li>Sinus tachycardia (HR 220-280)</li>
+              <li>Tall R waves (LV hypertrophy)</li>
+              <li>± supraventricular arrhythmia / AFib</li>
+              <li>± ventricular ectopic beats</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiograph</strong>: cardiomegaly, ± pulmonary edema ถ้ามี CHF</li>
+          <li><strong>BP</strong>: ⭐ <strong>ต้องวัดเสมอ</strong> — ~30% มี hypertension ร่วม</li>
+          <li><strong>NT-proBNP</strong>: variable elevation · less reliable ใน hyperthyroid</li>
+        </ul>
+
+        <p><strong>Comorbidity workup (essential!):</strong></p>
+        <ul>
+          <li>⭐ <strong>BUN/creatinine, SDMA, urinalysis</strong> — CKD พบบ่อยในแมวสูงอายุ และอาจถูก MASKED โดย hyperthyroid (hyperthyroid ↑ GFR)</li>
+          <li>Fasting glucose</li>
+          <li>CBC (mild erythrocytosis common)</li>
+          <li>การรักษา hyperthyroid อาจ "เผย" CKD ออกมา</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Primary HCM</strong> — T4 normal · echo persists post-treatment</li>
+          <li><strong>Hypertensive cardiomyopathy</strong> — BP &gt; 160 · T4 normal</li>
+          <li><strong>Acromegaly</strong> — IGF-1 elevated, growth hormone</li>
+          <li><strong>Anemia-induced</strong> high-output</li>
+          <li><strong>Pheochromocytoma</strong> (rare มากในแมว)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Definitive therapy options:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Hyperthyroid Treatment Options</span>
+          <table>
+            <tr><th>Option</th><th>Mechanism</th><th>Pros / Cons</th></tr>
+            <tr><td><strong>⭐ I-131 (radioiodine)</strong></td><td>ทำลาย thyroid tissue</td><td>Curative · single Rx · ต้องการ facility</td></tr>
+            <tr><td><strong>Methimazole</strong></td><td>Block T4 synthesis</td><td>PO/transdermal · lifelong · monitoring</td></tr>
+            <tr><td><strong>Carbimazole (Vidalta)</strong></td><td>Prodrug ของ methimazole</td><td>Once-daily · controlled-release</td></tr>
+            <tr><td><strong>Surgical thyroidectomy</strong></td><td>เอา thyroid ออก</td><td>Anesthetic risk · hypocalcemia ถ้า parathyroid damage</td></tr>
+            <tr><td><strong>Iodine-restricted diet (Y/D)</strong></td><td>จำกัด T4 substrate</td><td>Strict diet · เฉพาะ Y/D · ปัญหาบ้านที่มีหลายแมว</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>I-131 = curative</strong> · gold standard ถ้ามี<br>
+          📌 ⭐ <strong>Methimazole = first-line ถ้าไม่มี I-131</strong> · lifetime PO/transdermal<br>
+          📌 Pre-cardiac eval ก่อน radioiodine (4-6 weeks methimazole control ก่อนเพื่อประเมิน CKD ร่วม)</p>
+        </div>
+
+        <p><strong>Methimazole protocol:</strong></p>
+        <ul>
+          <li>เริ่ม: 1.25-2.5 mg/cat PO q12h หรือ transdermal</li>
+          <li>Recheck T4 + CBC + chemistry 2-4 weeks</li>
+          <li>ปรับ dose ให้ T4 อยู่ใน low-normal range</li>
+          <li>Long-term recheck q3-6 months</li>
+          <li>Side effects: facial pruritus, hepatopathy, BM suppression (rare แต่ serious)</li>
+        </ul>
+
+        <p><strong>Concurrent cardiac management:</strong></p>
+        <ul>
+          <li><strong>Atenolol 6.25-12.5 mg/cat q12-24h</strong> — controls tachycardia + ลด SAM
+            <ul>
+              <li>Useful as bridge to I-131 (4-6 weeks pre-op)</li>
+              <li>อาจหยุดได้หลัง euthyroid + cardiac normalize</li>
+            </ul>
+          </li>
+          <li><strong>CHF management</strong> ถ้ามี pulmonary edema/effusion:
+            <ul>
+              <li>Furosemide ตามต้องการ</li>
+              <li>Often improves with euthyroid state</li>
+            </ul>
+          </li>
+          <li><strong>Hypertension</strong>: amlodipine 0.625-1.25 mg/cat q24h</li>
+          <li><strong>Clopidogrel</strong> ถ้า LA enlargement &gt; 1.6 (ATE prevention)</li>
+        </ul>
+
+        <p><strong>Post-treatment monitoring:</strong></p>
+        <ul>
+          <li>Echo recheck 2-4 months post-euthyroid · cardiac changes ส่วนใหญ่ regress</li>
+          <li>ถ้า persistent abnormalities → primary cardiomyopathy ร่วม</li>
+          <li>BP recheck (hypertension อาจ resolve หรือ persist)</li>
+          <li>Renal function (CKD มัก emerge/worsen)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Hyperthyroid-induced CHF</strong> — มัก response ต่อ euthyroid + diuretic</li>
+          <li><strong>Persistent cardiomyopathy</strong> ถ้า treatment delayed</li>
+          <li><strong>ATE</strong> ถ้า severe LA enlargement</li>
+          <li><strong>Hypertension</strong> with target organ damage (retinal hemorrhage, CKD)</li>
+          <li><strong>Iatrogenic hypothyroid</strong> หลัง I-131 หรือ surgery</li>
+          <li><strong>"Unmasked" CKD</strong> หลัง restore euthyroid</li>
+          <li><strong>Methimazole adverse effects</strong>: facial pruritus, hepatopathy</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>I-131 treated:</strong> Median survival 2-4 years (มัก outliving cardiac concerns)</li>
+          <li><strong>Methimazole long-term:</strong> Variable · monitoring-dependent</li>
+          <li><strong>Untreated:</strong> Months to years · cardiac decompensation common</li>
+          <li><strong>Cardiac changes:</strong> ส่วนใหญ่ reverse ภายใน 4-12 weeks ของ euthyroid · บางรายดื้อใน advanced cases</li>
+          <li><strong>Concurrent CKD:</strong> มักกำหนด long-term prognosis</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-pda',
+    titleEn: 'Patent Ductus Arteriosus (PDA)',
+    titleTh: 'PDA — ท่อ Ductus เปิดค้าง',
+    type: 'disease',
+    system: 'congenital',
+    species: ['dog', 'cat'],
+    tags: ['PDA', 'patent ductus arteriosus', 'continuous murmur', 'machinery', 'congenital', 'shunt'],
+    aliases: ['PDA', 'continuous murmur', 'machinery murmur', 'ductus เปิด'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Patent Ductus Arteriosus (PDA)</strong> — fetal ductus arteriosus ไม่ปิดหลังคลอด · มี L→R shunt ระหว่าง aorta และ pulmonary artery</p>
+        <ul>
+          <li>⭐ <strong>Most common congenital heart defect ในหมา</strong> (~30% ของ canine congenital)</li>
+          <li>⭐ <strong>Female &gt; Male</strong> (3:1 ratio) — defect เดียวที่ female predominance</li>
+          <li>Predisposed breeds: <strong>Toy Poodle, Maltese, Pomeranian, Yorkshire Terrier, Cocker Spaniel, German Shepherd, Collie</strong></li>
+          <li>Genetic: polygenic inheritance</li>
+          <li>Cat: less common</li>
+          <li>Reverse PDA (R→L) = uncommon variant · poor prognosis</li>
+        </ul>
+
+        <p><strong>Normal physiology:</strong></p>
+        <ul>
+          <li>Fetal: ductus shunts blood จาก PA → aorta (bypass lungs)</li>
+          <li>Birth: ductus ปกติปิดใน 24-72 hours (functional) และ weeks (anatomic)</li>
+          <li>ขับเคลื่อนโดย O2 increase + prostaglandin decrease</li>
+          <li>PDA: ปิดไม่สมบูรณ์ → persistent communication</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Genetic / inherited (polygenic ในหมา)</li>
+          <li>Female sex predisposition</li>
+          <li>Breed predisposition (above)</li>
+          <li>Histopathology: abnormal smooth muscle development ใน ductus wall</li>
+        </ul>
+
+        <p><strong>Hemodynamic types:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">PDA Direction Types</span>
+          <ul>
+            <li><strong>Left-to-Right (typical, &gt; 95%)</strong> — Aorta → PA · pulmonary overcirculation · L volume overload · CHF risk</li>
+            <li><strong>Right-to-Left ("reverse PDA")</strong> — Severe pulmonary HT พลิก flow · cyanosis · lower body desaturation · poor prognosis</li>
+            <li><strong>Bidirectional</strong> — transitional · มัก progress ไป reverse</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>L→R PDA</strong>: surgical correction excellent prognosis<br>
+          📌 ⚠️ <strong>R→L PDA</strong>: ห้ามปิด (precipitates RV failure) · differential cyanosis (hindlimbs cyanotic, head pink)<br>
+          📌 ⭐ ECHO ก่อน "PDA closure" เสมอ — confirm direction</p>
+        </div>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Persistent shunt aorta → PA (L→R)</li>
+          <li>↑ pulmonary blood flow</li>
+          <li>↑ pulmonary venous return → LA volume overload</li>
+          <li>LA dilation → LV volume overload (eccentric hypertrophy)</li>
+          <li>Compensated: hyperkinetic LV, normal cardiac output to body</li>
+          <li>Decompensation → CHF (pulmonary edema)</li>
+          <li>ถ้า chronic uncorrected: ↑ pulmonary vascular resistance → pulmonary hypertension</li>
+          <li>Severe PHT → reverse shunt (R→L) → cyanosis</li>
+          <li>Mortality without intervention high (60-80% ภายใน 1 year)</li>
+        </ol>
+      `,
+      symptoms: `
+        <p><strong>L→R PDA presentation:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">PDA Classic Signs — Puppy/Young Adult</span>
+          <ul>
+            <li>⭐ <strong>Continuous "machinery" murmur</strong> — left base, high (3rd ICS)</li>
+            <li>⭐ <strong>Bounding pulses</strong> ("water hammer" pulse) — wide pulse pressure</li>
+            <li>มัก asymptomatic ตอน puppy (incidental finding)</li>
+            <li>Failure to thrive</li>
+            <li>Exercise intolerance</li>
+            <li>Cough (CHF)</li>
+            <li>Tachypnea / dyspnea (CHF)</li>
+            <li>Stunted growth</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>"Machinery murmur + bounding pulse + young dog = PDA"</strong><br>
+          📌 มักได้ยินครั้งแรกที่ puppy vaccination<br>
+          📌 ⭐ Early surgical correction = best prognosis</p>
+        </div>
+
+        <p><strong>R→L PDA (rare):</strong></p>
+        <ul>
+          <li>Differential cyanosis — caudal body cyanotic, cranial pink (Os flow direction)</li>
+          <li>Exercise intolerance</li>
+          <li>Hindlimb weakness</li>
+          <li>Polycythemia (compensatory)</li>
+          <li>NO continuous murmur (pressures equalized)</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Continuous murmur (machinery, locomotive) ที่ L base 3rd ICS</li>
+          <li>Murmur radiates กว้าง — entire L thorax · ได้ยินทาง R</li>
+          <li>มักดังมาก (grade 4-6/6)</li>
+          <li>Palpable thrill ที่ L base</li>
+          <li>Bounding femoral pulse (key feature)</li>
+          <li>Wide pulse pressure (high systolic - low diastolic)</li>
+          <li>Tachycardia</li>
+          <li>Pulmonary crackles ถ้ามี CHF</li>
+        </ul>
+      `,
+      diagnosis: `
+        <ul>
+          <li><strong>Echocardiogram</strong> (essential):
+            <ul>
+              <li>Direct visualization ของ PDA จาก L cranial view</li>
+              <li>Color Doppler: turbulent retrograde flow ใน main pulmonary artery</li>
+              <li>Continuous flow on PW Doppler</li>
+              <li>LA + LV enlargement (volume overload)</li>
+              <li>Hyperkinetic LV motion</li>
+              <li>⭐ Estimate ductus size + direction (L→R vs R→L)</li>
+              <li>Bubble study confirm ถ้าสงสัย reverse PDA</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiograph</strong>:
+            <ul>
+              <li>Generalized cardiomegaly</li>
+              <li>LA enlargement</li>
+              <li>Pulmonary overcirculation (engorged vessels)</li>
+              <li>"3 knuckles" sign (DV view): aortic arch + main PA + LA bulges</li>
+              <li>Pulmonary edema ถ้ามี CHF</li>
+            </ul>
+          </li>
+          <li><strong>ECG</strong>: ± LV enlargement (tall R), ± atrial enlargement (P mitrale)</li>
+          <li><strong>BP</strong>: wide pulse pressure (e.g., 180/40)</li>
+          <li><strong>CBC</strong>: polycythemia ถ้า reverse PDA</li>
+          <li><strong>Cardiology referral</strong> สำหรับ closure</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Aortopulmonary fistula</strong> (rare)</li>
+          <li><strong>Aortic regurgitation + Pulmonic stenosis</strong> (combined defect)</li>
+          <li><strong>Coronary AV fistula</strong></li>
+          <li><strong>Anomalous coronary artery</strong></li>
+          <li><strong>Other continuous murmurs</strong>: ruptured sinus of Valsalva, AV fistula</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>L→R PDA — closure indicated (often curative):</strong></p>
+
+        <ul>
+          <li>⭐ <strong>Transcatheter closure (Amplatz Canine Ductal Occluder, coil)</strong>:
+            <ul>
+              <li>Minimally invasive · femoral vascular access</li>
+              <li>Gold standard ถ้า PDA size + dog size suitable</li>
+              <li>Day procedure · low complication rate</li>
+              <li>~95% success rate</li>
+              <li>Specialty referral required</li>
+            </ul>
+          </li>
+          <li><strong>Surgical ligation</strong>:
+            <ul>
+              <li>Lateral thoracotomy · ผูก ductus ด้วย suture</li>
+              <li>ใช้ถ้า catheter ไม่ feasible (very small dog, large PDA)</li>
+              <li>~95% success · rare ductus rupture catastrophe</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Pre-/peri-procedure care:</strong></p>
+        <ul>
+          <li>Stabilize CHF ถ้ามี (furosemide, pimobendan, ACEi)</li>
+          <li>Pre-op echo + thoracic radiograph</li>
+          <li>Anesthesia: cardiac-friendly (etomidate induction · maintain BP)</li>
+          <li>Pre-op bloods + coag</li>
+          <li>Antibiotic prophylaxis (cefazolin)</li>
+        </ul>
+
+        <p><strong>Post-procedure:</strong></p>
+        <ul>
+          <li>ICU monitoring 24 hr</li>
+          <li>Pain management (opioids)</li>
+          <li>Recheck echo ที่ 4-12 weeks</li>
+          <li>Wean cardiac medications gradually ถ้า reversal</li>
+          <li>หมาส่วนใหญ่กลับ normal function</li>
+        </ul>
+
+        <p><strong>R→L PDA management:</strong></p>
+        <ul>
+          <li>⚠️ <strong>ห้ามปิด</strong> (จะ acute RV failure + death)</li>
+          <li>Phlebotomy ถ้า PCV &gt; 65% (q3-6 months)</li>
+          <li>Sildenafil สำหรับ pulmonary hypertension</li>
+          <li>Restrict exercise</li>
+          <li>Poor long-term prognosis · median 1-3 years</li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">PDA Outcomes — Surgical Correction</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">~95%</span>
+              <span class="num-label">Successful closure</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">&lt;5%</span>
+              <span class="num-label">Major complications</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Normal</span>
+              <span class="num-label">Life expectancy ถ้าปิดเร็ว</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">60-80%</span>
+              <span class="num-label">Mortality ภายใน 1 yr ถ้าไม่ปิด</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 ⭐ <strong>Early closure = essentially curative</strong><br>
+          📌 Delay = irreversible cardiac changes + pulmonary HT</p>
+        </div>
+      `,
+      complications: `
+        <ul>
+          <li><strong>CHF</strong> ถ้าไม่ปิด (early dyspnea, edema)</li>
+          <li><strong>Pulmonary hypertension</strong> ถ้า chronic (years)</li>
+          <li><strong>Reverse shunting</strong> (Eisenmenger physiology)</li>
+          <li><strong>Atrial fibrillation</strong> จาก severe LA enlargement</li>
+          <li><strong>Endocarditis</strong> ที่ ductus site (very rare)</li>
+          <li><strong>Surgical: ductus rupture</strong> (catastrophic — emergency thoracotomy)</li>
+          <li><strong>Catheter: device embolization</strong> (rare with experienced operator)</li>
+          <li><strong>Recurrent shunt</strong> ถ้า incomplete closure (rare)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>L→R PDA, surgically corrected early:</strong> Excellent · normal life expectancy</li>
+          <li><strong>L→R PDA, late correction (after CHF):</strong> Good แต่มี residual cardiac changes</li>
+          <li><strong>L→R PDA, no correction:</strong> 60-80% mortality first year</li>
+          <li><strong>R→L PDA:</strong> Poor · 1-3 year survival</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ============================================================
+     Phase 3b — Congenital (PS + SAS + VSD)
+     ============================================================ */
+
+  {
+    id: 'card-pulmonic-stenosis',
+    titleEn: 'Pulmonic Stenosis (PS)',
+    titleTh: 'PS — ลิ้น Pulmonic ตีบ',
+    type: 'disease',
+    system: 'congenital',
+    species: ['dog', 'cat'],
+    tags: ['PS', 'pulmonic stenosis', 'pulmonary stenosis', 'balloon valvuloplasty', 'right heart', 'congenital'],
+    aliases: ['PS', 'pulmonary stenosis'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Pulmonic Stenosis (PS)</strong> — narrowing ที่/ใกล้ pulmonic valve · RV outflow obstruction</p>
+        <ul>
+          <li>⭐ One of the most common canine congenital defects (15-20%)</li>
+          <li>Predisposed breeds: <strong>English Bulldog, Boxer, French Bulldog, Beagle, Mastiff, Cocker Spaniel</strong></li>
+          <li>Cat: rare</li>
+          <li>มัก dx ที่ puppy vaccination (murmur)</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">PS Anatomic Types</span>
+          <table>
+            <tr><th>Type</th><th>Description</th><th>Notes</th></tr>
+            <tr><td><strong>Type A (valvular)</strong></td><td>Fused/thickened cusps · poststenotic dilation ของ MPA</td><td>Most common · ตอบสนองต่อ BVP ดี</td></tr>
+            <tr><td><strong>Type B (dysplastic)</strong></td><td>Hypoplastic annulus + valve</td><td>Bulldog, Boxer · response BVP น้อย · อาจต้อง surgery</td></tr>
+            <tr><td><strong>Subvalvular</strong></td><td>Below valve (RV outflow)</td><td>Less common</td></tr>
+            <tr><td><strong>Supravalvular</strong></td><td>Above valve ใน main PA</td><td>Rare</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Type A</strong> = balloon valvuloplasty (BVP) มัก effective<br>
+          📌 ⚠️ <strong>Type B (Bulldog)</strong> = R-divisional coronary artery อาจวิ่งข้าม RV outflow → BVP อาจ rupture artery (ทำ CT angio ก่อน!)</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li>Genetic / inherited (polygenic)</li>
+          <li>Breed-specific (Bulldog familial)</li>
+          <li>Type B Bulldog: associated with R2A (single right coronary artery anomaly)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>RV outflow obstruction</li>
+          <li>↑ RV pressure เพื่อ overcome obstruction (concentric hypertrophy)</li>
+          <li>RV กลายเป็น stiff (diastolic dysfunction)</li>
+          <li>RA enlargement → tricuspid regurgitation</li>
+          <li>Severe: RV failure, ascites, syncope</li>
+          <li>Pressure gradient across valve = severity marker</li>
+          <li>Sudden death จาก arrhythmia possible (โดยเฉพาะ severe PS, exercise)</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li>Mild PS: asymptomatic (incidental murmur finding)</li>
+          <li>Moderate PS: occasional exercise intolerance</li>
+          <li>Severe PS:
+            <ul>
+              <li>⚠️ <strong>Syncope</strong> (especially exertional)</li>
+              <li>Exercise intolerance</li>
+              <li>Right CHF: ascites, hepatomegaly</li>
+              <li>⚠️ Sudden death</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Systolic ejection murmur · L base (3rd ICS) · grade 3-6/6</li>
+          <li>Murmur radiates ไป right hemithorax + cervical region</li>
+          <li>Thrill ถ้า grade 4+</li>
+          <li>S2 split (or paradoxical) ใน severe</li>
+          <li>JVP elevation ถ้า RV failure</li>
+          <li>Ascites ถ้า right CHF</li>
+        </ul>
+      `,
+      diagnosis: `
+        <ul>
+          <li><strong>Echocardiogram</strong>:
+            <ul>
+              <li>Thickened/fused pulmonic valve cusps (Type A) หรือ dysplastic (Type B)</li>
+              <li>Post-stenotic dilation ของ main PA (Type A characteristic)</li>
+              <li>RV concentric hypertrophy</li>
+              <li>RA enlargement</li>
+              <li>Septal flattening (D-shaped LV)</li>
+              <li><strong>CW Doppler:</strong> peak gradient across valve
+                <ul>
+                  <li>Mild &lt; 50 mmHg</li>
+                  <li>Moderate 50-80 mmHg</li>
+                  <li>Severe &gt; 80 mmHg (BVP indicated)</li>
+                </ul>
+              </li>
+              <li>Tricuspid regurgitation jet</li>
+            </ul>
+          </li>
+          <li><strong>CT angiography</strong> (Bulldog Type B): essential ก่อน BVP เพื่อ assess R2A</li>
+          <li><strong>Thoracic radiograph</strong>: RV enlargement, post-stenotic MPA bulge, normal lung fields (until CHF)</li>
+          <li><strong>ECG</strong>: right axis deviation, S waves ใน lead I, II, aVF (RV strain)</li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">PS Severity by Pressure Gradient</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">&lt;50</span>
+              <span class="num-label">Mild · monitor</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">50-80</span>
+              <span class="num-label">Moderate · BVP ถ้า symptomatic</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">&gt;80</span>
+              <span class="num-label">Severe · BVP indicated</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">&gt;100</span>
+              <span class="num-label">Critical · syncope risk</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 Bernoulli: gradient (mmHg) = 4 × (PV velocity)²<br>
+          📌 ⭐ <strong>BVP indicated ถ้า gradient &gt; 80 mmHg หรือ symptomatic</strong></p>
+        </div>
+      `,
+      differential: `
+        <ul>
+          <li><strong>SAS (subaortic stenosis)</strong> — different murmur location · LV affected</li>
+          <li><strong>Tricuspid dysplasia</strong> — RA enlargement, TR jet</li>
+          <li><strong>Tetralogy of Fallot</strong> — combined PS + VSD + RV hypertrophy + overriding aorta · cyanosis</li>
+          <li><strong>Heart base tumor</strong> — older dog</li>
+          <li><strong>Innocent puppy murmur</strong> — soft, resolves by 4-5 mo</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment by severity:</strong></p>
+
+        <ul>
+          <li><strong>Mild PS (gradient &lt; 50):</strong>
+            <ul>
+              <li>No medication needed</li>
+              <li>Annual echo to monitor</li>
+              <li>Avoid extreme exercise</li>
+            </ul>
+          </li>
+          <li><strong>Moderate PS (50-80):</strong>
+            <ul>
+              <li>Atenolol ถ้า symptomatic (ลด RV myocardial O2 demand)</li>
+              <li>BVP ถ้า symptomatic หรือ progressive</li>
+              <li>Echo every 6-12 months</li>
+            </ul>
+          </li>
+          <li><strong>Severe PS (&gt; 80) หรือ symptomatic:</strong>
+            <ul>
+              <li>⭐ <strong>Balloon valvuloplasty (BVP)</strong> — gold standard intervention
+                <ul>
+                  <li>Catheter ผ่าน femoral vein</li>
+                  <li>Balloon inflated across stenotic valve</li>
+                  <li>ลด gradient 30-70% typically</li>
+                  <li>Cardiology referral</li>
+                </ul>
+              </li>
+              <li>Atenolol pre-/post-procedure</li>
+              <li>Surgery (open valve repair) reserved สำหรับ failed BVP</li>
+            </ul>
+          </li>
+          <li><strong>Bulldog Type B with R2A:</strong>
+            <ul>
+              <li>⚠️ Pre-procedure CT angiography mandatory</li>
+              <li>Modified BVP technique หรือ surgical alternative</li>
+              <li>Higher risk of complications</li>
+            </ul>
+          </li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Right CHF</strong> (ascites, hepatic congestion)</li>
+          <li><strong>Syncope</strong></li>
+          <li><strong>Sudden death</strong> (โดยเฉพาะ severe + exercise)</li>
+          <li><strong>Arrhythmia</strong></li>
+          <li><strong>Pulmonary regurgitation</strong> หลัง BVP (mild · มัก well-tolerated)</li>
+          <li><strong>BVP failure / restenosis</strong></li>
+          <li><strong>Coronary rupture</strong> (Bulldog R2A)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Mild PS:</strong> Normal life expectancy</li>
+          <li><strong>Moderate PS:</strong> Generally good · monitoring</li>
+          <li><strong>Severe PS, BVP successful:</strong> Significantly improved · มัก normal life</li>
+          <li><strong>Severe PS, no intervention:</strong> Reduced lifespan · sudden death risk</li>
+          <li><strong>Bulldog Type B:</strong> More guarded</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-sas',
+    titleEn: 'Subaortic Stenosis (SAS)',
+    titleTh: 'SAS — ตีบใต้ลิ้น Aortic',
+    type: 'disease',
+    system: 'congenital',
+    species: ['dog'],
+    tags: ['SAS', 'subaortic stenosis', 'aortic stenosis', 'Newfoundland', 'Boxer', 'Golden', 'sudden death'],
+    aliases: ['SAS', 'subvalvular AS', 'อะออร์ติคตีบ'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Subaortic Stenosis (SAS)</strong> — fibromuscular ring/ridge ใต้ aortic valve · LV outflow obstruction</p>
+        <ul>
+          <li>⭐ หนึ่งใน most common canine congenital defects</li>
+          <li>Predisposed breeds: <strong>Newfoundland (มากที่สุด), Golden Retriever, Boxer, Rottweiler, German Shepherd, Bull Terrier</strong></li>
+          <li>Inherited (autosomal dominant ใน Newfoundland)</li>
+          <li>Cat: very rare</li>
+          <li>พัฒนาในช่วง weeks/months แรกของชีวิต — อาจไม่มีตั้งแต่เกิด</li>
+          <li>Progress ใน 6-12 months แรก แล้ว stable</li>
+        </ul>
+
+        <p><strong>Severity classification:</strong></p>
+        <ul>
+          <li>Mild: gradient &lt; 50 mmHg</li>
+          <li>Moderate: 50-80 mmHg</li>
+          <li>Severe: &gt; 80 mmHg (sudden death risk)</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>Genetic (inherited polygenic / autosomal dominant)</li>
+          <li>Newfoundland: heritable single major gene</li>
+          <li>Pathology: fibromuscular ring/ridge ใน LVOT ใต้ aortic valve</li>
+          <li>บางรายมี mitral valve dysplasia ร่วม</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>LV outflow obstruction ที่ subvalvular level</li>
+          <li>↑ LV pressure เพื่อ maintain CO</li>
+          <li>LV concentric hypertrophy</li>
+          <li>↑ Myocardial O2 demand</li>
+          <li>Subendocardial ischemia (severe cases)</li>
+          <li>Ventricular arrhythmia substrate</li>
+          <li>⚠️ Sudden death (especially during exercise) จาก VT/VF</li>
+          <li>Late: CHF ถ้า severe untreated</li>
+          <li>High-velocity jet damages aortic valve → endocarditis predisposition</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li>Mild SAS: asymptomatic</li>
+          <li>Moderate SAS: usually asymptomatic</li>
+          <li>Severe SAS:
+            <ul>
+              <li>⚠️ <strong>Exercise intolerance, syncope</strong></li>
+              <li>⚠️ <strong>Sudden death</strong> (มักระหว่าง exertion · 30-50% ของ severely affected)</li>
+              <li>CHF ใน advanced cases</li>
+            </ul>
+          </li>
+          <li>หลายตัวที่ identify ได้ตอน puppy โดย murmur (asymptomatic)</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>⭐ Systolic ejection murmur ที่ <strong>L base 4th ICS (aortic area)</strong></li>
+          <li>Radiates ขึ้น carotids (cervical region)</li>
+          <li>Grade variable (1-6) แต่ไม่ correlate กับ severity เสมอ</li>
+          <li>Pulse: weak/parvus et tardus (slow rising) ใน severe</li>
+          <li>Thrill ที่ L base + cervical area ใน severe</li>
+          <li>อาจมี diastolic murmur ถ้า aortic regurgitation (concurrent endocarditis red flag)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <ul>
+          <li><strong>Echocardiogram</strong> (gold standard):
+            <ul>
+              <li>Subaortic ridge หรือ ring (fibromuscular tissue ใต้ valve)</li>
+              <li>LV concentric hypertrophy</li>
+              <li>Post-stenotic aortic dilation (variable)</li>
+              <li>⭐ <strong>CW Doppler peak gradient</strong> (key measurement)
+                <ul>
+                  <li>Mild &lt; 50 mmHg</li>
+                  <li>Moderate 50-80 mmHg</li>
+                  <li>Severe &gt; 80 mmHg</li>
+                </ul>
+              </li>
+              <li>± Aortic regurgitation</li>
+              <li>Hyperdynamic LV motion</li>
+              <li>Repeat echo ที่ 12-18 months เพื่อ confirm stability (severity progress ตอนแรก)</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiograph</strong>: usually normal · LV enlargement ใน severe</li>
+          <li><strong>ECG</strong>: ± LV hypertrophy pattern (tall R waves), ventricular arrhythmia</li>
+          <li><strong>Holter monitor</strong> — recommended สำหรับ severe SAS เพื่อ detect VT</li>
+        </ul>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">⚠️ SAS Sudden Death Risk Factors</span>
+          <ul>
+            <li>Gradient &gt; 80 mmHg</li>
+            <li>Syncope history</li>
+            <li>VT on Holter</li>
+            <li>ST segment changes (subendocardial ischemia)</li>
+            <li>Predisposed breed (Newfoundland)</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>Restrict severe SAS dogs จาก intense exercise</strong> · risk-stratify ด้วย Holter<br>
+          📌 SAS = #1 cause ของ canine sudden cardiac death ใน young athletic breeds</p>
+        </div>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Innocent puppy murmur</strong> (resolves by 4-5 mo)</li>
+          <li><strong>HCM</strong> (cat or dog) — different echo</li>
+          <li><strong>Pulmonic stenosis</strong> — different location</li>
+          <li><strong>Aortic stenosis valvular</strong> — at valve level (rare ในหมา)</li>
+          <li><strong>Endocarditis aortic</strong> (acquired)</li>
+          <li><strong>Anemia-related murmur</strong></li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment options (limited efficacy):</strong></p>
+
+        <ul>
+          <li><strong>Mild SAS:</strong>
+            <ul>
+              <li>No medication</li>
+              <li>Annual echo</li>
+              <li>Normal exercise OK</li>
+              <li>Breeding considerations (don't breed)</li>
+            </ul>
+          </li>
+          <li><strong>Moderate-Severe SAS:</strong>
+            <ul>
+              <li>⭐ <strong>Atenolol 0.5-1 mg/kg PO q12h</strong>
+                <ul>
+                  <li>ลด myocardial O2 demand</li>
+                  <li>ลด sudden death risk (controversial evidence — Meurs study)</li>
+                  <li>ชะลอ HR · ลด ventricular arrhythmia</li>
+                </ul>
+              </li>
+              <li><strong>Exercise restriction</strong>: หลีก strenuous activity ใน severe</li>
+              <li><strong>BVP/surgery</strong>: limited benefit · gradient มักกลับมาใน 1-2 ปี</li>
+              <li><strong>Endocarditis prophylaxis</strong>:
+                <ul>
+                  <li>Antibiotics ระหว่าง dental procedures (amoxi-clav 22 mg/kg PO 1 hr pre, then q8h × 24 hr)</li>
+                  <li>Treat skin infections promptly</li>
+                </ul>
+              </li>
+              <li>Holter monitoring annually สำหรับ severe SAS</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Newer interventional approaches:</strong></p>
+        <ul>
+          <li><strong>Balloon dilation</strong> with cutting balloon — emerging, modest gradient reduction</li>
+          <li><strong>Surgical resection of ridge</strong> — open heart surgery, rarely done</li>
+          <li>ส่วนใหญ่ managed medically</li>
+        </ul>
+
+        <p><strong>Breeding recommendations:</strong></p>
+        <ul>
+          <li>Affected dogs (any severity) — DO NOT BREED</li>
+          <li>Breed organizations recommend echo screening</li>
+          <li>Newfoundland: ofa.org cardiac registry</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>⚠️ <strong>Sudden death</strong> (severe SAS · exercise) — main concern</li>
+          <li><strong>Endocarditis</strong> ที่ aortic valve (high-velocity jet damages endothelium)</li>
+          <li><strong>Aortic regurgitation</strong> progressive</li>
+          <li><strong>CHF</strong> ใน advanced cases</li>
+          <li><strong>Ventricular arrhythmias</strong></li>
+          <li><strong>Subendocardial fibrosis / infarction</strong></li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Mild SAS:</strong> Normal lifespan</li>
+          <li><strong>Moderate SAS:</strong> Often normal · annual monitoring</li>
+          <li><strong>Severe SAS:</strong> ~50% มีชีวิต &lt; 4 years · sudden death risk · atenolol อาจช่วย</li>
+          <li><strong>Endocarditis development:</strong> Worsens prognosis significantly</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-vsd',
+    titleEn: 'Ventricular Septal Defect (VSD)',
+    titleTh: 'VSD — รูที่ผนัง Ventricle',
+    type: 'disease',
+    system: 'congenital',
+    species: ['dog', 'cat'],
+    tags: ['VSD', 'ventricular septal defect', 'shunt', 'congenital', 'L-R shunt'],
+    aliases: ['VSD', 'septal defect'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Ventricular Septal Defect (VSD)</strong> — รูที่ interventricular septum · มี communication ระหว่าง LV และ RV</p>
+        <ul>
+          <li>3rd-4th most common canine congenital defect (~5-10%)</li>
+          <li>More common ในแมวเมื่อเทียบกับ congenital อื่น</li>
+          <li>Most common type: <strong>perimembranous</strong> (subaortic / "infracristal")</li>
+          <li>Other types: muscular, supracristal, inlet</li>
+          <li>Direction: usually L→R (small) หรือ bidirectional (large)</li>
+          <li>Predisposed breeds: English Springer Spaniel, Lakeland Terrier, English Bulldog</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">VSD Size + Hemodynamic Impact</span>
+          <table>
+            <tr><th>Size</th><th>Pressure relationship</th><th>Murmur</th><th>Treatment</th></tr>
+            <tr><td><strong>Small (restrictive)</strong></td><td>LV ≫ RV (steep gradient)</td><td>⭐ LOUD systolic (high velocity through small hole)</td><td>None · monitor · "loud is good"</td></tr>
+            <tr><td><strong>Moderate</strong></td><td>LV &gt; RV</td><td>Moderate</td><td>Variable · echo monitor</td></tr>
+            <tr><td><strong>Large (non-restrictive)</strong></td><td>LV ≈ RV (equalized)</td><td>⚠️ Soft / no murmur · poor prognosis</td><td>Pulmonary HT risk · Eisenmenger</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Counterintuitive: SMALL VSD = LOUD murmur</strong> (high velocity through restriction)<br>
+          📌 ⭐ <strong>LARGE VSD = SOFT murmur</strong> (equalized pressures, low velocity)<br>
+          📌 "Maladie de Roger" = small restrictive VSD (good prognosis)</p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li>Genetic (polygenic)</li>
+          <li>Failure of septum to close fully ระหว่าง embryogenesis</li>
+          <li>Often associated with other defects (PDA, PS, AS = "complex congenital")</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>L→R shunt (LV pressure &gt; RV pressure)</li>
+          <li>Excess flow ไป RV → pulmonary circulation</li>
+          <li>↑ Pulmonary blood flow</li>
+          <li>↑ LA + LV volume overload (returning blood)</li>
+          <li>ถ้าเล็ก (Roger) — minimal hemodynamic impact, lifelong tolerated</li>
+          <li>ถ้า moderate-large — LV volume overload → CHF</li>
+          <li>Long-term large VSD → pulmonary hypertension → reverse shunt (Eisenmenger) → cyanosis · poor prognosis</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li><strong>Small VSD:</strong> Asymptomatic · loud murmur เป็น sign เดียว (มัก incidental ที่ puppy exam)</li>
+          <li><strong>Moderate VSD:</strong>
+            <ul>
+              <li>Exercise intolerance · failure to thrive</li>
+              <li>Cough</li>
+              <li>Tachypnea</li>
+            </ul>
+          </li>
+          <li><strong>Large VSD with PHT/Eisenmenger:</strong>
+            <ul>
+              <li>Cyanosis</li>
+              <li>Severe exercise intolerance</li>
+              <li>Polycythemia</li>
+              <li>Syncope</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>⭐ Systolic murmur ที่ <strong>RIGHT</strong> hemithorax (4th ICS) — radiates จาก L→R direction
+            <ul>
+              <li>Small VSD: loud (4-6/6) holosystolic, มัก thrill</li>
+              <li>Large VSD: softer หรือ absent</li>
+            </ul>
+          </li>
+          <li>± Soft systolic murmur ที่ L apex (functional MR จาก LV dilation)</li>
+          <li>ถ้ามี pulmonary HT: loud P2, RV heave</li>
+          <li>Cyanosis ถ้า Eisenmenger physiology</li>
+        </ul>
+      `,
+      diagnosis: `
+        <ul>
+          <li><strong>Echocardiogram</strong> (essential):
+            <ul>
+              <li>Direct visualization ของ defect (right parasternal long-axis · 4-chamber views)</li>
+              <li>Color Doppler: turbulent flow LV→RV (high-velocity ถ้าเล็ก)</li>
+              <li>Estimate defect size + location</li>
+              <li>LV + LA enlargement (volume overload)</li>
+              <li>RV pressure estimation (TR jet → assess pulmonary HT)</li>
+              <li>หา associated defects (PDA, PS, AS)</li>
+            </ul>
+          </li>
+          <li><strong>Thoracic radiograph</strong>:
+            <ul>
+              <li>Small VSD: usually normal</li>
+              <li>Moderate-large VSD: cardiomegaly · pulmonary overcirculation</li>
+              <li>CHF: pulmonary edema</li>
+            </ul>
+          </li>
+          <li><strong>ECG</strong>: ± LV enlargement</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Tricuspid regurgitation</strong> — different murmur quality + RA enlargement</li>
+          <li><strong>Mitral regurgitation</strong> — L apex location vs VSD R</li>
+          <li><strong>Tetralogy of Fallot</strong> — VSD + PS + RV hypertrophy + overriding aorta · cyanosis</li>
+          <li><strong>Atrial septal defect</strong> — different shunt level</li>
+          <li><strong>Aortopulmonary window</strong></li>
+        </ul>
+      `,
+      treatment: `
+        <ul>
+          <li><strong>Small VSD (Maladie de Roger):</strong>
+            <ul>
+              <li>No medication needed</li>
+              <li>Annual echo เพื่อ confirm stability</li>
+              <li>Endocarditis prophylaxis สำหรับ dental procedures</li>
+              <li>Excellent prognosis</li>
+            </ul>
+          </li>
+          <li><strong>Moderate VSD without CHF:</strong>
+            <ul>
+              <li>ACE inhibitor (benazepril) — ลด afterload</li>
+              <li>Echo monitoring every 6-12 months</li>
+              <li>Closure consideration (transcatheter หรือ surgical)</li>
+            </ul>
+          </li>
+          <li><strong>VSD with CHF:</strong>
+            <ul>
+              <li>FSAP (Furosemide + Spironolactone + ACEi + Pimobendan)</li>
+              <li>Surgical/transcatheter closure ถ้า feasible</li>
+            </ul>
+          </li>
+          <li><strong>Large VSD with pulmonary HT (Eisenmenger):</strong>
+            <ul>
+              <li>⚠️ ห้ามปิด (precipitates RV failure)</li>
+              <li>Sildenafil สำหรับ pulmonary HT</li>
+              <li>Phlebotomy ถ้า PCV สูงมาก</li>
+              <li>Exercise restriction</li>
+              <li>Poor prognosis</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Closure options (specialty):</strong></p>
+        <ul>
+          <li><strong>Transcatheter closure</strong> (Amplatz device) — emerging ใน vet medicine</li>
+          <li><strong>Surgical closure</strong> — ต้อง cardiopulmonary bypass · rarely done</li>
+          <li><strong>Pulmonary artery banding</strong> — palliative · ป้องกัน Eisenmenger physiology</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>CHF</strong> ถ้า moderate-large VSD</li>
+          <li><strong>Pulmonary hypertension</strong> → Eisenmenger</li>
+          <li><strong>Endocarditis</strong> (aortic valve · โดยเฉพาะถ้า jet กระทบ valve)</li>
+          <li><strong>Aortic regurgitation</strong> (perimembranous VSD with prolapse)</li>
+          <li><strong>Spontaneous closure</strong> (~20% ของ small VSDs ใน first year — favorable)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Small VSD (Roger):</strong> Excellent · normal lifespan</li>
+          <li><strong>Moderate VSD:</strong> Variable · CHF risk</li>
+          <li><strong>Large VSD (Eisenmenger):</strong> Poor · 1-3 year survival</li>
+          <li><strong>Surgically corrected:</strong> Good ถ้าทำก่อน pulmonary HT develops</li>
+        </ul>
+      `,
+    },
+  },
+
 ];
 
 window.CARDIOLOGY_DATA_LOADED = true;
