@@ -3744,6 +3744,1627 @@ window.CARDIOLOGY_DATA = [
     },
   },
 
+  /* ============================================================
+     Phase 4 — Arrhythmias + CHF Management (5)
+     ============================================================ */
+
+  {
+    id: 'card-afib',
+    titleEn: 'Atrial Fibrillation (AFib)',
+    titleTh: 'ภาวะหัวใจห้องบนเต้นพลิ้ว (AFib)',
+    type: 'disease',
+    system: 'arrhythmia',
+    species: ['dog', 'cat'],
+    tags: ['atrial fibrillation', 'AFib', 'rate control', 'diltiazem', 'irregularly irregular', 'pulse deficit'],
+    aliases: ['AF', 'A-fib', 'หัวใจเต้นพลิ้ว'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Atrial Fibrillation (AFib)</strong> — chaotic electrical activity ใน atria · ไม่มี organized atrial contraction · irregular ventricular response</p>
+        <ul>
+          <li>⭐ Most common pathologic arrhythmia ในหมา (especially large/giant breeds)</li>
+          <li>Cat: rare · มัก secondary ต่อ severe atrial enlargement (HCM/RCM)</li>
+          <li>Two main scenarios:
+            <ul>
+              <li><strong>Secondary AFib</strong> — จาก structural heart disease (DCM, MMVD, dilated atria)</li>
+              <li><strong>"Lone AFib"</strong> — ไม่มี structural disease (giant breeds: Great Dane, Irish Wolfhound, Newfoundland)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">AFib Classifications</span>
+          <table>
+            <tr><th>Type</th><th>Duration</th><th>Notes</th></tr>
+            <tr><td><strong>Paroxysmal</strong></td><td>Spontaneous resolution &lt; 7 days</td><td>Often dx by Holter</td></tr>
+            <tr><td><strong>Persistent</strong></td><td>&gt; 7 days · ตอบสนอง cardioversion</td><td>Rate vs rhythm control</td></tr>
+            <tr><td><strong>Permanent</strong></td><td>Long-standing · cardioversion ไม่สำเร็จ</td><td>⭐ ส่วนใหญ่ของ vet AFib</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ Vet AFib ส่วนใหญ่เป็น <strong>permanent</strong> · เน้น rate control<br>
+          📌 Cardioversion ใน vet ทำได้ยาก/recurrence สูง</p>
+        </div>
+      `,
+      etiology: `
+        <p><strong>Underlying causes (dog):</strong></p>
+        <ul>
+          <li>⭐ <strong>DCM</strong> (Doberman, Boxer, Great Dane) — most common</li>
+          <li>⭐ <strong>MMVD advanced</strong> (LA enlargement)</li>
+          <li>Lone AFib (giant breeds, no structural disease)</li>
+          <li>Pericardial disease</li>
+          <li>Congenital (severe AS, large VSD)</li>
+          <li>Hyperthyroid (rare in dogs)</li>
+          <li>Pulmonary HT (severe)</li>
+          <li>Post-cardiac surgery</li>
+        </ul>
+
+        <p><strong>Cat:</strong></p>
+        <ul>
+          <li>HCM with severe LA enlargement</li>
+          <li>RCM</li>
+          <li>Hyperthyroidism</li>
+          <li>Dilated cardiomyopathy (rare since taurine fortification)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Multiple re-entry circuits ใน atrial myocardium</li>
+          <li>Atria "fibrillate" 400-600 BPM · ไม่มี coordinated contraction</li>
+          <li>AV node bombarded with impulses · conducts irregularly</li>
+          <li>Ventricular rate determined by AV node refractory period</li>
+          <li>Loss of atrial "kick" (~20% CO loss)</li>
+          <li>Tachycardia + ↓ filling time → ↓ CO</li>
+          <li>Stasis ใน atria → thrombus formation (especially cat)</li>
+          <li>Tachycardia-induced cardiomyopathy ถ้า uncontrolled (HR &gt; 180 chronic)</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li>Many asymptomatic ตอน detect ครั้งแรก (especially lone AFib)</li>
+          <li>Exercise intolerance · weakness</li>
+          <li>Syncope</li>
+          <li>Cough · dyspnea (CHF triggered by AFib)</li>
+          <li>Palpitations (clients may report "racing heart")</li>
+          <li>Cat: often presents with CHF or ATE</li>
+        </ul>
+
+        <p><strong>Physical exam — CLASSIC findings:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">AFib Classic Triad on Exam</span>
+          <ul>
+            <li>⭐ <strong>"Irregularly irregular" rhythm</strong> — no pattern at all</li>
+            <li>⭐ <strong>Pulse deficit</strong> — HR auscultation &gt; femoral pulse rate</li>
+            <li><strong>Variable intensity heart sounds</strong> (S1 amplitude varies with R-R)</li>
+            <li>+ Tachycardia (HR 150-250 in dogs)</li>
+            <li>± underlying disease murmur (MMVD, DCM)</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>"Irregularly irregular + pulse deficit"</strong> = AFib until proven otherwise<br>
+          📌 หลีก confusion ด้วย sinus arrhythmia (vs AFib): sinus arrhythmia = phasic with breath, regular pattern · AFib = chaotic, no pattern</p>
+        </div>
+      `,
+      diagnosis: `
+        <p><strong>ECG — defining features:</strong></p>
+        <ul>
+          <li>⭐ <strong>NO P waves</strong> (replaced by fibrillatory "f" waves)</li>
+          <li>⭐ <strong>Irregularly irregular R-R intervals</strong></li>
+          <li>QRS complexes <strong>narrow + normal morphology</strong> (supraventricular)</li>
+          <li>Variable HR (often 150-250 in dogs)</li>
+          <li>Baseline may show fine fibrillation waves</li>
+        </ul>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li><strong>ECG (essential)</strong> — confirms diagnosis</li>
+          <li><strong>Holter (24 hr)</strong> — assesses average HR + diurnal variation
+            <ul>
+              <li>Goal: <strong>average HR &lt; 125 BPM</strong> with rate control</li>
+              <li>Identifies paroxysmal AFib</li>
+            </ul>
+          </li>
+          <li><strong>Echocardiogram</strong> — identifies underlying disease + LA size + LV function</li>
+          <li><strong>Thoracic radiograph</strong> — assess for CHF</li>
+          <li><strong>NT-proBNP</strong> — supports cardiac disease severity</li>
+          <li><strong>T4</strong> (rule out hyperthyroid)</li>
+          <li><strong>Chemistry/electrolytes</strong> — baseline before antiarrhythmic</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Sinus arrhythmia</strong> — phasic, regular pattern, P waves present</li>
+          <li><strong>Atrial flutter</strong> — sawtooth flutter waves, regular conduction</li>
+          <li><strong>Frequent APCs/VPCs</strong> — irregular but with normal beats between</li>
+          <li><strong>Multifocal atrial tachycardia</strong> — variable P morphology</li>
+          <li><strong>2° AV block (variable)</strong> — different ECG pattern</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Strategy: Rate Control vs Rhythm Control</strong></p>
+        <ul>
+          <li>⭐ <strong>Rate control = mainstay in vet medicine</strong> (most cases permanent)</li>
+          <li>Rhythm control (cardioversion) limited in vet · high recurrence</li>
+          <li>Goal: HR &lt; 125 BPM (24-hr average on Holter) · &lt; 160 in clinic</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Rate Control Drugs — AFib</span>
+          <table>
+            <tr><th>Drug</th><th>Dose</th><th>Notes</th></tr>
+            <tr><td><strong>⭐ Diltiazem (CD)</strong></td><td>1-3 mg/kg PO q8h</td><td>First-line · Ca channel blocker · also IV for acute</td></tr>
+            <tr><td><strong>Digoxin</strong></td><td>0.003-0.005 mg/kg PO q12h</td><td>Adjunct · narrow window · monitor levels (1-2 ng/mL)</td></tr>
+            <tr><td><strong>Diltiazem + Digoxin combo</strong></td><td>Each at lower dose</td><td>⭐ Synergistic · best HR control</td></tr>
+            <tr><td><strong>Atenolol</strong></td><td>0.5-1 mg/kg PO q12h</td><td>Beta-blocker · use with caution in CHF</td></tr>
+            <tr><td><strong>Sotalol</strong></td><td>1-3 mg/kg PO q12h</td><td>Class III antiarrhythmic + beta-blocker</td></tr>
+            <tr><td><strong>Amiodarone</strong></td><td>10-15 mg/kg PO q12h × 7d, then q24h</td><td>Refractory · multiple side effects</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Diltiazem first-line</strong> · combine with digoxin if HR control inadequate<br>
+          📌 ⚠️ Beta-blockers in active CHF = caution · negative inotropy</p>
+        </div>
+
+        <p><strong>Acute AFib with rapid ventricular response (HR &gt; 200):</strong></p>
+        <ul>
+          <li>⭐ <strong>Diltiazem IV</strong>: 0.05-0.25 mg/kg slow bolus over 5 min, repeat to effect (max 0.75 mg/kg)</li>
+          <li>Then CRI 2-6 mcg/kg/min</li>
+          <li>Transition to PO once stable</li>
+          <li>Avoid digoxin IV (slow onset · arrhythmogenic)</li>
+        </ul>
+
+        <p><strong>Cardioversion (rare in vet):</strong></p>
+        <ul>
+          <li>Electrical cardioversion (synchronized DC shock) — possible but recurrence high</li>
+          <li>Pharmacological: amiodarone</li>
+          <li>Best candidates: lone AFib in giant breed without structural disease</li>
+          <li>Specialty referral · TEE-guided to rule out atrial thrombus first</li>
+        </ul>
+
+        <p><strong>Anticoagulation (cat):</strong></p>
+        <ul>
+          <li>Cat AFib + LA enlargement → high ATE risk</li>
+          <li>⭐ <strong>Clopidogrel 18.75 mg/cat PO q24h</strong></li>
+          <li>± Enoxaparin if recurrent</li>
+        </ul>
+
+        <p><strong>Treat underlying disease:</strong></p>
+        <ul>
+          <li>MMVD: FSAP if CHF</li>
+          <li>DCM: pimobendan + FSAP</li>
+          <li>HCM cat: standard HCM Rx</li>
+          <li>Hyperthyroid: methimazole/I-131</li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">AFib HR Control Goals</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">&lt;125</span>
+              <span class="num-label">24-hr Holter avg BPM</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">&lt;160</span>
+              <span class="num-label">Resting in-clinic BPM</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">~20%</span>
+              <span class="num-label">CO loss from absent atrial kick</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">100+</span>
+              <span class="num-label">Diltiazem trough · monitor</span>
+            </div>
+          </div>
+        </div>
+      `,
+      complications: `
+        <ul>
+          <li><strong>CHF precipitation</strong> from rapid ventricular response</li>
+          <li><strong>Tachycardia-induced cardiomyopathy</strong> (chronic uncontrolled)</li>
+          <li><strong>ATE (cat)</strong> — major risk</li>
+          <li><strong>Syncope</strong> from rapid rate</li>
+          <li><strong>Drug side effects</strong>: diltiazem hypotension, digoxin toxicity</li>
+          <li><strong>Sudden death</strong> uncommon directly from AFib</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Lone AFib (giant breed):</strong> Good with rate control · normal lifespan often</li>
+          <li><strong>AFib + DCM:</strong> Median 6-12 months · AFib worsens prognosis</li>
+          <li><strong>AFib + advanced MMVD:</strong> Reduced survival vs MMVD without AFib</li>
+          <li><strong>Cat AFib:</strong> Poor · indicates severe atrial dz</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-vt-vpc',
+    titleEn: 'Ventricular Tachycardia + VPCs',
+    titleTh: 'หัวใจห้องล่างเต้นเร็ว (VT/VPC)',
+    type: 'disease',
+    system: 'arrhythmia',
+    species: ['dog', 'cat'],
+    tags: ['VT', 'VPC', 'ventricular tachycardia', 'PVC', 'lidocaine', 'sotalol', 'sudden death', 'Boxer ARVC'],
+    aliases: ['PVCs', 'ventricular ectopy', 'VPCs'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Ventricular Premature Complexes (VPCs)</strong> และ <strong>Ventricular Tachycardia (VT)</strong> — abnormal beats originating below AV node</p>
+        <ul>
+          <li><strong>VPC</strong> = single early beat with wide bizarre QRS · no preceding P</li>
+          <li><strong>Couplet</strong> = 2 VPCs in row</li>
+          <li><strong>Triplet</strong> = 3 VPCs in row</li>
+          <li><strong>VT</strong> = ≥ 4 consecutive VPCs at HR &gt; 160 (dog) or &gt; 220 (cat)</li>
+          <li><strong>Sustained VT</strong> = &gt; 30 seconds duration</li>
+          <li><strong>Idioventricular rhythm (slow VT)</strong> = VT at slow rate (HR similar to sinus, often benign)</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">VT Classification — Hemodynamic + Morphologic</span>
+          <table>
+            <tr><th>Feature</th><th>Description</th><th>Significance</th></tr>
+            <tr><td><strong>Sustained vs Non-sustained</strong></td><td>&gt; 30 sec vs &lt; 30 sec</td><td>Sustained = treat aggressively</td></tr>
+            <tr><td><strong>Monomorphic</strong></td><td>Same QRS shape</td><td>Single focus</td></tr>
+            <tr><td><strong>Polymorphic</strong></td><td>Variable QRS shape</td><td>⚠️ Multiple foci · higher risk</td></tr>
+            <tr><td><strong>R-on-T phenomenon</strong></td><td>VPC falls on T wave</td><td>⚠️ Can trigger VF · DANGEROUS</td></tr>
+            <tr><td><strong>Torsades de Pointes</strong></td><td>"Twisting" polymorphic VT</td><td>⚠️ QT prolongation · drug-induced</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>R-on-T = ventricular fibrillation precursor</strong> · treat urgently<br>
+          📌 Polymorphic VT &gt; monomorphic VT in danger</p>
+        </div>
+      `,
+      etiology: `
+        <p><strong>Cardiac causes:</strong></p>
+        <ul>
+          <li>⭐ <strong>DCM</strong> (Doberman, Boxer ARVC, Great Dane)</li>
+          <li>⭐ <strong>SAS (Newfoundland, Boxer)</strong></li>
+          <li>HCM (cat)</li>
+          <li>Myocarditis (Trypanosoma, parvo, sepsis)</li>
+          <li>Cardiac trauma · contusion</li>
+          <li>Cardiac neoplasia (HSA)</li>
+          <li>Heartworm disease</li>
+          <li>Pulmonary hypertension (severe)</li>
+        </ul>
+
+        <p><strong>Non-cardiac causes:</strong></p>
+        <ul>
+          <li>⭐ <strong>GDV/Splenectomy</strong> — common cause of post-op VPC/VT</li>
+          <li><strong>Pancreatitis</strong> · sepsis</li>
+          <li><strong>Electrolytes</strong>: hypoK, hypoMg, hyperK</li>
+          <li><strong>Hypoxia</strong></li>
+          <li><strong>Drug toxicity</strong>: digoxin, atropine overdose, halothane, TCAs, theophylline</li>
+          <li><strong>Pheochromocytoma</strong></li>
+          <li><strong>Spinal trauma · severe pain</strong></li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>Ectopic ventricular focus depolarizes before SA node</li>
+          <li>Wave spreads through ventricle abnormally → wide QRS</li>
+          <li>If single → VPC</li>
+          <li>If repetitive → bigeminy, trigeminy, couplets, runs</li>
+          <li>If sustained at &gt; 160 BPM → VT with hemodynamic compromise</li>
+          <li>If VT degenerates with multiple foci → ventricular fibrillation (VF)</li>
+          <li>VF = no effective contraction = cardiac arrest (within seconds)</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li>Many VPCs asymptomatic (incidental finding)</li>
+          <li>Frequent VPCs/non-sustained VT: weakness, exercise intolerance</li>
+          <li>Sustained VT:
+            <ul>
+              <li>⚠️ Syncope</li>
+              <li>Collapse</li>
+              <li>Sudden death</li>
+              <li>Hypotension</li>
+            </ul>
+          </li>
+          <li>Polymorphic VT / R-on-T: imminent VF risk</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Pulse deficit (VPC during refractory period)</li>
+          <li>Irregular rhythm</li>
+          <li>Variable intensity S1 (varies with stroke volume)</li>
+          <li>Hypotension during VT</li>
+          <li>Mucous membrane pallor in severe</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>ECG — defining features:</strong></p>
+        <ul>
+          <li>⭐ <strong>WIDE bizarre QRS</strong> (&gt; 0.07 sec dog, &gt; 0.05 sec cat)</li>
+          <li>⭐ <strong>NO preceding P wave</strong></li>
+          <li>T wave opposite direction to QRS</li>
+          <li>Compensatory pause after VPC (full pause · vs APC = incomplete pause)</li>
+          <li>Fusion beats / capture beats during VT (proves ventricular origin)</li>
+          <li>AV dissociation in VT (P waves continue at slower rate · unrelated)</li>
+        </ul>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li><strong>ECG (rhythm strip)</strong> — confirms VPCs/VT</li>
+          <li><strong>Holter (24 hr)</strong> — quantifies VPCs · detects paroxysmal VT
+            <ul>
+              <li>Normal dog: &lt; 50 VPCs/24h</li>
+              <li>Suspicious: &gt; 50 VPCs/24h</li>
+              <li>Concerning: &gt; 100-1000 VPCs/24h, couplets, triplets, runs</li>
+              <li>Doberman screen: any VPCs warrants further investigation</li>
+              <li>Boxer ARVC: &gt; 100-300 VPCs/24h</li>
+            </ul>
+          </li>
+          <li><strong>Echocardiogram</strong> — identifies structural disease (DCM, ARVC, SAS)</li>
+          <li><strong>cTnI</strong> — myocardial damage marker</li>
+          <li><strong>Chemistry/electrolytes</strong> — K, Mg, Ca</li>
+          <li><strong>CBC + chemistry</strong> — sepsis, organ dysfunction</li>
+          <li><strong>Abdominal US</strong> — splenic mass (HSA), GDV, pancreatitis</li>
+          <li><strong>Genetic testing</strong> (Boxer striatin, Doberman)</li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Aberrantly conducted SVT</strong> — wide QRS but supraventricular origin (BBB or rate-related)</li>
+          <li><strong>Ventricular escape rhythm</strong> — slow, after pause/block, protective</li>
+          <li><strong>Idioventricular rhythm</strong> — slow VT (similar rate to sinus), often benign</li>
+          <li><strong>Hyperkalemia</strong> — wide QRS but no P waves (different mechanism)</li>
+          <li><strong>Severe sinus arrhythmia</strong> — distinguishable on closer look</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Indications for treatment:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">When to Treat VPC/VT</span>
+          <ul>
+            <li>⚠️ Sustained VT (&gt; 30 sec)</li>
+            <li>⚠️ HR &gt; 180 BPM during VT</li>
+            <li>⚠️ Hemodynamic compromise (hypotension, weakness, syncope)</li>
+            <li>⚠️ R-on-T phenomenon</li>
+            <li>⚠️ Polymorphic VT</li>
+            <li>⚠️ Frequent couplets/triplets in symptomatic patient</li>
+            <li>⚠️ Boxer/Doberman with &gt; 100-300 VPC/24h</li>
+            <li>Generally do NOT treat: rare isolated VPCs, idioventricular rhythm, asymptomatic</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ Treat the patient (symptoms + structural dz + Holter), not just the ECG<br>
+          📌 Rare VPCs in healthy heart often benign</p>
+        </div>
+
+        <p><strong>Acute VT treatment (emergency):</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Acute VT Drugs</span>
+          <table>
+            <tr><th>Drug</th><th>Dog dose</th><th>Cat dose</th></tr>
+            <tr><td><strong>⭐ Lidocaine (1st-line)</strong></td><td>2 mg/kg IV bolus, repeat q5min × 3 max · then CRI 25-80 mcg/kg/min</td><td>⚠️ 0.25-0.5 mg/kg max (toxicity!)</td></tr>
+            <tr><td><strong>Procainamide</strong></td><td>6-15 mg/kg IV slow over 5 min, then CRI 20-40 mcg/kg/min</td><td>1-2 mg/kg IV slow</td></tr>
+            <tr><td><strong>Esmolol (β-blocker)</strong></td><td>0.05-0.5 mg/kg IV bolus, then CRI 25-200 mcg/kg/min</td><td>Same</td></tr>
+            <tr><td><strong>Magnesium sulfate</strong></td><td>0.15-0.3 mEq/kg IV slow</td><td>Same · for torsades · refractory VT</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Lidocaine = #1 acute</strong> for VT in dogs (DON'T use in cats at high dose - seizures!)<br>
+          📌 ⚠️ <strong>Cat lidocaine: 0.25-0.5 mg/kg MAX</strong> · severe neurotoxicity at higher doses<br>
+          📌 Always treat underlying cause + correct K/Mg first</p>
+        </div>
+
+        <p><strong>Chronic management:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Chronic VT/VPC Drugs</span>
+          <table>
+            <tr><th>Drug</th><th>Dose (dog)</th><th>Notes</th></tr>
+            <tr><td><strong>⭐ Sotalol</strong></td><td>1-3 mg/kg PO q12h</td><td>#1 chronic · β-blocker + Class III · monitor ECG initiation</td></tr>
+            <tr><td><strong>Mexiletine</strong></td><td>5-8 mg/kg PO q8h</td><td>Oral lidocaine analog · combine with sotalol if refractory</td></tr>
+            <tr><td><strong>Amiodarone</strong></td><td>10-15 mg/kg PO q12h × 7d, then q24h</td><td>Refractory · multiple side effects (LFT, thyroid, lung)</td></tr>
+            <tr><td><strong>Atenolol</strong></td><td>0.5-1 mg/kg PO q12h</td><td>SAS · stress-induced VT</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Sotalol</strong> = first-line chronic for canine VT (Boxer ARVC, Doberman DCM)<br>
+          📌 Sotalol + mexiletine combo for refractory<br>
+          📌 ECG monitoring during sotalol initiation (proarrhythmia)</p>
+        </div>
+
+        <p><strong>Treat underlying cause:</strong></p>
+        <ul>
+          <li>DCM: pimobendan + FSAP</li>
+          <li>SAS: atenolol</li>
+          <li>GDV post-op: lidocaine CRI · usually resolves 24-72 hr</li>
+          <li>Splenectomy: lidocaine CRI as needed</li>
+          <li>Electrolytes: replace K, Mg</li>
+          <li>Pain: opioids</li>
+          <li>Sepsis: antimicrobials, supportive</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li>⚠️ <strong>Ventricular fibrillation → cardiac arrest → death</strong></li>
+          <li>⚠️ <strong>Sudden death</strong> (especially Doberman DCM, Boxer ARVC)</li>
+          <li><strong>Hemodynamic collapse</strong> from sustained VT</li>
+          <li><strong>Heart failure</strong> from frequent ectopy</li>
+          <li><strong>Drug proarrhythmia</strong> (sotalol, mexiletine, etc.)</li>
+          <li><strong>Cat lidocaine toxicity</strong> — seizures, death</li>
+          <li><strong>Amiodarone side effects</strong>: hepatopathy, hypothyroidism, pulmonary fibrosis</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Idioventricular rhythm:</strong> Excellent · usually self-limiting</li>
+          <li><strong>VPC, structurally normal heart:</strong> Generally good</li>
+          <li><strong>VT with DCM:</strong> Guarded · sotalol improves</li>
+          <li><strong>Boxer ARVC:</strong> Variable · sudden death common · sotalol helps</li>
+          <li><strong>Doberman DCM with frequent VT:</strong> Sudden death risk 30-40%</li>
+          <li><strong>R-on-T / polymorphic VT:</strong> Critical · high mortality</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-av-block',
+    titleEn: 'Atrioventricular Block (AV Block)',
+    titleTh: 'AV Block — บล็อกการนำไฟฟ้า',
+    type: 'disease',
+    system: 'arrhythmia',
+    species: ['dog', 'cat'],
+    tags: ['AV block', 'heart block', 'pacemaker', 'syncope', 'bradycardia', '3rd degree'],
+    aliases: ['heart block', 'AVB'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Atrioventricular (AV) Block</strong> — impaired electrical conduction ผ่าน AV node/His-Purkinje system</p>
+        <ul>
+          <li>3 degrees of severity: 1st, 2nd, 3rd</li>
+          <li>2nd degree subdivided: Mobitz Type I (Wenckebach), Type II</li>
+          <li>3rd degree (complete) = atrioventricular dissociation</li>
+          <li>Most common in older dogs · cocker spaniels, Pugs</li>
+          <li>Can be congenital (rare)</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">AV Block Classification</span>
+          <table>
+            <tr><th>Degree</th><th>Description</th><th>Clinical</th></tr>
+            <tr><td><strong>1st degree</strong></td><td>PR &gt; 0.13s (dog) / &gt; 0.09s (cat) · ทุก P → QRS</td><td>Usually asymptomatic · benign</td></tr>
+            <tr><td><strong>2nd degree Type I (Wenckebach)</strong></td><td>Progressive PR lengthening, then dropped QRS</td><td>Often vagal · usually benign</td></tr>
+            <tr><td><strong>2nd degree Type II</strong></td><td>Constant PR, sudden dropped QRS</td><td>⚠️ Concerning · pacemaker may be needed</td></tr>
+            <tr><td><strong>2nd degree high-grade</strong></td><td>Multiple consecutive blocked P waves</td><td>⚠️ Bridging to 3°</td></tr>
+            <tr><td><strong>⭐ 3rd degree (complete)</strong></td><td>P + QRS unrelated · escape rhythm</td><td>⚠️⚠️ Pacemaker indicated · syncope/death</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>1° + 2° Type I = often benign</strong> (vagal, drug)<br>
+          📌 ⚠️ <strong>2° Type II + 3° = pacemaker territory</strong></p>
+        </div>
+      `,
+      etiology: `
+        <ul>
+          <li>⭐ <strong>Idiopathic fibrosis of AV node</strong> — most common (older dog)</li>
+          <li><strong>High vagal tone</strong> — brachycephalic, athletes (1° + 2° Type I)</li>
+          <li><strong>Drug-induced</strong>: digoxin, diltiazem, beta-blockers, atenolol</li>
+          <li><strong>Cardiomyopathy</strong> with conduction system involvement</li>
+          <li><strong>Endocarditis</strong> with septal abscess</li>
+          <li><strong>Hyperkalemia</strong> (transient)</li>
+          <li><strong>Lyme disease, Trypanosoma</strong> (myocarditis)</li>
+          <li><strong>Cardiac tumor</strong></li>
+          <li><strong>Boxer cardiomyopathy</strong></li>
+          <li><strong>Congenital</strong> (rare)</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>1° AVB: slowed conduction at AV node (PR prolonged) but all impulses reach ventricle</li>
+          <li>2° AVB Type I: progressive AV node fatigue, eventually fails to conduct</li>
+          <li>2° AVB Type II: sudden block below AV node (His-Purkinje), often progressing</li>
+          <li>3° AVB: complete failure of conduction · ventricles depend on escape pacemaker
+            <ul>
+              <li>Junctional escape: 40-60 BPM, narrow QRS</li>
+              <li>Ventricular escape: 20-40 BPM, wide QRS, less reliable</li>
+            </ul>
+          </li>
+          <li>Bradycardia → ↓ CO → syncope, weakness, sudden death</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li>1° AVB: asymptomatic (incidental ECG finding)</li>
+          <li>2° Type I (Wenckebach): usually asymptomatic · resolves with stress/exercise</li>
+          <li>2° Type II / high-grade:
+            <ul>
+              <li>Episodic weakness</li>
+              <li>Syncope (especially with exertion)</li>
+              <li>Lethargy</li>
+            </ul>
+          </li>
+          <li>3° AVB:
+            <ul>
+              <li>⚠️ <strong>Syncope</strong> (Stokes-Adams attacks)</li>
+              <li>Severe exercise intolerance</li>
+              <li>CHF in severe</li>
+              <li>⚠️ Sudden death</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Bradycardia (HR &lt; 60 in 3°)</li>
+          <li>Cannon "a" waves on jugular pulse (atrial contraction against closed valve)</li>
+          <li>Variable S1 intensity</li>
+          <li>Pulse deficit</li>
+          <li>Hypotension during episodes</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>ECG features:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">ECG Recognition — Each AV Block Type</span>
+          <ul>
+            <li><strong>1° AVB:</strong> Prolonged PR, every P→QRS conducted</li>
+            <li><strong>2° Type I:</strong> Progressively longer PR, then dropped QRS, then resets ("Wenckebach")</li>
+            <li><strong>2° Type II:</strong> Constant PR, sudden dropped QRS without warning</li>
+            <li><strong>3° AVB:</strong> P waves regular at one rate, QRS regular at slower rate, NO relationship between them</li>
+          </ul>
+          <p class="mnem-tip">📌 In 3° AVB, P-P interval regular, R-R interval regular, but P-QRS dissociated<br>
+          📌 Wide QRS in 3° = ventricular escape (slower, less reliable)</p>
+        </div>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li><strong>ECG</strong> — diagnosis</li>
+          <li><strong>Holter (24 hr)</strong> — frequency, escape rhythm reliability, asymptomatic episodes</li>
+          <li><strong>Atropine response test</strong> — for distinguishing vagal vs structural
+            <ul>
+              <li>Atropine 0.04 mg/kg IM/IV</li>
+              <li>Vagal: HR ↑ &gt; 50%, block resolves</li>
+              <li>Structural: minimal response</li>
+            </ul>
+          </li>
+          <li><strong>Echocardiogram</strong> — structural disease (DCM, endocarditis, mass)</li>
+          <li><strong>Chemistry/electrolytes</strong> — K, Ca</li>
+          <li><strong>Serology</strong> — Lyme, Trypanosoma if endemic</li>
+          <li><strong>Drug history</strong> — digoxin, beta-blockers</li>
+          <li><strong>BP</strong></li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Sinus arrest / SA block</strong> — pause but P-QRS relationship maintained</li>
+          <li><strong>Sick sinus syndrome (SSS)</strong> — bradycardia + tachy episodes</li>
+          <li><strong>Vagal-induced bradycardia</strong> — physiologic</li>
+          <li><strong>Hyperkalemia</strong> — different ECG (tented T)</li>
+          <li><strong>Drug toxicity</strong> — Hx</li>
+          <li><strong>Atrial standstill</strong> — no P waves at all (hyperK, atrial fibrosis)</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Treatment by degree:</strong></p>
+
+        <ul>
+          <li><strong>1° AVB:</strong>
+            <ul>
+              <li>No treatment</li>
+              <li>Rule out drug effect, electrolyte issue</li>
+              <li>Monitor</li>
+            </ul>
+          </li>
+          <li><strong>2° AVB Type I (Wenckebach):</strong>
+            <ul>
+              <li>Usually no treatment</li>
+              <li>If symptomatic: consider atropine response · pacemaker if structural</li>
+            </ul>
+          </li>
+          <li><strong>2° AVB Type II:</strong>
+            <ul>
+              <li>Often progresses to 3° → consider pacemaker pre-emptively</li>
+              <li>Monitor symptomatic patients carefully</li>
+            </ul>
+          </li>
+          <li><strong>2° high-grade or symptomatic:</strong>
+            <ul>
+              <li>⭐ <strong>Pacemaker indicated</strong></li>
+            </ul>
+          </li>
+          <li><strong>3° AVB (complete):</strong>
+            <ul>
+              <li>⭐⭐ <strong>Pacemaker = treatment of choice</strong></li>
+              <li>Bridge: terbutaline 0.2 mg/kg PO q8h (β-agonist for HR support)</li>
+              <li>Theophylline 10 mg/kg PO q12h alternative</li>
+              <li>Atropine TRIAL but rarely effective</li>
+              <li>Cardiology referral urgently</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Pacemaker Implantation</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">VVI</span>
+              <span class="num-label">Most common mode (single-chamber)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">~85%</span>
+              <span class="num-label">Long-term success</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">8-10 yr</span>
+              <span class="num-label">Battery life typical</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">Days</span>
+              <span class="num-label">Resumption of normal activity</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 ⭐ <strong>Transvenous pacemaker</strong> via jugular vein · lead in RV<br>
+          📌 Generator placed in jugular furrow or paralumbar<br>
+          📌 Cardiology specialty procedure</p>
+        </div>
+
+        <p><strong>Treat underlying cause:</strong></p>
+        <ul>
+          <li>Discontinue offending drug (digoxin, beta-blocker, diltiazem)</li>
+          <li>Correct electrolytes (K, Ca)</li>
+          <li>Treat endocarditis (antibiotics)</li>
+          <li>Treat tick-borne disease (doxycycline)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Sudden death</strong> from asystole (3°)</li>
+          <li><strong>Syncope</strong> (Stokes-Adams) → injury</li>
+          <li><strong>CHF</strong> from chronic bradycardia</li>
+          <li><strong>Pacemaker complications</strong>: lead displacement, infection, malfunction</li>
+          <li><strong>Drug side effects</strong> (terbutaline tremors)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>1° + 2° Type I:</strong> Excellent · normal lifespan</li>
+          <li><strong>2° Type II:</strong> Good with pacemaker · risky without</li>
+          <li><strong>3° AVB without pacemaker:</strong> Months · sudden death common</li>
+          <li><strong>3° AVB with pacemaker:</strong> Excellent · 5-10 year survival typical</li>
+          <li><strong>Concurrent CHF:</strong> Determined by underlying disease</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-sss',
+    titleEn: 'Sick Sinus Syndrome (SSS)',
+    titleTh: 'Sick Sinus Syndrome — SA node เสื่อม',
+    type: 'disease',
+    system: 'arrhythmia',
+    species: ['dog'],
+    tags: ['SSS', 'sinus node dysfunction', 'Schnauzer', 'pacemaker', 'syncope', 'brady-tachy'],
+    aliases: ['sinus node dysfunction', 'SND', 'brady-tachy syndrome'],
+    source: 'Bussadori — Textbook of Cardiovascular Medicine',
+    sections: {
+      definition: `
+        <p><strong>Sick Sinus Syndrome (SSS)</strong> — degeneration ของ SA node + atrial conduction · variable bradycardia, sinus arrest, escape rhythms, sometimes alternating with tachyarrhythmia</p>
+        <ul>
+          <li>⭐ <strong>Predisposed: Miniature Schnauzer</strong> (classic), West Highland White Terrier, Cocker Spaniel, Dachshund</li>
+          <li>Older dogs (8-12 yo)</li>
+          <li>Female &gt; Male (Schnauzer)</li>
+          <li>Cat: rare</li>
+          <li>"Brady-tachy syndrome" variant: alternating bradycardia + supraventricular tachycardia</li>
+        </ul>
+
+        <p><strong>ECG manifestations (any combination):</strong></p>
+        <ul>
+          <li>Sinus bradycardia (HR &lt; 60)</li>
+          <li>Sinus arrest / pauses (&gt; 2 sec without P)</li>
+          <li>SA exit block</li>
+          <li>Junctional or ventricular escape rhythms</li>
+          <li>Supraventricular tachycardia (in brady-tachy)</li>
+          <li>Atrial fibrillation episodes</li>
+          <li>Inappropriate response to exercise/atropine</li>
+        </ul>
+      `,
+      etiology: `
+        <ul>
+          <li>⭐ Idiopathic fibrosis of SA node + atrial myocardium</li>
+          <li>Genetic predisposition (Schnauzer)</li>
+          <li>Autonomic dysfunction component</li>
+          <li>Concurrent atrial myocardial disease</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <ol>
+          <li>SA node fibrosis → unreliable pacing</li>
+          <li>Atrial muscle disease → susceptible to arrhythmias</li>
+          <li>SA node fails → escape rhythm (junctional 40-60 BPM, ventricular 20-40 BPM)</li>
+          <li>Pauses → cerebral hypoperfusion → syncope</li>
+          <li>If brady-tachy: rapid atrial tachycardia → CHF symptoms</li>
+          <li>Tachyarrhythmia ends → prolonged pause before SA recovers → "tachy-brady" syncope</li>
+        </ol>
+      `,
+      symptoms: `
+        <ul>
+          <li>⚠️ <strong>Syncope</strong> (most common · 70% of cases)
+            <ul>
+              <li>Often during exercise, excitement, post-cough</li>
+              <li>Brief (&lt; 30 sec)</li>
+              <li>Can be daily/weekly</li>
+            </ul>
+          </li>
+          <li>Episodic weakness</li>
+          <li>Exercise intolerance</li>
+          <li>Lethargy</li>
+          <li>Cough (if brady-tachy with CHF)</li>
+        </ul>
+
+        <p><strong>Physical exam:</strong></p>
+        <ul>
+          <li>Bradycardia (HR 40-60 baseline)</li>
+          <li>Pulse deficit during arrhythmia</li>
+          <li>Variable rhythm — pauses</li>
+          <li>± Murmur if concurrent MMVD (Schnauzer common comorbidity)</li>
+          <li>Often normal between episodes (intermittent)</li>
+        </ul>
+      `,
+      diagnosis: `
+        <p><strong>ECG findings:</strong></p>
+        <ul>
+          <li>Sinus bradycardia (HR &lt; 60)</li>
+          <li>Pauses &gt; 2 seconds (no P, no QRS)</li>
+          <li>Junctional or ventricular escape beats during pauses</li>
+          <li>Sinus arrest</li>
+          <li>± Atrial fibrillation episodes</li>
+          <li>Inappropriate to autonomic state (stress should ↑ HR)</li>
+        </ul>
+
+        <p><strong>Workup:</strong></p>
+        <ul>
+          <li><strong>ECG</strong> — initial</li>
+          <li><strong>Holter (24 hr)</strong> — ⭐ <strong>essential</strong> · captures intermittent abnormalities + correlates with symptoms (event diary)</li>
+          <li><strong>Atropine response test</strong> — ⭐ key diagnostic
+            <ul>
+              <li>Atropine 0.04 mg/kg IM</li>
+              <li>15 min later: ECG</li>
+              <li><strong>SSS:</strong> Inadequate ↑ HR (&lt; 50% increase) or paradoxical worsening</li>
+              <li><strong>Vagal:</strong> Strong response, normalizes</li>
+            </ul>
+          </li>
+          <li><strong>Exercise test</strong> — fail to ↑ HR appropriately</li>
+          <li><strong>Echocardiogram</strong> — assess for concurrent disease (MMVD common in Schnauzer)</li>
+          <li><strong>Chemistry, T4</strong> — rule out hypothyroid contributing</li>
+          <li><strong>BP</strong></li>
+        </ul>
+      `,
+      differential: `
+        <ul>
+          <li><strong>High vagal tone</strong> — atropine response distinguishes</li>
+          <li><strong>3° AV block</strong> — different ECG pattern</li>
+          <li><strong>2° AV block</strong> — P waves present but QRS dropped</li>
+          <li><strong>Atrial standstill</strong> — no P waves (hyperK, fibrosis)</li>
+          <li><strong>Drug-induced bradycardia</strong> — Hx</li>
+          <li><strong>Hypothyroid bradycardia</strong></li>
+          <li><strong>Brain disease causing syncope</strong> — neurologic findings</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Asymptomatic SSS:</strong></p>
+        <ul>
+          <li>No treatment</li>
+          <li>Annual recheck + Holter</li>
+          <li>Avoid AV-blocking drugs</li>
+        </ul>
+
+        <p><strong>Symptomatic SSS:</strong></p>
+        <ul>
+          <li>⭐ <strong>Pacemaker = treatment of choice</strong>
+            <ul>
+              <li>VVI mode typically</li>
+              <li>Resolves syncope in &gt; 90%</li>
+              <li>Allows control of tachy component without worsening brady</li>
+              <li>Cardiology referral</li>
+            </ul>
+          </li>
+          <li><strong>Medical bridge while awaiting pacemaker:</strong>
+            <ul>
+              <li>Terbutaline 0.2 mg/kg PO q8h (β-agonist · supports HR)</li>
+              <li>Theophylline 10 mg/kg PO q12h (alternative)</li>
+              <li>Hyoscyamine, propantheline (anticholinergics) - limited</li>
+            </ul>
+          </li>
+          <li><strong>Brady-tachy syndrome treatment:</strong>
+            <ul>
+              <li>Pacemaker FIRST (controls brady)</li>
+              <li>THEN antiarrhythmic for tachy (sotalol, atenolol) · safer with pacemaker in place</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>Concurrent disease:</strong></p>
+        <ul>
+          <li>MMVD (Schnauzer): manage with FSAP if Stage C</li>
+          <li>Avoid drugs that worsen bradycardia (digoxin, diltiazem, beta-blocker without pacemaker)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Syncope-related injury</strong> (falls, trauma)</li>
+          <li><strong>Sudden death</strong> from prolonged asystole</li>
+          <li><strong>CHF from brady-tachy</strong></li>
+          <li><strong>Pacemaker complications</strong> (lead displacement, infection)</li>
+          <li><strong>Drug-induced worsening</strong> (digoxin, beta-blockers without pacing)</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Asymptomatic SSS:</strong> Variable · may progress · annual monitoring</li>
+          <li><strong>Symptomatic + pacemaker:</strong> Excellent · normal lifespan often</li>
+          <li><strong>Symptomatic without pacemaker:</strong> Reduced · syncope quality of life issue</li>
+          <li><strong>Concurrent advanced MMVD:</strong> Determined by cardiac dz</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-chf-management',
+    titleEn: 'Congestive Heart Failure (CHF) Management',
+    titleTh: 'การจัดการ CHF (Acute + Chronic)',
+    type: 'topic',
+    system: 'chf',
+    species: ['dog', 'cat'],
+    tags: ['CHF', 'congestive heart failure', 'pulmonary edema', 'furosemide', 'pimobendan', 'acute', 'chronic'],
+    aliases: ['heart failure', 'pulmonary edema', 'CHF management'],
+    source: 'Bussadori + Duque-Carrasco',
+    sections: {
+      indications: `
+        <p><strong>CHF management indications:</strong></p>
+        <ul>
+          <li>Stage C (current or past CHF)</li>
+          <li>Stage D (refractory CHF)</li>
+          <li>Acute decompensation in established cardiac patient</li>
+          <li>De novo presentation with respiratory distress + cardiac history</li>
+        </ul>
+
+        <p><strong>CHF presentations:</strong></p>
+        <ul>
+          <li><strong>Left-sided CHF</strong>: pulmonary edema (cough, dyspnea)</li>
+          <li><strong>Right-sided CHF</strong>: ascites, pleural effusion, hepatic congestion</li>
+          <li><strong>Bi-ventricular CHF</strong>: combined</li>
+          <li><strong>Cat CHF</strong>: often pleural effusion + edema mixed picture</li>
+        </ul>
+      `,
+      contraindications: `
+        <ul>
+          <li>Misdiagnosis — "cough = MMVD" without confirmation can lead to inappropriate diuretic use</li>
+          <li>Always confirm CHF before lifelong furosemide</li>
+          <li>Avoid IV fluids during acute CHF (worsens edema)</li>
+          <li>Cat: avoid acepromazine (CV depressant)</li>
+          <li>Cat: avoid β-blockers in active CHF</li>
+        </ul>
+      `,
+      preparation: `
+        <p><strong>Confirming CHF diagnosis:</strong></p>
+        <ul>
+          <li><strong>Thoracic radiograph</strong> — gold standard for pulmonary edema
+            <ul>
+              <li>Dog: caudodorsal/perihilar alveolar pattern</li>
+              <li>Cat: diffuse, patchy, no specific pattern</li>
+              <li>Cardiomegaly with VHS &gt; 11.5 (dog), VLAS &gt; 3</li>
+              <li>Pulmonary venous distension (left CHF)</li>
+              <li>Pleural effusion (right or biventricular)</li>
+            </ul>
+          </li>
+          <li><strong>POCUS</strong> — rapid B-line assessment ใน emergency</li>
+          <li><strong>NT-proBNP rapid test</strong> — high NPV for ruling out</li>
+          <li><strong>Echocardiogram</strong> — ideal but post-stabilization</li>
+          <li><strong>Resting RR</strong> — &gt; 30/min sleeping = decompensation marker</li>
+        </ul>
+
+        <p><strong>Patient stabilization priorities:</strong></p>
+        <ul>
+          <li>Minimize stress · oxygen first</li>
+          <li>Sedation if needed (butorphanol)</li>
+          <li>IV access (cautious)</li>
+          <li>ECG monitoring</li>
+          <li>Pulse oximetry</li>
+          <li>Serial RR / HR / BP</li>
+        </ul>
+      `,
+      steps: `
+        <p><strong>ACUTE CHF management:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Acute CHF — "ABCDE" Approach</span>
+          <ul>
+            <li><strong>A</strong>irway — patent? open-mouth breathing?</li>
+            <li><strong>B</strong>reathing — oxygen 40-60% (mask, hood, cage)</li>
+            <li><strong>C</strong>irculation — IV access, but minimal fluids</li>
+            <li><strong>D</strong>iuretic — furosemide aggressive</li>
+            <li><strong>E</strong>verything else — sedation, additional drugs</li>
+          </ul>
+          <p class="mnem-tip">📌 Goal: <strong>RR &lt; 40 within 4-6 hours</strong><br>
+          📌 ⚠️ Avoid stress · let patient settle in oxygen cage</p>
+        </div>
+
+        <p><strong>Acute CHF drug protocol:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Acute CHF Medications</span>
+          <table>
+            <tr><th>Drug</th><th>Dog dose</th><th>Cat dose</th></tr>
+            <tr><td><strong>⭐ Furosemide</strong></td><td>2-4 mg/kg IV/IM, repeat q1-2h</td><td>1-2 mg/kg IV/IM, repeat q1-2h</td></tr>
+            <tr><td><strong>Furosemide CRI</strong></td><td>0.66-1 mg/kg/h after bolus</td><td>0.25-0.5 mg/kg/h</td></tr>
+            <tr><td><strong>⭐ Pimobendan</strong></td><td>0.25-0.3 mg/kg PO (or IV if available)</td><td>Controversial · 0.625-1.25 mg/cat (if HOCM ruled out)</td></tr>
+            <tr><td><strong>Butorphanol</strong></td><td>0.2-0.4 mg/kg IM</td><td>0.2-0.4 mg/kg IM</td></tr>
+            <tr><td><strong>Oxygen</strong></td><td>40-60% via cage/mask</td><td>40-60% (less stressful = cage)</td></tr>
+            <tr><td><strong>Thoracocentesis</strong></td><td>If &gt; 500 mL pleural effusion</td><td>⭐ Often needed in cat CHF</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ Furosemide is THE drug · don't withhold for fear of dehydration<br>
+          📌 ⭐ Cat: <strong>NEVER give acepromazine</strong> (CV depressant) · butorphanol OK<br>
+          📌 ⭐ Cat with CHF + pleural effusion: thoracocentesis may save life faster than diuretic alone</p>
+        </div>
+
+        <p><strong>Goals of acute therapy:</strong></p>
+        <ul>
+          <li>RR &lt; 40 within 4-6 hours</li>
+          <li>HR appropriate (not excessively tachycardic)</li>
+          <li>BP maintained (not hypotensive from over-diuresis)</li>
+          <li>Mucous membranes pink, CRT normal</li>
+          <li>Mentation improving</li>
+        </ul>
+
+        <p><strong>CHRONIC CHF management — Stage C:</strong></p>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Quadruple Therapy — "FSAP"</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">F</span>
+              <span class="num-label">Furosemide 1-4 mg/kg q8-12h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">S</span>
+              <span class="num-label">Spironolactone 2 mg/kg q12-24h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">A</span>
+              <span class="num-label">ACEi (enalapril/benazepril) 0.5 mg/kg q12-24h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">P</span>
+              <span class="num-label">Pimobendan 0.25-0.3 mg/kg q12h</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 ⭐ <strong>"FSAP" = standard MMVD CHF Rx</strong><br>
+          📌 Pimobendan 1 hr before food (better absorption)<br>
+          📌 CARING trial: spironolactone improves survival in MMVD CHF</p>
+        </div>
+
+        <p><strong>Cat chronic CHF (HCM/RCM):</strong></p>
+        <ul>
+          <li><strong>Furosemide</strong> 1-2 mg/kg PO q12-24h (titrate to RR &lt; 30)</li>
+          <li><strong>Clopidogrel</strong> 18.75 mg/cat PO q24h (ATE prevention)</li>
+          <li>± <strong>ACE inhibitor</strong> (benazepril 0.5 mg/kg q24h)</li>
+          <li>Pimobendan: <em>controversial</em> in HOCM but increasingly used</li>
+          <li>Avoid acepromazine</li>
+        </ul>
+
+        <p><strong>Refractory CHF (Stage D) — escalation:</strong></p>
+        <ul>
+          <li>↑ furosemide (up to 6-8 mg/kg q8h) or switch to <strong>torsemide</strong> (1/10 of furosemide dose)</li>
+          <li>Add <strong>hydralazine</strong> 0.5-2 mg/kg q12h (afterload reduction)</li>
+          <li>Add <strong>sildenafil</strong> 1-3 mg/kg q8-12h if pulmonary HT</li>
+          <li>Salt restriction (cardiac diet)</li>
+          <li>Reassess for transudate management (paracentesis, thoracocentesis)</li>
+          <li>Specialty referral · consider mitral valve repair (MMVD specialty)</li>
+        </ul>
+
+        <p><strong>Owner home monitoring:</strong></p>
+        <ul>
+          <li>⭐ <strong>Resting respiratory rate (RR)</strong> — single best predictor of decompensation
+            <ul>
+              <li>Count breaths per minute while sleeping</li>
+              <li>RR &gt; 30/min sleeping = warning · contact vet</li>
+              <li>RR &gt; 40/min = decompensation imminent</li>
+            </ul>
+          </li>
+          <li>Activity level / appetite tracking</li>
+          <li>Cough frequency (dog)</li>
+          <li>Abdominal distension (right CHF)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Pre-renal azotemia</strong> from over-diuresis — most common</li>
+          <li><strong>Hypokalemia</strong> from furosemide</li>
+          <li><strong>Hyperkalemia</strong> from ACEi + spironolactone (combination)</li>
+          <li><strong>Hypotension</strong> from combination therapy</li>
+          <li><strong>Cardiogenic shock</strong> in severe</li>
+          <li><strong>Acute kidney injury</strong> · ARS (acute renal stress)</li>
+          <li><strong>Cardiorenal syndrome</strong> — bidirectional decompensation</li>
+          <li><strong>Cardiac cachexia</strong> — late stage muscle wasting</li>
+          <li><strong>Drug interactions</strong> — NSAIDs catastrophic</li>
+          <li><strong>Recurrent CHF episodes</strong> — usually responsive but each worse</li>
+        </ul>
+
+        <p><strong>Monitoring schedule:</strong></p>
+        <ul>
+          <li><strong>1 week post-acute discharge</strong>: renal panel, electrolytes, BP, RR log</li>
+          <li><strong>Monthly initially</strong>: clinical exam, RR, weight</li>
+          <li><strong>Every 3 months</strong>: chemistry, urinalysis, BP</li>
+          <li><strong>Every 6 months</strong>: thoracic radiograph, echo</li>
+          <li><strong>NT-proBNP trending</strong> useful</li>
+        </ul>
+      `,
+      postCare: `
+        <p><strong>Owner education essentials:</strong></p>
+        <ul>
+          <li>How to count resting RR at home</li>
+          <li>Recognize decompensation signs (cough worsening, lethargy, anorexia)</li>
+          <li>Medication compliance critical (no missed doses)</li>
+          <li>Diet: cardiac diet (sodium-restricted) if tolerated · calorie-dense</li>
+          <li>Exercise: light, regular · avoid extreme</li>
+          <li>NEVER give NSAIDs (ask vet first for any new medication)</li>
+          <li>Emergency vet contacts</li>
+        </ul>
+
+        <p><strong>Quality of life assessment (ongoing):</strong></p>
+        <ul>
+          <li>Appetite</li>
+          <li>Activity</li>
+          <li>Comfort (no labored breathing)</li>
+          <li>Interaction with family</li>
+          <li>Hospitalizations frequency</li>
+          <li>Owner financial/emotional sustainability</li>
+        </ul>
+
+        <p><strong>End-of-life considerations (Stage D refractory):</strong></p>
+        <ul>
+          <li>Discuss prognosis honestly with owner</li>
+          <li>Hospice considerations · home euthanasia options</li>
+          <li>Recognize signs of unsalvageable decompensation</li>
+          <li>Quality of life over quantity</li>
+        </ul>
+      `,
+    },
+  },
+
+  /* ============================================================
+     Phase 5 — Cardiorenal Axis (FINAL)
+     ============================================================ */
+
+  {
+    id: 'card-cardiorenal-axis',
+    titleEn: 'Cardiorenal Axis (CRA) — CKD ↔ CHF',
+    titleTh: 'แกน Cardiorenal — ไต ↔ หัวใจ',
+    type: 'disease',
+    system: 'cardiorenal',
+    species: ['dog', 'cat'],
+    tags: ['cardiorenal', 'CRA', 'CRS', 'cardiorenal syndrome', 'CKD', 'CHF', 'RAAS', 'Duque-Carrasco'],
+    aliases: ['CRA', 'cardiorenal syndrome', 'CRS', 'แกนหัวใจไต'],
+    source: 'Duque-Carrasco — Cardiovascular-Renal Axis Disorders',
+    sections: {
+      definition: `
+        <p><strong>Cardiorenal Axis (CRA)</strong> หรือ <strong>Cardiorenal Syndrome (CRS)</strong> — bidirectional pathophysiologic interaction between heart และ kidneys · dysfunction ของอวัยวะหนึ่งทำให้อีกอวัยวะแย่ลง</p>
+        <ul>
+          <li>⭐ Duque-Carrasco textbook — central concept</li>
+          <li>Heart และ kidneys connect ผ่าน hemodynamics, neurohormonal axis (RAAS, SNS), inflammatory pathways</li>
+          <li>Common ในผู้ป่วยสูงอายุ — MMVD + CKD coexistence ~30-50%</li>
+          <li>Cat: HCM + CKD coexistence ~30-40%</li>
+          <li>Mutual deterioration → "vicious cycle" · poor prognosis ถ้า not recognized</li>
+        </ul>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Cardiorenal Syndrome — 5 Types (Ronco)</span>
+          <table>
+            <tr><th>Type</th><th>Direction</th><th>Example</th></tr>
+            <tr><td><strong>Type 1 (Acute CRS)</strong></td><td>⭐ Acute heart → AKI</td><td>Acute CHF → ↓ renal perfusion → AKI</td></tr>
+            <tr><td><strong>Type 2 (Chronic CRS)</strong></td><td>Chronic heart → CKD</td><td>Chronic MMVD → progressive CKD</td></tr>
+            <tr><td><strong>Type 3 (Acute renocardiac)</strong></td><td>Acute kidney → cardiac</td><td>AKI → fluid overload → pulmonary edema</td></tr>
+            <tr><td><strong>Type 4 (Chronic renocardiac)</strong></td><td>Chronic kidney → cardiac</td><td>CKD → uremic cardiomyopathy · hypertension → LVH</td></tr>
+            <tr><td><strong>Type 5 (Secondary)</strong></td><td>Systemic → both</td><td>Sepsis, DM, hyperthyroid → both</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Type 1 most common in vet emergency</strong>: acute CHF triggers AKI<br>
+          📌 <strong>Type 2 most common in vet practice</strong>: chronic MMVD with concurrent CKD</p>
+        </div>
+      `,
+      etiology: `
+        <p><strong>Mechanisms — bidirectional interactions:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Heart → Kidney Pathways</span>
+          <ul>
+            <li><strong>Reduced cardiac output</strong> → hypoperfusion → pre-renal AKI</li>
+            <li><strong>Venous congestion</strong> → ↑ renal venous pressure → ↓ GFR (often more important than CO)</li>
+            <li><strong>RAAS activation</strong> → vasoconstriction · Na/water retention · fibrosis</li>
+            <li><strong>Sympathetic overdrive</strong> → renal vasoconstriction</li>
+            <li><strong>Inflammatory mediators</strong> · oxidative stress</li>
+            <li><strong>Drug-induced</strong>: NSAIDs, diuretics, ACEi (especially over-diuresis)</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ <strong>Venous congestion ≥ low CO</strong> as cause of cardiorenal AKI<br>
+          📌 ⭐ Prevention: avoid over-diuresis · maintain volume status</p>
+        </div>
+
+        <p><strong>Kidney → Heart pathways:</strong></p>
+        <ul>
+          <li><strong>Volume overload</strong> from CKD → pulmonary edema · CHF exacerbation</li>
+          <li><strong>Hypertension</strong> (CKD-induced) → LVH · MMVD progression</li>
+          <li><strong>Anemia of CKD</strong> → ↑ cardiac workload · high-output strain</li>
+          <li><strong>Uremia</strong> → uremic cardiomyopathy (rare in vet)</li>
+          <li><strong>Electrolytes</strong>: hyperkalemia → arrhythmia · hypocalcemia → reduced contractility</li>
+          <li><strong>Acid-base derangements</strong></li>
+          <li><strong>Mineral-bone disease</strong> (FGF-23, PTH) → vascular calcification</li>
+        </ul>
+      `,
+      pathophysiology: `
+        <p><strong>"Vicious cycle" cascade:</strong></p>
+        <ol>
+          <li>Cardiac dysfunction (e.g., MMVD progression) → ↓ CO + ↑ venous pressure</li>
+          <li>Renal hypoperfusion + congestion → ↓ GFR → azotemia</li>
+          <li>RAAS activation → fluid retention · BP elevation</li>
+          <li>Increased preload → worsening CHF</li>
+          <li>Diuretic + ACEi to manage CHF → ↓ effective circulating volume</li>
+          <li>Pre-renal azotemia worsens → AKI on CKD</li>
+          <li>↑ uremia → cardiac strain · arrhythmia</li>
+          <li>Cycle accelerates → multi-organ decompensation</li>
+        </ol>
+
+        <p><strong>RAAS — central player:</strong></p>
+        <ul>
+          <li>Renin → Angiotensin I → Angiotensin II (vasoconstriction, Na/water retention)</li>
+          <li>Aldosterone → Na retention, K excretion, cardiac/renal fibrosis</li>
+          <li>Chronic RAAS activation = maladaptive in both heart + kidney</li>
+          <li>RAAS blockade (ACEi, ARB, spironolactone) = primary therapeutic target</li>
+        </ul>
+
+        <p><strong>"Cardiorenal triad":</strong></p>
+        <ul>
+          <li>Cardiac dysfunction</li>
+          <li>Renal dysfunction</li>
+          <li>Anemia (often present, worsens both)</li>
+        </ul>
+      `,
+      symptoms: `
+        <p><strong>Clinical clues to CRA:</strong></p>
+        <ul>
+          <li>CHF patient with rising creatinine on diuretic Rx</li>
+          <li>CKD patient with new respiratory distress</li>
+          <li>Patient on FSAP with worsening azotemia despite good clinical CHF control</li>
+          <li>Refractory CHF · refractory CKD</li>
+          <li>Fluid overload signs (peripheral edema, pleural effusion, ascites) ใน CKD patient</li>
+          <li>Hyperkalemia + cardiac dysrhythmia</li>
+          <li>Hypertension (renal-mediated)</li>
+        </ul>
+
+        <p><strong>Patterns to recognize:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">CRA Clinical Patterns</span>
+          <table>
+            <tr><th>Scenario</th><th>Pattern</th><th>Action</th></tr>
+            <tr><td><strong>"Stable CHF"</strong></td><td>Furosemide working · creatinine slowly creeping up</td><td>Accept mild azotemia · don't over-correct</td></tr>
+            <tr><td><strong>"Diuretic resistance"</strong></td><td>Furosemide dose ↑ but RR still ↑ + creat ↑</td><td>Switch to torsemide · add hydralazine</td></tr>
+            <tr><td><strong>"Cardiorenal crisis"</strong></td><td>Acute decomp + AKI + hyperK</td><td>⚠️ ICU · cautious diuretic · K management</td></tr>
+            <tr><td><strong>"Hidden AKI on CKD"</strong></td><td>CKD baseline + new lethargy/inappetence</td><td>Recheck SDMA, BUN, creat, USG</td></tr>
+            <tr><td><strong>Cat HCM + CKD</strong></td><td>HCM stage B2 + CKD IRIS 2-3</td><td>Telmisartan-based Rx · careful diuretic</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>"Permissive azotemia"</strong> — accept BUN/creat slight rise to keep CHF controlled<br>
+          📌 Don't chase normal creat at expense of pulmonary edema</p>
+        </div>
+      `,
+      diagnosis: `
+        <p><strong>Workup for CRA:</strong></p>
+        <ul>
+          <li><strong>Cardiac:</strong>
+            <ul>
+              <li>Echocardiogram</li>
+              <li>Thoracic radiograph</li>
+              <li>NT-proBNP</li>
+              <li>BP measurement</li>
+              <li>ECG (arrhythmia, electrolyte effects)</li>
+            </ul>
+          </li>
+          <li><strong>Renal:</strong>
+            <ul>
+              <li>BUN, creatinine, SDMA</li>
+              <li>Urinalysis (USG, protein, sediment)</li>
+              <li>UPC ratio (proteinuria)</li>
+              <li>IRIS staging (CKD)</li>
+              <li>Renal ultrasound</li>
+            </ul>
+          </li>
+          <li><strong>Electrolytes + acid-base:</strong>
+            <ul>
+              <li>Na, K, Cl, Ca, P, Mg</li>
+              <li>Venous blood gas</li>
+              <li>HyperK common (ACEi + spironolactone + AKI)</li>
+            </ul>
+          </li>
+          <li><strong>Volume status:</strong>
+            <ul>
+              <li>Body weight trends</li>
+              <li>Skin tent, mucous membranes</li>
+              <li>Caudal vena cava ultrasound (CVC) — collapsibility index</li>
+              <li>POCUS — B-lines (pulmonary edema), free fluid</li>
+            </ul>
+          </li>
+          <li><strong>Other:</strong>
+            <ul>
+              <li>CBC (anemia common)</li>
+              <li>T4 (rule out hyperthyroid)</li>
+              <li>Protein levels (PLN)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">IRIS CKD Staging — Quick Reference</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">1</span>
+              <span class="num-label">Creat &lt; 1.4 (dog) / &lt; 1.6 (cat) · subclinical</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2</span>
+              <span class="num-label">1.4-2.8 (dog) / 1.6-2.8 (cat) · mild azotemia</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">3</span>
+              <span class="num-label">2.9-5.0 (dog) / 2.9-5.0 (cat) · moderate</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">4</span>
+              <span class="num-label">&gt; 5.0 · severe · uremic</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 Sub-stage by proteinuria (UPC) and BP<br>
+          📌 SDMA &gt; 14 = early CKD even if creat normal<br>
+          📌 ⭐ Always sub-stage by BP — hypertension common driver of CRA</p>
+        </div>
+      `,
+      differential: `
+        <ul>
+          <li><strong>Pre-renal azotemia from dehydration alone</strong> — USG concentrated, responsive to fluids</li>
+          <li><strong>Pure CKD without cardiac disease</strong> — echo normal</li>
+          <li><strong>Pure CHF without renal disease</strong> — renal panel normal</li>
+          <li><strong>Drug-induced AKI</strong> (NSAIDs, aminoglycosides) — Hx</li>
+          <li><strong>Pyelonephritis</strong> — pyuria, fever</li>
+          <li><strong>Leptospirosis</strong> (dog) — acute · serology</li>
+          <li><strong>Toxin AKI</strong> (ethylene glycol, NSAID) — Hx</li>
+          <li><strong>Glomerulonephritis</strong> — heavy proteinuria</li>
+        </ul>
+      `,
+      treatment: `
+        <p><strong>Principles of CRA management:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">CRA Therapeutic Goals</span>
+          <ul>
+            <li><strong>Stabilize cardiac function</strong> — relieve congestion without over-diuresis</li>
+            <li><strong>Preserve renal function</strong> — avoid AKI on CKD</li>
+            <li><strong>Block RAAS</strong> — ACEi/ARB/spironolactone (cornerstone)</li>
+            <li><strong>Manage hypertension</strong> — cause + effect of CRA</li>
+            <li><strong>Correct electrolytes</strong> — especially K, P, Ca</li>
+            <li><strong>Address anemia</strong> — if symptomatic</li>
+            <li><strong>Avoid nephrotoxins</strong> — NSAIDs absolute, aminoglycosides</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ Balance is key · "best for heart" may "harm kidney"<br>
+          📌 ⭐ Lower BUN/creat goal vs symptomatic comfort = clinical judgment</p>
+        </div>
+
+        <p><strong>Drug strategy by scenario:</strong></p>
+
+        <div class="mnemonic table-aid">
+          <span class="mnem-title">Drug Choices in CRA</span>
+          <table>
+            <tr><th>Drug class</th><th>CHF Stage C + CKD 1-2</th><th>CHF Stage C + CKD 3-4</th></tr>
+            <tr><td><strong>Furosemide</strong></td><td>Standard dose</td><td>Lower dose · titrate carefully</td></tr>
+            <tr><td><strong>Torsemide</strong></td><td>If furosemide resistant</td><td>⭐ Often preferred (more predictable)</td></tr>
+            <tr><td><strong>ACEi (enalapril)</strong></td><td>Standard</td><td>⚠️ Caution · monitor K, creat · reduce dose</td></tr>
+            <tr><td><strong>ACEi (benazepril)</strong></td><td>Standard</td><td>⭐ Preferred over enalapril (hepatic metabolism)</td></tr>
+            <tr><td><strong>ARB (telmisartan)</strong></td><td>Alternative</td><td>⭐ Cat-approved · CKD proteinuria + HT</td></tr>
+            <tr><td><strong>Spironolactone</strong></td><td>Standard CHF Rx</td><td>⚠️ HyperK risk · reduce or omit</td></tr>
+            <tr><td><strong>Pimobendan</strong></td><td>Standard</td><td>Standard · no renal adjustment</td></tr>
+            <tr><td><strong>Amlodipine</strong></td><td>If HT</td><td>⭐ Cat HT first-line</td></tr>
+            <tr><td><strong>Hydralazine</strong></td><td>Refractory only</td><td>Refractory only</td></tr>
+            <tr><td><strong>NSAIDs</strong></td><td>⛔ AVOID</td><td>⛔ ABSOLUTELY AVOID</td></tr>
+          </table>
+          <p class="mnem-tip">📌 ⭐ <strong>Benazepril ดีกว่า enalapril ในผู้ป่วย CKD</strong> (hepatic metabolism)<br>
+          📌 ⭐ <strong>Telmisartan</strong> = ARB · cat-approved สำหรับ CKD proteinuria + HT<br>
+          📌 ⛔ NSAIDs absolutely contraindicated · catastrophic in CRA</p>
+        </div>
+
+        <p><strong>Specific scenarios:</strong></p>
+
+        <p><strong>Acute CHF + AKI on CKD:</strong></p>
+        <ul>
+          <li>Oxygen + furosemide cautious (lower dose IV bolus)</li>
+          <li>Avoid IV crystalloid bolus (worsens edema)</li>
+          <li>Monitor BUN/creat q6-12h</li>
+          <li>Adjust ACEi/spironolactone (often pause acutely)</li>
+          <li>Treat hyperkalemia: calcium gluconate, glucose+insulin if &gt; 6.5</li>
+          <li>POCUS-guided assessment of fluid status</li>
+        </ul>
+
+        <p><strong>Cat HCM + CKD:</strong></p>
+        <ul>
+          <li>⭐ <strong>Telmisartan 1-2 mg/kg PO q24h</strong> — first-line (CKD-approved · BP control · proteinuria)</li>
+          <li>Amlodipine for HT (BP &gt; 160 mmHg)</li>
+          <li>Furosemide minimum effective dose</li>
+          <li>Clopidogrel if LA &gt; 1.6</li>
+          <li>Phosphate binder if P elevated</li>
+          <li>Subcutaneous fluids may be appropriate (controversial in CHF)</li>
+        </ul>
+
+        <p><strong>Dog MMVD + CKD:</strong></p>
+        <ul>
+          <li>Benazepril (vs enalapril) for ACEi</li>
+          <li>FSAP with reduced spironolactone if hyperK</li>
+          <li>Pimobendan unchanged</li>
+          <li>BP control (often hypertension contributing)</li>
+          <li>Monitor renal q1-4 weeks initially</li>
+        </ul>
+
+        <p><strong>Dietary considerations:</strong></p>
+        <ul>
+          <li>Cardiac diet (Na restriction) — moderate restriction in CRA</li>
+          <li>Renal diet (low protein, low P) — not always best in advanced CHF</li>
+          <li>"CRA diet" = compromise · Hill's k/d, Royal Canin Cardiac, etc.</li>
+          <li>Calorie-dense (cachexia prevention)</li>
+        </ul>
+      `,
+      complications: `
+        <ul>
+          <li><strong>Acute kidney injury on CKD</strong> — common, often drug-induced</li>
+          <li><strong>Hyperkalemia</strong> — life-threatening · arrhythmia · arrest</li>
+          <li><strong>Hyponatremia</strong> from over-diuresis</li>
+          <li><strong>Refractory CHF</strong></li>
+          <li><strong>Refractory CKD</strong></li>
+          <li><strong>Anemia worsening</strong></li>
+          <li><strong>Hypertension uncontrolled</strong> → target organ damage</li>
+          <li><strong>Cardiac cachexia</strong></li>
+          <li><strong>Decision fatigue</strong> for owner — frequent rechecks, cost</li>
+          <li><strong>Polypharmacy issues</strong> — drug interactions</li>
+        </ul>
+
+        <p><strong>Prognosis:</strong></p>
+        <ul>
+          <li><strong>Mild CRA (CKD 1-2 + CHF B2-C):</strong> Reasonable · 1-2 years possible</li>
+          <li><strong>Moderate CRA (CKD 3 + CHF C):</strong> Median 6-12 months</li>
+          <li><strong>Severe CRA (CKD 4 + CHF D):</strong> Months · poor</li>
+          <li><strong>Acute CRS:</strong> Variable · depends on reversibility</li>
+          <li><strong>Cat HCM + CKD:</strong> Often determined by which dz progresses faster</li>
+        </ul>
+      `,
+    },
+  },
+
+  {
+    id: 'card-diuretic-resistance',
+    titleEn: 'Diuretic Resistance — Refractory CHF',
+    titleTh: 'ภาวะดื้อยาขับปัสสาวะ',
+    type: 'topic',
+    system: 'cardiorenal',
+    species: ['dog', 'cat'],
+    tags: ['diuretic resistance', 'refractory CHF', 'torsemide', 'sequential nephron blockade', 'Stage D'],
+    aliases: ['refractory heart failure', 'diuretic resistance'],
+    source: 'Duque-Carrasco — Cardiovascular-Renal Axis Disorders',
+    sections: {
+      indications: `
+        <p><strong>เมื่อสงสัย diuretic resistance:</strong></p>
+        <ul>
+          <li>Furosemide dose &gt; 4-6 mg/kg q8h ยังไม่สามารถ control CHF</li>
+          <li>Recurrent CHF episodes แม้ optimal medical Rx</li>
+          <li>RR ยังคง &gt; 30/min sleeping despite escalation</li>
+          <li>Persistent pleural effusion / ascites</li>
+          <li>Stage D MMVD or DCM</li>
+          <li>Cat refractory CHF</li>
+        </ul>
+
+        <p><strong>Definition:</strong></p>
+        <ul>
+          <li>Diuretic resistance = persistent volume overload despite adequate diuretic dosing</li>
+          <li>"True" resistance vs pseudo-resistance (compliance, dietary Na, drug interaction)</li>
+          <li>Common in Stage D CHF · hallmark of advanced disease</li>
+        </ul>
+      `,
+      contraindications: `
+        <p><strong>Pseudo-resistance — rule out before escalating:</strong></p>
+        <ul>
+          <li><strong>Compliance issues</strong> — owner not giving meds correctly · check pill counts</li>
+          <li><strong>Dietary Na excess</strong> — hidden Na in treats, table food</li>
+          <li><strong>NSAIDs concurrent</strong> — blocks diuretic effect · STOP</li>
+          <li><strong>Drug interaction</strong> — cholestyramine, sucralfate (binding)</li>
+          <li><strong>Pseudohypovolemia</strong> — over-restriction of fluid</li>
+          <li><strong>Wrong diagnosis</strong> — pulmonary disease misdiagnosed as CHF</li>
+        </ul>
+      `,
+      preparation: `
+        <p><strong>Workup before declaring resistance:</strong></p>
+        <ul>
+          <li>Confirm CHF (radiograph, echo, NT-proBNP)</li>
+          <li>Renal panel + electrolytes</li>
+          <li>BP measurement</li>
+          <li>Compliance check with owner</li>
+          <li>Diet review (sodium content)</li>
+          <li>Check for concurrent NSAIDs · supplements · other meds</li>
+          <li>Echo recheck (worsening structural disease?)</li>
+          <li>Body weight trend</li>
+          <li>POCUS for fluid status</li>
+        </ul>
+      `,
+      steps: `
+        <p><strong>Causes of true diuretic resistance:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Why Diuretic Stops Working</span>
+          <ul>
+            <li><strong>Reduced renal perfusion</strong> — heart cannot deliver drug to kidney</li>
+            <li><strong>Reduced GFR (CKD)</strong> — drug filtration impaired</li>
+            <li><strong>Distal tubule hypertrophy</strong> — chronic loop diuretic causes compensatory Na reabsorption distally</li>
+            <li><strong>Activation of RAAS + SNS</strong> — promotes Na retention</li>
+            <li><strong>Hypoalbuminemia</strong> — reduced protein binding · less effective delivery</li>
+            <li><strong>Intestinal edema</strong> — reduced PO absorption</li>
+            <li><strong>Drug interaction (NSAIDs)</strong> — prostaglandin block</li>
+          </ul>
+          <p class="mnem-tip">📌 <strong>Distal tubule hypertrophy</strong> = key reason for tolerance development<br>
+          📌 ⭐ "Sequential nephron blockade" addresses this</p>
+        </div>
+
+        <p><strong>Stepwise escalation strategy:</strong></p>
+
+        <div class="mnemonic numbers">
+          <span class="mnem-title">Refractory CHF — 5 Steps</span>
+          <div class="num-grid">
+            <div class="num-card">
+              <span class="num-big">1</span>
+              <span class="num-label">↑ Furosemide frequency q6-8h</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">2</span>
+              <span class="num-label">Switch to torsemide (1/10 dose)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">3</span>
+              <span class="num-label">Add hydralazine (afterload)</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">4</span>
+              <span class="num-label">Add sildenafil if PHT</span>
+            </div>
+            <div class="num-card">
+              <span class="num-big">5</span>
+              <span class="num-label">Specialty referral</span>
+            </div>
+          </div>
+          <p class="mnem-tip">📌 Always rule out pseudo-resistance FIRST before escalating<br>
+          📌 Each step needs reassessment</p>
+        </div>
+
+        <p><strong>Step 1: Optimize furosemide</strong></p>
+        <ul>
+          <li>Frequency more important than dose: q8h → q6h often more effective than higher dose q12h</li>
+          <li>Sustained delivery: CRI in hospital (0.66-1 mg/kg/h after IV bolus)</li>
+          <li>SC injection at home (better absorption than PO if intestinal edema)</li>
+          <li>Maximum recommended: 8 mg/kg q8h (24 mg/kg/day)</li>
+        </ul>
+
+        <p><strong>Step 2: Switch to torsemide</strong></p>
+        <ul>
+          <li>⭐ <strong>Torsemide 0.1-0.6 mg/kg PO q12-24h</strong></li>
+          <li>10× more potent than furosemide</li>
+          <li>Conversion: 1/10 to 1/20 of total furosemide dose</li>
+          <li>Longer half-life (12 hr vs 6 hr)</li>
+          <li>More predictable absorption (less affected by intestinal edema)</li>
+          <li>Anti-aldosterone effect (similar to spironolactone)</li>
+          <li>Often resolves "resistance" by itself</li>
+        </ul>
+
+        <p><strong>Step 3: Sequential nephron blockade</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">Sequential Nephron Blockade</span>
+          <ul>
+            <li>Loop diuretic (furosemide/torsemide) — loop of Henle</li>
+            <li>+ Thiazide (hydrochlorothiazide 1-2 mg/kg PO q12-24h) — distal tubule</li>
+            <li>+ Spironolactone (already in FSAP) — collecting duct</li>
+            <li>= Block Na reabsorption at multiple sites</li>
+          </ul>
+          <p class="mnem-tip">📌 Hydrochlorothiazide useful for distal tubule hypertrophy<br>
+          📌 ⚠️ Risk: severe hypokalemia, dehydration, AKI<br>
+          📌 Monitor electrolytes weekly initially</p>
+        </div>
+
+        <p><strong>Step 4: Add afterload reducer</strong></p>
+        <ul>
+          <li>⭐ <strong>Hydralazine 0.5-3 mg/kg PO q12h</strong> (titrate up gradually)</li>
+          <li>Direct arterial vasodilator</li>
+          <li>Reduces LV afterload → improves forward flow → improves renal perfusion</li>
+          <li>Side effect: reflex tachycardia (consider beta-blocker if not contraindicated)</li>
+          <li>Watch for hypotension</li>
+        </ul>
+
+        <p><strong>Step 5: Pulmonary HT</strong></p>
+        <ul>
+          <li>Echocardiogram for sPAP estimation</li>
+          <li>If sPAP &gt; 60 mmHg → <strong>Sildenafil 1-3 mg/kg PO q8-12h</strong></li>
+          <li>Pulmonary vasodilator → reduces RV afterload → improves LV filling</li>
+          <li>Often dramatic clinical improvement</li>
+        </ul>
+
+        <p><strong>Step 6: Specialty interventions:</strong></p>
+        <ul>
+          <li><strong>Mitral valve repair</strong> (specialty surgical · select centers)</li>
+          <li><strong>Pericardiectomy</strong> if pericardial component</li>
+          <li><strong>Repeated thoracocentesis / paracentesis</strong> for refractory effusions</li>
+          <li><strong>Indwelling catheter</strong> for repeated drainage</li>
+          <li><strong>Ultrafiltration</strong> (rare, specialty)</li>
+        </ul>
+      `,
+      complications: `
+        <p><strong>Iatrogenic complications of escalation:</strong></p>
+        <ul>
+          <li>⚠️ <strong>Severe hypokalemia</strong> — esp. with HCTZ + furosemide</li>
+          <li>⚠️ <strong>Hyperkalemia</strong> — paradoxical with ACEi + spironolactone + AKI</li>
+          <li>⚠️ <strong>Pre-renal azotemia / AKI</strong> — over-diuresis</li>
+          <li>⚠️ <strong>Hyponatremia</strong> — water retention &gt; Na</li>
+          <li>⚠️ <strong>Hypotension</strong> — combined vasodilators</li>
+          <li><strong>Hepatic congestion → drug accumulation</strong></li>
+          <li><strong>Drug interactions</strong> — polypharmacy</li>
+          <li><strong>Owner fatigue</strong> — multiple meds, frequent monitoring</li>
+        </ul>
+
+        <p><strong>Monitoring schedule for refractory CHF:</strong></p>
+        <ul>
+          <li>1-2 weeks after each medication change: renal panel, electrolytes, BP</li>
+          <li>Owner RR log daily</li>
+          <li>Body weight weekly</li>
+          <li>Recheck radiograph if RR ↑</li>
+          <li>Recheck echo q3-6 months</li>
+        </ul>
+      `,
+      postCare: `
+        <p><strong>Quality of life assessment:</strong></p>
+        <ul>
+          <li>Appetite (often poor in advanced CHF)</li>
+          <li>Activity level</li>
+          <li>Comfort (no labored breathing)</li>
+          <li>Interaction</li>
+          <li>Mobility</li>
+          <li>Number of "good days" vs "bad days"</li>
+        </ul>
+
+        <p><strong>End-of-life considerations:</strong></p>
+
+        <div class="mnemonic thai">
+          <span class="mnem-title">When to Discuss Euthanasia</span>
+          <ul>
+            <li>Refractory CHF despite Stage D therapy</li>
+            <li>Recurrent emergency hospitalizations</li>
+            <li>Persistent dyspnea at rest despite optimal Rx</li>
+            <li>Cachexia, unable to eat</li>
+            <li>Owner financial / emotional unsustainability</li>
+            <li>Multiple severe complications (AKI + hyperK + arrhythmia)</li>
+            <li>Quality of life poor on objective scales</li>
+          </ul>
+          <p class="mnem-tip">📌 ⭐ Honest, compassionate conversation<br>
+          📌 Hospice options · home euthanasia<br>
+          📌 Don't prolong suffering for "one more month"</p>
+        </div>
+
+        <p><strong>Caregiver support:</strong></p>
+        <ul>
+          <li>Acknowledge difficulty of long-term care</li>
+          <li>Practical: pill organizers, medication apps</li>
+          <li>Emotional: anticipatory grief is normal</li>
+          <li>Resources: pet hospice services, support groups</li>
+          <li>Recheck planning: what triggers euthanasia decision</li>
+        </ul>
+
+        <p><strong>Lessons from refractory CHF management:</strong></p>
+        <ul>
+          <li>⭐ Recognize early — don't wait for crisis</li>
+          <li>⭐ Sequential nephron blockade often dramatically helps</li>
+          <li>⭐ Pulmonary HT commonly missed — echo + sildenafil can be game-changer</li>
+          <li>⭐ Cardiorenal syndrome management = balance, not perfection</li>
+          <li>⭐ Owner involvement = key to long-term success</li>
+        </ul>
+      `,
+    },
+  },
+
 ];
 
 window.CARDIOLOGY_DATA_LOADED = true;
