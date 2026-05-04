@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>MMVD Self-Check — บันทึกอาการสุนัขโรคหัวใจ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --bg: #f7f5f2; --surface: #fff; --ink: #1a1a1a; --ink-mute: #666;
+    --rule: #e5e1db;
+    --red: #dc2626; --red-soft: #fef2f2;
+    --orange: #ea580c; --orange-soft: #fff7ed;
+    --yellow: #ca8a04; --yellow-soft: #fefce8;
+    --green: #16a34a; --green-soft: #f0fdf4;
+    --blue: #2563eb; --blue-soft: #eff6ff;
+    --font-sans: 'Sarabun', 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 400 16px/1.6 var(--font-sans);
+    min-height: 100vh; padding: 20px 16px 80px;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--red-soft) 0%, var(--orange-soft) 100%);
+    border-radius: 20px; padding: 28px 24px; margin-bottom: 20px;
+    border: 1px solid var(--rule);
+  }
+  .hero h1 {
+    font: 700 26px/1.3 var(--font-sans); color: var(--red); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero p { color: var(--ink-mute); font-size: 15px; }
+
+  .pet-info-card {
+    background: white; border-radius: 12px; padding: 14px 16px;
+    margin-top: 14px; border: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .pet-info-card .pet-icon { font-size: 28px; }
+  .pet-info-card .pet-details { flex: 1; min-width: 0; }
+  .pet-info-card .pet-name {
+    font: 700 15px var(--font-sans); color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .pet-info-card .owner-info {
+    font: 500 12px var(--font-sans); color: var(--ink-mute); margin-top: 2px;
+  }
+  .pet-info-card .change-btn {
+    background: transparent; border: 1px solid var(--rule);
+    color: var(--ink-mute); border-radius: 8px; padding: 6px 10px;
+    font: 600 11px var(--font-sans); cursor: pointer; flex-shrink: 0;
+  }
+  .pet-info-card .change-btn:hover { color: var(--red); border-color: var(--red); }
+
+  .tabs {
+    display: flex; gap: 4px; background: var(--surface);
+    border-radius: 12px; padding: 4px; margin-bottom: 16px;
+    border: 1px solid var(--rule); overflow-x: auto;
+  }
+  .tab {
+    flex: 1; min-width: 80px; padding: 10px 12px;
+    background: transparent; border: none; border-radius: 8px;
+    font: 600 13px var(--font-sans); color: var(--ink-mute);
+    cursor: pointer; transition: all 180ms; white-space: nowrap;
+  }
+  .tab.active { background: var(--red); color: white; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .card {
+    background: var(--surface); border-radius: 16px;
+    padding: 20px; margin-bottom: 14px; border: 1px solid var(--rule);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card h2 {
+    font: 700 17px var(--font-sans); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card .hint {
+    font: 400 12px var(--font-sans); color: var(--ink-mute);
+    margin-top: 4px; margin-bottom: 12px; line-height: 1.5;
+  }
+
+  .input-group { margin-bottom: 18px; }
+  .field-label {
+    display: block; font: 600 13px var(--font-sans);
+    margin-bottom: 6px; color: var(--ink);
+  }
+  input[type="number"], input[type="date"], input[type="text"], input[type="tel"], textarea, select {
+    width: 100%; padding: 12px 14px; background: var(--bg);
+    border: 1.5px solid var(--rule); border-radius: 10px;
+    font: 500 16px var(--font-sans); color: var(--ink);
+    outline: none; transition: all 150ms; -webkit-appearance: none;
+    font-family: var(--font-sans);
+  }
+  input:focus, textarea:focus { border-color: var(--red); background: white; }
+  textarea { resize: vertical; min-height: 60px; }
+  .input-with-unit { position: relative; }
+  .input-with-unit input { padding-right: 60px; }
+  .input-with-unit .unit {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    font: 600 14px var(--font-sans); color: var(--ink-mute); pointer-events: none;
+  }
+
+  .segmented {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 6px; margin-bottom: 4px;
+  }
+  .seg-btn {
+    padding: 12px 8px; background: var(--bg);
+    border: 1.5px solid var(--rule); border-radius: 10px;
+    font: 600 14px var(--font-sans); color: var(--ink);
+    cursor: pointer; transition: all 150ms;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 4px; min-height: 60px;
+    text-align: center; line-height: 1.3; font-family: var(--font-sans);
+  }
+  .seg-btn .seg-emoji { font-size: 20px; }
+  .seg-btn .seg-label { font-size: 12px; }
+  .seg-btn:hover { border-color: var(--red); }
+  .seg-btn.active { background: var(--red); color: white; border-color: var(--red); }
+
+  .btn-save {
+    width: 100%; padding: 16px; background: var(--red); color: white;
+    border: none; border-radius: 12px; font: 700 16px var(--font-sans);
+    cursor: pointer; margin-top: 8px; transition: all 180ms;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+    font-family: var(--font-sans);
+  }
+  .btn-save:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35); }
+  .btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+  .btn-secondary {
+    background: var(--surface); color: var(--ink);
+    border: 1.5px solid var(--rule); box-shadow: none;
+  }
+
+  .alert {
+    padding: 14px 16px; border-radius: 12px; margin-bottom: 14px;
+    font: 500 14px var(--font-sans); display: flex;
+    align-items: flex-start; gap: 10px; line-height: 1.5;
+  }
+  .alert.green { background: var(--green-soft); color: #15803d; border: 1px solid #bbf7d0; }
+  .alert.yellow { background: var(--yellow-soft); color: #a16207; border: 1px solid #fde68a; }
+  .alert.orange { background: var(--orange-soft); color: #c2410c; border: 1px solid #fed7aa; }
+  .alert.red { background: var(--red-soft); color: #b91c1c; border: 1px solid #fecaca; }
+  .alert .icon { font-size: 18px; flex-shrink: 0; }
+
+  .history-item {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .history-date {
+    font: 700 14px var(--font-mono); color: var(--red);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .history-stats { display: flex; flex-wrap: wrap; gap: 8px; }
+  .history-stat {
+    background: var(--bg); padding: 4px 10px; border-radius: 999px;
+    font: 600 12px var(--font-mono); color: var(--ink);
+  }
+  .history-stat.warn { background: #fee2e2; color: #b91c1c; }
+  .history-note {
+    font: 400 13px var(--font-sans); color: var(--ink-mute);
+    margin-top: 4px; line-height: 1.5;
+  }
+  .delete-btn {
+    background: transparent; border: none; color: var(--red);
+    font: 600 12px var(--font-sans); cursor: pointer;
+    padding: 2px 8px; border-radius: 6px;
+  }
+  .delete-btn:hover { background: var(--red-soft); }
+
+  .chart-container {
+    background: var(--surface); border: 1px solid var(--rule);
+    border-radius: 12px; padding: 16px; margin-bottom: 14px;
+  }
+  .chart-title {
+    font: 700 14px var(--font-sans); margin-bottom: 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .chart { width: 100%; height: 180px; }
+  .chart-empty {
+    text-align: center; color: var(--ink-mute);
+    font: 500 13px var(--font-sans); padding: 40px 20px;
+  }
+
+  .emergency-card {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 2px solid var(--red); border-radius: 16px;
+    padding: 18px; margin-bottom: 16px;
+  }
+  .emergency-card h3 {
+    color: var(--red); font: 700 16px var(--font-sans);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .emergency-card ul { list-style: none; padding: 0; }
+  .emergency-card li {
+    padding: 6px 0; font: 500 14px var(--font-sans);
+    color: #7f1d1d; display: flex; align-items: flex-start;
+    gap: 8px; line-height: 1.5;
+  }
+  .emergency-card li::before { content: '🚨'; flex-shrink: 0; }
+
+  .info-card {
+    background: var(--blue-soft); border: 1px solid #bfdbfe;
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 14px;
+    font: 500 13px/1.6 var(--font-sans); color: #1e40af;
+  }
+  .info-card strong { color: #1e3a8a; }
+
+  .button-row {
+    display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap;
+  }
+  .button-row button {
+    flex: 1; min-width: 100px; padding: 10px 12px;
+    background: var(--surface); border: 1.5px solid var(--rule);
+    border-radius: 10px; font: 600 13px var(--font-sans);
+    color: var(--ink); cursor: pointer; transition: all 150ms;
+    font-family: var(--font-sans);
+  }
+  .button-row button:hover { border-color: var(--red); color: var(--red); }
+
+  .med-list { display: flex; flex-direction: column; gap: 8px; }
+  .med-item {
+    background: var(--surface); border: 1.5px solid var(--rule);
+    border-radius: 10px; padding: 12px 14px;
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer; transition: all 150ms;
+  }
+  .med-item:hover { border-color: var(--red); }
+  .med-item.checked { background: var(--green-soft); border-color: var(--green); }
+  .med-checkbox {
+    width: 24px; height: 24px; border-radius: 6px;
+    border: 2px solid var(--rule); display: flex;
+    align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 150ms;
+  }
+  .med-item.checked .med-checkbox {
+    background: var(--green); border-color: var(--green); color: white;
+  }
+  .med-name { flex: 1; font: 600 14px var(--font-sans); }
+  .med-time { font: 500 12px var(--font-mono); color: var(--ink-mute); }
+
+  .toast {
+    position: fixed; bottom: 20px; left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--ink); color: white;
+    padding: 12px 20px; border-radius: 999px;
+    font: 600 14px var(--font-sans);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transition: transform 300ms; z-index: 1000;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast.success { background: var(--green); }
+  .toast.error { background: var(--red); }
+
+  .loading-overlay {
+    position: fixed; inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: none; align-items: center; justify-content: center;
+    z-index: 9999; flex-direction: column; gap: 12px;
+  }
+  .loading-overlay.show { display: flex; }
+  .spinner {
+    width: 40px; height: 40px; border: 3px solid var(--rule);
+    border-top-color: var(--red); border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { font: 600 14px var(--font-sans); color: var(--ink); }
+
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5);
+    display: none; align-items: center; justify-content: center;
+    z-index: 9000; padding: 20px;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: var(--surface); border-radius: 20px;
+    padding: 28px 24px; max-width: 460px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+  }
+  .modal h2 {
+    font: 700 22px var(--font-sans); margin-bottom: 6px; color: var(--red);
+  }
+  .modal-subtitle {
+    color: var(--ink-mute); font: 500 14px var(--font-sans);
+    margin-bottom: 20px; line-height: 1.5;
+  }
+
+  .footer-note {
+    text-align: center; color: var(--ink-mute);
+    font: 400 12px var(--font-sans); padding: 20px 0; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loadingText">กำลังโหลด...</div>
+</div>
+
+<!-- REGISTRATION MODAL -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <h2>❤️ ยินดีต้อนรับ</h2>
+    <p class="modal-subtitle">กรอกข้อมูลเพียงครั้งแรก · ครั้งต่อไปไม่ต้องกรอกอีก</p>
+
+    <div class="input-group">
+      <label class="field-label">🐕 ชื่อน้องหมา <span style="color:var(--red);">*</span></label>
+      <input type="text" id="reg-petName" placeholder="เช่น ขนมหวาน" required />
+    </div>
+
+    <div class="input-group">
+      <label class="field-label">👤 ชื่อเจ้าของ <span style="color:var(--red);">*</span></label>
+      <input type="text" id="reg-ownerName" placeholder="ชื่อ-นามสกุล" required />
+    </div>
+
+    <div class="input-group">
+      <label class="field-label">📞 เบอร์โทรศัพท์ <span style="color:var(--red);">*</span></label>
+      <input type="tel" id="reg-phone" placeholder="เช่น 081-234-5678" required maxlength="20" />
+    </div>
+
+    <button class="btn-save" id="registerBtn">✨ เริ่มใช้งาน</button>
+
+    <p class="footer-note" style="padding: 16px 0 0;">
+      ข้อมูลเก็บอย่างปลอดภัย · ใช้สำหรับติดตามอาการของน้องหมา<br>
+      ไม่ต้องสร้างบัญชี · ไม่ต้องล็อกอิน
+    </p>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="container" id="mainApp" style="display: none;">
+
+  <div class="hero">
+    <h1>❤️ MMVD Self-Check</h1>
+    <p>บันทึกอาการสุนัขโรคหัวใจ ที่บ้านอย่างเป็นระบบ</p>
+    <div class="pet-info-card">
+      <span class="pet-icon">🐕</span>
+      <div class="pet-details">
+        <div class="pet-name" id="display-petName">—</div>
+        <div class="owner-info" id="display-ownerInfo">—</div>
+      </div>
+      <button class="change-btn" id="changeInfoBtn">แก้ไข</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="daily">📋 รายวัน</button>
+    <button class="tab" data-tab="weekly">📊 รายสัปดาห์</button>
+    <button class="tab" data-tab="history">📅 ประวัติ</button>
+    <button class="tab" data-tab="trends">📈 แนวโน้ม</button>
+    <button class="tab" data-tab="info">ℹ️ คู่มือ</button>
+  </div>
+
+  <!-- TAB: DAILY -->
+  <div class="tab-content active" id="tab-daily">
+
+    <div class="card">
+      <h2>📅 วันที่บันทึก</h2>
+      <input type="date" id="entryDate" />
+    </div>
+
+    <div class="card">
+      <h2>💤 อัตราการหายใจตอนหลับ (SRR)</h2>
+      <p class="hint">นับขณะหลับสนิท · นับ 15 วินาที × 4 = ครั้ง/นาที<br><strong>เป้าหมาย: &lt; 30 ครั้ง/นาที</strong></p>
+      <div class="input-with-unit">
+        <input type="number" id="srr" placeholder="เช่น 22" min="0" max="200" inputmode="numeric" />
+        <span class="unit">ครั้ง/นาที</span>
+      </div>
+      <div id="srrAlert"></div>
+    </div>
+
+    <div class="card">
+      <h2>🫁 ลักษณะการหายใจ</h2>
+      <div class="segmented" data-field="breathing">
+        <button class="seg-btn" data-value="normal"><span class="seg-emoji">😊</span><span class="seg-label">ปกติ</span></button>
+        <button class="seg-btn" data-value="effort"><span class="seg-emoji">😮‍💨</span><span class="seg-label">หายใจแรง</span></button>
+        <button class="seg-btn" data-value="open-mouth"><span class="seg-emoji">😱</span><span class="seg-label">อ้าปาก</span></button>
+        <button class="seg-btn" data-value="orthopnea"><span class="seg-emoji">🆘</span><span class="seg-label">นั่งหายใจ</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>😮‍💨 ไอ (วันนี้)</h2>
+      <div class="segmented" data-field="cough">
+        <button class="seg-btn" data-value="0"><span class="seg-emoji">✅</span><span class="seg-label">ไม่ไอ</span></button>
+        <button class="seg-btn" data-value="1-3"><span class="seg-emoji">🙂</span><span class="seg-label">1-3 ครั้ง</span></button>
+        <button class="seg-btn" data-value="4-10"><span class="seg-emoji">😟</span><span class="seg-label">4-10 ครั้ง</span></button>
+        <button class="seg-btn" data-value="10+"><span class="seg-emoji">😰</span><span class="seg-label">&gt;10 ครั้ง</span></button>
+      </div>
+      <p class="hint" style="margin-top: 12px;">ไอตอนกลางคืน · ตื่นเต้น · นอน → cardiac sign</p>
+    </div>
+
+    <div class="card">
+      <h2>🍽️ การกินอาหาร</h2>
+      <div class="segmented" data-field="appetite">
+        <button class="seg-btn" data-value="100"><span class="seg-emoji">😋</span><span class="seg-label">กินครบ 100%</span></button>
+        <button class="seg-btn" data-value="75"><span class="seg-emoji">🙂</span><span class="seg-label">กิน ~75%</span></button>
+        <button class="seg-btn" data-value="50"><span class="seg-emoji">😐</span><span class="seg-label">กิน ~50%</span></button>
+        <button class="seg-btn" data-value="25"><span class="seg-emoji">😟</span><span class="seg-label">กิน &lt;25%</span></button>
+        <button class="seg-btn" data-value="0"><span class="seg-emoji">😨</span><span class="seg-label">ไม่กินเลย</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>⚡ ระดับพลังงาน</h2>
+      <div class="segmented" data-field="energy">
+        <button class="seg-btn" data-value="excellent"><span class="seg-emoji">🤸</span><span class="seg-label">สดใส</span></button>
+        <button class="seg-btn" data-value="normal"><span class="seg-emoji">🐕</span><span class="seg-label">ปกติ</span></button>
+        <button class="seg-btn" data-value="tired"><span class="seg-emoji">😴</span><span class="seg-label">เหนื่อยง่าย</span></button>
+        <button class="seg-btn" data-value="lethargic"><span class="seg-emoji">😪</span><span class="seg-label">ซึม นอนทั้งวัน</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>😵 หมดสติ / เป็นลม</h2>
+      <div class="segmented" data-field="syncope">
+        <button class="seg-btn" data-value="0"><span class="seg-emoji">✅</span><span class="seg-label">ไม่มี</span></button>
+        <button class="seg-btn" data-value="1"><span class="seg-emoji">⚠️</span><span class="seg-label">1 ครั้ง</span></button>
+        <button class="seg-btn" data-value="2+"><span class="seg-emoji">🚨</span><span class="seg-label">≥ 2 ครั้ง</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>👅 สีเหงือก</h2>
+      <p class="hint">กดเหงือก 2 วินาที · ปล่อย · ดูสี</p>
+      <div class="segmented" data-field="gumColor">
+        <button class="seg-btn" data-value="pink"><span class="seg-emoji">🩷</span><span class="seg-label">ชมพูสด</span></button>
+        <button class="seg-btn" data-value="pale"><span class="seg-emoji">🤍</span><span class="seg-label">ซีด</span></button>
+        <button class="seg-btn" data-value="cyanotic"><span class="seg-emoji">💜</span><span class="seg-label">ม่วง/น้ำเงิน</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💊 ให้ยาวันนี้</h2>
+      <p class="hint">เช็คเมื่อให้ยาแล้ว</p>
+      <div class="med-list" id="medList"></div>
+      <button class="btn-save btn-secondary" id="addMedBtn" style="margin-top: 12px;">+ เพิ่มยา</button>
+    </div>
+
+    <div class="card">
+      <h2>📝 หมายเหตุ</h2>
+      <textarea id="notes" placeholder="อาการอื่นๆ ที่สังเกต..." rows="3"></textarea>
+    </div>
+
+    <button class="btn-save" id="saveDailyBtn">💾 บันทึกข้อมูลวันนี้</button>
+
+  </div>
+
+  <!-- TAB: WEEKLY -->
+  <div class="tab-content" id="tab-weekly">
+    <div class="info-card">
+      <strong>📊 บันทึกรายสัปดาห์</strong> — ชั่งน้ำหนัก + วัดรอบเอวสัปดาห์ละครั้ง · เวลาเดียวกัน · เครื่องชั่งเดียวกัน
+    </div>
+
+    <div class="card">
+      <h2>📅 วันที่</h2>
+      <input type="date" id="weeklyDate" />
+    </div>
+
+    <div class="card">
+      <h2>⚖️ น้ำหนัก</h2>
+      <p class="hint">ชั่งตอนเช้าก่อนอาหาร · เครื่องชั่งเดียวกัน</p>
+      <div class="input-with-unit">
+        <input type="number" id="weight" placeholder="เช่น 5.2" step="0.01" inputmode="decimal" />
+        <span class="unit">กก.</span>
+      </div>
+      <div id="weightAlert"></div>
+    </div>
+
+    <div class="card">
+      <h2>📏 รอบเอว</h2>
+      <p class="hint">วัดรอบที่กว้างที่สุดของท้อง · ใช้สายวัดผ้า<br>ติดตามการเพิ่มขึ้น = ascites</p>
+      <div class="input-with-unit">
+        <input type="number" id="abdomen" placeholder="เช่น 42" step="0.1" inputmode="decimal" />
+        <span class="unit">ซม.</span>
+      </div>
+    </div>
+
+    <button class="btn-save" id="saveWeeklyBtn">💾 บันทึกรายสัปดาห์</button>
+  </div>
+
+  <!-- TAB: HISTORY -->
+  <div class="tab-content" id="tab-history">
+    <div class="button-row">
+      <button id="exportCsvBtn">📥 Export CSV</button>
+      <button id="copyForVetBtn">📋 Copy ส่งให้คุณหมอ</button>
+      <button id="refreshBtn">🔄 รีเฟรช</button>
+    </div>
+    <div id="historyList"></div>
+  </div>
+
+  <!-- TAB: TRENDS -->
+  <div class="tab-content" id="tab-trends">
+    <div class="info-card">
+      <strong>📈 กราฟแนวโน้ม</strong> — ดู SRR + น้ำหนักเปลี่ยนแปลงตามเวลา · ช่วยเห็น progression ก่อน decompensation
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">
+        <span>💤 SRR Trend (30 วันล่าสุด)</span>
+        <span style="font: 500 12px var(--font-mono); color: var(--red);">เป้าหมาย &lt; 30</span>
+      </div>
+      <svg class="chart" id="srrChart"></svg>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">
+        <span>⚖️ Weight Trend (12 สัปดาห์ล่าสุด)</span>
+      </div>
+      <svg class="chart" id="weightChart"></svg>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">
+        <span>📊 สถิติ 7 วันล่าสุด</span>
+      </div>
+      <div id="weeklyStats"></div>
+    </div>
+  </div>
+
+  <!-- TAB: INFO -->
+  <div class="tab-content" id="tab-info">
+    <div class="emergency-card">
+      <h3>🚨 อาการเรียกหมอด่วน!</h3>
+      <ul>
+        <li>SRR &gt; 40 ครั้ง/นาที</li>
+        <li>หายใจอ้าปาก ตอนพัก</li>
+        <li>เหงือกม่วง / น้ำเงิน</li>
+        <li>ฟองสีชมพูจากปาก/จมูก</li>
+        <li>หมดสติ &gt; 1 ครั้ง/วัน</li>
+        <li>ไม่กินอาหาร + ซึม &gt; 24 ชม.</li>
+        <li>ท้องโตขึ้นเร็ว · บวมที่ขา</li>
+        <li>ไอเป็นชุด หยุดไม่ได้</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💤 SRR — Sleeping Respiratory Rate</h2>
+      <p style="font-size: 14px; line-height: 1.7;">
+        <strong>วิธีนับ:</strong><br>
+        1. รอน้องหมาหลับสนิท (ไม่ฝันร้าย/ขยับ)<br>
+        2. มอง <strong>หน้าอก</strong> ขึ้น-ลง · นับ 1 รอบขึ้น-ลง = 1 ครั้ง<br>
+        3. นับ 15 วินาที × 4 = ครั้ง/นาที<br>
+        <br>
+        <strong>เกณฑ์:</strong><br>
+        • &lt; 30 ครั้ง/นาที = ปกติ ✅<br>
+        • 30-40 = เริ่มน่ากังวล ⚠️ (ติดต่อคลินิก)<br>
+        • &gt; 40 = decompensation 🚨 (เรียกด่วน!)
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🫁 ลักษณะการหายใจ</h2>
+      <p style="font-size: 14px; line-height: 1.7;">
+        <strong>ปกติ:</strong> หายใจเงียบๆ · หน้าอกขึ้น-ลงเล็กๆ<br>
+        <strong>หายใจแรง:</strong> ใช้ท้องช่วย · หน้าอกขยับมาก<br>
+        <strong>อ้าปาก:</strong> ⚠️ หมาหายใจอ้าปากตอนพัก = ไม่ปกติ · เหนื่อย/CHF<br>
+        <strong>นั่งหายใจ:</strong> 🚨 ไม่ยอมนอน · ยืน/นั่งเท่านั้น = severe CHF
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>👅 ตรวจสีเหงือก + CRT</h2>
+      <p style="font-size: 14px; line-height: 1.7;">
+        <strong>วิธีตรวจ:</strong><br>
+        1. ยกริมฝีปากบนน้องหมา<br>
+        2. กดที่เหงือก (เหนือเขี้ยว) 2 วินาที<br>
+        3. ปล่อย · ดูสีกลับมาในกี่วินาที<br>
+        <br>
+        <strong>ปกติ:</strong> สีกลับใน &lt; 2 วินาที · เหงือกชมพูสด<br>
+        <strong>ผิดปกติ:</strong> CRT &gt; 2 วินาที · ซีด/ม่วง = poor perfusion
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>💊 หลักการให้ยา MMVD</h2>
+      <p style="font-size: 14px; line-height: 1.7;">
+        • <strong>Pimobendan</strong> — ก่อนอาหาร 1 ชั่วโมง<br>
+        • <strong>Furosemide</strong> — ทุก 8-12 ชั่วโมง · เตรียมน้ำให้ดื่ม<br>
+        • <strong>ACEi</strong> — เวลาเดียวกันทุกวัน<br>
+        • <strong>Spironolactone</strong> — กับอาหาร<br>
+        <br>
+        ⚠️ <strong>ห้าม NSAIDs!</strong> (เช่น ibuprofen, aspirin)
+      </p>
+    </div>
+
+    <div class="footer-note">
+      เครื่องมือนี้เป็นเพียงตัวช่วยเฝ้าระวัง<br>
+      ไม่ใช่การวินิจฉัย/รักษาทางการแพทย์<br>
+      หากกังวลอาการ ติดต่อสัตวแพทย์ทันที
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="mmvd-self-check.js"></script>
+
+</body>
+</html>

@@ -268,3 +268,95 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- รันด้วยมือ: SELECT cleanup_old_quiz_sessions();
+
+
+-- ╔═══════════════════════════════════════════════════════════════════╗
+-- ║  9. MMVD SELF-CHECK (Owner home monitoring tool)                  ║
+-- ║     Public access — pet_id is the "key" per pet                   ║
+-- ╚═══════════════════════════════════════════════════════════════════╝
+
+-- Pets registry
+CREATE TABLE IF NOT EXISTS mmvd_pets (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  pet_name TEXT NOT NULL,
+  owner_name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  meds JSONB DEFAULT '[]'::jsonb,  -- [{ id, name, time }]
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_mmvd_pets_phone ON mmvd_pets(phone);
+CREATE INDEX IF NOT EXISTS idx_mmvd_pets_created ON mmvd_pets(created_at DESC);
+
+-- Daily entries
+CREATE TABLE IF NOT EXISTS mmvd_daily (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  pet_id UUID NOT NULL REFERENCES mmvd_pets(id) ON DELETE CASCADE,
+  entry_date DATE NOT NULL,
+  srr INTEGER,
+  breathing TEXT,
+  cough TEXT,
+  appetite TEXT,
+  energy TEXT,
+  syncope TEXT,
+  gum_color TEXT,
+  notes TEXT,
+  meds_taken JSONB DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(pet_id, entry_date)
+);
+
+CREATE INDEX IF NOT EXISTS idx_mmvd_daily_pet ON mmvd_daily(pet_id);
+CREATE INDEX IF NOT EXISTS idx_mmvd_daily_date ON mmvd_daily(entry_date DESC);
+CREATE INDEX IF NOT EXISTS idx_mmvd_daily_pet_date ON mmvd_daily(pet_id, entry_date DESC);
+
+-- Weekly entries
+CREATE TABLE IF NOT EXISTS mmvd_weekly (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  pet_id UUID NOT NULL REFERENCES mmvd_pets(id) ON DELETE CASCADE,
+  entry_date DATE NOT NULL,
+  weight NUMERIC(5, 2),
+  abdomen NUMERIC(5, 1),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(pet_id, entry_date)
+);
+
+CREATE INDEX IF NOT EXISTS idx_mmvd_weekly_pet ON mmvd_weekly(pet_id);
+CREATE INDEX IF NOT EXISTS idx_mmvd_weekly_date ON mmvd_weekly(entry_date DESC);
+
+-- RLS — public access (pet_id is the secret)
+ALTER TABLE mmvd_pets ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mmvd_daily ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mmvd_weekly ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Public access mmvd_pets" ON mmvd_pets;
+DROP POLICY IF EXISTS "Public access mmvd_daily" ON mmvd_daily;
+DROP POLICY IF EXISTS "Public access mmvd_weekly" ON mmvd_weekly;
+
+CREATE POLICY "Public access mmvd_pets" ON mmvd_pets FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Public access mmvd_daily" ON mmvd_daily FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Public access mmvd_weekly" ON mmvd_weekly FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+
+GRANT ALL ON mmvd_pets TO anon, authenticated;
+GRANT ALL ON mmvd_daily TO anon, authenticated;
+GRANT ALL ON mmvd_weekly TO anon, authenticated;
+
+-- Updated_at triggers
+CREATE OR REPLACE FUNCTION update_mmvd_pets_updated_at() RETURNS trigger AS $$
+BEGIN NEW.updated_at = NOW(); RETURN NEW; END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trg_mmvd_pets_updated ON mmvd_pets;
+CREATE TRIGGER trg_mmvd_pets_updated BEFORE UPDATE ON mmvd_pets
+  FOR EACH ROW EXECUTE FUNCTION update_mmvd_pets_updated_at();
+
+DROP TRIGGER IF EXISTS trg_mmvd_daily_updated ON mmvd_daily;
+CREATE TRIGGER trg_mmvd_daily_updated BEFORE UPDATE ON mmvd_daily
+  FOR EACH ROW EXECUTE FUNCTION update_mmvd_pets_updated_at();
+
+DROP TRIGGER IF EXISTS trg_mmvd_weekly_updated ON mmvd_weekly;
+CREATE TRIGGER trg_mmvd_weekly_updated BEFORE UPDATE ON mmvd_weekly
+  FOR EACH ROW EXECUTE FUNCTION update_mmvd_pets_updated_at();

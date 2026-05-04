@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260501av">
+  <link rel="stylesheet" href="style.css?v=20260501aw">
 
   <!-- Supabase JS v2 — pinned + dual CDN with fallback -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"
@@ -89,7 +89,7 @@
 
     <div class="section-label">
       <span class="lbl">เมนูในห้อง</span>
-      <span class="count">4 หมวด</span>
+      <span class="count">5 หมวด</span>
     </div>
 
     <!-- SUB-MENU GRID --------------------------------------------- -->
@@ -147,6 +147,23 @@
         </span>
       </a>
 
+      <!-- MMVD Patients (admin view) -->
+      <a class="card c1" href="mmvd-admin.html" aria-label="MMVD Patients">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </span>
+        <span class="card-body">
+          <span class="card-title">MMVD Patients</span>
+          <span class="card-desc">ดูข้อมูล follow-up หมาโรคหัวใจ · SRR trends · ประวัติเจ้าของ</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </a>
+
       <!-- รายการรอจัดซื้อ -->
       <a class="card c2" href="shopping.html" aria-label="รายการรอจัดซื้อ">
         <span class="card-icon">
@@ -180,6 +197,6 @@
 
   </div>
 
-  <script src="auth.js?v=20260501av"></script>
+  <script src="auth.js?v=20260501aw"></script>
 </body>
 </html>
