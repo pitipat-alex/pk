@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>คู่มือใช้งาน MMVD Self-Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f5f3ee;
+    font-family: 'Sarabun', sans-serif;
+    color: #1a1a1a;
+    padding: 20px 16px;
+    line-height: 1.5;
+  }
+  
+  .poster {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+    padding: 36px 32px 28px;
+    border-bottom: 3px solid #dc2626;
+    text-align: center;
+    position: relative;
+  }
+  .header::before {
+    content: '❤️';
+    font-size: 48px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #dc2626;
+    margin-bottom: 6px;
+  }
+  .header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+  }
+  .header .url {
+    margin-top: 16px;
+    background: white;
+    border: 2px dashed #dc2626;
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #dc2626;
+    font-weight: 600;
+  }
+  
+  /* Section title */
+  .section-title {
+    background: #1a1a1a;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .section-title .num {
+    background: #dc2626;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  
+  /* Step card */
+  .steps {
+    padding: 24px 32px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 24px;
+    margin-bottom: 28px;
+    align-items: center;
+  }
+  .step:nth-child(even) {
+    grid-template-columns: 280px 1fr;
+  }
+  .step:nth-child(even) .step-text {
+    order: 2;
+  }
+  .step:nth-child(even) .step-mockup {
+    order: 1;
+  }
+  
+  .step-text {
+    padding: 18px;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .step-num .dot {
+    width: 24px;
+    height: 24px;
+    background: #dc2626;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .step-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+  .step-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .step-tip {
+    margin-top: 10px;
+    background: #f0fdf4;
+    border-left: 3px solid #16a34a;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #15803d;
+  }
+  
+  /* Phone mockup */
+  .phone {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    aspect-ratio: 9/16;
+    max-height: 460px;
+  }
+  .phone-screen {
+    background: #f7f5f2;
+    border-radius: 18px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    font-size: 11px;
+  }
+  
+  /* Mockup elements */
+  .m-hero {
+    background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e1db;
+  }
+  .m-hero-title {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .m-hero-sub {
+    color: #888;
+    font-size: 9px;
+  }
+  .m-modal {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .m-modal h3 {
+    color: #dc2626;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .m-modal-sub {
+    color: #888;
+    font-size: 9px;
+    margin-bottom: 12px;
+  }
+  .m-input {
+    background: #f7f5f2;
+    border: 1.5px solid #e5e1db;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    color: #888;
+  }
+  .m-input.filled {
+    background: white;
+    border-color: #dc2626;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+  .m-input-label {
+    font-size: 9px;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 3px;
+    margin-top: 4px;
+  }
+  .m-btn {
+    background: #dc2626;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 6px;
+    box-shadow: 0 3px 8px rgba(220, 38, 38, 0.3);
+  }
+  .m-card {
+    background: white;
+    border: 1px solid #e5e1db;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 6px;
+  }
+  .m-card h4 {
+    font-size: 11px;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .m-segments {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .m-seg {
+    background: #f7f5f2;
+    border: 1.5px solid #e5e1db;
+    border-radius: 8px;
+    padding: 6px 2px;
+    text-align: center;
+    font-size: 9px;
+  }
+  .m-seg.active {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+  }
+  .m-seg-emoji {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .m-pet-info {
+    background: white;
+    border-radius: 10px;
+    padding: 8px 10px;
+    border: 1px solid #e5e1db;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .m-pet-icon { font-size: 22px; }
+  .m-pet-name {
+    font-weight: 700;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .m-pet-arrow {
+    font-size: 8px;
+    color: #888;
+  }
+  .m-pet-owner {
+    font-size: 9px;
+    color: #888;
+  }
+  .m-tabs {
+    display: flex;
+    gap: 2px;
+    background: white;
+    border: 1px solid #e5e1db;
+    border-radius: 8px;
+    padding: 2px;
+    margin-bottom: 6px;
+  }
+  .m-tab {
+    flex: 1;
+    text-align: center;
+    padding: 5px 2px;
+    font-size: 9px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #888;
+  }
+  .m-tab.active {
+    background: #dc2626;
+    color: white;
+  }
+  .m-srr {
+    font-size: 28px;
+    font-weight: 800;
+    color: #16a34a;
+    text-align: center;
+    margin: 4px 0;
+  }
+  .m-alert {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 9px;
+    text-align: center;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .m-dropdown {
+    background: white;
+    border: 1px solid #e5e1db;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 4px;
+    overflow: hidden;
+  }
+  .m-dropdown-item {
+    padding: 8px 10px;
+    font-size: 10px;
+    border-bottom: 1px solid #f0eee8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .m-dropdown-item:last-child { border-bottom: none; }
+  .m-dropdown-item.current {
+    background: #fef2f2;
+    color: #dc2626;
+    font-weight: 700;
+  }
+  .m-dropdown-item.add-new {
+    background: #fef2f2;
+    color: #dc2626;
+    font-weight: 700;
+    border-top: 2px solid #e5e1db;
+  }
+  
+  /* Annotation arrows */
+  .arrow-callout {
+    position: absolute;
+    background: #dc2626;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  
+  /* Daily entry checklist */
+  .checklist {
+    padding: 24px 32px;
+    background: #fef2f2;
+  }
+  .checklist h3 {
+    color: #dc2626;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .check-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .check-item {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid #fecaca;
+  }
+  .check-item .icon {
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .check-item .text {
+    flex: 1;
+  }
+  .check-item .text-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .check-item .text-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Emergency */
+  .emergency {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    padding: 24px 32px;
+    border-top: 3px solid #dc2626;
+    border-bottom: 3px solid #dc2626;
+  }
+  .emergency h3 {
+    color: #dc2626;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .em-item {
+    background: white;
+    border: 2px solid #dc2626;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #7f1d1d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .em-item .em-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 24px 32px;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+  }
+  .footer h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #fbbf24;
+  }
+  .footer p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .footer .url-big {
+    background: white;
+    color: #dc2626;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin-top: 14px;
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  /* Print styles */
+  @media print {
+    body { background: white; padding: 0; }
+    .poster { box-shadow: none; }
+    .step { page-break-inside: avoid; }
+    .checklist, .emergency { page-break-inside: avoid; }
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .step,
+    .step:nth-child(even) {
+      grid-template-columns: 1fr;
+    }
+    .step:nth-child(even) .step-text { order: 1; }
+    .step:nth-child(even) .step-mockup { order: 2; }
+    .step-mockup { max-width: 280px; margin: 0 auto; }
+    .check-grid, .emergency-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div style="font-size: 13px; color: #dc2626; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">🏥 คลินิกรักษาสัตว์หมอปิติพัฒน์</div>
+    <h1>คู่มือใช้งาน MMVD Self-Check</h1>
+    <h2>📱 บันทึกอาการน้องหมา-โรคหัวใจ ที่บ้าน</h2>
+    <div class="url">pitipat-alex.github.io/pk/mmvd-self-check.html</div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 1: REGISTRATION -->
+  <!-- ============================================ -->
+  <div class="section-title">
+    <span class="num">A</span>
+    <span>ลงทะเบียนครั้งแรก</span>
+  </div>
+
+  <div class="steps">
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">1</span> ขั้นที่ 1</div>
+        <div class="step-title">เปิดเว็บไซต์</div>
+        <div class="step-desc">
+          พิมพ์ URL ในเบราว์เซอร์ (Chrome / Safari):<br>
+          <strong style="color: #dc2626; font-family: monospace; font-size: 13px;">pitipat-alex.github.io/pk/mmvd-self-check.html</strong>
+        </div>
+        <div class="step-tip">💡 แนะนำ: บันทึกหน้าเว็บไว้ใน Bookmark เพื่อเปิดง่ายๆ ครั้งต่อไป</div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div style="background: white; border-radius: 6px; padding: 4px 8px; font-size: 9px; color: #888; margin-bottom: 8px; border: 1px solid #ddd;">
+              🌐 pitipat-alex.github.io/pk/mmvd-self-check.html
+            </div>
+            <div style="text-align: center; padding: 60px 0;">
+              <div style="font-size: 40px; margin-bottom: 8px;">❤️</div>
+              <div style="font-weight: 700; color: #dc2626; font-size: 14px;">MMVD Self-Check</div>
+              <div style="color: #888; font-size: 9px; margin-top: 4px;">กำลังโหลด...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">2</span> ขั้นที่ 2</div>
+        <div class="step-title">กรอกข้อมูล (ครั้งแรกครั้งเดียว)</div>
+        <div class="step-desc">
+          ระบบจะแสดงหน้าลงทะเบียน · กรอก:<br>
+          <strong>🐕 ชื่อน้องหมา</strong> (เช่น ขนมหวาน)<br>
+          <strong>👤 ชื่อเจ้าของ</strong> (ชื่อ-นามสกุล)<br>
+          <strong>📞 เบอร์โทรศัพท์</strong>
+        </div>
+        <div class="step-tip">💡 กรอกครั้งเดียวพอ · ครั้งต่อไปไม่ต้องกรอกอีก</div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-modal">
+              <h3>❤️ ยินดีต้อนรับ</h3>
+              <div class="m-modal-sub">กรอกข้อมูลเพียงครั้งแรก</div>
+              <div class="m-input-label">🐕 ชื่อน้องหมา *</div>
+              <div class="m-input filled">ขนมหวาน</div>
+              <div class="m-input-label">👤 ชื่อเจ้าของ *</div>
+              <div class="m-input filled">คุณสมชาย ใจดี</div>
+              <div class="m-input-label">📞 เบอร์โทร *</div>
+              <div class="m-input filled">081-234-5678</div>
+              <div class="m-btn">✨ เริ่มใช้งาน</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">3</span> ขั้นที่ 3</div>
+        <div class="step-title">เริ่มบันทึกได้เลย!</div>
+        <div class="step-desc">
+          เมื่อกด "เริ่มใช้งาน" ระบบจะไปที่หน้าหลัก<br>
+          เห็นชื่อน้องหมาด้านบน · มี 5 แท็บให้บันทึก
+        </div>
+        <div class="step-tip">✅ ครั้งต่อไปเปิดมา · ไม่ต้องลงทะเบียนใหม่ · เข้าหน้าหลักเลย</div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-hero">
+              <div class="m-hero-title">❤️ MMVD Self-Check</div>
+              <div class="m-hero-sub">บันทึกอาการน้องหมา-โรคหัวใจ</div>
+              <div class="m-pet-info">
+                <span class="m-pet-icon">🐕</span>
+                <div style="flex: 1;">
+                  <div class="m-pet-name">ขนมหวาน <span class="m-pet-arrow">+</span></div>
+                  <div class="m-pet-owner">คุณสมชาย · 081-234-5678</div>
+                </div>
+              </div>
+            </div>
+            <div class="m-tabs">
+              <div class="m-tab active">📋 รายวัน</div>
+              <div class="m-tab">📊 สัปดาห์</div>
+              <div class="m-tab">📅 ประวัติ</div>
+              <div class="m-tab">📈 แนวโน้ม</div>
+            </div>
+            <div class="m-card">
+              <h4>💤 SRR</h4>
+              <div class="m-srr">22</div>
+              <div class="m-alert">✅ ปกติ &lt; 30/นาที</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 2: DAILY USAGE -->
+  <!-- ============================================ -->
+  <div class="section-title">
+    <span class="num">B</span>
+    <span>การบันทึกประจำวัน</span>
+  </div>
+
+  <div class="steps">
+
+    <!-- Step 4 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">4</span> ขั้นที่ 4</div>
+        <div class="step-title">นับ SRR ตอนน้องหลับ</div>
+        <div class="step-desc">
+          <strong>SRR = Sleeping Respiratory Rate</strong> (อัตราการหายใจตอนหลับ)<br>
+          <br>
+          <strong>วิธีนับ:</strong><br>
+          1. รอน้องหลับสนิท (ไม่ฝัน · ไม่ขยับ)<br>
+          2. มองหน้าอกขึ้น-ลง · 1 รอบ = 1 ครั้ง<br>
+          3. นับ <strong>15 วินาที × 4</strong> = ครั้ง/นาที<br>
+          <br>
+          <strong>เกณฑ์:</strong><br>
+          🟢 &lt; 30 = ปกติ<br>
+          🟡 30-40 = น่ากังวล (ติดต่อคลินิก)<br>
+          🔴 &gt; 40 = ฉุกเฉิน (เรียกหมอด่วน!)
+        </div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-card">
+              <h4>💤 SRR (อัตราการหายใจตอนหลับ)</h4>
+              <div style="font-size: 9px; color: #888; margin-bottom: 6px;">นับ 15 วินาที × 4</div>
+              <div style="background: white; border: 1.5px solid #dc2626; border-radius: 8px; padding: 10px; text-align: center;">
+                <div style="font-size: 24px; font-weight: 800; color: #1a1a1a;">22</div>
+                <div style="font-size: 9px; color: #888;">ครั้ง/นาที</div>
+              </div>
+              <div class="m-alert" style="margin-top: 6px;">✅ ปกติ — SRR &lt; 30</div>
+            </div>
+            <div class="m-card">
+              <h4>🫁 ลักษณะการหายใจ</h4>
+              <div class="m-segments">
+                <div class="m-seg active"><span class="m-seg-emoji">😊</span>ปกติ</div>
+                <div class="m-seg"><span class="m-seg-emoji">😮‍💨</span>หายใจแรง</div>
+                <div class="m-seg"><span class="m-seg-emoji">😱</span>อ้าปาก</div>
+                <div class="m-seg"><span class="m-seg-emoji">🆘</span>นั่งหายใจ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">5</span> ขั้นที่ 5</div>
+        <div class="step-title">เลือกอาการอื่นๆ · กดปุ่มที่ตรงกับน้อง</div>
+        <div class="step-desc">
+          แต่ละหัวข้อมี <strong>ปุ่มให้กด</strong> · ไม่ต้องพิมพ์<br>
+          เลือกที่ตรงกับน้องในวันนี้:<br>
+          <br>
+          <strong>😮‍💨 ไอ</strong> — ไม่ไอ / 1-3 / 4-10 / &gt;10<br>
+          <strong>🍽️ การกิน</strong> — 100% / 75% / 50% / &lt;25% / 0%<br>
+          <strong>⚡ พลังงาน</strong> — สดใส / ปกติ / เหนื่อย / ซึม<br>
+          <strong>😵 หมดสติ</strong> — ไม่มี / 1 / ≥2 ครั้ง<br>
+          <strong>👅 สีเหงือก</strong> — ชมพู / ซีด / ม่วง
+        </div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-card">
+              <h4>😮‍💨 ไอ (วันนี้)</h4>
+              <div class="m-segments">
+                <div class="m-seg active"><span class="m-seg-emoji">✅</span>ไม่ไอ</div>
+                <div class="m-seg"><span class="m-seg-emoji">🙂</span>1-3</div>
+                <div class="m-seg"><span class="m-seg-emoji">😟</span>4-10</div>
+                <div class="m-seg"><span class="m-seg-emoji">😰</span>&gt;10</div>
+              </div>
+            </div>
+            <div class="m-card">
+              <h4>🍽️ การกินอาหาร</h4>
+              <div class="m-segments" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="m-seg active"><span class="m-seg-emoji">😋</span>100%</div>
+                <div class="m-seg"><span class="m-seg-emoji">🙂</span>75%</div>
+                <div class="m-seg"><span class="m-seg-emoji">😐</span>50%</div>
+                <div class="m-seg"><span class="m-seg-emoji">😟</span>&lt;25%</div>
+                <div class="m-seg"><span class="m-seg-emoji">😨</span>0%</div>
+              </div>
+            </div>
+            <div class="m-card">
+              <h4>⚡ พลังงาน</h4>
+              <div class="m-segments">
+                <div class="m-seg"><span class="m-seg-emoji">🤸</span>สดใส</div>
+                <div class="m-seg active"><span class="m-seg-emoji">🐕</span>ปกติ</div>
+                <div class="m-seg"><span class="m-seg-emoji">😴</span>เหนื่อย</div>
+                <div class="m-seg"><span class="m-seg-emoji">😪</span>ซึม</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">6</span> ขั้นที่ 6</div>
+        <div class="step-title">กดปุ่ม "บันทึก"</div>
+        <div class="step-desc">
+          เมื่อกรอกครบ → เลื่อนลงล่างสุด<br>
+          กดปุ่ม <strong style="color: #dc2626;">💾 บันทึกข้อมูลวันนี้</strong><br>
+          <br>
+          ระบบจะแสดง <strong>"✅ บันทึกข้อมูลเรียบร้อย"</strong>
+        </div>
+        <div class="step-tip">💡 ข้อมูลถูกส่งไปยังระบบ · คุณหมอจะดูได้</div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-card">
+              <h4>📝 หมายเหตุ</h4>
+              <div style="background: #f7f5f2; border: 1.5px solid #e5e1db; border-radius: 8px; padding: 8px; font-size: 9px; color: #888; min-height: 40px;">
+                อาการอื่นๆ ที่สังเกต...
+              </div>
+            </div>
+            <div class="m-btn" style="font-size: 13px; padding: 14px;">💾 บันทึกข้อมูลวันนี้</div>
+            <div style="margin-top: 30px;">
+              <div style="background: #16a34a; color: white; padding: 10px 16px; border-radius: 999px; text-align: center; font-size: 11px; font-weight: 700;">✅ บันทึกข้อมูลเรียบร้อย</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 3: MULTIPLE PETS -->
+  <!-- ============================================ -->
+  <div class="section-title">
+    <span class="num">C</span>
+    <span>ถ้ามีน้องหลายตัว</span>
+  </div>
+
+  <div class="steps">
+
+    <!-- Step 7 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">7</span> ขั้นที่ 7</div>
+        <div class="step-title">เพิ่มน้องตัวใหม่</div>
+        <div class="step-desc">
+          <strong>กดที่ชื่อน้องด้านบน</strong> (แถบสีแดงอ่อน) → ดรอปดาวน์เปิด<br>
+          <br>
+          คลิก <strong style="color: #dc2626;">"➕ เพิ่มน้องตัวใหม่"</strong><br>
+          กรอกแค่ <strong>ชื่อน้องตัวใหม่</strong><br>
+          (ข้อมูลเจ้าของใช้ของเดิม)
+        </div>
+        <div class="step-tip">💡 รองรับน้องได้ไม่จำกัด · แต่ละตัวเก็บข้อมูลแยกกัน</div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-hero">
+              <div class="m-pet-info">
+                <span class="m-pet-icon">🐕</span>
+                <div style="flex: 1;">
+                  <div class="m-pet-name">ขนมหวาน <span class="m-pet-arrow">▼</span></div>
+                  <div class="m-pet-owner">คุณสมชาย · 081-234-5678</div>
+                </div>
+              </div>
+              <div class="m-dropdown">
+                <div class="m-dropdown-item current">🐕 ขนมหวาน <span style="margin-left: auto; color: #dc2626;">✓</span></div>
+                <div class="m-dropdown-item">🐕 บราวนี่</div>
+                <div class="m-dropdown-item add-new">➕ เพิ่มน้องตัวใหม่</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="step">
+      <div class="step-text">
+        <div class="step-num"><span class="dot">8</span> ขั้นที่ 8</div>
+        <div class="step-title">สลับน้องที่จะบันทึก</div>
+        <div class="step-desc">
+          กดที่ชื่อน้องด้านบน → ดรอปดาวน์เปิด<br>
+          คลิกที่น้องที่ต้องการ<br>
+          <br>
+          ระบบจะ <strong>โหลดข้อมูลของน้องตัวนั้น</strong><br>
+          จากนั้นบันทึกตามขั้นตอน 4-6
+        </div>
+      </div>
+      <div class="step-mockup">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="m-modal">
+              <h3>🐕 เพิ่มน้องตัวใหม่</h3>
+              <div class="m-modal-sub">กรอกชื่อน้อง</div>
+              <div class="m-input-label">🐕 ชื่อน้องหมา *</div>
+              <div class="m-input filled">บราวนี่</div>
+              <div class="m-input-label">👤 เจ้าของ (ของเดิม)</div>
+              <div class="m-input">คุณสมชาย ใจดี</div>
+              <div class="m-input-label">📞 เบอร์โทร (ของเดิม)</div>
+              <div class="m-input">081-234-5678</div>
+              <div style="display: flex; gap: 6px; margin-top: 10px;">
+                <div style="flex: 1; background: white; border: 1.5px solid #ddd; border-radius: 8px; padding: 8px; text-align: center; font-size: 10px;">ยกเลิก</div>
+                <div style="flex: 2; background: #dc2626; color: white; border-radius: 8px; padding: 8px; text-align: center; font-size: 10px; font-weight: 700;">✨ เพิ่มน้อง</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================ -->
+  <!-- DAILY CHECKLIST -->
+  <!-- ============================================ -->
+  <div class="checklist">
+    <h3>📋 ทำทุกวัน · 5 นาที</h3>
+    <div class="check-grid">
+      <div class="check-item">
+        <span class="icon">💤</span>
+        <div class="text">
+          <div class="text-title">นับ SRR</div>
+          <div class="text-desc">ตอนน้องหลับสนิท · 15 วินาที × 4</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">🫁</span>
+        <div class="text">
+          <div class="text-title">ดูการหายใจ</div>
+          <div class="text-desc">ปกติ / แรง / อ้าปาก / นั่งหายใจ</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">😮‍💨</span>
+        <div class="text">
+          <div class="text-title">นับครั้งที่ไอ</div>
+          <div class="text-desc">เน้นช่วงกลางคืน · ตื่นเต้น</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">🍽️</span>
+        <div class="text">
+          <div class="text-title">การกิน</div>
+          <div class="text-desc">เปอร์เซ็นต์เทียบกับปกติ</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">⚡</span>
+        <div class="text">
+          <div class="text-title">พลังงาน</div>
+          <div class="text-desc">สดใส / เหนื่อยง่าย / ซึม</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">😵</span>
+        <div class="text">
+          <div class="text-title">หมดสติ?</div>
+          <div class="text-desc">บันทึกทุกครั้งที่เกิด</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">👅</span>
+        <div class="text">
+          <div class="text-title">สีเหงือก</div>
+          <div class="text-desc">กดเหงือก 2 วินาที · ดูสี</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <span class="icon">⚖️</span>
+        <div class="text">
+          <div class="text-title">ชั่งน้ำหนัก (สัปดาห์ละครั้ง)</div>
+          <div class="text-desc">เช้า · ก่อนอาหาร · เครื่องชั่งเดียวกัน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- EMERGENCY -->
+  <!-- ============================================ -->
+  <div class="emergency">
+    <h3>🚨 อาการเรียกหมอด่วน!</h3>
+    <div class="emergency-grid">
+      <div class="em-item"><span class="em-icon">💤</span> SRR &gt; 40 ครั้ง/นาที</div>
+      <div class="em-item"><span class="em-icon">😱</span> หายใจอ้าปากตอนพัก</div>
+      <div class="em-item"><span class="em-icon">💜</span> เหงือกม่วง / น้ำเงิน</div>
+      <div class="em-item"><span class="em-icon">🩸</span> ฟองสีชมพูจากปาก</div>
+      <div class="em-item"><span class="em-icon">😵</span> หมดสติ &gt; 1 ครั้ง/วัน</div>
+      <div class="em-item"><span class="em-icon">😨</span> ไม่กิน + ซึม &gt; 24 ชม.</div>
+      <div class="em-item"><span class="em-icon">🤰</span> ท้องโตขึ้นเร็ว · บวมที่ขา</div>
+      <div class="em-item"><span class="em-icon">😮‍💨</span> ไอเป็นชุด · หยุดไม่ได้</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <h4>🏥 คลินิกรักษาสัตว์หมอปิติพัฒน์</h4>
+    <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; margin: 14px auto; max-width: 480px;">
+      <div style="font-size: 14px; font-weight: 700; color: #fbbf24; margin-bottom: 8px;">🕐 เวลาทำการ</div>
+      <div style="font-size: 14px; line-height: 1.7;">
+        จันทร์-ศุกร์: 17:00 - 20:00 น.<br>
+        อาทิตย์: 10:00 - 20:00 น.<br>
+        <span style="opacity: 0.7;">(หยุดทุกวันเสาร์)</span>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
+      <a href="tel:0855251545" style="background: white; color: #dc2626; padding: 10px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14px;">📞 085-525-1545</a>
+      <a href="https://line.me/R/ti/p/@771mzxdy" target="_blank" rel="noopener" style="background: #06c755; color: white; padding: 10px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14px;">💬 LINE @771mzxdy</a>
+    </div>
+    <p style="margin-top: 18px; opacity: 0.7; font-size: 12px;">เครื่องมือนี้เป็นเพียงตัวช่วยเฝ้าระวัง</p>
+    <p style="opacity: 0.7; font-size: 12px;">หากกังวลอาการ ติดต่อสัตวแพทย์ทันที</p>
+    <div class="url-big">pitipat-alex.github.io/pk/mmvd-self-check.html</div>
+  </div>
+
+</div>
+
+<!-- Print button -->
+<div style="text-align: center; margin: 24px 0; padding-bottom: 40px;">
+  <button onclick="window.print()" style="background: #dc2626; color: white; border: none; padding: 14px 28px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);">
+    🖨️ พิมพ์คู่มือ (Print)
+  </button>
+</div>
+
+</body>
+</html>

@@ -355,6 +355,89 @@
     text-align: center; color: var(--ink-mute);
     font: 400 12px var(--font-sans); padding: 20px 0; line-height: 1.6;
   }
+
+  /* Clinic info card */
+  .clinic-card {
+    background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+    border: 2px solid var(--red);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .clinic-card .clinic-name {
+    font: 700 18px var(--font-sans);
+    color: var(--red);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .clinic-card .clinic-hours {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    font: 500 13px/1.6 var(--font-sans);
+    color: var(--ink);
+  }
+  .clinic-card .clinic-hours strong {
+    color: var(--red);
+    font-weight: 700;
+  }
+  .clinic-card .clinic-contact {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .clinic-card .contact-btn {
+    background: white;
+    border: 1.5px solid var(--red);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font: 600 13px var(--font-sans);
+    color: var(--red);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 150ms;
+  }
+  .clinic-card .contact-btn:hover {
+    background: var(--red);
+    color: white;
+  }
+  .clinic-card .contact-btn.line {
+    background: #06c755;
+    border-color: #06c755;
+    color: white;
+  }
+  .clinic-card .contact-btn.line:hover {
+    background: #04a647;
+    border-color: #04a647;
+  }
+
+  /* Guide button */
+  .guide-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: white;
+    border: 2px solid var(--red);
+    border-radius: 12px;
+    color: var(--red);
+    font: 700 15px var(--font-sans);
+    text-decoration: none;
+    margin-top: 16px;
+    transition: all 180ms;
+    font-family: var(--font-sans);
+  }
+  .guide-link:hover {
+    background: var(--red);
+    color: white;
+  }
 </style>
 </head>
 <body>
@@ -675,6 +758,26 @@
         <br>
         ⚠️ <strong>ห้าม NSAIDs!</strong> (เช่น ibuprofen, aspirin)
       </p>
+    </div>
+
+    <a href="mmvd-guide.html" class="guide-link">
+      <span>📖</span>
+      <span>คู่มือการใช้งานแบบรูปภาพ</span>
+    </a>
+
+    <!-- Clinic info -->
+    <div class="clinic-card">
+      <div class="clinic-name">🏥 คลินิกรักษาสัตว์<br>หมอปิติพัฒน์</div>
+      <div class="clinic-hours">
+        <strong>🕐 เวลาทำการ</strong><br>
+        จันทร์-ศุกร์: 17:00 - 20:00 น.<br>
+        อาทิตย์: 10:00 - 20:00 น.<br>
+        <span style="color: var(--ink-mute);">(หยุดทุกวันเสาร์)</span>
+      </div>
+      <div class="clinic-contact">
+        <a href="tel:0855251545" class="contact-btn">📞 085-525-1545</a>
+        <a href="https://line.me/R/ti/p/@771mzxdy" target="_blank" rel="noopener" class="contact-btn line">💬 @771mzxdy</a>
+      </div>
     </div>
 
     <div class="footer-note">
