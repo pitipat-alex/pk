@@ -242,6 +242,7 @@
       <div class="detail-actions">
         <button id="exportPetCsvBtn">📥 Export CSV</button>
         <button id="copyDetailBtn">📋 Copy รายงาน</button>
+        <button class="danger" id="clearHistoryBtn">🧹 ล้างประวัติ</button>
         <button class="danger" id="deletePetBtn">🗑️ ลบเคส</button>
       </div>
 
@@ -306,7 +307,18 @@
     document.getElementById('closeDetailBtn').addEventListener('click', closeDetail);
     document.getElementById('exportPetCsvBtn').addEventListener('click', () => exportPetCsv(pet, dailyEntries, weeklyEntries));
     document.getElementById('copyDetailBtn').addEventListener('click', () => copyDetailReport(pet, combined));
+    document.getElementById('clearHistoryBtn').addEventListener('click', () => clearPetHistory(pet));
     document.getElementById('deletePetBtn').addEventListener('click', () => deletePet(pet));
+    
+    // Wire up per-entry delete buttons
+    document.querySelectorAll('.entry-delete-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const entryId = btn.dataset.entryId;
+        const entryKind = btn.dataset.entryKind;
+        await deleteEntry(pet.id, entryId, entryKind);
+      });
+    });
   }
 
   function entryDetailHtml(entry) {
@@ -334,7 +346,10 @@
     
     return `
       <div class="detail-entry">
-        <div class="detail-entry-date">${entry._kind === 'daily' ? '📋' : '📊'} ${dateStr}</div>
+        <div class="detail-entry-date">
+          <span>${entry._kind === 'daily' ? '📋' : '📊'} ${dateStr}</span>
+          <button class="entry-delete-btn" data-entry-id="${entry.id}" data-entry-kind="${entry._kind}" title="ลบรายการนี้">🗑️</button>
+        </div>
         <div class="detail-entry-stats">${stats.join('')}</div>
         ${entry.notes ? `<div class="detail-entry-note">📝 ${escapeHtml(entry.notes)}</div>` : ''}
       </div>
@@ -522,6 +537,61 @@
       document.execCommand('copy');
       document.body.removeChild(ta);
       showToast('✅ คัดลอกแล้ว');
+    }
+  }
+
+  // ============================================================
+  // Delete single entry
+  // ============================================================
+  async function deleteEntry(petId, entryId, entryKind) {
+    if (!confirm('ลบรายการนี้?')) return;
+    
+    try {
+      const table = entryKind === 'daily' ? 'mmvd_daily' : 'mmvd_weekly';
+      const { error } = await sb.from(table).delete().eq('id', entryId);
+      if (error) throw error;
+      
+      // Reload + re-render detail
+      await loadAll();
+      showPetDetail(petId);
+      showToast('✅ ลบรายการแล้ว');
+    } catch (e) {
+      console.error(e);
+      showToast('ลบไม่สำเร็จ', 'error');
+    }
+  }
+
+  // ============================================================
+  // Clear pet history (keep pet, delete all entries)
+  // ============================================================
+  async function clearPetHistory(pet) {
+    const dailyCount = allDaily.filter(d => d.pet_id === pet.id).length;
+    const weeklyCount = allWeekly.filter(w => w.pet_id === pet.id).length;
+    const total = dailyCount + weeklyCount;
+    
+    if (total === 0) {
+      showToast('ไม่มีประวัติให้ลบ', 'error');
+      return;
+    }
+    
+    if (!confirm(`⚠️ ล้างประวัติทั้งหมด ${total} รายการ ของ ${pet.pet_name}?\n(เก็บข้อมูลเจ้าของ · ลบเฉพาะบันทึกอาการ)`)) return;
+    if (!confirm('แน่ใจอีกครั้ง?')) return;
+    
+    try {
+      const [dRes, wRes] = await Promise.all([
+        sb.from('mmvd_daily').delete().eq('pet_id', pet.id),
+        sb.from('mmvd_weekly').delete().eq('pet_id', pet.id),
+      ]);
+      
+      if (dRes.error) throw dRes.error;
+      if (wRes.error) throw wRes.error;
+      
+      await loadAll();
+      showPetDetail(pet.id);
+      showToast(`✅ ล้างประวัติ ${total} รายการแล้ว`);
+    } catch (e) {
+      console.error(e);
+      showToast('ล้างประวัติไม่สำเร็จ', 'error');
     }
   }
 

@@ -298,6 +298,26 @@
       font: 700 13px var(--font-mono);
       color: var(--red);
       margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .entry-delete-btn {
+      background: transparent;
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 150ms;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+    .entry-delete-btn:hover {
+      opacity: 1;
+      background: var(--red-soft);
+      border-color: var(--red);
     }
     .detail-entry-stats {
       display: flex;
