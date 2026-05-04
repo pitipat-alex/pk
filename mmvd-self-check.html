@@ -44,22 +44,75 @@
     background: white; border-radius: 12px; padding: 14px 16px;
     margin-top: 14px; border: 1px solid var(--rule);
     display: flex; align-items: center; gap: 10px;
+    position: relative;
   }
   .pet-info-card .pet-icon { font-size: 28px; }
-  .pet-info-card .pet-details { flex: 1; min-width: 0; }
+  .pet-info-card .pet-details { flex: 1; min-width: 0; cursor: pointer; }
+  .pet-info-card .pet-details:hover .pet-name { color: var(--red); }
   .pet-info-card .pet-name {
     font: 700 15px var(--font-sans); color: var(--ink);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 150ms;
+  }
+  .pet-info-card .pet-name .switcher-arrow {
+    font-size: 11px; color: var(--ink-mute); flex-shrink: 0;
   }
   .pet-info-card .owner-info {
     font: 500 12px var(--font-sans); color: var(--ink-mute); margin-top: 2px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
   .pet-info-card .change-btn {
     background: transparent; border: 1px solid var(--rule);
     color: var(--ink-mute); border-radius: 8px; padding: 6px 10px;
     font: 600 11px var(--font-sans); cursor: pointer; flex-shrink: 0;
+    font-family: inherit;
   }
   .pet-info-card .change-btn:hover { color: var(--red); border-color: var(--red); }
+
+  /* Pet switcher dropdown */
+  .pet-switcher {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+  }
+  .pet-switcher.show { display: block; }
+  .pet-switcher-item {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 150ms;
+    border-bottom: 1px solid var(--rule);
+    font: 500 14px var(--font-sans);
+    color: var(--ink);
+  }
+  .pet-switcher-item:last-child { border-bottom: none; }
+  .pet-switcher-item:hover { background: var(--bg); }
+  .pet-switcher-item.current {
+    background: var(--red-soft);
+    font-weight: 700;
+  }
+  .pet-switcher-item .check {
+    margin-left: auto;
+    color: var(--red);
+    font-size: 14px;
+  }
+  .pet-switcher-item.add-new {
+    border-top: 2px solid var(--rule);
+    color: var(--red);
+    font-weight: 600;
+  }
+  .pet-switcher-item .pet-list-emoji { font-size: 18px; }
 
   .tabs {
     display: flex; gap: 4px; background: var(--surface);
@@ -341,6 +394,34 @@
   </div>
 </div>
 
+<!-- ADD NEW PET MODAL (มีน้องตัวใหม่) -->
+<div class="modal-overlay" id="addPetModal">
+  <div class="modal">
+    <h2>🐕 เพิ่มน้องตัวใหม่</h2>
+    <p class="modal-subtitle">กรอกชื่อน้อง · ข้อมูลเจ้าของจะใช้ของเดิม</p>
+
+    <div class="input-group">
+      <label class="field-label">🐕 ชื่อน้องหมา <span style="color:var(--red);">*</span></label>
+      <input type="text" id="addpet-petName" placeholder="เช่น บราวนี่" required />
+    </div>
+
+    <div class="input-group">
+      <label class="field-label">👤 เจ้าของ (ใช้ของน้องตัวอื่น)</label>
+      <input type="text" id="addpet-ownerName" disabled style="opacity:0.7;" />
+    </div>
+
+    <div class="input-group">
+      <label class="field-label">📞 เบอร์โทร (ใช้ของน้องตัวอื่น)</label>
+      <input type="tel" id="addpet-phone" disabled style="opacity:0.7;" />
+    </div>
+
+    <div style="display: flex; gap: 8px;">
+      <button class="btn-save btn-secondary" id="cancelAddPetBtn" style="flex: 1;">ยกเลิก</button>
+      <button class="btn-save" id="confirmAddPetBtn" style="flex: 2;">✨ เพิ่มน้อง</button>
+    </div>
+  </div>
+</div>
+
 <!-- MAIN APP -->
 <div class="container" id="mainApp" style="display: none;">
 
@@ -349,11 +430,16 @@
     <p>บันทึกอาการสุนัขโรคหัวใจ ที่บ้านอย่างเป็นระบบ</p>
     <div class="pet-info-card">
       <span class="pet-icon">🐕</span>
-      <div class="pet-details">
-        <div class="pet-name" id="display-petName">—</div>
+      <div class="pet-details" id="petDetailsToggle">
+        <div class="pet-name">
+          <span id="display-petName">—</span>
+          <span class="switcher-arrow" id="switcherArrow">▼</span>
+        </div>
         <div class="owner-info" id="display-ownerInfo">—</div>
       </div>
       <button class="change-btn" id="changeInfoBtn">แก้ไข</button>
+      <!-- Pet switcher dropdown -->
+      <div class="pet-switcher" id="petSwitcher"></div>
     </div>
   </div>
 

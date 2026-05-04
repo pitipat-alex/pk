@@ -8,10 +8,21 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const PET_ID_KEY = 'mmvd-pet-id';
+// ============================================================
+// LocalStorage keys (multi-pet support)
+// ============================================================
+// New format:
+//   mmvd-pet-ids: ["uuid1", "uuid2"]   ← array of all pets owned
+//   mmvd-current-pet-id: "uuid1"        ← which pet is currently active
+// Legacy:
+//   mmvd-pet-id: "uuid1"  ← old single-pet (auto-migrated)
+const PET_IDS_KEY = 'mmvd-pet-ids';
+const CURRENT_PET_KEY = 'mmvd-current-pet-id';
+const LEGACY_PET_ID_KEY = 'mmvd-pet-id';
 
-let petId = null;
-let petInfo = null;
+let petId = null;        // current active pet
+let petInfo = null;      // current pet info
+let allPets = [];        // all pets owned by this user (from localStorage IDs)
 let history = [];
 let weekly = [];
 let dailyForm = {};
@@ -46,32 +57,111 @@ function formatShortDate(dateStr) {
 }
 
 // ============================================================
+// LocalStorage helpers — multi-pet support
+// ============================================================
+function getPetIds() {
+  // Migration: check legacy single-pet key
+  const legacy = localStorage.getItem(LEGACY_PET_ID_KEY);
+  if (legacy) {
+    // Migrate to array format
+    localStorage.setItem(PET_IDS_KEY, JSON.stringify([legacy]));
+    localStorage.setItem(CURRENT_PET_KEY, legacy);
+    localStorage.removeItem(LEGACY_PET_ID_KEY);
+    return [legacy];
+  }
+  
+  try {
+    const stored = localStorage.getItem(PET_IDS_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function savePetIds(ids) {
+  localStorage.setItem(PET_IDS_KEY, JSON.stringify(ids));
+}
+
+function getCurrentPetId() {
+  return localStorage.getItem(CURRENT_PET_KEY);
+}
+
+function setCurrentPetId(id) {
+  localStorage.setItem(CURRENT_PET_KEY, id);
+}
+
+function addPetIdToList(id) {
+  const ids = getPetIds();
+  if (!ids.includes(id)) {
+    ids.push(id);
+    savePetIds(ids);
+  }
+  setCurrentPetId(id);
+}
+
+function removePetIdFromList(id) {
+  const ids = getPetIds().filter(x => x !== id);
+  savePetIds(ids);
+  if (getCurrentPetId() === id) {
+    if (ids.length > 0) setCurrentPetId(ids[0]);
+    else localStorage.removeItem(CURRENT_PET_KEY);
+  }
+}
+
+// ============================================================
 // Init
 // ============================================================
 async function init() {
-  petId = localStorage.getItem(PET_ID_KEY);
+  const petIds = getPetIds();
 
-  if (!petId) {
+  if (petIds.length === 0) {
+    // First time ever — show registration
     document.getElementById('registerModal').classList.add('show');
     return;
   }
 
+  // Determine current pet
+  let currentId = getCurrentPetId();
+  if (!currentId || !petIds.includes(currentId)) {
+    currentId = petIds[0];
+    setCurrentPetId(currentId);
+  }
+
   showLoading('กำลังโหลดข้อมูล...');
   try {
-    const { data, error } = await sb
+    // Load all pets owned by this user
+    const { data: petsData, error: petsErr } = await sb
       .from('mmvd_pets')
       .select('*')
-      .eq('id', petId)
-      .single();
+      .in('id', petIds);
 
-    if (error || !data) {
-      localStorage.removeItem(PET_ID_KEY);
+    if (petsErr) throw petsErr;
+
+    if (!petsData || petsData.length === 0) {
+      // All pet_ids in localStorage are invalid — clear + re-register
+      localStorage.removeItem(PET_IDS_KEY);
+      localStorage.removeItem(CURRENT_PET_KEY);
       hideLoading();
       document.getElementById('registerModal').classList.add('show');
       return;
     }
 
-    petInfo = data;
+    allPets = petsData;
+    
+    // Filter out missing pets from localStorage
+    const validIds = petsData.map(p => p.id);
+    const cleanedIds = petIds.filter(id => validIds.includes(id));
+    if (cleanedIds.length !== petIds.length) {
+      savePetIds(cleanedIds);
+    }
+    if (!validIds.includes(currentId)) {
+      currentId = validIds[0];
+      setCurrentPetId(currentId);
+    }
+
+    petId = currentId;
+    petInfo = allPets.find(p => p.id === currentId);
+
     showMainApp();
     await loadEntries();
     hideLoading();
@@ -92,7 +182,119 @@ function showMainApp() {
 
   document.getElementById('entryDate').value = today;
   document.getElementById('weeklyDate').value = today;
+  
+  renderPetSwitcher();
 }
+
+function renderPetSwitcher() {
+  const switcher = document.getElementById('petSwitcher');
+  const arrow = document.getElementById('switcherArrow');
+  
+  // Hide arrow if only 1 pet
+  if (allPets.length <= 1) {
+    arrow.textContent = '+';
+    arrow.style.fontSize = '14px';
+  } else {
+    arrow.textContent = '▼';
+    arrow.style.fontSize = '11px';
+  }
+  
+  let html = '';
+  
+  // List all pets
+  allPets.forEach(pet => {
+    const isCurrent = pet.id === petId;
+    html += `
+      <div class="pet-switcher-item ${isCurrent ? 'current' : ''}" data-pet-id="${pet.id}">
+        <span class="pet-list-emoji">🐕</span>
+        <span>${escapeHtml(pet.pet_name)}</span>
+        ${isCurrent ? '<span class="check">✓</span>' : ''}
+      </div>
+    `;
+  });
+  
+  // Add new pet option
+  html += `
+    <div class="pet-switcher-item add-new" data-action="add-new">
+      <span class="pet-list-emoji">➕</span>
+      <span>เพิ่มน้องตัวใหม่</span>
+    </div>
+  `;
+  
+  switcher.innerHTML = html;
+  
+  // Wire up click handlers
+  switcher.querySelectorAll('[data-pet-id]').forEach(item => {
+    item.addEventListener('click', async () => {
+      const newId = item.dataset.petId;
+      switcher.classList.remove('show');
+      if (newId !== petId) {
+        await switchPet(newId);
+      }
+    });
+  });
+  
+  switcher.querySelector('[data-action="add-new"]').addEventListener('click', () => {
+    switcher.classList.remove('show');
+    openAddPetModal();
+  });
+}
+
+async function switchPet(newPetId) {
+  showLoading('กำลังเปลี่ยนน้อง...');
+  try {
+    const newPet = allPets.find(p => p.id === newPetId);
+    if (!newPet) throw new Error('ไม่พบข้อมูลน้อง');
+    
+    petId = newPetId;
+    petInfo = newPet;
+    setCurrentPetId(newPetId);
+    
+    document.getElementById('display-petName').textContent = petInfo.pet_name;
+    document.getElementById('display-ownerInfo').textContent = `${petInfo.owner_name} · ${petInfo.phone}`;
+    
+    await loadEntries();
+    
+    // Reset daily form state
+    dailyForm = {};
+    document.getElementById('srr').value = '';
+    document.getElementById('notes').value = '';
+    document.getElementById('srrAlert').innerHTML = '';
+    document.getElementById('weight').value = '';
+    document.getElementById('abdomen').value = '';
+    document.getElementById('weightAlert').innerHTML = '';
+    document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+    
+    renderPetSwitcher();
+    
+    // Re-render history/trends if currently on those tabs
+    const activeTab = document.querySelector('.tab.active')?.dataset.tab;
+    if (activeTab === 'history') renderHistory();
+    if (activeTab === 'trends') renderTrends();
+    
+    hideLoading();
+    showToast(`✅ สลับไป ${petInfo.pet_name}`, 'success');
+  } catch (e) {
+    console.error(e);
+    hideLoading();
+    showToast('สลับไม่สำเร็จ', 'error');
+  }
+}
+
+// Toggle pet switcher
+document.getElementById('petDetailsToggle').addEventListener('click', (e) => {
+  e.stopPropagation();
+  document.getElementById('petSwitcher').classList.toggle('show');
+});
+
+// Click outside to close
+document.addEventListener('click', (e) => {
+  const switcher = document.getElementById('petSwitcher');
+  const toggle = document.getElementById('petDetailsToggle');
+  if (switcher && !switcher.contains(e.target) && !toggle.contains(e.target)) {
+    switcher.classList.remove('show');
+  }
+});
 
 // ============================================================
 // Registration
@@ -130,7 +332,8 @@ document.getElementById('registerBtn').addEventListener('click', async () => {
 
     petId = data.id;
     petInfo = data;
-    localStorage.setItem(PET_ID_KEY, petId);
+    allPets = [data];
+    addPetIdToList(petId);
 
     showMainApp();
     await loadEntries();
@@ -145,7 +348,7 @@ document.getElementById('registerBtn').addEventListener('click', async () => {
 });
 
 // ============================================================
-// Change pet info
+// Change pet info (current pet)
 // ============================================================
 document.getElementById('changeInfoBtn').addEventListener('click', async () => {
   const newPetName = prompt('ชื่อน้องหมา:', petInfo.pet_name);
@@ -174,8 +377,13 @@ document.getElementById('changeInfoBtn').addEventListener('click', async () => {
     if (error) throw error;
 
     petInfo = data;
+    // Update in allPets cache
+    const idx = allPets.findIndex(p => p.id === petId);
+    if (idx >= 0) allPets[idx] = data;
+    
     document.getElementById('display-petName').textContent = petInfo.pet_name;
     document.getElementById('display-ownerInfo').textContent = `${petInfo.owner_name} · ${petInfo.phone}`;
+    renderPetSwitcher();
     hideLoading();
     showToast('✅ บันทึกแล้ว', 'success');
 
@@ -183,6 +391,77 @@ document.getElementById('changeInfoBtn').addEventListener('click', async () => {
     console.error(e);
     hideLoading();
     showToast('บันทึกไม่สำเร็จ', 'error');
+  }
+});
+
+// ============================================================
+// Add new pet (multi-pet)
+// ============================================================
+function openAddPetModal() {
+  // Pre-fill with current owner info
+  document.getElementById('addpet-petName').value = '';
+  document.getElementById('addpet-ownerName').value = petInfo.owner_name;
+  document.getElementById('addpet-phone').value = petInfo.phone;
+  document.getElementById('addPetModal').classList.add('show');
+  setTimeout(() => document.getElementById('addpet-petName').focus(), 100);
+}
+
+document.getElementById('cancelAddPetBtn').addEventListener('click', () => {
+  document.getElementById('addPetModal').classList.remove('show');
+});
+
+document.getElementById('confirmAddPetBtn').addEventListener('click', async () => {
+  const newPetName = document.getElementById('addpet-petName').value.trim();
+  if (!newPetName) {
+    showToast('กรุณากรอกชื่อน้อง', 'error');
+    return;
+  }
+  
+  document.getElementById('addPetModal').classList.remove('show');
+  showLoading('กำลังเพิ่มน้องใหม่...');
+  
+  try {
+    const { data, error } = await sb
+      .from('mmvd_pets')
+      .insert([{
+        pet_name: newPetName,
+        owner_name: petInfo.owner_name,
+        phone: petInfo.phone,
+        meds: [],
+      }])
+      .select()
+      .single();
+    
+    if (error) throw error;
+    
+    // Add to local list + switch to this pet
+    allPets.push(data);
+    addPetIdToList(data.id);
+    
+    petId = data.id;
+    petInfo = data;
+    
+    document.getElementById('display-petName').textContent = petInfo.pet_name;
+    document.getElementById('display-ownerInfo').textContent = `${petInfo.owner_name} · ${petInfo.phone}`;
+    
+    await loadEntries();
+    
+    // Reset form
+    dailyForm = {};
+    document.getElementById('srr').value = '';
+    document.getElementById('notes').value = '';
+    document.getElementById('srrAlert').innerHTML = '';
+    document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+    
+    renderPetSwitcher();
+    
+    hideLoading();
+    showToast(`✨ เพิ่ม ${newPetName} แล้ว · กำลังบันทึกของน้องตัวนี้`, 'success');
+    
+  } catch (e) {
+    console.error(e);
+    hideLoading();
+    showToast('เพิ่มน้องไม่สำเร็จ', 'error');
   }
 });
 
