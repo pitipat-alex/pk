@@ -1882,6 +1882,19 @@ html.locked .lock-screen { display: flex; }
 /* System-color modifiers (cycle through pride 6) */
 .color-cardiovascular  { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
 .color-respiratory     { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+
+/* Pathophysiology systems (Neumann handbook) */
+.color-general         { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-hemato          { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-cardio          { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
+.color-resp            { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+.color-gi              { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
+.color-renal           { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }
+.color-endo            { --entry-color: var(--green);  --detail-color: var(--green);  --detail-color-soft: var(--green-soft); }
+.color-hepatic         { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
+.color-neuro           { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-reprod          { --entry-color: var(--purple); --detail-color: var(--purple); --detail-color-soft: var(--purple-soft); }
+.color-neoplasia       { --entry-color: var(--red);    --detail-color: var(--red);    --detail-color-soft: var(--red-soft); }
 .color-digestive       { --entry-color: var(--yellow); --detail-color: var(--yellow); --detail-color-soft: var(--yellow-soft); }
 .color-hepatobiliary   { --entry-color: var(--orange); --detail-color: var(--orange); --detail-color-soft: var(--orange-soft); }
 .color-urinary         { --entry-color: var(--blue);   --detail-color: var(--blue);   --detail-color-soft: var(--blue-soft); }

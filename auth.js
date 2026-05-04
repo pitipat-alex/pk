@@ -213,6 +213,21 @@
           </div>
         </section>
 
+        <!-- Supabase usage -->
+        <section class="settings-section">
+          <h4 class="settings-h4">
+            <span class="sh4-icon">☁️</span>
+            <span>Supabase Database</span>
+          </h4>
+          <p class="settings-desc">การใช้งาน free tier (500 MB · 2 GB egress · 50K MAU)</p>
+          <div class="info-list" id="supabaseUsage">
+            <div class="info-row">
+              <span class="info-label">กำลังโหลด...</span>
+              <span class="info-value">—</span>
+            </div>
+          </div>
+        </section>
+
         <!-- Data management -->
         <section class="settings-section">
           <h4 class="settings-h4">
@@ -494,11 +509,105 @@
     backdrop.classList.add('show');
     settingsModal.classList.add('show');
     document.body.style.overflow = 'hidden';
+    loadSupabaseUsage();
   }
   function closeSettings() {
     backdrop.classList.remove('show');
     settingsModal.classList.remove('show');
     document.body.style.overflow = '';
+  }
+
+  // ---------- Supabase usage estimation -----------------------------
+  async function loadSupabaseUsage() {
+    const container = document.getElementById('supabaseUsage');
+    if (!container) return;
+
+    try {
+      // Count rows from public tables (proxy for usage)
+      const tables = [
+        { name: 'shopping_items', label: '🛒 รายการช้อปปิ้ง' },
+        { name: 'shared_expenses', label: '💰 ค่าใช้จ่ายแชร์' },
+        { name: 'teaching_schedule', label: '📅 ตารางสอน' },
+        { name: 'quizzes', label: '🎓 Quiz บันทึก' },
+        { name: 'quiz_sessions', label: '🎮 Quiz Sessions' },
+        { name: 'mmvd_pets', label: '🐕 MMVD Pets' },
+        { name: 'mmvd_daily', label: '📋 MMVD รายวัน' },
+        { name: 'mmvd_weekly', label: '📊 MMVD รายสัปดาห์' },
+      ];
+
+      const results = await Promise.all(
+        tables.map(async t => {
+          try {
+            const { count, error } = await sb
+              .from(t.name)
+              .select('*', { count: 'exact', head: true });
+            return { ...t, count: error ? null : count };
+          } catch (e) {
+            return { ...t, count: null };
+          }
+        })
+      );
+
+      let totalRows = 0;
+      const rows = results.map(r => {
+        const countStr = r.count === null ? '—' : r.count.toLocaleString('en-US');
+        if (r.count !== null) totalRows += r.count;
+        return `
+          <div class="info-row">
+            <span class="info-label">${r.label}</span>
+            <span class="info-value">${countStr} rows</span>
+          </div>
+        `;
+      }).join('');
+
+      // Estimate storage size (very rough — avg row 2KB)
+      const estKB = totalRows * 2;
+      const estMB = estKB / 1024;
+      const sizeStr = estMB < 1
+        ? `~${estKB.toFixed(0)} KB`
+        : `~${estMB.toFixed(2)} MB`;
+
+      // Free tier: 500 MB
+      const pctUsed = ((estMB / 500) * 100).toFixed(2);
+      const pctNum = parseFloat(pctUsed);
+      const barColor = pctNum < 50 ? 'var(--green, #16a34a)'
+                     : pctNum < 80 ? 'var(--yellow, #ca8a04)'
+                     : 'var(--red, #dc2626)';
+
+      container.innerHTML = `
+        <div class="info-row" style="border-bottom: 2px solid var(--rule); padding-bottom: 12px;">
+          <span class="info-label">📊 รวมทั้งหมด</span>
+          <span class="info-value"><strong>${totalRows.toLocaleString('en-US')}</strong> rows · ${sizeStr}</span>
+        </div>
+        <div style="padding: 12px 0;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 12px;">
+            <span style="color: var(--ink-mute);">ใช้ไป (จาก 500 MB)</span>
+            <span style="color: ${barColor}; font-weight: 700;">${pctUsed}%</span>
+          </div>
+          <div style="background: var(--rule); height: 8px; border-radius: 4px; overflow: hidden;">
+            <div style="height: 100%; width: ${Math.min(pctNum, 100)}%; background: ${barColor}; transition: width 400ms;"></div>
+          </div>
+          <div style="margin-top: 6px; font-size: 11px; color: var(--ink-mute);">
+            ⚠️ ค่าโดยประมาณ — คำนวณจาก ~2 KB/row
+          </div>
+        </div>
+        ${rows}
+      `;
+
+    } catch (e) {
+      container.innerHTML = `
+        <div class="info-row">
+          <span class="info-label">⚠️ โหลดไม่สำเร็จ</span>
+          <span class="info-value">${escapeHtmlSimple(e.message || 'unknown')}</span>
+        </div>
+      `;
+    }
+  }
+
+  function escapeHtmlSimple(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[c]);
   }
 
   modalClose && modalClose.addEventListener('click', closeSettings);
