@@ -285,16 +285,6 @@
         <svg id="detailWeightChart"></svg>
       </div>
 
-      <!-- Medication list -->
-      ${pet.meds && pet.meds.length > 0 ? `
-        <div class="detail-chart">
-          <div class="detail-chart-title">💊 ยาที่ให้ปัจจุบัน</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            ${pet.meds.map(m => `<span class="summary-pill">${escapeHtml(m.name)} · ${escapeHtml(m.time || '')}</span>`).join('')}
-          </div>
-        </div>
-      ` : ''}
-
       <!-- History -->
       <div class="detail-chart-title" style="margin-top: 20px;">📅 ประวัติทั้งหมด</div>
       <div class="detail-history" id="detailHistory">
@@ -333,7 +323,6 @@
       if (entry.energy) stats.push(`<span class="detail-entry-stat">${energyLabels[entry.energy]}</span>`);
       if (entry.syncope && entry.syncope !== '0') stats.push(`<span class="detail-entry-stat warn">${syncopeLabels[entry.syncope]}</span>`);
       if (entry.gum_color && entry.gum_color !== 'pink') stats.push(`<span class="detail-entry-stat warn">${gumLabels[entry.gum_color]}</span>`);
-      if (entry.meds_taken && entry.meds_taken.length > 0) stats.push(`<span class="detail-entry-stat">💊 ${entry.meds_taken.length}</span>`);
     } else {
       if (entry.weight) stats.push(`<span class="detail-entry-stat">⚖️ ${entry.weight} kg</span>`);
       if (entry.abdomen) stats.push(`<span class="detail-entry-stat">📏 ${entry.abdomen} cm</span>`);
@@ -454,7 +443,7 @@
   function exportPetCsv(pet, dailyEntries, weeklyEntries) {
     let csv = `บันทึก MMVD: ${pet.pet_name}\n`;
     csv += `เจ้าของ,${pet.owner_name},เบอร์,${pet.phone}\n\n`;
-    csv += 'ประเภท,วันที่,SRR,หายใจ,ไอ,กิน,พลังงาน,หมดสติ,เหงือก,น้ำหนัก,รอบเอว,ยา,หมายเหตุ\n';
+    csv += 'ประเภท,วันที่,SRR,หายใจ,ไอ,กิน,พลังงาน,หมดสติ,เหงือก,น้ำหนัก,รอบเอว,หมายเหตุ\n';
     
     dailyEntries.forEach(h => {
       csv += [
@@ -466,7 +455,6 @@
         h.syncope ? syncopeLabels[h.syncope] : '',
         h.gum_color ? gumLabels[h.gum_color] : '',
         '', '',
-        h.meds_taken ? h.meds_taken.join(';') : '',
         (h.notes || '').replace(/[",\n]/g, ' '),
       ].map(v => `"${v}"`).join(',') + '\n';
     });
@@ -476,7 +464,7 @@
         'รายสัปดาห์', w.entry_date,
         '', '', '', '', '', '', '',
         w.weight || '', w.abdomen || '',
-        '', '',
+        '',
       ].map(v => `"${v}"`).join(',') + '\n';
     });
     

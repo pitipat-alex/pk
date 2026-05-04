@@ -12,7 +12,6 @@ const PET_ID_KEY = 'mmvd-pet-id';
 
 let petId = null;
 let petInfo = null;
-let medsList = [];
 let history = [];
 let weekly = [];
 let dailyForm = {};
@@ -73,19 +72,6 @@ async function init() {
     }
 
     petInfo = data;
-    medsList = (data.meds || []).map(m => ({ ...m, takenToday: false, lastTaken: null }));
-
-    if (medsList.length === 0) {
-      medsList = [
-        { id: 'med1', name: 'Pimobendan', time: '07:00' },
-        { id: 'med2', name: 'Furosemide', time: '07:00' },
-        { id: 'med3', name: 'Benazepril', time: '07:00' },
-        { id: 'med4', name: 'Spironolactone', time: '07:00' },
-      ];
-      await saveMedsToSupabase();
-    }
-
-    loadMedTakenStatus();
     showMainApp();
     await loadEntries();
     hideLoading();
@@ -97,42 +83,6 @@ async function init() {
   }
 }
 
-function loadMedTakenStatus() {
-  const todayKey = new Date().toDateString();
-  const key = `mmvd-meds-taken-${petId}`;
-  try {
-    const stored = localStorage.getItem(key);
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      if (parsed.date === todayKey && parsed.taken) {
-        medsList.forEach(m => {
-          m.takenToday = parsed.taken.includes(m.id);
-          m.lastTaken = todayKey;
-        });
-      }
-    }
-  } catch (e) { /* ignore */ }
-}
-
-function saveMedTakenStatus() {
-  const key = `mmvd-meds-taken-${petId}`;
-  const taken = medsList.filter(m => m.takenToday).map(m => m.id);
-  localStorage.setItem(key, JSON.stringify({
-    date: new Date().toDateString(),
-    taken,
-  }));
-}
-
-async function saveMedsToSupabase() {
-  if (!petId) return;
-  const medsForDB = medsList.map(m => ({
-    id: m.id,
-    name: m.name,
-    time: m.time,
-  }));
-  await sb.from('mmvd_pets').update({ meds: medsForDB }).eq('id', petId);
-}
-
 function showMainApp() {
   document.getElementById('registerModal').classList.remove('show');
   document.getElementById('mainApp').style.display = 'block';
@@ -142,8 +92,6 @@ function showMainApp() {
 
   document.getElementById('entryDate').value = today;
   document.getElementById('weeklyDate').value = today;
-
-  renderMedList();
 }
 
 // ============================================================
@@ -173,12 +121,7 @@ document.getElementById('registerBtn').addEventListener('click', async () => {
         pet_name: petName,
         owner_name: ownerName,
         phone: phone,
-        meds: [
-          { id: 'med1', name: 'Pimobendan', time: '07:00' },
-          { id: 'med2', name: 'Furosemide', time: '07:00' },
-          { id: 'med3', name: 'Benazepril', time: '07:00' },
-          { id: 'med4', name: 'Spironolactone', time: '07:00' },
-        ],
+        meds: [],
       }])
       .select()
       .single();
@@ -187,7 +130,6 @@ document.getElementById('registerBtn').addEventListener('click', async () => {
 
     petId = data.id;
     petInfo = data;
-    medsList = data.meds.map(m => ({ ...m, takenToday: false, lastTaken: null }));
     localStorage.setItem(PET_ID_KEY, petId);
 
     showMainApp();
@@ -342,67 +284,6 @@ document.getElementById('weight').addEventListener('input', (e) => {
 });
 
 // ============================================================
-// Medication
-// ============================================================
-function renderMedList() {
-  const list = document.getElementById('medList');
-  list.innerHTML = medsList.map(m => `
-    <div class="med-item ${m.takenToday ? 'checked' : ''}" data-id="${m.id}">
-      <div class="med-checkbox">
-        ${m.takenToday ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' : ''}
-      </div>
-      <div class="med-name">${escapeHtml(m.name)}</div>
-      <div class="med-time">${m.time}</div>
-      <button class="delete-btn" data-del-med="${m.id}">✕</button>
-    </div>
-  `).join('');
-
-  list.querySelectorAll('.med-item').forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (e.target.closest('[data-del-med]')) return;
-      const id = item.dataset.id;
-      const med = medsList.find(m => m.id === id);
-      if (med) {
-        med.takenToday = !med.takenToday;
-        med.lastTaken = new Date().toDateString();
-        saveMedTakenStatus();
-        renderMedList();
-      }
-    });
-  });
-
-  list.querySelectorAll('[data-del-med]').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const id = btn.dataset.delMed;
-      if (confirm('ลบยานี้?')) {
-        medsList = medsList.filter(m => m.id !== id);
-        await saveMedsToSupabase();
-        renderMedList();
-      }
-    });
-  });
-}
-
-document.getElementById('addMedBtn').addEventListener('click', async () => {
-  const name = prompt('ชื่อยา:');
-  if (!name || !name.trim()) return;
-  const time = prompt('เวลาให้ (เช่น 08:00):', '08:00');
-  if (!time) return;
-
-  medsList.push({
-    id: 'med' + Date.now(),
-    name: name.trim(),
-    time: time.trim(),
-    takenToday: false,
-    lastTaken: null,
-  });
-  await saveMedsToSupabase();
-  renderMedList();
-  showToast('เพิ่มยาเรียบร้อย', 'success');
-});
-
-// ============================================================
 // Save Daily
 // ============================================================
 document.getElementById('saveDailyBtn').addEventListener('click', async () => {
@@ -430,7 +311,6 @@ document.getElementById('saveDailyBtn').addEventListener('click', async () => {
     syncope: dailyForm.syncope || null,
     gum_color: dailyForm.gumColor || null,
     notes: notes || null,
-    meds_taken: medsList.filter(m => m.takenToday).map(m => m.name),
   };
 
   try {
@@ -536,7 +416,6 @@ function renderHistory() {
       if (entry.energy) stats.push(`<span class="history-stat">⚡ ${energyLabels[entry.energy]}</span>`);
       if (entry.syncope && entry.syncope !== '0') stats.push(`<span class="history-stat warn">😵 ${syncopeLabels[entry.syncope]}</span>`);
       if (entry.gum_color && entry.gum_color !== 'pink') stats.push(`<span class="history-stat warn">${gumLabels[entry.gum_color]}</span>`);
-      if (entry.meds_taken && entry.meds_taken.length > 0) stats.push(`<span class="history-stat">💊 ${entry.meds_taken.length} ยา</span>`);
     } else {
       if (entry.weight) stats.push(`<span class="history-stat">⚖️ ${entry.weight} กก.</span>`);
       if (entry.abdomen) stats.push(`<span class="history-stat">📏 ${entry.abdomen} ซม.</span>`);
@@ -597,7 +476,7 @@ document.getElementById('refreshBtn').addEventListener('click', async () => {
 // Export CSV
 // ============================================================
 document.getElementById('exportCsvBtn').addEventListener('click', () => {
-  let csv = 'ประเภท,วันที่,SRR,หายใจ,ไอ,กิน,พลังงาน,หมดสติ,เหงือก,น้ำหนัก,รอบเอว,ยา,หมายเหตุ\n';
+  let csv = 'ประเภท,วันที่,SRR,หายใจ,ไอ,กิน,พลังงาน,หมดสติ,เหงือก,น้ำหนัก,รอบเอว,หมายเหตุ\n';
 
   history.forEach(h => {
     csv += [
@@ -609,7 +488,6 @@ document.getElementById('exportCsvBtn').addEventListener('click', () => {
       h.syncope ? syncopeLabels[h.syncope] : '',
       h.gum_color ? gumLabels[h.gum_color] : '',
       '', '',
-      h.meds_taken ? h.meds_taken.join(';') : '',
       (h.notes || '').replace(/[",\n]/g, ' '),
     ].map(v => `"${v}"`).join(',') + '\n';
   });
@@ -619,7 +497,7 @@ document.getElementById('exportCsvBtn').addEventListener('click', () => {
       'รายสัปดาห์', w.entry_date,
       '', '', '', '', '', '', '',
       w.weight || '', w.abdomen || '',
-      '', '',
+      '',
     ].map(v => `"${v}"`).join(',') + '\n';
   });
 
